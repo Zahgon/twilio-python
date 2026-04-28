@@ -21,13 +21,13 @@ class Version(object):
         """
         Turns a relative uri into an absolute url.
         """
-        return self.domain.absolute_url(self.relative_uri(uri))
+        pass
 
     def relative_uri(self, uri: str) -> str:
         """
         Turns a relative uri into a versioned relative uri.
         """
-        return "{}/{}".format(self.version.strip("/"), uri.strip("/"))
+        pass
 
     def request(
         self,
@@ -43,17 +43,7 @@ class Version(object):
         """
         Make an HTTP request.
         """
-        url = self.relative_uri(uri)
-        return self.domain.request(
-            method,
-            url,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
+        pass
 
     async def request_async(
         self,
@@ -69,17 +59,7 @@ class Version(object):
         """
         Make an asynchronous HTTP request
         """
-        url = self.relative_uri(uri)
-        return await self.domain.request_async(
-            method,
-            url,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
+        pass
 
     @classmethod
     def exception(
@@ -91,48 +71,13 @@ class Version(object):
         If the response is RFC-9457 compliant (contains 'type', 'title', 'status', and 'code' fields),
         returns a TwilioServiceException. Otherwise, returns a TwilioRestException for backward compatibility.
         """
-        # noinspection PyBroadException
-        try:
-            error_payload = json.loads(response.text)
-
-            # Check if this is an RFC-9457 compliant error response
-            # Required fields: type, title, status, code
-            if all(key in error_payload for key in ["type", "title", "status", "code"]):
-                # This is an RFC-9457 compliant error response
-                return TwilioServiceException(
-                    type_uri=error_payload["type"],
-                    title=error_payload["title"],
-                    status=error_payload["status"],
-                    code=error_payload["code"],
-                    detail=error_payload.get("detail"),
-                    instance=error_payload.get("instance"),
-                    errors=error_payload.get("errors"),
-                    method=method,
-                    uri=uri,
-                )
-            else:
-                # Legacy error format - use TwilioRestException
-                if "message" in error_payload:
-                    message = "{}: {}".format(message, error_payload["message"])
-                details = error_payload.get("details")
-                code = error_payload.get("code", response.status_code)
-                return TwilioRestException(
-                    response.status_code, uri, message, code, method, details
-                )
-        except Exception:
-            return TwilioRestException(
-                response.status_code, uri, message, response.status_code, method
-            )
+        pass
 
     def _parse_fetch(self, method: str, uri: str, response: Response) -> Any:
         """
         Parses fetch response JSON
         """
-        # Note that 3XX response codes are allowed for fetches.
-        if response.status_code < 200 or response.status_code >= 400:
-            raise self.exception(method, uri, response, "Unable to fetch record")
-
-        return json.loads(response.text)
+        pass
 
     def fetch(
         self,
@@ -148,18 +93,7 @@ class Version(object):
         """
         Fetch a resource instance.
         """
-        response = self.request(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-
-        return self._parse_fetch(method, uri, response)
+        pass
 
     async def fetch_async(
         self,
@@ -175,17 +109,7 @@ class Version(object):
         """
         Asynchronously fetch a resource instance.
         """
-        response = await self.request_async(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-        return self._parse_fetch(method, uri, response)
+        pass
 
     def fetch_with_response_info(
         self,
@@ -207,18 +131,7 @@ class Version(object):
                 - status_code: HTTP status code (typically 200)
                 - headers_dict: Response headers as a dictionary
         """
-        response = self.request(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-        payload = self._parse_fetch(method, uri, response)
-        return payload, response.status_code, dict(response.headers or {})
+        pass
 
     async def fetch_with_response_info_async(
         self,
@@ -240,27 +153,13 @@ class Version(object):
                 - status_code: HTTP status code (typically 200)
                 - headers_dict: Response headers as a dictionary
         """
-        response = await self.request_async(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-        payload = self._parse_fetch(method, uri, response)
-        return payload, response.status_code, dict(response.headers or {})
+        pass
 
     def _parse_update(self, method: str, uri: str, response: Response) -> Any:
         """
         Parses update response JSON
         """
-        if response.status_code < 200 or response.status_code >= 300:
-            raise self.exception(method, uri, response, "Unable to update record")
-
-        return json.loads(response.text)
+        pass
 
     def update(
         self,
@@ -276,18 +175,7 @@ class Version(object):
         """
         Update a resource instance.
         """
-        response = self.request(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-
-        return self._parse_update(method, uri, response)
+        pass
 
     async def update_async(
         self,
@@ -303,18 +191,7 @@ class Version(object):
         """
         Asynchronously update a resource instance.
         """
-        response = await self.request_async(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-
-        return self._parse_update(method, uri, response)
+        pass
 
     def update_with_response_info(
         self,
@@ -336,18 +213,7 @@ class Version(object):
                 - status_code: HTTP status code (typically 200)
                 - headers_dict: Response headers as a dictionary
         """
-        response = self.request(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-        payload = self._parse_update(method, uri, response)
-        return payload, response.status_code, dict(response.headers or {})
+        pass
 
     async def update_with_response_info_async(
         self,
@@ -369,27 +235,13 @@ class Version(object):
                 - status_code: HTTP status code (typically 200)
                 - headers_dict: Response headers as a dictionary
         """
-        response = await self.request_async(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-        payload = self._parse_update(method, uri, response)
-        return payload, response.status_code, dict(response.headers or {})
+        pass
 
     def _parse_delete(self, method: str, uri: str, response: Response) -> bool:
         """
         Parses delete response JSON
         """
-        if response.status_code < 200 or response.status_code >= 300:
-            raise self.exception(method, uri, response, "Unable to delete record")
-
-        return True  # if response code is 2XX, deletion was successful
+        pass
 
     def delete(
         self,
@@ -405,18 +257,7 @@ class Version(object):
         """
         Delete a resource.
         """
-        response = self.request(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-
-        return self._parse_delete(method, uri, response)
+        pass
 
     async def delete_async(
         self,
@@ -432,18 +273,7 @@ class Version(object):
         """
         Asynchronously delete a resource.
         """
-        response = await self.request_async(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-
-        return self._parse_delete(method, uri, response)
+        pass
 
     def delete_with_response_info(
         self,
@@ -465,18 +295,7 @@ class Version(object):
                 - status_code: HTTP status code (typically 204 for successful delete)
                 - headers_dict: Response headers as a dictionary
         """
-        response = self.request(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-        success = self._parse_delete(method, uri, response)
-        return success, response.status_code, dict(response.headers or {})
+        pass
 
     async def delete_with_response_info_async(
         self,
@@ -498,18 +317,7 @@ class Version(object):
                 - status_code: HTTP status code (typically 204 for successful delete)
                 - headers_dict: Response headers as a dictionary
         """
-        response = await self.request_async(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-        success = self._parse_delete(method, uri, response)
-        return success, response.status_code, dict(response.headers or {})
+        pass
 
     def read_limits(
         self, limit: Optional[int] = None, page_size: Optional[int] = None
@@ -522,13 +330,7 @@ class Version(object):
         :param page_size: Max page size.
         :return A dictionary of paging limits.
         """
-        if limit is not None and page_size is None:
-            page_size = limit
-
-        return {
-            "limit": limit or values.unset,
-            "page_size": page_size or values.unset,
-        }
+        pass
 
     def page(
         self,
@@ -544,16 +346,7 @@ class Version(object):
         """
         Makes an HTTP request.
         """
-        return self.request(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
+        pass
 
     async def page_async(
         self,
@@ -569,16 +362,7 @@ class Version(object):
         """
         Makes an asynchronous HTTP request.
         """
-        return await self.request_async(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
+        pass
 
     def page_with_response_info(
         self,
@@ -600,17 +384,7 @@ class Version(object):
                 - status_code: HTTP status code
                 - headers_dict: Response headers as a dictionary
         """
-        response = self.request(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-        return response, response.status_code, dict(response.headers or {})
+        pass
 
     async def page_with_response_info_async(
         self,
@@ -632,17 +406,7 @@ class Version(object):
                 - status_code: HTTP status code
                 - headers_dict: Response headers as a dictionary
         """
-        response = await self.request_async(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-        return response, response.status_code, dict(response.headers or {})
+        pass
 
     def stream(
         self,
@@ -657,25 +421,7 @@ class Version(object):
         :param limit: The max number of records to read.
         :param page_limit: The max number of pages to read.
         """
-        current_record = 1
-        current_page = 1
-
-        while page is not None:
-            for record in page:
-                yield record
-                current_record += 1
-                if limit and limit is not values.unset and limit < current_record:
-                    return
-
-            current_page += 1
-            if (
-                page_limit
-                and page_limit is not values.unset
-                and page_limit < current_page
-            ):
-                return
-
-            page = page.next_page()
+        pass
 
     async def stream_async(
         self,
@@ -690,34 +436,13 @@ class Version(object):
         :param limit: The max number of records to read.
         :param page_limit: The max number of pages to read.
         """
-        current_record = 1
-        current_page = 1
-
-        while page is not None:
-            for record in page:
-                yield record
-                current_record += 1
-                if limit and limit is not values.unset and limit < current_record:
-                    return
-
-            current_page += 1
-            if (
-                page_limit
-                and page_limit is not values.unset
-                and page_limit < current_page
-            ):
-                return
-
-            page = await page.next_page_async()
+        pass
 
     def _parse_create(self, method: str, uri: str, response: Response) -> Any:
         """
         Parse create response JSON
         """
-        if response.status_code < 200 or response.status_code >= 300:
-            raise self.exception(method, uri, response, "Unable to create record")
-
-        return json.loads(response.text)
+        pass
 
     def create(
         self,
@@ -733,17 +458,7 @@ class Version(object):
         """
         Create a resource instance.
         """
-        response = self.request(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-        return self._parse_create(method, uri, response)
+        pass
 
     async def create_async(
         self,
@@ -759,17 +474,7 @@ class Version(object):
         """
         Asynchronously create a resource instance.
         """
-        response = await self.request_async(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-        return self._parse_create(method, uri, response)
+        pass
 
     def create_with_response_info(
         self,
@@ -791,18 +496,7 @@ class Version(object):
                 - status_code: HTTP status code (e.g., 201)
                 - headers_dict: Response headers as a dictionary
         """
-        response = self.request(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-        payload = self._parse_create(method, uri, response)
-        return payload, response.status_code, dict(response.headers or {})
+        pass
 
     async def create_with_response_info_async(
         self,
@@ -824,15 +518,4 @@ class Version(object):
                 - status_code: HTTP status code (e.g., 201)
                 - headers_dict: Response headers as a dictionary
         """
-        response = await self.request_async(
-            method,
-            uri,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
-        payload = self._parse_create(method, uri, response)
-        return payload, response.status_code, dict(response.headers or {})
+        pass

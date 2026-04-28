@@ -78,14 +78,7 @@ class BrandRegistrationOtpList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, headers=headers
-        )
+        pass
 
     def create(self) -> BrandRegistrationOtpInstance:
         """
@@ -94,12 +87,7 @@ class BrandRegistrationOtpList(ListResource):
 
         :returns: The created BrandRegistrationOtpInstance
         """
-        payload, _, _ = self._create()
-        return BrandRegistrationOtpInstance(
-            self._version,
-            payload,
-            brand_registration_sid=self._solution["brand_registration_sid"],
-        )
+        pass
 
     def create_with_http_info(self) -> ApiResponse:
         """
@@ -108,13 +96,7 @@ class BrandRegistrationOtpList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create()
-        instance = BrandRegistrationOtpInstance(
-            self._version,
-            payload,
-            brand_registration_sid=self._solution["brand_registration_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self) -> tuple:
         """
@@ -123,14 +105,7 @@ class BrandRegistrationOtpList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, headers=headers
-        )
+        pass
 
     async def create_async(self) -> BrandRegistrationOtpInstance:
         """
@@ -139,12 +114,7 @@ class BrandRegistrationOtpList(ListResource):
 
         :returns: The created BrandRegistrationOtpInstance
         """
-        payload, _, _ = await self._create_async()
-        return BrandRegistrationOtpInstance(
-            self._version,
-            payload,
-            brand_registration_sid=self._solution["brand_registration_sid"],
-        )
+        pass
 
     async def create_with_http_info_async(self) -> ApiResponse:
         """
@@ -153,13 +123,7 @@ class BrandRegistrationOtpList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async()
-        instance = BrandRegistrationOtpInstance(
-            self._version,
-            payload,
-            brand_registration_sid=self._solution["brand_registration_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

@@ -88,26 +88,7 @@ class ValidationRequestList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "PhoneNumber": phone_number,
-                "FriendlyName": friendly_name,
-                "CallDelay": call_delay,
-                "Extension": extension,
-                "StatusCallback": status_callback,
-                "StatusCallbackMethod": status_callback_method,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -130,17 +111,7 @@ class ValidationRequestList(ListResource):
 
         :returns: The created ValidationRequestInstance
         """
-        payload, _, _ = self._create(
-            phone_number=phone_number,
-            friendly_name=friendly_name,
-            call_delay=call_delay,
-            extension=extension,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-        )
-        return ValidationRequestInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -163,18 +134,7 @@ class ValidationRequestList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            phone_number=phone_number,
-            friendly_name=friendly_name,
-            call_delay=call_delay,
-            extension=extension,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-        )
-        instance = ValidationRequestInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -191,26 +151,7 @@ class ValidationRequestList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "PhoneNumber": phone_number,
-                "FriendlyName": friendly_name,
-                "CallDelay": call_delay,
-                "Extension": extension,
-                "StatusCallback": status_callback,
-                "StatusCallbackMethod": status_callback_method,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -233,17 +174,7 @@ class ValidationRequestList(ListResource):
 
         :returns: The created ValidationRequestInstance
         """
-        payload, _, _ = await self._create_async(
-            phone_number=phone_number,
-            friendly_name=friendly_name,
-            call_delay=call_delay,
-            extension=extension,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-        )
-        return ValidationRequestInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -266,18 +197,7 @@ class ValidationRequestList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            phone_number=phone_number,
-            friendly_name=friendly_name,
-            call_delay=call_delay,
-            extension=extension,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-        )
-        instance = ValidationRequestInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

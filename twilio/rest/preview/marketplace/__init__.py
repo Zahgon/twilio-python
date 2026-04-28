@@ -33,15 +33,11 @@ class Marketplace(Version):
 
     @property
     def available_add_ons(self) -> AvailableAddOnList:
-        if self._available_add_ons is None:
-            self._available_add_ons = AvailableAddOnList(self)
-        return self._available_add_ons
+        pass
 
     @property
     def installed_add_ons(self) -> InstalledAddOnList:
-        if self._installed_add_ons is None:
-            self._installed_add_ons = InstalledAddOnList(self)
-        return self._installed_add_ons
+        pass
 
     def __repr__(self) -> str:
         """

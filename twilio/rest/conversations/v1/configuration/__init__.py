@@ -61,11 +61,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ConfigurationContext for this ConfigurationInstance
         """
-        if self._context is None:
-            self._context = ConfigurationContext(
-                self._version,
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "ConfigurationInstance":
         """
@@ -74,7 +70,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: The fetched ConfigurationInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "ConfigurationInstance":
         """
@@ -83,7 +79,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: The fetched ConfigurationInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -92,7 +88,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -101,7 +97,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -120,12 +116,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: The updated ConfigurationInstance
         """
-        return self._proxy.update(
-            default_chat_service_sid=default_chat_service_sid,
-            default_messaging_service_sid=default_messaging_service_sid,
-            default_inactive_timer=default_inactive_timer,
-            default_closed_timer=default_closed_timer,
-        )
+        pass
 
     async def update_async(
         self,
@@ -144,12 +135,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: The updated ConfigurationInstance
         """
-        return await self._proxy.update_async(
-            default_chat_service_sid=default_chat_service_sid,
-            default_messaging_service_sid=default_messaging_service_sid,
-            default_inactive_timer=default_inactive_timer,
-            default_closed_timer=default_closed_timer,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -168,12 +154,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            default_chat_service_sid=default_chat_service_sid,
-            default_messaging_service_sid=default_messaging_service_sid,
-            default_inactive_timer=default_inactive_timer,
-            default_closed_timer=default_closed_timer,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -192,12 +173,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            default_chat_service_sid=default_chat_service_sid,
-            default_messaging_service_sid=default_messaging_service_sid,
-            default_inactive_timer=default_inactive_timer,
-            default_closed_timer=default_closed_timer,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -228,14 +204,7 @@ class ConfigurationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> ConfigurationInstance:
         """
@@ -244,11 +213,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: The fetched ConfigurationInstance
         """
-        payload, _, _ = self._fetch()
-        return ConfigurationInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -257,12 +222,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = ConfigurationInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -271,14 +231,7 @@ class ConfigurationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> ConfigurationInstance:
         """
@@ -287,11 +240,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: The fetched ConfigurationInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return ConfigurationInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -300,12 +249,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = ConfigurationInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -320,24 +264,7 @@ class ConfigurationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "DefaultChatServiceSid": default_chat_service_sid,
-                "DefaultMessagingServiceSid": default_messaging_service_sid,
-                "DefaultInactiveTimer": default_inactive_timer,
-                "DefaultClosedTimer": default_closed_timer,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -356,13 +283,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: The updated ConfigurationInstance
         """
-        payload, _, _ = self._update(
-            default_chat_service_sid=default_chat_service_sid,
-            default_messaging_service_sid=default_messaging_service_sid,
-            default_inactive_timer=default_inactive_timer,
-            default_closed_timer=default_closed_timer,
-        )
-        return ConfigurationInstance(self._version, payload)
+        pass
 
     def update_with_http_info(
         self,
@@ -381,14 +302,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            default_chat_service_sid=default_chat_service_sid,
-            default_messaging_service_sid=default_messaging_service_sid,
-            default_inactive_timer=default_inactive_timer,
-            default_closed_timer=default_closed_timer,
-        )
-        instance = ConfigurationInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -403,24 +317,7 @@ class ConfigurationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "DefaultChatServiceSid": default_chat_service_sid,
-                "DefaultMessagingServiceSid": default_messaging_service_sid,
-                "DefaultInactiveTimer": default_inactive_timer,
-                "DefaultClosedTimer": default_closed_timer,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -439,13 +336,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: The updated ConfigurationInstance
         """
-        payload, _, _ = await self._update_async(
-            default_chat_service_sid=default_chat_service_sid,
-            default_messaging_service_sid=default_messaging_service_sid,
-            default_inactive_timer=default_inactive_timer,
-            default_closed_timer=default_closed_timer,
-        )
-        return ConfigurationInstance(self._version, payload)
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -464,14 +355,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            default_chat_service_sid=default_chat_service_sid,
-            default_messaging_service_sid=default_messaging_service_sid,
-            default_inactive_timer=default_inactive_timer,
-            default_closed_timer=default_closed_timer,
-        )
-        instance = ConfigurationInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -501,16 +385,14 @@ class ConfigurationList(ListResource):
         """
         Access the webhooks
         """
-        if self._webhooks is None:
-            self._webhooks = WebhookList(self._version)
-        return self._webhooks
+        pass
 
     def get(self) -> ConfigurationContext:
         """
         Constructs a ConfigurationContext
 
         """
-        return ConfigurationContext(self._version)
+        pass
 
     def __call__(self) -> ConfigurationContext:
         """

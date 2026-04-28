@@ -45,11 +45,7 @@ class SettingsInstance(InstanceResource):
 
         :returns: SettingsContext for this SettingsInstance
         """
-        if self._context is None:
-            self._context = SettingsContext(
-                self._version,
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "SettingsInstance":
         """
@@ -58,7 +54,7 @@ class SettingsInstance(InstanceResource):
 
         :returns: The fetched SettingsInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "SettingsInstance":
         """
@@ -67,7 +63,7 @@ class SettingsInstance(InstanceResource):
 
         :returns: The fetched SettingsInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -76,7 +72,7 @@ class SettingsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -85,7 +81,7 @@ class SettingsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self, dialing_permissions_inheritance: Union[bool, object] = values.unset
@@ -97,9 +93,7 @@ class SettingsInstance(InstanceResource):
 
         :returns: The updated SettingsInstance
         """
-        return self._proxy.update(
-            dialing_permissions_inheritance=dialing_permissions_inheritance,
-        )
+        pass
 
     async def update_async(
         self, dialing_permissions_inheritance: Union[bool, object] = values.unset
@@ -111,9 +105,7 @@ class SettingsInstance(InstanceResource):
 
         :returns: The updated SettingsInstance
         """
-        return await self._proxy.update_async(
-            dialing_permissions_inheritance=dialing_permissions_inheritance,
-        )
+        pass
 
     def update_with_http_info(
         self, dialing_permissions_inheritance: Union[bool, object] = values.unset
@@ -125,9 +117,7 @@ class SettingsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            dialing_permissions_inheritance=dialing_permissions_inheritance,
-        )
+        pass
 
     async def update_with_http_info_async(
         self, dialing_permissions_inheritance: Union[bool, object] = values.unset
@@ -139,9 +129,7 @@ class SettingsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            dialing_permissions_inheritance=dialing_permissions_inheritance,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -172,14 +160,7 @@ class SettingsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> SettingsInstance:
         """
@@ -188,11 +169,7 @@ class SettingsContext(InstanceContext):
 
         :returns: The fetched SettingsInstance
         """
-        payload, _, _ = self._fetch()
-        return SettingsInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -201,12 +178,7 @@ class SettingsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = SettingsInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -215,14 +187,7 @@ class SettingsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> SettingsInstance:
         """
@@ -231,11 +196,7 @@ class SettingsContext(InstanceContext):
 
         :returns: The fetched SettingsInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return SettingsInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -244,12 +205,7 @@ class SettingsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = SettingsInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self, dialing_permissions_inheritance: Union[bool, object] = values.unset
@@ -260,23 +216,7 @@ class SettingsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "DialingPermissionsInheritance": serialize.boolean_to_string(
-                    dialing_permissions_inheritance
-                ),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self, dialing_permissions_inheritance: Union[bool, object] = values.unset
@@ -288,10 +228,7 @@ class SettingsContext(InstanceContext):
 
         :returns: The updated SettingsInstance
         """
-        payload, _, _ = self._update(
-            dialing_permissions_inheritance=dialing_permissions_inheritance
-        )
-        return SettingsInstance(self._version, payload)
+        pass
 
     def update_with_http_info(
         self, dialing_permissions_inheritance: Union[bool, object] = values.unset
@@ -303,11 +240,7 @@ class SettingsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            dialing_permissions_inheritance=dialing_permissions_inheritance
-        )
-        instance = SettingsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self, dialing_permissions_inheritance: Union[bool, object] = values.unset
@@ -318,23 +251,7 @@ class SettingsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "DialingPermissionsInheritance": serialize.boolean_to_string(
-                    dialing_permissions_inheritance
-                ),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, dialing_permissions_inheritance: Union[bool, object] = values.unset
@@ -346,10 +263,7 @@ class SettingsContext(InstanceContext):
 
         :returns: The updated SettingsInstance
         """
-        payload, _, _ = await self._update_async(
-            dialing_permissions_inheritance=dialing_permissions_inheritance
-        )
-        return SettingsInstance(self._version, payload)
+        pass
 
     async def update_with_http_info_async(
         self, dialing_permissions_inheritance: Union[bool, object] = values.unset
@@ -361,11 +275,7 @@ class SettingsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            dialing_permissions_inheritance=dialing_permissions_inheritance
-        )
-        instance = SettingsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -393,7 +303,7 @@ class SettingsList(ListResource):
         Constructs a SettingsContext
 
         """
-        return SettingsContext(self._version)
+        pass
 
     def __call__(self) -> SettingsContext:
         """

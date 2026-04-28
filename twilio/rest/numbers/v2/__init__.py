@@ -41,39 +41,27 @@ class V2(Version):
 
     @property
     def applications(self) -> ApplicationList:
-        if self._applications is None:
-            self._applications = ApplicationList(self)
-        return self._applications
+        pass
 
     @property
     def authorization_documents(self) -> AuthorizationDocumentList:
-        if self._authorization_documents is None:
-            self._authorization_documents = AuthorizationDocumentList(self)
-        return self._authorization_documents
+        pass
 
     @property
     def bulk_hosted_number_orders(self) -> BulkHostedNumberOrderList:
-        if self._bulk_hosted_number_orders is None:
-            self._bulk_hosted_number_orders = BulkHostedNumberOrderList(self)
-        return self._bulk_hosted_number_orders
+        pass
 
     @property
     def bundle_clone(self) -> BundleCloneList:
-        if self._bundle_clone is None:
-            self._bundle_clone = BundleCloneList(self)
-        return self._bundle_clone
+        pass
 
     @property
     def hosted_number_orders(self) -> HostedNumberOrderList:
-        if self._hosted_number_orders is None:
-            self._hosted_number_orders = HostedNumberOrderList(self)
-        return self._hosted_number_orders
+        pass
 
     @property
     def regulatory_compliance(self) -> RegulatoryComplianceList:
-        if self._regulatory_compliance is None:
-            self._regulatory_compliance = RegulatoryComplianceList(self)
-        return self._regulatory_compliance
+        pass
 
     def __repr__(self) -> str:
         """

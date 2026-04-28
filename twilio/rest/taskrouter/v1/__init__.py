@@ -31,9 +31,7 @@ class V1(Version):
 
     @property
     def workspaces(self) -> WorkspaceList:
-        if self._workspaces is None:
-            self._workspaces = WorkspaceList(self)
-        return self._workspaces
+        pass
 
     def __repr__(self) -> str:
         """

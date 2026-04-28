@@ -79,13 +79,7 @@ class AvailablePhoneNumberCountryInstance(InstanceResource):
 
         :returns: AvailablePhoneNumberCountryContext for this AvailablePhoneNumberCountryInstance
         """
-        if self._context is None:
-            self._context = AvailablePhoneNumberCountryContext(
-                self._version,
-                account_sid=self._solution["account_sid"],
-                country_code=self._solution["country_code"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "AvailablePhoneNumberCountryInstance":
         """
@@ -94,7 +88,7 @@ class AvailablePhoneNumberCountryInstance(InstanceResource):
 
         :returns: The fetched AvailablePhoneNumberCountryInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "AvailablePhoneNumberCountryInstance":
         """
@@ -103,7 +97,7 @@ class AvailablePhoneNumberCountryInstance(InstanceResource):
 
         :returns: The fetched AvailablePhoneNumberCountryInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -112,7 +106,7 @@ class AvailablePhoneNumberCountryInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -121,56 +115,56 @@ class AvailablePhoneNumberCountryInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     @property
     def local(self) -> LocalList:
         """
         Access the local
         """
-        return self._proxy.local
+        pass
 
     @property
     def machine_to_machine(self) -> MachineToMachineList:
         """
         Access the machine_to_machine
         """
-        return self._proxy.machine_to_machine
+        pass
 
     @property
     def mobile(self) -> MobileList:
         """
         Access the mobile
         """
-        return self._proxy.mobile
+        pass
 
     @property
     def national(self) -> NationalList:
         """
         Access the national
         """
-        return self._proxy.national
+        pass
 
     @property
     def shared_cost(self) -> SharedCostList:
         """
         Access the shared_cost
         """
-        return self._proxy.shared_cost
+        pass
 
     @property
     def toll_free(self) -> TollFreeList:
         """
         Access the toll_free
         """
-        return self._proxy.toll_free
+        pass
 
     @property
     def voip(self) -> VoipList:
         """
         Access the voip
         """
-        return self._proxy.voip
+        pass
 
     def __repr__(self) -> str:
         """
@@ -222,14 +216,7 @@ class AvailablePhoneNumberCountryContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> AvailablePhoneNumberCountryInstance:
         """
@@ -238,13 +225,7 @@ class AvailablePhoneNumberCountryContext(InstanceContext):
 
         :returns: The fetched AvailablePhoneNumberCountryInstance
         """
-        payload, _, _ = self._fetch()
-        return AvailablePhoneNumberCountryInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            country_code=self._solution["country_code"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -253,14 +234,7 @@ class AvailablePhoneNumberCountryContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = AvailablePhoneNumberCountryInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            country_code=self._solution["country_code"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -269,14 +243,7 @@ class AvailablePhoneNumberCountryContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> AvailablePhoneNumberCountryInstance:
         """
@@ -285,13 +252,7 @@ class AvailablePhoneNumberCountryContext(InstanceContext):
 
         :returns: The fetched AvailablePhoneNumberCountryInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return AvailablePhoneNumberCountryInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            country_code=self._solution["country_code"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -300,105 +261,56 @@ class AvailablePhoneNumberCountryContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = AvailablePhoneNumberCountryInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            country_code=self._solution["country_code"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def local(self) -> LocalList:
         """
         Access the local
         """
-        if self._local is None:
-            self._local = LocalList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["country_code"],
-            )
-        return self._local
+        pass
 
     @property
     def machine_to_machine(self) -> MachineToMachineList:
         """
         Access the machine_to_machine
         """
-        if self._machine_to_machine is None:
-            self._machine_to_machine = MachineToMachineList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["country_code"],
-            )
-        return self._machine_to_machine
+        pass
 
     @property
     def mobile(self) -> MobileList:
         """
         Access the mobile
         """
-        if self._mobile is None:
-            self._mobile = MobileList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["country_code"],
-            )
-        return self._mobile
+        pass
 
     @property
     def national(self) -> NationalList:
         """
         Access the national
         """
-        if self._national is None:
-            self._national = NationalList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["country_code"],
-            )
-        return self._national
+        pass
 
     @property
     def shared_cost(self) -> SharedCostList:
         """
         Access the shared_cost
         """
-        if self._shared_cost is None:
-            self._shared_cost = SharedCostList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["country_code"],
-            )
-        return self._shared_cost
+        pass
 
     @property
     def toll_free(self) -> TollFreeList:
         """
         Access the toll_free
         """
-        if self._toll_free is None:
-            self._toll_free = TollFreeList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["country_code"],
-            )
-        return self._toll_free
+        pass
 
     @property
     def voip(self) -> VoipList:
         """
         Access the voip
         """
-        if self._voip is None:
-            self._voip = VoipList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["country_code"],
-            )
-        return self._voip
+        pass
 
     def __repr__(self) -> str:
         """
@@ -422,9 +334,7 @@ class AvailablePhoneNumberCountryPage(Page):
 
         :param payload: Payload response from the API
         """
-        return AvailablePhoneNumberCountryInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -475,10 +385,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -500,10 +407,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -523,11 +427,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -547,13 +447,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -574,12 +468,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -600,13 +489,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -626,12 +509,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -651,12 +529,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -674,24 +547,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: Page of AvailablePhoneNumberCountryInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return AvailablePhoneNumberCountryPage(
-            self._version, response, solution=self._solution
-        )
+        pass
 
     async def page_async(
         self,
@@ -709,24 +565,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: Page of AvailablePhoneNumberCountryInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return AvailablePhoneNumberCountryPage(
-            self._version, response, solution=self._solution
-        )
+        pass
 
     def page_with_http_info(
         self,
@@ -744,25 +583,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: ApiResponse with AvailablePhoneNumberCountryPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = AvailablePhoneNumberCountryPage(
-            self._version, response, solution=self._solution
-        )
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -780,27 +601,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: ApiResponse with AvailablePhoneNumberCountryPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = AvailablePhoneNumberCountryPage(
-            self._version, response, solution=self._solution
-        )
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> AvailablePhoneNumberCountryPage:
         """
@@ -811,10 +612,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: Page of AvailablePhoneNumberCountryInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return AvailablePhoneNumberCountryPage(
-            self._version, response, solution=self._solution
-        )
+        pass
 
     async def get_page_async(self, target_url: str) -> AvailablePhoneNumberCountryPage:
         """
@@ -825,10 +623,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :returns: Page of AvailablePhoneNumberCountryInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return AvailablePhoneNumberCountryPage(
-            self._version, response, solution=self._solution
-        )
+        pass
 
     def get(self, country_code: str) -> AvailablePhoneNumberCountryContext:
         """
@@ -836,11 +631,7 @@ class AvailablePhoneNumberCountryList(ListResource):
 
         :param country_code: The [ISO-3166-1](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code of the country to fetch available phone number information about.
         """
-        return AvailablePhoneNumberCountryContext(
-            self._version,
-            account_sid=self._solution["account_sid"],
-            country_code=country_code,
-        )
+        pass
 
     def __call__(self, country_code: str) -> AvailablePhoneNumberCountryContext:
         """

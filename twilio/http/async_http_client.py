@@ -76,50 +76,13 @@ class AsyncTwilioHttpClient(AsyncHttpClient):
 
         :return: An http response
         """
-        if timeout is not None and timeout <= 0:
-            raise ValueError(timeout)
-
-        basic_auth = None
-        if auth is not None:
-            basic_auth = BasicAuth(login=auth[0], password=auth[1])
-
-        kwargs = {
-            "method": method.upper(),
-            "url": url,
-            "params": params,
-            "data": data,
-            "headers": headers,
-            "auth": basic_auth,
-            "timeout": timeout,
-            "allow_redirects": allow_redirects,
-        }
-
-        self.log_request(kwargs)
-        self._test_only_last_response = None
-
-        temp = False
-        session = None
-        if self.session:
-            session = self.session
-        else:
-            session = ClientSession()
-            temp = True
-        self._test_only_last_request = TwilioRequest(**kwargs)
-        response = await session.request(**kwargs)
-        self.log_response(response.status, response)
-        self._test_only_last_response = Response(
-            response.status, await response.text(), response.headers
-        )
-        if temp:
-            await session.close()
-        return self._test_only_last_response
+        pass
 
     async def close(self):
         """
         Closes the HTTP client session
         """
-        if self.session:
-            await self.session.close()
+        pass
 
     async def __aenter__(self):
         """

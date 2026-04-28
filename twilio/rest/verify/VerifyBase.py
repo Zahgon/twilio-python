@@ -32,9 +32,7 @@ class VerifyBase(Domain):
         """
         :returns: Versions v2 of Verify
         """
-        if self._v2 is None:
-            self._v2 = V2(self)
-        return self._v2
+        pass
 
     def __repr__(self) -> str:
         """

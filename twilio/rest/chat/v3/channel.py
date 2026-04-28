@@ -95,13 +95,7 @@ class ChannelInstance(InstanceResource):
 
         :returns: ChannelContext for this ChannelInstance
         """
-        if self._context is None:
-            self._context = ChannelContext(
-                self._version,
-                service_sid=self._solution["service_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def update(
         self,
@@ -120,11 +114,7 @@ class ChannelInstance(InstanceResource):
 
         :returns: The updated ChannelInstance
         """
-        return self._proxy.update(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            type=type,
-            messaging_service_sid=messaging_service_sid,
-        )
+        pass
 
     async def update_async(
         self,
@@ -143,11 +133,7 @@ class ChannelInstance(InstanceResource):
 
         :returns: The updated ChannelInstance
         """
-        return await self._proxy.update_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            type=type,
-            messaging_service_sid=messaging_service_sid,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -166,11 +152,7 @@ class ChannelInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            type=type,
-            messaging_service_sid=messaging_service_sid,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -189,11 +171,7 @@ class ChannelInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            type=type,
-            messaging_service_sid=messaging_service_sid,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -238,31 +216,7 @@ class ChannelContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Type": type,
-                "MessagingServiceSid": messaging_service_sid,
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            x_twilio_webhook_enabled is values.unset
-            or (
-                isinstance(x_twilio_webhook_enabled, str)
-                and not x_twilio_webhook_enabled
-            )
-        ):
-            headers["X-Twilio-Webhook-Enabled"] = x_twilio_webhook_enabled
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -281,17 +235,7 @@ class ChannelContext(InstanceContext):
 
         :returns: The updated ChannelInstance
         """
-        payload, _, _ = self._update(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            type=type,
-            messaging_service_sid=messaging_service_sid,
-        )
-        return ChannelInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -310,18 +254,7 @@ class ChannelContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            type=type,
-            messaging_service_sid=messaging_service_sid,
-        )
-        instance = ChannelInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -337,31 +270,7 @@ class ChannelContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Type": type,
-                "MessagingServiceSid": messaging_service_sid,
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            x_twilio_webhook_enabled is values.unset
-            or (
-                isinstance(x_twilio_webhook_enabled, str)
-                and not x_twilio_webhook_enabled
-            )
-        ):
-            headers["X-Twilio-Webhook-Enabled"] = x_twilio_webhook_enabled
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -380,17 +289,7 @@ class ChannelContext(InstanceContext):
 
         :returns: The updated ChannelInstance
         """
-        payload, _, _ = await self._update_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            type=type,
-            messaging_service_sid=messaging_service_sid,
-        )
-        return ChannelInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -409,18 +308,7 @@ class ChannelContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            type=type,
-            messaging_service_sid=messaging_service_sid,
-        )
-        instance = ChannelInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -450,7 +338,7 @@ class ChannelList(ListResource):
         :param service_sid: The unique SID identifier of the Service.
         :param sid: A 34 character string that uniquely identifies this Channel.
         """
-        return ChannelContext(self._version, service_sid=service_sid, sid=sid)
+        pass
 
     def __call__(self, service_sid: str, sid: str) -> ChannelContext:
         """

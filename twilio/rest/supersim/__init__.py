@@ -15,79 +15,36 @@ from twilio.rest.supersim.v1.usage_record import UsageRecordList
 class Supersim(SupersimBase):
     @property
     def esim_profiles(self) -> EsimProfileList:
-        warn(
-            "esim_profiles is deprecated. Use v1.esim_profiles instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.esim_profiles
+        pass
 
     @property
     def fleets(self) -> FleetList:
-        warn(
-            "fleets is deprecated. Use v1.fleets instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.fleets
+        pass
 
     @property
     def ip_commands(self) -> IpCommandList:
-        warn(
-            "ip_commands is deprecated. Use v1.ip_commands instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.ip_commands
+        pass
 
     @property
     def networks(self) -> NetworkList:
-        warn(
-            "networks is deprecated. Use v1.networks instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.networks
+        pass
 
     @property
     def network_access_profiles(self) -> NetworkAccessProfileList:
-        warn(
-            "network_access_profiles is deprecated. Use v1.network_access_profiles instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.network_access_profiles
+        pass
 
     @property
     def settings_updates(self) -> SettingsUpdateList:
-        warn(
-            "settings_updates is deprecated. Use v1.settings_updates instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.settings_updates
+        pass
 
     @property
     def sims(self) -> SimList:
-        warn(
-            "sims is deprecated. Use v1.sims instead.", DeprecationWarning, stacklevel=2
-        )
-        return self.v1.sims
+        pass
 
     @property
     def sms_commands(self) -> SmsCommandList:
-        warn(
-            "sms_commands is deprecated. Use v1.sms_commands instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.sms_commands
+        pass
 
     @property
     def usage_records(self) -> UsageRecordList:
-        warn(
-            "usage_records is deprecated. Use v1.usage_records instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.usage_records
+        pass

@@ -8,7 +8,7 @@ class AuthStrategy(object):
 
     @property
     def auth_type(self) -> AuthType:
-        return self._auth_type
+        pass
 
     @abstractmethod
     def get_auth_string(self) -> str:

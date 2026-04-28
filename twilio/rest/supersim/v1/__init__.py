@@ -47,57 +47,39 @@ class V1(Version):
 
     @property
     def esim_profiles(self) -> EsimProfileList:
-        if self._esim_profiles is None:
-            self._esim_profiles = EsimProfileList(self)
-        return self._esim_profiles
+        pass
 
     @property
     def fleets(self) -> FleetList:
-        if self._fleets is None:
-            self._fleets = FleetList(self)
-        return self._fleets
+        pass
 
     @property
     def ip_commands(self) -> IpCommandList:
-        if self._ip_commands is None:
-            self._ip_commands = IpCommandList(self)
-        return self._ip_commands
+        pass
 
     @property
     def networks(self) -> NetworkList:
-        if self._networks is None:
-            self._networks = NetworkList(self)
-        return self._networks
+        pass
 
     @property
     def network_access_profiles(self) -> NetworkAccessProfileList:
-        if self._network_access_profiles is None:
-            self._network_access_profiles = NetworkAccessProfileList(self)
-        return self._network_access_profiles
+        pass
 
     @property
     def settings_updates(self) -> SettingsUpdateList:
-        if self._settings_updates is None:
-            self._settings_updates = SettingsUpdateList(self)
-        return self._settings_updates
+        pass
 
     @property
     def sims(self) -> SimList:
-        if self._sims is None:
-            self._sims = SimList(self)
-        return self._sims
+        pass
 
     @property
     def sms_commands(self) -> SmsCommandList:
-        if self._sms_commands is None:
-            self._sms_commands = SmsCommandList(self)
-        return self._sms_commands
+        pass
 
     @property
     def usage_records(self) -> UsageRecordList:
-        if self._usage_records is None:
-            self._usage_records = UsageRecordList(self)
-        return self._usage_records
+        pass
 
     def __repr__(self) -> str:
         """

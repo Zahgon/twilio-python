@@ -53,33 +53,13 @@ class HttpClient(object):
         """
         Logs the HTTP request
         """
-        self.logger.info("-- BEGIN Twilio API Request --")
-
-        if kwargs["params"]:
-            self.logger.info(
-                "{} Request: {}?{}".format(
-                    kwargs["method"], kwargs["url"], urlencode(kwargs["params"])
-                )
-            )
-            self.logger.info("Query Params: {}".format(kwargs["params"]))
-        else:
-            self.logger.info("{} Request: {}".format(kwargs["method"], kwargs["url"]))
-
-        if kwargs["headers"]:
-            self.logger.info("Headers:")
-            for key, value in kwargs["headers"].items():
-                # Do not log authorization headers
-                if "authorization" not in key.lower():
-                    self.logger.info("{} : {}".format(key, value))
-
-        self.logger.info("-- END Twilio API Request --")
+        pass
 
     def log_response(self, status_code: int, response: Response) -> None:
         """
         Logs the HTTP response
         """
-        self.logger.info("Response Status Code: {}".format(status_code))
-        self.logger.info("Response Headers: {}".format(response.headers))
+        pass
 
 
 class AsyncHttpClient(HttpClient):

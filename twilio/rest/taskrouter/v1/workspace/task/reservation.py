@@ -112,14 +112,7 @@ class ReservationInstance(InstanceResource):
 
         :returns: ReservationContext for this ReservationInstance
         """
-        if self._context is None:
-            self._context = ReservationContext(
-                self._version,
-                workspace_sid=self._solution["workspace_sid"],
-                task_sid=self._solution["task_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "ReservationInstance":
         """
@@ -128,7 +121,7 @@ class ReservationInstance(InstanceResource):
 
         :returns: The fetched ReservationInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "ReservationInstance":
         """
@@ -137,7 +130,7 @@ class ReservationInstance(InstanceResource):
 
         :returns: The fetched ReservationInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -146,7 +139,7 @@ class ReservationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -155,7 +148,7 @@ class ReservationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -282,63 +275,7 @@ class ReservationInstance(InstanceResource):
 
         :returns: The updated ReservationInstance
         """
-        return self._proxy.update(
-            if_match=if_match,
-            reservation_status=reservation_status,
-            worker_activity_sid=worker_activity_sid,
-            instruction=instruction,
-            dequeue_post_work_activity_sid=dequeue_post_work_activity_sid,
-            dequeue_from=dequeue_from,
-            dequeue_record=dequeue_record,
-            dequeue_timeout=dequeue_timeout,
-            dequeue_to=dequeue_to,
-            dequeue_status_callback_url=dequeue_status_callback_url,
-            call_from=call_from,
-            call_record=call_record,
-            call_timeout=call_timeout,
-            call_to=call_to,
-            call_url=call_url,
-            call_status_callback_url=call_status_callback_url,
-            call_accept=call_accept,
-            redirect_call_sid=redirect_call_sid,
-            redirect_accept=redirect_accept,
-            redirect_url=redirect_url,
-            to=to,
-            from_=from_,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            status_callback_event=status_callback_event,
-            timeout=timeout,
-            record=record,
-            muted=muted,
-            beep=beep,
-            start_conference_on_enter=start_conference_on_enter,
-            end_conference_on_exit=end_conference_on_exit,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            early_media=early_media,
-            max_participants=max_participants,
-            conference_status_callback=conference_status_callback,
-            conference_status_callback_method=conference_status_callback_method,
-            conference_status_callback_event=conference_status_callback_event,
-            conference_record=conference_record,
-            conference_trim=conference_trim,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            conference_recording_status_callback=conference_recording_status_callback,
-            conference_recording_status_callback_method=conference_recording_status_callback_method,
-            region=region,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            dequeue_status_callback_event=dequeue_status_callback_event,
-            post_work_activity_sid=post_work_activity_sid,
-            supervisor_mode=supervisor_mode,
-            supervisor=supervisor,
-            end_conference_on_customer_exit=end_conference_on_customer_exit,
-            beep_on_customer_entrance=beep_on_customer_entrance,
-            jitter_buffer_size=jitter_buffer_size,
-        )
+        pass
 
     async def update_async(
         self,
@@ -465,63 +402,7 @@ class ReservationInstance(InstanceResource):
 
         :returns: The updated ReservationInstance
         """
-        return await self._proxy.update_async(
-            if_match=if_match,
-            reservation_status=reservation_status,
-            worker_activity_sid=worker_activity_sid,
-            instruction=instruction,
-            dequeue_post_work_activity_sid=dequeue_post_work_activity_sid,
-            dequeue_from=dequeue_from,
-            dequeue_record=dequeue_record,
-            dequeue_timeout=dequeue_timeout,
-            dequeue_to=dequeue_to,
-            dequeue_status_callback_url=dequeue_status_callback_url,
-            call_from=call_from,
-            call_record=call_record,
-            call_timeout=call_timeout,
-            call_to=call_to,
-            call_url=call_url,
-            call_status_callback_url=call_status_callback_url,
-            call_accept=call_accept,
-            redirect_call_sid=redirect_call_sid,
-            redirect_accept=redirect_accept,
-            redirect_url=redirect_url,
-            to=to,
-            from_=from_,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            status_callback_event=status_callback_event,
-            timeout=timeout,
-            record=record,
-            muted=muted,
-            beep=beep,
-            start_conference_on_enter=start_conference_on_enter,
-            end_conference_on_exit=end_conference_on_exit,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            early_media=early_media,
-            max_participants=max_participants,
-            conference_status_callback=conference_status_callback,
-            conference_status_callback_method=conference_status_callback_method,
-            conference_status_callback_event=conference_status_callback_event,
-            conference_record=conference_record,
-            conference_trim=conference_trim,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            conference_recording_status_callback=conference_recording_status_callback,
-            conference_recording_status_callback_method=conference_recording_status_callback_method,
-            region=region,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            dequeue_status_callback_event=dequeue_status_callback_event,
-            post_work_activity_sid=post_work_activity_sid,
-            supervisor_mode=supervisor_mode,
-            supervisor=supervisor,
-            end_conference_on_customer_exit=end_conference_on_customer_exit,
-            beep_on_customer_entrance=beep_on_customer_entrance,
-            jitter_buffer_size=jitter_buffer_size,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -648,63 +529,7 @@ class ReservationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            if_match=if_match,
-            reservation_status=reservation_status,
-            worker_activity_sid=worker_activity_sid,
-            instruction=instruction,
-            dequeue_post_work_activity_sid=dequeue_post_work_activity_sid,
-            dequeue_from=dequeue_from,
-            dequeue_record=dequeue_record,
-            dequeue_timeout=dequeue_timeout,
-            dequeue_to=dequeue_to,
-            dequeue_status_callback_url=dequeue_status_callback_url,
-            call_from=call_from,
-            call_record=call_record,
-            call_timeout=call_timeout,
-            call_to=call_to,
-            call_url=call_url,
-            call_status_callback_url=call_status_callback_url,
-            call_accept=call_accept,
-            redirect_call_sid=redirect_call_sid,
-            redirect_accept=redirect_accept,
-            redirect_url=redirect_url,
-            to=to,
-            from_=from_,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            status_callback_event=status_callback_event,
-            timeout=timeout,
-            record=record,
-            muted=muted,
-            beep=beep,
-            start_conference_on_enter=start_conference_on_enter,
-            end_conference_on_exit=end_conference_on_exit,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            early_media=early_media,
-            max_participants=max_participants,
-            conference_status_callback=conference_status_callback,
-            conference_status_callback_method=conference_status_callback_method,
-            conference_status_callback_event=conference_status_callback_event,
-            conference_record=conference_record,
-            conference_trim=conference_trim,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            conference_recording_status_callback=conference_recording_status_callback,
-            conference_recording_status_callback_method=conference_recording_status_callback_method,
-            region=region,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            dequeue_status_callback_event=dequeue_status_callback_event,
-            post_work_activity_sid=post_work_activity_sid,
-            supervisor_mode=supervisor_mode,
-            supervisor=supervisor,
-            end_conference_on_customer_exit=end_conference_on_customer_exit,
-            beep_on_customer_entrance=beep_on_customer_entrance,
-            jitter_buffer_size=jitter_buffer_size,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -831,63 +656,7 @@ class ReservationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            if_match=if_match,
-            reservation_status=reservation_status,
-            worker_activity_sid=worker_activity_sid,
-            instruction=instruction,
-            dequeue_post_work_activity_sid=dequeue_post_work_activity_sid,
-            dequeue_from=dequeue_from,
-            dequeue_record=dequeue_record,
-            dequeue_timeout=dequeue_timeout,
-            dequeue_to=dequeue_to,
-            dequeue_status_callback_url=dequeue_status_callback_url,
-            call_from=call_from,
-            call_record=call_record,
-            call_timeout=call_timeout,
-            call_to=call_to,
-            call_url=call_url,
-            call_status_callback_url=call_status_callback_url,
-            call_accept=call_accept,
-            redirect_call_sid=redirect_call_sid,
-            redirect_accept=redirect_accept,
-            redirect_url=redirect_url,
-            to=to,
-            from_=from_,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            status_callback_event=status_callback_event,
-            timeout=timeout,
-            record=record,
-            muted=muted,
-            beep=beep,
-            start_conference_on_enter=start_conference_on_enter,
-            end_conference_on_exit=end_conference_on_exit,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            early_media=early_media,
-            max_participants=max_participants,
-            conference_status_callback=conference_status_callback,
-            conference_status_callback_method=conference_status_callback_method,
-            conference_status_callback_event=conference_status_callback_event,
-            conference_record=conference_record,
-            conference_trim=conference_trim,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            conference_recording_status_callback=conference_recording_status_callback,
-            conference_recording_status_callback_method=conference_recording_status_callback_method,
-            region=region,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            dequeue_status_callback_event=dequeue_status_callback_event,
-            post_work_activity_sid=post_work_activity_sid,
-            supervisor_mode=supervisor_mode,
-            supervisor=supervisor,
-            end_conference_on_customer_exit=end_conference_on_customer_exit,
-            beep_on_customer_entrance=beep_on_customer_entrance,
-            jitter_buffer_size=jitter_buffer_size,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -931,14 +700,7 @@ class ReservationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> ReservationInstance:
         """
@@ -947,14 +709,7 @@ class ReservationContext(InstanceContext):
 
         :returns: The fetched ReservationInstance
         """
-        payload, _, _ = self._fetch()
-        return ReservationInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            task_sid=self._solution["task_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -963,15 +718,7 @@ class ReservationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = ReservationInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            task_sid=self._solution["task_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -980,14 +727,7 @@ class ReservationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> ReservationInstance:
         """
@@ -996,14 +736,7 @@ class ReservationContext(InstanceContext):
 
         :returns: The fetched ReservationInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return ReservationInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            task_sid=self._solution["task_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -1012,15 +745,7 @@ class ReservationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = ReservationInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            task_sid=self._solution["task_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -1092,93 +817,7 @@ class ReservationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "ReservationStatus": reservation_status,
-                "WorkerActivitySid": worker_activity_sid,
-                "Instruction": instruction,
-                "DequeuePostWorkActivitySid": dequeue_post_work_activity_sid,
-                "DequeueFrom": dequeue_from,
-                "DequeueRecord": dequeue_record,
-                "DequeueTimeout": dequeue_timeout,
-                "DequeueTo": dequeue_to,
-                "DequeueStatusCallbackUrl": dequeue_status_callback_url,
-                "CallFrom": call_from,
-                "CallRecord": call_record,
-                "CallTimeout": call_timeout,
-                "CallTo": call_to,
-                "CallUrl": call_url,
-                "CallStatusCallbackUrl": call_status_callback_url,
-                "CallAccept": serialize.boolean_to_string(call_accept),
-                "RedirectCallSid": redirect_call_sid,
-                "RedirectAccept": serialize.boolean_to_string(redirect_accept),
-                "RedirectUrl": redirect_url,
-                "To": to,
-                "From": from_,
-                "StatusCallback": status_callback,
-                "StatusCallbackMethod": status_callback_method,
-                "StatusCallbackEvent": serialize.map(
-                    status_callback_event, lambda e: e
-                ),
-                "Timeout": timeout,
-                "Record": serialize.boolean_to_string(record),
-                "Muted": serialize.boolean_to_string(muted),
-                "Beep": beep,
-                "StartConferenceOnEnter": serialize.boolean_to_string(
-                    start_conference_on_enter
-                ),
-                "EndConferenceOnExit": serialize.boolean_to_string(
-                    end_conference_on_exit
-                ),
-                "WaitUrl": wait_url,
-                "WaitMethod": wait_method,
-                "EarlyMedia": serialize.boolean_to_string(early_media),
-                "MaxParticipants": max_participants,
-                "ConferenceStatusCallback": conference_status_callback,
-                "ConferenceStatusCallbackMethod": conference_status_callback_method,
-                "ConferenceStatusCallbackEvent": serialize.map(
-                    conference_status_callback_event, lambda e: e
-                ),
-                "ConferenceRecord": conference_record,
-                "ConferenceTrim": conference_trim,
-                "RecordingChannels": recording_channels,
-                "RecordingStatusCallback": recording_status_callback,
-                "RecordingStatusCallbackMethod": recording_status_callback_method,
-                "ConferenceRecordingStatusCallback": conference_recording_status_callback,
-                "ConferenceRecordingStatusCallbackMethod": conference_recording_status_callback_method,
-                "Region": region,
-                "SipAuthUsername": sip_auth_username,
-                "SipAuthPassword": sip_auth_password,
-                "DequeueStatusCallbackEvent": serialize.map(
-                    dequeue_status_callback_event, lambda e: e
-                ),
-                "PostWorkActivitySid": post_work_activity_sid,
-                "SupervisorMode": supervisor_mode,
-                "Supervisor": supervisor,
-                "EndConferenceOnCustomerExit": serialize.boolean_to_string(
-                    end_conference_on_customer_exit
-                ),
-                "BeepOnCustomerEntrance": serialize.boolean_to_string(
-                    beep_on_customer_entrance
-                ),
-                "JitterBufferSize": jitter_buffer_size,
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            if_match is values.unset or (isinstance(if_match, str) and not if_match)
-        ):
-            headers["If-Match"] = if_match
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -1305,70 +944,7 @@ class ReservationContext(InstanceContext):
 
         :returns: The updated ReservationInstance
         """
-        payload, _, _ = self._update(
-            if_match=if_match,
-            reservation_status=reservation_status,
-            worker_activity_sid=worker_activity_sid,
-            instruction=instruction,
-            dequeue_post_work_activity_sid=dequeue_post_work_activity_sid,
-            dequeue_from=dequeue_from,
-            dequeue_record=dequeue_record,
-            dequeue_timeout=dequeue_timeout,
-            dequeue_to=dequeue_to,
-            dequeue_status_callback_url=dequeue_status_callback_url,
-            call_from=call_from,
-            call_record=call_record,
-            call_timeout=call_timeout,
-            call_to=call_to,
-            call_url=call_url,
-            call_status_callback_url=call_status_callback_url,
-            call_accept=call_accept,
-            redirect_call_sid=redirect_call_sid,
-            redirect_accept=redirect_accept,
-            redirect_url=redirect_url,
-            to=to,
-            from_=from_,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            status_callback_event=status_callback_event,
-            timeout=timeout,
-            record=record,
-            muted=muted,
-            beep=beep,
-            start_conference_on_enter=start_conference_on_enter,
-            end_conference_on_exit=end_conference_on_exit,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            early_media=early_media,
-            max_participants=max_participants,
-            conference_status_callback=conference_status_callback,
-            conference_status_callback_method=conference_status_callback_method,
-            conference_status_callback_event=conference_status_callback_event,
-            conference_record=conference_record,
-            conference_trim=conference_trim,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            conference_recording_status_callback=conference_recording_status_callback,
-            conference_recording_status_callback_method=conference_recording_status_callback_method,
-            region=region,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            dequeue_status_callback_event=dequeue_status_callback_event,
-            post_work_activity_sid=post_work_activity_sid,
-            supervisor_mode=supervisor_mode,
-            supervisor=supervisor,
-            end_conference_on_customer_exit=end_conference_on_customer_exit,
-            beep_on_customer_entrance=beep_on_customer_entrance,
-            jitter_buffer_size=jitter_buffer_size,
-        )
-        return ReservationInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            task_sid=self._solution["task_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -1495,71 +1071,7 @@ class ReservationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            if_match=if_match,
-            reservation_status=reservation_status,
-            worker_activity_sid=worker_activity_sid,
-            instruction=instruction,
-            dequeue_post_work_activity_sid=dequeue_post_work_activity_sid,
-            dequeue_from=dequeue_from,
-            dequeue_record=dequeue_record,
-            dequeue_timeout=dequeue_timeout,
-            dequeue_to=dequeue_to,
-            dequeue_status_callback_url=dequeue_status_callback_url,
-            call_from=call_from,
-            call_record=call_record,
-            call_timeout=call_timeout,
-            call_to=call_to,
-            call_url=call_url,
-            call_status_callback_url=call_status_callback_url,
-            call_accept=call_accept,
-            redirect_call_sid=redirect_call_sid,
-            redirect_accept=redirect_accept,
-            redirect_url=redirect_url,
-            to=to,
-            from_=from_,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            status_callback_event=status_callback_event,
-            timeout=timeout,
-            record=record,
-            muted=muted,
-            beep=beep,
-            start_conference_on_enter=start_conference_on_enter,
-            end_conference_on_exit=end_conference_on_exit,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            early_media=early_media,
-            max_participants=max_participants,
-            conference_status_callback=conference_status_callback,
-            conference_status_callback_method=conference_status_callback_method,
-            conference_status_callback_event=conference_status_callback_event,
-            conference_record=conference_record,
-            conference_trim=conference_trim,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            conference_recording_status_callback=conference_recording_status_callback,
-            conference_recording_status_callback_method=conference_recording_status_callback_method,
-            region=region,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            dequeue_status_callback_event=dequeue_status_callback_event,
-            post_work_activity_sid=post_work_activity_sid,
-            supervisor_mode=supervisor_mode,
-            supervisor=supervisor,
-            end_conference_on_customer_exit=end_conference_on_customer_exit,
-            beep_on_customer_entrance=beep_on_customer_entrance,
-            jitter_buffer_size=jitter_buffer_size,
-        )
-        instance = ReservationInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            task_sid=self._solution["task_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -1631,93 +1143,7 @@ class ReservationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "ReservationStatus": reservation_status,
-                "WorkerActivitySid": worker_activity_sid,
-                "Instruction": instruction,
-                "DequeuePostWorkActivitySid": dequeue_post_work_activity_sid,
-                "DequeueFrom": dequeue_from,
-                "DequeueRecord": dequeue_record,
-                "DequeueTimeout": dequeue_timeout,
-                "DequeueTo": dequeue_to,
-                "DequeueStatusCallbackUrl": dequeue_status_callback_url,
-                "CallFrom": call_from,
-                "CallRecord": call_record,
-                "CallTimeout": call_timeout,
-                "CallTo": call_to,
-                "CallUrl": call_url,
-                "CallStatusCallbackUrl": call_status_callback_url,
-                "CallAccept": serialize.boolean_to_string(call_accept),
-                "RedirectCallSid": redirect_call_sid,
-                "RedirectAccept": serialize.boolean_to_string(redirect_accept),
-                "RedirectUrl": redirect_url,
-                "To": to,
-                "From": from_,
-                "StatusCallback": status_callback,
-                "StatusCallbackMethod": status_callback_method,
-                "StatusCallbackEvent": serialize.map(
-                    status_callback_event, lambda e: e
-                ),
-                "Timeout": timeout,
-                "Record": serialize.boolean_to_string(record),
-                "Muted": serialize.boolean_to_string(muted),
-                "Beep": beep,
-                "StartConferenceOnEnter": serialize.boolean_to_string(
-                    start_conference_on_enter
-                ),
-                "EndConferenceOnExit": serialize.boolean_to_string(
-                    end_conference_on_exit
-                ),
-                "WaitUrl": wait_url,
-                "WaitMethod": wait_method,
-                "EarlyMedia": serialize.boolean_to_string(early_media),
-                "MaxParticipants": max_participants,
-                "ConferenceStatusCallback": conference_status_callback,
-                "ConferenceStatusCallbackMethod": conference_status_callback_method,
-                "ConferenceStatusCallbackEvent": serialize.map(
-                    conference_status_callback_event, lambda e: e
-                ),
-                "ConferenceRecord": conference_record,
-                "ConferenceTrim": conference_trim,
-                "RecordingChannels": recording_channels,
-                "RecordingStatusCallback": recording_status_callback,
-                "RecordingStatusCallbackMethod": recording_status_callback_method,
-                "ConferenceRecordingStatusCallback": conference_recording_status_callback,
-                "ConferenceRecordingStatusCallbackMethod": conference_recording_status_callback_method,
-                "Region": region,
-                "SipAuthUsername": sip_auth_username,
-                "SipAuthPassword": sip_auth_password,
-                "DequeueStatusCallbackEvent": serialize.map(
-                    dequeue_status_callback_event, lambda e: e
-                ),
-                "PostWorkActivitySid": post_work_activity_sid,
-                "SupervisorMode": supervisor_mode,
-                "Supervisor": supervisor,
-                "EndConferenceOnCustomerExit": serialize.boolean_to_string(
-                    end_conference_on_customer_exit
-                ),
-                "BeepOnCustomerEntrance": serialize.boolean_to_string(
-                    beep_on_customer_entrance
-                ),
-                "JitterBufferSize": jitter_buffer_size,
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            if_match is values.unset or (isinstance(if_match, str) and not if_match)
-        ):
-            headers["If-Match"] = if_match
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -1844,70 +1270,7 @@ class ReservationContext(InstanceContext):
 
         :returns: The updated ReservationInstance
         """
-        payload, _, _ = await self._update_async(
-            if_match=if_match,
-            reservation_status=reservation_status,
-            worker_activity_sid=worker_activity_sid,
-            instruction=instruction,
-            dequeue_post_work_activity_sid=dequeue_post_work_activity_sid,
-            dequeue_from=dequeue_from,
-            dequeue_record=dequeue_record,
-            dequeue_timeout=dequeue_timeout,
-            dequeue_to=dequeue_to,
-            dequeue_status_callback_url=dequeue_status_callback_url,
-            call_from=call_from,
-            call_record=call_record,
-            call_timeout=call_timeout,
-            call_to=call_to,
-            call_url=call_url,
-            call_status_callback_url=call_status_callback_url,
-            call_accept=call_accept,
-            redirect_call_sid=redirect_call_sid,
-            redirect_accept=redirect_accept,
-            redirect_url=redirect_url,
-            to=to,
-            from_=from_,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            status_callback_event=status_callback_event,
-            timeout=timeout,
-            record=record,
-            muted=muted,
-            beep=beep,
-            start_conference_on_enter=start_conference_on_enter,
-            end_conference_on_exit=end_conference_on_exit,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            early_media=early_media,
-            max_participants=max_participants,
-            conference_status_callback=conference_status_callback,
-            conference_status_callback_method=conference_status_callback_method,
-            conference_status_callback_event=conference_status_callback_event,
-            conference_record=conference_record,
-            conference_trim=conference_trim,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            conference_recording_status_callback=conference_recording_status_callback,
-            conference_recording_status_callback_method=conference_recording_status_callback_method,
-            region=region,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            dequeue_status_callback_event=dequeue_status_callback_event,
-            post_work_activity_sid=post_work_activity_sid,
-            supervisor_mode=supervisor_mode,
-            supervisor=supervisor,
-            end_conference_on_customer_exit=end_conference_on_customer_exit,
-            beep_on_customer_entrance=beep_on_customer_entrance,
-            jitter_buffer_size=jitter_buffer_size,
-        )
-        return ReservationInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            task_sid=self._solution["task_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -2034,71 +1397,7 @@ class ReservationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            if_match=if_match,
-            reservation_status=reservation_status,
-            worker_activity_sid=worker_activity_sid,
-            instruction=instruction,
-            dequeue_post_work_activity_sid=dequeue_post_work_activity_sid,
-            dequeue_from=dequeue_from,
-            dequeue_record=dequeue_record,
-            dequeue_timeout=dequeue_timeout,
-            dequeue_to=dequeue_to,
-            dequeue_status_callback_url=dequeue_status_callback_url,
-            call_from=call_from,
-            call_record=call_record,
-            call_timeout=call_timeout,
-            call_to=call_to,
-            call_url=call_url,
-            call_status_callback_url=call_status_callback_url,
-            call_accept=call_accept,
-            redirect_call_sid=redirect_call_sid,
-            redirect_accept=redirect_accept,
-            redirect_url=redirect_url,
-            to=to,
-            from_=from_,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            status_callback_event=status_callback_event,
-            timeout=timeout,
-            record=record,
-            muted=muted,
-            beep=beep,
-            start_conference_on_enter=start_conference_on_enter,
-            end_conference_on_exit=end_conference_on_exit,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            early_media=early_media,
-            max_participants=max_participants,
-            conference_status_callback=conference_status_callback,
-            conference_status_callback_method=conference_status_callback_method,
-            conference_status_callback_event=conference_status_callback_event,
-            conference_record=conference_record,
-            conference_trim=conference_trim,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            conference_recording_status_callback=conference_recording_status_callback,
-            conference_recording_status_callback_method=conference_recording_status_callback_method,
-            region=region,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            dequeue_status_callback_event=dequeue_status_callback_event,
-            post_work_activity_sid=post_work_activity_sid,
-            supervisor_mode=supervisor_mode,
-            supervisor=supervisor,
-            end_conference_on_customer_exit=end_conference_on_customer_exit,
-            beep_on_customer_entrance=beep_on_customer_entrance,
-            jitter_buffer_size=jitter_buffer_size,
-        )
-        instance = ReservationInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            task_sid=self._solution["task_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -2118,12 +1417,7 @@ class ReservationPage(Page):
 
         :param payload: Payload response from the API
         """
-        return ReservationInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            task_sid=self._solution["task_sid"],
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -2180,14 +1474,7 @@ class ReservationList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            reservation_status=reservation_status,
-            worker_sid=worker_sid,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -2213,14 +1500,7 @@ class ReservationList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            reservation_status=reservation_status,
-            worker_sid=worker_sid,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -2244,15 +1524,7 @@ class ReservationList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            reservation_status=reservation_status,
-            worker_sid=worker_sid,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -2276,15 +1548,7 @@ class ReservationList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            reservation_status=reservation_status,
-            worker_sid=worker_sid,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -2309,14 +1573,7 @@ class ReservationList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                reservation_status=reservation_status,
-                worker_sid=worker_sid,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -2341,15 +1598,7 @@ class ReservationList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                reservation_status=reservation_status,
-                worker_sid=worker_sid,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -2373,14 +1622,7 @@ class ReservationList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            reservation_status=reservation_status,
-            worker_sid=worker_sid,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -2404,14 +1646,7 @@ class ReservationList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            reservation_status=reservation_status,
-            worker_sid=worker_sid,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -2433,24 +1668,7 @@ class ReservationList(ListResource):
 
         :returns: Page of ReservationInstance
         """
-        data = values.of(
-            {
-                "ReservationStatus": reservation_status,
-                "WorkerSid": worker_sid,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ReservationPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -2472,24 +1690,7 @@ class ReservationList(ListResource):
 
         :returns: Page of ReservationInstance
         """
-        data = values.of(
-            {
-                "ReservationStatus": reservation_status,
-                "WorkerSid": worker_sid,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ReservationPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -2511,25 +1712,7 @@ class ReservationList(ListResource):
 
         :returns: ApiResponse with ReservationPage, status code, and headers
         """
-        data = values.of(
-            {
-                "ReservationStatus": reservation_status,
-                "WorkerSid": worker_sid,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = ReservationPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -2551,27 +1734,7 @@ class ReservationList(ListResource):
 
         :returns: ApiResponse with ReservationPage, status code, and headers
         """
-        data = values.of(
-            {
-                "ReservationStatus": reservation_status,
-                "WorkerSid": worker_sid,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = ReservationPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> ReservationPage:
         """
@@ -2582,8 +1745,7 @@ class ReservationList(ListResource):
 
         :returns: Page of ReservationInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return ReservationPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> ReservationPage:
         """
@@ -2594,8 +1756,7 @@ class ReservationList(ListResource):
 
         :returns: Page of ReservationInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return ReservationPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, sid: str) -> ReservationContext:
         """
@@ -2603,12 +1764,7 @@ class ReservationList(ListResource):
 
         :param sid: The SID of the TaskReservation resource to update.
         """
-        return ReservationContext(
-            self._version,
-            workspace_sid=self._solution["workspace_sid"],
-            task_sid=self._solution["task_sid"],
-            sid=sid,
-        )
+        pass
 
     def __call__(self, sid: str) -> ReservationContext:
         """

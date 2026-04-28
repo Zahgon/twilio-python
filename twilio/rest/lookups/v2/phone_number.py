@@ -96,12 +96,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: PhoneNumberContext for this PhoneNumberInstance
         """
-        if self._context is None:
-            self._context = PhoneNumberContext(
-                self._version,
-                phone_number=self._solution["phone_number"],
-            )
-        return self._context
+        pass
 
     def fetch(
         self,
@@ -142,23 +137,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: The fetched PhoneNumberInstance
         """
-        return self._proxy.fetch(
-            fields=fields,
-            country_code=country_code,
-            first_name=first_name,
-            last_name=last_name,
-            address_line1=address_line1,
-            address_line2=address_line2,
-            city=city,
-            state=state,
-            postal_code=postal_code,
-            address_country_code=address_country_code,
-            national_id=national_id,
-            date_of_birth=date_of_birth,
-            last_verified_date=last_verified_date,
-            verification_sid=verification_sid,
-            partner_sub_id=partner_sub_id,
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -199,23 +178,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: The fetched PhoneNumberInstance
         """
-        return await self._proxy.fetch_async(
-            fields=fields,
-            country_code=country_code,
-            first_name=first_name,
-            last_name=last_name,
-            address_line1=address_line1,
-            address_line2=address_line2,
-            city=city,
-            state=state,
-            postal_code=postal_code,
-            address_country_code=address_country_code,
-            national_id=national_id,
-            date_of_birth=date_of_birth,
-            last_verified_date=last_verified_date,
-            verification_sid=verification_sid,
-            partner_sub_id=partner_sub_id,
-        )
+        pass
 
     def fetch_with_http_info(
         self,
@@ -256,23 +219,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            fields=fields,
-            country_code=country_code,
-            first_name=first_name,
-            last_name=last_name,
-            address_line1=address_line1,
-            address_line2=address_line2,
-            city=city,
-            state=state,
-            postal_code=postal_code,
-            address_country_code=address_country_code,
-            national_id=national_id,
-            date_of_birth=date_of_birth,
-            last_verified_date=last_verified_date,
-            verification_sid=verification_sid,
-            partner_sub_id=partner_sub_id,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self,
@@ -313,23 +260,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            fields=fields,
-            country_code=country_code,
-            first_name=first_name,
-            last_name=last_name,
-            address_line1=address_line1,
-            address_line2=address_line2,
-            city=city,
-            state=state,
-            postal_code=postal_code,
-            address_country_code=address_country_code,
-            national_id=national_id,
-            date_of_birth=date_of_birth,
-            last_verified_date=last_verified_date,
-            verification_sid=verification_sid,
-            partner_sub_id=partner_sub_id,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -382,34 +313,7 @@ class PhoneNumberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "Fields": fields,
-                "CountryCode": country_code,
-                "FirstName": first_name,
-                "LastName": last_name,
-                "AddressLine1": address_line1,
-                "AddressLine2": address_line2,
-                "City": city,
-                "State": state,
-                "PostalCode": postal_code,
-                "AddressCountryCode": address_country_code,
-                "NationalId": national_id,
-                "DateOfBirth": date_of_birth,
-                "LastVerifiedDate": last_verified_date,
-                "VerificationSid": verification_sid,
-                "PartnerSubId": partner_sub_id,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(
         self,
@@ -450,28 +354,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: The fetched PhoneNumberInstance
         """
-        payload, _, _ = self._fetch(
-            fields=fields,
-            country_code=country_code,
-            first_name=first_name,
-            last_name=last_name,
-            address_line1=address_line1,
-            address_line2=address_line2,
-            city=city,
-            state=state,
-            postal_code=postal_code,
-            address_country_code=address_country_code,
-            national_id=national_id,
-            date_of_birth=date_of_birth,
-            last_verified_date=last_verified_date,
-            verification_sid=verification_sid,
-            partner_sub_id=partner_sub_id,
-        )
-        return PhoneNumberInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
+        pass
 
     def fetch_with_http_info(
         self,
@@ -512,29 +395,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(
-            fields=fields,
-            country_code=country_code,
-            first_name=first_name,
-            last_name=last_name,
-            address_line1=address_line1,
-            address_line2=address_line2,
-            city=city,
-            state=state,
-            postal_code=postal_code,
-            address_country_code=address_country_code,
-            national_id=national_id,
-            date_of_birth=date_of_birth,
-            last_verified_date=last_verified_date,
-            verification_sid=verification_sid,
-            partner_sub_id=partner_sub_id,
-        )
-        instance = PhoneNumberInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self,
@@ -560,34 +421,7 @@ class PhoneNumberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "Fields": fields,
-                "CountryCode": country_code,
-                "FirstName": first_name,
-                "LastName": last_name,
-                "AddressLine1": address_line1,
-                "AddressLine2": address_line2,
-                "City": city,
-                "State": state,
-                "PostalCode": postal_code,
-                "AddressCountryCode": address_country_code,
-                "NationalId": national_id,
-                "DateOfBirth": date_of_birth,
-                "LastVerifiedDate": last_verified_date,
-                "VerificationSid": verification_sid,
-                "PartnerSubId": partner_sub_id,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -628,28 +462,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: The fetched PhoneNumberInstance
         """
-        payload, _, _ = await self._fetch_async(
-            fields=fields,
-            country_code=country_code,
-            first_name=first_name,
-            last_name=last_name,
-            address_line1=address_line1,
-            address_line2=address_line2,
-            city=city,
-            state=state,
-            postal_code=postal_code,
-            address_country_code=address_country_code,
-            national_id=national_id,
-            date_of_birth=date_of_birth,
-            last_verified_date=last_verified_date,
-            verification_sid=verification_sid,
-            partner_sub_id=partner_sub_id,
-        )
-        return PhoneNumberInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self,
@@ -690,29 +503,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            fields=fields,
-            country_code=country_code,
-            first_name=first_name,
-            last_name=last_name,
-            address_line1=address_line1,
-            address_line2=address_line2,
-            city=city,
-            state=state,
-            postal_code=postal_code,
-            address_country_code=address_country_code,
-            national_id=national_id,
-            date_of_birth=date_of_birth,
-            last_verified_date=last_verified_date,
-            verification_sid=verification_sid,
-            partner_sub_id=partner_sub_id,
-        )
-        instance = PhoneNumberInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -741,7 +532,7 @@ class PhoneNumberList(ListResource):
 
         :param phone_number: The phone number to lookup in E.164 or national format. Default country code is +1 (North America).
         """
-        return PhoneNumberContext(self._version, phone_number=phone_number)
+        pass
 
     def __call__(self, phone_number: str) -> PhoneNumberContext:
         """

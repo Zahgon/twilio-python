@@ -20,7 +20,7 @@ class Domain(object):
         :param string uri: The relative uri to make absolute.
         :return: An absolute url (based off this domain)
         """
-        return "{}/{}".format(self.base_url.strip("/"), uri.strip("/"))
+        pass
 
     def request(
         self,
@@ -45,17 +45,7 @@ class Domain(object):
         :param allow_redirects: True if the client should follow HTTP
         redirects.
         """
-        url = self.absolute_url(uri)
-        return self.twilio.request(
-            method,
-            url,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
+        pass
 
     async def request_async(
         self,
@@ -80,14 +70,4 @@ class Domain(object):
         :param allow_redirects: True if the client should follow HTTP
         redirects.
         """
-        url = self.absolute_url(uri)
-        return await self.twilio.request_async(
-            method,
-            url,
-            params=params,
-            data=data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
+        pass

@@ -69,12 +69,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ConfigurationContext for this ConfigurationInstance
         """
-        if self._context is None:
-            self._context = ConfigurationContext(
-                self._version,
-                chat_service_sid=self._solution["chat_service_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "ConfigurationInstance":
         """
@@ -83,7 +78,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: The fetched ConfigurationInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "ConfigurationInstance":
         """
@@ -92,7 +87,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: The fetched ConfigurationInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -101,7 +96,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -110,7 +105,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -129,12 +124,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: The updated ConfigurationInstance
         """
-        return self._proxy.update(
-            default_conversation_creator_role_sid=default_conversation_creator_role_sid,
-            default_conversation_role_sid=default_conversation_role_sid,
-            default_chat_service_role_sid=default_chat_service_role_sid,
-            reachability_enabled=reachability_enabled,
-        )
+        pass
 
     async def update_async(
         self,
@@ -153,12 +143,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: The updated ConfigurationInstance
         """
-        return await self._proxy.update_async(
-            default_conversation_creator_role_sid=default_conversation_creator_role_sid,
-            default_conversation_role_sid=default_conversation_role_sid,
-            default_chat_service_role_sid=default_chat_service_role_sid,
-            reachability_enabled=reachability_enabled,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -177,12 +162,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            default_conversation_creator_role_sid=default_conversation_creator_role_sid,
-            default_conversation_role_sid=default_conversation_role_sid,
-            default_chat_service_role_sid=default_chat_service_role_sid,
-            reachability_enabled=reachability_enabled,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -201,12 +181,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            default_conversation_creator_role_sid=default_conversation_creator_role_sid,
-            default_conversation_role_sid=default_conversation_role_sid,
-            default_chat_service_role_sid=default_chat_service_role_sid,
-            reachability_enabled=reachability_enabled,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -244,14 +219,7 @@ class ConfigurationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> ConfigurationInstance:
         """
@@ -260,12 +228,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: The fetched ConfigurationInstance
         """
-        payload, _, _ = self._fetch()
-        return ConfigurationInstance(
-            self._version,
-            payload,
-            chat_service_sid=self._solution["chat_service_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -274,13 +237,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = ConfigurationInstance(
-            self._version,
-            payload,
-            chat_service_sid=self._solution["chat_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -289,14 +246,7 @@ class ConfigurationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> ConfigurationInstance:
         """
@@ -305,12 +255,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: The fetched ConfigurationInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return ConfigurationInstance(
-            self._version,
-            payload,
-            chat_service_sid=self._solution["chat_service_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -319,13 +264,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = ConfigurationInstance(
-            self._version,
-            payload,
-            chat_service_sid=self._solution["chat_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -340,26 +279,7 @@ class ConfigurationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "DefaultConversationCreatorRoleSid": default_conversation_creator_role_sid,
-                "DefaultConversationRoleSid": default_conversation_role_sid,
-                "DefaultChatServiceRoleSid": default_chat_service_role_sid,
-                "ReachabilityEnabled": serialize.boolean_to_string(
-                    reachability_enabled
-                ),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -378,15 +298,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: The updated ConfigurationInstance
         """
-        payload, _, _ = self._update(
-            default_conversation_creator_role_sid=default_conversation_creator_role_sid,
-            default_conversation_role_sid=default_conversation_role_sid,
-            default_chat_service_role_sid=default_chat_service_role_sid,
-            reachability_enabled=reachability_enabled,
-        )
-        return ConfigurationInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -405,16 +317,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            default_conversation_creator_role_sid=default_conversation_creator_role_sid,
-            default_conversation_role_sid=default_conversation_role_sid,
-            default_chat_service_role_sid=default_chat_service_role_sid,
-            reachability_enabled=reachability_enabled,
-        )
-        instance = ConfigurationInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -429,26 +332,7 @@ class ConfigurationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "DefaultConversationCreatorRoleSid": default_conversation_creator_role_sid,
-                "DefaultConversationRoleSid": default_conversation_role_sid,
-                "DefaultChatServiceRoleSid": default_chat_service_role_sid,
-                "ReachabilityEnabled": serialize.boolean_to_string(
-                    reachability_enabled
-                ),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -467,15 +351,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: The updated ConfigurationInstance
         """
-        payload, _, _ = await self._update_async(
-            default_conversation_creator_role_sid=default_conversation_creator_role_sid,
-            default_conversation_role_sid=default_conversation_role_sid,
-            default_chat_service_role_sid=default_chat_service_role_sid,
-            reachability_enabled=reachability_enabled,
-        )
-        return ConfigurationInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -494,16 +370,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            default_conversation_creator_role_sid=default_conversation_creator_role_sid,
-            default_conversation_role_sid=default_conversation_role_sid,
-            default_chat_service_role_sid=default_chat_service_role_sid,
-            reachability_enabled=reachability_enabled,
-        )
-        instance = ConfigurationInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -540,31 +407,21 @@ class ConfigurationList(ListResource):
         """
         Access the notifications
         """
-        if self._notifications is None:
-            self._notifications = NotificationList(
-                self._version, chat_service_sid=self._solution["chat_service_sid"]
-            )
-        return self._notifications
+        pass
 
     @property
     def webhooks(self) -> WebhookList:
         """
         Access the webhooks
         """
-        if self._webhooks is None:
-            self._webhooks = WebhookList(
-                self._version, chat_service_sid=self._solution["chat_service_sid"]
-            )
-        return self._webhooks
+        pass
 
     def get(self) -> ConfigurationContext:
         """
         Constructs a ConfigurationContext
 
         """
-        return ConfigurationContext(
-            self._version, chat_service_sid=self._solution["chat_service_sid"]
-        )
+        pass
 
     def __call__(self) -> ConfigurationContext:
         """

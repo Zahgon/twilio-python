@@ -44,14 +44,7 @@ class PortingPortInInstance(InstanceResource):
             self.country: Optional[str] = payload.get("country")
 
         def to_dict(self):
-            return {
-                "street": self.street,
-                "street_2": self.street_2,
-                "city": self.city,
-                "state": self.state,
-                "zip": self.zip,
-                "country": self.country,
-            }
+            pass
 
     class NumbersV1PortingLosingCarrierInformation(object):
         """
@@ -97,20 +90,7 @@ class PortingPortInInstance(InstanceResource):
             self.katakana_name: Optional[str] = payload.get("katakana_name")
 
         def to_dict(self):
-            return {
-                "customer_name": self.customer_name,
-                "account_number": self.account_number,
-                "account_telephone_number": self.account_telephone_number,
-                "address_sid": self.address_sid,
-                "address": self.address.to_dict() if self.address is not None else None,
-                "authorized_representative": self.authorized_representative,
-                "authorized_representative_email": self.authorized_representative_email,
-                "customer_type": self.customer_type,
-                "authorized_representative_katakana": self.authorized_representative_katakana,
-                "sub_municipality": self.sub_municipality,
-                "building": self.building,
-                "katakana_name": self.katakana_name,
-            }
+            pass
 
     class NumbersV1PortingPortInCreate(object):
         """
@@ -158,27 +138,7 @@ class PortingPortInInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "account_sid": self.account_sid,
-                "documents": self.documents,
-                "phone_numbers": (
-                    [phone_numbers.to_dict() for phone_numbers in self.phone_numbers]
-                    if self.phone_numbers is not None
-                    else None
-                ),
-                "losing_carrier_information": (
-                    self.losing_carrier_information.to_dict()
-                    if self.losing_carrier_information is not None
-                    else None
-                ),
-                "notification_emails": self.notification_emails,
-                "target_port_in_date": self.target_port_in_date,
-                "target_port_in_time_range_start": self.target_port_in_time_range_start,
-                "target_port_in_time_range_end": self.target_port_in_time_range_end,
-                "bundle_sid": self.bundle_sid,
-                "portability_advance_carrier": self.portability_advance_carrier,
-                "auto_cancel_approval_numbers": self.auto_cancel_approval_numbers,
-            }
+            pass
 
     class NumbersV1PortingPortInCreatePhoneNumbers(object):
         """
@@ -192,10 +152,7 @@ class PortingPortInInstance(InstanceResource):
             self.pin: Optional[str] = payload.get("pin")
 
         def to_dict(self):
-            return {
-                "phone_number": self.phone_number,
-                "pin": self.pin,
-            }
+            pass
 
     """
     :ivar port_in_request_sid: The SID of the Port In request. This is a unique identifier of the port in request.
@@ -280,12 +237,7 @@ class PortingPortInInstance(InstanceResource):
 
         :returns: PortingPortInContext for this PortingPortInInstance
         """
-        if self._context is None:
-            self._context = PortingPortInContext(
-                self._version,
-                port_in_request_sid=self._solution["port_in_request_sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -294,7 +246,7 @@ class PortingPortInInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -303,7 +255,7 @@ class PortingPortInInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -312,7 +264,7 @@ class PortingPortInInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -321,7 +273,7 @@ class PortingPortInInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "PortingPortInInstance":
         """
@@ -330,7 +282,7 @@ class PortingPortInInstance(InstanceResource):
 
         :returns: The fetched PortingPortInInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "PortingPortInInstance":
         """
@@ -339,7 +291,7 @@ class PortingPortInInstance(InstanceResource):
 
         :returns: The fetched PortingPortInInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -348,7 +300,7 @@ class PortingPortInInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -357,7 +309,7 @@ class PortingPortInInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -391,14 +343,7 @@ class PortingPortInContext(InstanceContext):
             self.country: Optional[str] = payload.get("country")
 
         def to_dict(self):
-            return {
-                "street": self.street,
-                "street_2": self.street_2,
-                "city": self.city,
-                "state": self.state,
-                "zip": self.zip,
-                "country": self.country,
-            }
+            pass
 
     class NumbersV1PortingLosingCarrierInformation(object):
         """
@@ -444,20 +389,7 @@ class PortingPortInContext(InstanceContext):
             self.katakana_name: Optional[str] = payload.get("katakana_name")
 
         def to_dict(self):
-            return {
-                "customer_name": self.customer_name,
-                "account_number": self.account_number,
-                "account_telephone_number": self.account_telephone_number,
-                "address_sid": self.address_sid,
-                "address": self.address.to_dict() if self.address is not None else None,
-                "authorized_representative": self.authorized_representative,
-                "authorized_representative_email": self.authorized_representative_email,
-                "customer_type": self.customer_type,
-                "authorized_representative_katakana": self.authorized_representative_katakana,
-                "sub_municipality": self.sub_municipality,
-                "building": self.building,
-                "katakana_name": self.katakana_name,
-            }
+            pass
 
     class NumbersV1PortingPortInCreate(object):
         """
@@ -505,27 +437,7 @@ class PortingPortInContext(InstanceContext):
             )
 
         def to_dict(self):
-            return {
-                "account_sid": self.account_sid,
-                "documents": self.documents,
-                "phone_numbers": (
-                    [phone_numbers.to_dict() for phone_numbers in self.phone_numbers]
-                    if self.phone_numbers is not None
-                    else None
-                ),
-                "losing_carrier_information": (
-                    self.losing_carrier_information.to_dict()
-                    if self.losing_carrier_information is not None
-                    else None
-                ),
-                "notification_emails": self.notification_emails,
-                "target_port_in_date": self.target_port_in_date,
-                "target_port_in_time_range_start": self.target_port_in_time_range_start,
-                "target_port_in_time_range_end": self.target_port_in_time_range_end,
-                "bundle_sid": self.bundle_sid,
-                "portability_advance_carrier": self.portability_advance_carrier,
-                "auto_cancel_approval_numbers": self.auto_cancel_approval_numbers,
-            }
+            pass
 
     class NumbersV1PortingPortInCreatePhoneNumbers(object):
         """
@@ -539,10 +451,7 @@ class PortingPortInContext(InstanceContext):
             self.pin: Optional[str] = payload.get("pin")
 
         def to_dict(self):
-            return {
-                "phone_number": self.phone_number,
-                "pin": self.pin,
-            }
+            pass
 
     def __init__(self, version: Version, port_in_request_sid: str):
         """
@@ -566,12 +475,7 @@ class PortingPortInContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -580,8 +484,7 @@ class PortingPortInContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -590,8 +493,7 @@ class PortingPortInContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -600,12 +502,7 @@ class PortingPortInContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -614,8 +511,7 @@ class PortingPortInContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -624,8 +520,7 @@ class PortingPortInContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -634,14 +529,7 @@ class PortingPortInContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> PortingPortInInstance:
         """
@@ -650,12 +538,7 @@ class PortingPortInContext(InstanceContext):
 
         :returns: The fetched PortingPortInInstance
         """
-        payload, _, _ = self._fetch()
-        return PortingPortInInstance(
-            self._version,
-            payload,
-            port_in_request_sid=self._solution["port_in_request_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -664,13 +547,7 @@ class PortingPortInContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = PortingPortInInstance(
-            self._version,
-            payload,
-            port_in_request_sid=self._solution["port_in_request_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -679,14 +556,7 @@ class PortingPortInContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> PortingPortInInstance:
         """
@@ -695,12 +565,7 @@ class PortingPortInContext(InstanceContext):
 
         :returns: The fetched PortingPortInInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return PortingPortInInstance(
-            self._version,
-            payload,
-            port_in_request_sid=self._solution["port_in_request_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -709,13 +574,7 @@ class PortingPortInContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = PortingPortInInstance(
-            self._version,
-            payload,
-            port_in_request_sid=self._solution["port_in_request_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -749,14 +608,7 @@ class PortingPortInList(ListResource):
             self.country: Optional[str] = payload.get("country")
 
         def to_dict(self):
-            return {
-                "street": self.street,
-                "street_2": self.street_2,
-                "city": self.city,
-                "state": self.state,
-                "zip": self.zip,
-                "country": self.country,
-            }
+            pass
 
     class NumbersV1PortingLosingCarrierInformation(object):
         """
@@ -802,20 +654,7 @@ class PortingPortInList(ListResource):
             self.katakana_name: Optional[str] = payload.get("katakana_name")
 
         def to_dict(self):
-            return {
-                "customer_name": self.customer_name,
-                "account_number": self.account_number,
-                "account_telephone_number": self.account_telephone_number,
-                "address_sid": self.address_sid,
-                "address": self.address.to_dict() if self.address is not None else None,
-                "authorized_representative": self.authorized_representative,
-                "authorized_representative_email": self.authorized_representative_email,
-                "customer_type": self.customer_type,
-                "authorized_representative_katakana": self.authorized_representative_katakana,
-                "sub_municipality": self.sub_municipality,
-                "building": self.building,
-                "katakana_name": self.katakana_name,
-            }
+            pass
 
     class NumbersV1PortingPortInCreate(object):
         """
@@ -863,27 +702,7 @@ class PortingPortInList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "account_sid": self.account_sid,
-                "documents": self.documents,
-                "phone_numbers": (
-                    [phone_numbers.to_dict() for phone_numbers in self.phone_numbers]
-                    if self.phone_numbers is not None
-                    else None
-                ),
-                "losing_carrier_information": (
-                    self.losing_carrier_information.to_dict()
-                    if self.losing_carrier_information is not None
-                    else None
-                ),
-                "notification_emails": self.notification_emails,
-                "target_port_in_date": self.target_port_in_date,
-                "target_port_in_time_range_start": self.target_port_in_time_range_start,
-                "target_port_in_time_range_end": self.target_port_in_time_range_end,
-                "bundle_sid": self.bundle_sid,
-                "portability_advance_carrier": self.portability_advance_carrier,
-                "auto_cancel_approval_numbers": self.auto_cancel_approval_numbers,
-            }
+            pass
 
     class NumbersV1PortingPortInCreatePhoneNumbers(object):
         """
@@ -897,10 +716,7 @@ class PortingPortInList(ListResource):
             self.pin: Optional[str] = payload.get("pin")
 
         def to_dict(self):
-            return {
-                "phone_number": self.phone_number,
-                "pin": self.pin,
-            }
+            pass
 
     def __init__(self, version: Version):
         """
@@ -922,17 +738,7 @@ class PortingPortInList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = numbers_v1_porting_port_in_create.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self, numbers_v1_porting_port_in_create: NumbersV1PortingPortInCreate
@@ -944,10 +750,7 @@ class PortingPortInList(ListResource):
 
         :returns: The created PortingPortInInstance
         """
-        payload, _, _ = self._create(
-            numbers_v1_porting_port_in_create=numbers_v1_porting_port_in_create
-        )
-        return PortingPortInInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self, numbers_v1_porting_port_in_create: NumbersV1PortingPortInCreate
@@ -959,11 +762,7 @@ class PortingPortInList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            numbers_v1_porting_port_in_create=numbers_v1_porting_port_in_create
-        )
-        instance = PortingPortInInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self, numbers_v1_porting_port_in_create: NumbersV1PortingPortInCreate
@@ -974,17 +773,7 @@ class PortingPortInList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = numbers_v1_porting_port_in_create.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self, numbers_v1_porting_port_in_create: NumbersV1PortingPortInCreate
@@ -996,10 +785,7 @@ class PortingPortInList(ListResource):
 
         :returns: The created PortingPortInInstance
         """
-        payload, _, _ = await self._create_async(
-            numbers_v1_porting_port_in_create=numbers_v1_porting_port_in_create
-        )
-        return PortingPortInInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self, numbers_v1_porting_port_in_create: NumbersV1PortingPortInCreate
@@ -1011,11 +797,7 @@ class PortingPortInList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            numbers_v1_porting_port_in_create=numbers_v1_porting_port_in_create
-        )
-        instance = PortingPortInInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def get(self, port_in_request_sid: str) -> PortingPortInContext:
         """
@@ -1023,9 +805,7 @@ class PortingPortInList(ListResource):
 
         :param port_in_request_sid: The SID of the Port In request. This is a unique identifier of the port in request.
         """
-        return PortingPortInContext(
-            self._version, port_in_request_sid=port_in_request_sid
-        )
+        pass
 
     def __call__(self, port_in_request_sid: str) -> PortingPortInContext:
         """

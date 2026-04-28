@@ -61,12 +61,7 @@ class PluginConfigurationArchiveInstance(InstanceResource):
 
         :returns: PluginConfigurationArchiveContext for this PluginConfigurationArchiveInstance
         """
-        if self._context is None:
-            self._context = PluginConfigurationArchiveContext(
-                self._version,
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def update(
         self, flex_metadata: Union[str, object] = values.unset
@@ -78,9 +73,7 @@ class PluginConfigurationArchiveInstance(InstanceResource):
 
         :returns: The updated PluginConfigurationArchiveInstance
         """
-        return self._proxy.update(
-            flex_metadata=flex_metadata,
-        )
+        pass
 
     async def update_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -92,9 +85,7 @@ class PluginConfigurationArchiveInstance(InstanceResource):
 
         :returns: The updated PluginConfigurationArchiveInstance
         """
-        return await self._proxy.update_async(
-            flex_metadata=flex_metadata,
-        )
+        pass
 
     def update_with_http_info(
         self, flex_metadata: Union[str, object] = values.unset
@@ -106,9 +97,7 @@ class PluginConfigurationArchiveInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            flex_metadata=flex_metadata,
-        )
+        pass
 
     async def update_with_http_info_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -120,9 +109,7 @@ class PluginConfigurationArchiveInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            flex_metadata=flex_metadata,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -162,21 +149,7 @@ class PluginConfigurationArchiveContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of({})
-        headers = values.of({})
-
-        if not (
-            flex_metadata is values.unset
-            or (isinstance(flex_metadata, str) and not flex_metadata)
-        ):
-            headers["Flex-Metadata"] = flex_metadata
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self, flex_metadata: Union[str, object] = values.unset
@@ -188,10 +161,7 @@ class PluginConfigurationArchiveContext(InstanceContext):
 
         :returns: The updated PluginConfigurationArchiveInstance
         """
-        payload, _, _ = self._update(flex_metadata=flex_metadata)
-        return PluginConfigurationArchiveInstance(
-            self._version, payload, sid=self._solution["sid"]
-        )
+        pass
 
     def update_with_http_info(
         self, flex_metadata: Union[str, object] = values.unset
@@ -203,11 +173,7 @@ class PluginConfigurationArchiveContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(flex_metadata=flex_metadata)
-        instance = PluginConfigurationArchiveInstance(
-            self._version, payload, sid=self._solution["sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -218,21 +184,7 @@ class PluginConfigurationArchiveContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of({})
-        headers = values.of({})
-
-        if not (
-            flex_metadata is values.unset
-            or (isinstance(flex_metadata, str) and not flex_metadata)
-        ):
-            headers["Flex-Metadata"] = flex_metadata
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -244,10 +196,7 @@ class PluginConfigurationArchiveContext(InstanceContext):
 
         :returns: The updated PluginConfigurationArchiveInstance
         """
-        payload, _, _ = await self._update_async(flex_metadata=flex_metadata)
-        return PluginConfigurationArchiveInstance(
-            self._version, payload, sid=self._solution["sid"]
-        )
+        pass
 
     async def update_with_http_info_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -259,13 +208,7 @@ class PluginConfigurationArchiveContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            flex_metadata=flex_metadata
-        )
-        instance = PluginConfigurationArchiveInstance(
-            self._version, payload, sid=self._solution["sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -296,7 +239,7 @@ class PluginConfigurationArchiveList(ListResource):
 
         :param sid: The SID of the Flex Plugin Configuration resource to archive.
         """
-        return PluginConfigurationArchiveContext(self._version, sid=sid)
+        pass
 
     def __call__(self, sid: str) -> PluginConfigurationArchiveContext:
         """

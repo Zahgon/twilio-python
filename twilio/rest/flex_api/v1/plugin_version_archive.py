@@ -72,13 +72,7 @@ class PluginVersionArchiveInstance(InstanceResource):
 
         :returns: PluginVersionArchiveContext for this PluginVersionArchiveInstance
         """
-        if self._context is None:
-            self._context = PluginVersionArchiveContext(
-                self._version,
-                plugin_sid=self._solution["plugin_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def update(
         self, flex_metadata: Union[str, object] = values.unset
@@ -90,9 +84,7 @@ class PluginVersionArchiveInstance(InstanceResource):
 
         :returns: The updated PluginVersionArchiveInstance
         """
-        return self._proxy.update(
-            flex_metadata=flex_metadata,
-        )
+        pass
 
     async def update_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -104,9 +96,7 @@ class PluginVersionArchiveInstance(InstanceResource):
 
         :returns: The updated PluginVersionArchiveInstance
         """
-        return await self._proxy.update_async(
-            flex_metadata=flex_metadata,
-        )
+        pass
 
     def update_with_http_info(
         self, flex_metadata: Union[str, object] = values.unset
@@ -118,9 +108,7 @@ class PluginVersionArchiveInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            flex_metadata=flex_metadata,
-        )
+        pass
 
     async def update_with_http_info_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -132,9 +120,7 @@ class PluginVersionArchiveInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            flex_metadata=flex_metadata,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -174,21 +160,7 @@ class PluginVersionArchiveContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of({})
-        headers = values.of({})
-
-        if not (
-            flex_metadata is values.unset
-            or (isinstance(flex_metadata, str) and not flex_metadata)
-        ):
-            headers["Flex-Metadata"] = flex_metadata
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self, flex_metadata: Union[str, object] = values.unset
@@ -200,13 +172,7 @@ class PluginVersionArchiveContext(InstanceContext):
 
         :returns: The updated PluginVersionArchiveInstance
         """
-        payload, _, _ = self._update(flex_metadata=flex_metadata)
-        return PluginVersionArchiveInstance(
-            self._version,
-            payload,
-            plugin_sid=self._solution["plugin_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def update_with_http_info(
         self, flex_metadata: Union[str, object] = values.unset
@@ -218,14 +184,7 @@ class PluginVersionArchiveContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(flex_metadata=flex_metadata)
-        instance = PluginVersionArchiveInstance(
-            self._version,
-            payload,
-            plugin_sid=self._solution["plugin_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -236,21 +195,7 @@ class PluginVersionArchiveContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of({})
-        headers = values.of({})
-
-        if not (
-            flex_metadata is values.unset
-            or (isinstance(flex_metadata, str) and not flex_metadata)
-        ):
-            headers["Flex-Metadata"] = flex_metadata
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -262,13 +207,7 @@ class PluginVersionArchiveContext(InstanceContext):
 
         :returns: The updated PluginVersionArchiveInstance
         """
-        payload, _, _ = await self._update_async(flex_metadata=flex_metadata)
-        return PluginVersionArchiveInstance(
-            self._version,
-            payload,
-            plugin_sid=self._solution["plugin_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -280,16 +219,7 @@ class PluginVersionArchiveContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            flex_metadata=flex_metadata
-        )
-        instance = PluginVersionArchiveInstance(
-            self._version,
-            payload,
-            plugin_sid=self._solution["plugin_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -319,9 +249,7 @@ class PluginVersionArchiveList(ListResource):
         :param plugin_sid: The SID of the Flex Plugin the resource to belongs to.
         :param sid: The SID of the Flex Plugin Version resource to archive.
         """
-        return PluginVersionArchiveContext(
-            self._version, plugin_sid=plugin_sid, sid=sid
-        )
+        pass
 
     def __call__(self, plugin_sid: str, sid: str) -> PluginVersionArchiveContext:
         """

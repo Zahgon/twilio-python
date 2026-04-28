@@ -61,12 +61,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: PhoneNumberContext for this PhoneNumberInstance
         """
-        if self._context is None:
-            self._context = PhoneNumberContext(
-                self._version,
-                phone_number=self._solution["phone_number"],
-            )
-        return self._context
+        pass
 
     def fetch(
         self,
@@ -85,12 +80,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: The fetched PhoneNumberInstance
         """
-        return self._proxy.fetch(
-            country_code=country_code,
-            type=type,
-            add_ons=add_ons,
-            add_ons_data=add_ons_data,
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -109,12 +99,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: The fetched PhoneNumberInstance
         """
-        return await self._proxy.fetch_async(
-            country_code=country_code,
-            type=type,
-            add_ons=add_ons,
-            add_ons_data=add_ons_data,
-        )
+        pass
 
     def fetch_with_http_info(
         self,
@@ -133,12 +118,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            country_code=country_code,
-            type=type,
-            add_ons=add_ons,
-            add_ons_data=add_ons_data,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self,
@@ -157,12 +137,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            country_code=country_code,
-            type=type,
-            add_ons=add_ons,
-            add_ons_data=add_ons_data,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -204,24 +179,7 @@ class PhoneNumberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "CountryCode": country_code,
-                "Type": serialize.map(type, lambda e: e),
-                "AddOns": serialize.map(add_ons, lambda e: e),
-            }
-        )
-
-        params.update(serialize.prefixed_collapsible_map(add_ons_data, "AddOns"))
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(
         self,
@@ -240,17 +198,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: The fetched PhoneNumberInstance
         """
-        payload, _, _ = self._fetch(
-            country_code=country_code,
-            type=type,
-            add_ons=add_ons,
-            add_ons_data=add_ons_data,
-        )
-        return PhoneNumberInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
+        pass
 
     def fetch_with_http_info(
         self,
@@ -269,18 +217,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(
-            country_code=country_code,
-            type=type,
-            add_ons=add_ons,
-            add_ons_data=add_ons_data,
-        )
-        instance = PhoneNumberInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self,
@@ -295,24 +232,7 @@ class PhoneNumberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "CountryCode": country_code,
-                "Type": serialize.map(type, lambda e: e),
-                "AddOns": serialize.map(add_ons, lambda e: e),
-            }
-        )
-
-        params.update(serialize.prefixed_collapsible_map(add_ons_data, "AddOns"))
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -331,17 +251,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: The fetched PhoneNumberInstance
         """
-        payload, _, _ = await self._fetch_async(
-            country_code=country_code,
-            type=type,
-            add_ons=add_ons,
-            add_ons_data=add_ons_data,
-        )
-        return PhoneNumberInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self,
@@ -360,18 +270,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            country_code=country_code,
-            type=type,
-            add_ons=add_ons,
-            add_ons_data=add_ons_data,
-        )
-        instance = PhoneNumberInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -400,7 +299,7 @@ class PhoneNumberList(ListResource):
 
         :param phone_number: The phone number to lookup in [E.164](https://www.twilio.com/docs/glossary/what-e164) format, which consists of a + followed by the country code and subscriber number.
         """
-        return PhoneNumberContext(self._version, phone_number=phone_number)
+        pass
 
     def __call__(self, phone_number: str) -> PhoneNumberContext:
         """

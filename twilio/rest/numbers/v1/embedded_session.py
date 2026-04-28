@@ -33,9 +33,7 @@ class EmbeddedSessionInstance(InstanceResource):
             self.theme_set_id: Optional[str] = payload.get("themeSetId")
 
         def to_dict(self):
-            return {
-                "themeSetId": self.theme_set_id,
-            }
+            pass
 
     """
     :ivar id: Registration identifier (BU-prefixed).
@@ -81,9 +79,7 @@ class EmbeddedSessionList(ListResource):
             self.theme_set_id: Optional[str] = payload.get("themeSetId")
 
         def to_dict(self):
-            return {
-                "themeSetId": self.theme_set_id,
-            }
+            pass
 
     def __init__(self, version: Version, bundle_sid: str):
         """
@@ -113,17 +109,7 @@ class EmbeddedSessionList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = numbers_v1_create_embedded_session_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -136,12 +122,7 @@ class EmbeddedSessionList(ListResource):
 
         :returns: The created EmbeddedSessionInstance
         """
-        payload, _, _ = self._create(
-            numbers_v1_create_embedded_session_request=numbers_v1_create_embedded_session_request
-        )
-        return EmbeddedSessionInstance(
-            self._version, payload, bundle_sid=self._solution["bundle_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -154,13 +135,7 @@ class EmbeddedSessionList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            numbers_v1_create_embedded_session_request=numbers_v1_create_embedded_session_request
-        )
-        instance = EmbeddedSessionInstance(
-            self._version, payload, bundle_sid=self._solution["bundle_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -172,17 +147,7 @@ class EmbeddedSessionList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = numbers_v1_create_embedded_session_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -195,12 +160,7 @@ class EmbeddedSessionList(ListResource):
 
         :returns: The created EmbeddedSessionInstance
         """
-        payload, _, _ = await self._create_async(
-            numbers_v1_create_embedded_session_request=numbers_v1_create_embedded_session_request
-        )
-        return EmbeddedSessionInstance(
-            self._version, payload, bundle_sid=self._solution["bundle_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -213,13 +173,7 @@ class EmbeddedSessionList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            numbers_v1_create_embedded_session_request=numbers_v1_create_embedded_session_request
-        )
-        instance = EmbeddedSessionInstance(
-            self._version, payload, bundle_sid=self._solution["bundle_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

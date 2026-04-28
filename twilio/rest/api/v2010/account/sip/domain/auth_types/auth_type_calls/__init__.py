@@ -62,13 +62,7 @@ class AuthTypeCallsList(ListResource):
         """
         Access the credential_list_mappings
         """
-        if self._credential_list_mappings is None:
-            self._credential_list_mappings = AuthCallsCredentialListMappingList(
-                self._version,
-                account_sid=self._solution["account_sid"],
-                domain_sid=self._solution["domain_sid"],
-            )
-        return self._credential_list_mappings
+        pass
 
     @property
     def ip_access_control_list_mappings(
@@ -77,15 +71,7 @@ class AuthTypeCallsList(ListResource):
         """
         Access the ip_access_control_list_mappings
         """
-        if self._ip_access_control_list_mappings is None:
-            self._ip_access_control_list_mappings = (
-                AuthCallsIpAccessControlListMappingList(
-                    self._version,
-                    account_sid=self._solution["account_sid"],
-                    domain_sid=self._solution["domain_sid"],
-                )
-            )
-        return self._ip_access_control_list_mappings
+        pass
 
     def __repr__(self) -> str:
         """

@@ -47,12 +47,7 @@ class ArchivedCallContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -61,8 +56,7 @@ class ArchivedCallContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -71,8 +65,7 @@ class ArchivedCallContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -81,12 +74,7 @@ class ArchivedCallContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -95,8 +83,7 @@ class ArchivedCallContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -105,8 +92,7 @@ class ArchivedCallContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -136,7 +122,7 @@ class ArchivedCallList(ListResource):
         :param date: The date of the Call in UTC.
         :param sid: The Twilio-provided Call SID that uniquely identifies the Call resource to delete
         """
-        return ArchivedCallContext(self._version, date=date, sid=sid)
+        pass
 
     def __call__(self, date: date, sid: str) -> ArchivedCallContext:
         """

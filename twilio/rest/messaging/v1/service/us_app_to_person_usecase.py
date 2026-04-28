@@ -80,19 +80,7 @@ class UsAppToPersonUsecaseList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        params = values.of(
-            {
-                "BrandRegistrationSid": brand_registration_sid,
-            }
-        )
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers, params=params
-        )
+        pass
 
     def fetch(
         self, brand_registration_sid: Union[str, object] = values.unset
@@ -103,12 +91,7 @@ class UsAppToPersonUsecaseList(ListResource):
         :param brand_registration_sid: The unique string to identify the A2P brand.
         :returns: The fetched UsAppToPersonUsecaseInstance
         """
-        payload, _, _ = self._fetch(brand_registration_sid=brand_registration_sid)
-        return UsAppToPersonUsecaseInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
+        pass
 
     def fetch_with_http_info(
         self, brand_registration_sid: Union[str, object] = values.unset
@@ -119,15 +102,7 @@ class UsAppToPersonUsecaseList(ListResource):
         :param brand_registration_sid: The unique string to identify the A2P brand.
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(
-            brand_registration_sid=brand_registration_sid
-        )
-        instance = UsAppToPersonUsecaseInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self, brand_registration_sid: Union[str, object] = values.unset
@@ -138,19 +113,7 @@ class UsAppToPersonUsecaseList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        params = values.of(
-            {
-                "BrandRegistrationSid": brand_registration_sid,
-            }
-        )
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers, params=params
-        )
+        pass
 
     async def fetch_async(
         self, brand_registration_sid: Union[str, object] = values.unset
@@ -161,14 +124,7 @@ class UsAppToPersonUsecaseList(ListResource):
         :param brand_registration_sid: The unique string to identify the A2P brand.
         :returns: The fetched UsAppToPersonUsecaseInstance
         """
-        payload, _, _ = await self._fetch_async(
-            brand_registration_sid=brand_registration_sid
-        )
-        return UsAppToPersonUsecaseInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, brand_registration_sid: Union[str, object] = values.unset
@@ -179,15 +135,7 @@ class UsAppToPersonUsecaseList(ListResource):
         :param brand_registration_sid: The unique string to identify the A2P brand.
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            brand_registration_sid=brand_registration_sid
-        )
-        instance = UsAppToPersonUsecaseInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

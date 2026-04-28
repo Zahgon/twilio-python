@@ -31,9 +31,7 @@ class V1(Version):
 
     @property
     def trunks(self) -> TrunkList:
-        if self._trunks is None:
-            self._trunks = TrunkList(self)
-        return self._trunks
+        pass
 
     def __repr__(self) -> str:
         """

@@ -35,21 +35,15 @@ class V1(Version):
 
     @property
     def messaging(self) -> MessagingList:
-        if self._messaging is None:
-            self._messaging = MessagingList(self)
-        return self._messaging
+        pass
 
     @property
     def phone_numbers(self) -> PhoneNumberList:
-        if self._phone_numbers is None:
-            self._phone_numbers = PhoneNumberList(self)
-        return self._phone_numbers
+        pass
 
     @property
     def voice(self) -> VoiceList:
-        if self._voice is None:
-            self._voice = VoiceList(self)
-        return self._voice
+        pass
 
     def __repr__(self) -> str:
         """

@@ -68,23 +68,7 @@ class AuthorizeList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        params = values.of(
-            {
-                "ResponseType": response_type,
-                "ClientId": client_id,
-                "RedirectUri": redirect_uri,
-                "Scope": scope,
-                "State": state,
-            }
-        )
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers, params=params
-        )
+        pass
 
     def fetch(
         self,
@@ -100,14 +84,7 @@ class AuthorizeList(ListResource):
         :param response_type: Response Type:param client_id: The Client Identifier:param redirect_uri: The url to which response will be redirected to:param scope: The scope of the access request:param state: An opaque value which can be used to maintain state between the request and callback
         :returns: The fetched AuthorizeInstance
         """
-        payload, _, _ = self._fetch(
-            response_type=response_type,
-            client_id=client_id,
-            redirect_uri=redirect_uri,
-            scope=scope,
-            state=state,
-        )
-        return AuthorizeInstance(self._version, payload)
+        pass
 
     def fetch_with_http_info(
         self,
@@ -123,15 +100,7 @@ class AuthorizeList(ListResource):
         :param response_type: Response Type:param client_id: The Client Identifier:param redirect_uri: The url to which response will be redirected to:param scope: The scope of the access request:param state: An opaque value which can be used to maintain state between the request and callback
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(
-            response_type=response_type,
-            client_id=client_id,
-            redirect_uri=redirect_uri,
-            scope=scope,
-            state=state,
-        )
-        instance = AuthorizeInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self,
@@ -147,23 +116,7 @@ class AuthorizeList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        params = values.of(
-            {
-                "ResponseType": response_type,
-                "ClientId": client_id,
-                "RedirectUri": redirect_uri,
-                "Scope": scope,
-                "State": state,
-            }
-        )
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers, params=params
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -179,14 +132,7 @@ class AuthorizeList(ListResource):
         :param response_type: Response Type:param client_id: The Client Identifier:param redirect_uri: The url to which response will be redirected to:param scope: The scope of the access request:param state: An opaque value which can be used to maintain state between the request and callback
         :returns: The fetched AuthorizeInstance
         """
-        payload, _, _ = await self._fetch_async(
-            response_type=response_type,
-            client_id=client_id,
-            redirect_uri=redirect_uri,
-            scope=scope,
-            state=state,
-        )
-        return AuthorizeInstance(self._version, payload)
+        pass
 
     async def fetch_with_http_info_async(
         self,
@@ -202,15 +148,7 @@ class AuthorizeList(ListResource):
         :param response_type: Response Type:param client_id: The Client Identifier:param redirect_uri: The url to which response will be redirected to:param scope: The scope of the access request:param state: An opaque value which can be used to maintain state between the request and callback
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            response_type=response_type,
-            client_id=client_id,
-            redirect_uri=redirect_uri,
-            scope=scope,
-            state=state,
-        )
-        instance = AuthorizeInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

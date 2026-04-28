@@ -14,54 +14,24 @@ from twilio.rest.verify.v2.verification_attempts_summary import (
 class Verify(VerifyBase):
     @property
     def forms(self) -> FormList:
-        warn(
-            "forms is deprecated. Use v2.forms instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v2.forms
+        pass
 
     @property
     def safelist(self) -> SafelistList:
-        warn(
-            "safelist is deprecated. Use v2.safelist instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v2.safelist
+        pass
 
     @property
     def services(self) -> ServiceList:
-        warn(
-            "services is deprecated. Use v2.services instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v2.services
+        pass
 
     @property
     def verification_attempts(self) -> VerificationAttemptList:
-        warn(
-            "verification_attempts is deprecated. Use v2.verification_attempts instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v2.verification_attempts
+        pass
 
     @property
     def verification_attempts_summary(self) -> VerificationAttemptsSummaryList:
-        warn(
-            "verification_attempts_summary is deprecated. Use v2.verification_attempts_summary instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v2.verification_attempts_summary
+        pass
 
     @property
     def templates(self) -> TemplateList:
-        warn(
-            "templates is deprecated. Use v2.templates instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v2.templates
+        pass

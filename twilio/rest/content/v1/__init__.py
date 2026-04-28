@@ -35,21 +35,15 @@ class V1(Version):
 
     @property
     def contents(self) -> ContentList:
-        if self._contents is None:
-            self._contents = ContentList(self)
-        return self._contents
+        pass
 
     @property
     def content_and_approvals(self) -> ContentAndApprovalsList:
-        if self._content_and_approvals is None:
-            self._content_and_approvals = ContentAndApprovalsList(self)
-        return self._content_and_approvals
+        pass
 
     @property
     def legacy_contents(self) -> LegacyContentList:
-        if self._legacy_contents is None:
-            self._legacy_contents = LegacyContentList(self)
-        return self._legacy_contents
+        pass
 
     def __repr__(self) -> str:
         """

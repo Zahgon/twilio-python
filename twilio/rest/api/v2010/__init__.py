@@ -33,15 +33,11 @@ class V2010(Version):
 
     @property
     def accounts(self) -> AccountList:
-        if self._accounts is None:
-            self._accounts = AccountList(self)
-        return self._accounts
+        pass
 
     @property
     def account(self) -> AccountContext:
-        if self._account is None:
-            self._account = AccountContext(self, self.domain.twilio.account_sid)
-        return self._account
+        pass
 
     @account.setter
     def account(self, value: AccountContext) -> None:
@@ -49,7 +45,7 @@ class V2010(Version):
         Setter to override account
         :param value: value to use as account
         """
-        self._account = value
+        pass
 
     def __repr__(self) -> str:
         """

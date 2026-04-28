@@ -61,21 +61,7 @@ class BulkConsentsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Items": serialize.map(items, lambda e: serialize.object(e)),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(self, items: List[object]) -> BulkConsentsInstance:
         """
@@ -85,8 +71,7 @@ class BulkConsentsList(ListResource):
 
         :returns: The created BulkConsentsInstance
         """
-        payload, _, _ = self._create(items=items)
-        return BulkConsentsInstance(self._version, payload)
+        pass
 
     def create_with_http_info(self, items: List[object]) -> ApiResponse:
         """
@@ -96,9 +81,7 @@ class BulkConsentsList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(items=items)
-        instance = BulkConsentsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self, items: List[object]) -> tuple:
         """
@@ -107,21 +90,7 @@ class BulkConsentsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Items": serialize.map(items, lambda e: serialize.object(e)),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(self, items: List[object]) -> BulkConsentsInstance:
         """
@@ -131,8 +100,7 @@ class BulkConsentsList(ListResource):
 
         :returns: The created BulkConsentsInstance
         """
-        payload, _, _ = await self._create_async(items=items)
-        return BulkConsentsInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(self, items: List[object]) -> ApiResponse:
         """
@@ -142,9 +110,7 @@ class BulkConsentsList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(items=items)
-        instance = BulkConsentsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

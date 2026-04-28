@@ -8,18 +8,8 @@ from twilio.rest.bulkexports.v1.export_configuration import ExportConfigurationL
 class Bulkexports(BulkexportsBase):
     @property
     def exports(self) -> ExportList:
-        warn(
-            "exports is deprecated. Use v1.exports instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.exports
+        pass
 
     @property
     def export_configuration(self) -> ExportConfigurationList:
-        warn(
-            "export_configuration is deprecated. Use v1.export_configuration instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.export_configuration
+        pass

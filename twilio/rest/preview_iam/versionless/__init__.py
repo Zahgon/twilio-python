@@ -31,9 +31,7 @@ class Versionless(Version):
 
     @property
     def organization(self) -> OrganizationList:
-        if self._organization is None:
-            self._organization = OrganizationList(self)
-        return self._organization
+        pass
 
     def __repr__(self) -> str:
         """

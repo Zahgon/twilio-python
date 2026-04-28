@@ -39,19 +39,19 @@ class TwilioRestException(TwilioException):
         """Try to pretty-print the exception, if this is going on screen."""
 
         def red(words: str) -> str:
-            return "\033[31m\033[49m%s\033[0m" % words
+            pass
 
         def white(words: str) -> str:
-            return "\033[37m\033[49m%s\033[0m" % words
+            pass
 
         def blue(words: str) -> str:
-            return "\033[34m\033[49m%s\033[0m" % words
+            pass
 
         def teal(words: str) -> str:
-            return "\033[36m\033[49m%s\033[0m" % words
+            pass
 
         def get_uri(code: int) -> str:
-            return "https://www.twilio.com/docs/errors/{0}".format(code)
+            pass
 
         # If it makes sense to print a human readable error message, try to
         # do it. The one problem is that someone might catch this error and
@@ -125,19 +125,19 @@ class TwilioServiceException(TwilioException):
         """Pretty-print the exception for terminal output."""
 
         def red(words: str) -> str:
-            return "\033[31m\033[49m%s\033[0m" % words
+            pass
 
         def white(words: str) -> str:
-            return "\033[37m\033[49m%s\033[0m" % words
+            pass
 
         def blue(words: str) -> str:
-            return "\033[34m\033[49m%s\033[0m" % words
+            pass
 
         def teal(words: str) -> str:
-            return "\033[36m\033[49m%s\033[0m" % words
+            pass
 
         def yellow(words: str) -> str:
-            return "\033[33m\033[49m%s\033[0m" % words
+            pass
 
         # Check if we're in a TTY for colored output
         if hasattr(sys.stderr, "isatty") and sys.stderr.isatty():

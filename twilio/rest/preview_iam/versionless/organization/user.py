@@ -39,11 +39,7 @@ class UserInstance(InstanceResource):
             self.type: Optional[str] = payload.get("type")
 
         def to_dict(self):
-            return {
-                "primary": self.primary,
-                "value": self.value,
-                "type": self.type,
-            }
+            pass
 
     class ScimMeta(object):
         """
@@ -61,12 +57,7 @@ class UserInstance(InstanceResource):
             self.version: Optional[str] = payload.get("version")
 
         def to_dict(self):
-            return {
-                "resourceType": self.resource_type,
-                "created": self.created,
-                "lastModified": self.last_modified,
-                "version": self.version,
-            }
+            pass
 
     class ScimName(object):
         """
@@ -80,10 +71,7 @@ class UserInstance(InstanceResource):
             self.family_name: Optional[str] = payload.get("familyName")
 
         def to_dict(self):
-            return {
-                "givenName": self.given_name,
-                "familyName": self.family_name,
-            }
+            pass
 
     class ScimPatchOperation(object):
         """
@@ -99,11 +87,7 @@ class UserInstance(InstanceResource):
             self.value: Optional[Dict[str, object]] = payload.get("value")
 
         def to_dict(self):
-            return {
-                "op": self.op,
-                "path": self.path,
-                "value": self.value,
-            }
+            pass
 
     class ScimPatchRequest(object):
         """
@@ -119,14 +103,7 @@ class UserInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "schemas": self.schemas,
-                "Operations": (
-                    [operations.to_dict() for operations in self.operations]
-                    if self.operations is not None
-                    else None
-                ),
-            }
+            pass
 
     class ScimUser(object):
         """
@@ -170,28 +147,7 @@ class UserInstance(InstanceResource):
             self.more_info: Optional[str] = payload.get("moreInfo")
 
         def to_dict(self):
-            return {
-                "id": self.id,
-                "externalId": self.external_id,
-                "userName": self.user_name,
-                "displayName": self.display_name,
-                "name": self.name.to_dict() if self.name is not None else None,
-                "emails": (
-                    [emails.to_dict() for emails in self.emails]
-                    if self.emails is not None
-                    else None
-                ),
-                "active": self.active,
-                "locale": self.locale,
-                "timezone": self.timezone,
-                "schemas": self.schemas,
-                "meta": self.meta.to_dict() if self.meta is not None else None,
-                "detail": self.detail,
-                "scimType": self.scim_type,
-                "status": self.status,
-                "code": self.code,
-                "moreInfo": self.more_info,
-            }
+            pass
 
     """
     :ivar id: Unique Twilio user sid
@@ -252,13 +208,7 @@ class UserInstance(InstanceResource):
 
         :returns: UserContext for this UserInstance
         """
-        if self._context is None:
-            self._context = UserContext(
-                self._version,
-                organization_sid=self._solution["organization_sid"],
-                id=self._solution["id"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -267,7 +217,7 @@ class UserInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -276,7 +226,7 @@ class UserInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -285,7 +235,7 @@ class UserInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -294,7 +244,7 @@ class UserInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "UserInstance":
         """
@@ -303,7 +253,7 @@ class UserInstance(InstanceResource):
 
         :returns: The fetched UserInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "UserInstance":
         """
@@ -312,7 +262,7 @@ class UserInstance(InstanceResource):
 
         :returns: The fetched UserInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -321,7 +271,7 @@ class UserInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -330,7 +280,7 @@ class UserInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def patch(
         self,
@@ -345,10 +295,7 @@ class UserInstance(InstanceResource):
 
         :returns: The patched UserInstance
         """
-        return self._proxy.patch(
-            scim_patch_request=scim_patch_request,
-            if_match=if_match,
-        )
+        pass
 
     async def patch_async(
         self,
@@ -363,10 +310,7 @@ class UserInstance(InstanceResource):
 
         :returns: The patched UserInstance
         """
-        return await self._proxy.patch_async(
-            scim_patch_request=scim_patch_request,
-            if_match=if_match,
-        )
+        pass
 
     def update(
         self, scim_user: ScimUser, if_match: Union[str, object] = values.unset
@@ -379,10 +323,7 @@ class UserInstance(InstanceResource):
 
         :returns: The updated UserInstance
         """
-        return self._proxy.update(
-            scim_user=scim_user,
-            if_match=if_match,
-        )
+        pass
 
     async def update_async(
         self, scim_user: ScimUser, if_match: Union[str, object] = values.unset
@@ -395,10 +336,7 @@ class UserInstance(InstanceResource):
 
         :returns: The updated UserInstance
         """
-        return await self._proxy.update_async(
-            scim_user=scim_user,
-            if_match=if_match,
-        )
+        pass
 
     def update_with_http_info(
         self, scim_user: ScimUser, if_match: Union[str, object] = values.unset
@@ -411,10 +349,7 @@ class UserInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            scim_user=scim_user,
-            if_match=if_match,
-        )
+        pass
 
     async def update_with_http_info_async(
         self, scim_user: ScimUser, if_match: Union[str, object] = values.unset
@@ -427,10 +362,7 @@ class UserInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            scim_user=scim_user,
-            if_match=if_match,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -458,11 +390,7 @@ class UserContext(InstanceContext):
             self.type: Optional[str] = payload.get("type")
 
         def to_dict(self):
-            return {
-                "primary": self.primary,
-                "value": self.value,
-                "type": self.type,
-            }
+            pass
 
     class ScimMeta(object):
         """
@@ -480,12 +408,7 @@ class UserContext(InstanceContext):
             self.version: Optional[str] = payload.get("version")
 
         def to_dict(self):
-            return {
-                "resourceType": self.resource_type,
-                "created": self.created,
-                "lastModified": self.last_modified,
-                "version": self.version,
-            }
+            pass
 
     class ScimName(object):
         """
@@ -499,10 +422,7 @@ class UserContext(InstanceContext):
             self.family_name: Optional[str] = payload.get("familyName")
 
         def to_dict(self):
-            return {
-                "givenName": self.given_name,
-                "familyName": self.family_name,
-            }
+            pass
 
     class ScimPatchOperation(object):
         """
@@ -518,11 +438,7 @@ class UserContext(InstanceContext):
             self.value: Optional[Dict[str, object]] = payload.get("value")
 
         def to_dict(self):
-            return {
-                "op": self.op,
-                "path": self.path,
-                "value": self.value,
-            }
+            pass
 
     class ScimPatchRequest(object):
         """
@@ -538,14 +454,7 @@ class UserContext(InstanceContext):
             )
 
         def to_dict(self):
-            return {
-                "schemas": self.schemas,
-                "Operations": (
-                    [operations.to_dict() for operations in self.operations]
-                    if self.operations is not None
-                    else None
-                ),
-            }
+            pass
 
     class ScimUser(object):
         """
@@ -589,28 +498,7 @@ class UserContext(InstanceContext):
             self.more_info: Optional[str] = payload.get("moreInfo")
 
         def to_dict(self):
-            return {
-                "id": self.id,
-                "externalId": self.external_id,
-                "userName": self.user_name,
-                "displayName": self.display_name,
-                "name": self.name.to_dict() if self.name is not None else None,
-                "emails": (
-                    [emails.to_dict() for emails in self.emails]
-                    if self.emails is not None
-                    else None
-                ),
-                "active": self.active,
-                "locale": self.locale,
-                "timezone": self.timezone,
-                "schemas": self.schemas,
-                "meta": self.meta.to_dict() if self.meta is not None else None,
-                "detail": self.detail,
-                "scimType": self.scim_type,
-                "status": self.status,
-                "code": self.code,
-                "moreInfo": self.more_info,
-            }
+            pass
 
     def __init__(self, version: Version, organization_sid: str, id: str):
         """
@@ -636,14 +524,7 @@ class UserContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/scim+json"
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -652,8 +533,7 @@ class UserContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -662,8 +542,7 @@ class UserContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -672,14 +551,7 @@ class UserContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/scim+json"
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -688,8 +560,7 @@ class UserContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -698,8 +569,7 @@ class UserContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -708,14 +578,7 @@ class UserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/scim+json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> UserInstance:
         """
@@ -724,13 +587,7 @@ class UserContext(InstanceContext):
 
         :returns: The fetched UserInstance
         """
-        payload, _, _ = self._fetch()
-        return UserInstance(
-            self._version,
-            payload,
-            organization_sid=self._solution["organization_sid"],
-            id=self._solution["id"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -739,14 +596,7 @@ class UserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = UserInstance(
-            self._version,
-            payload,
-            organization_sid=self._solution["organization_sid"],
-            id=self._solution["id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -755,14 +605,7 @@ class UserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/scim+json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> UserInstance:
         """
@@ -771,13 +614,7 @@ class UserContext(InstanceContext):
 
         :returns: The fetched UserInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return UserInstance(
-            self._version,
-            payload,
-            organization_sid=self._solution["organization_sid"],
-            id=self._solution["id"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -786,14 +623,7 @@ class UserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = UserInstance(
-            self._version,
-            payload,
-            organization_sid=self._solution["organization_sid"],
-            id=self._solution["id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _patch(
         self,
@@ -806,24 +636,7 @@ class UserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = scim_patch_request.to_dict()
-
-        headers = values.of({})
-
-        if not (
-            if_match is values.unset or (isinstance(if_match, str) and not if_match)
-        ):
-            headers["If-Match"] = if_match
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Content-Type"] = "application/scim+json"
-
-        headers["Accept"] = "application/scim+json"
-
-        return self._version.patch_with_response_info(
-            method="PATCH", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def patch(
         self,
@@ -838,15 +651,7 @@ class UserContext(InstanceContext):
 
         :returns: The patched UserInstance
         """
-        payload, _, _ = self._patch(
-            scim_patch_request=scim_patch_request, if_match=if_match
-        )
-        return UserInstance(
-            self._version,
-            payload,
-            organization_sid=self._solution["organization_sid"],
-            id=self._solution["id"],
-        )
+        pass
 
     def patch_with_http_info(
         self,
@@ -861,16 +666,7 @@ class UserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._patch(
-            scim_patch_request=scim_patch_request, if_match=if_match
-        )
-        instance = UserInstance(
-            self._version,
-            payload,
-            organization_sid=self._solution["organization_sid"],
-            id=self._solution["id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _patch_async(
         self,
@@ -883,24 +679,7 @@ class UserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = scim_patch_request.to_dict()
-
-        headers = values.of({})
-
-        if not (
-            if_match is values.unset or (isinstance(if_match, str) and not if_match)
-        ):
-            headers["If-Match"] = if_match
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Content-Type"] = "application/scim+json"
-
-        headers["Accept"] = "application/scim+json"
-
-        return await self._version.patch_with_response_info_async(
-            method="PATCH", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def patch_async(
         self,
@@ -915,15 +694,7 @@ class UserContext(InstanceContext):
 
         :returns: The patched UserInstance
         """
-        payload, _, _ = await self._patch_async(
-            scim_patch_request=scim_patch_request, if_match=if_match
-        )
-        return UserInstance(
-            self._version,
-            payload,
-            organization_sid=self._solution["organization_sid"],
-            id=self._solution["id"],
-        )
+        pass
 
     async def patch_with_http_info_async(
         self,
@@ -938,16 +709,7 @@ class UserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._patch_async(
-            scim_patch_request=scim_patch_request, if_match=if_match
-        )
-        instance = UserInstance(
-            self._version,
-            payload,
-            organization_sid=self._solution["organization_sid"],
-            id=self._solution["id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self, scim_user: ScimUser, if_match: Union[str, object] = values.unset
@@ -958,24 +720,7 @@ class UserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = scim_user.to_dict()
-
-        headers = values.of({})
-
-        if not (
-            if_match is values.unset or (isinstance(if_match, str) and not if_match)
-        ):
-            headers["If-Match"] = if_match
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Content-Type"] = "application/scim+json"
-
-        headers["Accept"] = "application/scim+json"
-
-        return self._version.update_with_response_info(
-            method="PUT", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self, scim_user: ScimUser, if_match: Union[str, object] = values.unset
@@ -988,13 +733,7 @@ class UserContext(InstanceContext):
 
         :returns: The updated UserInstance
         """
-        payload, _, _ = self._update(scim_user=scim_user, if_match=if_match)
-        return UserInstance(
-            self._version,
-            payload,
-            organization_sid=self._solution["organization_sid"],
-            id=self._solution["id"],
-        )
+        pass
 
     def update_with_http_info(
         self, scim_user: ScimUser, if_match: Union[str, object] = values.unset
@@ -1007,16 +746,7 @@ class UserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            scim_user=scim_user, if_match=if_match
-        )
-        instance = UserInstance(
-            self._version,
-            payload,
-            organization_sid=self._solution["organization_sid"],
-            id=self._solution["id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self, scim_user: ScimUser, if_match: Union[str, object] = values.unset
@@ -1027,24 +757,7 @@ class UserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = scim_user.to_dict()
-
-        headers = values.of({})
-
-        if not (
-            if_match is values.unset or (isinstance(if_match, str) and not if_match)
-        ):
-            headers["If-Match"] = if_match
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Content-Type"] = "application/scim+json"
-
-        headers["Accept"] = "application/scim+json"
-
-        return await self._version.update_with_response_info_async(
-            method="PUT", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, scim_user: ScimUser, if_match: Union[str, object] = values.unset
@@ -1057,13 +770,7 @@ class UserContext(InstanceContext):
 
         :returns: The updated UserInstance
         """
-        payload, _, _ = await self._update_async(scim_user=scim_user, if_match=if_match)
-        return UserInstance(
-            self._version,
-            payload,
-            organization_sid=self._solution["organization_sid"],
-            id=self._solution["id"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self, scim_user: ScimUser, if_match: Union[str, object] = values.unset
@@ -1076,16 +783,7 @@ class UserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            scim_user=scim_user, if_match=if_match
-        )
-        instance = UserInstance(
-            self._version,
-            payload,
-            organization_sid=self._solution["organization_sid"],
-            id=self._solution["id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -1105,9 +803,7 @@ class UserPage(Page):
 
         :param payload: Payload response from the API
         """
-        return UserInstance(
-            self._version, payload, organization_sid=self._solution["organization_sid"]
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -1134,11 +830,7 @@ class UserList(ListResource):
             self.type: Optional[str] = payload.get("type")
 
         def to_dict(self):
-            return {
-                "primary": self.primary,
-                "value": self.value,
-                "type": self.type,
-            }
+            pass
 
     class ScimMeta(object):
         """
@@ -1156,12 +848,7 @@ class UserList(ListResource):
             self.version: Optional[str] = payload.get("version")
 
         def to_dict(self):
-            return {
-                "resourceType": self.resource_type,
-                "created": self.created,
-                "lastModified": self.last_modified,
-                "version": self.version,
-            }
+            pass
 
     class ScimName(object):
         """
@@ -1175,10 +862,7 @@ class UserList(ListResource):
             self.family_name: Optional[str] = payload.get("familyName")
 
         def to_dict(self):
-            return {
-                "givenName": self.given_name,
-                "familyName": self.family_name,
-            }
+            pass
 
     class ScimPatchOperation(object):
         """
@@ -1194,11 +878,7 @@ class UserList(ListResource):
             self.value: Optional[Dict[str, object]] = payload.get("value")
 
         def to_dict(self):
-            return {
-                "op": self.op,
-                "path": self.path,
-                "value": self.value,
-            }
+            pass
 
     class ScimPatchRequest(object):
         """
@@ -1214,14 +894,7 @@ class UserList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "schemas": self.schemas,
-                "Operations": (
-                    [operations.to_dict() for operations in self.operations]
-                    if self.operations is not None
-                    else None
-                ),
-            }
+            pass
 
     class ScimUser(object):
         """
@@ -1265,28 +938,7 @@ class UserList(ListResource):
             self.more_info: Optional[str] = payload.get("moreInfo")
 
         def to_dict(self):
-            return {
-                "id": self.id,
-                "externalId": self.external_id,
-                "userName": self.user_name,
-                "displayName": self.display_name,
-                "name": self.name.to_dict() if self.name is not None else None,
-                "emails": (
-                    [emails.to_dict() for emails in self.emails]
-                    if self.emails is not None
-                    else None
-                ),
-                "active": self.active,
-                "locale": self.locale,
-                "timezone": self.timezone,
-                "schemas": self.schemas,
-                "meta": self.meta.to_dict() if self.meta is not None else None,
-                "detail": self.detail,
-                "scimType": self.scim_type,
-                "status": self.status,
-                "code": self.code,
-                "moreInfo": self.more_info,
-            }
+            pass
 
     def __init__(self, version: Version, organization_sid: str):
         """
@@ -1311,19 +963,7 @@ class UserList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = scim_user.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Content-Type"] = "application/scim+json"
-
-        headers["Accept"] = "application/scim+json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(self, scim_user: ScimUser) -> UserInstance:
         """
@@ -1333,10 +973,7 @@ class UserList(ListResource):
 
         :returns: The created UserInstance
         """
-        payload, _, _ = self._create(scim_user=scim_user)
-        return UserInstance(
-            self._version, payload, organization_sid=self._solution["organization_sid"]
-        )
+        pass
 
     def create_with_http_info(self, scim_user: ScimUser) -> ApiResponse:
         """
@@ -1346,11 +983,7 @@ class UserList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(scim_user=scim_user)
-        instance = UserInstance(
-            self._version, payload, organization_sid=self._solution["organization_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self, scim_user: ScimUser) -> tuple:
         """
@@ -1359,19 +992,7 @@ class UserList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = scim_user.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Content-Type"] = "application/scim+json"
-
-        headers["Accept"] = "application/scim+json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(self, scim_user: ScimUser) -> UserInstance:
         """
@@ -1381,10 +1002,7 @@ class UserList(ListResource):
 
         :returns: The created UserInstance
         """
-        payload, _, _ = await self._create_async(scim_user=scim_user)
-        return UserInstance(
-            self._version, payload, organization_sid=self._solution["organization_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(self, scim_user: ScimUser) -> ApiResponse:
         """
@@ -1394,11 +1012,7 @@ class UserList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(scim_user=scim_user)
-        instance = UserInstance(
-            self._version, payload, organization_sid=self._solution["organization_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -1422,10 +1036,7 @@ class UserList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(filter=filter, page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -1449,10 +1060,7 @@ class UserList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(filter=filter, page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -1474,13 +1082,7 @@ class UserList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            filter=filter, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -1502,13 +1104,7 @@ class UserList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            filter=filter, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -1531,13 +1127,7 @@ class UserList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                filter=filter,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -1560,14 +1150,7 @@ class UserList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                filter=filter,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -1589,13 +1172,7 @@ class UserList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            filter=filter,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1617,13 +1194,7 @@ class UserList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            filter=filter,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1643,23 +1214,7 @@ class UserList(ListResource):
 
         :returns: Page of UserInstance
         """
-        data = values.of(
-            {
-                "filter": filter,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/scim+json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return UserPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -1679,23 +1234,7 @@ class UserList(ListResource):
 
         :returns: Page of UserInstance
         """
-        data = values.of(
-            {
-                "filter": filter,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/scim+json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return UserPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -1715,24 +1254,7 @@ class UserList(ListResource):
 
         :returns: ApiResponse with UserPage, status code, and headers
         """
-        data = values.of(
-            {
-                "filter": filter,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/scim+json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = UserPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1752,26 +1274,7 @@ class UserList(ListResource):
 
         :returns: ApiResponse with UserPage, status code, and headers
         """
-        data = values.of(
-            {
-                "filter": filter,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/scim+json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = UserPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> UserPage:
         """
@@ -1782,8 +1285,7 @@ class UserList(ListResource):
 
         :returns: Page of UserInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return UserPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> UserPage:
         """
@@ -1794,8 +1296,7 @@ class UserList(ListResource):
 
         :returns: Page of UserInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return UserPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, id: str) -> UserContext:
         """
@@ -1803,9 +1304,7 @@ class UserList(ListResource):
 
         :param id:
         """
-        return UserContext(
-            self._version, organization_sid=self._solution["organization_sid"], id=id
-        )
+        pass
 
     def __call__(self, id: str) -> UserContext:
         """

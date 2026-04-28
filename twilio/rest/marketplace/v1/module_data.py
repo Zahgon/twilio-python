@@ -83,22 +83,7 @@ class ModuleDataList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "ModuleInfo": module_info,
-                "Configuration": configuration,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -113,10 +98,7 @@ class ModuleDataList(ListResource):
 
         :returns: The created ModuleDataInstance
         """
-        payload, _, _ = self._create(
-            module_info=module_info, configuration=configuration
-        )
-        return ModuleDataInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -131,11 +113,7 @@ class ModuleDataList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            module_info=module_info, configuration=configuration
-        )
-        instance = ModuleDataInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -148,22 +126,7 @@ class ModuleDataList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "ModuleInfo": module_info,
-                "Configuration": configuration,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -178,10 +141,7 @@ class ModuleDataList(ListResource):
 
         :returns: The created ModuleDataInstance
         """
-        payload, _, _ = await self._create_async(
-            module_info=module_info, configuration=configuration
-        )
-        return ModuleDataInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -196,11 +156,7 @@ class ModuleDataList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            module_info=module_info, configuration=configuration
-        )
-        instance = ModuleDataInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -209,13 +165,7 @@ class ModuleDataList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> ModuleDataInstance:
         """
@@ -224,8 +174,7 @@ class ModuleDataList(ListResource):
 
         :returns: The fetched ModuleDataInstance
         """
-        payload, _, _ = self._fetch()
-        return ModuleDataInstance(self._version, payload)
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -234,9 +183,7 @@ class ModuleDataList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = ModuleDataInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -245,13 +192,7 @@ class ModuleDataList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> ModuleDataInstance:
         """
@@ -260,8 +201,7 @@ class ModuleDataList(ListResource):
 
         :returns: The fetched ModuleDataInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return ModuleDataInstance(self._version, payload)
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -270,9 +210,7 @@ class ModuleDataList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = ModuleDataInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

@@ -96,13 +96,7 @@ class SubscribeRulesList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> SubscribeRulesInstance:
         """
@@ -111,13 +105,7 @@ class SubscribeRulesList(ListResource):
 
         :returns: The fetched SubscribeRulesInstance
         """
-        payload, _, _ = self._fetch()
-        return SubscribeRulesInstance(
-            self._version,
-            payload,
-            room_sid=self._solution["room_sid"],
-            participant_sid=self._solution["participant_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -126,14 +114,7 @@ class SubscribeRulesList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = SubscribeRulesInstance(
-            self._version,
-            payload,
-            room_sid=self._solution["room_sid"],
-            participant_sid=self._solution["participant_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -142,13 +123,7 @@ class SubscribeRulesList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> SubscribeRulesInstance:
         """
@@ -157,13 +132,7 @@ class SubscribeRulesList(ListResource):
 
         :returns: The fetched SubscribeRulesInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return SubscribeRulesInstance(
-            self._version,
-            payload,
-            room_sid=self._solution["room_sid"],
-            participant_sid=self._solution["participant_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -172,14 +141,7 @@ class SubscribeRulesList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = SubscribeRulesInstance(
-            self._version,
-            payload,
-            room_sid=self._solution["room_sid"],
-            participant_sid=self._solution["participant_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(self, rules: Union[object, object] = values.unset) -> tuple:
         """
@@ -188,21 +150,7 @@ class SubscribeRulesList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Rules": serialize.object(rules),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self, rules: Union[object, object] = values.unset
@@ -214,13 +162,7 @@ class SubscribeRulesList(ListResource):
 
         :returns: The updated SubscribeRulesInstance
         """
-        payload, _, _ = self._update(rules=rules)
-        return SubscribeRulesInstance(
-            self._version,
-            payload,
-            room_sid=self._solution["room_sid"],
-            participant_sid=self._solution["participant_sid"],
-        )
+        pass
 
     def update_with_http_info(
         self, rules: Union[object, object] = values.unset
@@ -232,14 +174,7 @@ class SubscribeRulesList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(rules=rules)
-        instance = SubscribeRulesInstance(
-            self._version,
-            payload,
-            room_sid=self._solution["room_sid"],
-            participant_sid=self._solution["participant_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(self, rules: Union[object, object] = values.unset) -> tuple:
         """
@@ -248,21 +183,7 @@ class SubscribeRulesList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Rules": serialize.object(rules),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, rules: Union[object, object] = values.unset
@@ -274,13 +195,7 @@ class SubscribeRulesList(ListResource):
 
         :returns: The updated SubscribeRulesInstance
         """
-        payload, _, _ = await self._update_async(rules=rules)
-        return SubscribeRulesInstance(
-            self._version,
-            payload,
-            room_sid=self._solution["room_sid"],
-            participant_sid=self._solution["participant_sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self, rules: Union[object, object] = values.unset
@@ -292,14 +207,7 @@ class SubscribeRulesList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(rules=rules)
-        instance = SubscribeRulesInstance(
-            self._version,
-            payload,
-            room_sid=self._solution["room_sid"],
-            participant_sid=self._solution["participant_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

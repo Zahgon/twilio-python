@@ -19,81 +19,36 @@ from twilio.rest.messaging.v1.usecase import UsecaseList
 class Messaging(MessagingBase):
     @property
     def brand_registrations(self) -> BrandRegistrationList:
-        warn(
-            "brand_registrations is deprecated. Use v1.brand_registrations instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.brand_registrations
+        pass
 
     @property
     def deactivations(self) -> DeactivationsList:
-        warn(
-            "deactivations is deprecated. Use v1.deactivations instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.deactivations
+        pass
 
     @property
     def domain_certs(self) -> DomainCertsList:
-        warn(
-            "domain_certs is deprecated. Use v1.domain_certs instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.domain_certs
+        pass
 
     @property
     def domain_config(self) -> DomainConfigList:
-        warn(
-            "domain_config is deprecated. Use v1.domain_config instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.domain_config
+        pass
 
     @property
     def domain_config_messaging_service(self) -> DomainConfigMessagingServiceList:
-        warn(
-            "domain_config_messaging_service is deprecated. Use v1.domain_config_messaging_service instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.domain_config_messaging_service
+        pass
 
     @property
     def external_campaign(self) -> ExternalCampaignList:
-        warn(
-            "external_campaign is deprecated. Use v1.external_campaign instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.external_campaign
+        pass
 
     @property
     def linkshortening_messaging_service(self) -> LinkshorteningMessagingServiceList:
-        warn(
-            "linkshortening_messaging_service is deprecated. Use v1.linkshortening_messaging_service instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.linkshortening_messaging_service
+        pass
 
     @property
     def services(self) -> ServiceList:
-        warn(
-            "services is deprecated. Use v1.services instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.services
+        pass
 
     @property
     def usecases(self) -> UsecaseList:
-        warn(
-            "usecases is deprecated. Use v1.usecases instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.usecases
+        pass

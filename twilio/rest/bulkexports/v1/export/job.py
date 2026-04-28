@@ -70,12 +70,7 @@ class JobInstance(InstanceResource):
 
         :returns: JobContext for this JobInstance
         """
-        if self._context is None:
-            self._context = JobContext(
-                self._version,
-                job_sid=self._solution["job_sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -84,7 +79,7 @@ class JobInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -93,7 +88,7 @@ class JobInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -102,7 +97,7 @@ class JobInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -111,7 +106,7 @@ class JobInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "JobInstance":
         """
@@ -120,7 +115,7 @@ class JobInstance(InstanceResource):
 
         :returns: The fetched JobInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "JobInstance":
         """
@@ -129,7 +124,7 @@ class JobInstance(InstanceResource):
 
         :returns: The fetched JobInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -138,7 +133,7 @@ class JobInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -147,7 +142,7 @@ class JobInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -183,12 +178,7 @@ class JobContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -197,8 +187,7 @@ class JobContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -207,8 +196,7 @@ class JobContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -217,12 +205,7 @@ class JobContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -231,8 +214,7 @@ class JobContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -241,8 +223,7 @@ class JobContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -251,14 +232,7 @@ class JobContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> JobInstance:
         """
@@ -267,12 +241,7 @@ class JobContext(InstanceContext):
 
         :returns: The fetched JobInstance
         """
-        payload, _, _ = self._fetch()
-        return JobInstance(
-            self._version,
-            payload,
-            job_sid=self._solution["job_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -281,13 +250,7 @@ class JobContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = JobInstance(
-            self._version,
-            payload,
-            job_sid=self._solution["job_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -296,14 +259,7 @@ class JobContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> JobInstance:
         """
@@ -312,12 +268,7 @@ class JobContext(InstanceContext):
 
         :returns: The fetched JobInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return JobInstance(
-            self._version,
-            payload,
-            job_sid=self._solution["job_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -326,13 +277,7 @@ class JobContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = JobInstance(
-            self._version,
-            payload,
-            job_sid=self._solution["job_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -361,7 +306,7 @@ class JobList(ListResource):
 
         :param job_sid: The unique string that that we created to identify the Bulk Export job
         """
-        return JobContext(self._version, job_sid=job_sid)
+        pass
 
     def __call__(self, job_sid: str) -> JobContext:
         """

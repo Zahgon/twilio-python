@@ -55,12 +55,7 @@ class CallInstance(InstanceResource):
 
         :returns: CallContext for this CallInstance
         """
-        if self._context is None:
-            self._context = CallContext(
-                self._version,
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "CallInstance":
         """
@@ -69,7 +64,7 @@ class CallInstance(InstanceResource):
 
         :returns: The fetched CallInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "CallInstance":
         """
@@ -78,7 +73,7 @@ class CallInstance(InstanceResource):
 
         :returns: The fetched CallInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -87,7 +82,7 @@ class CallInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -96,35 +91,35 @@ class CallInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     @property
     def annotation(self) -> AnnotationList:
         """
         Access the annotation
         """
-        return self._proxy.annotation
+        pass
 
     @property
     def summary(self) -> CallSummaryList:
         """
         Access the summary
         """
-        return self._proxy.summary
+        pass
 
     @property
     def events(self) -> EventList:
         """
         Access the events
         """
-        return self._proxy.events
+        pass
 
     @property
     def metrics(self) -> MetricList:
         """
         Access the metrics
         """
-        return self._proxy.metrics
+        pass
 
     def __repr__(self) -> str:
         """
@@ -165,14 +160,7 @@ class CallContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> CallInstance:
         """
@@ -181,12 +169,7 @@ class CallContext(InstanceContext):
 
         :returns: The fetched CallInstance
         """
-        payload, _, _ = self._fetch()
-        return CallInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -195,13 +178,7 @@ class CallContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = CallInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -210,14 +187,7 @@ class CallContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> CallInstance:
         """
@@ -226,12 +196,7 @@ class CallContext(InstanceContext):
 
         :returns: The fetched CallInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return CallInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -240,61 +205,35 @@ class CallContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = CallInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def annotation(self) -> AnnotationList:
         """
         Access the annotation
         """
-        if self._annotation is None:
-            self._annotation = AnnotationList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._annotation
+        pass
 
     @property
     def summary(self) -> CallSummaryList:
         """
         Access the summary
         """
-        if self._summary is None:
-            self._summary = CallSummaryList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._summary
+        pass
 
     @property
     def events(self) -> EventList:
         """
         Access the events
         """
-        if self._events is None:
-            self._events = EventList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._events
+        pass
 
     @property
     def metrics(self) -> MetricList:
         """
         Access the metrics
         """
-        if self._metrics is None:
-            self._metrics = MetricList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._metrics
+        pass
 
     def __repr__(self) -> str:
         """
@@ -323,7 +262,7 @@ class CallList(ListResource):
 
         :param sid:
         """
-        return CallContext(self._version, sid=sid)
+        pass
 
     def __call__(self, sid: str) -> CallContext:
         """

@@ -52,33 +52,21 @@ class SipList(ListResource):
         """
         Access the credential_lists
         """
-        if self._credential_lists is None:
-            self._credential_lists = CredentialListList(
-                self._version, account_sid=self._solution["account_sid"]
-            )
-        return self._credential_lists
+        pass
 
     @property
     def domains(self) -> DomainList:
         """
         Access the domains
         """
-        if self._domains is None:
-            self._domains = DomainList(
-                self._version, account_sid=self._solution["account_sid"]
-            )
-        return self._domains
+        pass
 
     @property
     def ip_access_control_lists(self) -> IpAccessControlListList:
         """
         Access the ip_access_control_lists
         """
-        if self._ip_access_control_lists is None:
-            self._ip_access_control_lists = IpAccessControlListList(
-                self._version, account_sid=self._solution["account_sid"]
-            )
-        return self._ip_access_control_lists
+        pass
 
     def __repr__(self) -> str:
         """

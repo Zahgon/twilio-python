@@ -10,36 +10,16 @@ from twilio.rest.events.v1.subscription import SubscriptionList
 class Events(EventsBase):
     @property
     def event_types(self) -> EventTypeList:
-        warn(
-            "event_types is deprecated. Use v1.event_types instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.event_types
+        pass
 
     @property
     def schemas(self) -> SchemaList:
-        warn(
-            "schemas is deprecated. Use v1.schemas instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.schemas
+        pass
 
     @property
     def sinks(self) -> SinkList:
-        warn(
-            "sinks is deprecated. Use v1.sinks instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.sinks
+        pass
 
     @property
     def subscriptions(self) -> SubscriptionList:
-        warn(
-            "subscriptions is deprecated. Use v1.subscriptions instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.subscriptions
+        pass

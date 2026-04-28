@@ -65,9 +65,7 @@ class BuildStatusInstance(InstanceResource):
 
         :returns: BuildStatusContext for this BuildStatusInstance
         """
-        if self._context is None:
-            self._context = BuildStatusContext(self._version, service_sid=self._solution['service_sid'], sid=self._solution['sid'],)
-        return self._context
+        pass
     
     
     def fetch(self) -> "BuildStatusInstance":
@@ -77,7 +75,7 @@ class BuildStatusInstance(InstanceResource):
 
         :returns: The fetched BuildStatusInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "BuildStatusInstance":
         """
@@ -86,7 +84,7 @@ class BuildStatusInstance(InstanceResource):
 
         :returns: The fetched BuildStatusInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -95,7 +93,7 @@ class BuildStatusInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -104,7 +102,7 @@ class BuildStatusInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
     
     def __repr__(self) -> str:
         """
@@ -144,15 +142,7 @@ class BuildStatusContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        
-
-        headers = values.of({})
-        
-        
-        
-        headers["Accept"] = "application/json"
-        
-        return self._version.fetch_with_response_info(method='GET', uri=self._uri, headers=headers)
+        pass
 
     def fetch(self) -> BuildStatusInstance:
         """
@@ -161,14 +151,7 @@ class BuildStatusContext(InstanceContext):
 
         :returns: The fetched BuildStatusInstance
         """
-        payload, _, _ = self._fetch()
-        return BuildStatusInstance(
-            self._version,
-            payload,
-            service_sid=self._solution['service_sid'],
-            sid=self._solution['sid'],
-            
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -177,15 +160,7 @@ class BuildStatusContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = BuildStatusInstance(
-            self._version,
-            payload,
-            service_sid=self._solution['service_sid'],
-            sid=self._solution['sid'],
-            
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -194,15 +169,7 @@ class BuildStatusContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        
-
-        headers = values.of({})
-        
-        
-        
-        headers["Accept"] = "application/json"
-        
-        return await self._version.fetch_with_response_info_async(method='GET', uri=self._uri, headers=headers)
+        pass
 
     async def fetch_async(self) -> BuildStatusInstance:
         """
@@ -211,14 +178,7 @@ class BuildStatusContext(InstanceContext):
 
         :returns: The fetched BuildStatusInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return BuildStatusInstance(
-            self._version,
-            payload,
-            service_sid=self._solution['service_sid'],
-            sid=self._solution['sid'],
-            
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -227,15 +187,7 @@ class BuildStatusContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = BuildStatusInstance(
-            self._version,
-            payload,
-            service_sid=self._solution['service_sid'],
-            sid=self._solution['sid'],
-            
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
     
     
     def __repr__(self) -> str:
@@ -274,7 +226,7 @@ class BuildStatusList(ListResource):
         Constructs a BuildStatusContext
         
         """
-        return BuildStatusContext(self._version, service_sid=self._solution['service_sid'], sid=self._solution['sid'])
+        pass
 
     def __call__(self) -> BuildStatusContext:
         """

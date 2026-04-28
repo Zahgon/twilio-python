@@ -72,12 +72,7 @@ class RequestManagedCertInstance(InstanceResource):
 
         :returns: RequestManagedCertContext for this RequestManagedCertInstance
         """
-        if self._context is None:
-            self._context = RequestManagedCertContext(
-                self._version,
-                domain_sid=self._solution["domain_sid"],
-            )
-        return self._context
+        pass
 
     def update(self) -> "RequestManagedCertInstance":
         """
@@ -86,7 +81,7 @@ class RequestManagedCertInstance(InstanceResource):
 
         :returns: The updated RequestManagedCertInstance
         """
-        return self._proxy.update()
+        pass
 
     async def update_async(self) -> "RequestManagedCertInstance":
         """
@@ -95,7 +90,7 @@ class RequestManagedCertInstance(InstanceResource):
 
         :returns: The updated RequestManagedCertInstance
         """
-        return await self._proxy.update_async()
+        pass
 
     def update_with_http_info(self) -> ApiResponse:
         """
@@ -104,7 +99,7 @@ class RequestManagedCertInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info()
+        pass
 
     async def update_with_http_info_async(self) -> ApiResponse:
         """
@@ -113,7 +108,7 @@ class RequestManagedCertInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -151,15 +146,7 @@ class RequestManagedCertContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of({})
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(self) -> RequestManagedCertInstance:
         """
@@ -168,10 +155,7 @@ class RequestManagedCertContext(InstanceContext):
 
         :returns: The updated RequestManagedCertInstance
         """
-        payload, _, _ = self._update()
-        return RequestManagedCertInstance(
-            self._version, payload, domain_sid=self._solution["domain_sid"]
-        )
+        pass
 
     def update_with_http_info(self) -> ApiResponse:
         """
@@ -180,11 +164,7 @@ class RequestManagedCertContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update()
-        instance = RequestManagedCertInstance(
-            self._version, payload, domain_sid=self._solution["domain_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(self) -> tuple:
         """
@@ -193,15 +173,7 @@ class RequestManagedCertContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of({})
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(self) -> RequestManagedCertInstance:
         """
@@ -210,10 +182,7 @@ class RequestManagedCertContext(InstanceContext):
 
         :returns: The updated RequestManagedCertInstance
         """
-        payload, _, _ = await self._update_async()
-        return RequestManagedCertInstance(
-            self._version, payload, domain_sid=self._solution["domain_sid"]
-        )
+        pass
 
     async def update_with_http_info_async(self) -> ApiResponse:
         """
@@ -222,11 +191,7 @@ class RequestManagedCertContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async()
-        instance = RequestManagedCertInstance(
-            self._version, payload, domain_sid=self._solution["domain_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -255,7 +220,7 @@ class RequestManagedCertList(ListResource):
 
         :param domain_sid: Unique string used to identify the domain that this certificate should be associated with.
         """
-        return RequestManagedCertContext(self._version, domain_sid=domain_sid)
+        pass
 
     def __call__(self, domain_sid: str) -> RequestManagedCertContext:
         """

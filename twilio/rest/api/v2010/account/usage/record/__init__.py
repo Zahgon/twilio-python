@@ -97,9 +97,7 @@ class RecordPage(Page):
 
         :param payload: Payload response from the API
         """
-        return RecordInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -167,16 +165,7 @@ class RecordList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            category=category,
-            start_date=start_date,
-            end_date=end_date,
-            include_subaccounts=include_subaccounts,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -206,16 +195,7 @@ class RecordList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            category=category,
-            start_date=start_date,
-            end_date=end_date,
-            include_subaccounts=include_subaccounts,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -243,17 +223,7 @@ class RecordList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            category=category,
-            start_date=start_date,
-            end_date=end_date,
-            include_subaccounts=include_subaccounts,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -281,17 +251,7 @@ class RecordList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            category=category,
-            start_date=start_date,
-            end_date=end_date,
-            include_subaccounts=include_subaccounts,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -320,16 +280,7 @@ class RecordList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                category=category,
-                start_date=start_date,
-                end_date=end_date,
-                include_subaccounts=include_subaccounts,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -358,17 +309,7 @@ class RecordList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                category=category,
-                start_date=start_date,
-                end_date=end_date,
-                include_subaccounts=include_subaccounts,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -396,16 +337,7 @@ class RecordList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            category=category,
-            start_date=start_date,
-            end_date=end_date,
-            include_subaccounts=include_subaccounts,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -433,16 +365,7 @@ class RecordList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            category=category,
-            start_date=start_date,
-            end_date=end_date,
-            include_subaccounts=include_subaccounts,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -468,26 +391,7 @@ class RecordList(ListResource):
 
         :returns: Page of RecordInstance
         """
-        data = values.of(
-            {
-                "Category": category,
-                "StartDate": serialize.iso8601_date(start_date),
-                "EndDate": serialize.iso8601_date(end_date),
-                "IncludeSubaccounts": serialize.boolean_to_string(include_subaccounts),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return RecordPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -513,26 +417,7 @@ class RecordList(ListResource):
 
         :returns: Page of RecordInstance
         """
-        data = values.of(
-            {
-                "Category": category,
-                "StartDate": serialize.iso8601_date(start_date),
-                "EndDate": serialize.iso8601_date(end_date),
-                "IncludeSubaccounts": serialize.boolean_to_string(include_subaccounts),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return RecordPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -558,27 +443,7 @@ class RecordList(ListResource):
 
         :returns: ApiResponse with RecordPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Category": category,
-                "StartDate": serialize.iso8601_date(start_date),
-                "EndDate": serialize.iso8601_date(end_date),
-                "IncludeSubaccounts": serialize.boolean_to_string(include_subaccounts),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = RecordPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -604,29 +469,7 @@ class RecordList(ListResource):
 
         :returns: ApiResponse with RecordPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Category": category,
-                "StartDate": serialize.iso8601_date(start_date),
-                "EndDate": serialize.iso8601_date(end_date),
-                "IncludeSubaccounts": serialize.boolean_to_string(include_subaccounts),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = RecordPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> RecordPage:
         """
@@ -637,8 +480,7 @@ class RecordList(ListResource):
 
         :returns: Page of RecordInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return RecordPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> RecordPage:
         """
@@ -649,96 +491,63 @@ class RecordList(ListResource):
 
         :returns: Page of RecordInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return RecordPage(self._version, response, solution=self._solution)
+        pass
 
     @property
     def all_time(self) -> AllTimeList:
         """
         Access the all_time
         """
-        if self._all_time is None:
-            self._all_time = AllTimeList(
-                self._version, account_sid=self._solution["account_sid"]
-            )
-        return self._all_time
+        pass
 
     @property
     def daily(self) -> DailyList:
         """
         Access the daily
         """
-        if self._daily is None:
-            self._daily = DailyList(
-                self._version, account_sid=self._solution["account_sid"]
-            )
-        return self._daily
+        pass
 
     @property
     def last_month(self) -> LastMonthList:
         """
         Access the last_month
         """
-        if self._last_month is None:
-            self._last_month = LastMonthList(
-                self._version, account_sid=self._solution["account_sid"]
-            )
-        return self._last_month
+        pass
 
     @property
     def monthly(self) -> MonthlyList:
         """
         Access the monthly
         """
-        if self._monthly is None:
-            self._monthly = MonthlyList(
-                self._version, account_sid=self._solution["account_sid"]
-            )
-        return self._monthly
+        pass
 
     @property
     def this_month(self) -> ThisMonthList:
         """
         Access the this_month
         """
-        if self._this_month is None:
-            self._this_month = ThisMonthList(
-                self._version, account_sid=self._solution["account_sid"]
-            )
-        return self._this_month
+        pass
 
     @property
     def today(self) -> TodayList:
         """
         Access the today
         """
-        if self._today is None:
-            self._today = TodayList(
-                self._version, account_sid=self._solution["account_sid"]
-            )
-        return self._today
+        pass
 
     @property
     def yearly(self) -> YearlyList:
         """
         Access the yearly
         """
-        if self._yearly is None:
-            self._yearly = YearlyList(
-                self._version, account_sid=self._solution["account_sid"]
-            )
-        return self._yearly
+        pass
 
     @property
     def yesterday(self) -> YesterdayList:
         """
         Access the yesterday
         """
-        if self._yesterday is None:
-            self._yesterday = YesterdayList(
-                self._version, account_sid=self._solution["account_sid"]
-            )
-        return self._yesterday
+        pass
 
     def __repr__(self) -> str:
         """

@@ -53,12 +53,7 @@ class OperatorAttachmentsInstance(InstanceResource):
 
         :returns: OperatorAttachmentsContext for this OperatorAttachmentsInstance
         """
-        if self._context is None:
-            self._context = OperatorAttachmentsContext(
-                self._version,
-                service_sid=self._solution["service_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "OperatorAttachmentsInstance":
         """
@@ -67,7 +62,7 @@ class OperatorAttachmentsInstance(InstanceResource):
 
         :returns: The fetched OperatorAttachmentsInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "OperatorAttachmentsInstance":
         """
@@ -76,7 +71,7 @@ class OperatorAttachmentsInstance(InstanceResource):
 
         :returns: The fetched OperatorAttachmentsInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -85,7 +80,7 @@ class OperatorAttachmentsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -94,7 +89,7 @@ class OperatorAttachmentsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -130,14 +125,7 @@ class OperatorAttachmentsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> OperatorAttachmentsInstance:
         """
@@ -146,12 +134,7 @@ class OperatorAttachmentsContext(InstanceContext):
 
         :returns: The fetched OperatorAttachmentsInstance
         """
-        payload, _, _ = self._fetch()
-        return OperatorAttachmentsInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -160,13 +143,7 @@ class OperatorAttachmentsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = OperatorAttachmentsInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -175,14 +152,7 @@ class OperatorAttachmentsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> OperatorAttachmentsInstance:
         """
@@ -191,12 +161,7 @@ class OperatorAttachmentsContext(InstanceContext):
 
         :returns: The fetched OperatorAttachmentsInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return OperatorAttachmentsInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -205,13 +170,7 @@ class OperatorAttachmentsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = OperatorAttachmentsInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -240,7 +199,7 @@ class OperatorAttachmentsList(ListResource):
 
         :param service_sid: The unique SID identifier of the Service.
         """
-        return OperatorAttachmentsContext(self._version, service_sid=service_sid)
+        pass
 
     def __call__(self, service_sid: str) -> OperatorAttachmentsContext:
         """

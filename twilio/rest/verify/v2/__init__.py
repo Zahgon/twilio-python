@@ -45,39 +45,27 @@ class V2(Version):
 
     @property
     def forms(self) -> FormList:
-        if self._forms is None:
-            self._forms = FormList(self)
-        return self._forms
+        pass
 
     @property
     def safelist(self) -> SafelistList:
-        if self._safelist is None:
-            self._safelist = SafelistList(self)
-        return self._safelist
+        pass
 
     @property
     def services(self) -> ServiceList:
-        if self._services is None:
-            self._services = ServiceList(self)
-        return self._services
+        pass
 
     @property
     def templates(self) -> TemplateList:
-        if self._templates is None:
-            self._templates = TemplateList(self)
-        return self._templates
+        pass
 
     @property
     def verification_attempts(self) -> VerificationAttemptList:
-        if self._verification_attempts is None:
-            self._verification_attempts = VerificationAttemptList(self)
-        return self._verification_attempts
+        pass
 
     @property
     def verification_attempts_summary(self) -> VerificationAttemptsSummaryList:
-        if self._verification_attempts_summary is None:
-            self._verification_attempts_summary = VerificationAttemptsSummaryList(self)
-        return self._verification_attempts_summary
+        pass
 
     def __repr__(self) -> str:
         """

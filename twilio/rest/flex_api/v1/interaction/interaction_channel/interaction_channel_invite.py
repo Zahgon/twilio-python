@@ -69,12 +69,7 @@ class InteractionChannelInvitePage(Page):
 
         :param payload: Payload response from the API
         """
-        return InteractionChannelInviteInstance(
-            self._version,
-            payload,
-            interaction_sid=self._solution["interaction_sid"],
-            channel_sid=self._solution["channel_sid"],
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -116,21 +111,7 @@ class InteractionChannelInviteList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Routing": serialize.object(routing),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(self, routing: object) -> InteractionChannelInviteInstance:
         """
@@ -140,13 +121,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: The created InteractionChannelInviteInstance
         """
-        payload, _, _ = self._create(routing=routing)
-        return InteractionChannelInviteInstance(
-            self._version,
-            payload,
-            interaction_sid=self._solution["interaction_sid"],
-            channel_sid=self._solution["channel_sid"],
-        )
+        pass
 
     def create_with_http_info(self, routing: object) -> ApiResponse:
         """
@@ -156,14 +131,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(routing=routing)
-        instance = InteractionChannelInviteInstance(
-            self._version,
-            payload,
-            interaction_sid=self._solution["interaction_sid"],
-            channel_sid=self._solution["channel_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self, routing: object) -> tuple:
         """
@@ -172,21 +140,7 @@ class InteractionChannelInviteList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Routing": serialize.object(routing),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(self, routing: object) -> InteractionChannelInviteInstance:
         """
@@ -196,13 +150,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: The created InteractionChannelInviteInstance
         """
-        payload, _, _ = await self._create_async(routing=routing)
-        return InteractionChannelInviteInstance(
-            self._version,
-            payload,
-            interaction_sid=self._solution["interaction_sid"],
-            channel_sid=self._solution["channel_sid"],
-        )
+        pass
 
     async def create_with_http_info_async(self, routing: object) -> ApiResponse:
         """
@@ -212,14 +160,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(routing=routing)
-        instance = InteractionChannelInviteInstance(
-            self._version,
-            payload,
-            interaction_sid=self._solution["interaction_sid"],
-            channel_sid=self._solution["channel_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -241,10 +182,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -266,10 +204,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -289,11 +224,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -313,13 +244,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -340,12 +265,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -366,13 +286,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -392,12 +306,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -417,12 +326,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -440,24 +344,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: Page of InteractionChannelInviteInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return InteractionChannelInvitePage(
-            self._version, response, solution=self._solution
-        )
+        pass
 
     async def page_async(
         self,
@@ -475,24 +362,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: Page of InteractionChannelInviteInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return InteractionChannelInvitePage(
-            self._version, response, solution=self._solution
-        )
+        pass
 
     def page_with_http_info(
         self,
@@ -510,25 +380,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: ApiResponse with InteractionChannelInvitePage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = InteractionChannelInvitePage(
-            self._version, response, solution=self._solution
-        )
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -546,27 +398,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: ApiResponse with InteractionChannelInvitePage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = InteractionChannelInvitePage(
-            self._version, response, solution=self._solution
-        )
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> InteractionChannelInvitePage:
         """
@@ -577,10 +409,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: Page of InteractionChannelInviteInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return InteractionChannelInvitePage(
-            self._version, response, solution=self._solution
-        )
+        pass
 
     async def get_page_async(self, target_url: str) -> InteractionChannelInvitePage:
         """
@@ -591,10 +420,7 @@ class InteractionChannelInviteList(ListResource):
 
         :returns: Page of InteractionChannelInviteInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return InteractionChannelInvitePage(
-            self._version, response, solution=self._solution
-        )
+        pass
 
     def __repr__(self) -> str:
         """

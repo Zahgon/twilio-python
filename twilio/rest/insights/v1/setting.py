@@ -47,11 +47,7 @@ class SettingInstance(InstanceResource):
 
         :returns: SettingContext for this SettingInstance
         """
-        if self._context is None:
-            self._context = SettingContext(
-                self._version,
-            )
-        return self._context
+        pass
 
     def fetch(
         self, subaccount_sid: Union[str, object] = values.unset
@@ -63,9 +59,7 @@ class SettingInstance(InstanceResource):
 
         :returns: The fetched SettingInstance
         """
-        return self._proxy.fetch(
-            subaccount_sid=subaccount_sid,
-        )
+        pass
 
     async def fetch_async(
         self, subaccount_sid: Union[str, object] = values.unset
@@ -77,9 +71,7 @@ class SettingInstance(InstanceResource):
 
         :returns: The fetched SettingInstance
         """
-        return await self._proxy.fetch_async(
-            subaccount_sid=subaccount_sid,
-        )
+        pass
 
     def fetch_with_http_info(
         self, subaccount_sid: Union[str, object] = values.unset
@@ -91,9 +83,7 @@ class SettingInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            subaccount_sid=subaccount_sid,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, subaccount_sid: Union[str, object] = values.unset
@@ -105,9 +95,7 @@ class SettingInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            subaccount_sid=subaccount_sid,
-        )
+        pass
 
     def update(
         self,
@@ -124,11 +112,7 @@ class SettingInstance(InstanceResource):
 
         :returns: The updated SettingInstance
         """
-        return self._proxy.update(
-            advanced_features=advanced_features,
-            voice_trace=voice_trace,
-            subaccount_sid=subaccount_sid,
-        )
+        pass
 
     async def update_async(
         self,
@@ -145,11 +129,7 @@ class SettingInstance(InstanceResource):
 
         :returns: The updated SettingInstance
         """
-        return await self._proxy.update_async(
-            advanced_features=advanced_features,
-            voice_trace=voice_trace,
-            subaccount_sid=subaccount_sid,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -166,11 +146,7 @@ class SettingInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            advanced_features=advanced_features,
-            voice_trace=voice_trace,
-            subaccount_sid=subaccount_sid,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -187,11 +163,7 @@ class SettingInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            advanced_features=advanced_features,
-            voice_trace=voice_trace,
-            subaccount_sid=subaccount_sid,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -222,20 +194,7 @@ class SettingContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "SubaccountSid": subaccount_sid,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(
         self, subaccount_sid: Union[str, object] = values.unset
@@ -247,11 +206,7 @@ class SettingContext(InstanceContext):
 
         :returns: The fetched SettingInstance
         """
-        payload, _, _ = self._fetch(subaccount_sid=subaccount_sid)
-        return SettingInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     def fetch_with_http_info(
         self, subaccount_sid: Union[str, object] = values.unset
@@ -263,12 +218,7 @@ class SettingContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(subaccount_sid=subaccount_sid)
-        instance = SettingInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self, subaccount_sid: Union[str, object] = values.unset
@@ -279,20 +229,7 @@ class SettingContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "SubaccountSid": subaccount_sid,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self, subaccount_sid: Union[str, object] = values.unset
@@ -304,11 +241,7 @@ class SettingContext(InstanceContext):
 
         :returns: The fetched SettingInstance
         """
-        payload, _, _ = await self._fetch_async(subaccount_sid=subaccount_sid)
-        return SettingInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, subaccount_sid: Union[str, object] = values.unset
@@ -320,14 +253,7 @@ class SettingContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            subaccount_sid=subaccount_sid
-        )
-        instance = SettingInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -341,23 +267,7 @@ class SettingContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "AdvancedFeatures": serialize.boolean_to_string(advanced_features),
-                "VoiceTrace": serialize.boolean_to_string(voice_trace),
-                "SubaccountSid": subaccount_sid,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -374,12 +284,7 @@ class SettingContext(InstanceContext):
 
         :returns: The updated SettingInstance
         """
-        payload, _, _ = self._update(
-            advanced_features=advanced_features,
-            voice_trace=voice_trace,
-            subaccount_sid=subaccount_sid,
-        )
-        return SettingInstance(self._version, payload)
+        pass
 
     def update_with_http_info(
         self,
@@ -396,13 +301,7 @@ class SettingContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            advanced_features=advanced_features,
-            voice_trace=voice_trace,
-            subaccount_sid=subaccount_sid,
-        )
-        instance = SettingInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -416,23 +315,7 @@ class SettingContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "AdvancedFeatures": serialize.boolean_to_string(advanced_features),
-                "VoiceTrace": serialize.boolean_to_string(voice_trace),
-                "SubaccountSid": subaccount_sid,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -449,12 +332,7 @@ class SettingContext(InstanceContext):
 
         :returns: The updated SettingInstance
         """
-        payload, _, _ = await self._update_async(
-            advanced_features=advanced_features,
-            voice_trace=voice_trace,
-            subaccount_sid=subaccount_sid,
-        )
-        return SettingInstance(self._version, payload)
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -471,13 +349,7 @@ class SettingContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            advanced_features=advanced_features,
-            voice_trace=voice_trace,
-            subaccount_sid=subaccount_sid,
-        )
-        instance = SettingInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -505,7 +377,7 @@ class SettingList(ListResource):
         Constructs a SettingContext
 
         """
-        return SettingContext(self._version)
+        pass
 
     def __call__(self) -> SettingContext:
         """

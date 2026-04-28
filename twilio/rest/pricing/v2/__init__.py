@@ -35,21 +35,15 @@ class V2(Version):
 
     @property
     def countries(self) -> CountryList:
-        if self._countries is None:
-            self._countries = CountryList(self)
-        return self._countries
+        pass
 
     @property
     def numbers(self) -> NumberList:
-        if self._numbers is None:
-            self._numbers = NumberList(self)
-        return self._numbers
+        pass
 
     @property
     def voice(self) -> VoiceList:
-        if self._voice is None:
-            self._voice = VoiceList(self)
-        return self._voice
+        pass
 
     def __repr__(self) -> str:
         """

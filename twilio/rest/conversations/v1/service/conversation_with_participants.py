@@ -141,37 +141,7 @@ class ConversationWithParticipantsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "UniqueName": unique_name,
-                "DateCreated": serialize.iso8601_datetime(date_created),
-                "DateUpdated": serialize.iso8601_datetime(date_updated),
-                "MessagingServiceSid": messaging_service_sid,
-                "Attributes": attributes,
-                "State": state,
-                "Timers.Inactive": timers_inactive,
-                "Timers.Closed": timers_closed,
-                "Bindings.Email.Address": bindings_email_address,
-                "Bindings.Email.Name": bindings_email_name,
-                "Participant": serialize.map(participant, lambda e: e),
-            }
-        )
-        headers = values.of(
-            {
-                "X-Twilio-Webhook-Enabled": x_twilio_webhook_enabled,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -212,24 +182,7 @@ class ConversationWithParticipantsList(ListResource):
 
         :returns: The created ConversationWithParticipantsInstance
         """
-        payload, _, _ = self._create(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            friendly_name=friendly_name,
-            unique_name=unique_name,
-            date_created=date_created,
-            date_updated=date_updated,
-            messaging_service_sid=messaging_service_sid,
-            attributes=attributes,
-            state=state,
-            timers_inactive=timers_inactive,
-            timers_closed=timers_closed,
-            bindings_email_address=bindings_email_address,
-            bindings_email_name=bindings_email_name,
-            participant=participant,
-        )
-        return ConversationWithParticipantsInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -270,25 +223,7 @@ class ConversationWithParticipantsList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            friendly_name=friendly_name,
-            unique_name=unique_name,
-            date_created=date_created,
-            date_updated=date_updated,
-            messaging_service_sid=messaging_service_sid,
-            attributes=attributes,
-            state=state,
-            timers_inactive=timers_inactive,
-            timers_closed=timers_closed,
-            bindings_email_address=bindings_email_address,
-            bindings_email_name=bindings_email_name,
-            participant=participant,
-        )
-        instance = ConversationWithParticipantsInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -316,37 +251,7 @@ class ConversationWithParticipantsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "UniqueName": unique_name,
-                "DateCreated": serialize.iso8601_datetime(date_created),
-                "DateUpdated": serialize.iso8601_datetime(date_updated),
-                "MessagingServiceSid": messaging_service_sid,
-                "Attributes": attributes,
-                "State": state,
-                "Timers.Inactive": timers_inactive,
-                "Timers.Closed": timers_closed,
-                "Bindings.Email.Address": bindings_email_address,
-                "Bindings.Email.Name": bindings_email_name,
-                "Participant": serialize.map(participant, lambda e: e),
-            }
-        )
-        headers = values.of(
-            {
-                "X-Twilio-Webhook-Enabled": x_twilio_webhook_enabled,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -387,24 +292,7 @@ class ConversationWithParticipantsList(ListResource):
 
         :returns: The created ConversationWithParticipantsInstance
         """
-        payload, _, _ = await self._create_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            friendly_name=friendly_name,
-            unique_name=unique_name,
-            date_created=date_created,
-            date_updated=date_updated,
-            messaging_service_sid=messaging_service_sid,
-            attributes=attributes,
-            state=state,
-            timers_inactive=timers_inactive,
-            timers_closed=timers_closed,
-            bindings_email_address=bindings_email_address,
-            bindings_email_name=bindings_email_name,
-            participant=participant,
-        )
-        return ConversationWithParticipantsInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -445,25 +333,7 @@ class ConversationWithParticipantsList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            friendly_name=friendly_name,
-            unique_name=unique_name,
-            date_created=date_created,
-            date_updated=date_updated,
-            messaging_service_sid=messaging_service_sid,
-            attributes=attributes,
-            state=state,
-            timers_inactive=timers_inactive,
-            timers_closed=timers_closed,
-            bindings_email_address=bindings_email_address,
-            bindings_email_name=bindings_email_name,
-            participant=participant,
-        )
-        instance = ConversationWithParticipantsInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

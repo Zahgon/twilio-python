@@ -47,27 +47,21 @@ class DialingPermissionsList(ListResource):
         """
         Access the bulk_country_updates
         """
-        if self._bulk_country_updates is None:
-            self._bulk_country_updates = BulkCountryUpdateList(self._version)
-        return self._bulk_country_updates
+        pass
 
     @property
     def countries(self) -> CountryList:
         """
         Access the countries
         """
-        if self._countries is None:
-            self._countries = CountryList(self._version)
-        return self._countries
+        pass
 
     @property
     def settings(self) -> SettingsList:
         """
         Access the settings
         """
-        if self._settings is None:
-            self._settings = SettingsList(self._version)
-        return self._settings
+        pass
 
     def __repr__(self) -> str:
         """

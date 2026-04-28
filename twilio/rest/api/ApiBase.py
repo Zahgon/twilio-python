@@ -32,9 +32,7 @@ class ApiBase(Domain):
         """
         :returns: Versions v2010 of Api
         """
-        if self._v2010 is None:
-            self._v2010 = V2010(self)
-        return self._v2010
+        pass
 
     def __repr__(self) -> str:
         """

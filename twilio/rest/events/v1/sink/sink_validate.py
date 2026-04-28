@@ -70,21 +70,7 @@ class SinkValidateList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "TestId": test_id,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(self, test_id: str) -> SinkValidateInstance:
         """
@@ -94,8 +80,7 @@ class SinkValidateList(ListResource):
 
         :returns: The created SinkValidateInstance
         """
-        payload, _, _ = self._create(test_id=test_id)
-        return SinkValidateInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     def create_with_http_info(self, test_id: str) -> ApiResponse:
         """
@@ -105,11 +90,7 @@ class SinkValidateList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(test_id=test_id)
-        instance = SinkValidateInstance(
-            self._version, payload, sid=self._solution["sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self, test_id: str) -> tuple:
         """
@@ -118,21 +99,7 @@ class SinkValidateList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "TestId": test_id,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(self, test_id: str) -> SinkValidateInstance:
         """
@@ -142,8 +109,7 @@ class SinkValidateList(ListResource):
 
         :returns: The created SinkValidateInstance
         """
-        payload, _, _ = await self._create_async(test_id=test_id)
-        return SinkValidateInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     async def create_with_http_info_async(self, test_id: str) -> ApiResponse:
         """
@@ -153,11 +119,7 @@ class SinkValidateList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(test_id=test_id)
-        instance = SinkValidateInstance(
-            self._version, payload, sid=self._solution["sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

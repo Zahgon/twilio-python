@@ -41,13 +41,7 @@ class MessageInstance(InstanceResource):
             self.mode: Optional[str] = payload.get("mode")
 
         def to_dict(self):
-            return {
-                "identity": self.identity,
-                "session_id": self.session_id,
-                "body": self.body,
-                "webhook": self.webhook,
-                "mode": self.mode,
-            }
+            pass
 
     """
     :ivar status: success or failure based on whether the request successfully generated a response.
@@ -104,13 +98,7 @@ class MessageList(ListResource):
             self.mode: Optional[str] = payload.get("mode")
 
         def to_dict(self):
-            return {
-                "identity": self.identity,
-                "session_id": self.session_id,
-                "body": self.body,
-                "webhook": self.webhook,
-                "mode": self.mode,
-            }
+            pass
 
     def __init__(self, version: Version, id: str):
         """
@@ -138,17 +126,7 @@ class MessageList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = assistants_v1_service_assistant_send_message_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -161,10 +139,7 @@ class MessageList(ListResource):
 
         :returns: The created MessageInstance
         """
-        payload, _, _ = self._create(
-            assistants_v1_service_assistant_send_message_request=assistants_v1_service_assistant_send_message_request
-        )
-        return MessageInstance(self._version, payload, id=self._solution["id"])
+        pass
 
     def create_with_http_info(
         self,
@@ -177,11 +152,7 @@ class MessageList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            assistants_v1_service_assistant_send_message_request=assistants_v1_service_assistant_send_message_request
-        )
-        instance = MessageInstance(self._version, payload, id=self._solution["id"])
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -193,17 +164,7 @@ class MessageList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = assistants_v1_service_assistant_send_message_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -216,10 +177,7 @@ class MessageList(ListResource):
 
         :returns: The created MessageInstance
         """
-        payload, _, _ = await self._create_async(
-            assistants_v1_service_assistant_send_message_request=assistants_v1_service_assistant_send_message_request
-        )
-        return MessageInstance(self._version, payload, id=self._solution["id"])
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -232,11 +190,7 @@ class MessageList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            assistants_v1_service_assistant_send_message_request=assistants_v1_service_assistant_send_message_request
-        )
-        instance = MessageInstance(self._version, payload, id=self._solution["id"])
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

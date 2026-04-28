@@ -76,12 +76,7 @@ class AssessmentsInstance(InstanceResource):
 
         :returns: AssessmentsContext for this AssessmentsInstance
         """
-        if self._context is None:
-            self._context = AssessmentsContext(
-                self._version,
-                assessment_sid=self._solution["assessment_sid"],
-            )
-        return self._context
+        pass
 
     def update(
         self,
@@ -100,12 +95,7 @@ class AssessmentsInstance(InstanceResource):
 
         :returns: The updated AssessmentsInstance
         """
-        return self._proxy.update(
-            offset=offset,
-            answer_text=answer_text,
-            answer_id=answer_id,
-            authorization=authorization,
-        )
+        pass
 
     async def update_async(
         self,
@@ -124,12 +114,7 @@ class AssessmentsInstance(InstanceResource):
 
         :returns: The updated AssessmentsInstance
         """
-        return await self._proxy.update_async(
-            offset=offset,
-            answer_text=answer_text,
-            answer_id=answer_id,
-            authorization=authorization,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -148,12 +133,7 @@ class AssessmentsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            offset=offset,
-            answer_text=answer_text,
-            answer_id=answer_id,
-            authorization=authorization,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -172,12 +152,7 @@ class AssessmentsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            offset=offset,
-            answer_text=answer_text,
-            answer_id=answer_id,
-            authorization=authorization,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -221,29 +196,7 @@ class AssessmentsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Offset": offset,
-                "AnswerText": answer_text,
-                "AnswerId": answer_id,
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            authorization is values.unset
-            or (isinstance(authorization, str) and not authorization)
-        ):
-            headers["Authorization"] = authorization
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -262,15 +215,7 @@ class AssessmentsContext(InstanceContext):
 
         :returns: The updated AssessmentsInstance
         """
-        payload, _, _ = self._update(
-            offset=offset,
-            answer_text=answer_text,
-            answer_id=answer_id,
-            authorization=authorization,
-        )
-        return AssessmentsInstance(
-            self._version, payload, assessment_sid=self._solution["assessment_sid"]
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -289,16 +234,7 @@ class AssessmentsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            offset=offset,
-            answer_text=answer_text,
-            answer_id=answer_id,
-            authorization=authorization,
-        )
-        instance = AssessmentsInstance(
-            self._version, payload, assessment_sid=self._solution["assessment_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -313,29 +249,7 @@ class AssessmentsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Offset": offset,
-                "AnswerText": answer_text,
-                "AnswerId": answer_id,
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            authorization is values.unset
-            or (isinstance(authorization, str) and not authorization)
-        ):
-            headers["Authorization"] = authorization
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -354,15 +268,7 @@ class AssessmentsContext(InstanceContext):
 
         :returns: The updated AssessmentsInstance
         """
-        payload, _, _ = await self._update_async(
-            offset=offset,
-            answer_text=answer_text,
-            answer_id=answer_id,
-            authorization=authorization,
-        )
-        return AssessmentsInstance(
-            self._version, payload, assessment_sid=self._solution["assessment_sid"]
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -381,16 +287,7 @@ class AssessmentsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            offset=offset,
-            answer_text=answer_text,
-            answer_id=answer_id,
-            authorization=authorization,
-        )
-        instance = AssessmentsInstance(
-            self._version, payload, assessment_sid=self._solution["assessment_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -410,7 +307,7 @@ class AssessmentsPage(Page):
 
         :param payload: Payload response from the API
         """
-        return AssessmentsInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -454,35 +351,7 @@ class AssessmentsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "CategorySid": category_sid,
-                "CategoryName": category_name,
-                "SegmentId": segment_id,
-                "AgentId": agent_id,
-                "Offset": offset,
-                "MetricId": metric_id,
-                "MetricName": metric_name,
-                "AnswerText": answer_text,
-                "AnswerId": answer_id,
-                "QuestionnaireSid": questionnaire_sid,
-            }
-        )
-        headers = values.of(
-            {
-                "Authorization": authorization,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -515,20 +384,7 @@ class AssessmentsList(ListResource):
 
         :returns: The created AssessmentsInstance
         """
-        payload, _, _ = self._create(
-            category_sid=category_sid,
-            category_name=category_name,
-            segment_id=segment_id,
-            agent_id=agent_id,
-            offset=offset,
-            metric_id=metric_id,
-            metric_name=metric_name,
-            answer_text=answer_text,
-            answer_id=answer_id,
-            questionnaire_sid=questionnaire_sid,
-            authorization=authorization,
-        )
-        return AssessmentsInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -561,21 +417,7 @@ class AssessmentsList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            category_sid=category_sid,
-            category_name=category_name,
-            segment_id=segment_id,
-            agent_id=agent_id,
-            offset=offset,
-            metric_id=metric_id,
-            metric_name=metric_name,
-            answer_text=answer_text,
-            answer_id=answer_id,
-            questionnaire_sid=questionnaire_sid,
-            authorization=authorization,
-        )
-        instance = AssessmentsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -597,35 +439,7 @@ class AssessmentsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "CategorySid": category_sid,
-                "CategoryName": category_name,
-                "SegmentId": segment_id,
-                "AgentId": agent_id,
-                "Offset": offset,
-                "MetricId": metric_id,
-                "MetricName": metric_name,
-                "AnswerText": answer_text,
-                "AnswerId": answer_id,
-                "QuestionnaireSid": questionnaire_sid,
-            }
-        )
-        headers = values.of(
-            {
-                "Authorization": authorization,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -658,20 +472,7 @@ class AssessmentsList(ListResource):
 
         :returns: The created AssessmentsInstance
         """
-        payload, _, _ = await self._create_async(
-            category_sid=category_sid,
-            category_name=category_name,
-            segment_id=segment_id,
-            agent_id=agent_id,
-            offset=offset,
-            metric_id=metric_id,
-            metric_name=metric_name,
-            answer_text=answer_text,
-            answer_id=answer_id,
-            questionnaire_sid=questionnaire_sid,
-            authorization=authorization,
-        )
-        return AssessmentsInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -704,21 +505,7 @@ class AssessmentsList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            category_sid=category_sid,
-            category_name=category_name,
-            segment_id=segment_id,
-            agent_id=agent_id,
-            offset=offset,
-            metric_id=metric_id,
-            metric_name=metric_name,
-            answer_text=answer_text,
-            answer_id=answer_id,
-            questionnaire_sid=questionnaire_sid,
-            authorization=authorization,
-        )
-        instance = AssessmentsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -744,14 +531,7 @@ class AssessmentsList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            authorization=authorization,
-            segment_id=segment_id,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -777,14 +557,7 @@ class AssessmentsList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            authorization=authorization,
-            segment_id=segment_id,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -808,15 +581,7 @@ class AssessmentsList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            authorization=authorization,
-            segment_id=segment_id,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -840,15 +605,7 @@ class AssessmentsList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            authorization=authorization,
-            segment_id=segment_id,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -873,14 +630,7 @@ class AssessmentsList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                authorization=authorization,
-                segment_id=segment_id,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -905,15 +655,7 @@ class AssessmentsList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                authorization=authorization,
-                segment_id=segment_id,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -937,14 +679,7 @@ class AssessmentsList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            authorization=authorization,
-            segment_id=segment_id,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -968,14 +703,7 @@ class AssessmentsList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            authorization=authorization,
-            segment_id=segment_id,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -997,29 +725,7 @@ class AssessmentsList(ListResource):
 
         :returns: Page of AssessmentsInstance
         """
-        data = values.of(
-            {
-                "Authorization": authorization,
-                "SegmentId": segment_id,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of(
-            {
-                "Authorization": authorization,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return AssessmentsPage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -1041,29 +747,7 @@ class AssessmentsList(ListResource):
 
         :returns: Page of AssessmentsInstance
         """
-        data = values.of(
-            {
-                "Authorization": authorization,
-                "SegmentId": segment_id,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of(
-            {
-                "Authorization": authorization,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return AssessmentsPage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -1085,30 +769,7 @@ class AssessmentsList(ListResource):
 
         :returns: ApiResponse with AssessmentsPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Authorization": authorization,
-                "SegmentId": segment_id,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of(
-            {
-                "Authorization": authorization,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = AssessmentsPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1130,32 +791,7 @@ class AssessmentsList(ListResource):
 
         :returns: ApiResponse with AssessmentsPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Authorization": authorization,
-                "SegmentId": segment_id,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of(
-            {
-                "Authorization": authorization,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = AssessmentsPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> AssessmentsPage:
         """
@@ -1166,8 +802,7 @@ class AssessmentsList(ListResource):
 
         :returns: Page of AssessmentsInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return AssessmentsPage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> AssessmentsPage:
         """
@@ -1178,8 +813,7 @@ class AssessmentsList(ListResource):
 
         :returns: Page of AssessmentsInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return AssessmentsPage(self._version, response)
+        pass
 
     def get(self, assessment_sid: str) -> AssessmentsContext:
         """
@@ -1187,7 +821,7 @@ class AssessmentsList(ListResource):
 
         :param assessment_sid: The SID of the assessment to be modified
         """
-        return AssessmentsContext(self._version, assessment_sid=assessment_sid)
+        pass
 
     def __call__(self, assessment_sid: str) -> AssessmentsContext:
         """

@@ -46,15 +46,7 @@ class ApproveChallengeInstance(InstanceResource):
             ] = payload.get("response")
 
         def to_dict(self):
-            return {
-                "id": self.id,
-                "rawId": self.raw_id,
-                "authenticatorAttachment": self.authenticator_attachment,
-                "type": self.type,
-                "response": (
-                    self.response.to_dict() if self.response is not None else None
-                ),
-            }
+            pass
 
     class ApprovePasskeysChallengeRequestResponse(object):
         """
@@ -72,12 +64,7 @@ class ApproveChallengeInstance(InstanceResource):
             self.user_handle: Optional[str] = payload.get("userHandle")
 
         def to_dict(self):
-            return {
-                "authenticatorData": self.authenticator_data,
-                "clientDataJSON": self.client_data_json,
-                "signature": self.signature,
-                "userHandle": self.user_handle,
-            }
+            pass
 
     """
     :ivar sid: A 34 character string that uniquely identifies this Challenge.
@@ -174,15 +161,7 @@ class ApproveChallengeList(ListResource):
             ] = payload.get("response")
 
         def to_dict(self):
-            return {
-                "id": self.id,
-                "rawId": self.raw_id,
-                "authenticatorAttachment": self.authenticator_attachment,
-                "type": self.type,
-                "response": (
-                    self.response.to_dict() if self.response is not None else None
-                ),
-            }
+            pass
 
     class ApprovePasskeysChallengeRequestResponse(object):
         """
@@ -200,12 +179,7 @@ class ApproveChallengeList(ListResource):
             self.user_handle: Optional[str] = payload.get("userHandle")
 
         def to_dict(self):
-            return {
-                "authenticatorData": self.authenticator_data,
-                "clientDataJSON": self.client_data_json,
-                "signature": self.signature,
-                "userHandle": self.user_handle,
-            }
+            pass
 
     def __init__(self, version: Version, service_sid: str):
         """
@@ -234,17 +208,7 @@ class ApproveChallengeList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = approve_passkeys_challenge_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self, approve_passkeys_challenge_request: ApprovePasskeysChallengeRequest
@@ -256,12 +220,7 @@ class ApproveChallengeList(ListResource):
 
         :returns: The updated ApproveChallengeInstance
         """
-        payload, _, _ = self._update(
-            approve_passkeys_challenge_request=approve_passkeys_challenge_request
-        )
-        return ApproveChallengeInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     def update_with_http_info(
         self, approve_passkeys_challenge_request: ApprovePasskeysChallengeRequest
@@ -273,13 +232,7 @@ class ApproveChallengeList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            approve_passkeys_challenge_request=approve_passkeys_challenge_request
-        )
-        instance = ApproveChallengeInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self, approve_passkeys_challenge_request: ApprovePasskeysChallengeRequest
@@ -290,17 +243,7 @@ class ApproveChallengeList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = approve_passkeys_challenge_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, approve_passkeys_challenge_request: ApprovePasskeysChallengeRequest
@@ -312,12 +255,7 @@ class ApproveChallengeList(ListResource):
 
         :returns: The updated ApproveChallengeInstance
         """
-        payload, _, _ = await self._update_async(
-            approve_passkeys_challenge_request=approve_passkeys_challenge_request
-        )
-        return ApproveChallengeInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     async def update_with_http_info_async(
         self, approve_passkeys_challenge_request: ApprovePasskeysChallengeRequest
@@ -329,13 +267,7 @@ class ApproveChallengeList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            approve_passkeys_challenge_request=approve_passkeys_challenge_request
-        )
-        instance = ApproveChallengeInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

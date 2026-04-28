@@ -63,12 +63,7 @@ class UserInstance(InstanceResource):
 
         :returns: UserContext for this UserInstance
         """
-        if self._context is None:
-            self._context = UserContext(
-                self._version,
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "UserInstance":
         """
@@ -77,7 +72,7 @@ class UserInstance(InstanceResource):
 
         :returns: The fetched UserInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "UserInstance":
         """
@@ -86,7 +81,7 @@ class UserInstance(InstanceResource):
 
         :returns: The fetched UserInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -95,7 +90,7 @@ class UserInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -104,7 +99,7 @@ class UserInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -123,12 +118,7 @@ class UserInstance(InstanceResource):
 
         :returns: The updated UserInstance
         """
-        return self._proxy.update(
-            friendly_name=friendly_name,
-            avatar=avatar,
-            state=state,
-            is_available=is_available,
-        )
+        pass
 
     async def update_async(
         self,
@@ -147,12 +137,7 @@ class UserInstance(InstanceResource):
 
         :returns: The updated UserInstance
         """
-        return await self._proxy.update_async(
-            friendly_name=friendly_name,
-            avatar=avatar,
-            state=state,
-            is_available=is_available,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -171,12 +156,7 @@ class UserInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            friendly_name=friendly_name,
-            avatar=avatar,
-            state=state,
-            is_available=is_available,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -195,12 +175,7 @@ class UserInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            friendly_name=friendly_name,
-            avatar=avatar,
-            state=state,
-            is_available=is_available,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -236,14 +211,7 @@ class UserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> UserInstance:
         """
@@ -252,12 +220,7 @@ class UserContext(InstanceContext):
 
         :returns: The fetched UserInstance
         """
-        payload, _, _ = self._fetch()
-        return UserInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -266,13 +229,7 @@ class UserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = UserInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -281,14 +238,7 @@ class UserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> UserInstance:
         """
@@ -297,12 +247,7 @@ class UserContext(InstanceContext):
 
         :returns: The fetched UserInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return UserInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -311,13 +256,7 @@ class UserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = UserInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -332,24 +271,7 @@ class UserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "Avatar": avatar,
-                "State": state,
-                "IsAvailable": serialize.boolean_to_string(is_available),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -368,13 +290,7 @@ class UserContext(InstanceContext):
 
         :returns: The updated UserInstance
         """
-        payload, _, _ = self._update(
-            friendly_name=friendly_name,
-            avatar=avatar,
-            state=state,
-            is_available=is_available,
-        )
-        return UserInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     def update_with_http_info(
         self,
@@ -393,14 +309,7 @@ class UserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            friendly_name=friendly_name,
-            avatar=avatar,
-            state=state,
-            is_available=is_available,
-        )
-        instance = UserInstance(self._version, payload, sid=self._solution["sid"])
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -415,24 +324,7 @@ class UserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "Avatar": avatar,
-                "State": state,
-                "IsAvailable": serialize.boolean_to_string(is_available),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -451,13 +343,7 @@ class UserContext(InstanceContext):
 
         :returns: The updated UserInstance
         """
-        payload, _, _ = await self._update_async(
-            friendly_name=friendly_name,
-            avatar=avatar,
-            state=state,
-            is_available=is_available,
-        )
-        return UserInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -476,14 +362,7 @@ class UserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            friendly_name=friendly_name,
-            avatar=avatar,
-            state=state,
-            is_available=is_available,
-        )
-        instance = UserInstance(self._version, payload, sid=self._solution["sid"])
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -512,7 +391,7 @@ class UserList(ListResource):
 
         :param sid: The SID of the User resource to update. This value can be either the `sid` or the `identity` of the User resource to update.
         """
-        return UserContext(self._version, sid=sid)
+        pass
 
     def __call__(self, sid: str) -> UserContext:
         """

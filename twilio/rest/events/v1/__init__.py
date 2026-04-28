@@ -37,27 +37,19 @@ class V1(Version):
 
     @property
     def event_types(self) -> EventTypeList:
-        if self._event_types is None:
-            self._event_types = EventTypeList(self)
-        return self._event_types
+        pass
 
     @property
     def schemas(self) -> SchemaList:
-        if self._schemas is None:
-            self._schemas = SchemaList(self)
-        return self._schemas
+        pass
 
     @property
     def sinks(self) -> SinkList:
-        if self._sinks is None:
-            self._sinks = SinkList(self)
-        return self._sinks
+        pass
 
     @property
     def subscriptions(self) -> SubscriptionList:
-        if self._subscriptions is None:
-            self._subscriptions = SubscriptionList(self)
-        return self._subscriptions
+        pass
 
     def __repr__(self) -> str:
         """

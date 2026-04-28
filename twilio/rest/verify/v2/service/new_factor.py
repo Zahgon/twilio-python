@@ -40,11 +40,7 @@ class NewFactorInstance(InstanceResource):
             ] = payload.get("config")
 
         def to_dict(self):
-            return {
-                "friendly_name": self.friendly_name,
-                "identity": self.identity,
-                "config": self.config.to_dict() if self.config is not None else None,
-            }
+            pass
 
     class CreateNewPasskeysFactorRequestConfig(object):
         """
@@ -70,16 +66,7 @@ class NewFactorInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "relying_party": (
-                    self.relying_party.to_dict()
-                    if self.relying_party is not None
-                    else None
-                ),
-                "authenticator_attachment": self.authenticator_attachment,
-                "discoverable_credentials": self.discoverable_credentials,
-                "user_verification": self.user_verification,
-            }
+            pass
 
     class CreateNewPasskeysFactorRequestConfigRelyingParty(object):
         """
@@ -95,11 +82,7 @@ class NewFactorInstance(InstanceResource):
             self.origins: Optional[List[str]] = payload.get("origins")
 
         def to_dict(self):
-            return {
-                "id": self.id,
-                "name": self.name,
-                "origins": self.origins,
-            }
+            pass
 
     """
     :ivar sid: A 34 character string that uniquely identifies this Factor.
@@ -174,11 +157,7 @@ class NewFactorList(ListResource):
             ] = payload.get("config")
 
         def to_dict(self):
-            return {
-                "friendly_name": self.friendly_name,
-                "identity": self.identity,
-                "config": self.config.to_dict() if self.config is not None else None,
-            }
+            pass
 
     class CreateNewPasskeysFactorRequestConfig(object):
         """
@@ -204,16 +183,7 @@ class NewFactorList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "relying_party": (
-                    self.relying_party.to_dict()
-                    if self.relying_party is not None
-                    else None
-                ),
-                "authenticator_attachment": self.authenticator_attachment,
-                "discoverable_credentials": self.discoverable_credentials,
-                "user_verification": self.user_verification,
-            }
+            pass
 
     class CreateNewPasskeysFactorRequestConfigRelyingParty(object):
         """
@@ -229,11 +199,7 @@ class NewFactorList(ListResource):
             self.origins: Optional[List[str]] = payload.get("origins")
 
         def to_dict(self):
-            return {
-                "id": self.id,
-                "name": self.name,
-                "origins": self.origins,
-            }
+            pass
 
     def __init__(self, version: Version, service_sid: str):
         """
@@ -260,17 +226,7 @@ class NewFactorList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = create_new_passkeys_factor_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self, create_new_passkeys_factor_request: CreateNewPasskeysFactorRequest
@@ -282,12 +238,7 @@ class NewFactorList(ListResource):
 
         :returns: The created NewFactorInstance
         """
-        payload, _, _ = self._create(
-            create_new_passkeys_factor_request=create_new_passkeys_factor_request
-        )
-        return NewFactorInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self, create_new_passkeys_factor_request: CreateNewPasskeysFactorRequest
@@ -299,13 +250,7 @@ class NewFactorList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            create_new_passkeys_factor_request=create_new_passkeys_factor_request
-        )
-        instance = NewFactorInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self, create_new_passkeys_factor_request: CreateNewPasskeysFactorRequest
@@ -316,17 +261,7 @@ class NewFactorList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = create_new_passkeys_factor_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self, create_new_passkeys_factor_request: CreateNewPasskeysFactorRequest
@@ -338,12 +273,7 @@ class NewFactorList(ListResource):
 
         :returns: The created NewFactorInstance
         """
-        payload, _, _ = await self._create_async(
-            create_new_passkeys_factor_request=create_new_passkeys_factor_request
-        )
-        return NewFactorInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self, create_new_passkeys_factor_request: CreateNewPasskeysFactorRequest
@@ -355,13 +285,7 @@ class NewFactorList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            create_new_passkeys_factor_request=create_new_passkeys_factor_request
-        )
-        instance = NewFactorInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

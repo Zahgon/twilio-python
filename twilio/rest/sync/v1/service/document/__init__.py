@@ -84,13 +84,7 @@ class DocumentInstance(InstanceResource):
 
         :returns: DocumentContext for this DocumentInstance
         """
-        if self._context is None:
-            self._context = DocumentContext(
-                self._version,
-                service_sid=self._solution["service_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -99,7 +93,7 @@ class DocumentInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -108,7 +102,7 @@ class DocumentInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -117,7 +111,7 @@ class DocumentInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -126,7 +120,7 @@ class DocumentInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "DocumentInstance":
         """
@@ -135,7 +129,7 @@ class DocumentInstance(InstanceResource):
 
         :returns: The fetched DocumentInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "DocumentInstance":
         """
@@ -144,7 +138,7 @@ class DocumentInstance(InstanceResource):
 
         :returns: The fetched DocumentInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -153,7 +147,7 @@ class DocumentInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -162,7 +156,7 @@ class DocumentInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -179,11 +173,7 @@ class DocumentInstance(InstanceResource):
 
         :returns: The updated DocumentInstance
         """
-        return self._proxy.update(
-            if_match=if_match,
-            data=data,
-            ttl=ttl,
-        )
+        pass
 
     async def update_async(
         self,
@@ -200,11 +190,7 @@ class DocumentInstance(InstanceResource):
 
         :returns: The updated DocumentInstance
         """
-        return await self._proxy.update_async(
-            if_match=if_match,
-            data=data,
-            ttl=ttl,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -221,11 +207,7 @@ class DocumentInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            if_match=if_match,
-            data=data,
-            ttl=ttl,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -242,18 +224,14 @@ class DocumentInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            if_match=if_match,
-            data=data,
-            ttl=ttl,
-        )
+        pass
 
     @property
     def document_permissions(self) -> DocumentPermissionList:
         """
         Access the document_permissions
         """
-        return self._proxy.document_permissions
+        pass
 
     def __repr__(self) -> str:
         """
@@ -293,12 +271,7 @@ class DocumentContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -307,8 +280,7 @@ class DocumentContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -317,8 +289,7 @@ class DocumentContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -327,12 +298,7 @@ class DocumentContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -341,8 +307,7 @@ class DocumentContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -351,8 +316,7 @@ class DocumentContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -361,14 +325,7 @@ class DocumentContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> DocumentInstance:
         """
@@ -377,13 +334,7 @@ class DocumentContext(InstanceContext):
 
         :returns: The fetched DocumentInstance
         """
-        payload, _, _ = self._fetch()
-        return DocumentInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -392,14 +343,7 @@ class DocumentContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = DocumentInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -408,14 +352,7 @@ class DocumentContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> DocumentInstance:
         """
@@ -424,13 +361,7 @@ class DocumentContext(InstanceContext):
 
         :returns: The fetched DocumentInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return DocumentInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -439,14 +370,7 @@ class DocumentContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = DocumentInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -460,27 +384,7 @@ class DocumentContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Data": serialize.object(data),
-                "Ttl": ttl,
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            if_match is values.unset or (isinstance(if_match, str) and not if_match)
-        ):
-            headers["If-Match"] = if_match
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -497,13 +401,7 @@ class DocumentContext(InstanceContext):
 
         :returns: The updated DocumentInstance
         """
-        payload, _, _ = self._update(if_match=if_match, data=data, ttl=ttl)
-        return DocumentInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -520,16 +418,7 @@ class DocumentContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            if_match=if_match, data=data, ttl=ttl
-        )
-        instance = DocumentInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -543,27 +432,7 @@ class DocumentContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Data": serialize.object(data),
-                "Ttl": ttl,
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            if_match is values.unset or (isinstance(if_match, str) and not if_match)
-        ):
-            headers["If-Match"] = if_match
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -580,13 +449,7 @@ class DocumentContext(InstanceContext):
 
         :returns: The updated DocumentInstance
         """
-        payload, _, _ = await self._update_async(if_match=if_match, data=data, ttl=ttl)
-        return DocumentInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -603,29 +466,14 @@ class DocumentContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            if_match=if_match, data=data, ttl=ttl
-        )
-        instance = DocumentInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def document_permissions(self) -> DocumentPermissionList:
         """
         Access the document_permissions
         """
-        if self._document_permissions is None:
-            self._document_permissions = DocumentPermissionList(
-                self._version,
-                self._solution["service_sid"],
-                self._solution["sid"],
-            )
-        return self._document_permissions
+        pass
 
     def __repr__(self) -> str:
         """
@@ -645,9 +493,7 @@ class DocumentPage(Page):
 
         :param payload: Payload response from the API
         """
-        return DocumentInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -688,23 +534,7 @@ class DocumentList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "UniqueName": unique_name,
-                "Data": serialize.object(data),
-                "Ttl": ttl,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -721,10 +551,7 @@ class DocumentList(ListResource):
 
         :returns: The created DocumentInstance
         """
-        payload, _, _ = self._create(unique_name=unique_name, data=data, ttl=ttl)
-        return DocumentInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -741,13 +568,7 @@ class DocumentList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            unique_name=unique_name, data=data, ttl=ttl
-        )
-        instance = DocumentInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -761,23 +582,7 @@ class DocumentList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "UniqueName": unique_name,
-                "Data": serialize.object(data),
-                "Ttl": ttl,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -794,12 +599,7 @@ class DocumentList(ListResource):
 
         :returns: The created DocumentInstance
         """
-        payload, _, _ = await self._create_async(
-            unique_name=unique_name, data=data, ttl=ttl
-        )
-        return DocumentInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -816,13 +616,7 @@ class DocumentList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            unique_name=unique_name, data=data, ttl=ttl
-        )
-        instance = DocumentInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -844,10 +638,7 @@ class DocumentList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -869,10 +660,7 @@ class DocumentList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -892,11 +680,7 @@ class DocumentList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -916,13 +700,7 @@ class DocumentList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -943,12 +721,7 @@ class DocumentList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -969,13 +742,7 @@ class DocumentList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -995,12 +762,7 @@ class DocumentList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1020,12 +782,7 @@ class DocumentList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1043,22 +800,7 @@ class DocumentList(ListResource):
 
         :returns: Page of DocumentInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return DocumentPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -1076,22 +818,7 @@ class DocumentList(ListResource):
 
         :returns: Page of DocumentInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return DocumentPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -1109,23 +836,7 @@ class DocumentList(ListResource):
 
         :returns: ApiResponse with DocumentPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = DocumentPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1143,25 +854,7 @@ class DocumentList(ListResource):
 
         :returns: ApiResponse with DocumentPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = DocumentPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> DocumentPage:
         """
@@ -1172,8 +865,7 @@ class DocumentList(ListResource):
 
         :returns: Page of DocumentInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return DocumentPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> DocumentPage:
         """
@@ -1184,8 +876,7 @@ class DocumentList(ListResource):
 
         :returns: Page of DocumentInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return DocumentPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, sid: str) -> DocumentContext:
         """
@@ -1193,9 +884,7 @@ class DocumentList(ListResource):
 
         :param sid: The SID of the Document resource to update. Can be the Document resource's `sid` or its `unique_name`.
         """
-        return DocumentContext(
-            self._version, service_sid=self._solution["service_sid"], sid=sid
-        )
+        pass
 
     def __call__(self, sid: str) -> DocumentContext:
         """

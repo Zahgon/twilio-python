@@ -59,13 +59,7 @@ class EngagementContextInstance(InstanceResource):
 
         :returns: EngagementContextContext for this EngagementContextInstance
         """
-        if self._context is None:
-            self._context = EngagementContextContext(
-                self._version,
-                flow_sid=self._solution["flow_sid"],
-                engagement_sid=self._solution["engagement_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "EngagementContextInstance":
         """
@@ -74,7 +68,7 @@ class EngagementContextInstance(InstanceResource):
 
         :returns: The fetched EngagementContextInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "EngagementContextInstance":
         """
@@ -83,7 +77,7 @@ class EngagementContextInstance(InstanceResource):
 
         :returns: The fetched EngagementContextInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -92,7 +86,7 @@ class EngagementContextInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -101,7 +95,7 @@ class EngagementContextInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -141,14 +135,7 @@ class EngagementContextContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> EngagementContextInstance:
         """
@@ -157,13 +144,7 @@ class EngagementContextContext(InstanceContext):
 
         :returns: The fetched EngagementContextInstance
         """
-        payload, _, _ = self._fetch()
-        return EngagementContextInstance(
-            self._version,
-            payload,
-            flow_sid=self._solution["flow_sid"],
-            engagement_sid=self._solution["engagement_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -172,14 +153,7 @@ class EngagementContextContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = EngagementContextInstance(
-            self._version,
-            payload,
-            flow_sid=self._solution["flow_sid"],
-            engagement_sid=self._solution["engagement_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -188,14 +162,7 @@ class EngagementContextContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> EngagementContextInstance:
         """
@@ -204,13 +171,7 @@ class EngagementContextContext(InstanceContext):
 
         :returns: The fetched EngagementContextInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return EngagementContextInstance(
-            self._version,
-            payload,
-            flow_sid=self._solution["flow_sid"],
-            engagement_sid=self._solution["engagement_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -219,14 +180,7 @@ class EngagementContextContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = EngagementContextInstance(
-            self._version,
-            payload,
-            flow_sid=self._solution["flow_sid"],
-            engagement_sid=self._solution["engagement_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -262,11 +216,7 @@ class EngagementContextList(ListResource):
         Constructs a EngagementContextContext
 
         """
-        return EngagementContextContext(
-            self._version,
-            flow_sid=self._solution["flow_sid"],
-            engagement_sid=self._solution["engagement_sid"],
-        )
+        pass
 
     def __call__(self) -> EngagementContextContext:
         """

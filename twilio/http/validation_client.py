@@ -68,35 +68,7 @@ class ValidationClient(HttpClient):
         :return: An http response
         :rtype: A :class:`Response <twilio.rest.http.response.Response>` object
         """
-        session = self.session or Session()
-        request = Request(
-            method.upper(), url, params=params, data=data, headers=headers, auth=auth
-        )
-        prepared_request = session.prepare_request(request)
-
-        if (
-            "Host" not in prepared_request.headers
-            and "host" not in prepared_request.headers
-        ):
-            prepared_request.headers["Host"] = self._get_host(prepared_request)
-
-        validation_payload = self._build_validation_payload(prepared_request)
-        jwt = ClientValidationJwt(
-            self.account_sid,
-            self.api_key_sid,
-            self.credential_sid,
-            self.private_key,
-            validation_payload,
-        )
-        prepared_request.headers["Twilio-Client-Validation"] = jwt.to_jwt()
-
-        response = session.send(
-            prepared_request,
-            allow_redirects=allow_redirects,
-            timeout=timeout,
-        )
-
-        return Response(int(response.status_code), response.text)
+        pass
 
     def _build_validation_payload(self, request):
         """
@@ -104,34 +76,15 @@ class ValidationClient(HttpClient):
         :param PreparedRequest request: request we will extract information from.
         :return: ValidationPayload
         """
-        parsed = urlparse(request.url)
-        path = parsed.path
-        query_string = parsed.query or ""
-
-        return ValidationPayload(
-            method=request.method,
-            path=path,
-            query_string=query_string,
-            all_headers=request.headers,
-            signed_headers=ValidationClient.__SIGNED_HEADERS,
-            body=request.body or "",
-        )
+        pass
 
     def _get_host(self, request):
         """Pull the Host out of the request"""
-        parsed = urlparse(request.url)
-        return str(parsed.netloc)
+        pass
 
     def validate_ssl_certificate(self, client):
         """
         Validate that a request to the new SSL certificate is successful
         :return: null on success, raise TwilioRestException if the request fails
         """
-        response = client.request("GET", "https://tls-test.twilio.com:443")
-
-        if response.status_code < 200 or response.status_code >= 300:
-            raise TwilioRestException(
-                response.status_code,
-                "https://tls-test.twilio.com:443",
-                "Failed to validate SSL certificate",
-            )
+        pass

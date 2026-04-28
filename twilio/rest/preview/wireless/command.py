@@ -72,12 +72,7 @@ class CommandInstance(InstanceResource):
 
         :returns: CommandContext for this CommandInstance
         """
-        if self._context is None:
-            self._context = CommandContext(
-                self._version,
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "CommandInstance":
         """
@@ -86,7 +81,7 @@ class CommandInstance(InstanceResource):
 
         :returns: The fetched CommandInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "CommandInstance":
         """
@@ -95,7 +90,7 @@ class CommandInstance(InstanceResource):
 
         :returns: The fetched CommandInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -104,7 +99,7 @@ class CommandInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -113,7 +108,7 @@ class CommandInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -149,14 +144,7 @@ class CommandContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> CommandInstance:
         """
@@ -165,12 +153,7 @@ class CommandContext(InstanceContext):
 
         :returns: The fetched CommandInstance
         """
-        payload, _, _ = self._fetch()
-        return CommandInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -179,13 +162,7 @@ class CommandContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = CommandInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -194,14 +171,7 @@ class CommandContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> CommandInstance:
         """
@@ -210,12 +180,7 @@ class CommandContext(InstanceContext):
 
         :returns: The fetched CommandInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return CommandInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -224,13 +189,7 @@ class CommandContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = CommandInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -250,7 +209,7 @@ class CommandPage(Page):
 
         :param payload: Payload response from the API
         """
-        return CommandInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -290,27 +249,7 @@ class CommandList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Command": command,
-                "Device": device,
-                "Sim": sim,
-                "CallbackMethod": callback_method,
-                "CallbackUrl": callback_url,
-                "CommandMode": command_mode,
-                "IncludeSid": include_sid,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -335,16 +274,7 @@ class CommandList(ListResource):
 
         :returns: The created CommandInstance
         """
-        payload, _, _ = self._create(
-            command=command,
-            device=device,
-            sim=sim,
-            callback_method=callback_method,
-            callback_url=callback_url,
-            command_mode=command_mode,
-            include_sid=include_sid,
-        )
-        return CommandInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -369,17 +299,7 @@ class CommandList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            command=command,
-            device=device,
-            sim=sim,
-            callback_method=callback_method,
-            callback_url=callback_url,
-            command_mode=command_mode,
-            include_sid=include_sid,
-        )
-        instance = CommandInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -397,27 +317,7 @@ class CommandList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Command": command,
-                "Device": device,
-                "Sim": sim,
-                "CallbackMethod": callback_method,
-                "CallbackUrl": callback_url,
-                "CommandMode": command_mode,
-                "IncludeSid": include_sid,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -442,16 +342,7 @@ class CommandList(ListResource):
 
         :returns: The created CommandInstance
         """
-        payload, _, _ = await self._create_async(
-            command=command,
-            device=device,
-            sim=sim,
-            callback_method=callback_method,
-            callback_url=callback_url,
-            command_mode=command_mode,
-            include_sid=include_sid,
-        )
-        return CommandInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -476,17 +367,7 @@ class CommandList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            command=command,
-            device=device,
-            sim=sim,
-            callback_method=callback_method,
-            callback_url=callback_url,
-            command_mode=command_mode,
-            include_sid=include_sid,
-        )
-        instance = CommandInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -516,16 +397,7 @@ class CommandList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            device=device,
-            sim=sim,
-            status=status,
-            direction=direction,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -555,16 +427,7 @@ class CommandList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            device=device,
-            sim=sim,
-            status=status,
-            direction=direction,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -592,17 +455,7 @@ class CommandList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            device=device,
-            sim=sim,
-            status=status,
-            direction=direction,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -630,17 +483,7 @@ class CommandList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            device=device,
-            sim=sim,
-            status=status,
-            direction=direction,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -669,16 +512,7 @@ class CommandList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                device=device,
-                sim=sim,
-                status=status,
-                direction=direction,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -707,17 +541,7 @@ class CommandList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                device=device,
-                sim=sim,
-                status=status,
-                direction=direction,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -745,16 +569,7 @@ class CommandList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            device=device,
-            sim=sim,
-            status=status,
-            direction=direction,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -782,16 +597,7 @@ class CommandList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            device=device,
-            sim=sim,
-            status=status,
-            direction=direction,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -817,26 +623,7 @@ class CommandList(ListResource):
 
         :returns: Page of CommandInstance
         """
-        data = values.of(
-            {
-                "Device": device,
-                "Sim": sim,
-                "Status": status,
-                "Direction": direction,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return CommandPage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -862,26 +649,7 @@ class CommandList(ListResource):
 
         :returns: Page of CommandInstance
         """
-        data = values.of(
-            {
-                "Device": device,
-                "Sim": sim,
-                "Status": status,
-                "Direction": direction,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return CommandPage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -907,27 +675,7 @@ class CommandList(ListResource):
 
         :returns: ApiResponse with CommandPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Device": device,
-                "Sim": sim,
-                "Status": status,
-                "Direction": direction,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = CommandPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -953,29 +701,7 @@ class CommandList(ListResource):
 
         :returns: ApiResponse with CommandPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Device": device,
-                "Sim": sim,
-                "Status": status,
-                "Direction": direction,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = CommandPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> CommandPage:
         """
@@ -986,8 +712,7 @@ class CommandList(ListResource):
 
         :returns: Page of CommandInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return CommandPage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> CommandPage:
         """
@@ -998,8 +723,7 @@ class CommandList(ListResource):
 
         :returns: Page of CommandInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return CommandPage(self._version, response)
+        pass
 
     def get(self, sid: str) -> CommandContext:
         """
@@ -1007,7 +731,7 @@ class CommandList(ListResource):
 
         :param sid:
         """
-        return CommandContext(self._version, sid=sid)
+        pass
 
     def __call__(self, sid: str) -> CommandContext:
         """

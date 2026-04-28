@@ -126,60 +126,7 @@ class ComplianceTollfreeInquiriesList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "TollfreePhoneNumber": tollfree_phone_number,
-                "NotificationEmail": notification_email,
-                "CustomerProfileSid": customer_profile_sid,
-                "BusinessName": business_name,
-                "BusinessWebsite": business_website,
-                "UseCaseCategories": serialize.map(use_case_categories, lambda e: e),
-                "UseCaseSummary": use_case_summary,
-                "ProductionMessageSample": production_message_sample,
-                "OptInImageUrls": serialize.map(opt_in_image_urls, lambda e: e),
-                "OptInType": opt_in_type,
-                "MessageVolume": message_volume,
-                "BusinessStreetAddress": business_street_address,
-                "BusinessStreetAddress2": business_street_address2,
-                "BusinessCity": business_city,
-                "BusinessStateProvinceRegion": business_state_province_region,
-                "BusinessPostalCode": business_postal_code,
-                "BusinessCountry": business_country,
-                "AdditionalInformation": additional_information,
-                "BusinessContactFirstName": business_contact_first_name,
-                "BusinessContactLastName": business_contact_last_name,
-                "BusinessContactEmail": business_contact_email,
-                "BusinessContactPhone": business_contact_phone,
-                "ThemeSetId": theme_set_id,
-                "SkipMessagingUseCase": serialize.boolean_to_string(
-                    skip_messaging_use_case
-                ),
-                "BusinessRegistrationNumber": business_registration_number,
-                "BusinessRegistrationAuthority": business_registration_authority,
-                "BusinessRegistrationCountry": business_registration_country,
-                "BusinessType": business_type,
-                "DoingBusinessAs": doing_business_as,
-                "OptInConfirmationMessage": opt_in_confirmation_message,
-                "HelpMessageSample": help_message_sample,
-                "PrivacyPolicyUrl": privacy_policy_url,
-                "TermsAndConditionsUrl": terms_and_conditions_url,
-                "AgeGatedContent": serialize.boolean_to_string(age_gated_content),
-                "ExternalReferenceId": external_reference_id,
-                "OptInKeywords": serialize.map(opt_in_keywords, lambda e: e),
-                "VettingId": vetting_id,
-                "VettingProvider": vetting_provider,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -270,47 +217,7 @@ class ComplianceTollfreeInquiriesList(ListResource):
 
         :returns: The created ComplianceTollfreeInquiriesInstance
         """
-        payload, _, _ = self._create(
-            tollfree_phone_number=tollfree_phone_number,
-            notification_email=notification_email,
-            customer_profile_sid=customer_profile_sid,
-            business_name=business_name,
-            business_website=business_website,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            theme_set_id=theme_set_id,
-            skip_messaging_use_case=skip_messaging_use_case,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            external_reference_id=external_reference_id,
-            opt_in_keywords=opt_in_keywords,
-            vetting_id=vetting_id,
-            vetting_provider=vetting_provider,
-        )
-        return ComplianceTollfreeInquiriesInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -401,48 +308,7 @@ class ComplianceTollfreeInquiriesList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            tollfree_phone_number=tollfree_phone_number,
-            notification_email=notification_email,
-            customer_profile_sid=customer_profile_sid,
-            business_name=business_name,
-            business_website=business_website,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            theme_set_id=theme_set_id,
-            skip_messaging_use_case=skip_messaging_use_case,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            external_reference_id=external_reference_id,
-            opt_in_keywords=opt_in_keywords,
-            vetting_id=vetting_id,
-            vetting_provider=vetting_provider,
-        )
-        instance = ComplianceTollfreeInquiriesInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -495,60 +361,7 @@ class ComplianceTollfreeInquiriesList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "TollfreePhoneNumber": tollfree_phone_number,
-                "NotificationEmail": notification_email,
-                "CustomerProfileSid": customer_profile_sid,
-                "BusinessName": business_name,
-                "BusinessWebsite": business_website,
-                "UseCaseCategories": serialize.map(use_case_categories, lambda e: e),
-                "UseCaseSummary": use_case_summary,
-                "ProductionMessageSample": production_message_sample,
-                "OptInImageUrls": serialize.map(opt_in_image_urls, lambda e: e),
-                "OptInType": opt_in_type,
-                "MessageVolume": message_volume,
-                "BusinessStreetAddress": business_street_address,
-                "BusinessStreetAddress2": business_street_address2,
-                "BusinessCity": business_city,
-                "BusinessStateProvinceRegion": business_state_province_region,
-                "BusinessPostalCode": business_postal_code,
-                "BusinessCountry": business_country,
-                "AdditionalInformation": additional_information,
-                "BusinessContactFirstName": business_contact_first_name,
-                "BusinessContactLastName": business_contact_last_name,
-                "BusinessContactEmail": business_contact_email,
-                "BusinessContactPhone": business_contact_phone,
-                "ThemeSetId": theme_set_id,
-                "SkipMessagingUseCase": serialize.boolean_to_string(
-                    skip_messaging_use_case
-                ),
-                "BusinessRegistrationNumber": business_registration_number,
-                "BusinessRegistrationAuthority": business_registration_authority,
-                "BusinessRegistrationCountry": business_registration_country,
-                "BusinessType": business_type,
-                "DoingBusinessAs": doing_business_as,
-                "OptInConfirmationMessage": opt_in_confirmation_message,
-                "HelpMessageSample": help_message_sample,
-                "PrivacyPolicyUrl": privacy_policy_url,
-                "TermsAndConditionsUrl": terms_and_conditions_url,
-                "AgeGatedContent": serialize.boolean_to_string(age_gated_content),
-                "ExternalReferenceId": external_reference_id,
-                "OptInKeywords": serialize.map(opt_in_keywords, lambda e: e),
-                "VettingId": vetting_id,
-                "VettingProvider": vetting_provider,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -639,47 +452,7 @@ class ComplianceTollfreeInquiriesList(ListResource):
 
         :returns: The created ComplianceTollfreeInquiriesInstance
         """
-        payload, _, _ = await self._create_async(
-            tollfree_phone_number=tollfree_phone_number,
-            notification_email=notification_email,
-            customer_profile_sid=customer_profile_sid,
-            business_name=business_name,
-            business_website=business_website,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            theme_set_id=theme_set_id,
-            skip_messaging_use_case=skip_messaging_use_case,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            external_reference_id=external_reference_id,
-            opt_in_keywords=opt_in_keywords,
-            vetting_id=vetting_id,
-            vetting_provider=vetting_provider,
-        )
-        return ComplianceTollfreeInquiriesInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -770,48 +543,7 @@ class ComplianceTollfreeInquiriesList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            tollfree_phone_number=tollfree_phone_number,
-            notification_email=notification_email,
-            customer_profile_sid=customer_profile_sid,
-            business_name=business_name,
-            business_website=business_website,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            theme_set_id=theme_set_id,
-            skip_messaging_use_case=skip_messaging_use_case,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            external_reference_id=external_reference_id,
-            opt_in_keywords=opt_in_keywords,
-            vetting_id=vetting_id,
-            vetting_provider=vetting_provider,
-        )
-        instance = ComplianceTollfreeInquiriesInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

@@ -120,13 +120,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: RecordingContext for this RecordingInstance
         """
-        if self._context is None:
-            self._context = RecordingContext(
-                self._version,
-                account_sid=self._solution["account_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -135,7 +129,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -144,7 +138,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -153,7 +147,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -162,7 +156,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(
         self, include_soft_deleted: Union[bool, object] = values.unset
@@ -174,9 +168,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: The fetched RecordingInstance
         """
-        return self._proxy.fetch(
-            include_soft_deleted=include_soft_deleted,
-        )
+        pass
 
     async def fetch_async(
         self, include_soft_deleted: Union[bool, object] = values.unset
@@ -188,9 +180,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: The fetched RecordingInstance
         """
-        return await self._proxy.fetch_async(
-            include_soft_deleted=include_soft_deleted,
-        )
+        pass
 
     def fetch_with_http_info(
         self, include_soft_deleted: Union[bool, object] = values.unset
@@ -202,9 +192,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            include_soft_deleted=include_soft_deleted,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, include_soft_deleted: Union[bool, object] = values.unset
@@ -216,23 +204,21 @@ class RecordingInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            include_soft_deleted=include_soft_deleted,
-        )
+        pass
 
     @property
     def add_on_results(self) -> AddOnResultList:
         """
         Access the add_on_results
         """
-        return self._proxy.add_on_results
+        pass
 
     @property
     def transcriptions(self) -> TranscriptionList:
         """
         Access the transcriptions
         """
-        return self._proxy.transcriptions
+        pass
 
     def __repr__(self) -> str:
         """
@@ -275,12 +261,7 @@ class RecordingContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -289,8 +270,7 @@ class RecordingContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -299,8 +279,7 @@ class RecordingContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -309,12 +288,7 @@ class RecordingContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -323,8 +297,7 @@ class RecordingContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -333,8 +306,7 @@ class RecordingContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self, include_soft_deleted: Union[bool, object] = values.unset) -> tuple:
         """
@@ -343,20 +315,7 @@ class RecordingContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "IncludeSoftDeleted": serialize.boolean_to_string(include_soft_deleted),
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(
         self, include_soft_deleted: Union[bool, object] = values.unset
@@ -368,13 +327,7 @@ class RecordingContext(InstanceContext):
 
         :returns: The fetched RecordingInstance
         """
-        payload, _, _ = self._fetch(include_soft_deleted=include_soft_deleted)
-        return RecordingInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(
         self, include_soft_deleted: Union[bool, object] = values.unset
@@ -386,16 +339,7 @@ class RecordingContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(
-            include_soft_deleted=include_soft_deleted
-        )
-        instance = RecordingInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self, include_soft_deleted: Union[bool, object] = values.unset
@@ -406,20 +350,7 @@ class RecordingContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "IncludeSoftDeleted": serialize.boolean_to_string(include_soft_deleted),
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self, include_soft_deleted: Union[bool, object] = values.unset
@@ -431,15 +362,7 @@ class RecordingContext(InstanceContext):
 
         :returns: The fetched RecordingInstance
         """
-        payload, _, _ = await self._fetch_async(
-            include_soft_deleted=include_soft_deleted
-        )
-        return RecordingInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, include_soft_deleted: Union[bool, object] = values.unset
@@ -451,42 +374,21 @@ class RecordingContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            include_soft_deleted=include_soft_deleted
-        )
-        instance = RecordingInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def add_on_results(self) -> AddOnResultList:
         """
         Access the add_on_results
         """
-        if self._add_on_results is None:
-            self._add_on_results = AddOnResultList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._add_on_results
+        pass
 
     @property
     def transcriptions(self) -> TranscriptionList:
         """
         Access the transcriptions
         """
-        if self._transcriptions is None:
-            self._transcriptions = TranscriptionList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._transcriptions
+        pass
 
     def __repr__(self) -> str:
         """
@@ -506,9 +408,7 @@ class RecordingPage(Page):
 
         :param payload: Payload response from the API
         """
-        return RecordingInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -569,18 +469,7 @@ class RecordingList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            date_created=date_created,
-            date_created_before=date_created_before,
-            date_created_after=date_created_after,
-            call_sid=call_sid,
-            conference_sid=conference_sid,
-            include_soft_deleted=include_soft_deleted,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -614,18 +503,7 @@ class RecordingList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            date_created=date_created,
-            date_created_before=date_created_before,
-            date_created_after=date_created_after,
-            call_sid=call_sid,
-            conference_sid=conference_sid,
-            include_soft_deleted=include_soft_deleted,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -657,19 +535,7 @@ class RecordingList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            date_created=date_created,
-            date_created_before=date_created_before,
-            date_created_after=date_created_after,
-            call_sid=call_sid,
-            conference_sid=conference_sid,
-            include_soft_deleted=include_soft_deleted,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -701,19 +567,7 @@ class RecordingList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            date_created=date_created,
-            date_created_before=date_created_before,
-            date_created_after=date_created_after,
-            call_sid=call_sid,
-            conference_sid=conference_sid,
-            include_soft_deleted=include_soft_deleted,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -746,18 +600,7 @@ class RecordingList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                date_created=date_created,
-                date_created_before=date_created_before,
-                date_created_after=date_created_after,
-                call_sid=call_sid,
-                conference_sid=conference_sid,
-                include_soft_deleted=include_soft_deleted,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -790,19 +633,7 @@ class RecordingList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                date_created=date_created,
-                date_created_before=date_created_before,
-                date_created_after=date_created_after,
-                call_sid=call_sid,
-                conference_sid=conference_sid,
-                include_soft_deleted=include_soft_deleted,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -834,18 +665,7 @@ class RecordingList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            date_created=date_created,
-            date_created_before=date_created_before,
-            date_created_after=date_created_after,
-            call_sid=call_sid,
-            conference_sid=conference_sid,
-            include_soft_deleted=include_soft_deleted,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -877,18 +697,7 @@ class RecordingList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            date_created=date_created,
-            date_created_before=date_created_before,
-            date_created_after=date_created_after,
-            call_sid=call_sid,
-            conference_sid=conference_sid,
-            include_soft_deleted=include_soft_deleted,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -918,28 +727,7 @@ class RecordingList(ListResource):
 
         :returns: Page of RecordingInstance
         """
-        data = values.of(
-            {
-                "DateCreated": serialize.iso8601_datetime(date_created),
-                "DateCreated<": serialize.iso8601_datetime(date_created_before),
-                "DateCreated>": serialize.iso8601_datetime(date_created_after),
-                "CallSid": call_sid,
-                "ConferenceSid": conference_sid,
-                "IncludeSoftDeleted": serialize.boolean_to_string(include_soft_deleted),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return RecordingPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -969,28 +757,7 @@ class RecordingList(ListResource):
 
         :returns: Page of RecordingInstance
         """
-        data = values.of(
-            {
-                "DateCreated": serialize.iso8601_datetime(date_created),
-                "DateCreated<": serialize.iso8601_datetime(date_created_before),
-                "DateCreated>": serialize.iso8601_datetime(date_created_after),
-                "CallSid": call_sid,
-                "ConferenceSid": conference_sid,
-                "IncludeSoftDeleted": serialize.boolean_to_string(include_soft_deleted),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return RecordingPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -1020,29 +787,7 @@ class RecordingList(ListResource):
 
         :returns: ApiResponse with RecordingPage, status code, and headers
         """
-        data = values.of(
-            {
-                "DateCreated": serialize.iso8601_datetime(date_created),
-                "DateCreated<": serialize.iso8601_datetime(date_created_before),
-                "DateCreated>": serialize.iso8601_datetime(date_created_after),
-                "CallSid": call_sid,
-                "ConferenceSid": conference_sid,
-                "IncludeSoftDeleted": serialize.boolean_to_string(include_soft_deleted),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = RecordingPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1072,31 +817,7 @@ class RecordingList(ListResource):
 
         :returns: ApiResponse with RecordingPage, status code, and headers
         """
-        data = values.of(
-            {
-                "DateCreated": serialize.iso8601_datetime(date_created),
-                "DateCreated<": serialize.iso8601_datetime(date_created_before),
-                "DateCreated>": serialize.iso8601_datetime(date_created_after),
-                "CallSid": call_sid,
-                "ConferenceSid": conference_sid,
-                "IncludeSoftDeleted": serialize.boolean_to_string(include_soft_deleted),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = RecordingPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> RecordingPage:
         """
@@ -1107,8 +828,7 @@ class RecordingList(ListResource):
 
         :returns: Page of RecordingInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return RecordingPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> RecordingPage:
         """
@@ -1119,8 +839,7 @@ class RecordingList(ListResource):
 
         :returns: Page of RecordingInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return RecordingPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, sid: str) -> RecordingContext:
         """
@@ -1128,9 +847,7 @@ class RecordingList(ListResource):
 
         :param sid: The Twilio-provided string that uniquely identifies the Recording resource to fetch.
         """
-        return RecordingContext(
-            self._version, account_sid=self._solution["account_sid"], sid=sid
-        )
+        pass
 
     def __call__(self, sid: str) -> RecordingContext:
         """

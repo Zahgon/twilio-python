@@ -67,89 +67,57 @@ class V1(Version):
 
     @property
     def brand_registrations(self) -> BrandRegistrationList:
-        if self._brand_registrations is None:
-            self._brand_registrations = BrandRegistrationList(self)
-        return self._brand_registrations
+        pass
 
     @property
     def deactivations(self) -> DeactivationsList:
-        if self._deactivations is None:
-            self._deactivations = DeactivationsList(self)
-        return self._deactivations
+        pass
 
     @property
     def domain_certs(self) -> DomainCertsList:
-        if self._domain_certs is None:
-            self._domain_certs = DomainCertsList(self)
-        return self._domain_certs
+        pass
 
     @property
     def domain_config(self) -> DomainConfigList:
-        if self._domain_config is None:
-            self._domain_config = DomainConfigList(self)
-        return self._domain_config
+        pass
 
     @property
     def domain_config_messaging_service(self) -> DomainConfigMessagingServiceList:
-        if self._domain_config_messaging_service is None:
-            self._domain_config_messaging_service = DomainConfigMessagingServiceList(
-                self
-            )
-        return self._domain_config_messaging_service
+        pass
 
     @property
     def domain_validate_dns(self) -> DomainValidateDnList:
-        if self._domain_validate_dns is None:
-            self._domain_validate_dns = DomainValidateDnList(self)
-        return self._domain_validate_dns
+        pass
 
     @property
     def external_campaign(self) -> ExternalCampaignList:
-        if self._external_campaign is None:
-            self._external_campaign = ExternalCampaignList(self)
-        return self._external_campaign
+        pass
 
     @property
     def linkshortening_messaging_service(self) -> LinkshorteningMessagingServiceList:
-        if self._linkshortening_messaging_service is None:
-            self._linkshortening_messaging_service = LinkshorteningMessagingServiceList(
-                self
-            )
-        return self._linkshortening_messaging_service
+        pass
 
     @property
     def linkshortening_messaging_service_domain_association(
         self,
     ) -> LinkshorteningMessagingServiceDomainAssociationList:
-        if self._linkshortening_messaging_service_domain_association is None:
-            self._linkshortening_messaging_service_domain_association = (
-                LinkshorteningMessagingServiceDomainAssociationList(self)
-            )
-        return self._linkshortening_messaging_service_domain_association
+        pass
 
     @property
     def request_managed_cert(self) -> RequestManagedCertList:
-        if self._request_managed_cert is None:
-            self._request_managed_cert = RequestManagedCertList(self)
-        return self._request_managed_cert
+        pass
 
     @property
     def services(self) -> ServiceList:
-        if self._services is None:
-            self._services = ServiceList(self)
-        return self._services
+        pass
 
     @property
     def tollfree_verifications(self) -> TollfreeVerificationList:
-        if self._tollfree_verifications is None:
-            self._tollfree_verifications = TollfreeVerificationList(self)
-        return self._tollfree_verifications
+        pass
 
     @property
     def usecases(self) -> UsecaseList:
-        if self._usecases is None:
-            self._usecases = UsecaseList(self)
-        return self._usecases
+        pass
 
     def __repr__(self) -> str:
         """

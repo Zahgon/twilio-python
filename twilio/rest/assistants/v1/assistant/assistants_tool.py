@@ -77,13 +77,7 @@ class AssistantsToolInstance(InstanceResource):
 
         :returns: AssistantsToolContext for this AssistantsToolInstance
         """
-        if self._context is None:
-            self._context = AssistantsToolContext(
-                self._version,
-                assistant_id=self._solution["assistant_id"],
-                id=self._solution["id"],
-            )
-        return self._context
+        pass
 
     def create(self) -> "AssistantsToolInstance":
         """
@@ -92,7 +86,7 @@ class AssistantsToolInstance(InstanceResource):
 
         :returns: The created AssistantsToolInstance
         """
-        return self._proxy.create()
+        pass
 
     async def create_async(self) -> "AssistantsToolInstance":
         """
@@ -101,7 +95,7 @@ class AssistantsToolInstance(InstanceResource):
 
         :returns: The created AssistantsToolInstance
         """
-        return await self._proxy.create_async()
+        pass
 
     def create_with_http_info(self) -> ApiResponse:
         """
@@ -110,7 +104,7 @@ class AssistantsToolInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.create_with_http_info()
+        pass
 
     async def create_with_http_info_async(self) -> ApiResponse:
         """
@@ -119,7 +113,7 @@ class AssistantsToolInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.create_with_http_info_async()
+        pass
 
     def delete(self) -> bool:
         """
@@ -128,7 +122,7 @@ class AssistantsToolInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -137,7 +131,7 @@ class AssistantsToolInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -146,7 +140,7 @@ class AssistantsToolInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -155,7 +149,7 @@ class AssistantsToolInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -193,13 +187,7 @@ class AssistantsToolContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of({})
-        headers = values.of({})
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(self) -> AssistantsToolInstance:
         """
@@ -208,13 +196,7 @@ class AssistantsToolContext(InstanceContext):
 
         :returns: The created AssistantsToolInstance
         """
-        payload, _, _ = self._create()
-        return AssistantsToolInstance(
-            self._version,
-            payload,
-            assistant_id=self._solution["assistant_id"],
-            id=self._solution["id"],
-        )
+        pass
 
     def create_with_http_info(self) -> ApiResponse:
         """
@@ -223,14 +205,7 @@ class AssistantsToolContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create()
-        instance = AssistantsToolInstance(
-            self._version,
-            payload,
-            assistant_id=self._solution["assistant_id"],
-            id=self._solution["id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self) -> tuple:
         """
@@ -239,13 +214,7 @@ class AssistantsToolContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of({})
-        headers = values.of({})
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(self) -> AssistantsToolInstance:
         """
@@ -254,13 +223,7 @@ class AssistantsToolContext(InstanceContext):
 
         :returns: The created AssistantsToolInstance
         """
-        payload, _, _ = await self._create_async()
-        return AssistantsToolInstance(
-            self._version,
-            payload,
-            assistant_id=self._solution["assistant_id"],
-            id=self._solution["id"],
-        )
+        pass
 
     async def create_with_http_info_async(self) -> ApiResponse:
         """
@@ -269,14 +232,7 @@ class AssistantsToolContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async()
-        instance = AssistantsToolInstance(
-            self._version,
-            payload,
-            assistant_id=self._solution["assistant_id"],
-            id=self._solution["id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _delete(self) -> tuple:
         """
@@ -285,12 +241,7 @@ class AssistantsToolContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -299,8 +250,7 @@ class AssistantsToolContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -309,8 +259,7 @@ class AssistantsToolContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -319,12 +268,7 @@ class AssistantsToolContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -333,8 +277,7 @@ class AssistantsToolContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -343,8 +286,7 @@ class AssistantsToolContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -364,9 +306,7 @@ class AssistantsToolPage(Page):
 
         :param payload: Payload response from the API
         """
-        return AssistantsToolInstance(
-            self._version, payload, assistant_id=self._solution["assistant_id"]
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -402,12 +342,7 @@ class AssistantsToolList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, headers=headers
-        )
+        pass
 
     def create(self) -> AssistantsToolInstance:
         """
@@ -416,10 +351,7 @@ class AssistantsToolList(ListResource):
 
         :returns: The created AssistantsToolInstance
         """
-        payload, _, _ = self._create()
-        return AssistantsToolInstance(
-            self._version, payload, assistant_id=self._solution["assistant_id"]
-        )
+        pass
 
     def create_with_http_info(self) -> ApiResponse:
         """
@@ -428,11 +360,7 @@ class AssistantsToolList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create()
-        instance = AssistantsToolInstance(
-            self._version, payload, assistant_id=self._solution["assistant_id"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self) -> tuple:
         """
@@ -441,12 +369,7 @@ class AssistantsToolList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, headers=headers
-        )
+        pass
 
     async def create_async(self) -> AssistantsToolInstance:
         """
@@ -455,10 +378,7 @@ class AssistantsToolList(ListResource):
 
         :returns: The created AssistantsToolInstance
         """
-        payload, _, _ = await self._create_async()
-        return AssistantsToolInstance(
-            self._version, payload, assistant_id=self._solution["assistant_id"]
-        )
+        pass
 
     async def create_with_http_info_async(self) -> ApiResponse:
         """
@@ -467,11 +387,7 @@ class AssistantsToolList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async()
-        instance = AssistantsToolInstance(
-            self._version, payload, assistant_id=self._solution["assistant_id"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -493,10 +409,7 @@ class AssistantsToolList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -518,10 +431,7 @@ class AssistantsToolList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -541,11 +451,7 @@ class AssistantsToolList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -565,13 +471,7 @@ class AssistantsToolList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -592,12 +492,7 @@ class AssistantsToolList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -618,13 +513,7 @@ class AssistantsToolList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -644,12 +533,7 @@ class AssistantsToolList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -669,12 +553,7 @@ class AssistantsToolList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -692,22 +571,7 @@ class AssistantsToolList(ListResource):
 
         :returns: Page of AssistantsToolInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return AssistantsToolPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -725,22 +589,7 @@ class AssistantsToolList(ListResource):
 
         :returns: Page of AssistantsToolInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return AssistantsToolPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -758,23 +607,7 @@ class AssistantsToolList(ListResource):
 
         :returns: ApiResponse with AssistantsToolPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = AssistantsToolPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -792,25 +625,7 @@ class AssistantsToolList(ListResource):
 
         :returns: ApiResponse with AssistantsToolPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = AssistantsToolPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> AssistantsToolPage:
         """
@@ -821,8 +636,7 @@ class AssistantsToolList(ListResource):
 
         :returns: Page of AssistantsToolInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return AssistantsToolPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> AssistantsToolPage:
         """
@@ -833,8 +647,7 @@ class AssistantsToolList(ListResource):
 
         :returns: Page of AssistantsToolInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return AssistantsToolPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, id: str) -> AssistantsToolContext:
         """
@@ -842,9 +655,7 @@ class AssistantsToolList(ListResource):
 
         :param id: The tool ID.
         """
-        return AssistantsToolContext(
-            self._version, assistant_id=self._solution["assistant_id"], id=id
-        )
+        pass
 
     def __call__(self, id: str) -> AssistantsToolContext:
         """

@@ -86,24 +86,7 @@ class NewApiKeyList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "AccountSid": account_sid,
-                "FriendlyName": friendly_name,
-                "KeyType": key_type,
-                "Policy": serialize.object(policy),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -122,13 +105,7 @@ class NewApiKeyList(ListResource):
 
         :returns: The created NewApiKeyInstance
         """
-        payload, _, _ = self._create(
-            account_sid=account_sid,
-            friendly_name=friendly_name,
-            key_type=key_type,
-            policy=policy,
-        )
-        return NewApiKeyInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -147,14 +124,7 @@ class NewApiKeyList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            account_sid=account_sid,
-            friendly_name=friendly_name,
-            key_type=key_type,
-            policy=policy,
-        )
-        instance = NewApiKeyInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -169,24 +139,7 @@ class NewApiKeyList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "AccountSid": account_sid,
-                "FriendlyName": friendly_name,
-                "KeyType": key_type,
-                "Policy": serialize.object(policy),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -205,13 +158,7 @@ class NewApiKeyList(ListResource):
 
         :returns: The created NewApiKeyInstance
         """
-        payload, _, _ = await self._create_async(
-            account_sid=account_sid,
-            friendly_name=friendly_name,
-            key_type=key_type,
-            policy=policy,
-        )
-        return NewApiKeyInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -230,14 +177,7 @@ class NewApiKeyList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            account_sid=account_sid,
-            friendly_name=friendly_name,
-            key_type=key_type,
-            policy=policy,
-        )
-        instance = NewApiKeyInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

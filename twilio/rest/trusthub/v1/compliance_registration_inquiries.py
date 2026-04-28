@@ -78,12 +78,7 @@ class ComplianceRegistrationInquiriesInstance(InstanceResource):
 
         :returns: ComplianceRegistrationInquiriesContext for this ComplianceRegistrationInquiriesInstance
         """
-        if self._context is None:
-            self._context = ComplianceRegistrationInquiriesContext(
-                self._version,
-                registration_id=self._solution["registration_id"],
-            )
-        return self._context
+        pass
 
     def update(
         self,
@@ -98,10 +93,7 @@ class ComplianceRegistrationInquiriesInstance(InstanceResource):
 
         :returns: The updated ComplianceRegistrationInquiriesInstance
         """
-        return self._proxy.update(
-            is_isv_embed=is_isv_embed,
-            theme_set_id=theme_set_id,
-        )
+        pass
 
     async def update_async(
         self,
@@ -116,10 +108,7 @@ class ComplianceRegistrationInquiriesInstance(InstanceResource):
 
         :returns: The updated ComplianceRegistrationInquiriesInstance
         """
-        return await self._proxy.update_async(
-            is_isv_embed=is_isv_embed,
-            theme_set_id=theme_set_id,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -134,10 +123,7 @@ class ComplianceRegistrationInquiriesInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            is_isv_embed=is_isv_embed,
-            theme_set_id=theme_set_id,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -152,10 +138,7 @@ class ComplianceRegistrationInquiriesInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            is_isv_embed=is_isv_embed,
-            theme_set_id=theme_set_id,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -199,22 +182,7 @@ class ComplianceRegistrationInquiriesContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "IsIsvEmbed": serialize.boolean_to_string(is_isv_embed),
-                "ThemeSetId": theme_set_id,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -229,12 +197,7 @@ class ComplianceRegistrationInquiriesContext(InstanceContext):
 
         :returns: The updated ComplianceRegistrationInquiriesInstance
         """
-        payload, _, _ = self._update(
-            is_isv_embed=is_isv_embed, theme_set_id=theme_set_id
-        )
-        return ComplianceRegistrationInquiriesInstance(
-            self._version, payload, registration_id=self._solution["registration_id"]
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -249,13 +212,7 @@ class ComplianceRegistrationInquiriesContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            is_isv_embed=is_isv_embed, theme_set_id=theme_set_id
-        )
-        instance = ComplianceRegistrationInquiriesInstance(
-            self._version, payload, registration_id=self._solution["registration_id"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -268,22 +225,7 @@ class ComplianceRegistrationInquiriesContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "IsIsvEmbed": serialize.boolean_to_string(is_isv_embed),
-                "ThemeSetId": theme_set_id,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -298,12 +240,7 @@ class ComplianceRegistrationInquiriesContext(InstanceContext):
 
         :returns: The updated ComplianceRegistrationInquiriesInstance
         """
-        payload, _, _ = await self._update_async(
-            is_isv_embed=is_isv_embed, theme_set_id=theme_set_id
-        )
-        return ComplianceRegistrationInquiriesInstance(
-            self._version, payload, registration_id=self._solution["registration_id"]
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -318,13 +255,7 @@ class ComplianceRegistrationInquiriesContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            is_isv_embed=is_isv_embed, theme_set_id=theme_set_id
-        )
-        instance = ComplianceRegistrationInquiriesInstance(
-            self._version, payload, registration_id=self._solution["registration_id"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -406,63 +337,7 @@ class ComplianceRegistrationInquiriesList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "EndUserType": end_user_type,
-                "PhoneNumberType": phone_number_type,
-                "BusinessIdentityType": business_identity_type,
-                "BusinessRegistrationAuthority": business_registration_authority,
-                "BusinessLegalName": business_legal_name,
-                "NotificationEmail": notification_email,
-                "AcceptedNotificationReceipt": serialize.boolean_to_string(
-                    accepted_notification_receipt
-                ),
-                "BusinessRegistrationNumber": business_registration_number,
-                "BusinessWebsiteUrl": business_website_url,
-                "FriendlyName": friendly_name,
-                "AuthorizedRepresentative1FirstName": authorized_representative1_first_name,
-                "AuthorizedRepresentative1LastName": authorized_representative1_last_name,
-                "AuthorizedRepresentative1Phone": authorized_representative1_phone,
-                "AuthorizedRepresentative1Email": authorized_representative1_email,
-                "AuthorizedRepresentative1DateOfBirth": authorized_representative1_date_of_birth,
-                "AddressStreet": address_street,
-                "AddressStreetSecondary": address_street_secondary,
-                "AddressCity": address_city,
-                "AddressSubdivision": address_subdivision,
-                "AddressPostalCode": address_postal_code,
-                "AddressCountryCode": address_country_code,
-                "EmergencyAddressStreet": emergency_address_street,
-                "EmergencyAddressStreetSecondary": emergency_address_street_secondary,
-                "EmergencyAddressCity": emergency_address_city,
-                "EmergencyAddressSubdivision": emergency_address_subdivision,
-                "EmergencyAddressPostalCode": emergency_address_postal_code,
-                "EmergencyAddressCountryCode": emergency_address_country_code,
-                "UseAddressAsEmergencyAddress": serialize.boolean_to_string(
-                    use_address_as_emergency_address
-                ),
-                "FileName": file_name,
-                "File": file,
-                "FirstName": first_name,
-                "LastName": last_name,
-                "DateOfBirth": date_of_birth,
-                "IndividualEmail": individual_email,
-                "IndividualPhone": individual_phone,
-                "IsIsvEmbed": serialize.boolean_to_string(is_isv_embed),
-                "IsvRegisteringForSelfOrTenant": isv_registering_for_self_or_tenant,
-                "StatusCallbackUrl": status_callback_url,
-                "ThemeSetId": theme_set_id,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -556,48 +431,7 @@ class ComplianceRegistrationInquiriesList(ListResource):
 
         :returns: The created ComplianceRegistrationInquiriesInstance
         """
-        payload, _, _ = self._create(
-            end_user_type=end_user_type,
-            phone_number_type=phone_number_type,
-            business_identity_type=business_identity_type,
-            business_registration_authority=business_registration_authority,
-            business_legal_name=business_legal_name,
-            notification_email=notification_email,
-            accepted_notification_receipt=accepted_notification_receipt,
-            business_registration_number=business_registration_number,
-            business_website_url=business_website_url,
-            friendly_name=friendly_name,
-            authorized_representative1_first_name=authorized_representative1_first_name,
-            authorized_representative1_last_name=authorized_representative1_last_name,
-            authorized_representative1_phone=authorized_representative1_phone,
-            authorized_representative1_email=authorized_representative1_email,
-            authorized_representative1_date_of_birth=authorized_representative1_date_of_birth,
-            address_street=address_street,
-            address_street_secondary=address_street_secondary,
-            address_city=address_city,
-            address_subdivision=address_subdivision,
-            address_postal_code=address_postal_code,
-            address_country_code=address_country_code,
-            emergency_address_street=emergency_address_street,
-            emergency_address_street_secondary=emergency_address_street_secondary,
-            emergency_address_city=emergency_address_city,
-            emergency_address_subdivision=emergency_address_subdivision,
-            emergency_address_postal_code=emergency_address_postal_code,
-            emergency_address_country_code=emergency_address_country_code,
-            use_address_as_emergency_address=use_address_as_emergency_address,
-            file_name=file_name,
-            file=file,
-            first_name=first_name,
-            last_name=last_name,
-            date_of_birth=date_of_birth,
-            individual_email=individual_email,
-            individual_phone=individual_phone,
-            is_isv_embed=is_isv_embed,
-            isv_registering_for_self_or_tenant=isv_registering_for_self_or_tenant,
-            status_callback_url=status_callback_url,
-            theme_set_id=theme_set_id,
-        )
-        return ComplianceRegistrationInquiriesInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -691,49 +525,7 @@ class ComplianceRegistrationInquiriesList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            end_user_type=end_user_type,
-            phone_number_type=phone_number_type,
-            business_identity_type=business_identity_type,
-            business_registration_authority=business_registration_authority,
-            business_legal_name=business_legal_name,
-            notification_email=notification_email,
-            accepted_notification_receipt=accepted_notification_receipt,
-            business_registration_number=business_registration_number,
-            business_website_url=business_website_url,
-            friendly_name=friendly_name,
-            authorized_representative1_first_name=authorized_representative1_first_name,
-            authorized_representative1_last_name=authorized_representative1_last_name,
-            authorized_representative1_phone=authorized_representative1_phone,
-            authorized_representative1_email=authorized_representative1_email,
-            authorized_representative1_date_of_birth=authorized_representative1_date_of_birth,
-            address_street=address_street,
-            address_street_secondary=address_street_secondary,
-            address_city=address_city,
-            address_subdivision=address_subdivision,
-            address_postal_code=address_postal_code,
-            address_country_code=address_country_code,
-            emergency_address_street=emergency_address_street,
-            emergency_address_street_secondary=emergency_address_street_secondary,
-            emergency_address_city=emergency_address_city,
-            emergency_address_subdivision=emergency_address_subdivision,
-            emergency_address_postal_code=emergency_address_postal_code,
-            emergency_address_country_code=emergency_address_country_code,
-            use_address_as_emergency_address=use_address_as_emergency_address,
-            file_name=file_name,
-            file=file,
-            first_name=first_name,
-            last_name=last_name,
-            date_of_birth=date_of_birth,
-            individual_email=individual_email,
-            individual_phone=individual_phone,
-            is_isv_embed=is_isv_embed,
-            isv_registering_for_self_or_tenant=isv_registering_for_self_or_tenant,
-            status_callback_url=status_callback_url,
-            theme_set_id=theme_set_id,
-        )
-        instance = ComplianceRegistrationInquiriesInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -788,63 +580,7 @@ class ComplianceRegistrationInquiriesList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "EndUserType": end_user_type,
-                "PhoneNumberType": phone_number_type,
-                "BusinessIdentityType": business_identity_type,
-                "BusinessRegistrationAuthority": business_registration_authority,
-                "BusinessLegalName": business_legal_name,
-                "NotificationEmail": notification_email,
-                "AcceptedNotificationReceipt": serialize.boolean_to_string(
-                    accepted_notification_receipt
-                ),
-                "BusinessRegistrationNumber": business_registration_number,
-                "BusinessWebsiteUrl": business_website_url,
-                "FriendlyName": friendly_name,
-                "AuthorizedRepresentative1FirstName": authorized_representative1_first_name,
-                "AuthorizedRepresentative1LastName": authorized_representative1_last_name,
-                "AuthorizedRepresentative1Phone": authorized_representative1_phone,
-                "AuthorizedRepresentative1Email": authorized_representative1_email,
-                "AuthorizedRepresentative1DateOfBirth": authorized_representative1_date_of_birth,
-                "AddressStreet": address_street,
-                "AddressStreetSecondary": address_street_secondary,
-                "AddressCity": address_city,
-                "AddressSubdivision": address_subdivision,
-                "AddressPostalCode": address_postal_code,
-                "AddressCountryCode": address_country_code,
-                "EmergencyAddressStreet": emergency_address_street,
-                "EmergencyAddressStreetSecondary": emergency_address_street_secondary,
-                "EmergencyAddressCity": emergency_address_city,
-                "EmergencyAddressSubdivision": emergency_address_subdivision,
-                "EmergencyAddressPostalCode": emergency_address_postal_code,
-                "EmergencyAddressCountryCode": emergency_address_country_code,
-                "UseAddressAsEmergencyAddress": serialize.boolean_to_string(
-                    use_address_as_emergency_address
-                ),
-                "FileName": file_name,
-                "File": file,
-                "FirstName": first_name,
-                "LastName": last_name,
-                "DateOfBirth": date_of_birth,
-                "IndividualEmail": individual_email,
-                "IndividualPhone": individual_phone,
-                "IsIsvEmbed": serialize.boolean_to_string(is_isv_embed),
-                "IsvRegisteringForSelfOrTenant": isv_registering_for_self_or_tenant,
-                "StatusCallbackUrl": status_callback_url,
-                "ThemeSetId": theme_set_id,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -938,48 +674,7 @@ class ComplianceRegistrationInquiriesList(ListResource):
 
         :returns: The created ComplianceRegistrationInquiriesInstance
         """
-        payload, _, _ = await self._create_async(
-            end_user_type=end_user_type,
-            phone_number_type=phone_number_type,
-            business_identity_type=business_identity_type,
-            business_registration_authority=business_registration_authority,
-            business_legal_name=business_legal_name,
-            notification_email=notification_email,
-            accepted_notification_receipt=accepted_notification_receipt,
-            business_registration_number=business_registration_number,
-            business_website_url=business_website_url,
-            friendly_name=friendly_name,
-            authorized_representative1_first_name=authorized_representative1_first_name,
-            authorized_representative1_last_name=authorized_representative1_last_name,
-            authorized_representative1_phone=authorized_representative1_phone,
-            authorized_representative1_email=authorized_representative1_email,
-            authorized_representative1_date_of_birth=authorized_representative1_date_of_birth,
-            address_street=address_street,
-            address_street_secondary=address_street_secondary,
-            address_city=address_city,
-            address_subdivision=address_subdivision,
-            address_postal_code=address_postal_code,
-            address_country_code=address_country_code,
-            emergency_address_street=emergency_address_street,
-            emergency_address_street_secondary=emergency_address_street_secondary,
-            emergency_address_city=emergency_address_city,
-            emergency_address_subdivision=emergency_address_subdivision,
-            emergency_address_postal_code=emergency_address_postal_code,
-            emergency_address_country_code=emergency_address_country_code,
-            use_address_as_emergency_address=use_address_as_emergency_address,
-            file_name=file_name,
-            file=file,
-            first_name=first_name,
-            last_name=last_name,
-            date_of_birth=date_of_birth,
-            individual_email=individual_email,
-            individual_phone=individual_phone,
-            is_isv_embed=is_isv_embed,
-            isv_registering_for_self_or_tenant=isv_registering_for_self_or_tenant,
-            status_callback_url=status_callback_url,
-            theme_set_id=theme_set_id,
-        )
-        return ComplianceRegistrationInquiriesInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -1073,49 +768,7 @@ class ComplianceRegistrationInquiriesList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            end_user_type=end_user_type,
-            phone_number_type=phone_number_type,
-            business_identity_type=business_identity_type,
-            business_registration_authority=business_registration_authority,
-            business_legal_name=business_legal_name,
-            notification_email=notification_email,
-            accepted_notification_receipt=accepted_notification_receipt,
-            business_registration_number=business_registration_number,
-            business_website_url=business_website_url,
-            friendly_name=friendly_name,
-            authorized_representative1_first_name=authorized_representative1_first_name,
-            authorized_representative1_last_name=authorized_representative1_last_name,
-            authorized_representative1_phone=authorized_representative1_phone,
-            authorized_representative1_email=authorized_representative1_email,
-            authorized_representative1_date_of_birth=authorized_representative1_date_of_birth,
-            address_street=address_street,
-            address_street_secondary=address_street_secondary,
-            address_city=address_city,
-            address_subdivision=address_subdivision,
-            address_postal_code=address_postal_code,
-            address_country_code=address_country_code,
-            emergency_address_street=emergency_address_street,
-            emergency_address_street_secondary=emergency_address_street_secondary,
-            emergency_address_city=emergency_address_city,
-            emergency_address_subdivision=emergency_address_subdivision,
-            emergency_address_postal_code=emergency_address_postal_code,
-            emergency_address_country_code=emergency_address_country_code,
-            use_address_as_emergency_address=use_address_as_emergency_address,
-            file_name=file_name,
-            file=file,
-            first_name=first_name,
-            last_name=last_name,
-            date_of_birth=date_of_birth,
-            individual_email=individual_email,
-            individual_phone=individual_phone,
-            is_isv_embed=is_isv_embed,
-            isv_registering_for_self_or_tenant=isv_registering_for_self_or_tenant,
-            status_callback_url=status_callback_url,
-            theme_set_id=theme_set_id,
-        )
-        instance = ComplianceRegistrationInquiriesInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def get(self, registration_id: str) -> ComplianceRegistrationInquiriesContext:
         """
@@ -1123,9 +776,7 @@ class ComplianceRegistrationInquiriesList(ListResource):
 
         :param registration_id: The unique RegistrationId matching the Regulatory Compliance Inquiry that should be resumed or resubmitted. This value will have been returned by the initial Regulatory Compliance Inquiry creation call.
         """
-        return ComplianceRegistrationInquiriesContext(
-            self._version, registration_id=registration_id
-        )
+        pass
 
     def __call__(self, registration_id: str) -> ComplianceRegistrationInquiriesContext:
         """

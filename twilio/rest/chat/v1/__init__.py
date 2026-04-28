@@ -33,15 +33,11 @@ class V1(Version):
 
     @property
     def credentials(self) -> CredentialList:
-        if self._credentials is None:
-            self._credentials = CredentialList(self)
-        return self._credentials
+        pass
 
     @property
     def services(self) -> ServiceList:
-        if self._services is None:
-            self._services = ServiceList(self)
-        return self._services
+        pass
 
     def __repr__(self) -> str:
         """

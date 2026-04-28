@@ -31,9 +31,7 @@ class V1(Version):
 
     @property
     def flows(self) -> FlowList:
-        if self._flows is None:
-            self._flows = FlowList(self)
-        return self._flows
+        pass
 
     def __repr__(self) -> str:
         """

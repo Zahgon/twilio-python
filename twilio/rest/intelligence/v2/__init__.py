@@ -45,51 +45,35 @@ class V2(Version):
 
     @property
     def custom_operators(self) -> CustomOperatorList:
-        if self._custom_operators is None:
-            self._custom_operators = CustomOperatorList(self)
-        return self._custom_operators
+        pass
 
     @property
     def operators(self) -> OperatorList:
-        if self._operators is None:
-            self._operators = OperatorList(self)
-        return self._operators
+        pass
 
     @property
     def operator_attachment(self) -> OperatorAttachmentList:
-        if self._operator_attachment is None:
-            self._operator_attachment = OperatorAttachmentList(self)
-        return self._operator_attachment
+        pass
 
     @property
     def operator_attachments(self) -> OperatorAttachmentsList:
-        if self._operator_attachments is None:
-            self._operator_attachments = OperatorAttachmentsList(self)
-        return self._operator_attachments
+        pass
 
     @property
     def operator_type(self) -> OperatorTypeList:
-        if self._operator_type is None:
-            self._operator_type = OperatorTypeList(self)
-        return self._operator_type
+        pass
 
     @property
     def prebuilt_operators(self) -> PrebuiltOperatorList:
-        if self._prebuilt_operators is None:
-            self._prebuilt_operators = PrebuiltOperatorList(self)
-        return self._prebuilt_operators
+        pass
 
     @property
     def services(self) -> ServiceList:
-        if self._services is None:
-            self._services = ServiceList(self)
-        return self._services
+        pass
 
     @property
     def transcripts(self) -> TranscriptList:
-        if self._transcripts is None:
-            self._transcripts = TranscriptList(self)
-        return self._transcripts
+        pass
 
     def __repr__(self) -> str:
         """

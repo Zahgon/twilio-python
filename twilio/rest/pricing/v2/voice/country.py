@@ -64,12 +64,7 @@ class CountryInstance(InstanceResource):
 
         :returns: CountryContext for this CountryInstance
         """
-        if self._context is None:
-            self._context = CountryContext(
-                self._version,
-                iso_country=self._solution["iso_country"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "CountryInstance":
         """
@@ -78,7 +73,7 @@ class CountryInstance(InstanceResource):
 
         :returns: The fetched CountryInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "CountryInstance":
         """
@@ -87,7 +82,7 @@ class CountryInstance(InstanceResource):
 
         :returns: The fetched CountryInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -96,7 +91,7 @@ class CountryInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -105,7 +100,7 @@ class CountryInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -141,14 +136,7 @@ class CountryContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> CountryInstance:
         """
@@ -157,12 +145,7 @@ class CountryContext(InstanceContext):
 
         :returns: The fetched CountryInstance
         """
-        payload, _, _ = self._fetch()
-        return CountryInstance(
-            self._version,
-            payload,
-            iso_country=self._solution["iso_country"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -171,13 +154,7 @@ class CountryContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = CountryInstance(
-            self._version,
-            payload,
-            iso_country=self._solution["iso_country"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -186,14 +163,7 @@ class CountryContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> CountryInstance:
         """
@@ -202,12 +172,7 @@ class CountryContext(InstanceContext):
 
         :returns: The fetched CountryInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return CountryInstance(
-            self._version,
-            payload,
-            iso_country=self._solution["iso_country"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -216,13 +181,7 @@ class CountryContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = CountryInstance(
-            self._version,
-            payload,
-            iso_country=self._solution["iso_country"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -242,7 +201,7 @@ class CountryPage(Page):
 
         :param payload: Payload response from the API
         """
-        return CountryInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -286,10 +245,7 @@ class CountryList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -311,10 +267,7 @@ class CountryList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -334,11 +287,7 @@ class CountryList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -358,13 +307,7 @@ class CountryList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -385,12 +328,7 @@ class CountryList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -411,13 +349,7 @@ class CountryList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -437,12 +369,7 @@ class CountryList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -462,12 +389,7 @@ class CountryList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -485,22 +407,7 @@ class CountryList(ListResource):
 
         :returns: Page of CountryInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return CountryPage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -518,22 +425,7 @@ class CountryList(ListResource):
 
         :returns: Page of CountryInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return CountryPage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -551,23 +443,7 @@ class CountryList(ListResource):
 
         :returns: ApiResponse with CountryPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = CountryPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -585,25 +461,7 @@ class CountryList(ListResource):
 
         :returns: ApiResponse with CountryPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = CountryPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> CountryPage:
         """
@@ -614,8 +472,7 @@ class CountryList(ListResource):
 
         :returns: Page of CountryInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return CountryPage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> CountryPage:
         """
@@ -626,8 +483,7 @@ class CountryList(ListResource):
 
         :returns: Page of CountryInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return CountryPage(self._version, response)
+        pass
 
     def get(self, iso_country: str) -> CountryContext:
         """
@@ -635,7 +491,7 @@ class CountryList(ListResource):
 
         :param iso_country: The [ISO country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) of the origin-based voice pricing information to fetch.
         """
-        return CountryContext(self._version, iso_country=iso_country)
+        pass
 
     def __call__(self, iso_country: str) -> CountryContext:
         """

@@ -58,12 +58,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: RecordingContext for this RecordingInstance
         """
-        if self._context is None:
-            self._context = RecordingContext(
-                self._version,
-                trunk_sid=self._solution["trunk_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "RecordingInstance":
         """
@@ -72,7 +67,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: The fetched RecordingInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "RecordingInstance":
         """
@@ -81,7 +76,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: The fetched RecordingInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -90,7 +85,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -99,7 +94,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -114,10 +109,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: The updated RecordingInstance
         """
-        return self._proxy.update(
-            mode=mode,
-            trim=trim,
-        )
+        pass
 
     async def update_async(
         self,
@@ -132,10 +124,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: The updated RecordingInstance
         """
-        return await self._proxy.update_async(
-            mode=mode,
-            trim=trim,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -150,10 +139,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            mode=mode,
-            trim=trim,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -168,10 +154,7 @@ class RecordingInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            mode=mode,
-            trim=trim,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -207,14 +190,7 @@ class RecordingContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> RecordingInstance:
         """
@@ -223,12 +199,7 @@ class RecordingContext(InstanceContext):
 
         :returns: The fetched RecordingInstance
         """
-        payload, _, _ = self._fetch()
-        return RecordingInstance(
-            self._version,
-            payload,
-            trunk_sid=self._solution["trunk_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -237,13 +208,7 @@ class RecordingContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = RecordingInstance(
-            self._version,
-            payload,
-            trunk_sid=self._solution["trunk_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -252,14 +217,7 @@ class RecordingContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> RecordingInstance:
         """
@@ -268,12 +226,7 @@ class RecordingContext(InstanceContext):
 
         :returns: The fetched RecordingInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return RecordingInstance(
-            self._version,
-            payload,
-            trunk_sid=self._solution["trunk_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -282,13 +235,7 @@ class RecordingContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = RecordingInstance(
-            self._version,
-            payload,
-            trunk_sid=self._solution["trunk_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -301,22 +248,7 @@ class RecordingContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Mode": mode,
-                "Trim": trim,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -331,10 +263,7 @@ class RecordingContext(InstanceContext):
 
         :returns: The updated RecordingInstance
         """
-        payload, _, _ = self._update(mode=mode, trim=trim)
-        return RecordingInstance(
-            self._version, payload, trunk_sid=self._solution["trunk_sid"]
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -349,11 +278,7 @@ class RecordingContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(mode=mode, trim=trim)
-        instance = RecordingInstance(
-            self._version, payload, trunk_sid=self._solution["trunk_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -366,22 +291,7 @@ class RecordingContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Mode": mode,
-                "Trim": trim,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -396,10 +306,7 @@ class RecordingContext(InstanceContext):
 
         :returns: The updated RecordingInstance
         """
-        payload, _, _ = await self._update_async(mode=mode, trim=trim)
-        return RecordingInstance(
-            self._version, payload, trunk_sid=self._solution["trunk_sid"]
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -414,11 +321,7 @@ class RecordingContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(mode=mode, trim=trim)
-        instance = RecordingInstance(
-            self._version, payload, trunk_sid=self._solution["trunk_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -452,7 +355,7 @@ class RecordingList(ListResource):
         Constructs a RecordingContext
 
         """
-        return RecordingContext(self._version, trunk_sid=self._solution["trunk_sid"])
+        pass
 
     def __call__(self) -> RecordingContext:
         """

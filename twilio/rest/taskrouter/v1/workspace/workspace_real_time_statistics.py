@@ -76,12 +76,7 @@ class WorkspaceRealTimeStatisticsInstance(InstanceResource):
 
         :returns: WorkspaceRealTimeStatisticsContext for this WorkspaceRealTimeStatisticsInstance
         """
-        if self._context is None:
-            self._context = WorkspaceRealTimeStatisticsContext(
-                self._version,
-                workspace_sid=self._solution["workspace_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(
         self, task_channel: Union[str, object] = values.unset
@@ -93,9 +88,7 @@ class WorkspaceRealTimeStatisticsInstance(InstanceResource):
 
         :returns: The fetched WorkspaceRealTimeStatisticsInstance
         """
-        return self._proxy.fetch(
-            task_channel=task_channel,
-        )
+        pass
 
     async def fetch_async(
         self, task_channel: Union[str, object] = values.unset
@@ -107,9 +100,7 @@ class WorkspaceRealTimeStatisticsInstance(InstanceResource):
 
         :returns: The fetched WorkspaceRealTimeStatisticsInstance
         """
-        return await self._proxy.fetch_async(
-            task_channel=task_channel,
-        )
+        pass
 
     def fetch_with_http_info(
         self, task_channel: Union[str, object] = values.unset
@@ -121,9 +112,7 @@ class WorkspaceRealTimeStatisticsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            task_channel=task_channel,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, task_channel: Union[str, object] = values.unset
@@ -135,9 +124,7 @@ class WorkspaceRealTimeStatisticsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            task_channel=task_channel,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -177,20 +164,7 @@ class WorkspaceRealTimeStatisticsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "TaskChannel": task_channel,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(
         self, task_channel: Union[str, object] = values.unset
@@ -202,12 +176,7 @@ class WorkspaceRealTimeStatisticsContext(InstanceContext):
 
         :returns: The fetched WorkspaceRealTimeStatisticsInstance
         """
-        payload, _, _ = self._fetch(task_channel=task_channel)
-        return WorkspaceRealTimeStatisticsInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-        )
+        pass
 
     def fetch_with_http_info(
         self, task_channel: Union[str, object] = values.unset
@@ -219,13 +188,7 @@ class WorkspaceRealTimeStatisticsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(task_channel=task_channel)
-        instance = WorkspaceRealTimeStatisticsInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self, task_channel: Union[str, object] = values.unset
@@ -236,20 +199,7 @@ class WorkspaceRealTimeStatisticsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "TaskChannel": task_channel,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self, task_channel: Union[str, object] = values.unset
@@ -261,12 +211,7 @@ class WorkspaceRealTimeStatisticsContext(InstanceContext):
 
         :returns: The fetched WorkspaceRealTimeStatisticsInstance
         """
-        payload, _, _ = await self._fetch_async(task_channel=task_channel)
-        return WorkspaceRealTimeStatisticsInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, task_channel: Union[str, object] = values.unset
@@ -278,15 +223,7 @@ class WorkspaceRealTimeStatisticsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            task_channel=task_channel
-        )
-        instance = WorkspaceRealTimeStatisticsInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -322,9 +259,7 @@ class WorkspaceRealTimeStatisticsList(ListResource):
         Constructs a WorkspaceRealTimeStatisticsContext
 
         """
-        return WorkspaceRealTimeStatisticsContext(
-            self._version, workspace_sid=self._solution["workspace_sid"]
-        )
+        pass
 
     def __call__(self) -> WorkspaceRealTimeStatisticsContext:
         """

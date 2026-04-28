@@ -58,12 +58,7 @@ class NumberInstance(InstanceResource):
 
         :returns: NumberContext for this NumberInstance
         """
-        if self._context is None:
-            self._context = NumberContext(
-                self._version,
-                number=self._solution["number"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "NumberInstance":
         """
@@ -72,7 +67,7 @@ class NumberInstance(InstanceResource):
 
         :returns: The fetched NumberInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "NumberInstance":
         """
@@ -81,7 +76,7 @@ class NumberInstance(InstanceResource):
 
         :returns: The fetched NumberInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -90,7 +85,7 @@ class NumberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -99,7 +94,7 @@ class NumberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -135,14 +130,7 @@ class NumberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> NumberInstance:
         """
@@ -151,12 +139,7 @@ class NumberContext(InstanceContext):
 
         :returns: The fetched NumberInstance
         """
-        payload, _, _ = self._fetch()
-        return NumberInstance(
-            self._version,
-            payload,
-            number=self._solution["number"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -165,13 +148,7 @@ class NumberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = NumberInstance(
-            self._version,
-            payload,
-            number=self._solution["number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -180,14 +157,7 @@ class NumberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> NumberInstance:
         """
@@ -196,12 +166,7 @@ class NumberContext(InstanceContext):
 
         :returns: The fetched NumberInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return NumberInstance(
-            self._version,
-            payload,
-            number=self._solution["number"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -210,13 +175,7 @@ class NumberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = NumberInstance(
-            self._version,
-            payload,
-            number=self._solution["number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -245,7 +204,7 @@ class NumberList(ListResource):
 
         :param number: The phone number to fetch.
         """
-        return NumberContext(self._version, number=number)
+        pass
 
     def __call__(self, number: str) -> NumberContext:
         """

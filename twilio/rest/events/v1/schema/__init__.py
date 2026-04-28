@@ -61,12 +61,7 @@ class SchemaInstance(InstanceResource):
 
         :returns: SchemaContext for this SchemaInstance
         """
-        if self._context is None:
-            self._context = SchemaContext(
-                self._version,
-                id=self._solution["id"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "SchemaInstance":
         """
@@ -75,7 +70,7 @@ class SchemaInstance(InstanceResource):
 
         :returns: The fetched SchemaInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "SchemaInstance":
         """
@@ -84,7 +79,7 @@ class SchemaInstance(InstanceResource):
 
         :returns: The fetched SchemaInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -93,7 +88,7 @@ class SchemaInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -102,14 +97,14 @@ class SchemaInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     @property
     def versions(self) -> SchemaVersionList:
         """
         Access the versions
         """
-        return self._proxy.versions
+        pass
 
     def __repr__(self) -> str:
         """
@@ -147,14 +142,7 @@ class SchemaContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> SchemaInstance:
         """
@@ -163,12 +151,7 @@ class SchemaContext(InstanceContext):
 
         :returns: The fetched SchemaInstance
         """
-        payload, _, _ = self._fetch()
-        return SchemaInstance(
-            self._version,
-            payload,
-            id=self._solution["id"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -177,13 +160,7 @@ class SchemaContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = SchemaInstance(
-            self._version,
-            payload,
-            id=self._solution["id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -192,14 +169,7 @@ class SchemaContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> SchemaInstance:
         """
@@ -208,12 +178,7 @@ class SchemaContext(InstanceContext):
 
         :returns: The fetched SchemaInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return SchemaInstance(
-            self._version,
-            payload,
-            id=self._solution["id"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -222,25 +187,14 @@ class SchemaContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = SchemaInstance(
-            self._version,
-            payload,
-            id=self._solution["id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def versions(self) -> SchemaVersionList:
         """
         Access the versions
         """
-        if self._versions is None:
-            self._versions = SchemaVersionList(
-                self._version,
-                self._solution["id"],
-            )
-        return self._versions
+        pass
 
     def __repr__(self) -> str:
         """
@@ -269,7 +223,7 @@ class SchemaList(ListResource):
 
         :param id: The unique identifier of the schema. Each schema can have multiple versions, that share the same id.
         """
-        return SchemaContext(self._version, id=id)
+        pass
 
     def __call__(self, id: str) -> SchemaContext:
         """

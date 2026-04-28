@@ -33,14 +33,7 @@ class Request(object):
 
     @classmethod
     def attribute_equal(cls, lhs, rhs) -> bool:
-        if lhs == Match.ANY or rhs == Match.ANY:
-            # ANY matches everything
-            return True
-
-        lhs = lhs or None
-        rhs = rhs or None
-
-        return lhs == rhs
+        pass
 
     def __eq__(self, other) -> bool:
         if not isinstance(other, Request):

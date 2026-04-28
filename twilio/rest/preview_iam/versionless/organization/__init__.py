@@ -51,36 +51,21 @@ class OrganizationContext(InstanceContext):
         """
         Access the accounts
         """
-        if self._accounts is None:
-            self._accounts = AccountList(
-                self._version,
-                self._solution["organization_sid"],
-            )
-        return self._accounts
+        pass
 
     @property
     def role_assignments(self) -> RoleAssignmentList:
         """
         Access the role_assignments
         """
-        if self._role_assignments is None:
-            self._role_assignments = RoleAssignmentList(
-                self._version,
-                self._solution["organization_sid"],
-            )
-        return self._role_assignments
+        pass
 
     @property
     def users(self) -> UserList:
         """
         Access the users
         """
-        if self._users is None:
-            self._users = UserList(
-                self._version,
-                self._solution["organization_sid"],
-            )
-        return self._users
+        pass
 
     def __repr__(self) -> str:
         """
@@ -109,7 +94,7 @@ class OrganizationList(ListResource):
 
         :param organization_sid:
         """
-        return OrganizationContext(self._version, organization_sid=organization_sid)
+        pass
 
     def __call__(self, organization_sid: str) -> OrganizationContext:
         """

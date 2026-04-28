@@ -35,15 +35,11 @@ class HostedNumbers(Version):
 
     @property
     def authorization_documents(self) -> AuthorizationDocumentList:
-        if self._authorization_documents is None:
-            self._authorization_documents = AuthorizationDocumentList(self)
-        return self._authorization_documents
+        pass
 
     @property
     def hosted_number_orders(self) -> HostedNumberOrderList:
-        if self._hosted_number_orders is None:
-            self._hosted_number_orders = HostedNumberOrderList(self)
-        return self._hosted_number_orders
+        pass
 
     def __repr__(self) -> str:
         """

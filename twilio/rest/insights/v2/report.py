@@ -42,11 +42,7 @@ class ReportInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "total_calls": self.total_calls,
-                "answered_by_human_percentage": self.answered_by_human_percentage,
-                "answered_by_machine_percentage": self.answered_by_machine_percentage,
-            }
+            pass
 
     class AccountReportCallDirection(object):
         """
@@ -60,10 +56,7 @@ class ReportInstance(InstanceResource):
             self.inbound: Optional[int] = payload.get("inbound")
 
         def to_dict(self):
-            return {
-                "outbound": self.outbound,
-                "inbound": self.inbound,
-            }
+            pass
 
     class AccountReportCallState(object):
         """
@@ -83,13 +76,7 @@ class ReportInstance(InstanceResource):
             self.canceled: Optional[int] = payload.get("canceled")
 
         def to_dict(self):
-            return {
-                "completed": self.completed,
-                "fail": self.fail,
-                "busy": self.busy,
-                "noanswer": self.noanswer,
-                "canceled": self.canceled,
-            }
+            pass
 
     class AccountReportCallType(object):
         """
@@ -109,13 +96,7 @@ class ReportInstance(InstanceResource):
             self.whatsapp: Optional[int] = payload.get("whatsapp")
 
         def to_dict(self):
-            return {
-                "carrier": self.carrier,
-                "sip": self.sip,
-                "trunking": self.trunking,
-                "client": self.client,
-                "whatsapp": self.whatsapp,
-            }
+            pass
 
     class AccountReportKYT(object):
         """
@@ -129,13 +110,7 @@ class ReportInstance(InstanceResource):
             ] = payload.get("outbound_carrier_calling")
 
         def to_dict(self):
-            return {
-                "outbound_carrier_calling": (
-                    self.outbound_carrier_calling.to_dict()
-                    if self.outbound_carrier_calling is not None
-                    else None
-                ),
-            }
+            pass
 
     class AccountReportKYTOutboundCarrierCalling(object):
         """
@@ -179,34 +154,7 @@ class ReportInstance(InstanceResource):
             self.stir_shaken: Optional[StirShaken] = payload.get("stir_shaken")
 
         def to_dict(self):
-            return {
-                "unique_calling_numbers": self.unique_calling_numbers,
-                "unique_called_numbers": self.unique_called_numbers,
-                "blocked_calls_by_carrier": (
-                    [
-                        blocked_calls_by_carrier.to_dict()
-                        for blocked_calls_by_carrier in self.blocked_calls_by_carrier
-                    ]
-                    if self.blocked_calls_by_carrier is not None
-                    else None
-                ),
-                "short_duration_calls_percentage": self.short_duration_calls_percentage,
-                "long_duration_calls_percentage": self.long_duration_calls_percentage,
-                "potential_robocalls_percentage": self.potential_robocalls_percentage,
-                "branded_calling": (
-                    self.branded_calling.to_dict()
-                    if self.branded_calling is not None
-                    else None
-                ),
-                "voice_integrity": (
-                    self.voice_integrity.to_dict()
-                    if self.voice_integrity is not None
-                    else None
-                ),
-                "stir_shaken": (
-                    self.stir_shaken.to_dict() if self.stir_shaken is not None else None
-                ),
-            }
+            pass
 
     class AccountReportNetworkIssues(object):
         """
@@ -222,14 +170,7 @@ class ReportInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "sdk": self.sdk.to_dict() if self.sdk is not None else None,
-                "twilio_gateway": (
-                    self.twilio_gateway.to_dict()
-                    if self.twilio_gateway is not None
-                    else None
-                ),
-            }
+            pass
 
     class AccountReportNetworkIssuesSdk(object):
         """
@@ -255,12 +196,7 @@ class ReportInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "ice_failures_percentage": self.ice_failures_percentage,
-                "high_latency_percentage": self.high_latency_percentage,
-                "high_packet_loss_percentage": self.high_packet_loss_percentage,
-                "high_jitter_percentage": self.high_jitter_percentage,
-            }
+            pass
 
     class AccountReportNetworkIssuesTwilioGateway(object):
         """
@@ -282,11 +218,7 @@ class ReportInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "high_latency_percentage": self.high_latency_percentage,
-                "high_packet_loss_percentage": self.high_packet_loss_percentage,
-                "high_jitter_percentage": self.high_jitter_percentage,
-            }
+            pass
 
     class BrandedCalling(object):
         """
@@ -312,18 +244,7 @@ class ReportInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "total_branded_calls": self.total_branded_calls,
-                "percent_branded_calls": self.percent_branded_calls,
-                "answer_rate": self.answer_rate,
-                "human_answer_rate": self.human_answer_rate,
-                "engagement_rate": self.engagement_rate,
-                "by_use_case": (
-                    [by_use_case.to_dict() for by_use_case in self.by_use_case]
-                    if self.by_use_case is not None
-                    else None
-                ),
-            }
+            pass
 
     class BrandedUseCaseDetail(object):
         """
@@ -347,14 +268,7 @@ class ReportInstance(InstanceResource):
             self.engagement_rate: Optional[float] = payload.get("engagement_rate")
 
         def to_dict(self):
-            return {
-                "use_case": self.use_case,
-                "enabled_phonenumbers": self.enabled_phonenumbers,
-                "total_calls": self.total_calls,
-                "answer_rate": self.answer_rate,
-                "human_answer_rate": self.human_answer_rate,
-                "engagement_rate": self.engagement_rate,
-            }
+            pass
 
     class CountyCarrierValueCarriers(object):
         """
@@ -374,12 +288,7 @@ class ReportInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "carrier": self.carrier,
-                "total_calls": self.total_calls,
-                "blocked_calls": self.blocked_calls,
-                "blocked_calls_percentage": self.blocked_calls_percentage,
-            }
+            pass
 
     class InsightsV2CreateAccountReportRequest(object):
         """
@@ -397,16 +306,7 @@ class ReportInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "time_range": (
-                    self.time_range.to_dict() if self.time_range is not None else None
-                ),
-                "filters": (
-                    [filters.to_dict() for filters in self.filters]
-                    if self.filters is not None
-                    else None
-                ),
-            }
+            pass
 
     class InsightsV2CreateAccountReportRequestTimeRange(object):
         """
@@ -420,10 +320,7 @@ class ReportInstance(InstanceResource):
             self.end_datetime: Optional[datetime] = payload.get("end_datetime")
 
         def to_dict(self):
-            return {
-                "start_datetime": self.start_datetime,
-                "end_datetime": self.end_datetime,
-            }
+            pass
 
     class ReportFilter(object):
         """
@@ -437,10 +334,7 @@ class ReportInstance(InstanceResource):
             self.values: Optional[List[str]] = payload.get("values")
 
         def to_dict(self):
-            return {
-                "key": self.key,
-                "values": self.values,
-            }
+            pass
 
     class StirShaken(object):
         """
@@ -458,17 +352,7 @@ class ReportInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "call_count": (
-                    self.call_count.to_dict() if self.call_count is not None else None
-                ),
-                "percentage": (
-                    self.percentage.to_dict() if self.percentage is not None else None
-                ),
-                "answer_rate": (
-                    self.answer_rate.to_dict() if self.answer_rate is not None else None
-                ),
-            }
+            pass
 
     class StirShakenAnswerRate(object):
         """
@@ -484,11 +368,7 @@ class ReportInstance(InstanceResource):
             self.stsh_c: Optional[float] = payload.get("stsh_c")
 
         def to_dict(self):
-            return {
-                "stsh_a": self.stsh_a,
-                "stsh_b": self.stsh_b,
-                "stsh_c": self.stsh_c,
-            }
+            pass
 
     class StirShakenCallCount(object):
         """
@@ -504,11 +384,7 @@ class ReportInstance(InstanceResource):
             self.stsh_c: Optional[int] = payload.get("stsh_c")
 
         def to_dict(self):
-            return {
-                "stsh_a": self.stsh_a,
-                "stsh_b": self.stsh_b,
-                "stsh_c": self.stsh_c,
-            }
+            pass
 
     class StirShakenPercentage(object):
         """
@@ -524,11 +400,7 @@ class ReportInstance(InstanceResource):
             self.stsh_c: Optional[float] = payload.get("stsh_c")
 
         def to_dict(self):
-            return {
-                "stsh_a": self.stsh_a,
-                "stsh_b": self.stsh_b,
-                "stsh_c": self.stsh_c,
-            }
+            pass
 
     class VoiceIntegrity(object):
         """
@@ -546,18 +418,7 @@ class ReportInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "enabled_calls": self.enabled_calls,
-                "enabled_percentage": self.enabled_percentage,
-                "calls_per_bundle": (
-                    [
-                        calls_per_bundle.to_dict()
-                        for calls_per_bundle in self.calls_per_bundle
-                    ]
-                    if self.calls_per_bundle is not None
-                    else None
-                ),
-            }
+            pass
 
     class VoiceIntegrityCallsPerBundle(object):
         """
@@ -579,13 +440,7 @@ class ReportInstance(InstanceResource):
             self.human_answer_rate: Optional[float] = payload.get("human_answer_rate")
 
         def to_dict(self):
-            return {
-                "bundle_sid": self.bundle_sid,
-                "enabled_phonenumbers": self.enabled_phonenumbers,
-                "total_calls": self.total_calls,
-                "answer_rate": self.answer_rate,
-                "human_answer_rate": self.human_answer_rate,
-            }
+            pass
 
     class ReportStatus(object):
         CREATED = "created"
@@ -668,12 +523,7 @@ class ReportInstance(InstanceResource):
 
         :returns: ReportContext for this ReportInstance
         """
-        if self._context is None:
-            self._context = ReportContext(
-                self._version,
-                report_id=self._solution["report_id"],
-            )
-        return self._context
+        pass
 
     def create(
         self,
@@ -688,9 +538,7 @@ class ReportInstance(InstanceResource):
 
         :returns: The created ReportInstance
         """
-        return self._proxy.create(
-            insights_v2_create_account_report_request=insights_v2_create_account_report_request,
-        )
+        pass
 
     async def create_async(
         self,
@@ -705,9 +553,7 @@ class ReportInstance(InstanceResource):
 
         :returns: The created ReportInstance
         """
-        return await self._proxy.create_async(
-            insights_v2_create_account_report_request=insights_v2_create_account_report_request,
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -722,9 +568,7 @@ class ReportInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.create_with_http_info(
-            insights_v2_create_account_report_request=insights_v2_create_account_report_request,
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -739,9 +583,7 @@ class ReportInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.create_with_http_info_async(
-            insights_v2_create_account_report_request=insights_v2_create_account_report_request,
-        )
+        pass
 
     def fetch(self) -> "ReportInstance":
         """
@@ -750,7 +592,7 @@ class ReportInstance(InstanceResource):
 
         :returns: The fetched ReportInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "ReportInstance":
         """
@@ -759,7 +601,7 @@ class ReportInstance(InstanceResource):
 
         :returns: The fetched ReportInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -768,7 +610,7 @@ class ReportInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -777,7 +619,7 @@ class ReportInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -809,11 +651,7 @@ class ReportContext(InstanceContext):
             )
 
         def to_dict(self):
-            return {
-                "total_calls": self.total_calls,
-                "answered_by_human_percentage": self.answered_by_human_percentage,
-                "answered_by_machine_percentage": self.answered_by_machine_percentage,
-            }
+            pass
 
     class AccountReportCallDirection(object):
         """
@@ -827,10 +665,7 @@ class ReportContext(InstanceContext):
             self.inbound: Optional[int] = payload.get("inbound")
 
         def to_dict(self):
-            return {
-                "outbound": self.outbound,
-                "inbound": self.inbound,
-            }
+            pass
 
     class AccountReportCallState(object):
         """
@@ -850,13 +685,7 @@ class ReportContext(InstanceContext):
             self.canceled: Optional[int] = payload.get("canceled")
 
         def to_dict(self):
-            return {
-                "completed": self.completed,
-                "fail": self.fail,
-                "busy": self.busy,
-                "noanswer": self.noanswer,
-                "canceled": self.canceled,
-            }
+            pass
 
     class AccountReportCallType(object):
         """
@@ -876,13 +705,7 @@ class ReportContext(InstanceContext):
             self.whatsapp: Optional[int] = payload.get("whatsapp")
 
         def to_dict(self):
-            return {
-                "carrier": self.carrier,
-                "sip": self.sip,
-                "trunking": self.trunking,
-                "client": self.client,
-                "whatsapp": self.whatsapp,
-            }
+            pass
 
     class AccountReportKYT(object):
         """
@@ -896,13 +719,7 @@ class ReportContext(InstanceContext):
             ] = payload.get("outbound_carrier_calling")
 
         def to_dict(self):
-            return {
-                "outbound_carrier_calling": (
-                    self.outbound_carrier_calling.to_dict()
-                    if self.outbound_carrier_calling is not None
-                    else None
-                ),
-            }
+            pass
 
     class AccountReportKYTOutboundCarrierCalling(object):
         """
@@ -946,34 +763,7 @@ class ReportContext(InstanceContext):
             self.stir_shaken: Optional[StirShaken] = payload.get("stir_shaken")
 
         def to_dict(self):
-            return {
-                "unique_calling_numbers": self.unique_calling_numbers,
-                "unique_called_numbers": self.unique_called_numbers,
-                "blocked_calls_by_carrier": (
-                    [
-                        blocked_calls_by_carrier.to_dict()
-                        for blocked_calls_by_carrier in self.blocked_calls_by_carrier
-                    ]
-                    if self.blocked_calls_by_carrier is not None
-                    else None
-                ),
-                "short_duration_calls_percentage": self.short_duration_calls_percentage,
-                "long_duration_calls_percentage": self.long_duration_calls_percentage,
-                "potential_robocalls_percentage": self.potential_robocalls_percentage,
-                "branded_calling": (
-                    self.branded_calling.to_dict()
-                    if self.branded_calling is not None
-                    else None
-                ),
-                "voice_integrity": (
-                    self.voice_integrity.to_dict()
-                    if self.voice_integrity is not None
-                    else None
-                ),
-                "stir_shaken": (
-                    self.stir_shaken.to_dict() if self.stir_shaken is not None else None
-                ),
-            }
+            pass
 
     class AccountReportNetworkIssues(object):
         """
@@ -989,14 +779,7 @@ class ReportContext(InstanceContext):
             )
 
         def to_dict(self):
-            return {
-                "sdk": self.sdk.to_dict() if self.sdk is not None else None,
-                "twilio_gateway": (
-                    self.twilio_gateway.to_dict()
-                    if self.twilio_gateway is not None
-                    else None
-                ),
-            }
+            pass
 
     class AccountReportNetworkIssuesSdk(object):
         """
@@ -1022,12 +805,7 @@ class ReportContext(InstanceContext):
             )
 
         def to_dict(self):
-            return {
-                "ice_failures_percentage": self.ice_failures_percentage,
-                "high_latency_percentage": self.high_latency_percentage,
-                "high_packet_loss_percentage": self.high_packet_loss_percentage,
-                "high_jitter_percentage": self.high_jitter_percentage,
-            }
+            pass
 
     class AccountReportNetworkIssuesTwilioGateway(object):
         """
@@ -1049,11 +827,7 @@ class ReportContext(InstanceContext):
             )
 
         def to_dict(self):
-            return {
-                "high_latency_percentage": self.high_latency_percentage,
-                "high_packet_loss_percentage": self.high_packet_loss_percentage,
-                "high_jitter_percentage": self.high_jitter_percentage,
-            }
+            pass
 
     class BrandedCalling(object):
         """
@@ -1079,18 +853,7 @@ class ReportContext(InstanceContext):
             )
 
         def to_dict(self):
-            return {
-                "total_branded_calls": self.total_branded_calls,
-                "percent_branded_calls": self.percent_branded_calls,
-                "answer_rate": self.answer_rate,
-                "human_answer_rate": self.human_answer_rate,
-                "engagement_rate": self.engagement_rate,
-                "by_use_case": (
-                    [by_use_case.to_dict() for by_use_case in self.by_use_case]
-                    if self.by_use_case is not None
-                    else None
-                ),
-            }
+            pass
 
     class BrandedUseCaseDetail(object):
         """
@@ -1114,14 +877,7 @@ class ReportContext(InstanceContext):
             self.engagement_rate: Optional[float] = payload.get("engagement_rate")
 
         def to_dict(self):
-            return {
-                "use_case": self.use_case,
-                "enabled_phonenumbers": self.enabled_phonenumbers,
-                "total_calls": self.total_calls,
-                "answer_rate": self.answer_rate,
-                "human_answer_rate": self.human_answer_rate,
-                "engagement_rate": self.engagement_rate,
-            }
+            pass
 
     class CountyCarrierValueCarriers(object):
         """
@@ -1141,12 +897,7 @@ class ReportContext(InstanceContext):
             )
 
         def to_dict(self):
-            return {
-                "carrier": self.carrier,
-                "total_calls": self.total_calls,
-                "blocked_calls": self.blocked_calls,
-                "blocked_calls_percentage": self.blocked_calls_percentage,
-            }
+            pass
 
     class InsightsV2CreateAccountReportRequest(object):
         """
@@ -1164,16 +915,7 @@ class ReportContext(InstanceContext):
             )
 
         def to_dict(self):
-            return {
-                "time_range": (
-                    self.time_range.to_dict() if self.time_range is not None else None
-                ),
-                "filters": (
-                    [filters.to_dict() for filters in self.filters]
-                    if self.filters is not None
-                    else None
-                ),
-            }
+            pass
 
     class InsightsV2CreateAccountReportRequestTimeRange(object):
         """
@@ -1187,10 +929,7 @@ class ReportContext(InstanceContext):
             self.end_datetime: Optional[datetime] = payload.get("end_datetime")
 
         def to_dict(self):
-            return {
-                "start_datetime": self.start_datetime,
-                "end_datetime": self.end_datetime,
-            }
+            pass
 
     class ReportFilter(object):
         """
@@ -1204,10 +943,7 @@ class ReportContext(InstanceContext):
             self.values: Optional[List[str]] = payload.get("values")
 
         def to_dict(self):
-            return {
-                "key": self.key,
-                "values": self.values,
-            }
+            pass
 
     class StirShaken(object):
         """
@@ -1225,17 +961,7 @@ class ReportContext(InstanceContext):
             )
 
         def to_dict(self):
-            return {
-                "call_count": (
-                    self.call_count.to_dict() if self.call_count is not None else None
-                ),
-                "percentage": (
-                    self.percentage.to_dict() if self.percentage is not None else None
-                ),
-                "answer_rate": (
-                    self.answer_rate.to_dict() if self.answer_rate is not None else None
-                ),
-            }
+            pass
 
     class StirShakenAnswerRate(object):
         """
@@ -1251,11 +977,7 @@ class ReportContext(InstanceContext):
             self.stsh_c: Optional[float] = payload.get("stsh_c")
 
         def to_dict(self):
-            return {
-                "stsh_a": self.stsh_a,
-                "stsh_b": self.stsh_b,
-                "stsh_c": self.stsh_c,
-            }
+            pass
 
     class StirShakenCallCount(object):
         """
@@ -1271,11 +993,7 @@ class ReportContext(InstanceContext):
             self.stsh_c: Optional[int] = payload.get("stsh_c")
 
         def to_dict(self):
-            return {
-                "stsh_a": self.stsh_a,
-                "stsh_b": self.stsh_b,
-                "stsh_c": self.stsh_c,
-            }
+            pass
 
     class StirShakenPercentage(object):
         """
@@ -1291,11 +1009,7 @@ class ReportContext(InstanceContext):
             self.stsh_c: Optional[float] = payload.get("stsh_c")
 
         def to_dict(self):
-            return {
-                "stsh_a": self.stsh_a,
-                "stsh_b": self.stsh_b,
-                "stsh_c": self.stsh_c,
-            }
+            pass
 
     class VoiceIntegrity(object):
         """
@@ -1313,18 +1027,7 @@ class ReportContext(InstanceContext):
             )
 
         def to_dict(self):
-            return {
-                "enabled_calls": self.enabled_calls,
-                "enabled_percentage": self.enabled_percentage,
-                "calls_per_bundle": (
-                    [
-                        calls_per_bundle.to_dict()
-                        for calls_per_bundle in self.calls_per_bundle
-                    ]
-                    if self.calls_per_bundle is not None
-                    else None
-                ),
-            }
+            pass
 
     class VoiceIntegrityCallsPerBundle(object):
         """
@@ -1346,13 +1049,7 @@ class ReportContext(InstanceContext):
             self.human_answer_rate: Optional[float] = payload.get("human_answer_rate")
 
         def to_dict(self):
-            return {
-                "bundle_sid": self.bundle_sid,
-                "enabled_phonenumbers": self.enabled_phonenumbers,
-                "total_calls": self.total_calls,
-                "answer_rate": self.answer_rate,
-                "human_answer_rate": self.human_answer_rate,
-            }
+            pass
 
     def __init__(self, version: Version, report_id: str):
         """
@@ -1381,17 +1078,7 @@ class ReportContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = insights_v2_create_account_report_request.to_dict()
-
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -1406,12 +1093,7 @@ class ReportContext(InstanceContext):
 
         :returns: The created ReportInstance
         """
-        payload, _, _ = self._create(
-            insights_v2_create_account_report_request=insights_v2_create_account_report_request
-        )
-        return ReportInstance(
-            self._version, payload, report_id=self._solution["report_id"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -1426,13 +1108,7 @@ class ReportContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            insights_v2_create_account_report_request=insights_v2_create_account_report_request
-        )
-        instance = ReportInstance(
-            self._version, payload, report_id=self._solution["report_id"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -1446,17 +1122,7 @@ class ReportContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = insights_v2_create_account_report_request.to_dict()
-
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -1471,12 +1137,7 @@ class ReportContext(InstanceContext):
 
         :returns: The created ReportInstance
         """
-        payload, _, _ = await self._create_async(
-            insights_v2_create_account_report_request=insights_v2_create_account_report_request
-        )
-        return ReportInstance(
-            self._version, payload, report_id=self._solution["report_id"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -1491,13 +1152,7 @@ class ReportContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            insights_v2_create_account_report_request=insights_v2_create_account_report_request
-        )
-        instance = ReportInstance(
-            self._version, payload, report_id=self._solution["report_id"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -1506,14 +1161,7 @@ class ReportContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> ReportInstance:
         """
@@ -1522,12 +1170,7 @@ class ReportContext(InstanceContext):
 
         :returns: The fetched ReportInstance
         """
-        payload, _, _ = self._fetch()
-        return ReportInstance(
-            self._version,
-            payload,
-            report_id=self._solution["report_id"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -1536,13 +1179,7 @@ class ReportContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = ReportInstance(
-            self._version,
-            payload,
-            report_id=self._solution["report_id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -1551,14 +1188,7 @@ class ReportContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> ReportInstance:
         """
@@ -1567,12 +1197,7 @@ class ReportContext(InstanceContext):
 
         :returns: The fetched ReportInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return ReportInstance(
-            self._version,
-            payload,
-            report_id=self._solution["report_id"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -1581,13 +1206,7 @@ class ReportContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = ReportInstance(
-            self._version,
-            payload,
-            report_id=self._solution["report_id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -1619,11 +1238,7 @@ class ReportList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "total_calls": self.total_calls,
-                "answered_by_human_percentage": self.answered_by_human_percentage,
-                "answered_by_machine_percentage": self.answered_by_machine_percentage,
-            }
+            pass
 
     class AccountReportCallDirection(object):
         """
@@ -1637,10 +1252,7 @@ class ReportList(ListResource):
             self.inbound: Optional[int] = payload.get("inbound")
 
         def to_dict(self):
-            return {
-                "outbound": self.outbound,
-                "inbound": self.inbound,
-            }
+            pass
 
     class AccountReportCallState(object):
         """
@@ -1660,13 +1272,7 @@ class ReportList(ListResource):
             self.canceled: Optional[int] = payload.get("canceled")
 
         def to_dict(self):
-            return {
-                "completed": self.completed,
-                "fail": self.fail,
-                "busy": self.busy,
-                "noanswer": self.noanswer,
-                "canceled": self.canceled,
-            }
+            pass
 
     class AccountReportCallType(object):
         """
@@ -1686,13 +1292,7 @@ class ReportList(ListResource):
             self.whatsapp: Optional[int] = payload.get("whatsapp")
 
         def to_dict(self):
-            return {
-                "carrier": self.carrier,
-                "sip": self.sip,
-                "trunking": self.trunking,
-                "client": self.client,
-                "whatsapp": self.whatsapp,
-            }
+            pass
 
     class AccountReportKYT(object):
         """
@@ -1706,13 +1306,7 @@ class ReportList(ListResource):
             ] = payload.get("outbound_carrier_calling")
 
         def to_dict(self):
-            return {
-                "outbound_carrier_calling": (
-                    self.outbound_carrier_calling.to_dict()
-                    if self.outbound_carrier_calling is not None
-                    else None
-                ),
-            }
+            pass
 
     class AccountReportKYTOutboundCarrierCalling(object):
         """
@@ -1756,34 +1350,7 @@ class ReportList(ListResource):
             self.stir_shaken: Optional[StirShaken] = payload.get("stir_shaken")
 
         def to_dict(self):
-            return {
-                "unique_calling_numbers": self.unique_calling_numbers,
-                "unique_called_numbers": self.unique_called_numbers,
-                "blocked_calls_by_carrier": (
-                    [
-                        blocked_calls_by_carrier.to_dict()
-                        for blocked_calls_by_carrier in self.blocked_calls_by_carrier
-                    ]
-                    if self.blocked_calls_by_carrier is not None
-                    else None
-                ),
-                "short_duration_calls_percentage": self.short_duration_calls_percentage,
-                "long_duration_calls_percentage": self.long_duration_calls_percentage,
-                "potential_robocalls_percentage": self.potential_robocalls_percentage,
-                "branded_calling": (
-                    self.branded_calling.to_dict()
-                    if self.branded_calling is not None
-                    else None
-                ),
-                "voice_integrity": (
-                    self.voice_integrity.to_dict()
-                    if self.voice_integrity is not None
-                    else None
-                ),
-                "stir_shaken": (
-                    self.stir_shaken.to_dict() if self.stir_shaken is not None else None
-                ),
-            }
+            pass
 
     class AccountReportNetworkIssues(object):
         """
@@ -1799,14 +1366,7 @@ class ReportList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "sdk": self.sdk.to_dict() if self.sdk is not None else None,
-                "twilio_gateway": (
-                    self.twilio_gateway.to_dict()
-                    if self.twilio_gateway is not None
-                    else None
-                ),
-            }
+            pass
 
     class AccountReportNetworkIssuesSdk(object):
         """
@@ -1832,12 +1392,7 @@ class ReportList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "ice_failures_percentage": self.ice_failures_percentage,
-                "high_latency_percentage": self.high_latency_percentage,
-                "high_packet_loss_percentage": self.high_packet_loss_percentage,
-                "high_jitter_percentage": self.high_jitter_percentage,
-            }
+            pass
 
     class AccountReportNetworkIssuesTwilioGateway(object):
         """
@@ -1859,11 +1414,7 @@ class ReportList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "high_latency_percentage": self.high_latency_percentage,
-                "high_packet_loss_percentage": self.high_packet_loss_percentage,
-                "high_jitter_percentage": self.high_jitter_percentage,
-            }
+            pass
 
     class BrandedCalling(object):
         """
@@ -1889,18 +1440,7 @@ class ReportList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "total_branded_calls": self.total_branded_calls,
-                "percent_branded_calls": self.percent_branded_calls,
-                "answer_rate": self.answer_rate,
-                "human_answer_rate": self.human_answer_rate,
-                "engagement_rate": self.engagement_rate,
-                "by_use_case": (
-                    [by_use_case.to_dict() for by_use_case in self.by_use_case]
-                    if self.by_use_case is not None
-                    else None
-                ),
-            }
+            pass
 
     class BrandedUseCaseDetail(object):
         """
@@ -1924,14 +1464,7 @@ class ReportList(ListResource):
             self.engagement_rate: Optional[float] = payload.get("engagement_rate")
 
         def to_dict(self):
-            return {
-                "use_case": self.use_case,
-                "enabled_phonenumbers": self.enabled_phonenumbers,
-                "total_calls": self.total_calls,
-                "answer_rate": self.answer_rate,
-                "human_answer_rate": self.human_answer_rate,
-                "engagement_rate": self.engagement_rate,
-            }
+            pass
 
     class CountyCarrierValueCarriers(object):
         """
@@ -1951,12 +1484,7 @@ class ReportList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "carrier": self.carrier,
-                "total_calls": self.total_calls,
-                "blocked_calls": self.blocked_calls,
-                "blocked_calls_percentage": self.blocked_calls_percentage,
-            }
+            pass
 
     class InsightsV2CreateAccountReportRequest(object):
         """
@@ -1974,16 +1502,7 @@ class ReportList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "time_range": (
-                    self.time_range.to_dict() if self.time_range is not None else None
-                ),
-                "filters": (
-                    [filters.to_dict() for filters in self.filters]
-                    if self.filters is not None
-                    else None
-                ),
-            }
+            pass
 
     class InsightsV2CreateAccountReportRequestTimeRange(object):
         """
@@ -1997,10 +1516,7 @@ class ReportList(ListResource):
             self.end_datetime: Optional[datetime] = payload.get("end_datetime")
 
         def to_dict(self):
-            return {
-                "start_datetime": self.start_datetime,
-                "end_datetime": self.end_datetime,
-            }
+            pass
 
     class ReportFilter(object):
         """
@@ -2014,10 +1530,7 @@ class ReportList(ListResource):
             self.values: Optional[List[str]] = payload.get("values")
 
         def to_dict(self):
-            return {
-                "key": self.key,
-                "values": self.values,
-            }
+            pass
 
     class StirShaken(object):
         """
@@ -2035,17 +1548,7 @@ class ReportList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "call_count": (
-                    self.call_count.to_dict() if self.call_count is not None else None
-                ),
-                "percentage": (
-                    self.percentage.to_dict() if self.percentage is not None else None
-                ),
-                "answer_rate": (
-                    self.answer_rate.to_dict() if self.answer_rate is not None else None
-                ),
-            }
+            pass
 
     class StirShakenAnswerRate(object):
         """
@@ -2061,11 +1564,7 @@ class ReportList(ListResource):
             self.stsh_c: Optional[float] = payload.get("stsh_c")
 
         def to_dict(self):
-            return {
-                "stsh_a": self.stsh_a,
-                "stsh_b": self.stsh_b,
-                "stsh_c": self.stsh_c,
-            }
+            pass
 
     class StirShakenCallCount(object):
         """
@@ -2081,11 +1580,7 @@ class ReportList(ListResource):
             self.stsh_c: Optional[int] = payload.get("stsh_c")
 
         def to_dict(self):
-            return {
-                "stsh_a": self.stsh_a,
-                "stsh_b": self.stsh_b,
-                "stsh_c": self.stsh_c,
-            }
+            pass
 
     class StirShakenPercentage(object):
         """
@@ -2101,11 +1596,7 @@ class ReportList(ListResource):
             self.stsh_c: Optional[float] = payload.get("stsh_c")
 
         def to_dict(self):
-            return {
-                "stsh_a": self.stsh_a,
-                "stsh_b": self.stsh_b,
-                "stsh_c": self.stsh_c,
-            }
+            pass
 
     class VoiceIntegrity(object):
         """
@@ -2123,18 +1614,7 @@ class ReportList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "enabled_calls": self.enabled_calls,
-                "enabled_percentage": self.enabled_percentage,
-                "calls_per_bundle": (
-                    [
-                        calls_per_bundle.to_dict()
-                        for calls_per_bundle in self.calls_per_bundle
-                    ]
-                    if self.calls_per_bundle is not None
-                    else None
-                ),
-            }
+            pass
 
     class VoiceIntegrityCallsPerBundle(object):
         """
@@ -2156,13 +1636,7 @@ class ReportList(ListResource):
             self.human_answer_rate: Optional[float] = payload.get("human_answer_rate")
 
         def to_dict(self):
-            return {
-                "bundle_sid": self.bundle_sid,
-                "enabled_phonenumbers": self.enabled_phonenumbers,
-                "total_calls": self.total_calls,
-                "answer_rate": self.answer_rate,
-                "human_answer_rate": self.human_answer_rate,
-            }
+            pass
 
     def __init__(self, version: Version):
         """
@@ -2179,7 +1653,7 @@ class ReportList(ListResource):
 
         :param report_id: A unique request id.
         """
-        return ReportContext(self._version, report_id=report_id)
+        pass
 
     def __call__(self, report_id: str) -> ReportContext:
         """

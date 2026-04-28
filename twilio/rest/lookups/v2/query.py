@@ -54,18 +54,7 @@ class QueryInstance(InstanceResource):
             self.date_of_birth: Optional[str] = payload.get("date_of_birth")
 
         def to_dict(self):
-            return {
-                "first_name": self.first_name,
-                "last_name": self.last_name,
-                "address_line1": self.address_line1,
-                "address_line2": self.address_line2,
-                "city": self.city,
-                "state": self.state,
-                "postal_code": self.postal_code,
-                "address_country_code": self.address_country_code,
-                "national_id": self.national_id,
-                "date_of_birth": self.date_of_birth,
-            }
+            pass
 
     class LastSimSwapInfo(object):
         """
@@ -83,11 +72,7 @@ class QueryInstance(InstanceResource):
             self.swapped_in_period: Optional[bool] = payload.get("swapped_in_period")
 
         def to_dict(self):
-            return {
-                "last_sim_swap_date": self.last_sim_swap_date,
-                "swapped_period": self.swapped_period,
-                "swapped_in_period": self.swapped_in_period,
-            }
+            pass
 
     class LookupBatchRequest(object):
         """
@@ -117,27 +102,7 @@ class QueryInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "correlation_id": self.correlation_id,
-                "phone_number": self.phone_number,
-                "fields": self.fields,
-                "country_code": self.country_code,
-                "identity_match": (
-                    self.identity_match.to_dict()
-                    if self.identity_match is not None
-                    else None
-                ),
-                "reassigned_number": (
-                    self.reassigned_number.to_dict()
-                    if self.reassigned_number is not None
-                    else None
-                ),
-                "sms_pumping_risk": (
-                    self.sms_pumping_risk.to_dict()
-                    if self.sms_pumping_risk is not None
-                    else None
-                ),
-            }
+            pass
 
     class LookupRequest(object):
         """
@@ -151,13 +116,7 @@ class QueryInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "phone_numbers": (
-                    [phone_numbers.to_dict() for phone_numbers in self.phone_numbers]
-                    if self.phone_numbers is not None
-                    else None
-                ),
-            }
+            pass
 
     class ReassignedNumberParameters(object):
         """
@@ -169,9 +128,7 @@ class QueryInstance(InstanceResource):
             self.last_verified_date: Optional[str] = payload.get("last_verified_date")
 
         def to_dict(self):
-            return {
-                "last_verified_date": self.last_verified_date,
-            }
+            pass
 
     class RiskParameters(object):
         """
@@ -183,9 +140,7 @@ class QueryInstance(InstanceResource):
             self.partner_sub_id: Optional[str] = payload.get("partner_sub_id")
 
         def to_dict(self):
-            return {
-                "partner_sub_id": self.partner_sub_id,
-            }
+            pass
 
     """
     :ivar phone_numbers: 
@@ -238,18 +193,7 @@ class QueryList(ListResource):
             self.date_of_birth: Optional[str] = payload.get("date_of_birth")
 
         def to_dict(self):
-            return {
-                "first_name": self.first_name,
-                "last_name": self.last_name,
-                "address_line1": self.address_line1,
-                "address_line2": self.address_line2,
-                "city": self.city,
-                "state": self.state,
-                "postal_code": self.postal_code,
-                "address_country_code": self.address_country_code,
-                "national_id": self.national_id,
-                "date_of_birth": self.date_of_birth,
-            }
+            pass
 
     class LastSimSwapInfo(object):
         """
@@ -267,11 +211,7 @@ class QueryList(ListResource):
             self.swapped_in_period: Optional[bool] = payload.get("swapped_in_period")
 
         def to_dict(self):
-            return {
-                "last_sim_swap_date": self.last_sim_swap_date,
-                "swapped_period": self.swapped_period,
-                "swapped_in_period": self.swapped_in_period,
-            }
+            pass
 
     class LookupBatchRequest(object):
         """
@@ -301,27 +241,7 @@ class QueryList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "correlation_id": self.correlation_id,
-                "phone_number": self.phone_number,
-                "fields": self.fields,
-                "country_code": self.country_code,
-                "identity_match": (
-                    self.identity_match.to_dict()
-                    if self.identity_match is not None
-                    else None
-                ),
-                "reassigned_number": (
-                    self.reassigned_number.to_dict()
-                    if self.reassigned_number is not None
-                    else None
-                ),
-                "sms_pumping_risk": (
-                    self.sms_pumping_risk.to_dict()
-                    if self.sms_pumping_risk is not None
-                    else None
-                ),
-            }
+            pass
 
     class LookupRequest(object):
         """
@@ -335,13 +255,7 @@ class QueryList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "phone_numbers": (
-                    [phone_numbers.to_dict() for phone_numbers in self.phone_numbers]
-                    if self.phone_numbers is not None
-                    else None
-                ),
-            }
+            pass
 
     class ReassignedNumberParameters(object):
         """
@@ -353,9 +267,7 @@ class QueryList(ListResource):
             self.last_verified_date: Optional[str] = payload.get("last_verified_date")
 
         def to_dict(self):
-            return {
-                "last_verified_date": self.last_verified_date,
-            }
+            pass
 
     class RiskParameters(object):
         """
@@ -367,9 +279,7 @@ class QueryList(ListResource):
             self.partner_sub_id: Optional[str] = payload.get("partner_sub_id")
 
         def to_dict(self):
-            return {
-                "partner_sub_id": self.partner_sub_id,
-            }
+            pass
 
     def __init__(self, version: Version):
         """
@@ -391,17 +301,7 @@ class QueryList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = lookup_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self, lookup_request: Union[LookupRequest, object] = values.unset
@@ -413,8 +313,7 @@ class QueryList(ListResource):
 
         :returns: The created QueryInstance
         """
-        payload, _, _ = self._create(lookup_request=lookup_request)
-        return QueryInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self, lookup_request: Union[LookupRequest, object] = values.unset
@@ -426,9 +325,7 @@ class QueryList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(lookup_request=lookup_request)
-        instance = QueryInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self, lookup_request: Union[LookupRequest, object] = values.unset
@@ -439,17 +336,7 @@ class QueryList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = lookup_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self, lookup_request: Union[LookupRequest, object] = values.unset
@@ -461,8 +348,7 @@ class QueryList(ListResource):
 
         :returns: The created QueryInstance
         """
-        payload, _, _ = await self._create_async(lookup_request=lookup_request)
-        return QueryInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self, lookup_request: Union[LookupRequest, object] = values.unset
@@ -474,11 +360,7 @@ class QueryList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            lookup_request=lookup_request
-        )
-        instance = QueryInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

@@ -46,15 +46,7 @@ class NewVerifyFactorInstance(InstanceResource):
             ] = payload.get("response")
 
         def to_dict(self):
-            return {
-                "id": self.id,
-                "rawId": self.raw_id,
-                "authenticatorAttachment": self.authenticator_attachment,
-                "type": self.type,
-                "response": (
-                    self.response.to_dict() if self.response is not None else None
-                ),
-            }
+            pass
 
     class VerifyPasskeysFactorRequestResponse(object):
         """
@@ -70,11 +62,7 @@ class NewVerifyFactorInstance(InstanceResource):
             self.transports: Optional[List[Enumstr]] = payload.get("transports")
 
         def to_dict(self):
-            return {
-                "attestationObject": self.attestation_object,
-                "clientDataJSON": self.client_data_json,
-                "transports": self.transports,
-            }
+            pass
 
     """
     :ivar sid: A 34 character string that uniquely identifies this Factor.
@@ -153,15 +141,7 @@ class NewVerifyFactorList(ListResource):
             ] = payload.get("response")
 
         def to_dict(self):
-            return {
-                "id": self.id,
-                "rawId": self.raw_id,
-                "authenticatorAttachment": self.authenticator_attachment,
-                "type": self.type,
-                "response": (
-                    self.response.to_dict() if self.response is not None else None
-                ),
-            }
+            pass
 
     class VerifyPasskeysFactorRequestResponse(object):
         """
@@ -177,11 +157,7 @@ class NewVerifyFactorList(ListResource):
             self.transports: Optional[List[Enumstr]] = payload.get("transports")
 
         def to_dict(self):
-            return {
-                "attestationObject": self.attestation_object,
-                "clientDataJSON": self.client_data_json,
-                "transports": self.transports,
-            }
+            pass
 
     def __init__(self, version: Version, service_sid: str):
         """
@@ -210,17 +186,7 @@ class NewVerifyFactorList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = verify_passkeys_factor_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self, verify_passkeys_factor_request: VerifyPasskeysFactorRequest
@@ -232,12 +198,7 @@ class NewVerifyFactorList(ListResource):
 
         :returns: The updated NewVerifyFactorInstance
         """
-        payload, _, _ = self._update(
-            verify_passkeys_factor_request=verify_passkeys_factor_request
-        )
-        return NewVerifyFactorInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     def update_with_http_info(
         self, verify_passkeys_factor_request: VerifyPasskeysFactorRequest
@@ -249,13 +210,7 @@ class NewVerifyFactorList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            verify_passkeys_factor_request=verify_passkeys_factor_request
-        )
-        instance = NewVerifyFactorInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self, verify_passkeys_factor_request: VerifyPasskeysFactorRequest
@@ -266,17 +221,7 @@ class NewVerifyFactorList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = verify_passkeys_factor_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, verify_passkeys_factor_request: VerifyPasskeysFactorRequest
@@ -288,12 +233,7 @@ class NewVerifyFactorList(ListResource):
 
         :returns: The updated NewVerifyFactorInstance
         """
-        payload, _, _ = await self._update_async(
-            verify_passkeys_factor_request=verify_passkeys_factor_request
-        )
-        return NewVerifyFactorInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     async def update_with_http_info_async(
         self, verify_passkeys_factor_request: VerifyPasskeysFactorRequest
@@ -305,13 +245,7 @@ class NewVerifyFactorList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            verify_passkeys_factor_request=verify_passkeys_factor_request
-        )
-        instance = NewVerifyFactorInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

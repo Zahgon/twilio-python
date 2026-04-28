@@ -68,14 +68,7 @@ class SyncMapPermissionInstance(InstanceResource):
 
         :returns: SyncMapPermissionContext for this SyncMapPermissionInstance
         """
-        if self._context is None:
-            self._context = SyncMapPermissionContext(
-                self._version,
-                service_sid=self._solution["service_sid"],
-                map_sid=self._solution["map_sid"],
-                identity=self._solution["identity"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -84,7 +77,7 @@ class SyncMapPermissionInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -93,7 +86,7 @@ class SyncMapPermissionInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -102,7 +95,7 @@ class SyncMapPermissionInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -111,7 +104,7 @@ class SyncMapPermissionInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "SyncMapPermissionInstance":
         """
@@ -120,7 +113,7 @@ class SyncMapPermissionInstance(InstanceResource):
 
         :returns: The fetched SyncMapPermissionInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "SyncMapPermissionInstance":
         """
@@ -129,7 +122,7 @@ class SyncMapPermissionInstance(InstanceResource):
 
         :returns: The fetched SyncMapPermissionInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -138,7 +131,7 @@ class SyncMapPermissionInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -147,7 +140,7 @@ class SyncMapPermissionInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self, read: bool, write: bool, manage: bool
@@ -161,11 +154,7 @@ class SyncMapPermissionInstance(InstanceResource):
 
         :returns: The updated SyncMapPermissionInstance
         """
-        return self._proxy.update(
-            read=read,
-            write=write,
-            manage=manage,
-        )
+        pass
 
     async def update_async(
         self, read: bool, write: bool, manage: bool
@@ -179,11 +168,7 @@ class SyncMapPermissionInstance(InstanceResource):
 
         :returns: The updated SyncMapPermissionInstance
         """
-        return await self._proxy.update_async(
-            read=read,
-            write=write,
-            manage=manage,
-        )
+        pass
 
     def update_with_http_info(
         self, read: bool, write: bool, manage: bool
@@ -197,11 +182,7 @@ class SyncMapPermissionInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            read=read,
-            write=write,
-            manage=manage,
-        )
+        pass
 
     async def update_with_http_info_async(
         self, read: bool, write: bool, manage: bool
@@ -215,11 +196,7 @@ class SyncMapPermissionInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            read=read,
-            write=write,
-            manage=manage,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -263,12 +240,7 @@ class SyncMapPermissionContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -277,8 +249,7 @@ class SyncMapPermissionContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -287,8 +258,7 @@ class SyncMapPermissionContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -297,12 +267,7 @@ class SyncMapPermissionContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -311,8 +276,7 @@ class SyncMapPermissionContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -321,8 +285,7 @@ class SyncMapPermissionContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -331,14 +294,7 @@ class SyncMapPermissionContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> SyncMapPermissionInstance:
         """
@@ -347,14 +303,7 @@ class SyncMapPermissionContext(InstanceContext):
 
         :returns: The fetched SyncMapPermissionInstance
         """
-        payload, _, _ = self._fetch()
-        return SyncMapPermissionInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            map_sid=self._solution["map_sid"],
-            identity=self._solution["identity"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -363,15 +312,7 @@ class SyncMapPermissionContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = SyncMapPermissionInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            map_sid=self._solution["map_sid"],
-            identity=self._solution["identity"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -380,14 +321,7 @@ class SyncMapPermissionContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> SyncMapPermissionInstance:
         """
@@ -396,14 +330,7 @@ class SyncMapPermissionContext(InstanceContext):
 
         :returns: The fetched SyncMapPermissionInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return SyncMapPermissionInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            map_sid=self._solution["map_sid"],
-            identity=self._solution["identity"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -412,15 +339,7 @@ class SyncMapPermissionContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = SyncMapPermissionInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            map_sid=self._solution["map_sid"],
-            identity=self._solution["identity"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(self, read: bool, write: bool, manage: bool) -> tuple:
         """
@@ -429,23 +348,7 @@ class SyncMapPermissionContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Read": serialize.boolean_to_string(read),
-                "Write": serialize.boolean_to_string(write),
-                "Manage": serialize.boolean_to_string(manage),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self, read: bool, write: bool, manage: bool
@@ -459,14 +362,7 @@ class SyncMapPermissionContext(InstanceContext):
 
         :returns: The updated SyncMapPermissionInstance
         """
-        payload, _, _ = self._update(read=read, write=write, manage=manage)
-        return SyncMapPermissionInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            map_sid=self._solution["map_sid"],
-            identity=self._solution["identity"],
-        )
+        pass
 
     def update_with_http_info(
         self, read: bool, write: bool, manage: bool
@@ -480,17 +376,7 @@ class SyncMapPermissionContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            read=read, write=write, manage=manage
-        )
-        instance = SyncMapPermissionInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            map_sid=self._solution["map_sid"],
-            identity=self._solution["identity"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(self, read: bool, write: bool, manage: bool) -> tuple:
         """
@@ -499,23 +385,7 @@ class SyncMapPermissionContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Read": serialize.boolean_to_string(read),
-                "Write": serialize.boolean_to_string(write),
-                "Manage": serialize.boolean_to_string(manage),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, read: bool, write: bool, manage: bool
@@ -529,14 +399,7 @@ class SyncMapPermissionContext(InstanceContext):
 
         :returns: The updated SyncMapPermissionInstance
         """
-        payload, _, _ = await self._update_async(read=read, write=write, manage=manage)
-        return SyncMapPermissionInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            map_sid=self._solution["map_sid"],
-            identity=self._solution["identity"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self, read: bool, write: bool, manage: bool
@@ -550,17 +413,7 @@ class SyncMapPermissionContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            read=read, write=write, manage=manage
-        )
-        instance = SyncMapPermissionInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            map_sid=self._solution["map_sid"],
-            identity=self._solution["identity"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -580,12 +433,7 @@ class SyncMapPermissionPage(Page):
 
         :param payload: Payload response from the API
         """
-        return SyncMapPermissionInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            map_sid=self._solution["map_sid"],
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -638,10 +486,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -663,10 +508,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -686,11 +528,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -710,13 +548,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -737,12 +569,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -763,13 +590,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -789,12 +610,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -814,12 +630,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -837,22 +648,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: Page of SyncMapPermissionInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return SyncMapPermissionPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -870,22 +666,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: Page of SyncMapPermissionInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return SyncMapPermissionPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -903,23 +684,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: ApiResponse with SyncMapPermissionPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = SyncMapPermissionPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -937,25 +702,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: ApiResponse with SyncMapPermissionPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = SyncMapPermissionPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> SyncMapPermissionPage:
         """
@@ -966,8 +713,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: Page of SyncMapPermissionInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return SyncMapPermissionPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> SyncMapPermissionPage:
         """
@@ -978,8 +724,7 @@ class SyncMapPermissionList(ListResource):
 
         :returns: Page of SyncMapPermissionInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return SyncMapPermissionPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, identity: str) -> SyncMapPermissionContext:
         """
@@ -987,12 +732,7 @@ class SyncMapPermissionList(ListResource):
 
         :param identity: The application-defined string that uniquely identifies the User's Sync Map Permission resource to update.
         """
-        return SyncMapPermissionContext(
-            self._version,
-            service_sid=self._solution["service_sid"],
-            map_sid=self._solution["map_sid"],
-            identity=identity,
-        )
+        pass
 
     def __call__(self, identity: str) -> SyncMapPermissionContext:
         """

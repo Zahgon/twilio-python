@@ -54,11 +54,7 @@ class AuthTokenPromotionInstance(InstanceResource):
 
         :returns: AuthTokenPromotionContext for this AuthTokenPromotionInstance
         """
-        if self._context is None:
-            self._context = AuthTokenPromotionContext(
-                self._version,
-            )
-        return self._context
+        pass
 
     def update(self) -> "AuthTokenPromotionInstance":
         """
@@ -67,7 +63,7 @@ class AuthTokenPromotionInstance(InstanceResource):
 
         :returns: The updated AuthTokenPromotionInstance
         """
-        return self._proxy.update()
+        pass
 
     async def update_async(self) -> "AuthTokenPromotionInstance":
         """
@@ -76,7 +72,7 @@ class AuthTokenPromotionInstance(InstanceResource):
 
         :returns: The updated AuthTokenPromotionInstance
         """
-        return await self._proxy.update_async()
+        pass
 
     def update_with_http_info(self) -> ApiResponse:
         """
@@ -85,7 +81,7 @@ class AuthTokenPromotionInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info()
+        pass
 
     async def update_with_http_info_async(self) -> ApiResponse:
         """
@@ -94,7 +90,7 @@ class AuthTokenPromotionInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -125,15 +121,7 @@ class AuthTokenPromotionContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of({})
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(self) -> AuthTokenPromotionInstance:
         """
@@ -142,8 +130,7 @@ class AuthTokenPromotionContext(InstanceContext):
 
         :returns: The updated AuthTokenPromotionInstance
         """
-        payload, _, _ = self._update()
-        return AuthTokenPromotionInstance(self._version, payload)
+        pass
 
     def update_with_http_info(self) -> ApiResponse:
         """
@@ -152,9 +139,7 @@ class AuthTokenPromotionContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update()
-        instance = AuthTokenPromotionInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(self) -> tuple:
         """
@@ -163,15 +148,7 @@ class AuthTokenPromotionContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of({})
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(self) -> AuthTokenPromotionInstance:
         """
@@ -180,8 +157,7 @@ class AuthTokenPromotionContext(InstanceContext):
 
         :returns: The updated AuthTokenPromotionInstance
         """
-        payload, _, _ = await self._update_async()
-        return AuthTokenPromotionInstance(self._version, payload)
+        pass
 
     async def update_with_http_info_async(self) -> ApiResponse:
         """
@@ -190,9 +166,7 @@ class AuthTokenPromotionContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async()
-        instance = AuthTokenPromotionInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -220,7 +194,7 @@ class AuthTokenPromotionList(ListResource):
         Constructs a AuthTokenPromotionContext
 
         """
-        return AuthTokenPromotionContext(self._version)
+        pass
 
     def __call__(self) -> AuthTokenPromotionContext:
         """

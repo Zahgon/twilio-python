@@ -8,9 +8,4 @@ class Oauth(OauthBase):
 
     @property
     def token(self) -> TokenList:
-        warn(
-            "token is deprecated. Use v1.token instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.token
+        pass

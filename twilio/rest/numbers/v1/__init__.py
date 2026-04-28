@@ -69,79 +69,53 @@ class V1(Version):
 
     @property
     def bulk_eligibilities(self) -> BulkEligibilityList:
-        if self._bulk_eligibilities is None:
-            self._bulk_eligibilities = BulkEligibilityList(self)
-        return self._bulk_eligibilities
+        pass
 
     @property
     def eligibilities(self) -> EligibilityList:
-        if self._eligibilities is None:
-            self._eligibilities = EligibilityList(self)
-        return self._eligibilities
+        pass
 
     @property
     def embedded_sessions(self) -> EmbeddedSessionList:
-        if self._embedded_sessions is None:
-            self._embedded_sessions = EmbeddedSessionList(self)
-        return self._embedded_sessions
+        pass
 
     @property
     def porting_all_port_ins(self) -> PortingAllPortInList:
-        if self._porting_all_port_ins is None:
-            self._porting_all_port_ins = PortingAllPortInList(self)
-        return self._porting_all_port_ins
+        pass
 
     @property
     def porting_port_ins(self) -> PortingPortInList:
-        if self._porting_port_ins is None:
-            self._porting_port_ins = PortingPortInList(self)
-        return self._porting_port_ins
+        pass
 
     @property
     def porting_port_in_phone_number(self) -> PortingPortInPhoneNumberList:
-        if self._porting_port_in_phone_number is None:
-            self._porting_port_in_phone_number = PortingPortInPhoneNumberList(self)
-        return self._porting_port_in_phone_number
+        pass
 
     @property
     def porting_portabilities(self) -> PortingPortabilityList:
-        if self._porting_portabilities is None:
-            self._porting_portabilities = PortingPortabilityList(self)
-        return self._porting_portabilities
+        pass
 
     @property
     def porting_webhook_configurations(self) -> PortingWebhookConfigurationList:
-        if self._porting_webhook_configurations is None:
-            self._porting_webhook_configurations = PortingWebhookConfigurationList(self)
-        return self._porting_webhook_configurations
+        pass
 
     @property
     def porting_webhook_configurations_delete(
         self,
     ) -> PortingWebhookConfigurationDeleteList:
-        if self._porting_webhook_configurations_delete is None:
-            self._porting_webhook_configurations_delete = (
-                PortingWebhookConfigurationDeleteList(self)
-            )
-        return self._porting_webhook_configurations_delete
+        pass
 
     @property
     def sender_id_registrations(self) -> SenderIdRegistrationList:
-        if self._sender_id_registrations is None:
-            self._sender_id_registrations = SenderIdRegistrationList(self)
-        return self._sender_id_registrations
+        pass
 
     @property
     def signing_request_configurations(self) -> SigningRequestConfigurationList:
-        if self._signing_request_configurations is None:
-            self._signing_request_configurations = SigningRequestConfigurationList(self)
-        return self._signing_request_configurations
+        pass
 
     @property
     def webhook(self) -> WebhookList:
-        if self._webhook is None:
-            self._webhook = WebhookList(self)
-        return self._webhook
+        pass
 
     def __repr__(self) -> str:
         """

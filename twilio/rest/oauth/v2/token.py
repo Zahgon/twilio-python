@@ -80,34 +80,7 @@ class TokenList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "grant_type": grant_type,
-                "client_id": client_id,
-                "client_secret": client_secret,
-                "code": code,
-                "redirect_uri": redirect_uri,
-                "audience": audience,
-                "refresh_token": refresh_token,
-                "scope": scope,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        params = values.of(
-            {
-                "account_sid": account_sid,
-            }
-        )
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers, params=params
-        )
+        pass
 
     def create(
         self,
@@ -136,18 +109,7 @@ class TokenList(ListResource):
 
         :returns: The created TokenInstance
         """
-        payload, _, _ = self._create(
-            account_sid=account_sid,
-            grant_type=grant_type,
-            client_id=client_id,
-            client_secret=client_secret,
-            code=code,
-            redirect_uri=redirect_uri,
-            audience=audience,
-            refresh_token=refresh_token,
-            scope=scope,
-        )
-        return TokenInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -176,19 +138,7 @@ class TokenList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            account_sid=account_sid,
-            grant_type=grant_type,
-            client_id=client_id,
-            client_secret=client_secret,
-            code=code,
-            redirect_uri=redirect_uri,
-            audience=audience,
-            refresh_token=refresh_token,
-            scope=scope,
-        )
-        instance = TokenInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -208,34 +158,7 @@ class TokenList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "grant_type": grant_type,
-                "client_id": client_id,
-                "client_secret": client_secret,
-                "code": code,
-                "redirect_uri": redirect_uri,
-                "audience": audience,
-                "refresh_token": refresh_token,
-                "scope": scope,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        params = values.of(
-            {
-                "account_sid": account_sid,
-            }
-        )
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers, params=params
-        )
+        pass
 
     async def create_async(
         self,
@@ -264,18 +187,7 @@ class TokenList(ListResource):
 
         :returns: The created TokenInstance
         """
-        payload, _, _ = await self._create_async(
-            account_sid=account_sid,
-            grant_type=grant_type,
-            client_id=client_id,
-            client_secret=client_secret,
-            code=code,
-            redirect_uri=redirect_uri,
-            audience=audience,
-            refresh_token=refresh_token,
-            scope=scope,
-        )
-        return TokenInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -304,19 +216,7 @@ class TokenList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            account_sid=account_sid,
-            grant_type=grant_type,
-            client_id=client_id,
-            client_secret=client_secret,
-            code=code,
-            redirect_uri=redirect_uri,
-            audience=audience,
-            refresh_token=refresh_token,
-            scope=scope,
-        )
-        instance = TokenInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

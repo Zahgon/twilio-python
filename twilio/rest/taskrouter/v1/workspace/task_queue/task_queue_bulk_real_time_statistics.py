@@ -88,17 +88,7 @@ class TaskQueueBulkRealTimeStatisticsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = body.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self, body: Union[object, object] = values.unset
@@ -110,10 +100,7 @@ class TaskQueueBulkRealTimeStatisticsList(ListResource):
 
         :returns: The created TaskQueueBulkRealTimeStatisticsInstance
         """
-        payload, _, _ = self._create(body=body)
-        return TaskQueueBulkRealTimeStatisticsInstance(
-            self._version, payload, workspace_sid=self._solution["workspace_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self, body: Union[object, object] = values.unset
@@ -125,11 +112,7 @@ class TaskQueueBulkRealTimeStatisticsList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(body=body)
-        instance = TaskQueueBulkRealTimeStatisticsInstance(
-            self._version, payload, workspace_sid=self._solution["workspace_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self, body: Union[object, object] = values.unset) -> tuple:
         """
@@ -138,17 +121,7 @@ class TaskQueueBulkRealTimeStatisticsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = body.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self, body: Union[object, object] = values.unset
@@ -160,10 +133,7 @@ class TaskQueueBulkRealTimeStatisticsList(ListResource):
 
         :returns: The created TaskQueueBulkRealTimeStatisticsInstance
         """
-        payload, _, _ = await self._create_async(body=body)
-        return TaskQueueBulkRealTimeStatisticsInstance(
-            self._version, payload, workspace_sid=self._solution["workspace_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self, body: Union[object, object] = values.unset
@@ -175,11 +145,7 @@ class TaskQueueBulkRealTimeStatisticsList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(body=body)
-        instance = TaskQueueBulkRealTimeStatisticsInstance(
-            self._version, payload, workspace_sid=self._solution["workspace_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

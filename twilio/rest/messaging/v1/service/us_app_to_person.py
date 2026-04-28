@@ -123,13 +123,7 @@ class UsAppToPersonInstance(InstanceResource):
 
         :returns: UsAppToPersonContext for this UsAppToPersonInstance
         """
-        if self._context is None:
-            self._context = UsAppToPersonContext(
-                self._version,
-                messaging_service_sid=self._solution["messaging_service_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -138,7 +132,7 @@ class UsAppToPersonInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -147,7 +141,7 @@ class UsAppToPersonInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -156,7 +150,7 @@ class UsAppToPersonInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -165,7 +159,7 @@ class UsAppToPersonInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(
         self, x_twilio_api_version: Union[str, object] = values.unset
@@ -177,9 +171,7 @@ class UsAppToPersonInstance(InstanceResource):
 
         :returns: The fetched UsAppToPersonInstance
         """
-        return self._proxy.fetch(
-            x_twilio_api_version=x_twilio_api_version,
-        )
+        pass
 
     async def fetch_async(
         self, x_twilio_api_version: Union[str, object] = values.unset
@@ -191,9 +183,7 @@ class UsAppToPersonInstance(InstanceResource):
 
         :returns: The fetched UsAppToPersonInstance
         """
-        return await self._proxy.fetch_async(
-            x_twilio_api_version=x_twilio_api_version,
-        )
+        pass
 
     def fetch_with_http_info(
         self, x_twilio_api_version: Union[str, object] = values.unset
@@ -205,9 +195,7 @@ class UsAppToPersonInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            x_twilio_api_version=x_twilio_api_version,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, x_twilio_api_version: Union[str, object] = values.unset
@@ -219,9 +207,7 @@ class UsAppToPersonInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            x_twilio_api_version=x_twilio_api_version,
-        )
+        pass
 
     def update(
         self,
@@ -252,18 +238,7 @@ class UsAppToPersonInstance(InstanceResource):
 
         :returns: The updated UsAppToPersonInstance
         """
-        return self._proxy.update(
-            has_embedded_links=has_embedded_links,
-            has_embedded_phone=has_embedded_phone,
-            message_samples=message_samples,
-            message_flow=message_flow,
-            description=description,
-            age_gated=age_gated,
-            direct_lending=direct_lending,
-            x_twilio_api_version=x_twilio_api_version,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-        )
+        pass
 
     async def update_async(
         self,
@@ -294,18 +269,7 @@ class UsAppToPersonInstance(InstanceResource):
 
         :returns: The updated UsAppToPersonInstance
         """
-        return await self._proxy.update_async(
-            has_embedded_links=has_embedded_links,
-            has_embedded_phone=has_embedded_phone,
-            message_samples=message_samples,
-            message_flow=message_flow,
-            description=description,
-            age_gated=age_gated,
-            direct_lending=direct_lending,
-            x_twilio_api_version=x_twilio_api_version,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -336,18 +300,7 @@ class UsAppToPersonInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            has_embedded_links=has_embedded_links,
-            has_embedded_phone=has_embedded_phone,
-            message_samples=message_samples,
-            message_flow=message_flow,
-            description=description,
-            age_gated=age_gated,
-            direct_lending=direct_lending,
-            x_twilio_api_version=x_twilio_api_version,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -378,18 +331,7 @@ class UsAppToPersonInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            has_embedded_links=has_embedded_links,
-            has_embedded_phone=has_embedded_phone,
-            message_samples=message_samples,
-            message_flow=message_flow,
-            description=description,
-            age_gated=age_gated,
-            direct_lending=direct_lending,
-            x_twilio_api_version=x_twilio_api_version,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -429,12 +371,7 @@ class UsAppToPersonContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -443,8 +380,7 @@ class UsAppToPersonContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -453,8 +389,7 @@ class UsAppToPersonContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -463,12 +398,7 @@ class UsAppToPersonContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -477,8 +407,7 @@ class UsAppToPersonContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -487,8 +416,7 @@ class UsAppToPersonContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self, x_twilio_api_version: Union[str, object] = values.unset) -> tuple:
         """
@@ -497,20 +425,7 @@ class UsAppToPersonContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        if not (
-            x_twilio_api_version is values.unset
-            or (isinstance(x_twilio_api_version, str) and not x_twilio_api_version)
-        ):
-            headers["X-Twilio-Api-Version"] = x_twilio_api_version
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(
         self, x_twilio_api_version: Union[str, object] = values.unset
@@ -522,13 +437,7 @@ class UsAppToPersonContext(InstanceContext):
 
         :returns: The fetched UsAppToPersonInstance
         """
-        payload, _, _ = self._fetch(x_twilio_api_version=x_twilio_api_version)
-        return UsAppToPersonInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(
         self, x_twilio_api_version: Union[str, object] = values.unset
@@ -540,16 +449,7 @@ class UsAppToPersonContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(
-            x_twilio_api_version=x_twilio_api_version
-        )
-        instance = UsAppToPersonInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self, x_twilio_api_version: Union[str, object] = values.unset
@@ -560,20 +460,7 @@ class UsAppToPersonContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        if not (
-            x_twilio_api_version is values.unset
-            or (isinstance(x_twilio_api_version, str) and not x_twilio_api_version)
-        ):
-            headers["X-Twilio-Api-Version"] = x_twilio_api_version
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self, x_twilio_api_version: Union[str, object] = values.unset
@@ -585,15 +472,7 @@ class UsAppToPersonContext(InstanceContext):
 
         :returns: The fetched UsAppToPersonInstance
         """
-        payload, _, _ = await self._fetch_async(
-            x_twilio_api_version=x_twilio_api_version
-        )
-        return UsAppToPersonInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, x_twilio_api_version: Union[str, object] = values.unset
@@ -605,16 +484,7 @@ class UsAppToPersonContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            x_twilio_api_version=x_twilio_api_version
-        )
-        instance = UsAppToPersonInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -635,35 +505,7 @@ class UsAppToPersonContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "HasEmbeddedLinks": serialize.boolean_to_string(has_embedded_links),
-                "HasEmbeddedPhone": serialize.boolean_to_string(has_embedded_phone),
-                "MessageSamples": serialize.map(message_samples, lambda e: e),
-                "MessageFlow": message_flow,
-                "Description": description,
-                "AgeGated": serialize.boolean_to_string(age_gated),
-                "DirectLending": serialize.boolean_to_string(direct_lending),
-                "PrivacyPolicyUrl": privacy_policy_url,
-                "TermsAndConditionsUrl": terms_and_conditions_url,
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            x_twilio_api_version is values.unset
-            or (isinstance(x_twilio_api_version, str) and not x_twilio_api_version)
-        ):
-            headers["X-Twilio-Api-Version"] = x_twilio_api_version
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -694,24 +536,7 @@ class UsAppToPersonContext(InstanceContext):
 
         :returns: The updated UsAppToPersonInstance
         """
-        payload, _, _ = self._update(
-            has_embedded_links=has_embedded_links,
-            has_embedded_phone=has_embedded_phone,
-            message_samples=message_samples,
-            message_flow=message_flow,
-            description=description,
-            age_gated=age_gated,
-            direct_lending=direct_lending,
-            x_twilio_api_version=x_twilio_api_version,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-        )
-        return UsAppToPersonInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -742,25 +567,7 @@ class UsAppToPersonContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            has_embedded_links=has_embedded_links,
-            has_embedded_phone=has_embedded_phone,
-            message_samples=message_samples,
-            message_flow=message_flow,
-            description=description,
-            age_gated=age_gated,
-            direct_lending=direct_lending,
-            x_twilio_api_version=x_twilio_api_version,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-        )
-        instance = UsAppToPersonInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -781,35 +588,7 @@ class UsAppToPersonContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "HasEmbeddedLinks": serialize.boolean_to_string(has_embedded_links),
-                "HasEmbeddedPhone": serialize.boolean_to_string(has_embedded_phone),
-                "MessageSamples": serialize.map(message_samples, lambda e: e),
-                "MessageFlow": message_flow,
-                "Description": description,
-                "AgeGated": serialize.boolean_to_string(age_gated),
-                "DirectLending": serialize.boolean_to_string(direct_lending),
-                "PrivacyPolicyUrl": privacy_policy_url,
-                "TermsAndConditionsUrl": terms_and_conditions_url,
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            x_twilio_api_version is values.unset
-            or (isinstance(x_twilio_api_version, str) and not x_twilio_api_version)
-        ):
-            headers["X-Twilio-Api-Version"] = x_twilio_api_version
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -840,24 +619,7 @@ class UsAppToPersonContext(InstanceContext):
 
         :returns: The updated UsAppToPersonInstance
         """
-        payload, _, _ = await self._update_async(
-            has_embedded_links=has_embedded_links,
-            has_embedded_phone=has_embedded_phone,
-            message_samples=message_samples,
-            message_flow=message_flow,
-            description=description,
-            age_gated=age_gated,
-            direct_lending=direct_lending,
-            x_twilio_api_version=x_twilio_api_version,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-        )
-        return UsAppToPersonInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -888,25 +650,7 @@ class UsAppToPersonContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            has_embedded_links=has_embedded_links,
-            has_embedded_phone=has_embedded_phone,
-            message_samples=message_samples,
-            message_flow=message_flow,
-            description=description,
-            age_gated=age_gated,
-            direct_lending=direct_lending,
-            x_twilio_api_version=x_twilio_api_version,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-        )
-        instance = UsAppToPersonInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -926,11 +670,7 @@ class UsAppToPersonPage(Page):
 
         :param payload: Payload response from the API
         """
-        return UsAppToPersonInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -989,43 +729,7 @@ class UsAppToPersonList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "BrandRegistrationSid": brand_registration_sid,
-                "Description": description,
-                "MessageFlow": message_flow,
-                "MessageSamples": serialize.map(message_samples, lambda e: e),
-                "UsAppToPersonUsecase": us_app_to_person_usecase,
-                "HasEmbeddedLinks": serialize.boolean_to_string(has_embedded_links),
-                "HasEmbeddedPhone": serialize.boolean_to_string(has_embedded_phone),
-                "OptInMessage": opt_in_message,
-                "OptOutMessage": opt_out_message,
-                "HelpMessage": help_message,
-                "OptInKeywords": serialize.map(opt_in_keywords, lambda e: e),
-                "OptOutKeywords": serialize.map(opt_out_keywords, lambda e: e),
-                "HelpKeywords": serialize.map(help_keywords, lambda e: e),
-                "SubscriberOptIn": serialize.boolean_to_string(subscriber_opt_in),
-                "AgeGated": serialize.boolean_to_string(age_gated),
-                "DirectLending": serialize.boolean_to_string(direct_lending),
-                "PrivacyPolicyUrl": privacy_policy_url,
-                "TermsAndConditionsUrl": terms_and_conditions_url,
-            }
-        )
-        headers = values.of(
-            {
-                "X-Twilio-Api-Version": x_twilio_api_version,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -1074,32 +778,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: The created UsAppToPersonInstance
         """
-        payload, _, _ = self._create(
-            brand_registration_sid=brand_registration_sid,
-            description=description,
-            message_flow=message_flow,
-            message_samples=message_samples,
-            us_app_to_person_usecase=us_app_to_person_usecase,
-            has_embedded_links=has_embedded_links,
-            has_embedded_phone=has_embedded_phone,
-            x_twilio_api_version=x_twilio_api_version,
-            opt_in_message=opt_in_message,
-            opt_out_message=opt_out_message,
-            help_message=help_message,
-            opt_in_keywords=opt_in_keywords,
-            opt_out_keywords=opt_out_keywords,
-            help_keywords=help_keywords,
-            subscriber_opt_in=subscriber_opt_in,
-            age_gated=age_gated,
-            direct_lending=direct_lending,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-        )
-        return UsAppToPersonInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -1148,33 +827,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            brand_registration_sid=brand_registration_sid,
-            description=description,
-            message_flow=message_flow,
-            message_samples=message_samples,
-            us_app_to_person_usecase=us_app_to_person_usecase,
-            has_embedded_links=has_embedded_links,
-            has_embedded_phone=has_embedded_phone,
-            x_twilio_api_version=x_twilio_api_version,
-            opt_in_message=opt_in_message,
-            opt_out_message=opt_out_message,
-            help_message=help_message,
-            opt_in_keywords=opt_in_keywords,
-            opt_out_keywords=opt_out_keywords,
-            help_keywords=help_keywords,
-            subscriber_opt_in=subscriber_opt_in,
-            age_gated=age_gated,
-            direct_lending=direct_lending,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-        )
-        instance = UsAppToPersonInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -1204,43 +857,7 @@ class UsAppToPersonList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "BrandRegistrationSid": brand_registration_sid,
-                "Description": description,
-                "MessageFlow": message_flow,
-                "MessageSamples": serialize.map(message_samples, lambda e: e),
-                "UsAppToPersonUsecase": us_app_to_person_usecase,
-                "HasEmbeddedLinks": serialize.boolean_to_string(has_embedded_links),
-                "HasEmbeddedPhone": serialize.boolean_to_string(has_embedded_phone),
-                "OptInMessage": opt_in_message,
-                "OptOutMessage": opt_out_message,
-                "HelpMessage": help_message,
-                "OptInKeywords": serialize.map(opt_in_keywords, lambda e: e),
-                "OptOutKeywords": serialize.map(opt_out_keywords, lambda e: e),
-                "HelpKeywords": serialize.map(help_keywords, lambda e: e),
-                "SubscriberOptIn": serialize.boolean_to_string(subscriber_opt_in),
-                "AgeGated": serialize.boolean_to_string(age_gated),
-                "DirectLending": serialize.boolean_to_string(direct_lending),
-                "PrivacyPolicyUrl": privacy_policy_url,
-                "TermsAndConditionsUrl": terms_and_conditions_url,
-            }
-        )
-        headers = values.of(
-            {
-                "X-Twilio-Api-Version": x_twilio_api_version,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -1289,32 +906,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: The created UsAppToPersonInstance
         """
-        payload, _, _ = await self._create_async(
-            brand_registration_sid=brand_registration_sid,
-            description=description,
-            message_flow=message_flow,
-            message_samples=message_samples,
-            us_app_to_person_usecase=us_app_to_person_usecase,
-            has_embedded_links=has_embedded_links,
-            has_embedded_phone=has_embedded_phone,
-            x_twilio_api_version=x_twilio_api_version,
-            opt_in_message=opt_in_message,
-            opt_out_message=opt_out_message,
-            help_message=help_message,
-            opt_in_keywords=opt_in_keywords,
-            opt_out_keywords=opt_out_keywords,
-            help_keywords=help_keywords,
-            subscriber_opt_in=subscriber_opt_in,
-            age_gated=age_gated,
-            direct_lending=direct_lending,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-        )
-        return UsAppToPersonInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -1363,33 +955,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            brand_registration_sid=brand_registration_sid,
-            description=description,
-            message_flow=message_flow,
-            message_samples=message_samples,
-            us_app_to_person_usecase=us_app_to_person_usecase,
-            has_embedded_links=has_embedded_links,
-            has_embedded_phone=has_embedded_phone,
-            x_twilio_api_version=x_twilio_api_version,
-            opt_in_message=opt_in_message,
-            opt_out_message=opt_out_message,
-            help_message=help_message,
-            opt_in_keywords=opt_in_keywords,
-            opt_out_keywords=opt_out_keywords,
-            help_keywords=help_keywords,
-            subscriber_opt_in=subscriber_opt_in,
-            age_gated=age_gated,
-            direct_lending=direct_lending,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-        )
-        instance = UsAppToPersonInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -1413,12 +979,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            x_twilio_api_version=x_twilio_api_version, page_size=limits["page_size"]
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -1442,12 +1003,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            x_twilio_api_version=x_twilio_api_version, page_size=limits["page_size"]
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -1469,13 +1025,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            x_twilio_api_version=x_twilio_api_version, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -1497,13 +1047,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            x_twilio_api_version=x_twilio_api_version, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -1526,13 +1070,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                x_twilio_api_version=x_twilio_api_version,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -1555,14 +1093,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                x_twilio_api_version=x_twilio_api_version,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -1584,13 +1115,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            x_twilio_api_version=x_twilio_api_version,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1612,13 +1137,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            x_twilio_api_version=x_twilio_api_version,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1638,28 +1157,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: Page of UsAppToPersonInstance
         """
-        data = values.of(
-            {
-                "X-Twilio-Api-Version": x_twilio_api_version,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of(
-            {
-                "X-Twilio-Api-Version": x_twilio_api_version,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return UsAppToPersonPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -1679,28 +1177,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: Page of UsAppToPersonInstance
         """
-        data = values.of(
-            {
-                "X-Twilio-Api-Version": x_twilio_api_version,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of(
-            {
-                "X-Twilio-Api-Version": x_twilio_api_version,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return UsAppToPersonPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -1720,29 +1197,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: ApiResponse with UsAppToPersonPage, status code, and headers
         """
-        data = values.of(
-            {
-                "X-Twilio-Api-Version": x_twilio_api_version,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of(
-            {
-                "X-Twilio-Api-Version": x_twilio_api_version,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = UsAppToPersonPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1762,31 +1217,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: ApiResponse with UsAppToPersonPage, status code, and headers
         """
-        data = values.of(
-            {
-                "X-Twilio-Api-Version": x_twilio_api_version,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of(
-            {
-                "X-Twilio-Api-Version": x_twilio_api_version,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = UsAppToPersonPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> UsAppToPersonPage:
         """
@@ -1797,8 +1228,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: Page of UsAppToPersonInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return UsAppToPersonPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> UsAppToPersonPage:
         """
@@ -1809,8 +1239,7 @@ class UsAppToPersonList(ListResource):
 
         :returns: Page of UsAppToPersonInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return UsAppToPersonPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, sid: str) -> UsAppToPersonContext:
         """
@@ -1818,11 +1247,7 @@ class UsAppToPersonList(ListResource):
 
         :param sid: The SID of the US A2P Compliance resource to update `QE2c6890da8086d771620e9b13fadeba0b`.
         """
-        return UsAppToPersonContext(
-            self._version,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-            sid=sid,
-        )
+        pass
 
     def __call__(self, sid: str) -> UsAppToPersonContext:
         """

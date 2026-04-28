@@ -16,63 +16,28 @@ class Preview(PreviewBase):
 
     @property
     def authorization_documents(self) -> AuthorizationDocumentList:
-        warn(
-            "authorization_documents is deprecated. Use hosted_numbers.authorization_documents instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.hosted_numbers.authorization_documents
+        pass
 
     @property
     def hosted_number_orders(self) -> HostedNumberOrderList:
-        warn(
-            "hosted_number_orders is deprecated. Use hosted_numbers.hosted_number_orders instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.hosted_numbers.hosted_number_orders
+        pass
 
     @property
     def available_add_ons(self) -> AvailableAddOnList:
-        warn(
-            "available_add_ons is deprecated. Use marketplace.available_add_ons instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.marketplace.available_add_ons
+        pass
 
     @property
     def installed_add_ons(self) -> InstalledAddOnList:
-        warn(
-            "installed_add_ons is deprecated. Use marketplace.installed_add_ons instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.marketplace.installed_add_ons
+        pass
 
     @property
     def commands(self) -> CommandList:
-        warn(
-            "commands is deprecated. Use wireless.commands instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.wireless.commands
+        pass
 
     @property
     def rate_plans(self) -> RatePlanList:
-        warn(
-            "rate_plans is deprecated. Use wireless.rate_plans instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.wireless.rate_plans
+        pass
 
     @property
     def sims(self) -> SimList:
-        warn(
-            "sims is deprecated. Use wireless.sims instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.wireless.sims
+        pass

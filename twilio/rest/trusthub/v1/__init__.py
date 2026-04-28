@@ -57,65 +57,43 @@ class V1(Version):
 
     @property
     def compliance_inquiries(self) -> ComplianceInquiriesList:
-        if self._compliance_inquiries is None:
-            self._compliance_inquiries = ComplianceInquiriesList(self)
-        return self._compliance_inquiries
+        pass
 
     @property
     def compliance_registration_inquiries(self) -> ComplianceRegistrationInquiriesList:
-        if self._compliance_registration_inquiries is None:
-            self._compliance_registration_inquiries = (
-                ComplianceRegistrationInquiriesList(self)
-            )
-        return self._compliance_registration_inquiries
+        pass
 
     @property
     def compliance_tollfree_inquiries(self) -> ComplianceTollfreeInquiriesList:
-        if self._compliance_tollfree_inquiries is None:
-            self._compliance_tollfree_inquiries = ComplianceTollfreeInquiriesList(self)
-        return self._compliance_tollfree_inquiries
+        pass
 
     @property
     def customer_profiles(self) -> CustomerProfilesList:
-        if self._customer_profiles is None:
-            self._customer_profiles = CustomerProfilesList(self)
-        return self._customer_profiles
+        pass
 
     @property
     def end_users(self) -> EndUserList:
-        if self._end_users is None:
-            self._end_users = EndUserList(self)
-        return self._end_users
+        pass
 
     @property
     def end_user_types(self) -> EndUserTypeList:
-        if self._end_user_types is None:
-            self._end_user_types = EndUserTypeList(self)
-        return self._end_user_types
+        pass
 
     @property
     def policies(self) -> PoliciesList:
-        if self._policies is None:
-            self._policies = PoliciesList(self)
-        return self._policies
+        pass
 
     @property
     def supporting_documents(self) -> SupportingDocumentList:
-        if self._supporting_documents is None:
-            self._supporting_documents = SupportingDocumentList(self)
-        return self._supporting_documents
+        pass
 
     @property
     def supporting_document_types(self) -> SupportingDocumentTypeList:
-        if self._supporting_document_types is None:
-            self._supporting_document_types = SupportingDocumentTypeList(self)
-        return self._supporting_document_types
+        pass
 
     @property
     def trust_products(self) -> TrustProductsList:
-        if self._trust_products is None:
-            self._trust_products = TrustProductsList(self)
-        return self._trust_products
+        pass
 
     def __repr__(self) -> str:
         """

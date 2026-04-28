@@ -35,21 +35,15 @@ class V2(Version):
 
     @property
     def phone_numbers(self) -> PhoneNumberList:
-        if self._phone_numbers is None:
-            self._phone_numbers = PhoneNumberList(self)
-        return self._phone_numbers
+        pass
 
     @property
     def sip_domains(self) -> SipDomainList:
-        if self._sip_domains is None:
-            self._sip_domains = SipDomainList(self)
-        return self._sip_domains
+        pass
 
     @property
     def trunks(self) -> TrunkList:
-        if self._trunks is None:
-            self._trunks = TrunkList(self)
-        return self._trunks
+        pass
 
     def __repr__(self) -> str:
         """

@@ -175,11 +175,7 @@ class Client(ClientBase):
 
         :returns: Accounts Twilio Domain
         """
-        if self._accounts is None:
-            from twilio.rest.accounts import Accounts
-
-            self._accounts = Accounts(self)
-        return self._accounts
+        pass
 
     @property
     def api(self) -> "Api":
@@ -188,11 +184,7 @@ class Client(ClientBase):
 
         :returns: Api Twilio Domain
         """
-        if self._api is None:
-            from twilio.rest.api import Api
-
-            self._api = Api(self)
-        return self._api
+        pass
 
     @property
     def assistants(self) -> "Assistants":
@@ -201,11 +193,7 @@ class Client(ClientBase):
 
         :returns: Assistants Twilio Domain
         """
-        if self._assistants is None:
-            from twilio.rest.assistants import Assistants
-
-            self._assistants = Assistants(self)
-        return self._assistants
+        pass
 
     @property
     def bulkexports(self) -> "Bulkexports":
@@ -214,11 +202,7 @@ class Client(ClientBase):
 
         :returns: Bulkexports Twilio Domain
         """
-        if self._bulkexports is None:
-            from twilio.rest.bulkexports import Bulkexports
-
-            self._bulkexports = Bulkexports(self)
-        return self._bulkexports
+        pass
 
     @property
     def chat(self) -> "Chat":
@@ -227,11 +211,7 @@ class Client(ClientBase):
 
         :returns: Chat Twilio Domain
         """
-        if self._chat is None:
-            from twilio.rest.chat import Chat
-
-            self._chat = Chat(self)
-        return self._chat
+        pass
 
     @property
     def content(self) -> "Content":
@@ -240,11 +220,7 @@ class Client(ClientBase):
 
         :returns: Content Twilio Domain
         """
-        if self._content is None:
-            from twilio.rest.content import Content
-
-            self._content = Content(self)
-        return self._content
+        pass
 
     @property
     def conversations(self) -> "Conversations":
@@ -253,11 +229,7 @@ class Client(ClientBase):
 
         :returns: Conversations Twilio Domain
         """
-        if self._conversations is None:
-            from twilio.rest.conversations import Conversations
-
-            self._conversations = Conversations(self)
-        return self._conversations
+        pass
 
     @property
     def events(self) -> "Events":
@@ -266,11 +238,7 @@ class Client(ClientBase):
 
         :returns: Events Twilio Domain
         """
-        if self._events is None:
-            from twilio.rest.events import Events
-
-            self._events = Events(self)
-        return self._events
+        pass
 
     @property
     def flex_api(self) -> "FlexApi":
@@ -279,11 +247,7 @@ class Client(ClientBase):
 
         :returns: FlexApi Twilio Domain
         """
-        if self._flex_api is None:
-            from twilio.rest.flex_api import FlexApi
-
-            self._flex_api = FlexApi(self)
-        return self._flex_api
+        pass
 
     @property
     def frontline_api(self) -> "FrontlineApi":
@@ -292,11 +256,7 @@ class Client(ClientBase):
 
         :returns: FrontlineApi Twilio Domain
         """
-        if self._frontline_api is None:
-            from twilio.rest.frontline_api import FrontlineApi
-
-            self._frontline_api = FrontlineApi(self)
-        return self._frontline_api
+        pass
 
     @property
     def preview_iam(self) -> "PreviewIam":
@@ -305,11 +265,7 @@ class Client(ClientBase):
 
         :returns: PreviewIam Twilio Domain
         """
-        if self._preview_iam is None:
-            from twilio.rest.preview_iam import PreviewIam
-
-            self._preview_iam = PreviewIam(self)
-        return self._preview_iam
+        pass
 
     @property
     def iam(self) -> "Iam":
@@ -318,11 +274,7 @@ class Client(ClientBase):
 
         :returns: Iam Twilio Domain
         """
-        if self._iam is None:
-            from twilio.rest.iam import Iam
-
-            self._iam = Iam(self)
-        return self._iam
+        pass
 
     @property
     def iam(self) -> "Iam":
@@ -331,11 +283,7 @@ class Client(ClientBase):
 
         :returns: Iam Twilio Domain
         """
-        if self._iam is None:
-            from twilio.rest.iam import Iam
-
-            self._iam = Iam(self)
-        return self._iam
+        pass
 
     @property
     def insights(self) -> "Insights":
@@ -344,11 +292,7 @@ class Client(ClientBase):
 
         :returns: Insights Twilio Domain
         """
-        if self._insights is None:
-            from twilio.rest.insights import Insights
-
-            self._insights = Insights(self)
-        return self._insights
+        pass
 
     @property
     def intelligence(self) -> "Intelligence":
@@ -357,11 +301,7 @@ class Client(ClientBase):
 
         :returns: Intelligence Twilio Domain
         """
-        if self._intelligence is None:
-            from twilio.rest.intelligence import Intelligence
-
-            self._intelligence = Intelligence(self)
-        return self._intelligence
+        pass
 
     @property
     def ip_messaging(self) -> "IpMessaging":
@@ -370,11 +310,7 @@ class Client(ClientBase):
 
         :returns: IpMessaging Twilio Domain
         """
-        if self._ip_messaging is None:
-            from twilio.rest.ip_messaging import IpMessaging
-
-            self._ip_messaging = IpMessaging(self)
-        return self._ip_messaging
+        pass
 
     @property
     def knowledge(self) -> "Knowledge":
@@ -383,11 +319,7 @@ class Client(ClientBase):
 
         :returns: Knowledge Twilio Domain
         """
-        if self._knowledge is None:
-            from twilio.rest.knowledge import Knowledge
-
-            self._knowledge = Knowledge(self)
-        return self._knowledge
+        pass
 
     @property
     def lookups(self) -> "Lookups":
@@ -396,11 +328,7 @@ class Client(ClientBase):
 
         :returns: Lookups Twilio Domain
         """
-        if self._lookups is None:
-            from twilio.rest.lookups import Lookups
-
-            self._lookups = Lookups(self)
-        return self._lookups
+        pass
 
     @property
     def marketplace(self) -> "Marketplace":
@@ -409,11 +337,7 @@ class Client(ClientBase):
 
         :returns: Marketplace Twilio Domain
         """
-        if self._marketplace is None:
-            from twilio.rest.marketplace import Marketplace
-
-            self._marketplace = Marketplace(self)
-        return self._marketplace
+        pass
 
     @property
     def messaging(self) -> "Messaging":
@@ -422,11 +346,7 @@ class Client(ClientBase):
 
         :returns: Messaging Twilio Domain
         """
-        if self._messaging is None:
-            from twilio.rest.messaging import Messaging
-
-            self._messaging = Messaging(self)
-        return self._messaging
+        pass
 
     @property
     def monitor(self) -> "Monitor":
@@ -435,11 +355,7 @@ class Client(ClientBase):
 
         :returns: Monitor Twilio Domain
         """
-        if self._monitor is None:
-            from twilio.rest.monitor import Monitor
-
-            self._monitor = Monitor(self)
-        return self._monitor
+        pass
 
     @property
     def notify(self) -> "Notify":
@@ -448,11 +364,7 @@ class Client(ClientBase):
 
         :returns: Notify Twilio Domain
         """
-        if self._notify is None:
-            from twilio.rest.notify import Notify
-
-            self._notify = Notify(self)
-        return self._notify
+        pass
 
     @property
     def numbers(self) -> "Numbers":
@@ -461,11 +373,7 @@ class Client(ClientBase):
 
         :returns: Numbers Twilio Domain
         """
-        if self._numbers is None:
-            from twilio.rest.numbers import Numbers
-
-            self._numbers = Numbers(self)
-        return self._numbers
+        pass
 
     @property
     def oauth(self) -> "Oauth":
@@ -474,11 +382,7 @@ class Client(ClientBase):
 
         :returns: Oauth Twilio Domain
         """
-        if self._oauth is None:
-            from twilio.rest.oauth import Oauth
-
-            self._oauth = Oauth(self)
-        return self._oauth
+        pass
 
     @property
     def preview(self) -> "Preview":
@@ -487,11 +391,7 @@ class Client(ClientBase):
 
         :returns: Preview Twilio Domain
         """
-        if self._preview is None:
-            from twilio.rest.preview import Preview
-
-            self._preview = Preview(self)
-        return self._preview
+        pass
 
     @property
     def pricing(self) -> "Pricing":
@@ -500,11 +400,7 @@ class Client(ClientBase):
 
         :returns: Pricing Twilio Domain
         """
-        if self._pricing is None:
-            from twilio.rest.pricing import Pricing
-
-            self._pricing = Pricing(self)
-        return self._pricing
+        pass
 
     @property
     def proxy(self) -> "Proxy":
@@ -513,11 +409,7 @@ class Client(ClientBase):
 
         :returns: Proxy Twilio Domain
         """
-        if self._proxy is None:
-            from twilio.rest.proxy import Proxy
-
-            self._proxy = Proxy(self)
-        return self._proxy
+        pass
 
     @property
     def routes(self) -> "Routes":
@@ -526,11 +418,7 @@ class Client(ClientBase):
 
         :returns: Routes Twilio Domain
         """
-        if self._routes is None:
-            from twilio.rest.routes import Routes
-
-            self._routes = Routes(self)
-        return self._routes
+        pass
 
     @property
     def serverless(self) -> "Serverless":
@@ -539,11 +427,7 @@ class Client(ClientBase):
 
         :returns: Serverless Twilio Domain
         """
-        if self._serverless is None:
-            from twilio.rest.serverless import Serverless
-
-            self._serverless = Serverless(self)
-        return self._serverless
+        pass
 
     @property
     def studio(self) -> "Studio":
@@ -552,11 +436,7 @@ class Client(ClientBase):
 
         :returns: Studio Twilio Domain
         """
-        if self._studio is None:
-            from twilio.rest.studio import Studio
-
-            self._studio = Studio(self)
-        return self._studio
+        pass
 
     @property
     def supersim(self) -> "Supersim":
@@ -565,11 +445,7 @@ class Client(ClientBase):
 
         :returns: Supersim Twilio Domain
         """
-        if self._supersim is None:
-            from twilio.rest.supersim import Supersim
-
-            self._supersim = Supersim(self)
-        return self._supersim
+        pass
 
     @property
     def sync(self) -> "Sync":
@@ -578,11 +454,7 @@ class Client(ClientBase):
 
         :returns: Sync Twilio Domain
         """
-        if self._sync is None:
-            from twilio.rest.sync import Sync
-
-            self._sync = Sync(self)
-        return self._sync
+        pass
 
     @property
     def taskrouter(self) -> "Taskrouter":
@@ -591,11 +463,7 @@ class Client(ClientBase):
 
         :returns: Taskrouter Twilio Domain
         """
-        if self._taskrouter is None:
-            from twilio.rest.taskrouter import Taskrouter
-
-            self._taskrouter = Taskrouter(self)
-        return self._taskrouter
+        pass
 
     @property
     def trunking(self) -> "Trunking":
@@ -604,11 +472,7 @@ class Client(ClientBase):
 
         :returns: Trunking Twilio Domain
         """
-        if self._trunking is None:
-            from twilio.rest.trunking import Trunking
-
-            self._trunking = Trunking(self)
-        return self._trunking
+        pass
 
     @property
     def trusthub(self) -> "Trusthub":
@@ -617,11 +481,7 @@ class Client(ClientBase):
 
         :returns: Trusthub Twilio Domain
         """
-        if self._trusthub is None:
-            from twilio.rest.trusthub import Trusthub
-
-            self._trusthub = Trusthub(self)
-        return self._trusthub
+        pass
 
     @property
     def verify(self) -> "Verify":
@@ -630,11 +490,7 @@ class Client(ClientBase):
 
         :returns: Verify Twilio Domain
         """
-        if self._verify is None:
-            from twilio.rest.verify import Verify
-
-            self._verify = Verify(self)
-        return self._verify
+        pass
 
     @property
     def video(self) -> "Video":
@@ -643,11 +499,7 @@ class Client(ClientBase):
 
         :returns: Video Twilio Domain
         """
-        if self._video is None:
-            from twilio.rest.video import Video
-
-            self._video = Video(self)
-        return self._video
+        pass
 
     @property
     def voice(self) -> "Voice":
@@ -656,11 +508,7 @@ class Client(ClientBase):
 
         :returns: Voice Twilio Domain
         """
-        if self._voice is None:
-            from twilio.rest.voice import Voice
-
-            self._voice = Voice(self)
-        return self._voice
+        pass
 
     @property
     def wireless(self) -> "Wireless":
@@ -669,104 +517,100 @@ class Client(ClientBase):
 
         :returns: Wireless Twilio Domain
         """
-        if self._wireless is None:
-            from twilio.rest.wireless import Wireless
-
-            self._wireless = Wireless(self)
-        return self._wireless
+        pass
 
     @property
     def addresses(self) -> "AddressList":
-        return self.api.account.addresses
+        pass
 
     @property
     def applications(self) -> "ApplicationList":
-        return self.api.account.applications
+        pass
 
     @property
     def authorized_connect_apps(self) -> "AuthorizedConnectAppList":
-        return self.api.account.authorized_connect_apps
+        pass
 
     @property
     def available_phone_numbers(self) -> "AvailablePhoneNumberCountryList":
-        return self.api.account.available_phone_numbers
+        pass
 
     @property
     def balance(self) -> "BalanceList":
-        return self.api.account.balance
+        pass
 
     @property
     def calls(self) -> "CallList":
-        return self.api.account.calls
+        pass
 
     @property
     def conferences(self) -> "ConferenceList":
-        return self.api.account.conferences
+        pass
 
     @property
     def connect_apps(self) -> "ConnectAppList":
-        return self.api.account.connect_apps
+        pass
 
     @property
     def incoming_phone_numbers(self) -> "IncomingPhoneNumberList":
-        return self.api.account.incoming_phone_numbers
+        pass
 
     @property
     def keys(self) -> "KeyList":
-        return self.api.account.keys
+        pass
 
     @property
     def new_keys(self) -> "NewKeyList":
-        return self.api.account.new_keys
+        pass
 
     @property
     def messages(self) -> "MessageList":
-        return self.api.account.messages
+        pass
 
     @property
     def signing_keys(self) -> "SigningKeyList":
-        return self.api.account.signing_keys
+        pass
 
     @property
     def new_signing_keys(self) -> "NewSigningKeyList":
-        return self.api.account.new_signing_keys
+        pass
 
     @property
     def notifications(self) -> "NotificationList":
-        return self.api.account.notifications
+        pass
 
     @property
     def outgoing_caller_ids(self) -> "OutgoingCallerIdList":
-        return self.api.account.outgoing_caller_ids
+        pass
 
     @property
     def validation_requests(self) -> "ValidationRequestList":
-        return self.api.account.validation_requests
+        pass
 
     @property
     def queues(self) -> "QueueList":
-        return self.api.account.queues
+        pass
 
     @property
     def recordings(self) -> "RecordingList":
-        return self.api.account.recordings
+        pass
 
     @property
     def short_codes(self) -> "ShortCodeList":
-        return self.api.account.short_codes
+        pass
 
     @property
     def sip(self) -> "SipList":
-        return self.api.account.sip
+        pass
 
     @property
     def tokens(self) -> "TokenList":
-        return self.api.account.tokens
+        pass
 
     @property
     def transcriptions(self) -> "TranscriptionList":
-        return self.api.account.transcriptions
+        pass
 
     @property
     def usage(self) -> "UsageList":
-        return self.api.account.usage
+        pass

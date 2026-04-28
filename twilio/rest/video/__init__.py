@@ -12,54 +12,24 @@ from twilio.rest.video.v1.room import RoomList
 class Video(VideoBase):
     @property
     def compositions(self) -> CompositionList:
-        warn(
-            "compositions is deprecated. Use v1.compositions instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.compositions
+        pass
 
     @property
     def composition_hooks(self) -> CompositionHookList:
-        warn(
-            "composition_hooks is deprecated. Use v1.composition_hooks instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.composition_hooks
+        pass
 
     @property
     def composition_settings(self) -> CompositionSettingsList:
-        warn(
-            "composition_settings is deprecated. Use v1.composition_settings instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.composition_settings
+        pass
 
     @property
     def recordings(self) -> RecordingList:
-        warn(
-            "recordings is deprecated. Use v1.recordings instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.recordings
+        pass
 
     @property
     def recording_settings(self) -> RecordingSettingsList:
-        warn(
-            "recording_settings is deprecated. Use v1.recording_settings instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.recording_settings
+        pass
 
     @property
     def rooms(self) -> RoomList:
-        warn(
-            "rooms is deprecated. Use v1.rooms instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.rooms
+        pass

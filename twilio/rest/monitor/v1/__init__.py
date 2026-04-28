@@ -33,15 +33,11 @@ class V1(Version):
 
     @property
     def alerts(self) -> AlertList:
-        if self._alerts is None:
-            self._alerts = AlertList(self)
-        return self._alerts
+        pass
 
     @property
     def events(self) -> EventList:
-        if self._events is None:
-            self._events = EventList(self)
-        return self._events
+        pass
 
     def __repr__(self) -> str:
         """

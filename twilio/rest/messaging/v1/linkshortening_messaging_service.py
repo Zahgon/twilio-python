@@ -56,13 +56,7 @@ class LinkshorteningMessagingServiceInstance(InstanceResource):
 
         :returns: LinkshorteningMessagingServiceContext for this LinkshorteningMessagingServiceInstance
         """
-        if self._context is None:
-            self._context = LinkshorteningMessagingServiceContext(
-                self._version,
-                domain_sid=self._solution["domain_sid"],
-                messaging_service_sid=self._solution["messaging_service_sid"],
-            )
-        return self._context
+        pass
 
     def create(self) -> "LinkshorteningMessagingServiceInstance":
         """
@@ -71,7 +65,7 @@ class LinkshorteningMessagingServiceInstance(InstanceResource):
 
         :returns: The created LinkshorteningMessagingServiceInstance
         """
-        return self._proxy.create()
+        pass
 
     async def create_async(self) -> "LinkshorteningMessagingServiceInstance":
         """
@@ -80,7 +74,7 @@ class LinkshorteningMessagingServiceInstance(InstanceResource):
 
         :returns: The created LinkshorteningMessagingServiceInstance
         """
-        return await self._proxy.create_async()
+        pass
 
     def create_with_http_info(self) -> ApiResponse:
         """
@@ -89,7 +83,7 @@ class LinkshorteningMessagingServiceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.create_with_http_info()
+        pass
 
     async def create_with_http_info_async(self) -> ApiResponse:
         """
@@ -98,7 +92,7 @@ class LinkshorteningMessagingServiceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.create_with_http_info_async()
+        pass
 
     def delete(self) -> bool:
         """
@@ -107,7 +101,7 @@ class LinkshorteningMessagingServiceInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -116,7 +110,7 @@ class LinkshorteningMessagingServiceInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -125,7 +119,7 @@ class LinkshorteningMessagingServiceInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -134,7 +128,7 @@ class LinkshorteningMessagingServiceInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -176,15 +170,7 @@ class LinkshorteningMessagingServiceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of({})
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(self) -> LinkshorteningMessagingServiceInstance:
         """
@@ -193,13 +179,7 @@ class LinkshorteningMessagingServiceContext(InstanceContext):
 
         :returns: The created LinkshorteningMessagingServiceInstance
         """
-        payload, _, _ = self._create()
-        return LinkshorteningMessagingServiceInstance(
-            self._version,
-            payload,
-            domain_sid=self._solution["domain_sid"],
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
+        pass
 
     def create_with_http_info(self) -> ApiResponse:
         """
@@ -208,14 +188,7 @@ class LinkshorteningMessagingServiceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create()
-        instance = LinkshorteningMessagingServiceInstance(
-            self._version,
-            payload,
-            domain_sid=self._solution["domain_sid"],
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self) -> tuple:
         """
@@ -224,15 +197,7 @@ class LinkshorteningMessagingServiceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of({})
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(self) -> LinkshorteningMessagingServiceInstance:
         """
@@ -241,13 +206,7 @@ class LinkshorteningMessagingServiceContext(InstanceContext):
 
         :returns: The created LinkshorteningMessagingServiceInstance
         """
-        payload, _, _ = await self._create_async()
-        return LinkshorteningMessagingServiceInstance(
-            self._version,
-            payload,
-            domain_sid=self._solution["domain_sid"],
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
+        pass
 
     async def create_with_http_info_async(self) -> ApiResponse:
         """
@@ -256,14 +215,7 @@ class LinkshorteningMessagingServiceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async()
-        instance = LinkshorteningMessagingServiceInstance(
-            self._version,
-            payload,
-            domain_sid=self._solution["domain_sid"],
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _delete(self) -> tuple:
         """
@@ -272,12 +224,7 @@ class LinkshorteningMessagingServiceContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -286,8 +233,7 @@ class LinkshorteningMessagingServiceContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -296,8 +242,7 @@ class LinkshorteningMessagingServiceContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -306,12 +251,7 @@ class LinkshorteningMessagingServiceContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -320,8 +260,7 @@ class LinkshorteningMessagingServiceContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -330,8 +269,7 @@ class LinkshorteningMessagingServiceContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -365,11 +303,7 @@ class LinkshorteningMessagingServiceList(ListResource):
         :param domain_sid: The domain SID to dissociate from a messaging service. With URL shortening enabled, links in messages sent with the associated messaging service will be shortened to the provided domain
         :param messaging_service_sid: A messaging service SID to dissociate from a domain. With URL shortening enabled, links in messages sent with the provided messaging service will be shortened to the associated domain
         """
-        return LinkshorteningMessagingServiceContext(
-            self._version,
-            domain_sid=domain_sid,
-            messaging_service_sid=messaging_service_sid,
-        )
+        pass
 
     def __call__(
         self, domain_sid: str, messaging_service_sid: str

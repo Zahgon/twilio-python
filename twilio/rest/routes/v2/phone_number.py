@@ -68,12 +68,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: PhoneNumberContext for this PhoneNumberInstance
         """
-        if self._context is None:
-            self._context = PhoneNumberContext(
-                self._version,
-                phone_number=self._solution["phone_number"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "PhoneNumberInstance":
         """
@@ -82,7 +77,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: The fetched PhoneNumberInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "PhoneNumberInstance":
         """
@@ -91,7 +86,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: The fetched PhoneNumberInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -100,7 +95,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -109,7 +104,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -124,10 +119,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: The updated PhoneNumberInstance
         """
-        return self._proxy.update(
-            voice_region=voice_region,
-            friendly_name=friendly_name,
-        )
+        pass
 
     async def update_async(
         self,
@@ -142,10 +134,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: The updated PhoneNumberInstance
         """
-        return await self._proxy.update_async(
-            voice_region=voice_region,
-            friendly_name=friendly_name,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -160,10 +149,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            voice_region=voice_region,
-            friendly_name=friendly_name,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -178,10 +164,7 @@ class PhoneNumberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            voice_region=voice_region,
-            friendly_name=friendly_name,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -217,14 +200,7 @@ class PhoneNumberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> PhoneNumberInstance:
         """
@@ -233,12 +209,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: The fetched PhoneNumberInstance
         """
-        payload, _, _ = self._fetch()
-        return PhoneNumberInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -247,13 +218,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = PhoneNumberInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -262,14 +227,7 @@ class PhoneNumberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> PhoneNumberInstance:
         """
@@ -278,12 +236,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: The fetched PhoneNumberInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return PhoneNumberInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -292,13 +245,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = PhoneNumberInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -311,22 +258,7 @@ class PhoneNumberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "VoiceRegion": voice_region,
-                "FriendlyName": friendly_name,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -341,12 +273,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: The updated PhoneNumberInstance
         """
-        payload, _, _ = self._update(
-            voice_region=voice_region, friendly_name=friendly_name
-        )
-        return PhoneNumberInstance(
-            self._version, payload, phone_number=self._solution["phone_number"]
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -361,13 +288,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            voice_region=voice_region, friendly_name=friendly_name
-        )
-        instance = PhoneNumberInstance(
-            self._version, payload, phone_number=self._solution["phone_number"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -380,22 +301,7 @@ class PhoneNumberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "VoiceRegion": voice_region,
-                "FriendlyName": friendly_name,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -410,12 +316,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: The updated PhoneNumberInstance
         """
-        payload, _, _ = await self._update_async(
-            voice_region=voice_region, friendly_name=friendly_name
-        )
-        return PhoneNumberInstance(
-            self._version, payload, phone_number=self._solution["phone_number"]
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -430,13 +331,7 @@ class PhoneNumberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            voice_region=voice_region, friendly_name=friendly_name
-        )
-        instance = PhoneNumberInstance(
-            self._version, payload, phone_number=self._solution["phone_number"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -465,7 +360,7 @@ class PhoneNumberList(ListResource):
 
         :param phone_number: The phone number in E.164 format
         """
-        return PhoneNumberContext(self._version, phone_number=phone_number)
+        pass
 
     def __call__(self, phone_number: str) -> PhoneNumberContext:
         """

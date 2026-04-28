@@ -16,7 +16,7 @@ class Response(object):
 
     @property
     def text(self) -> str:
-        return self.content
+        pass
 
     def __repr__(self) -> str:
         return "HTTP {} {}".format(self.status_code, self.content)

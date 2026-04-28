@@ -141,13 +141,7 @@ class CallInstance(InstanceResource):
 
         :returns: CallContext for this CallInstance
         """
-        if self._context is None:
-            self._context = CallContext(
-                self._version,
-                account_sid=self._solution["account_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -156,7 +150,7 @@ class CallInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -165,7 +159,7 @@ class CallInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -174,7 +168,7 @@ class CallInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -183,7 +177,7 @@ class CallInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "CallInstance":
         """
@@ -192,7 +186,7 @@ class CallInstance(InstanceResource):
 
         :returns: The fetched CallInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "CallInstance":
         """
@@ -201,7 +195,7 @@ class CallInstance(InstanceResource):
 
         :returns: The fetched CallInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -210,7 +204,7 @@ class CallInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -219,7 +213,7 @@ class CallInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -248,17 +242,7 @@ class CallInstance(InstanceResource):
 
         :returns: The updated CallInstance
         """
-        return self._proxy.update(
-            url=url,
-            method=method,
-            status=status,
-            fallback_url=fallback_url,
-            fallback_method=fallback_method,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            twiml=twiml,
-            time_limit=time_limit,
-        )
+        pass
 
     async def update_async(
         self,
@@ -287,17 +271,7 @@ class CallInstance(InstanceResource):
 
         :returns: The updated CallInstance
         """
-        return await self._proxy.update_async(
-            url=url,
-            method=method,
-            status=status,
-            fallback_url=fallback_url,
-            fallback_method=fallback_method,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            twiml=twiml,
-            time_limit=time_limit,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -326,17 +300,7 @@ class CallInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            url=url,
-            method=method,
-            status=status,
-            fallback_url=fallback_url,
-            fallback_method=fallback_method,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            twiml=twiml,
-            time_limit=time_limit,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -365,80 +329,70 @@ class CallInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            url=url,
-            method=method,
-            status=status,
-            fallback_url=fallback_url,
-            fallback_method=fallback_method,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            twiml=twiml,
-            time_limit=time_limit,
-        )
+        pass
 
     @property
     def events(self) -> EventList:
         """
         Access the events
         """
-        return self._proxy.events
+        pass
 
     @property
     def notifications(self) -> NotificationList:
         """
         Access the notifications
         """
-        return self._proxy.notifications
+        pass
 
     @property
     def payments(self) -> PaymentList:
         """
         Access the payments
         """
-        return self._proxy.payments
+        pass
 
     @property
     def recordings(self) -> RecordingList:
         """
         Access the recordings
         """
-        return self._proxy.recordings
+        pass
 
     @property
     def siprec(self) -> SiprecList:
         """
         Access the siprec
         """
-        return self._proxy.siprec
+        pass
 
     @property
     def streams(self) -> StreamList:
         """
         Access the streams
         """
-        return self._proxy.streams
+        pass
 
     @property
     def transcriptions(self) -> TranscriptionList:
         """
         Access the transcriptions
         """
-        return self._proxy.transcriptions
+        pass
 
     @property
     def user_defined_messages(self) -> UserDefinedMessageList:
         """
         Access the user_defined_messages
         """
-        return self._proxy.user_defined_messages
+        pass
 
     @property
     def user_defined_message_subscriptions(self) -> UserDefinedMessageSubscriptionList:
         """
         Access the user_defined_message_subscriptions
         """
-        return self._proxy.user_defined_message_subscriptions
+        pass
 
     def __repr__(self) -> str:
         """
@@ -488,12 +442,7 @@ class CallContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -502,8 +451,7 @@ class CallContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -512,8 +460,7 @@ class CallContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -522,12 +469,7 @@ class CallContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -536,8 +478,7 @@ class CallContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -546,8 +487,7 @@ class CallContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -556,14 +496,7 @@ class CallContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> CallInstance:
         """
@@ -572,13 +505,7 @@ class CallContext(InstanceContext):
 
         :returns: The fetched CallInstance
         """
-        payload, _, _ = self._fetch()
-        return CallInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -587,14 +514,7 @@ class CallContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = CallInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -603,14 +523,7 @@ class CallContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> CallInstance:
         """
@@ -619,13 +532,7 @@ class CallContext(InstanceContext):
 
         :returns: The fetched CallInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return CallInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -634,14 +541,7 @@ class CallContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = CallInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -661,29 +561,7 @@ class CallContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Url": url,
-                "Method": method,
-                "Status": status,
-                "FallbackUrl": fallback_url,
-                "FallbackMethod": fallback_method,
-                "StatusCallback": status_callback,
-                "StatusCallbackMethod": status_callback_method,
-                "Twiml": twiml,
-                "TimeLimit": time_limit,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -712,23 +590,7 @@ class CallContext(InstanceContext):
 
         :returns: The updated CallInstance
         """
-        payload, _, _ = self._update(
-            url=url,
-            method=method,
-            status=status,
-            fallback_url=fallback_url,
-            fallback_method=fallback_method,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            twiml=twiml,
-            time_limit=time_limit,
-        )
-        return CallInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -757,24 +619,7 @@ class CallContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            url=url,
-            method=method,
-            status=status,
-            fallback_url=fallback_url,
-            fallback_method=fallback_method,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            twiml=twiml,
-            time_limit=time_limit,
-        )
-        instance = CallInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -794,29 +639,7 @@ class CallContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Url": url,
-                "Method": method,
-                "Status": status,
-                "FallbackUrl": fallback_url,
-                "FallbackMethod": fallback_method,
-                "StatusCallback": status_callback,
-                "StatusCallbackMethod": status_callback_method,
-                "Twiml": twiml,
-                "TimeLimit": time_limit,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -845,23 +668,7 @@ class CallContext(InstanceContext):
 
         :returns: The updated CallInstance
         """
-        payload, _, _ = await self._update_async(
-            url=url,
-            method=method,
-            status=status,
-            fallback_url=fallback_url,
-            fallback_method=fallback_method,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            twiml=twiml,
-            time_limit=time_limit,
-        )
-        return CallInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -890,143 +697,70 @@ class CallContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            url=url,
-            method=method,
-            status=status,
-            fallback_url=fallback_url,
-            fallback_method=fallback_method,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            twiml=twiml,
-            time_limit=time_limit,
-        )
-        instance = CallInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def events(self) -> EventList:
         """
         Access the events
         """
-        if self._events is None:
-            self._events = EventList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._events
+        pass
 
     @property
     def notifications(self) -> NotificationList:
         """
         Access the notifications
         """
-        if self._notifications is None:
-            self._notifications = NotificationList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._notifications
+        pass
 
     @property
     def payments(self) -> PaymentList:
         """
         Access the payments
         """
-        if self._payments is None:
-            self._payments = PaymentList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._payments
+        pass
 
     @property
     def recordings(self) -> RecordingList:
         """
         Access the recordings
         """
-        if self._recordings is None:
-            self._recordings = RecordingList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._recordings
+        pass
 
     @property
     def siprec(self) -> SiprecList:
         """
         Access the siprec
         """
-        if self._siprec is None:
-            self._siprec = SiprecList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._siprec
+        pass
 
     @property
     def streams(self) -> StreamList:
         """
         Access the streams
         """
-        if self._streams is None:
-            self._streams = StreamList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._streams
+        pass
 
     @property
     def transcriptions(self) -> TranscriptionList:
         """
         Access the transcriptions
         """
-        if self._transcriptions is None:
-            self._transcriptions = TranscriptionList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._transcriptions
+        pass
 
     @property
     def user_defined_messages(self) -> UserDefinedMessageList:
         """
         Access the user_defined_messages
         """
-        if self._user_defined_messages is None:
-            self._user_defined_messages = UserDefinedMessageList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._user_defined_messages
+        pass
 
     @property
     def user_defined_message_subscriptions(self) -> UserDefinedMessageSubscriptionList:
         """
         Access the user_defined_message_subscriptions
         """
-        if self._user_defined_message_subscriptions is None:
-            self._user_defined_message_subscriptions = (
-                UserDefinedMessageSubscriptionList(
-                    self._version,
-                    self._solution["account_sid"],
-                    self._solution["sid"],
-                )
-            )
-        return self._user_defined_message_subscriptions
+        pass
 
     def __repr__(self) -> str:
         """
@@ -1046,9 +780,7 @@ class CallPage(Page):
 
         :param payload: Payload response from the API
         """
-        return CallInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -1122,60 +854,7 @@ class CallList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "To": to,
-                "From": from_,
-                "Method": method,
-                "FallbackUrl": fallback_url,
-                "FallbackMethod": fallback_method,
-                "StatusCallback": status_callback,
-                "StatusCallbackEvent": serialize.map(
-                    status_callback_event, lambda e: e
-                ),
-                "StatusCallbackMethod": status_callback_method,
-                "SendDigits": send_digits,
-                "Timeout": timeout,
-                "Record": serialize.boolean_to_string(record),
-                "RecordingChannels": recording_channels,
-                "RecordingStatusCallback": recording_status_callback,
-                "RecordingStatusCallbackMethod": recording_status_callback_method,
-                "SipAuthUsername": sip_auth_username,
-                "SipAuthPassword": sip_auth_password,
-                "MachineDetection": machine_detection,
-                "MachineDetectionTimeout": machine_detection_timeout,
-                "RecordingStatusCallbackEvent": serialize.map(
-                    recording_status_callback_event, lambda e: e
-                ),
-                "Trim": trim,
-                "CallerId": caller_id,
-                "MachineDetectionSpeechThreshold": machine_detection_speech_threshold,
-                "MachineDetectionSpeechEndThreshold": machine_detection_speech_end_threshold,
-                "MachineDetectionSilenceTimeout": machine_detection_silence_timeout,
-                "AsyncAmd": async_amd,
-                "AsyncAmdStatusCallback": async_amd_status_callback,
-                "AsyncAmdStatusCallbackMethod": async_amd_status_callback_method,
-                "Byoc": byoc,
-                "CallReason": call_reason,
-                "CallToken": call_token,
-                "RecordingTrack": recording_track,
-                "TimeLimit": time_limit,
-                "ClientNotificationUrl": client_notification_url,
-                "Url": url,
-                "Twiml": twiml,
-                "ApplicationSid": application_sid,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -1258,47 +937,7 @@ class CallList(ListResource):
 
         :returns: The created CallInstance
         """
-        payload, _, _ = self._create(
-            to=to,
-            from_=from_,
-            method=method,
-            fallback_url=fallback_url,
-            fallback_method=fallback_method,
-            status_callback=status_callback,
-            status_callback_event=status_callback_event,
-            status_callback_method=status_callback_method,
-            send_digits=send_digits,
-            timeout=timeout,
-            record=record,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            machine_detection=machine_detection,
-            machine_detection_timeout=machine_detection_timeout,
-            recording_status_callback_event=recording_status_callback_event,
-            trim=trim,
-            caller_id=caller_id,
-            machine_detection_speech_threshold=machine_detection_speech_threshold,
-            machine_detection_speech_end_threshold=machine_detection_speech_end_threshold,
-            machine_detection_silence_timeout=machine_detection_silence_timeout,
-            async_amd=async_amd,
-            async_amd_status_callback=async_amd_status_callback,
-            async_amd_status_callback_method=async_amd_status_callback_method,
-            byoc=byoc,
-            call_reason=call_reason,
-            call_token=call_token,
-            recording_track=recording_track,
-            time_limit=time_limit,
-            client_notification_url=client_notification_url,
-            url=url,
-            twiml=twiml,
-            application_sid=application_sid,
-        )
-        return CallInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -1381,48 +1020,7 @@ class CallList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            to=to,
-            from_=from_,
-            method=method,
-            fallback_url=fallback_url,
-            fallback_method=fallback_method,
-            status_callback=status_callback,
-            status_callback_event=status_callback_event,
-            status_callback_method=status_callback_method,
-            send_digits=send_digits,
-            timeout=timeout,
-            record=record,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            machine_detection=machine_detection,
-            machine_detection_timeout=machine_detection_timeout,
-            recording_status_callback_event=recording_status_callback_event,
-            trim=trim,
-            caller_id=caller_id,
-            machine_detection_speech_threshold=machine_detection_speech_threshold,
-            machine_detection_speech_end_threshold=machine_detection_speech_end_threshold,
-            machine_detection_silence_timeout=machine_detection_silence_timeout,
-            async_amd=async_amd,
-            async_amd_status_callback=async_amd_status_callback,
-            async_amd_status_callback_method=async_amd_status_callback_method,
-            byoc=byoc,
-            call_reason=call_reason,
-            call_token=call_token,
-            recording_track=recording_track,
-            time_limit=time_limit,
-            client_notification_url=client_notification_url,
-            url=url,
-            twiml=twiml,
-            application_sid=application_sid,
-        )
-        instance = CallInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -1469,60 +1067,7 @@ class CallList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "To": to,
-                "From": from_,
-                "Method": method,
-                "FallbackUrl": fallback_url,
-                "FallbackMethod": fallback_method,
-                "StatusCallback": status_callback,
-                "StatusCallbackEvent": serialize.map(
-                    status_callback_event, lambda e: e
-                ),
-                "StatusCallbackMethod": status_callback_method,
-                "SendDigits": send_digits,
-                "Timeout": timeout,
-                "Record": serialize.boolean_to_string(record),
-                "RecordingChannels": recording_channels,
-                "RecordingStatusCallback": recording_status_callback,
-                "RecordingStatusCallbackMethod": recording_status_callback_method,
-                "SipAuthUsername": sip_auth_username,
-                "SipAuthPassword": sip_auth_password,
-                "MachineDetection": machine_detection,
-                "MachineDetectionTimeout": machine_detection_timeout,
-                "RecordingStatusCallbackEvent": serialize.map(
-                    recording_status_callback_event, lambda e: e
-                ),
-                "Trim": trim,
-                "CallerId": caller_id,
-                "MachineDetectionSpeechThreshold": machine_detection_speech_threshold,
-                "MachineDetectionSpeechEndThreshold": machine_detection_speech_end_threshold,
-                "MachineDetectionSilenceTimeout": machine_detection_silence_timeout,
-                "AsyncAmd": async_amd,
-                "AsyncAmdStatusCallback": async_amd_status_callback,
-                "AsyncAmdStatusCallbackMethod": async_amd_status_callback_method,
-                "Byoc": byoc,
-                "CallReason": call_reason,
-                "CallToken": call_token,
-                "RecordingTrack": recording_track,
-                "TimeLimit": time_limit,
-                "ClientNotificationUrl": client_notification_url,
-                "Url": url,
-                "Twiml": twiml,
-                "ApplicationSid": application_sid,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -1605,47 +1150,7 @@ class CallList(ListResource):
 
         :returns: The created CallInstance
         """
-        payload, _, _ = await self._create_async(
-            to=to,
-            from_=from_,
-            method=method,
-            fallback_url=fallback_url,
-            fallback_method=fallback_method,
-            status_callback=status_callback,
-            status_callback_event=status_callback_event,
-            status_callback_method=status_callback_method,
-            send_digits=send_digits,
-            timeout=timeout,
-            record=record,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            machine_detection=machine_detection,
-            machine_detection_timeout=machine_detection_timeout,
-            recording_status_callback_event=recording_status_callback_event,
-            trim=trim,
-            caller_id=caller_id,
-            machine_detection_speech_threshold=machine_detection_speech_threshold,
-            machine_detection_speech_end_threshold=machine_detection_speech_end_threshold,
-            machine_detection_silence_timeout=machine_detection_silence_timeout,
-            async_amd=async_amd,
-            async_amd_status_callback=async_amd_status_callback,
-            async_amd_status_callback_method=async_amd_status_callback_method,
-            byoc=byoc,
-            call_reason=call_reason,
-            call_token=call_token,
-            recording_track=recording_track,
-            time_limit=time_limit,
-            client_notification_url=client_notification_url,
-            url=url,
-            twiml=twiml,
-            application_sid=application_sid,
-        )
-        return CallInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -1728,48 +1233,7 @@ class CallList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            to=to,
-            from_=from_,
-            method=method,
-            fallback_url=fallback_url,
-            fallback_method=fallback_method,
-            status_callback=status_callback,
-            status_callback_event=status_callback_event,
-            status_callback_method=status_callback_method,
-            send_digits=send_digits,
-            timeout=timeout,
-            record=record,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            machine_detection=machine_detection,
-            machine_detection_timeout=machine_detection_timeout,
-            recording_status_callback_event=recording_status_callback_event,
-            trim=trim,
-            caller_id=caller_id,
-            machine_detection_speech_threshold=machine_detection_speech_threshold,
-            machine_detection_speech_end_threshold=machine_detection_speech_end_threshold,
-            machine_detection_silence_timeout=machine_detection_silence_timeout,
-            async_amd=async_amd,
-            async_amd_status_callback=async_amd_status_callback,
-            async_amd_status_callback_method=async_amd_status_callback_method,
-            byoc=byoc,
-            call_reason=call_reason,
-            call_token=call_token,
-            recording_track=recording_track,
-            time_limit=time_limit,
-            client_notification_url=client_notification_url,
-            url=url,
-            twiml=twiml,
-            application_sid=application_sid,
-        )
-        instance = CallInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -1811,22 +1275,7 @@ class CallList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            to=to,
-            from_=from_,
-            parent_call_sid=parent_call_sid,
-            status=status,
-            start_time=start_time,
-            start_time_before=start_time_before,
-            start_time_after=start_time_after,
-            end_time=end_time,
-            end_time_before=end_time_before,
-            end_time_after=end_time_after,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -1868,22 +1317,7 @@ class CallList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            to=to,
-            from_=from_,
-            parent_call_sid=parent_call_sid,
-            status=status,
-            start_time=start_time,
-            start_time_before=start_time_before,
-            start_time_after=start_time_after,
-            end_time=end_time,
-            end_time_before=end_time_before,
-            end_time_after=end_time_after,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -1923,23 +1357,7 @@ class CallList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            to=to,
-            from_=from_,
-            parent_call_sid=parent_call_sid,
-            status=status,
-            start_time=start_time,
-            start_time_before=start_time_before,
-            start_time_after=start_time_after,
-            end_time=end_time,
-            end_time_before=end_time_before,
-            end_time_after=end_time_after,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -1979,23 +1397,7 @@ class CallList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            to=to,
-            from_=from_,
-            parent_call_sid=parent_call_sid,
-            status=status,
-            start_time=start_time,
-            start_time_before=start_time_before,
-            start_time_after=start_time_after,
-            end_time=end_time,
-            end_time_before=end_time_before,
-            end_time_after=end_time_after,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -2036,22 +1438,7 @@ class CallList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                to=to,
-                from_=from_,
-                parent_call_sid=parent_call_sid,
-                status=status,
-                start_time=start_time,
-                start_time_before=start_time_before,
-                start_time_after=start_time_after,
-                end_time=end_time,
-                end_time_before=end_time_before,
-                end_time_after=end_time_after,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -2092,23 +1479,7 @@ class CallList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                to=to,
-                from_=from_,
-                parent_call_sid=parent_call_sid,
-                status=status,
-                start_time=start_time,
-                start_time_before=start_time_before,
-                start_time_after=start_time_after,
-                end_time=end_time,
-                end_time_before=end_time_before,
-                end_time_after=end_time_after,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -2148,22 +1519,7 @@ class CallList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            to=to,
-            from_=from_,
-            parent_call_sid=parent_call_sid,
-            status=status,
-            start_time=start_time,
-            start_time_before=start_time_before,
-            start_time_after=start_time_after,
-            end_time=end_time,
-            end_time_before=end_time_before,
-            end_time_after=end_time_after,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -2203,22 +1559,7 @@ class CallList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            to=to,
-            from_=from_,
-            parent_call_sid=parent_call_sid,
-            status=status,
-            start_time=start_time,
-            start_time_before=start_time_before,
-            start_time_after=start_time_after,
-            end_time=end_time,
-            end_time_before=end_time_before,
-            end_time_after=end_time_after,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -2256,32 +1597,7 @@ class CallList(ListResource):
 
         :returns: Page of CallInstance
         """
-        data = values.of(
-            {
-                "To": to,
-                "From": from_,
-                "ParentCallSid": parent_call_sid,
-                "Status": status,
-                "StartTime": serialize.iso8601_datetime(start_time),
-                "StartTime<": serialize.iso8601_datetime(start_time_before),
-                "StartTime>": serialize.iso8601_datetime(start_time_after),
-                "EndTime": serialize.iso8601_datetime(end_time),
-                "EndTime<": serialize.iso8601_datetime(end_time_before),
-                "EndTime>": serialize.iso8601_datetime(end_time_after),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return CallPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -2319,32 +1635,7 @@ class CallList(ListResource):
 
         :returns: Page of CallInstance
         """
-        data = values.of(
-            {
-                "To": to,
-                "From": from_,
-                "ParentCallSid": parent_call_sid,
-                "Status": status,
-                "StartTime": serialize.iso8601_datetime(start_time),
-                "StartTime<": serialize.iso8601_datetime(start_time_before),
-                "StartTime>": serialize.iso8601_datetime(start_time_after),
-                "EndTime": serialize.iso8601_datetime(end_time),
-                "EndTime<": serialize.iso8601_datetime(end_time_before),
-                "EndTime>": serialize.iso8601_datetime(end_time_after),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return CallPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -2382,33 +1673,7 @@ class CallList(ListResource):
 
         :returns: ApiResponse with CallPage, status code, and headers
         """
-        data = values.of(
-            {
-                "To": to,
-                "From": from_,
-                "ParentCallSid": parent_call_sid,
-                "Status": status,
-                "StartTime": serialize.iso8601_datetime(start_time),
-                "StartTime<": serialize.iso8601_datetime(start_time_before),
-                "StartTime>": serialize.iso8601_datetime(start_time_after),
-                "EndTime": serialize.iso8601_datetime(end_time),
-                "EndTime<": serialize.iso8601_datetime(end_time_before),
-                "EndTime>": serialize.iso8601_datetime(end_time_after),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = CallPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -2446,35 +1711,7 @@ class CallList(ListResource):
 
         :returns: ApiResponse with CallPage, status code, and headers
         """
-        data = values.of(
-            {
-                "To": to,
-                "From": from_,
-                "ParentCallSid": parent_call_sid,
-                "Status": status,
-                "StartTime": serialize.iso8601_datetime(start_time),
-                "StartTime<": serialize.iso8601_datetime(start_time_before),
-                "StartTime>": serialize.iso8601_datetime(start_time_after),
-                "EndTime": serialize.iso8601_datetime(end_time),
-                "EndTime<": serialize.iso8601_datetime(end_time_before),
-                "EndTime>": serialize.iso8601_datetime(end_time_after),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = CallPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> CallPage:
         """
@@ -2485,8 +1722,7 @@ class CallList(ListResource):
 
         :returns: Page of CallInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return CallPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> CallPage:
         """
@@ -2497,8 +1733,7 @@ class CallList(ListResource):
 
         :returns: Page of CallInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return CallPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, sid: str) -> CallContext:
         """
@@ -2506,9 +1741,7 @@ class CallList(ListResource):
 
         :param sid: The Twilio-provided string that uniquely identifies the Call resource to update
         """
-        return CallContext(
-            self._version, account_sid=self._solution["account_sid"], sid=sid
-        )
+        pass
 
     def __call__(self, sid: str) -> CallContext:
         """

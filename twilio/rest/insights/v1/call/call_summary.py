@@ -136,12 +136,7 @@ class CallSummaryInstance(InstanceResource):
 
         :returns: CallSummaryContext for this CallSummaryInstance
         """
-        if self._context is None:
-            self._context = CallSummaryContext(
-                self._version,
-                call_sid=self._solution["call_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(
         self,
@@ -156,9 +151,7 @@ class CallSummaryInstance(InstanceResource):
 
         :returns: The fetched CallSummaryInstance
         """
-        return self._proxy.fetch(
-            processing_state=processing_state,
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -173,9 +166,7 @@ class CallSummaryInstance(InstanceResource):
 
         :returns: The fetched CallSummaryInstance
         """
-        return await self._proxy.fetch_async(
-            processing_state=processing_state,
-        )
+        pass
 
     def fetch_with_http_info(
         self,
@@ -190,9 +181,7 @@ class CallSummaryInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            processing_state=processing_state,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self,
@@ -207,9 +196,7 @@ class CallSummaryInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            processing_state=processing_state,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -250,20 +237,7 @@ class CallSummaryContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "ProcessingState": processing_state,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(
         self,
@@ -278,12 +252,7 @@ class CallSummaryContext(InstanceContext):
 
         :returns: The fetched CallSummaryInstance
         """
-        payload, _, _ = self._fetch(processing_state=processing_state)
-        return CallSummaryInstance(
-            self._version,
-            payload,
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     def fetch_with_http_info(
         self,
@@ -298,13 +267,7 @@ class CallSummaryContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(processing_state=processing_state)
-        instance = CallSummaryInstance(
-            self._version,
-            payload,
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self,
@@ -318,20 +281,7 @@ class CallSummaryContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "ProcessingState": processing_state,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -346,12 +296,7 @@ class CallSummaryContext(InstanceContext):
 
         :returns: The fetched CallSummaryInstance
         """
-        payload, _, _ = await self._fetch_async(processing_state=processing_state)
-        return CallSummaryInstance(
-            self._version,
-            payload,
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self,
@@ -366,15 +311,7 @@ class CallSummaryContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            processing_state=processing_state
-        )
-        instance = CallSummaryInstance(
-            self._version,
-            payload,
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -408,7 +345,7 @@ class CallSummaryList(ListResource):
         Constructs a CallSummaryContext
 
         """
-        return CallSummaryContext(self._version, call_sid=self._solution["call_sid"])
+        pass
 
     def __call__(self) -> CallSummaryContext:
         """

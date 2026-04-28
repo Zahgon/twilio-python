@@ -42,11 +42,7 @@ class DeactivationsInstance(InstanceResource):
 
         :returns: DeactivationsContext for this DeactivationsInstance
         """
-        if self._context is None:
-            self._context = DeactivationsContext(
-                self._version,
-            )
-        return self._context
+        pass
 
     def fetch(
         self, date: Union[date, object] = values.unset
@@ -58,9 +54,7 @@ class DeactivationsInstance(InstanceResource):
 
         :returns: The fetched DeactivationsInstance
         """
-        return self._proxy.fetch(
-            date=date,
-        )
+        pass
 
     async def fetch_async(
         self, date: Union[date, object] = values.unset
@@ -72,9 +66,7 @@ class DeactivationsInstance(InstanceResource):
 
         :returns: The fetched DeactivationsInstance
         """
-        return await self._proxy.fetch_async(
-            date=date,
-        )
+        pass
 
     def fetch_with_http_info(
         self, date: Union[date, object] = values.unset
@@ -86,9 +78,7 @@ class DeactivationsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            date=date,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, date: Union[date, object] = values.unset
@@ -100,9 +90,7 @@ class DeactivationsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            date=date,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -133,20 +121,7 @@ class DeactivationsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "Date": serialize.iso8601_date(date),
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(self, date: Union[date, object] = values.unset) -> DeactivationsInstance:
         """
@@ -156,11 +131,7 @@ class DeactivationsContext(InstanceContext):
 
         :returns: The fetched DeactivationsInstance
         """
-        payload, _, _ = self._fetch(date=date)
-        return DeactivationsInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     def fetch_with_http_info(
         self, date: Union[date, object] = values.unset
@@ -172,12 +143,7 @@ class DeactivationsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(date=date)
-        instance = DeactivationsInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self, date: Union[date, object] = values.unset) -> tuple:
         """
@@ -186,20 +152,7 @@ class DeactivationsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "Date": serialize.iso8601_date(date),
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self, date: Union[date, object] = values.unset
@@ -211,11 +164,7 @@ class DeactivationsContext(InstanceContext):
 
         :returns: The fetched DeactivationsInstance
         """
-        payload, _, _ = await self._fetch_async(date=date)
-        return DeactivationsInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, date: Union[date, object] = values.unset
@@ -227,12 +176,7 @@ class DeactivationsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(date=date)
-        instance = DeactivationsInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -260,7 +204,7 @@ class DeactivationsList(ListResource):
         Constructs a DeactivationsContext
 
         """
-        return DeactivationsContext(self._version)
+        pass
 
     def __call__(self) -> DeactivationsContext:
         """

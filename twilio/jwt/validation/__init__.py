@@ -32,61 +32,16 @@ class ClientValidationJwt(Jwt):
         self.validation_payload = validation_payload
 
     def _generate_headers(self):
-        return {"cty": ClientValidationJwt.__CTY, "kid": self.credential_sid}
+        pass
 
     def _generate_payload(self):
         # Lowercase header keys, combine and sort headers with list values
-        all_headers = {
-            k.lower(): self._sort_and_join(v, ",")
-            for k, v in self.validation_payload.all_headers.items()
-        }
-        # Names of headers we are signing in the jwt
-        signed_headers = sorted(self.validation_payload.signed_headers)
-
-        # Stringify headers, only include headers in signed_headers
-        headers_str = [
-            "{}:{}".format(h, all_headers[h])
-            for h in signed_headers
-            if h in all_headers
-        ]
-        headers_str = "\n".join(headers_str)
-
-        # Sort query string parameters
-        query_string = self.validation_payload.query_string.split("&")
-        query_string = self._sort_and_join(query_string, "&")
-
-        req_body_hash = self._hash(self.validation_payload.body) or ""
-
-        signed_headers_str = ";".join(signed_headers)
-
-        signed_payload = [
-            self.validation_payload.method,
-            self.validation_payload.path,
-            query_string,
-        ]
-
-        if headers_str:
-            signed_payload.append(headers_str)
-        signed_payload.append("")
-        signed_payload.append(signed_headers_str)
-        signed_payload.append(req_body_hash)
-
-        signed_payload = "\n".join(signed_payload)
-
-        return {"hrh": signed_headers_str, "rqh": self._hash(signed_payload)}
+        pass
 
     @classmethod
     def _sort_and_join(cls, values, joiner):
-        if isinstance(values, str):
-            return values
-        return joiner.join(sorted(values))
+        pass
 
     @classmethod
     def _hash(cls, input_str):
-        if not input_str:
-            return input_str
-
-        if not isinstance(input_str, bytes):
-            input_str = input_str.encode("utf-8")
-
-        return sha256(input_str).hexdigest()
+        pass

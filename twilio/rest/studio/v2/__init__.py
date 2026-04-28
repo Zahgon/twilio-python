@@ -33,15 +33,11 @@ class V2(Version):
 
     @property
     def flows(self) -> FlowList:
-        if self._flows is None:
-            self._flows = FlowList(self)
-        return self._flows
+        pass
 
     @property
     def flow_validate(self) -> FlowValidateList:
-        if self._flow_validate is None:
-            self._flow_validate = FlowValidateList(self)
-        return self._flow_validate
+        pass
 
     def __repr__(self) -> str:
         """

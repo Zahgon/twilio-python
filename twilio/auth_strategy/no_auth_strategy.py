@@ -7,7 +7,7 @@ class NoAuthStrategy(AuthStrategy):
         super().__init__(AuthType.NO_AUTH)
 
     def get_auth_string(self) -> str:
-        return ""
+        pass
 
     def requires_authentication(self) -> bool:
-        return False
+        pass

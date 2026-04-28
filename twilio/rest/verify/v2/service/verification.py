@@ -102,13 +102,7 @@ class VerificationInstance(InstanceResource):
 
         :returns: VerificationContext for this VerificationInstance
         """
-        if self._context is None:
-            self._context = VerificationContext(
-                self._version,
-                service_sid=self._solution["service_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "VerificationInstance":
         """
@@ -117,7 +111,7 @@ class VerificationInstance(InstanceResource):
 
         :returns: The fetched VerificationInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "VerificationInstance":
         """
@@ -126,7 +120,7 @@ class VerificationInstance(InstanceResource):
 
         :returns: The fetched VerificationInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -135,7 +129,7 @@ class VerificationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -144,7 +138,7 @@ class VerificationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(self, status: "VerificationInstance.Status") -> "VerificationInstance":
         """
@@ -154,9 +148,7 @@ class VerificationInstance(InstanceResource):
 
         :returns: The updated VerificationInstance
         """
-        return self._proxy.update(
-            status=status,
-        )
+        pass
 
     async def update_async(
         self, status: "VerificationInstance.Status"
@@ -168,9 +160,7 @@ class VerificationInstance(InstanceResource):
 
         :returns: The updated VerificationInstance
         """
-        return await self._proxy.update_async(
-            status=status,
-        )
+        pass
 
     def update_with_http_info(
         self, status: "VerificationInstance.Status"
@@ -182,9 +172,7 @@ class VerificationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            status=status,
-        )
+        pass
 
     async def update_with_http_info_async(
         self, status: "VerificationInstance.Status"
@@ -196,9 +184,7 @@ class VerificationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            status=status,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -238,14 +224,7 @@ class VerificationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> VerificationInstance:
         """
@@ -254,13 +233,7 @@ class VerificationContext(InstanceContext):
 
         :returns: The fetched VerificationInstance
         """
-        payload, _, _ = self._fetch()
-        return VerificationInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -269,14 +242,7 @@ class VerificationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = VerificationInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -285,14 +251,7 @@ class VerificationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> VerificationInstance:
         """
@@ -301,13 +260,7 @@ class VerificationContext(InstanceContext):
 
         :returns: The fetched VerificationInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return VerificationInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -316,14 +269,7 @@ class VerificationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = VerificationInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(self, status: "VerificationInstance.Status") -> tuple:
         """
@@ -332,21 +278,7 @@ class VerificationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Status": status,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(self, status: "VerificationInstance.Status") -> VerificationInstance:
         """
@@ -356,13 +288,7 @@ class VerificationContext(InstanceContext):
 
         :returns: The updated VerificationInstance
         """
-        payload, _, _ = self._update(status=status)
-        return VerificationInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def update_with_http_info(
         self, status: "VerificationInstance.Status"
@@ -374,14 +300,7 @@ class VerificationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(status=status)
-        instance = VerificationInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(self, status: "VerificationInstance.Status") -> tuple:
         """
@@ -390,21 +309,7 @@ class VerificationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Status": status,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, status: "VerificationInstance.Status"
@@ -416,13 +321,7 @@ class VerificationContext(InstanceContext):
 
         :returns: The updated VerificationInstance
         """
-        payload, _, _ = await self._update_async(status=status)
-        return VerificationInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self, status: "VerificationInstance.Status"
@@ -434,14 +333,7 @@ class VerificationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(status=status)
-        instance = VerificationInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -498,40 +390,7 @@ class VerificationList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "To": to,
-                "Channel": channel,
-                "CustomFriendlyName": custom_friendly_name,
-                "CustomMessage": custom_message,
-                "SendDigits": send_digits,
-                "Locale": locale,
-                "CustomCode": custom_code,
-                "Amount": amount,
-                "Payee": payee,
-                "RateLimits": serialize.object(rate_limits),
-                "ChannelConfiguration": serialize.object(channel_configuration),
-                "AppHash": app_hash,
-                "TemplateSid": template_sid,
-                "TemplateCustomSubstitutions": template_custom_substitutions,
-                "DeviceIp": device_ip,
-                "EnableSnaClientToken": serialize.boolean_to_string(
-                    enable_sna_client_token
-                ),
-                "RiskCheck": risk_check,
-                "Tags": tags,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -578,29 +437,7 @@ class VerificationList(ListResource):
 
         :returns: The created VerificationInstance
         """
-        payload, _, _ = self._create(
-            to=to,
-            channel=channel,
-            custom_friendly_name=custom_friendly_name,
-            custom_message=custom_message,
-            send_digits=send_digits,
-            locale=locale,
-            custom_code=custom_code,
-            amount=amount,
-            payee=payee,
-            rate_limits=rate_limits,
-            channel_configuration=channel_configuration,
-            app_hash=app_hash,
-            template_sid=template_sid,
-            template_custom_substitutions=template_custom_substitutions,
-            device_ip=device_ip,
-            enable_sna_client_token=enable_sna_client_token,
-            risk_check=risk_check,
-            tags=tags,
-        )
-        return VerificationInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -647,30 +484,7 @@ class VerificationList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            to=to,
-            channel=channel,
-            custom_friendly_name=custom_friendly_name,
-            custom_message=custom_message,
-            send_digits=send_digits,
-            locale=locale,
-            custom_code=custom_code,
-            amount=amount,
-            payee=payee,
-            rate_limits=rate_limits,
-            channel_configuration=channel_configuration,
-            app_hash=app_hash,
-            template_sid=template_sid,
-            template_custom_substitutions=template_custom_substitutions,
-            device_ip=device_ip,
-            enable_sna_client_token=enable_sna_client_token,
-            risk_check=risk_check,
-            tags=tags,
-        )
-        instance = VerificationInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -699,40 +513,7 @@ class VerificationList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "To": to,
-                "Channel": channel,
-                "CustomFriendlyName": custom_friendly_name,
-                "CustomMessage": custom_message,
-                "SendDigits": send_digits,
-                "Locale": locale,
-                "CustomCode": custom_code,
-                "Amount": amount,
-                "Payee": payee,
-                "RateLimits": serialize.object(rate_limits),
-                "ChannelConfiguration": serialize.object(channel_configuration),
-                "AppHash": app_hash,
-                "TemplateSid": template_sid,
-                "TemplateCustomSubstitutions": template_custom_substitutions,
-                "DeviceIp": device_ip,
-                "EnableSnaClientToken": serialize.boolean_to_string(
-                    enable_sna_client_token
-                ),
-                "RiskCheck": risk_check,
-                "Tags": tags,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -779,29 +560,7 @@ class VerificationList(ListResource):
 
         :returns: The created VerificationInstance
         """
-        payload, _, _ = await self._create_async(
-            to=to,
-            channel=channel,
-            custom_friendly_name=custom_friendly_name,
-            custom_message=custom_message,
-            send_digits=send_digits,
-            locale=locale,
-            custom_code=custom_code,
-            amount=amount,
-            payee=payee,
-            rate_limits=rate_limits,
-            channel_configuration=channel_configuration,
-            app_hash=app_hash,
-            template_sid=template_sid,
-            template_custom_substitutions=template_custom_substitutions,
-            device_ip=device_ip,
-            enable_sna_client_token=enable_sna_client_token,
-            risk_check=risk_check,
-            tags=tags,
-        )
-        return VerificationInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -848,30 +607,7 @@ class VerificationList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            to=to,
-            channel=channel,
-            custom_friendly_name=custom_friendly_name,
-            custom_message=custom_message,
-            send_digits=send_digits,
-            locale=locale,
-            custom_code=custom_code,
-            amount=amount,
-            payee=payee,
-            rate_limits=rate_limits,
-            channel_configuration=channel_configuration,
-            app_hash=app_hash,
-            template_sid=template_sid,
-            template_custom_substitutions=template_custom_substitutions,
-            device_ip=device_ip,
-            enable_sna_client_token=enable_sna_client_token,
-            risk_check=risk_check,
-            tags=tags,
-        )
-        instance = VerificationInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def get(self, sid: str) -> VerificationContext:
         """
@@ -879,9 +615,7 @@ class VerificationList(ListResource):
 
         :param sid: The Twilio-provided string that uniquely identifies the Verification resource to update.
         """
-        return VerificationContext(
-            self._version, service_sid=self._solution["service_sid"], sid=sid
-        )
+        pass
 
     def __call__(self, sid: str) -> VerificationContext:
         """

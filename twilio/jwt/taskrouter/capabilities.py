@@ -41,28 +41,26 @@ class WorkerCapabilityToken(TaskRouterCapabilityToken):
 
     @property
     def resource_url(self):
-        return "{}/Workers/{}".format(self.workspace_url, self.channel_id)
+        pass
 
     @property
     def channel_prefix(self):
-        return "WK"
+        pass
 
     def allow_fetch_activities(self):
-        self._make_policy(self.workspace_url + "/Activities", "GET", True)
+        pass
 
     def allow_fetch_reservations(self):
-        self._make_policy(self.workspace_url + "/Tasks/**", "GET", True)
+        pass
 
     def allow_fetch_worker_reservations(self):
-        self._make_policy(self.resource_url + "/Reservations/**", "GET", True)
+        pass
 
     def allow_update_activities(self):
-        post_filter = {"ActivitySid": {"required": True}}
-        self._make_policy(self.resource_url, "POST", True, post_filter=post_filter)
+        pass
 
     def allow_update_reservations(self):
-        self._make_policy(self.workspace_url + "/Tasks/**", "POST", True)
-        self._make_policy(self.resource_url + "/Reservations/**", "POST", True)
+        pass
 
     def __str__(self):
         return "<WorkerCapabilityToken {}>".format(self.to_jwt())
@@ -83,11 +81,11 @@ class TaskQueueCapabilityToken(TaskRouterCapabilityToken):
 
     @property
     def resource_url(self):
-        return "{}/TaskQueues/{}".format(self.workspace_url, self.channel_id)
+        pass
 
     @property
     def channel_prefix(self):
-        return "WQ"
+        pass
 
     def __str__(self):
         return "<TaskQueueCapabilityToken {}>".format(self.to_jwt())
@@ -106,11 +104,11 @@ class WorkspaceCapabilityToken(TaskRouterCapabilityToken):
 
     @property
     def resource_url(self):
-        return self.workspace_url
+        pass
 
     @property
     def channel_prefix(self):
-        return "WS"
+        pass
 
     def __str__(self):
         return "<WorkspaceCapabilityToken {}>".format(self.to_jwt())

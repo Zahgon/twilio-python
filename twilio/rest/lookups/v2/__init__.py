@@ -39,33 +39,23 @@ class V2(Version):
 
     @property
     def bucket(self) -> BucketList:
-        if self._bucket is None:
-            self._bucket = BucketList(self)
-        return self._bucket
+        pass
 
     @property
     def lookup_overrides(self) -> LookupOverrideList:
-        if self._lookup_overrides is None:
-            self._lookup_overrides = LookupOverrideList(self)
-        return self._lookup_overrides
+        pass
 
     @property
     def phone_numbers(self) -> PhoneNumberList:
-        if self._phone_numbers is None:
-            self._phone_numbers = PhoneNumberList(self)
-        return self._phone_numbers
+        pass
 
     @property
     def query(self) -> QueryList:
-        if self._query is None:
-            self._query = QueryList(self)
-        return self._query
+        pass
 
     @property
     def rate_limits(self) -> RateLimitList:
-        if self._rate_limits is None:
-            self._rate_limits = RateLimitList(self)
-        return self._rate_limits
+        pass
 
     def __repr__(self) -> str:
         """

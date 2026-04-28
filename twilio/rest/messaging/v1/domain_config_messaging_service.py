@@ -71,12 +71,7 @@ class DomainConfigMessagingServiceInstance(InstanceResource):
 
         :returns: DomainConfigMessagingServiceContext for this DomainConfigMessagingServiceInstance
         """
-        if self._context is None:
-            self._context = DomainConfigMessagingServiceContext(
-                self._version,
-                messaging_service_sid=self._solution["messaging_service_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "DomainConfigMessagingServiceInstance":
         """
@@ -85,7 +80,7 @@ class DomainConfigMessagingServiceInstance(InstanceResource):
 
         :returns: The fetched DomainConfigMessagingServiceInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "DomainConfigMessagingServiceInstance":
         """
@@ -94,7 +89,7 @@ class DomainConfigMessagingServiceInstance(InstanceResource):
 
         :returns: The fetched DomainConfigMessagingServiceInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -103,7 +98,7 @@ class DomainConfigMessagingServiceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -112,7 +107,7 @@ class DomainConfigMessagingServiceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -152,14 +147,7 @@ class DomainConfigMessagingServiceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> DomainConfigMessagingServiceInstance:
         """
@@ -168,12 +156,7 @@ class DomainConfigMessagingServiceContext(InstanceContext):
 
         :returns: The fetched DomainConfigMessagingServiceInstance
         """
-        payload, _, _ = self._fetch()
-        return DomainConfigMessagingServiceInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -182,13 +165,7 @@ class DomainConfigMessagingServiceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = DomainConfigMessagingServiceInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -197,14 +174,7 @@ class DomainConfigMessagingServiceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> DomainConfigMessagingServiceInstance:
         """
@@ -213,12 +183,7 @@ class DomainConfigMessagingServiceContext(InstanceContext):
 
         :returns: The fetched DomainConfigMessagingServiceInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return DomainConfigMessagingServiceInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -227,13 +192,7 @@ class DomainConfigMessagingServiceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = DomainConfigMessagingServiceInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -264,9 +223,7 @@ class DomainConfigMessagingServiceList(ListResource):
 
         :param messaging_service_sid: Unique string used to identify the Messaging service that this domain should be associated with.
         """
-        return DomainConfigMessagingServiceContext(
-            self._version, messaging_service_sid=messaging_service_sid
-        )
+        pass
 
     def __call__(
         self, messaging_service_sid: str

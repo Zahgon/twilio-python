@@ -52,11 +52,7 @@ class ProvisioningStatusInstance(InstanceResource):
 
         :returns: ProvisioningStatusContext for this ProvisioningStatusInstance
         """
-        if self._context is None:
-            self._context = ProvisioningStatusContext(
-                self._version,
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "ProvisioningStatusInstance":
         """
@@ -65,7 +61,7 @@ class ProvisioningStatusInstance(InstanceResource):
 
         :returns: The fetched ProvisioningStatusInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "ProvisioningStatusInstance":
         """
@@ -74,7 +70,7 @@ class ProvisioningStatusInstance(InstanceResource):
 
         :returns: The fetched ProvisioningStatusInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -83,7 +79,7 @@ class ProvisioningStatusInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -92,7 +88,7 @@ class ProvisioningStatusInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -123,14 +119,7 @@ class ProvisioningStatusContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> ProvisioningStatusInstance:
         """
@@ -139,11 +128,7 @@ class ProvisioningStatusContext(InstanceContext):
 
         :returns: The fetched ProvisioningStatusInstance
         """
-        payload, _, _ = self._fetch()
-        return ProvisioningStatusInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -152,12 +137,7 @@ class ProvisioningStatusContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = ProvisioningStatusInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -166,14 +146,7 @@ class ProvisioningStatusContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> ProvisioningStatusInstance:
         """
@@ -182,11 +155,7 @@ class ProvisioningStatusContext(InstanceContext):
 
         :returns: The fetched ProvisioningStatusInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return ProvisioningStatusInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -195,12 +164,7 @@ class ProvisioningStatusContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = ProvisioningStatusInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -228,7 +192,7 @@ class ProvisioningStatusList(ListResource):
         Constructs a ProvisioningStatusContext
 
         """
-        return ProvisioningStatusContext(self._version)
+        pass
 
     def __call__(self) -> ProvisioningStatusContext:
         """

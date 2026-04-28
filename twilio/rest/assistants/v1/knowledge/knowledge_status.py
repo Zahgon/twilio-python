@@ -53,12 +53,7 @@ class KnowledgeStatusInstance(InstanceResource):
 
         :returns: KnowledgeStatusContext for this KnowledgeStatusInstance
         """
-        if self._context is None:
-            self._context = KnowledgeStatusContext(
-                self._version,
-                id=self._solution["id"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "KnowledgeStatusInstance":
         """
@@ -67,7 +62,7 @@ class KnowledgeStatusInstance(InstanceResource):
 
         :returns: The fetched KnowledgeStatusInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "KnowledgeStatusInstance":
         """
@@ -76,7 +71,7 @@ class KnowledgeStatusInstance(InstanceResource):
 
         :returns: The fetched KnowledgeStatusInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -85,7 +80,7 @@ class KnowledgeStatusInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -94,7 +89,7 @@ class KnowledgeStatusInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -130,14 +125,7 @@ class KnowledgeStatusContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> KnowledgeStatusInstance:
         """
@@ -146,12 +134,7 @@ class KnowledgeStatusContext(InstanceContext):
 
         :returns: The fetched KnowledgeStatusInstance
         """
-        payload, _, _ = self._fetch()
-        return KnowledgeStatusInstance(
-            self._version,
-            payload,
-            id=self._solution["id"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -160,13 +143,7 @@ class KnowledgeStatusContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = KnowledgeStatusInstance(
-            self._version,
-            payload,
-            id=self._solution["id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -175,14 +152,7 @@ class KnowledgeStatusContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> KnowledgeStatusInstance:
         """
@@ -191,12 +161,7 @@ class KnowledgeStatusContext(InstanceContext):
 
         :returns: The fetched KnowledgeStatusInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return KnowledgeStatusInstance(
-            self._version,
-            payload,
-            id=self._solution["id"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -205,13 +170,7 @@ class KnowledgeStatusContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = KnowledgeStatusInstance(
-            self._version,
-            payload,
-            id=self._solution["id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -245,7 +204,7 @@ class KnowledgeStatusList(ListResource):
         Constructs a KnowledgeStatusContext
 
         """
-        return KnowledgeStatusContext(self._version, id=self._solution["id"])
+        pass
 
     def __call__(self) -> KnowledgeStatusContext:
         """

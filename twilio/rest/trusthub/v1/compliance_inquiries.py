@@ -55,12 +55,7 @@ class ComplianceInquiriesInstance(InstanceResource):
 
         :returns: ComplianceInquiriesContext for this ComplianceInquiriesInstance
         """
-        if self._context is None:
-            self._context = ComplianceInquiriesContext(
-                self._version,
-                customer_id=self._solution["customer_id"],
-            )
-        return self._context
+        pass
 
     def update(
         self, primary_profile_sid: str, theme_set_id: Union[str, object] = values.unset
@@ -73,10 +68,7 @@ class ComplianceInquiriesInstance(InstanceResource):
 
         :returns: The updated ComplianceInquiriesInstance
         """
-        return self._proxy.update(
-            primary_profile_sid=primary_profile_sid,
-            theme_set_id=theme_set_id,
-        )
+        pass
 
     async def update_async(
         self, primary_profile_sid: str, theme_set_id: Union[str, object] = values.unset
@@ -89,10 +81,7 @@ class ComplianceInquiriesInstance(InstanceResource):
 
         :returns: The updated ComplianceInquiriesInstance
         """
-        return await self._proxy.update_async(
-            primary_profile_sid=primary_profile_sid,
-            theme_set_id=theme_set_id,
-        )
+        pass
 
     def update_with_http_info(
         self, primary_profile_sid: str, theme_set_id: Union[str, object] = values.unset
@@ -105,10 +94,7 @@ class ComplianceInquiriesInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            primary_profile_sid=primary_profile_sid,
-            theme_set_id=theme_set_id,
-        )
+        pass
 
     async def update_with_http_info_async(
         self, primary_profile_sid: str, theme_set_id: Union[str, object] = values.unset
@@ -121,10 +107,7 @@ class ComplianceInquiriesInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            primary_profile_sid=primary_profile_sid,
-            theme_set_id=theme_set_id,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -164,22 +147,7 @@ class ComplianceInquiriesContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "PrimaryProfileSid": primary_profile_sid,
-                "ThemeSetId": theme_set_id,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self, primary_profile_sid: str, theme_set_id: Union[str, object] = values.unset
@@ -192,12 +160,7 @@ class ComplianceInquiriesContext(InstanceContext):
 
         :returns: The updated ComplianceInquiriesInstance
         """
-        payload, _, _ = self._update(
-            primary_profile_sid=primary_profile_sid, theme_set_id=theme_set_id
-        )
-        return ComplianceInquiriesInstance(
-            self._version, payload, customer_id=self._solution["customer_id"]
-        )
+        pass
 
     def update_with_http_info(
         self, primary_profile_sid: str, theme_set_id: Union[str, object] = values.unset
@@ -210,13 +173,7 @@ class ComplianceInquiriesContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            primary_profile_sid=primary_profile_sid, theme_set_id=theme_set_id
-        )
-        instance = ComplianceInquiriesInstance(
-            self._version, payload, customer_id=self._solution["customer_id"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self, primary_profile_sid: str, theme_set_id: Union[str, object] = values.unset
@@ -227,22 +184,7 @@ class ComplianceInquiriesContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "PrimaryProfileSid": primary_profile_sid,
-                "ThemeSetId": theme_set_id,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, primary_profile_sid: str, theme_set_id: Union[str, object] = values.unset
@@ -255,12 +197,7 @@ class ComplianceInquiriesContext(InstanceContext):
 
         :returns: The updated ComplianceInquiriesInstance
         """
-        payload, _, _ = await self._update_async(
-            primary_profile_sid=primary_profile_sid, theme_set_id=theme_set_id
-        )
-        return ComplianceInquiriesInstance(
-            self._version, payload, customer_id=self._solution["customer_id"]
-        )
+        pass
 
     async def update_with_http_info_async(
         self, primary_profile_sid: str, theme_set_id: Union[str, object] = values.unset
@@ -273,13 +210,7 @@ class ComplianceInquiriesContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            primary_profile_sid=primary_profile_sid, theme_set_id=theme_set_id
-        )
-        instance = ComplianceInquiriesInstance(
-            self._version, payload, customer_id=self._solution["customer_id"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -316,23 +247,7 @@ class ComplianceInquiriesList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "NotificationEmail": notification_email,
-                "ThemeSetId": theme_set_id,
-                "PrimaryProfileSid": primary_profile_sid,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -349,12 +264,7 @@ class ComplianceInquiriesList(ListResource):
 
         :returns: The created ComplianceInquiriesInstance
         """
-        payload, _, _ = self._create(
-            notification_email=notification_email,
-            theme_set_id=theme_set_id,
-            primary_profile_sid=primary_profile_sid,
-        )
-        return ComplianceInquiriesInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -371,13 +281,7 @@ class ComplianceInquiriesList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            notification_email=notification_email,
-            theme_set_id=theme_set_id,
-            primary_profile_sid=primary_profile_sid,
-        )
-        instance = ComplianceInquiriesInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -391,23 +295,7 @@ class ComplianceInquiriesList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "NotificationEmail": notification_email,
-                "ThemeSetId": theme_set_id,
-                "PrimaryProfileSid": primary_profile_sid,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -424,12 +312,7 @@ class ComplianceInquiriesList(ListResource):
 
         :returns: The created ComplianceInquiriesInstance
         """
-        payload, _, _ = await self._create_async(
-            notification_email=notification_email,
-            theme_set_id=theme_set_id,
-            primary_profile_sid=primary_profile_sid,
-        )
-        return ComplianceInquiriesInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -446,13 +329,7 @@ class ComplianceInquiriesList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            notification_email=notification_email,
-            theme_set_id=theme_set_id,
-            primary_profile_sid=primary_profile_sid,
-        )
-        instance = ComplianceInquiriesInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def get(self, customer_id: str) -> ComplianceInquiriesContext:
         """
@@ -460,7 +337,7 @@ class ComplianceInquiriesList(ListResource):
 
         :param customer_id: The unique CustomerId matching the Customer Profile/Compliance Inquiry that should be resumed or resubmitted. This value will have been returned by the initial Compliance Inquiry creation call.
         """
-        return ComplianceInquiriesContext(self._version, customer_id=customer_id)
+        pass
 
     def __call__(self, customer_id: str) -> ComplianceInquiriesContext:
         """

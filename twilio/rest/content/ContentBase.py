@@ -34,18 +34,14 @@ class ContentBase(Domain):
         """
         :returns: Versions v1 of Content
         """
-        if self._v1 is None:
-            self._v1 = V1(self)
-        return self._v1
+        pass
 
     @property
     def v2(self) -> V2:
         """
         :returns: Versions v2 of Content
         """
-        if self._v2 is None:
-            self._v2 = V2(self)
-        return self._v2
+        pass
 
     def __repr__(self) -> str:
         """

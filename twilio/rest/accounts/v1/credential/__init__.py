@@ -43,18 +43,14 @@ class CredentialList(ListResource):
         """
         Access the aws
         """
-        if self._aws is None:
-            self._aws = AwsList(self._version)
-        return self._aws
+        pass
 
     @property
     def public_key(self) -> PublicKeyList:
         """
         Access the public_key
         """
-        if self._public_key is None:
-            self._public_key = PublicKeyList(self._version)
-        return self._public_key
+        pass
 
     def __repr__(self) -> str:
         """

@@ -204,11 +204,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ConfigurationContext for this ConfigurationInstance
         """
-        if self._context is None:
-            self._context = ConfigurationContext(
-                self._version,
-            )
-        return self._context
+        pass
 
     def fetch(
         self, ui_version: Union[str, object] = values.unset
@@ -220,9 +216,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: The fetched ConfigurationInstance
         """
-        return self._proxy.fetch(
-            ui_version=ui_version,
-        )
+        pass
 
     async def fetch_async(
         self, ui_version: Union[str, object] = values.unset
@@ -234,9 +228,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: The fetched ConfigurationInstance
         """
-        return await self._proxy.fetch_async(
-            ui_version=ui_version,
-        )
+        pass
 
     def fetch_with_http_info(
         self, ui_version: Union[str, object] = values.unset
@@ -248,9 +240,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            ui_version=ui_version,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, ui_version: Union[str, object] = values.unset
@@ -262,9 +252,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            ui_version=ui_version,
-        )
+        pass
 
     def update(
         self, body: Union[object, object] = values.unset
@@ -276,9 +264,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: The updated ConfigurationInstance
         """
-        return self._proxy.update(
-            body=body,
-        )
+        pass
 
     async def update_async(
         self, body: Union[object, object] = values.unset
@@ -290,9 +276,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: The updated ConfigurationInstance
         """
-        return await self._proxy.update_async(
-            body=body,
-        )
+        pass
 
     def update_with_http_info(
         self, body: Union[object, object] = values.unset
@@ -304,9 +288,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            body=body,
-        )
+        pass
 
     async def update_with_http_info_async(
         self, body: Union[object, object] = values.unset
@@ -318,9 +300,7 @@ class ConfigurationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            body=body,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -351,20 +331,7 @@ class ConfigurationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "UiVersion": ui_version,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(
         self, ui_version: Union[str, object] = values.unset
@@ -376,11 +343,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: The fetched ConfigurationInstance
         """
-        payload, _, _ = self._fetch(ui_version=ui_version)
-        return ConfigurationInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     def fetch_with_http_info(
         self, ui_version: Union[str, object] = values.unset
@@ -392,12 +355,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(ui_version=ui_version)
-        instance = ConfigurationInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self, ui_version: Union[str, object] = values.unset
@@ -408,20 +366,7 @@ class ConfigurationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "UiVersion": ui_version,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self, ui_version: Union[str, object] = values.unset
@@ -433,11 +378,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: The fetched ConfigurationInstance
         """
-        payload, _, _ = await self._fetch_async(ui_version=ui_version)
-        return ConfigurationInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, ui_version: Union[str, object] = values.unset
@@ -449,12 +390,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(ui_version=ui_version)
-        instance = ConfigurationInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(self, body: Union[object, object] = values.unset) -> tuple:
         """
@@ -463,17 +399,7 @@ class ConfigurationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = body.to_dict()
-
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self, body: Union[object, object] = values.unset
@@ -485,8 +411,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: The updated ConfigurationInstance
         """
-        payload, _, _ = self._update(body=body)
-        return ConfigurationInstance(self._version, payload)
+        pass
 
     def update_with_http_info(
         self, body: Union[object, object] = values.unset
@@ -498,9 +423,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(body=body)
-        instance = ConfigurationInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(self, body: Union[object, object] = values.unset) -> tuple:
         """
@@ -509,17 +432,7 @@ class ConfigurationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = body.to_dict()
-
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, body: Union[object, object] = values.unset
@@ -531,8 +444,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: The updated ConfigurationInstance
         """
-        payload, _, _ = await self._update_async(body=body)
-        return ConfigurationInstance(self._version, payload)
+        pass
 
     async def update_with_http_info_async(
         self, body: Union[object, object] = values.unset
@@ -544,9 +456,7 @@ class ConfigurationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(body=body)
-        instance = ConfigurationInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -574,7 +484,7 @@ class ConfigurationList(ListResource):
         Constructs a ConfigurationContext
 
         """
-        return ConfigurationContext(self._version)
+        pass
 
     def __call__(self) -> ConfigurationContext:
         """

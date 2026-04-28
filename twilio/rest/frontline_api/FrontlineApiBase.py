@@ -32,9 +32,7 @@ class FrontlineApiBase(Domain):
         """
         :returns: Versions v1 of FrontlineApi
         """
-        if self._v1 is None:
-            self._v1 = V1(self)
-        return self._v1
+        pass
 
     def __repr__(self) -> str:
         """

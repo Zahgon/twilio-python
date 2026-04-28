@@ -90,22 +90,7 @@ class UserDefinedMessageList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Content": content,
-                "IdempotencyKey": idempotency_key,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self, content: str, idempotency_key: Union[str, object] = values.unset
@@ -118,13 +103,7 @@ class UserDefinedMessageList(ListResource):
 
         :returns: The created UserDefinedMessageInstance
         """
-        payload, _, _ = self._create(content=content, idempotency_key=idempotency_key)
-        return UserDefinedMessageInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     def create_with_http_info(
         self, content: str, idempotency_key: Union[str, object] = values.unset
@@ -137,16 +116,7 @@ class UserDefinedMessageList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            content=content, idempotency_key=idempotency_key
-        )
-        instance = UserDefinedMessageInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self, content: str, idempotency_key: Union[str, object] = values.unset
@@ -157,22 +127,7 @@ class UserDefinedMessageList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Content": content,
-                "IdempotencyKey": idempotency_key,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self, content: str, idempotency_key: Union[str, object] = values.unset
@@ -185,15 +140,7 @@ class UserDefinedMessageList(ListResource):
 
         :returns: The created UserDefinedMessageInstance
         """
-        payload, _, _ = await self._create_async(
-            content=content, idempotency_key=idempotency_key
-        )
-        return UserDefinedMessageInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     async def create_with_http_info_async(
         self, content: str, idempotency_key: Union[str, object] = values.unset
@@ -206,16 +153,7 @@ class UserDefinedMessageList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            content=content, idempotency_key=idempotency_key
-        )
-        instance = UserDefinedMessageInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

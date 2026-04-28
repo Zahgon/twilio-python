@@ -56,12 +56,7 @@ class LinkshorteningMessagingServiceDomainAssociationInstance(InstanceResource):
 
         :returns: LinkshorteningMessagingServiceDomainAssociationContext for this LinkshorteningMessagingServiceDomainAssociationInstance
         """
-        if self._context is None:
-            self._context = LinkshorteningMessagingServiceDomainAssociationContext(
-                self._version,
-                messaging_service_sid=self._solution["messaging_service_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "LinkshorteningMessagingServiceDomainAssociationInstance":
         """
@@ -70,7 +65,7 @@ class LinkshorteningMessagingServiceDomainAssociationInstance(InstanceResource):
 
         :returns: The fetched LinkshorteningMessagingServiceDomainAssociationInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(
         self,
@@ -81,7 +76,7 @@ class LinkshorteningMessagingServiceDomainAssociationInstance(InstanceResource):
 
         :returns: The fetched LinkshorteningMessagingServiceDomainAssociationInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -90,7 +85,7 @@ class LinkshorteningMessagingServiceDomainAssociationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -99,7 +94,7 @@ class LinkshorteningMessagingServiceDomainAssociationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -141,14 +136,7 @@ class LinkshorteningMessagingServiceDomainAssociationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> LinkshorteningMessagingServiceDomainAssociationInstance:
         """
@@ -157,12 +145,7 @@ class LinkshorteningMessagingServiceDomainAssociationContext(InstanceContext):
 
         :returns: The fetched LinkshorteningMessagingServiceDomainAssociationInstance
         """
-        payload, _, _ = self._fetch()
-        return LinkshorteningMessagingServiceDomainAssociationInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -171,13 +154,7 @@ class LinkshorteningMessagingServiceDomainAssociationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = LinkshorteningMessagingServiceDomainAssociationInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -186,14 +163,7 @@ class LinkshorteningMessagingServiceDomainAssociationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -204,12 +174,7 @@ class LinkshorteningMessagingServiceDomainAssociationContext(InstanceContext):
 
         :returns: The fetched LinkshorteningMessagingServiceDomainAssociationInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return LinkshorteningMessagingServiceDomainAssociationInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -218,13 +183,7 @@ class LinkshorteningMessagingServiceDomainAssociationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = LinkshorteningMessagingServiceDomainAssociationInstance(
-            self._version,
-            payload,
-            messaging_service_sid=self._solution["messaging_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -257,9 +216,7 @@ class LinkshorteningMessagingServiceDomainAssociationList(ListResource):
 
         :param messaging_service_sid: Unique string used to identify the Messaging service that this domain should be associated with.
         """
-        return LinkshorteningMessagingServiceDomainAssociationContext(
-            self._version, messaging_service_sid=messaging_service_sid
-        )
+        pass
 
     def __call__(
         self, messaging_service_sid: str

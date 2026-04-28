@@ -63,14 +63,7 @@ class ExecutionStepContextInstance(InstanceResource):
 
         :returns: ExecutionStepContextContext for this ExecutionStepContextInstance
         """
-        if self._context is None:
-            self._context = ExecutionStepContextContext(
-                self._version,
-                flow_sid=self._solution["flow_sid"],
-                execution_sid=self._solution["execution_sid"],
-                step_sid=self._solution["step_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "ExecutionStepContextInstance":
         """
@@ -79,7 +72,7 @@ class ExecutionStepContextInstance(InstanceResource):
 
         :returns: The fetched ExecutionStepContextInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "ExecutionStepContextInstance":
         """
@@ -88,7 +81,7 @@ class ExecutionStepContextInstance(InstanceResource):
 
         :returns: The fetched ExecutionStepContextInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -97,7 +90,7 @@ class ExecutionStepContextInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -106,7 +99,7 @@ class ExecutionStepContextInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -150,14 +143,7 @@ class ExecutionStepContextContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> ExecutionStepContextInstance:
         """
@@ -166,14 +152,7 @@ class ExecutionStepContextContext(InstanceContext):
 
         :returns: The fetched ExecutionStepContextInstance
         """
-        payload, _, _ = self._fetch()
-        return ExecutionStepContextInstance(
-            self._version,
-            payload,
-            flow_sid=self._solution["flow_sid"],
-            execution_sid=self._solution["execution_sid"],
-            step_sid=self._solution["step_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -182,15 +161,7 @@ class ExecutionStepContextContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = ExecutionStepContextInstance(
-            self._version,
-            payload,
-            flow_sid=self._solution["flow_sid"],
-            execution_sid=self._solution["execution_sid"],
-            step_sid=self._solution["step_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -199,14 +170,7 @@ class ExecutionStepContextContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> ExecutionStepContextInstance:
         """
@@ -215,14 +179,7 @@ class ExecutionStepContextContext(InstanceContext):
 
         :returns: The fetched ExecutionStepContextInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return ExecutionStepContextInstance(
-            self._version,
-            payload,
-            flow_sid=self._solution["flow_sid"],
-            execution_sid=self._solution["execution_sid"],
-            step_sid=self._solution["step_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -231,15 +188,7 @@ class ExecutionStepContextContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = ExecutionStepContextInstance(
-            self._version,
-            payload,
-            flow_sid=self._solution["flow_sid"],
-            execution_sid=self._solution["execution_sid"],
-            step_sid=self._solution["step_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -279,12 +228,7 @@ class ExecutionStepContextList(ListResource):
         Constructs a ExecutionStepContextContext
 
         """
-        return ExecutionStepContextContext(
-            self._version,
-            flow_sid=self._solution["flow_sid"],
-            execution_sid=self._solution["execution_sid"],
-            step_sid=self._solution["step_sid"],
-        )
+        pass
 
     def __call__(self) -> ExecutionStepContextContext:
         """

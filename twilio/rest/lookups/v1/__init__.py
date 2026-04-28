@@ -31,9 +31,7 @@ class V1(Version):
 
     @property
     def phone_numbers(self) -> PhoneNumberList:
-        if self._phone_numbers is None:
-            self._phone_numbers = PhoneNumberList(self)
-        return self._phone_numbers
+        pass
 
     def __repr__(self) -> str:
         """

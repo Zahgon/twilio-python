@@ -43,45 +43,31 @@ class V1(Version):
 
     @property
     def auth_token_promotion(self) -> AuthTokenPromotionList:
-        if self._auth_token_promotion is None:
-            self._auth_token_promotion = AuthTokenPromotionList(self)
-        return self._auth_token_promotion
+        pass
 
     @property
     def bulk_consents(self) -> BulkConsentsList:
-        if self._bulk_consents is None:
-            self._bulk_consents = BulkConsentsList(self)
-        return self._bulk_consents
+        pass
 
     @property
     def bulk_contacts(self) -> BulkContactsList:
-        if self._bulk_contacts is None:
-            self._bulk_contacts = BulkContactsList(self)
-        return self._bulk_contacts
+        pass
 
     @property
     def credentials(self) -> CredentialList:
-        if self._credentials is None:
-            self._credentials = CredentialList(self)
-        return self._credentials
+        pass
 
     @property
     def messaging_geopermissions(self) -> MessagingGeopermissionsList:
-        if self._messaging_geopermissions is None:
-            self._messaging_geopermissions = MessagingGeopermissionsList(self)
-        return self._messaging_geopermissions
+        pass
 
     @property
     def safelist(self) -> SafelistList:
-        if self._safelist is None:
-            self._safelist = SafelistList(self)
-        return self._safelist
+        pass
 
     @property
     def secondary_auth_token(self) -> SecondaryAuthTokenList:
-        if self._secondary_auth_token is None:
-            self._secondary_auth_token = SecondaryAuthTokenList(self)
-        return self._secondary_auth_token
+        pass
 
     def __repr__(self) -> str:
         """

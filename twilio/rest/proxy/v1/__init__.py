@@ -31,9 +31,7 @@ class V1(Version):
 
     @property
     def services(self) -> ServiceList:
-        if self._services is None:
-            self._services = ServiceList(self)
-        return self._services
+        pass
 
     def __repr__(self) -> str:
         """

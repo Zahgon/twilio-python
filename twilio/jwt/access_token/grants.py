@@ -7,19 +7,7 @@ def deprecated(func):
     """This is a decorator which can be used to mark functions
     as deprecated. It will result in a warning being emitted
     when the function is used."""
-
-    @functools.wraps(func)
-    def new_func(*args, **kwargs):
-        warnings.simplefilter("always", DeprecationWarning)
-        warnings.warn(
-            "Call to deprecated function {}.".format(func.__name__),
-            category=DeprecationWarning,
-            stacklevel=2,
-        )
-        warnings.simplefilter("default", DeprecationWarning)
-        return func(*args, **kwargs)
-
-    return new_func
+    pass
 
 
 class ChatGrant(AccessTokenGrant):
@@ -39,20 +27,10 @@ class ChatGrant(AccessTokenGrant):
 
     @property
     def key(self):
-        return "chat"
+        pass
 
     def to_payload(self):
-        grant = {}
-        if self.service_sid:
-            grant["service_sid"] = self.service_sid
-        if self.endpoint_id:
-            grant["endpoint_id"] = self.endpoint_id
-        if self.deployment_role_sid:
-            grant["deployment_role_sid"] = self.deployment_role_sid
-        if self.push_credential_sid:
-            grant["push_credential_sid"] = self.push_credential_sid
-
-        return grant
+        pass
 
 
 class SyncGrant(AccessTokenGrant):
@@ -64,16 +42,10 @@ class SyncGrant(AccessTokenGrant):
 
     @property
     def key(self):
-        return "data_sync"
+        pass
 
     def to_payload(self):
-        grant = {}
-        if self.service_sid:
-            grant["service_sid"] = self.service_sid
-        if self.endpoint_id:
-            grant["endpoint_id"] = self.endpoint_id
-
-        return grant
+        pass
 
 
 class VoiceGrant(AccessTokenGrant):
@@ -100,28 +72,10 @@ class VoiceGrant(AccessTokenGrant):
 
     @property
     def key(self):
-        return "voice"
+        pass
 
     def to_payload(self):
-        grant = {}
-        if self.incoming_allow is True:
-            grant["incoming"] = {}
-            grant["incoming"]["allow"] = True
-
-        if self.outgoing_application_sid:
-            grant["outgoing"] = {}
-            grant["outgoing"]["application_sid"] = self.outgoing_application_sid
-
-            if self.outgoing_application_params:
-                grant["outgoing"]["params"] = self.outgoing_application_params
-
-        if self.push_credential_sid:
-            grant["push_credential_sid"] = self.push_credential_sid
-
-        if self.endpoint_id:
-            grant["endpoint_id"] = self.endpoint_id
-
-        return grant
+        pass
 
 
 class VideoGrant(AccessTokenGrant):
@@ -132,14 +86,10 @@ class VideoGrant(AccessTokenGrant):
 
     @property
     def key(self):
-        return "video"
+        pass
 
     def to_payload(self):
-        grant = {}
-        if self.room:
-            grant["room"] = self.room
-
-        return grant
+        pass
 
 
 class TaskRouterGrant(AccessTokenGrant):
@@ -152,18 +102,10 @@ class TaskRouterGrant(AccessTokenGrant):
 
     @property
     def key(self):
-        return "task_router"
+        pass
 
     def to_payload(self):
-        grant = {}
-        if self.workspace_sid:
-            grant["workspace_sid"] = self.workspace_sid
-        if self.worker_sid:
-            grant["worker_sid"] = self.worker_sid
-        if self.role:
-            grant["role"] = self.role
-
-        return grant
+        pass
 
 
 class PlaybackGrant(AccessTokenGrant):
@@ -176,8 +118,8 @@ class PlaybackGrant(AccessTokenGrant):
     @property
     def key(self):
         """Return the grant's key."""
-        return "player"
+        pass
 
     def to_payload(self):
         """Return the grant."""
-        return self.grant
+        pass

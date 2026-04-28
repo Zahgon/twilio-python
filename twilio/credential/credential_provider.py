@@ -7,7 +7,7 @@ class CredentialProvider:
 
     @property
     def auth_type(self) -> AuthType:
-        return self._auth_type
+        pass
 
     def to_auth_strategy(self):
         raise NotImplementedError("Subclasses must implement this method")

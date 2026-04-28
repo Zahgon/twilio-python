@@ -63,12 +63,7 @@ class WebhookInstance(InstanceResource):
 
         :returns: WebhookContext for this WebhookInstance
         """
-        if self._context is None:
-            self._context = WebhookContext(
-                self._version,
-                chat_service_sid=self._solution["chat_service_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "WebhookInstance":
         """
@@ -77,7 +72,7 @@ class WebhookInstance(InstanceResource):
 
         :returns: The fetched WebhookInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "WebhookInstance":
         """
@@ -86,7 +81,7 @@ class WebhookInstance(InstanceResource):
 
         :returns: The fetched WebhookInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -95,7 +90,7 @@ class WebhookInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -104,7 +99,7 @@ class WebhookInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -123,12 +118,7 @@ class WebhookInstance(InstanceResource):
 
         :returns: The updated WebhookInstance
         """
-        return self._proxy.update(
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            filters=filters,
-            method=method,
-        )
+        pass
 
     async def update_async(
         self,
@@ -147,12 +137,7 @@ class WebhookInstance(InstanceResource):
 
         :returns: The updated WebhookInstance
         """
-        return await self._proxy.update_async(
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            filters=filters,
-            method=method,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -171,12 +156,7 @@ class WebhookInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            filters=filters,
-            method=method,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -195,12 +175,7 @@ class WebhookInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            filters=filters,
-            method=method,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -238,14 +213,7 @@ class WebhookContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> WebhookInstance:
         """
@@ -254,12 +222,7 @@ class WebhookContext(InstanceContext):
 
         :returns: The fetched WebhookInstance
         """
-        payload, _, _ = self._fetch()
-        return WebhookInstance(
-            self._version,
-            payload,
-            chat_service_sid=self._solution["chat_service_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -268,13 +231,7 @@ class WebhookContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = WebhookInstance(
-            self._version,
-            payload,
-            chat_service_sid=self._solution["chat_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -283,14 +240,7 @@ class WebhookContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> WebhookInstance:
         """
@@ -299,12 +249,7 @@ class WebhookContext(InstanceContext):
 
         :returns: The fetched WebhookInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return WebhookInstance(
-            self._version,
-            payload,
-            chat_service_sid=self._solution["chat_service_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -313,13 +258,7 @@ class WebhookContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = WebhookInstance(
-            self._version,
-            payload,
-            chat_service_sid=self._solution["chat_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -334,24 +273,7 @@ class WebhookContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "PreWebhookUrl": pre_webhook_url,
-                "PostWebhookUrl": post_webhook_url,
-                "Filters": serialize.map(filters, lambda e: e),
-                "Method": method,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -370,15 +292,7 @@ class WebhookContext(InstanceContext):
 
         :returns: The updated WebhookInstance
         """
-        payload, _, _ = self._update(
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            filters=filters,
-            method=method,
-        )
-        return WebhookInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -397,16 +311,7 @@ class WebhookContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            filters=filters,
-            method=method,
-        )
-        instance = WebhookInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -421,24 +326,7 @@ class WebhookContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "PreWebhookUrl": pre_webhook_url,
-                "PostWebhookUrl": post_webhook_url,
-                "Filters": serialize.map(filters, lambda e: e),
-                "Method": method,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -457,15 +345,7 @@ class WebhookContext(InstanceContext):
 
         :returns: The updated WebhookInstance
         """
-        payload, _, _ = await self._update_async(
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            filters=filters,
-            method=method,
-        )
-        return WebhookInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -484,16 +364,7 @@ class WebhookContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            filters=filters,
-            method=method,
-        )
-        instance = WebhookInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -527,9 +398,7 @@ class WebhookList(ListResource):
         Constructs a WebhookContext
 
         """
-        return WebhookContext(
-            self._version, chat_service_sid=self._solution["chat_service_sid"]
-        )
+        pass
 
     def __call__(self) -> WebhookContext:
         """

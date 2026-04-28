@@ -62,12 +62,7 @@ class NotificationInstance(InstanceResource):
 
         :returns: NotificationContext for this NotificationInstance
         """
-        if self._context is None:
-            self._context = NotificationContext(
-                self._version,
-                chat_service_sid=self._solution["chat_service_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "NotificationInstance":
         """
@@ -76,7 +71,7 @@ class NotificationInstance(InstanceResource):
 
         :returns: The fetched NotificationInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "NotificationInstance":
         """
@@ -85,7 +80,7 @@ class NotificationInstance(InstanceResource):
 
         :returns: The fetched NotificationInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -94,7 +89,7 @@ class NotificationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -103,7 +98,7 @@ class NotificationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -140,21 +135,7 @@ class NotificationInstance(InstanceResource):
 
         :returns: The updated NotificationInstance
         """
-        return self._proxy.update(
-            log_enabled=log_enabled,
-            new_message_enabled=new_message_enabled,
-            new_message_template=new_message_template,
-            new_message_sound=new_message_sound,
-            new_message_badge_count_enabled=new_message_badge_count_enabled,
-            added_to_conversation_enabled=added_to_conversation_enabled,
-            added_to_conversation_template=added_to_conversation_template,
-            added_to_conversation_sound=added_to_conversation_sound,
-            removed_from_conversation_enabled=removed_from_conversation_enabled,
-            removed_from_conversation_template=removed_from_conversation_template,
-            removed_from_conversation_sound=removed_from_conversation_sound,
-            new_message_with_media_enabled=new_message_with_media_enabled,
-            new_message_with_media_template=new_message_with_media_template,
-        )
+        pass
 
     async def update_async(
         self,
@@ -191,21 +172,7 @@ class NotificationInstance(InstanceResource):
 
         :returns: The updated NotificationInstance
         """
-        return await self._proxy.update_async(
-            log_enabled=log_enabled,
-            new_message_enabled=new_message_enabled,
-            new_message_template=new_message_template,
-            new_message_sound=new_message_sound,
-            new_message_badge_count_enabled=new_message_badge_count_enabled,
-            added_to_conversation_enabled=added_to_conversation_enabled,
-            added_to_conversation_template=added_to_conversation_template,
-            added_to_conversation_sound=added_to_conversation_sound,
-            removed_from_conversation_enabled=removed_from_conversation_enabled,
-            removed_from_conversation_template=removed_from_conversation_template,
-            removed_from_conversation_sound=removed_from_conversation_sound,
-            new_message_with_media_enabled=new_message_with_media_enabled,
-            new_message_with_media_template=new_message_with_media_template,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -242,21 +209,7 @@ class NotificationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            log_enabled=log_enabled,
-            new_message_enabled=new_message_enabled,
-            new_message_template=new_message_template,
-            new_message_sound=new_message_sound,
-            new_message_badge_count_enabled=new_message_badge_count_enabled,
-            added_to_conversation_enabled=added_to_conversation_enabled,
-            added_to_conversation_template=added_to_conversation_template,
-            added_to_conversation_sound=added_to_conversation_sound,
-            removed_from_conversation_enabled=removed_from_conversation_enabled,
-            removed_from_conversation_template=removed_from_conversation_template,
-            removed_from_conversation_sound=removed_from_conversation_sound,
-            new_message_with_media_enabled=new_message_with_media_enabled,
-            new_message_with_media_template=new_message_with_media_template,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -293,21 +246,7 @@ class NotificationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            log_enabled=log_enabled,
-            new_message_enabled=new_message_enabled,
-            new_message_template=new_message_template,
-            new_message_sound=new_message_sound,
-            new_message_badge_count_enabled=new_message_badge_count_enabled,
-            added_to_conversation_enabled=added_to_conversation_enabled,
-            added_to_conversation_template=added_to_conversation_template,
-            added_to_conversation_sound=added_to_conversation_sound,
-            removed_from_conversation_enabled=removed_from_conversation_enabled,
-            removed_from_conversation_template=removed_from_conversation_template,
-            removed_from_conversation_sound=removed_from_conversation_sound,
-            new_message_with_media_enabled=new_message_with_media_enabled,
-            new_message_with_media_template=new_message_with_media_template,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -345,14 +284,7 @@ class NotificationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> NotificationInstance:
         """
@@ -361,12 +293,7 @@ class NotificationContext(InstanceContext):
 
         :returns: The fetched NotificationInstance
         """
-        payload, _, _ = self._fetch()
-        return NotificationInstance(
-            self._version,
-            payload,
-            chat_service_sid=self._solution["chat_service_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -375,13 +302,7 @@ class NotificationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = NotificationInstance(
-            self._version,
-            payload,
-            chat_service_sid=self._solution["chat_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -390,14 +311,7 @@ class NotificationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> NotificationInstance:
         """
@@ -406,12 +320,7 @@ class NotificationContext(InstanceContext):
 
         :returns: The fetched NotificationInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return NotificationInstance(
-            self._version,
-            payload,
-            chat_service_sid=self._solution["chat_service_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -420,13 +329,7 @@ class NotificationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = NotificationInstance(
-            self._version,
-            payload,
-            chat_service_sid=self._solution["chat_service_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -450,41 +353,7 @@ class NotificationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "LogEnabled": serialize.boolean_to_string(log_enabled),
-                "NewMessage.Enabled": serialize.boolean_to_string(new_message_enabled),
-                "NewMessage.Template": new_message_template,
-                "NewMessage.Sound": new_message_sound,
-                "NewMessage.BadgeCountEnabled": serialize.boolean_to_string(
-                    new_message_badge_count_enabled
-                ),
-                "AddedToConversation.Enabled": serialize.boolean_to_string(
-                    added_to_conversation_enabled
-                ),
-                "AddedToConversation.Template": added_to_conversation_template,
-                "AddedToConversation.Sound": added_to_conversation_sound,
-                "RemovedFromConversation.Enabled": serialize.boolean_to_string(
-                    removed_from_conversation_enabled
-                ),
-                "RemovedFromConversation.Template": removed_from_conversation_template,
-                "RemovedFromConversation.Sound": removed_from_conversation_sound,
-                "NewMessage.WithMedia.Enabled": serialize.boolean_to_string(
-                    new_message_with_media_enabled
-                ),
-                "NewMessage.WithMedia.Template": new_message_with_media_template,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -521,24 +390,7 @@ class NotificationContext(InstanceContext):
 
         :returns: The updated NotificationInstance
         """
-        payload, _, _ = self._update(
-            log_enabled=log_enabled,
-            new_message_enabled=new_message_enabled,
-            new_message_template=new_message_template,
-            new_message_sound=new_message_sound,
-            new_message_badge_count_enabled=new_message_badge_count_enabled,
-            added_to_conversation_enabled=added_to_conversation_enabled,
-            added_to_conversation_template=added_to_conversation_template,
-            added_to_conversation_sound=added_to_conversation_sound,
-            removed_from_conversation_enabled=removed_from_conversation_enabled,
-            removed_from_conversation_template=removed_from_conversation_template,
-            removed_from_conversation_sound=removed_from_conversation_sound,
-            new_message_with_media_enabled=new_message_with_media_enabled,
-            new_message_with_media_template=new_message_with_media_template,
-        )
-        return NotificationInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -575,25 +427,7 @@ class NotificationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            log_enabled=log_enabled,
-            new_message_enabled=new_message_enabled,
-            new_message_template=new_message_template,
-            new_message_sound=new_message_sound,
-            new_message_badge_count_enabled=new_message_badge_count_enabled,
-            added_to_conversation_enabled=added_to_conversation_enabled,
-            added_to_conversation_template=added_to_conversation_template,
-            added_to_conversation_sound=added_to_conversation_sound,
-            removed_from_conversation_enabled=removed_from_conversation_enabled,
-            removed_from_conversation_template=removed_from_conversation_template,
-            removed_from_conversation_sound=removed_from_conversation_sound,
-            new_message_with_media_enabled=new_message_with_media_enabled,
-            new_message_with_media_template=new_message_with_media_template,
-        )
-        instance = NotificationInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -617,41 +451,7 @@ class NotificationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "LogEnabled": serialize.boolean_to_string(log_enabled),
-                "NewMessage.Enabled": serialize.boolean_to_string(new_message_enabled),
-                "NewMessage.Template": new_message_template,
-                "NewMessage.Sound": new_message_sound,
-                "NewMessage.BadgeCountEnabled": serialize.boolean_to_string(
-                    new_message_badge_count_enabled
-                ),
-                "AddedToConversation.Enabled": serialize.boolean_to_string(
-                    added_to_conversation_enabled
-                ),
-                "AddedToConversation.Template": added_to_conversation_template,
-                "AddedToConversation.Sound": added_to_conversation_sound,
-                "RemovedFromConversation.Enabled": serialize.boolean_to_string(
-                    removed_from_conversation_enabled
-                ),
-                "RemovedFromConversation.Template": removed_from_conversation_template,
-                "RemovedFromConversation.Sound": removed_from_conversation_sound,
-                "NewMessage.WithMedia.Enabled": serialize.boolean_to_string(
-                    new_message_with_media_enabled
-                ),
-                "NewMessage.WithMedia.Template": new_message_with_media_template,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -688,24 +488,7 @@ class NotificationContext(InstanceContext):
 
         :returns: The updated NotificationInstance
         """
-        payload, _, _ = await self._update_async(
-            log_enabled=log_enabled,
-            new_message_enabled=new_message_enabled,
-            new_message_template=new_message_template,
-            new_message_sound=new_message_sound,
-            new_message_badge_count_enabled=new_message_badge_count_enabled,
-            added_to_conversation_enabled=added_to_conversation_enabled,
-            added_to_conversation_template=added_to_conversation_template,
-            added_to_conversation_sound=added_to_conversation_sound,
-            removed_from_conversation_enabled=removed_from_conversation_enabled,
-            removed_from_conversation_template=removed_from_conversation_template,
-            removed_from_conversation_sound=removed_from_conversation_sound,
-            new_message_with_media_enabled=new_message_with_media_enabled,
-            new_message_with_media_template=new_message_with_media_template,
-        )
-        return NotificationInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -742,25 +525,7 @@ class NotificationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            log_enabled=log_enabled,
-            new_message_enabled=new_message_enabled,
-            new_message_template=new_message_template,
-            new_message_sound=new_message_sound,
-            new_message_badge_count_enabled=new_message_badge_count_enabled,
-            added_to_conversation_enabled=added_to_conversation_enabled,
-            added_to_conversation_template=added_to_conversation_template,
-            added_to_conversation_sound=added_to_conversation_sound,
-            removed_from_conversation_enabled=removed_from_conversation_enabled,
-            removed_from_conversation_template=removed_from_conversation_template,
-            removed_from_conversation_sound=removed_from_conversation_sound,
-            new_message_with_media_enabled=new_message_with_media_enabled,
-            new_message_with_media_template=new_message_with_media_template,
-        )
-        instance = NotificationInstance(
-            self._version, payload, chat_service_sid=self._solution["chat_service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -794,9 +559,7 @@ class NotificationList(ListResource):
         Constructs a NotificationContext
 
         """
-        return NotificationContext(
-            self._version, chat_service_sid=self._solution["chat_service_sid"]
-        )
+        pass
 
     def __call__(self) -> NotificationContext:
         """

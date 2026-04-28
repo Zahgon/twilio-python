@@ -63,21 +63,7 @@ class SafelistList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "PhoneNumber": phone_number,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(self, phone_number: str) -> SafelistInstance:
         """
@@ -87,8 +73,7 @@ class SafelistList(ListResource):
 
         :returns: The created SafelistInstance
         """
-        payload, _, _ = self._create(phone_number=phone_number)
-        return SafelistInstance(self._version, payload)
+        pass
 
     def create_with_http_info(self, phone_number: str) -> ApiResponse:
         """
@@ -98,9 +83,7 @@ class SafelistList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(phone_number=phone_number)
-        instance = SafelistInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self, phone_number: str) -> tuple:
         """
@@ -109,21 +92,7 @@ class SafelistList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "PhoneNumber": phone_number,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(self, phone_number: str) -> SafelistInstance:
         """
@@ -133,8 +102,7 @@ class SafelistList(ListResource):
 
         :returns: The created SafelistInstance
         """
-        payload, _, _ = await self._create_async(phone_number=phone_number)
-        return SafelistInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(self, phone_number: str) -> ApiResponse:
         """
@@ -144,11 +112,7 @@ class SafelistList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            phone_number=phone_number
-        )
-        instance = SafelistInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _delete(self, phone_number: Union[str, object] = values.unset) -> tuple:
         """
@@ -157,16 +121,7 @@ class SafelistList(ListResource):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        params = values.of(
-            {
-                "PhoneNumber": phone_number,
-            }
-        )
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers, params=params
-        )
+        pass
 
     def delete(self, phone_number: Union[str, object] = values.unset) -> bool:
         """
@@ -175,8 +130,7 @@ class SafelistList(ListResource):
         :param phone_number: The phone number or phone number 1k prefix to be removed from SafeList. Phone numbers must be in [E.164 format](https://www.twilio.com/docs/glossary/what-e164).
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete(phone_number=phone_number)
-        return success
+        pass
 
     def delete_with_http_info(
         self, phone_number: Union[str, object] = values.unset
@@ -187,8 +141,7 @@ class SafelistList(ListResource):
         :param phone_number: The phone number or phone number 1k prefix to be removed from SafeList. Phone numbers must be in [E.164 format](https://www.twilio.com/docs/glossary/what-e164).
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete(phone_number=phone_number)
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(
         self, phone_number: Union[str, object] = values.unset
@@ -199,16 +152,7 @@ class SafelistList(ListResource):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        params = values.of(
-            {
-                "PhoneNumber": phone_number,
-            }
-        )
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers, params=params
-        )
+        pass
 
     async def delete_async(
         self, phone_number: Union[str, object] = values.unset
@@ -219,8 +163,7 @@ class SafelistList(ListResource):
         :param phone_number: The phone number or phone number 1k prefix to be removed from SafeList. Phone numbers must be in [E.164 format](https://www.twilio.com/docs/glossary/what-e164).
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async(phone_number=phone_number)
-        return success
+        pass
 
     async def delete_with_http_info_async(
         self, phone_number: Union[str, object] = values.unset
@@ -231,10 +174,7 @@ class SafelistList(ListResource):
         :param phone_number: The phone number or phone number 1k prefix to be removed from SafeList. Phone numbers must be in [E.164 format](https://www.twilio.com/docs/glossary/what-e164).
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async(
-            phone_number=phone_number
-        )
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self, phone_number: Union[str, object] = values.unset) -> tuple:
         """
@@ -243,19 +183,7 @@ class SafelistList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        params = values.of(
-            {
-                "PhoneNumber": phone_number,
-            }
-        )
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers, params=params
-        )
+        pass
 
     def fetch(
         self, phone_number: Union[str, object] = values.unset
@@ -266,8 +194,7 @@ class SafelistList(ListResource):
         :param phone_number: The phone number or phone number 1k prefix to be fetched from SafeList. Phone numbers must be in [E.164 format](https://www.twilio.com/docs/glossary/what-e164).
         :returns: The fetched SafelistInstance
         """
-        payload, _, _ = self._fetch(phone_number=phone_number)
-        return SafelistInstance(self._version, payload)
+        pass
 
     def fetch_with_http_info(
         self, phone_number: Union[str, object] = values.unset
@@ -278,9 +205,7 @@ class SafelistList(ListResource):
         :param phone_number: The phone number or phone number 1k prefix to be fetched from SafeList. Phone numbers must be in [E.164 format](https://www.twilio.com/docs/glossary/what-e164).
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(phone_number=phone_number)
-        instance = SafelistInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self, phone_number: Union[str, object] = values.unset
@@ -291,19 +216,7 @@ class SafelistList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        params = values.of(
-            {
-                "PhoneNumber": phone_number,
-            }
-        )
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers, params=params
-        )
+        pass
 
     async def fetch_async(
         self, phone_number: Union[str, object] = values.unset
@@ -314,8 +227,7 @@ class SafelistList(ListResource):
         :param phone_number: The phone number or phone number 1k prefix to be fetched from SafeList. Phone numbers must be in [E.164 format](https://www.twilio.com/docs/glossary/what-e164).
         :returns: The fetched SafelistInstance
         """
-        payload, _, _ = await self._fetch_async(phone_number=phone_number)
-        return SafelistInstance(self._version, payload)
+        pass
 
     async def fetch_with_http_info_async(
         self, phone_number: Union[str, object] = values.unset
@@ -326,11 +238,7 @@ class SafelistList(ListResource):
         :param phone_number: The phone number or phone number 1k prefix to be fetched from SafeList. Phone numbers must be in [E.164 format](https://www.twilio.com/docs/glossary/what-e164).
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            phone_number=phone_number
-        )
-        instance = SafelistInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

@@ -160,37 +160,7 @@ class HostedNumberOrderList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "phoneNumber": phone_number,
-                "smsCapability": serialize.boolean_to_string(sms_capability),
-                "accountSid": account_sid,
-                "friendlyName": friendly_name,
-                "uniqueName": unique_name,
-                "ccEmails": serialize.map(cc_emails, lambda e: e),
-                "smsUrl": sms_url,
-                "smsMethod": sms_method,
-                "smsFallbackUrl": sms_fallback_url,
-                "smsFallbackMethod": sms_fallback_method,
-                "statusCallbackUrl": status_callback_url,
-                "statusCallbackMethod": status_callback_method,
-                "smsApplicationSid": sms_application_sid,
-                "addressSid": address_sid,
-                "email": email,
-                "verificationType": verification_type,
-                "verificationDocumentSid": verification_document_sid,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -237,26 +207,7 @@ class HostedNumberOrderList(ListResource):
 
         :returns: The created HostedNumberOrderInstance
         """
-        payload, _, _ = self._create(
-            phone_number=phone_number,
-            sms_capability=sms_capability,
-            account_sid=account_sid,
-            friendly_name=friendly_name,
-            unique_name=unique_name,
-            cc_emails=cc_emails,
-            sms_url=sms_url,
-            sms_method=sms_method,
-            sms_fallback_url=sms_fallback_url,
-            sms_fallback_method=sms_fallback_method,
-            status_callback_url=status_callback_url,
-            status_callback_method=status_callback_method,
-            sms_application_sid=sms_application_sid,
-            address_sid=address_sid,
-            email=email,
-            verification_type=verification_type,
-            verification_document_sid=verification_document_sid,
-        )
-        return HostedNumberOrderInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -303,27 +254,7 @@ class HostedNumberOrderList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            phone_number=phone_number,
-            sms_capability=sms_capability,
-            account_sid=account_sid,
-            friendly_name=friendly_name,
-            unique_name=unique_name,
-            cc_emails=cc_emails,
-            sms_url=sms_url,
-            sms_method=sms_method,
-            sms_fallback_url=sms_fallback_url,
-            sms_fallback_method=sms_fallback_method,
-            status_callback_url=status_callback_url,
-            status_callback_method=status_callback_method,
-            sms_application_sid=sms_application_sid,
-            address_sid=address_sid,
-            email=email,
-            verification_type=verification_type,
-            verification_document_sid=verification_document_sid,
-        )
-        instance = HostedNumberOrderInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -353,37 +284,7 @@ class HostedNumberOrderList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "phoneNumber": phone_number,
-                "smsCapability": serialize.boolean_to_string(sms_capability),
-                "accountSid": account_sid,
-                "friendlyName": friendly_name,
-                "uniqueName": unique_name,
-                "ccEmails": serialize.map(cc_emails, lambda e: e),
-                "smsUrl": sms_url,
-                "smsMethod": sms_method,
-                "smsFallbackUrl": sms_fallback_url,
-                "smsFallbackMethod": sms_fallback_method,
-                "statusCallbackUrl": status_callback_url,
-                "statusCallbackMethod": status_callback_method,
-                "smsApplicationSid": sms_application_sid,
-                "addressSid": address_sid,
-                "email": email,
-                "verificationType": verification_type,
-                "verificationDocumentSid": verification_document_sid,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -430,26 +331,7 @@ class HostedNumberOrderList(ListResource):
 
         :returns: The created HostedNumberOrderInstance
         """
-        payload, _, _ = await self._create_async(
-            phone_number=phone_number,
-            sms_capability=sms_capability,
-            account_sid=account_sid,
-            friendly_name=friendly_name,
-            unique_name=unique_name,
-            cc_emails=cc_emails,
-            sms_url=sms_url,
-            sms_method=sms_method,
-            sms_fallback_url=sms_fallback_url,
-            sms_fallback_method=sms_fallback_method,
-            status_callback_url=status_callback_url,
-            status_callback_method=status_callback_method,
-            sms_application_sid=sms_application_sid,
-            address_sid=address_sid,
-            email=email,
-            verification_type=verification_type,
-            verification_document_sid=verification_document_sid,
-        )
-        return HostedNumberOrderInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -496,27 +378,7 @@ class HostedNumberOrderList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            phone_number=phone_number,
-            sms_capability=sms_capability,
-            account_sid=account_sid,
-            friendly_name=friendly_name,
-            unique_name=unique_name,
-            cc_emails=cc_emails,
-            sms_url=sms_url,
-            sms_method=sms_method,
-            sms_fallback_url=sms_fallback_url,
-            sms_fallback_method=sms_fallback_method,
-            status_callback_url=status_callback_url,
-            status_callback_method=status_callback_method,
-            sms_application_sid=sms_application_sid,
-            address_sid=address_sid,
-            email=email,
-            verification_type=verification_type,
-            verification_document_sid=verification_document_sid,
-        )
-        instance = HostedNumberOrderInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

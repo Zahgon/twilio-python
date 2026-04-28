@@ -58,7 +58,7 @@ class TemplatePage(Page):
 
         :param payload: Payload response from the API
         """
-        return TemplateInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -104,10 +104,7 @@ class TemplateList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(friendly_name=friendly_name, page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -131,12 +128,7 @@ class TemplateList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            friendly_name=friendly_name, page_size=limits["page_size"]
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -158,13 +150,7 @@ class TemplateList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            friendly_name=friendly_name, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -186,13 +172,7 @@ class TemplateList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            friendly_name=friendly_name, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -215,13 +195,7 @@ class TemplateList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                friendly_name=friendly_name,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -244,14 +218,7 @@ class TemplateList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                friendly_name=friendly_name,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -273,13 +240,7 @@ class TemplateList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            friendly_name=friendly_name,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -301,13 +262,7 @@ class TemplateList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            friendly_name=friendly_name,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -327,23 +282,7 @@ class TemplateList(ListResource):
 
         :returns: Page of TemplateInstance
         """
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return TemplatePage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -363,23 +302,7 @@ class TemplateList(ListResource):
 
         :returns: Page of TemplateInstance
         """
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return TemplatePage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -399,24 +322,7 @@ class TemplateList(ListResource):
 
         :returns: ApiResponse with TemplatePage, status code, and headers
         """
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = TemplatePage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -436,26 +342,7 @@ class TemplateList(ListResource):
 
         :returns: ApiResponse with TemplatePage, status code, and headers
         """
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = TemplatePage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> TemplatePage:
         """
@@ -466,8 +353,7 @@ class TemplateList(ListResource):
 
         :returns: Page of TemplateInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return TemplatePage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> TemplatePage:
         """
@@ -478,8 +364,7 @@ class TemplateList(ListResource):
 
         :returns: Page of TemplateInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return TemplatePage(self._version, response)
+        pass
 
     def __repr__(self) -> str:
         """

@@ -62,13 +62,7 @@ class WorkflowStatisticsInstance(InstanceResource):
 
         :returns: WorkflowStatisticsContext for this WorkflowStatisticsInstance
         """
-        if self._context is None:
-            self._context = WorkflowStatisticsContext(
-                self._version,
-                workspace_sid=self._solution["workspace_sid"],
-                workflow_sid=self._solution["workflow_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(
         self,
@@ -89,13 +83,7 @@ class WorkflowStatisticsInstance(InstanceResource):
 
         :returns: The fetched WorkflowStatisticsInstance
         """
-        return self._proxy.fetch(
-            minutes=minutes,
-            start_date=start_date,
-            end_date=end_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -116,13 +104,7 @@ class WorkflowStatisticsInstance(InstanceResource):
 
         :returns: The fetched WorkflowStatisticsInstance
         """
-        return await self._proxy.fetch_async(
-            minutes=minutes,
-            start_date=start_date,
-            end_date=end_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
+        pass
 
     def fetch_with_http_info(
         self,
@@ -143,13 +125,7 @@ class WorkflowStatisticsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            minutes=minutes,
-            start_date=start_date,
-            end_date=end_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self,
@@ -170,13 +146,7 @@ class WorkflowStatisticsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            minutes=minutes,
-            start_date=start_date,
-            end_date=end_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -225,24 +195,7 @@ class WorkflowStatisticsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "Minutes": minutes,
-                "StartDate": serialize.iso8601_datetime(start_date),
-                "EndDate": serialize.iso8601_datetime(end_date),
-                "TaskChannel": task_channel,
-                "SplitByWaitTime": split_by_wait_time,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(
         self,
@@ -263,19 +216,7 @@ class WorkflowStatisticsContext(InstanceContext):
 
         :returns: The fetched WorkflowStatisticsInstance
         """
-        payload, _, _ = self._fetch(
-            minutes=minutes,
-            start_date=start_date,
-            end_date=end_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
-        return WorkflowStatisticsInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            workflow_sid=self._solution["workflow_sid"],
-        )
+        pass
 
     def fetch_with_http_info(
         self,
@@ -296,20 +237,7 @@ class WorkflowStatisticsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(
-            minutes=minutes,
-            start_date=start_date,
-            end_date=end_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
-        instance = WorkflowStatisticsInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            workflow_sid=self._solution["workflow_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self,
@@ -325,24 +253,7 @@ class WorkflowStatisticsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "Minutes": minutes,
-                "StartDate": serialize.iso8601_datetime(start_date),
-                "EndDate": serialize.iso8601_datetime(end_date),
-                "TaskChannel": task_channel,
-                "SplitByWaitTime": split_by_wait_time,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -363,19 +274,7 @@ class WorkflowStatisticsContext(InstanceContext):
 
         :returns: The fetched WorkflowStatisticsInstance
         """
-        payload, _, _ = await self._fetch_async(
-            minutes=minutes,
-            start_date=start_date,
-            end_date=end_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
-        return WorkflowStatisticsInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            workflow_sid=self._solution["workflow_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self,
@@ -396,20 +295,7 @@ class WorkflowStatisticsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            minutes=minutes,
-            start_date=start_date,
-            end_date=end_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
-        instance = WorkflowStatisticsInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            workflow_sid=self._solution["workflow_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -445,11 +331,7 @@ class WorkflowStatisticsList(ListResource):
         Constructs a WorkflowStatisticsContext
 
         """
-        return WorkflowStatisticsContext(
-            self._version,
-            workspace_sid=self._solution["workspace_sid"],
-            workflow_sid=self._solution["workflow_sid"],
-        )
+        pass
 
     def __call__(self) -> WorkflowStatisticsContext:
         """

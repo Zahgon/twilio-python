@@ -35,21 +35,15 @@ class V2(Version):
 
     @property
     def inbound(self) -> InboundList:
-        if self._inbound is None:
-            self._inbound = InboundList(self)
-        return self._inbound
+        pass
 
     @property
     def outbound(self) -> OutboundList:
-        if self._outbound is None:
-            self._outbound = OutboundList(self)
-        return self._outbound
+        pass
 
     @property
     def reports(self) -> ReportList:
-        if self._reports is None:
-            self._reports = ReportList(self)
-        return self._reports
+        pass
 
     def __repr__(self) -> str:
         """

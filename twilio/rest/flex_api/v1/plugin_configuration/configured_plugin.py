@@ -87,13 +87,7 @@ class ConfiguredPluginInstance(InstanceResource):
 
         :returns: ConfiguredPluginContext for this ConfiguredPluginInstance
         """
-        if self._context is None:
-            self._context = ConfiguredPluginContext(
-                self._version,
-                configuration_sid=self._solution["configuration_sid"],
-                plugin_sid=self._solution["plugin_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(
         self, flex_metadata: Union[str, object] = values.unset
@@ -105,9 +99,7 @@ class ConfiguredPluginInstance(InstanceResource):
 
         :returns: The fetched ConfiguredPluginInstance
         """
-        return self._proxy.fetch(
-            flex_metadata=flex_metadata,
-        )
+        pass
 
     async def fetch_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -119,9 +111,7 @@ class ConfiguredPluginInstance(InstanceResource):
 
         :returns: The fetched ConfiguredPluginInstance
         """
-        return await self._proxy.fetch_async(
-            flex_metadata=flex_metadata,
-        )
+        pass
 
     def fetch_with_http_info(
         self, flex_metadata: Union[str, object] = values.unset
@@ -133,9 +123,7 @@ class ConfiguredPluginInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            flex_metadata=flex_metadata,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -147,9 +135,7 @@ class ConfiguredPluginInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            flex_metadata=flex_metadata,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -189,20 +175,7 @@ class ConfiguredPluginContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        if not (
-            flex_metadata is values.unset
-            or (isinstance(flex_metadata, str) and not flex_metadata)
-        ):
-            headers["Flex-Metadata"] = flex_metadata
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(
         self, flex_metadata: Union[str, object] = values.unset
@@ -214,13 +187,7 @@ class ConfiguredPluginContext(InstanceContext):
 
         :returns: The fetched ConfiguredPluginInstance
         """
-        payload, _, _ = self._fetch(flex_metadata=flex_metadata)
-        return ConfiguredPluginInstance(
-            self._version,
-            payload,
-            configuration_sid=self._solution["configuration_sid"],
-            plugin_sid=self._solution["plugin_sid"],
-        )
+        pass
 
     def fetch_with_http_info(
         self, flex_metadata: Union[str, object] = values.unset
@@ -232,14 +199,7 @@ class ConfiguredPluginContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(flex_metadata=flex_metadata)
-        instance = ConfiguredPluginInstance(
-            self._version,
-            payload,
-            configuration_sid=self._solution["configuration_sid"],
-            plugin_sid=self._solution["plugin_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -250,20 +210,7 @@ class ConfiguredPluginContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        if not (
-            flex_metadata is values.unset
-            or (isinstance(flex_metadata, str) and not flex_metadata)
-        ):
-            headers["Flex-Metadata"] = flex_metadata
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -275,13 +222,7 @@ class ConfiguredPluginContext(InstanceContext):
 
         :returns: The fetched ConfiguredPluginInstance
         """
-        payload, _, _ = await self._fetch_async(flex_metadata=flex_metadata)
-        return ConfiguredPluginInstance(
-            self._version,
-            payload,
-            configuration_sid=self._solution["configuration_sid"],
-            plugin_sid=self._solution["plugin_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, flex_metadata: Union[str, object] = values.unset
@@ -293,16 +234,7 @@ class ConfiguredPluginContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            flex_metadata=flex_metadata
-        )
-        instance = ConfiguredPluginInstance(
-            self._version,
-            payload,
-            configuration_sid=self._solution["configuration_sid"],
-            plugin_sid=self._solution["plugin_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -322,11 +254,7 @@ class ConfiguredPluginPage(Page):
 
         :param payload: Payload response from the API
         """
-        return ConfiguredPluginInstance(
-            self._version,
-            payload,
-            configuration_sid=self._solution["configuration_sid"],
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -379,10 +307,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(flex_metadata=flex_metadata, page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -406,12 +331,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            flex_metadata=flex_metadata, page_size=limits["page_size"]
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -433,13 +353,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            flex_metadata=flex_metadata, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -461,13 +375,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            flex_metadata=flex_metadata, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -490,13 +398,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                flex_metadata=flex_metadata,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -519,14 +421,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                flex_metadata=flex_metadata,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -548,13 +443,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            flex_metadata=flex_metadata,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -576,13 +465,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            flex_metadata=flex_metadata,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -602,28 +485,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: Page of ConfiguredPluginInstance
         """
-        data = values.of(
-            {
-                "Flex-Metadata": flex_metadata,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of(
-            {
-                "Flex-Metadata": flex_metadata,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ConfiguredPluginPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -643,28 +505,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: Page of ConfiguredPluginInstance
         """
-        data = values.of(
-            {
-                "Flex-Metadata": flex_metadata,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of(
-            {
-                "Flex-Metadata": flex_metadata,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ConfiguredPluginPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -684,29 +525,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: ApiResponse with ConfiguredPluginPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Flex-Metadata": flex_metadata,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of(
-            {
-                "Flex-Metadata": flex_metadata,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = ConfiguredPluginPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -726,31 +545,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: ApiResponse with ConfiguredPluginPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Flex-Metadata": flex_metadata,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of(
-            {
-                "Flex-Metadata": flex_metadata,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = ConfiguredPluginPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> ConfiguredPluginPage:
         """
@@ -761,8 +556,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: Page of ConfiguredPluginInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return ConfiguredPluginPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> ConfiguredPluginPage:
         """
@@ -773,8 +567,7 @@ class ConfiguredPluginList(ListResource):
 
         :returns: Page of ConfiguredPluginInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return ConfiguredPluginPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, plugin_sid: str) -> ConfiguredPluginContext:
         """
@@ -782,11 +575,7 @@ class ConfiguredPluginList(ListResource):
 
         :param plugin_sid: The unique string that we created to identify the Flex Plugin resource.
         """
-        return ConfiguredPluginContext(
-            self._version,
-            configuration_sid=self._solution["configuration_sid"],
-            plugin_sid=plugin_sid,
-        )
+        pass
 
     def __call__(self, plugin_sid: str) -> ConfiguredPluginContext:
         """

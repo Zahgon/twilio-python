@@ -55,54 +55,42 @@ class RegulatoryComplianceList(ListResource):
         """
         Access the bundles
         """
-        if self._bundles is None:
-            self._bundles = BundleList(self._version)
-        return self._bundles
+        pass
 
     @property
     def end_users(self) -> EndUserList:
         """
         Access the end_users
         """
-        if self._end_users is None:
-            self._end_users = EndUserList(self._version)
-        return self._end_users
+        pass
 
     @property
     def end_user_types(self) -> EndUserTypeList:
         """
         Access the end_user_types
         """
-        if self._end_user_types is None:
-            self._end_user_types = EndUserTypeList(self._version)
-        return self._end_user_types
+        pass
 
     @property
     def regulations(self) -> RegulationList:
         """
         Access the regulations
         """
-        if self._regulations is None:
-            self._regulations = RegulationList(self._version)
-        return self._regulations
+        pass
 
     @property
     def supporting_documents(self) -> SupportingDocumentList:
         """
         Access the supporting_documents
         """
-        if self._supporting_documents is None:
-            self._supporting_documents = SupportingDocumentList(self._version)
-        return self._supporting_documents
+        pass
 
     @property
     def supporting_document_types(self) -> SupportingDocumentTypeList:
         """
         Access the supporting_document_types
         """
-        if self._supporting_document_types is None:
-            self._supporting_document_types = SupportingDocumentTypeList(self._version)
-        return self._supporting_document_types
+        pass
 
     def __repr__(self) -> str:
         """

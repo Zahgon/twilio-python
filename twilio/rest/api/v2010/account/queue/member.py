@@ -67,14 +67,7 @@ class MemberInstance(InstanceResource):
 
         :returns: MemberContext for this MemberInstance
         """
-        if self._context is None:
-            self._context = MemberContext(
-                self._version,
-                account_sid=self._solution["account_sid"],
-                queue_sid=self._solution["queue_sid"],
-                call_sid=self._solution["call_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "MemberInstance":
         """
@@ -83,7 +76,7 @@ class MemberInstance(InstanceResource):
 
         :returns: The fetched MemberInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "MemberInstance":
         """
@@ -92,7 +85,7 @@ class MemberInstance(InstanceResource):
 
         :returns: The fetched MemberInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -101,7 +94,7 @@ class MemberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -110,7 +103,7 @@ class MemberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self, url: str, method: Union[str, object] = values.unset
@@ -123,10 +116,7 @@ class MemberInstance(InstanceResource):
 
         :returns: The updated MemberInstance
         """
-        return self._proxy.update(
-            url=url,
-            method=method,
-        )
+        pass
 
     async def update_async(
         self, url: str, method: Union[str, object] = values.unset
@@ -139,10 +129,7 @@ class MemberInstance(InstanceResource):
 
         :returns: The updated MemberInstance
         """
-        return await self._proxy.update_async(
-            url=url,
-            method=method,
-        )
+        pass
 
     def update_with_http_info(
         self, url: str, method: Union[str, object] = values.unset
@@ -155,10 +142,7 @@ class MemberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            url=url,
-            method=method,
-        )
+        pass
 
     async def update_with_http_info_async(
         self, url: str, method: Union[str, object] = values.unset
@@ -171,10 +155,7 @@ class MemberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            url=url,
-            method=method,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -220,14 +201,7 @@ class MemberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> MemberInstance:
         """
@@ -236,14 +210,7 @@ class MemberContext(InstanceContext):
 
         :returns: The fetched MemberInstance
         """
-        payload, _, _ = self._fetch()
-        return MemberInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            queue_sid=self._solution["queue_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -252,15 +219,7 @@ class MemberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = MemberInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            queue_sid=self._solution["queue_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -269,14 +228,7 @@ class MemberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> MemberInstance:
         """
@@ -285,14 +237,7 @@ class MemberContext(InstanceContext):
 
         :returns: The fetched MemberInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return MemberInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            queue_sid=self._solution["queue_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -301,15 +246,7 @@ class MemberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = MemberInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            queue_sid=self._solution["queue_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(self, url: str, method: Union[str, object] = values.unset) -> tuple:
         """
@@ -318,22 +255,7 @@ class MemberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Url": url,
-                "Method": method,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self, url: str, method: Union[str, object] = values.unset
@@ -346,14 +268,7 @@ class MemberContext(InstanceContext):
 
         :returns: The updated MemberInstance
         """
-        payload, _, _ = self._update(url=url, method=method)
-        return MemberInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            queue_sid=self._solution["queue_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     def update_with_http_info(
         self, url: str, method: Union[str, object] = values.unset
@@ -366,15 +281,7 @@ class MemberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(url=url, method=method)
-        instance = MemberInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            queue_sid=self._solution["queue_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self, url: str, method: Union[str, object] = values.unset
@@ -385,22 +292,7 @@ class MemberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Url": url,
-                "Method": method,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, url: str, method: Union[str, object] = values.unset
@@ -413,14 +305,7 @@ class MemberContext(InstanceContext):
 
         :returns: The updated MemberInstance
         """
-        payload, _, _ = await self._update_async(url=url, method=method)
-        return MemberInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            queue_sid=self._solution["queue_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self, url: str, method: Union[str, object] = values.unset
@@ -433,15 +318,7 @@ class MemberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(url=url, method=method)
-        instance = MemberInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            queue_sid=self._solution["queue_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -461,12 +338,7 @@ class MemberPage(Page):
 
         :param payload: Payload response from the API
         """
-        return MemberInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            queue_sid=self._solution["queue_sid"],
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -519,10 +391,7 @@ class MemberList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -544,10 +413,7 @@ class MemberList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -567,11 +433,7 @@ class MemberList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -591,13 +453,7 @@ class MemberList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -618,12 +474,7 @@ class MemberList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -644,13 +495,7 @@ class MemberList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -670,12 +515,7 @@ class MemberList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -695,12 +535,7 @@ class MemberList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -718,22 +553,7 @@ class MemberList(ListResource):
 
         :returns: Page of MemberInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return MemberPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -751,22 +571,7 @@ class MemberList(ListResource):
 
         :returns: Page of MemberInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return MemberPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -784,23 +589,7 @@ class MemberList(ListResource):
 
         :returns: ApiResponse with MemberPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = MemberPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -818,25 +607,7 @@ class MemberList(ListResource):
 
         :returns: ApiResponse with MemberPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = MemberPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> MemberPage:
         """
@@ -847,8 +618,7 @@ class MemberList(ListResource):
 
         :returns: Page of MemberInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return MemberPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> MemberPage:
         """
@@ -859,8 +629,7 @@ class MemberList(ListResource):
 
         :returns: Page of MemberInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return MemberPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, call_sid: str) -> MemberContext:
         """
@@ -868,12 +637,7 @@ class MemberList(ListResource):
 
         :param call_sid: The [Call](https://www.twilio.com/docs/voice/api/call-resource) SID of the resource(s) to update.
         """
-        return MemberContext(
-            self._version,
-            account_sid=self._solution["account_sid"],
-            queue_sid=self._solution["queue_sid"],
-            call_sid=call_sid,
-        )
+        pass
 
     def __call__(self, call_sid: str) -> MemberContext:
         """

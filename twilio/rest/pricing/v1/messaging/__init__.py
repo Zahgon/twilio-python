@@ -41,9 +41,7 @@ class MessagingList(ListResource):
         """
         Access the countries
         """
-        if self._countries is None:
-            self._countries = CountryList(self._version)
-        return self._countries
+        pass
 
     def __repr__(self) -> str:
         """

@@ -73,7 +73,7 @@ class ContentAndApprovalsPage(Page):
 
         :param payload: Payload response from the API
         """
-        return ContentAndApprovalsInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -117,10 +117,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -142,10 +139,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -165,11 +159,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -189,13 +179,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -216,12 +200,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -242,13 +221,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -268,12 +241,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -293,12 +261,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -316,22 +279,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: Page of ContentAndApprovalsInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ContentAndApprovalsPage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -349,22 +297,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: Page of ContentAndApprovalsInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ContentAndApprovalsPage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -382,23 +315,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: ApiResponse with ContentAndApprovalsPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = ContentAndApprovalsPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -416,25 +333,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: ApiResponse with ContentAndApprovalsPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = ContentAndApprovalsPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> ContentAndApprovalsPage:
         """
@@ -445,8 +344,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: Page of ContentAndApprovalsInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return ContentAndApprovalsPage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> ContentAndApprovalsPage:
         """
@@ -457,8 +355,7 @@ class ContentAndApprovalsList(ListResource):
 
         :returns: Page of ContentAndApprovalsInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return ContentAndApprovalsPage(self._version, response)
+        pass
 
     def __repr__(self) -> str:
         """

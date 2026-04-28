@@ -140,38 +140,7 @@ class NotificationList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Body": body,
-                "Priority": priority,
-                "Ttl": ttl,
-                "Title": title,
-                "Sound": sound,
-                "Action": action,
-                "Data": serialize.object(data),
-                "Apn": serialize.object(apn),
-                "Gcm": serialize.object(gcm),
-                "Sms": serialize.object(sms),
-                "FacebookMessenger": serialize.object(facebook_messenger),
-                "Fcm": serialize.object(fcm),
-                "Segment": serialize.map(segment, lambda e: e),
-                "Alexa": serialize.object(alexa),
-                "ToBinding": serialize.map(to_binding, lambda e: e),
-                "DeliveryCallbackUrl": delivery_callback_url,
-                "Identity": serialize.map(identity, lambda e: e),
-                "Tag": serialize.map(tag, lambda e: e),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -218,29 +187,7 @@ class NotificationList(ListResource):
 
         :returns: The created NotificationInstance
         """
-        payload, _, _ = self._create(
-            body=body,
-            priority=priority,
-            ttl=ttl,
-            title=title,
-            sound=sound,
-            action=action,
-            data=data,
-            apn=apn,
-            gcm=gcm,
-            sms=sms,
-            facebook_messenger=facebook_messenger,
-            fcm=fcm,
-            segment=segment,
-            alexa=alexa,
-            to_binding=to_binding,
-            delivery_callback_url=delivery_callback_url,
-            identity=identity,
-            tag=tag,
-        )
-        return NotificationInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -287,30 +234,7 @@ class NotificationList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            body=body,
-            priority=priority,
-            ttl=ttl,
-            title=title,
-            sound=sound,
-            action=action,
-            data=data,
-            apn=apn,
-            gcm=gcm,
-            sms=sms,
-            facebook_messenger=facebook_messenger,
-            fcm=fcm,
-            segment=segment,
-            alexa=alexa,
-            to_binding=to_binding,
-            delivery_callback_url=delivery_callback_url,
-            identity=identity,
-            tag=tag,
-        )
-        instance = NotificationInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -339,38 +263,7 @@ class NotificationList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Body": body,
-                "Priority": priority,
-                "Ttl": ttl,
-                "Title": title,
-                "Sound": sound,
-                "Action": action,
-                "Data": serialize.object(data),
-                "Apn": serialize.object(apn),
-                "Gcm": serialize.object(gcm),
-                "Sms": serialize.object(sms),
-                "FacebookMessenger": serialize.object(facebook_messenger),
-                "Fcm": serialize.object(fcm),
-                "Segment": serialize.map(segment, lambda e: e),
-                "Alexa": serialize.object(alexa),
-                "ToBinding": serialize.map(to_binding, lambda e: e),
-                "DeliveryCallbackUrl": delivery_callback_url,
-                "Identity": serialize.map(identity, lambda e: e),
-                "Tag": serialize.map(tag, lambda e: e),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -417,29 +310,7 @@ class NotificationList(ListResource):
 
         :returns: The created NotificationInstance
         """
-        payload, _, _ = await self._create_async(
-            body=body,
-            priority=priority,
-            ttl=ttl,
-            title=title,
-            sound=sound,
-            action=action,
-            data=data,
-            apn=apn,
-            gcm=gcm,
-            sms=sms,
-            facebook_messenger=facebook_messenger,
-            fcm=fcm,
-            segment=segment,
-            alexa=alexa,
-            to_binding=to_binding,
-            delivery_callback_url=delivery_callback_url,
-            identity=identity,
-            tag=tag,
-        )
-        return NotificationInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -486,30 +357,7 @@ class NotificationList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            body=body,
-            priority=priority,
-            ttl=ttl,
-            title=title,
-            sound=sound,
-            action=action,
-            data=data,
-            apn=apn,
-            gcm=gcm,
-            sms=sms,
-            facebook_messenger=facebook_messenger,
-            fcm=fcm,
-            segment=segment,
-            alexa=alexa,
-            to_binding=to_binding,
-            delivery_callback_url=delivery_callback_url,
-            identity=identity,
-            tag=tag,
-        )
-        instance = NotificationInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

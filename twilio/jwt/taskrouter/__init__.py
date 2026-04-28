@@ -60,9 +60,7 @@ class TaskRouterCapabilityToken(Jwt):
 
     @property
     def workspace_url(self):
-        return "{}/{}/Workspaces/{}".format(
-            self.DOMAIN, self.VERSION, self.workspace_sid
-        )
+        pass
 
     @property
     def resource_url(self):
@@ -75,68 +73,34 @@ class TaskRouterCapabilityToken(Jwt):
         )
 
     def allow_fetch_self(self):
-        self._make_policy(self.resource_url, "GET", True)
+        pass
 
     def allow_update_self(self):
-        self._make_policy(self.resource_url, "POST", True)
+        pass
 
     def allow_delete_self(self):
-        self._make_policy(self.resource_url, "DELETE", True)
+        pass
 
     def allow_fetch_subresources(self):
-        self._make_policy(self.resource_url + "/**", "GET", True)
+        pass
 
     def allow_update_subresources(self):
-        self._make_policy(self.resource_url + "/**", "POST", True)
+        pass
 
     def allow_delete_subresources(self):
-        self._make_policy(self.resource_url + "/**", "DELETE", True)
+        pass
 
     def allow_web_sockets(self, channel_id=None):
-        channel_id = channel_id or self.channel_id
-        web_socket_url = "{}/{}/{}".format(
-            self.EVENTS_BASE_URL, self.account_sid, channel_id
-        )
-        self._make_policy(web_socket_url, "GET", True)
-        self._make_policy(web_socket_url, "POST", True)
+        pass
 
     def _generate_payload(self):
-        payload = {
-            "account_sid": self.account_sid,
-            "workspace_sid": self.workspace_sid,
-            "channel": self.channel_id,
-            "version": self.VERSION,
-            "friendly_name": self.channel_id,
-            "policies": self.policies,
-        }
-
-        if self.channel_id.startswith("WK"):
-            payload["worker_sid"] = self.channel_id
-        elif self.channel_id.startswith("WQ"):
-            payload["taskqueue_sid"] = self.channel_id
-
-        return payload
+        pass
 
     def _make_policy(self, url, method, allowed, query_filter=None, post_filter=None):
-        self.policies.append(
-            {
-                "url": url,
-                "method": method.upper(),
-                "allow": allowed,
-                "query_filter": query_filter or {},
-                "post_filter": post_filter or {},
-            }
-        )
+        pass
 
     def _validate_inputs(self, account_sid, workspace_sid, channel_id):
-        if not account_sid or not account_sid.startswith("AC"):
-            raise ValueError("Invalid account sid provided {}".format(account_sid))
-
-        if not workspace_sid or not workspace_sid.startswith("WS"):
-            raise ValueError("Invalid workspace sid provided {}".format(workspace_sid))
-
-        if not channel_id or not channel_id.startswith(self.channel_prefix):
-            raise ValueError("Invalid channel id provided {}".format(channel_id))
+        pass
 
     def __str__(self):
         return "<TaskRouterCapabilityToken {}>".format(self.to_jwt())

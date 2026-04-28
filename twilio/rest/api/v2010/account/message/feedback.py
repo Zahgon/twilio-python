@@ -105,21 +105,7 @@ class FeedbackList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Outcome": outcome,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self, outcome: Union["FeedbackInstance.Outcome", object] = values.unset
@@ -131,13 +117,7 @@ class FeedbackList(ListResource):
 
         :returns: The created FeedbackInstance
         """
-        payload, _, _ = self._create(outcome=outcome)
-        return FeedbackInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            message_sid=self._solution["message_sid"],
-        )
+        pass
 
     def create_with_http_info(
         self, outcome: Union["FeedbackInstance.Outcome", object] = values.unset
@@ -149,14 +129,7 @@ class FeedbackList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(outcome=outcome)
-        instance = FeedbackInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            message_sid=self._solution["message_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self, outcome: Union["FeedbackInstance.Outcome", object] = values.unset
@@ -167,21 +140,7 @@ class FeedbackList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Outcome": outcome,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self, outcome: Union["FeedbackInstance.Outcome", object] = values.unset
@@ -193,13 +152,7 @@ class FeedbackList(ListResource):
 
         :returns: The created FeedbackInstance
         """
-        payload, _, _ = await self._create_async(outcome=outcome)
-        return FeedbackInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            message_sid=self._solution["message_sid"],
-        )
+        pass
 
     async def create_with_http_info_async(
         self, outcome: Union["FeedbackInstance.Outcome", object] = values.unset
@@ -211,14 +164,7 @@ class FeedbackList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(outcome=outcome)
-        instance = FeedbackInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            message_sid=self._solution["message_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

@@ -33,15 +33,11 @@ class V1(Version):
 
     @property
     def authorize(self) -> AuthorizeList:
-        if self._authorize is None:
-            self._authorize = AuthorizeList(self)
-        return self._authorize
+        pass
 
     @property
     def token(self) -> TokenList:
-        if self._token is None:
-            self._token = TokenList(self)
-        return self._token
+        pass
 
     def __repr__(self) -> str:
         """

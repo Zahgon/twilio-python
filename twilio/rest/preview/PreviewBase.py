@@ -36,27 +36,21 @@ class PreviewBase(Domain):
         """
         :returns: Versions hosted_numbers of Preview
         """
-        if self._hosted_numbers is None:
-            self._hosted_numbers = HostedNumbers(self)
-        return self._hosted_numbers
+        pass
 
     @property
     def marketplace(self) -> Marketplace:
         """
         :returns: Versions marketplace of Preview
         """
-        if self._marketplace is None:
-            self._marketplace = Marketplace(self)
-        return self._marketplace
+        pass
 
     @property
     def wireless(self) -> Wireless:
         """
         :returns: Versions wireless of Preview
         """
-        if self._wireless is None:
-            self._wireless = Wireless(self)
-        return self._wireless
+        pass
 
     def __repr__(self) -> str:
         """

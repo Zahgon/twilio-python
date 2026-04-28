@@ -103,12 +103,7 @@ class WorkspaceInstance(InstanceResource):
 
         :returns: WorkspaceContext for this WorkspaceInstance
         """
-        if self._context is None:
-            self._context = WorkspaceContext(
-                self._version,
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -117,7 +112,7 @@ class WorkspaceInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -126,7 +121,7 @@ class WorkspaceInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -135,7 +130,7 @@ class WorkspaceInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -144,7 +139,7 @@ class WorkspaceInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "WorkspaceInstance":
         """
@@ -153,7 +148,7 @@ class WorkspaceInstance(InstanceResource):
 
         :returns: The fetched WorkspaceInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "WorkspaceInstance":
         """
@@ -162,7 +157,7 @@ class WorkspaceInstance(InstanceResource):
 
         :returns: The fetched WorkspaceInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -171,7 +166,7 @@ class WorkspaceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -180,7 +175,7 @@ class WorkspaceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -207,15 +202,7 @@ class WorkspaceInstance(InstanceResource):
 
         :returns: The updated WorkspaceInstance
         """
-        return self._proxy.update(
-            default_activity_sid=default_activity_sid,
-            event_callback_url=event_callback_url,
-            events_filter=events_filter,
-            friendly_name=friendly_name,
-            multi_task_enabled=multi_task_enabled,
-            timeout_activity_sid=timeout_activity_sid,
-            prioritize_queue_order=prioritize_queue_order,
-        )
+        pass
 
     async def update_async(
         self,
@@ -242,15 +229,7 @@ class WorkspaceInstance(InstanceResource):
 
         :returns: The updated WorkspaceInstance
         """
-        return await self._proxy.update_async(
-            default_activity_sid=default_activity_sid,
-            event_callback_url=event_callback_url,
-            events_filter=events_filter,
-            friendly_name=friendly_name,
-            multi_task_enabled=multi_task_enabled,
-            timeout_activity_sid=timeout_activity_sid,
-            prioritize_queue_order=prioritize_queue_order,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -277,15 +256,7 @@ class WorkspaceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            default_activity_sid=default_activity_sid,
-            event_callback_url=event_callback_url,
-            events_filter=events_filter,
-            friendly_name=friendly_name,
-            multi_task_enabled=multi_task_enabled,
-            timeout_activity_sid=timeout_activity_sid,
-            prioritize_queue_order=prioritize_queue_order,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -312,85 +283,77 @@ class WorkspaceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            default_activity_sid=default_activity_sid,
-            event_callback_url=event_callback_url,
-            events_filter=events_filter,
-            friendly_name=friendly_name,
-            multi_task_enabled=multi_task_enabled,
-            timeout_activity_sid=timeout_activity_sid,
-            prioritize_queue_order=prioritize_queue_order,
-        )
+        pass
 
     @property
     def activities(self) -> ActivityList:
         """
         Access the activities
         """
-        return self._proxy.activities
+        pass
 
     @property
     def events(self) -> EventList:
         """
         Access the events
         """
-        return self._proxy.events
+        pass
 
     @property
     def tasks(self) -> TaskList:
         """
         Access the tasks
         """
-        return self._proxy.tasks
+        pass
 
     @property
     def task_channels(self) -> TaskChannelList:
         """
         Access the task_channels
         """
-        return self._proxy.task_channels
+        pass
 
     @property
     def task_queues(self) -> TaskQueueList:
         """
         Access the task_queues
         """
-        return self._proxy.task_queues
+        pass
 
     @property
     def workers(self) -> WorkerList:
         """
         Access the workers
         """
-        return self._proxy.workers
+        pass
 
     @property
     def workflows(self) -> WorkflowList:
         """
         Access the workflows
         """
-        return self._proxy.workflows
+        pass
 
     @property
     def cumulative_statistics(self) -> WorkspaceCumulativeStatisticsList:
         """
         Access the cumulative_statistics
         """
-        return self._proxy.cumulative_statistics
+        pass
 
     @property
     def real_time_statistics(self) -> WorkspaceRealTimeStatisticsList:
         """
         Access the real_time_statistics
         """
-        return self._proxy.real_time_statistics
+        pass
 
     @property
     def statistics(self) -> WorkspaceStatisticsList:
         """
         Access the statistics
         """
-        return self._proxy.statistics
+        pass
 
     def __repr__(self) -> str:
         """
@@ -437,12 +400,7 @@ class WorkspaceContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -451,8 +409,7 @@ class WorkspaceContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -461,8 +418,7 @@ class WorkspaceContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -471,12 +427,7 @@ class WorkspaceContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -485,8 +436,7 @@ class WorkspaceContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -495,8 +445,7 @@ class WorkspaceContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -505,14 +454,7 @@ class WorkspaceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> WorkspaceInstance:
         """
@@ -521,12 +463,7 @@ class WorkspaceContext(InstanceContext):
 
         :returns: The fetched WorkspaceInstance
         """
-        payload, _, _ = self._fetch()
-        return WorkspaceInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -535,13 +472,7 @@ class WorkspaceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = WorkspaceInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -550,14 +481,7 @@ class WorkspaceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> WorkspaceInstance:
         """
@@ -566,12 +490,7 @@ class WorkspaceContext(InstanceContext):
 
         :returns: The fetched WorkspaceInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return WorkspaceInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -580,13 +499,7 @@ class WorkspaceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = WorkspaceInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -606,27 +519,7 @@ class WorkspaceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "DefaultActivitySid": default_activity_sid,
-                "EventCallbackUrl": event_callback_url,
-                "EventsFilter": events_filter,
-                "FriendlyName": friendly_name,
-                "MultiTaskEnabled": serialize.boolean_to_string(multi_task_enabled),
-                "TimeoutActivitySid": timeout_activity_sid,
-                "PrioritizeQueueOrder": prioritize_queue_order,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -653,16 +546,7 @@ class WorkspaceContext(InstanceContext):
 
         :returns: The updated WorkspaceInstance
         """
-        payload, _, _ = self._update(
-            default_activity_sid=default_activity_sid,
-            event_callback_url=event_callback_url,
-            events_filter=events_filter,
-            friendly_name=friendly_name,
-            multi_task_enabled=multi_task_enabled,
-            timeout_activity_sid=timeout_activity_sid,
-            prioritize_queue_order=prioritize_queue_order,
-        )
-        return WorkspaceInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     def update_with_http_info(
         self,
@@ -689,17 +573,7 @@ class WorkspaceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            default_activity_sid=default_activity_sid,
-            event_callback_url=event_callback_url,
-            events_filter=events_filter,
-            friendly_name=friendly_name,
-            multi_task_enabled=multi_task_enabled,
-            timeout_activity_sid=timeout_activity_sid,
-            prioritize_queue_order=prioritize_queue_order,
-        )
-        instance = WorkspaceInstance(self._version, payload, sid=self._solution["sid"])
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -719,27 +593,7 @@ class WorkspaceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "DefaultActivitySid": default_activity_sid,
-                "EventCallbackUrl": event_callback_url,
-                "EventsFilter": events_filter,
-                "FriendlyName": friendly_name,
-                "MultiTaskEnabled": serialize.boolean_to_string(multi_task_enabled),
-                "TimeoutActivitySid": timeout_activity_sid,
-                "PrioritizeQueueOrder": prioritize_queue_order,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -766,16 +620,7 @@ class WorkspaceContext(InstanceContext):
 
         :returns: The updated WorkspaceInstance
         """
-        payload, _, _ = await self._update_async(
-            default_activity_sid=default_activity_sid,
-            event_callback_url=event_callback_url,
-            events_filter=events_filter,
-            friendly_name=friendly_name,
-            multi_task_enabled=multi_task_enabled,
-            timeout_activity_sid=timeout_activity_sid,
-            prioritize_queue_order=prioritize_queue_order,
-        )
-        return WorkspaceInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -802,137 +647,77 @@ class WorkspaceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            default_activity_sid=default_activity_sid,
-            event_callback_url=event_callback_url,
-            events_filter=events_filter,
-            friendly_name=friendly_name,
-            multi_task_enabled=multi_task_enabled,
-            timeout_activity_sid=timeout_activity_sid,
-            prioritize_queue_order=prioritize_queue_order,
-        )
-        instance = WorkspaceInstance(self._version, payload, sid=self._solution["sid"])
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def activities(self) -> ActivityList:
         """
         Access the activities
         """
-        if self._activities is None:
-            self._activities = ActivityList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._activities
+        pass
 
     @property
     def events(self) -> EventList:
         """
         Access the events
         """
-        if self._events is None:
-            self._events = EventList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._events
+        pass
 
     @property
     def tasks(self) -> TaskList:
         """
         Access the tasks
         """
-        if self._tasks is None:
-            self._tasks = TaskList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._tasks
+        pass
 
     @property
     def task_channels(self) -> TaskChannelList:
         """
         Access the task_channels
         """
-        if self._task_channels is None:
-            self._task_channels = TaskChannelList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._task_channels
+        pass
 
     @property
     def task_queues(self) -> TaskQueueList:
         """
         Access the task_queues
         """
-        if self._task_queues is None:
-            self._task_queues = TaskQueueList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._task_queues
+        pass
 
     @property
     def workers(self) -> WorkerList:
         """
         Access the workers
         """
-        if self._workers is None:
-            self._workers = WorkerList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._workers
+        pass
 
     @property
     def workflows(self) -> WorkflowList:
         """
         Access the workflows
         """
-        if self._workflows is None:
-            self._workflows = WorkflowList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._workflows
+        pass
 
     @property
     def cumulative_statistics(self) -> WorkspaceCumulativeStatisticsList:
         """
         Access the cumulative_statistics
         """
-        if self._cumulative_statistics is None:
-            self._cumulative_statistics = WorkspaceCumulativeStatisticsList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._cumulative_statistics
+        pass
 
     @property
     def real_time_statistics(self) -> WorkspaceRealTimeStatisticsList:
         """
         Access the real_time_statistics
         """
-        if self._real_time_statistics is None:
-            self._real_time_statistics = WorkspaceRealTimeStatisticsList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._real_time_statistics
+        pass
 
     @property
     def statistics(self) -> WorkspaceStatisticsList:
         """
         Access the statistics
         """
-        if self._statistics is None:
-            self._statistics = WorkspaceStatisticsList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._statistics
+        pass
 
     def __repr__(self) -> str:
         """
@@ -952,7 +737,7 @@ class WorkspacePage(Page):
 
         :param payload: Payload response from the API
         """
-        return WorkspaceInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -993,26 +778,7 @@ class WorkspaceList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "EventCallbackUrl": event_callback_url,
-                "EventsFilter": events_filter,
-                "MultiTaskEnabled": serialize.boolean_to_string(multi_task_enabled),
-                "Template": template,
-                "PrioritizeQueueOrder": prioritize_queue_order,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -1037,15 +803,7 @@ class WorkspaceList(ListResource):
 
         :returns: The created WorkspaceInstance
         """
-        payload, _, _ = self._create(
-            friendly_name=friendly_name,
-            event_callback_url=event_callback_url,
-            events_filter=events_filter,
-            multi_task_enabled=multi_task_enabled,
-            template=template,
-            prioritize_queue_order=prioritize_queue_order,
-        )
-        return WorkspaceInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -1070,16 +828,7 @@ class WorkspaceList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            friendly_name=friendly_name,
-            event_callback_url=event_callback_url,
-            events_filter=events_filter,
-            multi_task_enabled=multi_task_enabled,
-            template=template,
-            prioritize_queue_order=prioritize_queue_order,
-        )
-        instance = WorkspaceInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -1098,26 +847,7 @@ class WorkspaceList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "EventCallbackUrl": event_callback_url,
-                "EventsFilter": events_filter,
-                "MultiTaskEnabled": serialize.boolean_to_string(multi_task_enabled),
-                "Template": template,
-                "PrioritizeQueueOrder": prioritize_queue_order,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -1142,15 +872,7 @@ class WorkspaceList(ListResource):
 
         :returns: The created WorkspaceInstance
         """
-        payload, _, _ = await self._create_async(
-            friendly_name=friendly_name,
-            event_callback_url=event_callback_url,
-            events_filter=events_filter,
-            multi_task_enabled=multi_task_enabled,
-            template=template,
-            prioritize_queue_order=prioritize_queue_order,
-        )
-        return WorkspaceInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -1175,16 +897,7 @@ class WorkspaceList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            friendly_name=friendly_name,
-            event_callback_url=event_callback_url,
-            events_filter=events_filter,
-            multi_task_enabled=multi_task_enabled,
-            template=template,
-            prioritize_queue_order=prioritize_queue_order,
-        )
-        instance = WorkspaceInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -1208,10 +921,7 @@ class WorkspaceList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(friendly_name=friendly_name, page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -1235,12 +945,7 @@ class WorkspaceList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            friendly_name=friendly_name, page_size=limits["page_size"]
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -1262,13 +967,7 @@ class WorkspaceList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            friendly_name=friendly_name, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -1290,13 +989,7 @@ class WorkspaceList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            friendly_name=friendly_name, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -1319,13 +1012,7 @@ class WorkspaceList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                friendly_name=friendly_name,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -1348,14 +1035,7 @@ class WorkspaceList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                friendly_name=friendly_name,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -1377,13 +1057,7 @@ class WorkspaceList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            friendly_name=friendly_name,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1405,13 +1079,7 @@ class WorkspaceList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            friendly_name=friendly_name,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1431,23 +1099,7 @@ class WorkspaceList(ListResource):
 
         :returns: Page of WorkspaceInstance
         """
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return WorkspacePage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -1467,23 +1119,7 @@ class WorkspaceList(ListResource):
 
         :returns: Page of WorkspaceInstance
         """
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return WorkspacePage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -1503,24 +1139,7 @@ class WorkspaceList(ListResource):
 
         :returns: ApiResponse with WorkspacePage, status code, and headers
         """
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = WorkspacePage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1540,26 +1159,7 @@ class WorkspaceList(ListResource):
 
         :returns: ApiResponse with WorkspacePage, status code, and headers
         """
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = WorkspacePage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> WorkspacePage:
         """
@@ -1570,8 +1170,7 @@ class WorkspaceList(ListResource):
 
         :returns: Page of WorkspaceInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return WorkspacePage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> WorkspacePage:
         """
@@ -1582,8 +1181,7 @@ class WorkspaceList(ListResource):
 
         :returns: Page of WorkspaceInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return WorkspacePage(self._version, response)
+        pass
 
     def get(self, sid: str) -> WorkspaceContext:
         """
@@ -1591,7 +1189,7 @@ class WorkspaceList(ListResource):
 
         :param sid: The SID of the Workspace resource to update.
         """
-        return WorkspaceContext(self._version, sid=sid)
+        pass
 
     def __call__(self, sid: str) -> WorkspaceContext:
         """

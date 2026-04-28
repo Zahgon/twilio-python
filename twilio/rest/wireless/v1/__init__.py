@@ -37,27 +37,19 @@ class V1(Version):
 
     @property
     def commands(self) -> CommandList:
-        if self._commands is None:
-            self._commands = CommandList(self)
-        return self._commands
+        pass
 
     @property
     def rate_plans(self) -> RatePlanList:
-        if self._rate_plans is None:
-            self._rate_plans = RatePlanList(self)
-        return self._rate_plans
+        pass
 
     @property
     def sims(self) -> SimList:
-        if self._sims is None:
-            self._sims = SimList(self)
-        return self._sims
+        pass
 
     @property
     def usage_records(self) -> UsageRecordList:
-        if self._usage_records is None:
-            self._usage_records = UsageRecordList(self)
-        return self._usage_records
+        pass
 
     def __repr__(self) -> str:
         """

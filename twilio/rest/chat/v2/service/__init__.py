@@ -114,12 +114,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: ServiceContext for this ServiceInstance
         """
-        if self._context is None:
-            self._context = ServiceContext(
-                self._version,
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -128,7 +123,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -137,7 +132,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -146,7 +141,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -155,7 +150,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "ServiceInstance":
         """
@@ -164,7 +159,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: The fetched ServiceInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "ServiceInstance":
         """
@@ -173,7 +168,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: The fetched ServiceInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -182,7 +177,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -191,7 +186,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -266,39 +261,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: The updated ServiceInstance
         """
-        return self._proxy.update(
-            friendly_name=friendly_name,
-            default_service_role_sid=default_service_role_sid,
-            default_channel_role_sid=default_channel_role_sid,
-            default_channel_creator_role_sid=default_channel_creator_role_sid,
-            read_status_enabled=read_status_enabled,
-            reachability_enabled=reachability_enabled,
-            typing_indicator_timeout=typing_indicator_timeout,
-            consumption_report_interval=consumption_report_interval,
-            notifications_new_message_enabled=notifications_new_message_enabled,
-            notifications_new_message_template=notifications_new_message_template,
-            notifications_new_message_sound=notifications_new_message_sound,
-            notifications_new_message_badge_count_enabled=notifications_new_message_badge_count_enabled,
-            notifications_added_to_channel_enabled=notifications_added_to_channel_enabled,
-            notifications_added_to_channel_template=notifications_added_to_channel_template,
-            notifications_added_to_channel_sound=notifications_added_to_channel_sound,
-            notifications_removed_from_channel_enabled=notifications_removed_from_channel_enabled,
-            notifications_removed_from_channel_template=notifications_removed_from_channel_template,
-            notifications_removed_from_channel_sound=notifications_removed_from_channel_sound,
-            notifications_invited_to_channel_enabled=notifications_invited_to_channel_enabled,
-            notifications_invited_to_channel_template=notifications_invited_to_channel_template,
-            notifications_invited_to_channel_sound=notifications_invited_to_channel_sound,
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            webhook_method=webhook_method,
-            webhook_filters=webhook_filters,
-            limits_channel_members=limits_channel_members,
-            limits_user_channels=limits_user_channels,
-            media_compatibility_message=media_compatibility_message,
-            pre_webhook_retry_count=pre_webhook_retry_count,
-            post_webhook_retry_count=post_webhook_retry_count,
-            notifications_log_enabled=notifications_log_enabled,
-        )
+        pass
 
     async def update_async(
         self,
@@ -373,39 +336,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: The updated ServiceInstance
         """
-        return await self._proxy.update_async(
-            friendly_name=friendly_name,
-            default_service_role_sid=default_service_role_sid,
-            default_channel_role_sid=default_channel_role_sid,
-            default_channel_creator_role_sid=default_channel_creator_role_sid,
-            read_status_enabled=read_status_enabled,
-            reachability_enabled=reachability_enabled,
-            typing_indicator_timeout=typing_indicator_timeout,
-            consumption_report_interval=consumption_report_interval,
-            notifications_new_message_enabled=notifications_new_message_enabled,
-            notifications_new_message_template=notifications_new_message_template,
-            notifications_new_message_sound=notifications_new_message_sound,
-            notifications_new_message_badge_count_enabled=notifications_new_message_badge_count_enabled,
-            notifications_added_to_channel_enabled=notifications_added_to_channel_enabled,
-            notifications_added_to_channel_template=notifications_added_to_channel_template,
-            notifications_added_to_channel_sound=notifications_added_to_channel_sound,
-            notifications_removed_from_channel_enabled=notifications_removed_from_channel_enabled,
-            notifications_removed_from_channel_template=notifications_removed_from_channel_template,
-            notifications_removed_from_channel_sound=notifications_removed_from_channel_sound,
-            notifications_invited_to_channel_enabled=notifications_invited_to_channel_enabled,
-            notifications_invited_to_channel_template=notifications_invited_to_channel_template,
-            notifications_invited_to_channel_sound=notifications_invited_to_channel_sound,
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            webhook_method=webhook_method,
-            webhook_filters=webhook_filters,
-            limits_channel_members=limits_channel_members,
-            limits_user_channels=limits_user_channels,
-            media_compatibility_message=media_compatibility_message,
-            pre_webhook_retry_count=pre_webhook_retry_count,
-            post_webhook_retry_count=post_webhook_retry_count,
-            notifications_log_enabled=notifications_log_enabled,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -480,39 +411,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            friendly_name=friendly_name,
-            default_service_role_sid=default_service_role_sid,
-            default_channel_role_sid=default_channel_role_sid,
-            default_channel_creator_role_sid=default_channel_creator_role_sid,
-            read_status_enabled=read_status_enabled,
-            reachability_enabled=reachability_enabled,
-            typing_indicator_timeout=typing_indicator_timeout,
-            consumption_report_interval=consumption_report_interval,
-            notifications_new_message_enabled=notifications_new_message_enabled,
-            notifications_new_message_template=notifications_new_message_template,
-            notifications_new_message_sound=notifications_new_message_sound,
-            notifications_new_message_badge_count_enabled=notifications_new_message_badge_count_enabled,
-            notifications_added_to_channel_enabled=notifications_added_to_channel_enabled,
-            notifications_added_to_channel_template=notifications_added_to_channel_template,
-            notifications_added_to_channel_sound=notifications_added_to_channel_sound,
-            notifications_removed_from_channel_enabled=notifications_removed_from_channel_enabled,
-            notifications_removed_from_channel_template=notifications_removed_from_channel_template,
-            notifications_removed_from_channel_sound=notifications_removed_from_channel_sound,
-            notifications_invited_to_channel_enabled=notifications_invited_to_channel_enabled,
-            notifications_invited_to_channel_template=notifications_invited_to_channel_template,
-            notifications_invited_to_channel_sound=notifications_invited_to_channel_sound,
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            webhook_method=webhook_method,
-            webhook_filters=webhook_filters,
-            limits_channel_members=limits_channel_members,
-            limits_user_channels=limits_user_channels,
-            media_compatibility_message=media_compatibility_message,
-            pre_webhook_retry_count=pre_webhook_retry_count,
-            post_webhook_retry_count=post_webhook_retry_count,
-            notifications_log_enabled=notifications_log_enabled,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -587,67 +486,35 @@ class ServiceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            friendly_name=friendly_name,
-            default_service_role_sid=default_service_role_sid,
-            default_channel_role_sid=default_channel_role_sid,
-            default_channel_creator_role_sid=default_channel_creator_role_sid,
-            read_status_enabled=read_status_enabled,
-            reachability_enabled=reachability_enabled,
-            typing_indicator_timeout=typing_indicator_timeout,
-            consumption_report_interval=consumption_report_interval,
-            notifications_new_message_enabled=notifications_new_message_enabled,
-            notifications_new_message_template=notifications_new_message_template,
-            notifications_new_message_sound=notifications_new_message_sound,
-            notifications_new_message_badge_count_enabled=notifications_new_message_badge_count_enabled,
-            notifications_added_to_channel_enabled=notifications_added_to_channel_enabled,
-            notifications_added_to_channel_template=notifications_added_to_channel_template,
-            notifications_added_to_channel_sound=notifications_added_to_channel_sound,
-            notifications_removed_from_channel_enabled=notifications_removed_from_channel_enabled,
-            notifications_removed_from_channel_template=notifications_removed_from_channel_template,
-            notifications_removed_from_channel_sound=notifications_removed_from_channel_sound,
-            notifications_invited_to_channel_enabled=notifications_invited_to_channel_enabled,
-            notifications_invited_to_channel_template=notifications_invited_to_channel_template,
-            notifications_invited_to_channel_sound=notifications_invited_to_channel_sound,
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            webhook_method=webhook_method,
-            webhook_filters=webhook_filters,
-            limits_channel_members=limits_channel_members,
-            limits_user_channels=limits_user_channels,
-            media_compatibility_message=media_compatibility_message,
-            pre_webhook_retry_count=pre_webhook_retry_count,
-            post_webhook_retry_count=post_webhook_retry_count,
-            notifications_log_enabled=notifications_log_enabled,
-        )
+        pass
 
     @property
     def bindings(self) -> BindingList:
         """
         Access the bindings
         """
-        return self._proxy.bindings
+        pass
 
     @property
     def channels(self) -> ChannelList:
         """
         Access the channels
         """
-        return self._proxy.channels
+        pass
 
     @property
     def roles(self) -> RoleList:
         """
         Access the roles
         """
-        return self._proxy.roles
+        pass
 
     @property
     def users(self) -> UserList:
         """
         Access the users
         """
-        return self._proxy.users
+        pass
 
     def __repr__(self) -> str:
         """
@@ -688,12 +555,7 @@ class ServiceContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -702,8 +564,7 @@ class ServiceContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -712,8 +573,7 @@ class ServiceContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -722,12 +582,7 @@ class ServiceContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -736,8 +591,7 @@ class ServiceContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -746,8 +600,7 @@ class ServiceContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -756,14 +609,7 @@ class ServiceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> ServiceInstance:
         """
@@ -772,12 +618,7 @@ class ServiceContext(InstanceContext):
 
         :returns: The fetched ServiceInstance
         """
-        payload, _, _ = self._fetch()
-        return ServiceInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -786,13 +627,7 @@ class ServiceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = ServiceInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -801,14 +636,7 @@ class ServiceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> ServiceInstance:
         """
@@ -817,12 +645,7 @@ class ServiceContext(InstanceContext):
 
         :returns: The fetched ServiceInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return ServiceInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -831,13 +654,7 @@ class ServiceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = ServiceInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -881,65 +698,7 @@ class ServiceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "DefaultServiceRoleSid": default_service_role_sid,
-                "DefaultChannelRoleSid": default_channel_role_sid,
-                "DefaultChannelCreatorRoleSid": default_channel_creator_role_sid,
-                "ReadStatusEnabled": serialize.boolean_to_string(read_status_enabled),
-                "ReachabilityEnabled": serialize.boolean_to_string(
-                    reachability_enabled
-                ),
-                "TypingIndicatorTimeout": typing_indicator_timeout,
-                "ConsumptionReportInterval": consumption_report_interval,
-                "Notifications.NewMessage.Enabled": serialize.boolean_to_string(
-                    notifications_new_message_enabled
-                ),
-                "Notifications.NewMessage.Template": notifications_new_message_template,
-                "Notifications.NewMessage.Sound": notifications_new_message_sound,
-                "Notifications.NewMessage.BadgeCountEnabled": serialize.boolean_to_string(
-                    notifications_new_message_badge_count_enabled
-                ),
-                "Notifications.AddedToChannel.Enabled": serialize.boolean_to_string(
-                    notifications_added_to_channel_enabled
-                ),
-                "Notifications.AddedToChannel.Template": notifications_added_to_channel_template,
-                "Notifications.AddedToChannel.Sound": notifications_added_to_channel_sound,
-                "Notifications.RemovedFromChannel.Enabled": serialize.boolean_to_string(
-                    notifications_removed_from_channel_enabled
-                ),
-                "Notifications.RemovedFromChannel.Template": notifications_removed_from_channel_template,
-                "Notifications.RemovedFromChannel.Sound": notifications_removed_from_channel_sound,
-                "Notifications.InvitedToChannel.Enabled": serialize.boolean_to_string(
-                    notifications_invited_to_channel_enabled
-                ),
-                "Notifications.InvitedToChannel.Template": notifications_invited_to_channel_template,
-                "Notifications.InvitedToChannel.Sound": notifications_invited_to_channel_sound,
-                "PreWebhookUrl": pre_webhook_url,
-                "PostWebhookUrl": post_webhook_url,
-                "WebhookMethod": webhook_method,
-                "WebhookFilters": serialize.map(webhook_filters, lambda e: e),
-                "Limits.ChannelMembers": limits_channel_members,
-                "Limits.UserChannels": limits_user_channels,
-                "Media.CompatibilityMessage": media_compatibility_message,
-                "PreWebhookRetryCount": pre_webhook_retry_count,
-                "PostWebhookRetryCount": post_webhook_retry_count,
-                "Notifications.LogEnabled": serialize.boolean_to_string(
-                    notifications_log_enabled
-                ),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -1014,40 +773,7 @@ class ServiceContext(InstanceContext):
 
         :returns: The updated ServiceInstance
         """
-        payload, _, _ = self._update(
-            friendly_name=friendly_name,
-            default_service_role_sid=default_service_role_sid,
-            default_channel_role_sid=default_channel_role_sid,
-            default_channel_creator_role_sid=default_channel_creator_role_sid,
-            read_status_enabled=read_status_enabled,
-            reachability_enabled=reachability_enabled,
-            typing_indicator_timeout=typing_indicator_timeout,
-            consumption_report_interval=consumption_report_interval,
-            notifications_new_message_enabled=notifications_new_message_enabled,
-            notifications_new_message_template=notifications_new_message_template,
-            notifications_new_message_sound=notifications_new_message_sound,
-            notifications_new_message_badge_count_enabled=notifications_new_message_badge_count_enabled,
-            notifications_added_to_channel_enabled=notifications_added_to_channel_enabled,
-            notifications_added_to_channel_template=notifications_added_to_channel_template,
-            notifications_added_to_channel_sound=notifications_added_to_channel_sound,
-            notifications_removed_from_channel_enabled=notifications_removed_from_channel_enabled,
-            notifications_removed_from_channel_template=notifications_removed_from_channel_template,
-            notifications_removed_from_channel_sound=notifications_removed_from_channel_sound,
-            notifications_invited_to_channel_enabled=notifications_invited_to_channel_enabled,
-            notifications_invited_to_channel_template=notifications_invited_to_channel_template,
-            notifications_invited_to_channel_sound=notifications_invited_to_channel_sound,
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            webhook_method=webhook_method,
-            webhook_filters=webhook_filters,
-            limits_channel_members=limits_channel_members,
-            limits_user_channels=limits_user_channels,
-            media_compatibility_message=media_compatibility_message,
-            pre_webhook_retry_count=pre_webhook_retry_count,
-            post_webhook_retry_count=post_webhook_retry_count,
-            notifications_log_enabled=notifications_log_enabled,
-        )
-        return ServiceInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     def update_with_http_info(
         self,
@@ -1122,41 +848,7 @@ class ServiceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            friendly_name=friendly_name,
-            default_service_role_sid=default_service_role_sid,
-            default_channel_role_sid=default_channel_role_sid,
-            default_channel_creator_role_sid=default_channel_creator_role_sid,
-            read_status_enabled=read_status_enabled,
-            reachability_enabled=reachability_enabled,
-            typing_indicator_timeout=typing_indicator_timeout,
-            consumption_report_interval=consumption_report_interval,
-            notifications_new_message_enabled=notifications_new_message_enabled,
-            notifications_new_message_template=notifications_new_message_template,
-            notifications_new_message_sound=notifications_new_message_sound,
-            notifications_new_message_badge_count_enabled=notifications_new_message_badge_count_enabled,
-            notifications_added_to_channel_enabled=notifications_added_to_channel_enabled,
-            notifications_added_to_channel_template=notifications_added_to_channel_template,
-            notifications_added_to_channel_sound=notifications_added_to_channel_sound,
-            notifications_removed_from_channel_enabled=notifications_removed_from_channel_enabled,
-            notifications_removed_from_channel_template=notifications_removed_from_channel_template,
-            notifications_removed_from_channel_sound=notifications_removed_from_channel_sound,
-            notifications_invited_to_channel_enabled=notifications_invited_to_channel_enabled,
-            notifications_invited_to_channel_template=notifications_invited_to_channel_template,
-            notifications_invited_to_channel_sound=notifications_invited_to_channel_sound,
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            webhook_method=webhook_method,
-            webhook_filters=webhook_filters,
-            limits_channel_members=limits_channel_members,
-            limits_user_channels=limits_user_channels,
-            media_compatibility_message=media_compatibility_message,
-            pre_webhook_retry_count=pre_webhook_retry_count,
-            post_webhook_retry_count=post_webhook_retry_count,
-            notifications_log_enabled=notifications_log_enabled,
-        )
-        instance = ServiceInstance(self._version, payload, sid=self._solution["sid"])
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -1200,65 +892,7 @@ class ServiceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "DefaultServiceRoleSid": default_service_role_sid,
-                "DefaultChannelRoleSid": default_channel_role_sid,
-                "DefaultChannelCreatorRoleSid": default_channel_creator_role_sid,
-                "ReadStatusEnabled": serialize.boolean_to_string(read_status_enabled),
-                "ReachabilityEnabled": serialize.boolean_to_string(
-                    reachability_enabled
-                ),
-                "TypingIndicatorTimeout": typing_indicator_timeout,
-                "ConsumptionReportInterval": consumption_report_interval,
-                "Notifications.NewMessage.Enabled": serialize.boolean_to_string(
-                    notifications_new_message_enabled
-                ),
-                "Notifications.NewMessage.Template": notifications_new_message_template,
-                "Notifications.NewMessage.Sound": notifications_new_message_sound,
-                "Notifications.NewMessage.BadgeCountEnabled": serialize.boolean_to_string(
-                    notifications_new_message_badge_count_enabled
-                ),
-                "Notifications.AddedToChannel.Enabled": serialize.boolean_to_string(
-                    notifications_added_to_channel_enabled
-                ),
-                "Notifications.AddedToChannel.Template": notifications_added_to_channel_template,
-                "Notifications.AddedToChannel.Sound": notifications_added_to_channel_sound,
-                "Notifications.RemovedFromChannel.Enabled": serialize.boolean_to_string(
-                    notifications_removed_from_channel_enabled
-                ),
-                "Notifications.RemovedFromChannel.Template": notifications_removed_from_channel_template,
-                "Notifications.RemovedFromChannel.Sound": notifications_removed_from_channel_sound,
-                "Notifications.InvitedToChannel.Enabled": serialize.boolean_to_string(
-                    notifications_invited_to_channel_enabled
-                ),
-                "Notifications.InvitedToChannel.Template": notifications_invited_to_channel_template,
-                "Notifications.InvitedToChannel.Sound": notifications_invited_to_channel_sound,
-                "PreWebhookUrl": pre_webhook_url,
-                "PostWebhookUrl": post_webhook_url,
-                "WebhookMethod": webhook_method,
-                "WebhookFilters": serialize.map(webhook_filters, lambda e: e),
-                "Limits.ChannelMembers": limits_channel_members,
-                "Limits.UserChannels": limits_user_channels,
-                "Media.CompatibilityMessage": media_compatibility_message,
-                "PreWebhookRetryCount": pre_webhook_retry_count,
-                "PostWebhookRetryCount": post_webhook_retry_count,
-                "Notifications.LogEnabled": serialize.boolean_to_string(
-                    notifications_log_enabled
-                ),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -1333,40 +967,7 @@ class ServiceContext(InstanceContext):
 
         :returns: The updated ServiceInstance
         """
-        payload, _, _ = await self._update_async(
-            friendly_name=friendly_name,
-            default_service_role_sid=default_service_role_sid,
-            default_channel_role_sid=default_channel_role_sid,
-            default_channel_creator_role_sid=default_channel_creator_role_sid,
-            read_status_enabled=read_status_enabled,
-            reachability_enabled=reachability_enabled,
-            typing_indicator_timeout=typing_indicator_timeout,
-            consumption_report_interval=consumption_report_interval,
-            notifications_new_message_enabled=notifications_new_message_enabled,
-            notifications_new_message_template=notifications_new_message_template,
-            notifications_new_message_sound=notifications_new_message_sound,
-            notifications_new_message_badge_count_enabled=notifications_new_message_badge_count_enabled,
-            notifications_added_to_channel_enabled=notifications_added_to_channel_enabled,
-            notifications_added_to_channel_template=notifications_added_to_channel_template,
-            notifications_added_to_channel_sound=notifications_added_to_channel_sound,
-            notifications_removed_from_channel_enabled=notifications_removed_from_channel_enabled,
-            notifications_removed_from_channel_template=notifications_removed_from_channel_template,
-            notifications_removed_from_channel_sound=notifications_removed_from_channel_sound,
-            notifications_invited_to_channel_enabled=notifications_invited_to_channel_enabled,
-            notifications_invited_to_channel_template=notifications_invited_to_channel_template,
-            notifications_invited_to_channel_sound=notifications_invited_to_channel_sound,
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            webhook_method=webhook_method,
-            webhook_filters=webhook_filters,
-            limits_channel_members=limits_channel_members,
-            limits_user_channels=limits_user_channels,
-            media_compatibility_message=media_compatibility_message,
-            pre_webhook_retry_count=pre_webhook_retry_count,
-            post_webhook_retry_count=post_webhook_retry_count,
-            notifications_log_enabled=notifications_log_enabled,
-        )
-        return ServiceInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -1441,89 +1042,35 @@ class ServiceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            friendly_name=friendly_name,
-            default_service_role_sid=default_service_role_sid,
-            default_channel_role_sid=default_channel_role_sid,
-            default_channel_creator_role_sid=default_channel_creator_role_sid,
-            read_status_enabled=read_status_enabled,
-            reachability_enabled=reachability_enabled,
-            typing_indicator_timeout=typing_indicator_timeout,
-            consumption_report_interval=consumption_report_interval,
-            notifications_new_message_enabled=notifications_new_message_enabled,
-            notifications_new_message_template=notifications_new_message_template,
-            notifications_new_message_sound=notifications_new_message_sound,
-            notifications_new_message_badge_count_enabled=notifications_new_message_badge_count_enabled,
-            notifications_added_to_channel_enabled=notifications_added_to_channel_enabled,
-            notifications_added_to_channel_template=notifications_added_to_channel_template,
-            notifications_added_to_channel_sound=notifications_added_to_channel_sound,
-            notifications_removed_from_channel_enabled=notifications_removed_from_channel_enabled,
-            notifications_removed_from_channel_template=notifications_removed_from_channel_template,
-            notifications_removed_from_channel_sound=notifications_removed_from_channel_sound,
-            notifications_invited_to_channel_enabled=notifications_invited_to_channel_enabled,
-            notifications_invited_to_channel_template=notifications_invited_to_channel_template,
-            notifications_invited_to_channel_sound=notifications_invited_to_channel_sound,
-            pre_webhook_url=pre_webhook_url,
-            post_webhook_url=post_webhook_url,
-            webhook_method=webhook_method,
-            webhook_filters=webhook_filters,
-            limits_channel_members=limits_channel_members,
-            limits_user_channels=limits_user_channels,
-            media_compatibility_message=media_compatibility_message,
-            pre_webhook_retry_count=pre_webhook_retry_count,
-            post_webhook_retry_count=post_webhook_retry_count,
-            notifications_log_enabled=notifications_log_enabled,
-        )
-        instance = ServiceInstance(self._version, payload, sid=self._solution["sid"])
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def bindings(self) -> BindingList:
         """
         Access the bindings
         """
-        if self._bindings is None:
-            self._bindings = BindingList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._bindings
+        pass
 
     @property
     def channels(self) -> ChannelList:
         """
         Access the channels
         """
-        if self._channels is None:
-            self._channels = ChannelList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._channels
+        pass
 
     @property
     def roles(self) -> RoleList:
         """
         Access the roles
         """
-        if self._roles is None:
-            self._roles = RoleList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._roles
+        pass
 
     @property
     def users(self) -> UserList:
         """
         Access the users
         """
-        if self._users is None:
-            self._users = UserList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._users
+        pass
 
     def __repr__(self) -> str:
         """
@@ -1543,7 +1090,7 @@ class ServicePage(Page):
 
         :param payload: Payload response from the API
         """
-        return ServiceInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -1574,21 +1121,7 @@ class ServiceList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(self, friendly_name: str) -> ServiceInstance:
         """
@@ -1598,8 +1131,7 @@ class ServiceList(ListResource):
 
         :returns: The created ServiceInstance
         """
-        payload, _, _ = self._create(friendly_name=friendly_name)
-        return ServiceInstance(self._version, payload)
+        pass
 
     def create_with_http_info(self, friendly_name: str) -> ApiResponse:
         """
@@ -1609,9 +1141,7 @@ class ServiceList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(friendly_name=friendly_name)
-        instance = ServiceInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self, friendly_name: str) -> tuple:
         """
@@ -1620,21 +1150,7 @@ class ServiceList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(self, friendly_name: str) -> ServiceInstance:
         """
@@ -1644,8 +1160,7 @@ class ServiceList(ListResource):
 
         :returns: The created ServiceInstance
         """
-        payload, _, _ = await self._create_async(friendly_name=friendly_name)
-        return ServiceInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(self, friendly_name: str) -> ApiResponse:
         """
@@ -1655,11 +1170,7 @@ class ServiceList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            friendly_name=friendly_name
-        )
-        instance = ServiceInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -1681,10 +1192,7 @@ class ServiceList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -1706,10 +1214,7 @@ class ServiceList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -1729,11 +1234,7 @@ class ServiceList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -1753,13 +1254,7 @@ class ServiceList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -1780,12 +1275,7 @@ class ServiceList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -1806,13 +1296,7 @@ class ServiceList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -1832,12 +1316,7 @@ class ServiceList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1857,12 +1336,7 @@ class ServiceList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1880,22 +1354,7 @@ class ServiceList(ListResource):
 
         :returns: Page of ServiceInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ServicePage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -1913,22 +1372,7 @@ class ServiceList(ListResource):
 
         :returns: Page of ServiceInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ServicePage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -1946,23 +1390,7 @@ class ServiceList(ListResource):
 
         :returns: ApiResponse with ServicePage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = ServicePage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1980,25 +1408,7 @@ class ServiceList(ListResource):
 
         :returns: ApiResponse with ServicePage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = ServicePage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> ServicePage:
         """
@@ -2009,8 +1419,7 @@ class ServiceList(ListResource):
 
         :returns: Page of ServiceInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return ServicePage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> ServicePage:
         """
@@ -2021,8 +1430,7 @@ class ServiceList(ListResource):
 
         :returns: Page of ServiceInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return ServicePage(self._version, response)
+        pass
 
     def get(self, sid: str) -> ServiceContext:
         """
@@ -2030,7 +1438,7 @@ class ServiceList(ListResource):
 
         :param sid: The SID of the Service resource to update.
         """
-        return ServiceContext(self._version, sid=sid)
+        pass
 
     def __call__(self, sid: str) -> ServiceContext:
         """

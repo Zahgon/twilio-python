@@ -74,13 +74,7 @@ class BalanceList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> BalanceInstance:
         """
@@ -89,10 +83,7 @@ class BalanceList(ListResource):
 
         :returns: The fetched BalanceInstance
         """
-        payload, _, _ = self._fetch()
-        return BalanceInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -101,11 +92,7 @@ class BalanceList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = BalanceInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -114,13 +101,7 @@ class BalanceList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> BalanceInstance:
         """
@@ -129,10 +110,7 @@ class BalanceList(ListResource):
 
         :returns: The fetched BalanceInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return BalanceInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -141,11 +119,7 @@ class BalanceList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = BalanceInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

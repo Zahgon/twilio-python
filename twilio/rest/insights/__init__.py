@@ -11,45 +11,20 @@ from twilio.rest.insights.v1.setting import SettingList
 class Insights(InsightsBase):
     @property
     def settings(self) -> SettingList:
-        warn(
-            "settings is deprecated. Use v1.settings instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.settings
+        pass
 
     @property
     def calls(self) -> CallList:
-        warn(
-            "calls is deprecated. Use v1.calls instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.calls
+        pass
 
     @property
     def call_summaries(self) -> CallSummariesList:
-        warn(
-            "call_summaries is deprecated. Use v1.call_summaries instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.call_summaries
+        pass
 
     @property
     def conferences(self) -> ConferenceList:
-        warn(
-            "conferences is deprecated. Use v1.conferences instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.conferences
+        pass
 
     @property
     def rooms(self) -> RoomList:
-        warn(
-            "rooms is deprecated. Use v1.rooms instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.rooms
+        pass

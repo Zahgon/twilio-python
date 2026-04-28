@@ -76,12 +76,7 @@ class DomainCertsInstance(InstanceResource):
 
         :returns: DomainCertsContext for this DomainCertsInstance
         """
-        if self._context is None:
-            self._context = DomainCertsContext(
-                self._version,
-                domain_sid=self._solution["domain_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "DomainCertsInstance":
         """
@@ -90,7 +85,7 @@ class DomainCertsInstance(InstanceResource):
 
         :returns: The fetched DomainCertsInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "DomainCertsInstance":
         """
@@ -99,7 +94,7 @@ class DomainCertsInstance(InstanceResource):
 
         :returns: The fetched DomainCertsInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -108,7 +103,7 @@ class DomainCertsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -117,7 +112,7 @@ class DomainCertsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -155,14 +150,7 @@ class DomainCertsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> DomainCertsInstance:
         """
@@ -171,12 +159,7 @@ class DomainCertsContext(InstanceContext):
 
         :returns: The fetched DomainCertsInstance
         """
-        payload, _, _ = self._fetch()
-        return DomainCertsInstance(
-            self._version,
-            payload,
-            domain_sid=self._solution["domain_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -185,13 +168,7 @@ class DomainCertsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = DomainCertsInstance(
-            self._version,
-            payload,
-            domain_sid=self._solution["domain_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -200,14 +177,7 @@ class DomainCertsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> DomainCertsInstance:
         """
@@ -216,12 +186,7 @@ class DomainCertsContext(InstanceContext):
 
         :returns: The fetched DomainCertsInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return DomainCertsInstance(
-            self._version,
-            payload,
-            domain_sid=self._solution["domain_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -230,13 +195,7 @@ class DomainCertsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = DomainCertsInstance(
-            self._version,
-            payload,
-            domain_sid=self._solution["domain_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -265,7 +224,7 @@ class DomainCertsList(ListResource):
 
         :param domain_sid: Unique string used to identify the domain that this certificate should be associated with.
         """
-        return DomainCertsContext(self._version, domain_sid=domain_sid)
+        pass
 
     def __call__(self, domain_sid: str) -> DomainCertsContext:
         """

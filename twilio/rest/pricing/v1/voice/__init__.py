@@ -43,18 +43,14 @@ class VoiceList(ListResource):
         """
         Access the countries
         """
-        if self._countries is None:
-            self._countries = CountryList(self._version)
-        return self._countries
+        pass
 
     @property
     def numbers(self) -> NumberList:
         """
         Access the numbers
         """
-        if self._numbers is None:
-            self._numbers = NumberList(self._version)
-        return self._numbers
+        pass
 
     def __repr__(self) -> str:
         """

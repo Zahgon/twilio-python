@@ -31,9 +31,7 @@ class V3(Version):
 
     @property
     def typing_indicator(self) -> TypingIndicatorList:
-        if self._typing_indicator is None:
-            self._typing_indicator = TypingIndicatorList(self)
-        return self._typing_indicator
+        pass
 
     def __repr__(self) -> str:
         """

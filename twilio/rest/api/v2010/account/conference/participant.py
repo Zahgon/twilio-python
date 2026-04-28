@@ -100,14 +100,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ParticipantContext for this ParticipantInstance
         """
-        if self._context is None:
-            self._context = ParticipantContext(
-                self._version,
-                account_sid=self._solution["account_sid"],
-                conference_sid=self._solution["conference_sid"],
-                call_sid=self._solution["call_sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -116,7 +109,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -125,7 +118,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -134,7 +127,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -143,7 +136,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "ParticipantInstance":
         """
@@ -152,7 +145,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: The fetched ParticipantInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "ParticipantInstance":
         """
@@ -161,7 +154,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: The fetched ParticipantInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -170,7 +163,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -179,7 +172,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -214,20 +207,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: The updated ParticipantInstance
         """
-        return self._proxy.update(
-            muted=muted,
-            hold=hold,
-            hold_url=hold_url,
-            hold_method=hold_method,
-            announce_url=announce_url,
-            announce_method=announce_method,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            beep_on_exit=beep_on_exit,
-            end_conference_on_exit=end_conference_on_exit,
-            coaching=coaching,
-            call_sid_to_coach=call_sid_to_coach,
-        )
+        pass
 
     async def update_async(
         self,
@@ -262,20 +242,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: The updated ParticipantInstance
         """
-        return await self._proxy.update_async(
-            muted=muted,
-            hold=hold,
-            hold_url=hold_url,
-            hold_method=hold_method,
-            announce_url=announce_url,
-            announce_method=announce_method,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            beep_on_exit=beep_on_exit,
-            end_conference_on_exit=end_conference_on_exit,
-            coaching=coaching,
-            call_sid_to_coach=call_sid_to_coach,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -310,20 +277,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            muted=muted,
-            hold=hold,
-            hold_url=hold_url,
-            hold_method=hold_method,
-            announce_url=announce_url,
-            announce_method=announce_method,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            beep_on_exit=beep_on_exit,
-            end_conference_on_exit=end_conference_on_exit,
-            coaching=coaching,
-            call_sid_to_coach=call_sid_to_coach,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -358,20 +312,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            muted=muted,
-            hold=hold,
-            hold_url=hold_url,
-            hold_method=hold_method,
-            announce_url=announce_url,
-            announce_method=announce_method,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            beep_on_exit=beep_on_exit,
-            end_conference_on_exit=end_conference_on_exit,
-            coaching=coaching,
-            call_sid_to_coach=call_sid_to_coach,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -415,12 +356,7 @@ class ParticipantContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -429,8 +365,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -439,8 +374,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -449,12 +383,7 @@ class ParticipantContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -463,8 +392,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -473,8 +401,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -483,14 +410,7 @@ class ParticipantContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> ParticipantInstance:
         """
@@ -499,14 +419,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: The fetched ParticipantInstance
         """
-        payload, _, _ = self._fetch()
-        return ParticipantInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -515,15 +428,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = ParticipantInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -532,14 +437,7 @@ class ParticipantContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> ParticipantInstance:
         """
@@ -548,14 +446,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: The fetched ParticipantInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return ParticipantInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -564,15 +455,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = ParticipantInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -595,34 +478,7 @@ class ParticipantContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Muted": serialize.boolean_to_string(muted),
-                "Hold": serialize.boolean_to_string(hold),
-                "HoldUrl": hold_url,
-                "HoldMethod": hold_method,
-                "AnnounceUrl": announce_url,
-                "AnnounceMethod": announce_method,
-                "WaitUrl": wait_url,
-                "WaitMethod": wait_method,
-                "BeepOnExit": serialize.boolean_to_string(beep_on_exit),
-                "EndConferenceOnExit": serialize.boolean_to_string(
-                    end_conference_on_exit
-                ),
-                "Coaching": serialize.boolean_to_string(coaching),
-                "CallSidToCoach": call_sid_to_coach,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -657,27 +513,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: The updated ParticipantInstance
         """
-        payload, _, _ = self._update(
-            muted=muted,
-            hold=hold,
-            hold_url=hold_url,
-            hold_method=hold_method,
-            announce_url=announce_url,
-            announce_method=announce_method,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            beep_on_exit=beep_on_exit,
-            end_conference_on_exit=end_conference_on_exit,
-            coaching=coaching,
-            call_sid_to_coach=call_sid_to_coach,
-        )
-        return ParticipantInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -712,28 +548,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            muted=muted,
-            hold=hold,
-            hold_url=hold_url,
-            hold_method=hold_method,
-            announce_url=announce_url,
-            announce_method=announce_method,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            beep_on_exit=beep_on_exit,
-            end_conference_on_exit=end_conference_on_exit,
-            coaching=coaching,
-            call_sid_to_coach=call_sid_to_coach,
-        )
-        instance = ParticipantInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -756,34 +571,7 @@ class ParticipantContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Muted": serialize.boolean_to_string(muted),
-                "Hold": serialize.boolean_to_string(hold),
-                "HoldUrl": hold_url,
-                "HoldMethod": hold_method,
-                "AnnounceUrl": announce_url,
-                "AnnounceMethod": announce_method,
-                "WaitUrl": wait_url,
-                "WaitMethod": wait_method,
-                "BeepOnExit": serialize.boolean_to_string(beep_on_exit),
-                "EndConferenceOnExit": serialize.boolean_to_string(
-                    end_conference_on_exit
-                ),
-                "Coaching": serialize.boolean_to_string(coaching),
-                "CallSidToCoach": call_sid_to_coach,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -818,27 +606,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: The updated ParticipantInstance
         """
-        payload, _, _ = await self._update_async(
-            muted=muted,
-            hold=hold,
-            hold_url=hold_url,
-            hold_method=hold_method,
-            announce_url=announce_url,
-            announce_method=announce_method,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            beep_on_exit=beep_on_exit,
-            end_conference_on_exit=end_conference_on_exit,
-            coaching=coaching,
-            call_sid_to_coach=call_sid_to_coach,
-        )
-        return ParticipantInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -873,28 +641,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            muted=muted,
-            hold=hold,
-            hold_url=hold_url,
-            hold_method=hold_method,
-            announce_url=announce_url,
-            announce_method=announce_method,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            beep_on_exit=beep_on_exit,
-            end_conference_on_exit=end_conference_on_exit,
-            coaching=coaching,
-            call_sid_to_coach=call_sid_to_coach,
-        )
-        instance = ParticipantInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -914,12 +661,7 @@ class ParticipantPage(Page):
 
         :param payload: Payload response from the API
         """
-        return ParticipantInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -1013,82 +755,7 @@ class ParticipantList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "From": from_,
-                "To": to,
-                "StatusCallback": status_callback,
-                "StatusCallbackMethod": status_callback_method,
-                "StatusCallbackEvent": serialize.map(
-                    status_callback_event, lambda e: e
-                ),
-                "Label": label,
-                "Timeout": timeout,
-                "Record": serialize.boolean_to_string(record),
-                "Muted": serialize.boolean_to_string(muted),
-                "Beep": beep,
-                "StartConferenceOnEnter": serialize.boolean_to_string(
-                    start_conference_on_enter
-                ),
-                "EndConferenceOnExit": serialize.boolean_to_string(
-                    end_conference_on_exit
-                ),
-                "WaitUrl": wait_url,
-                "WaitMethod": wait_method,
-                "EarlyMedia": serialize.boolean_to_string(early_media),
-                "MaxParticipants": max_participants,
-                "ConferenceRecord": conference_record,
-                "ConferenceTrim": conference_trim,
-                "ConferenceStatusCallback": conference_status_callback,
-                "ConferenceStatusCallbackMethod": conference_status_callback_method,
-                "ConferenceStatusCallbackEvent": serialize.map(
-                    conference_status_callback_event, lambda e: e
-                ),
-                "RecordingChannels": recording_channels,
-                "RecordingStatusCallback": recording_status_callback,
-                "RecordingStatusCallbackMethod": recording_status_callback_method,
-                "SipAuthUsername": sip_auth_username,
-                "SipAuthPassword": sip_auth_password,
-                "Region": region,
-                "ConferenceRecordingStatusCallback": conference_recording_status_callback,
-                "ConferenceRecordingStatusCallbackMethod": conference_recording_status_callback_method,
-                "RecordingStatusCallbackEvent": serialize.map(
-                    recording_status_callback_event, lambda e: e
-                ),
-                "ConferenceRecordingStatusCallbackEvent": serialize.map(
-                    conference_recording_status_callback_event, lambda e: e
-                ),
-                "Coaching": serialize.boolean_to_string(coaching),
-                "CallSidToCoach": call_sid_to_coach,
-                "JitterBufferSize": jitter_buffer_size,
-                "Byoc": byoc,
-                "CallerId": caller_id,
-                "CallReason": call_reason,
-                "RecordingTrack": recording_track,
-                "TimeLimit": time_limit,
-                "MachineDetection": machine_detection,
-                "MachineDetectionTimeout": machine_detection_timeout,
-                "MachineDetectionSpeechThreshold": machine_detection_speech_threshold,
-                "MachineDetectionSpeechEndThreshold": machine_detection_speech_end_threshold,
-                "MachineDetectionSilenceTimeout": machine_detection_silence_timeout,
-                "AmdStatusCallback": amd_status_callback,
-                "AmdStatusCallbackMethod": amd_status_callback_method,
-                "Trim": trim,
-                "CallToken": call_token,
-                "ClientNotificationUrl": client_notification_url,
-                "CallerDisplayName": caller_display_name,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -1201,64 +868,7 @@ class ParticipantList(ListResource):
 
         :returns: The created ParticipantInstance
         """
-        payload, _, _ = self._create(
-            from_=from_,
-            to=to,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            status_callback_event=status_callback_event,
-            label=label,
-            timeout=timeout,
-            record=record,
-            muted=muted,
-            beep=beep,
-            start_conference_on_enter=start_conference_on_enter,
-            end_conference_on_exit=end_conference_on_exit,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            early_media=early_media,
-            max_participants=max_participants,
-            conference_record=conference_record,
-            conference_trim=conference_trim,
-            conference_status_callback=conference_status_callback,
-            conference_status_callback_method=conference_status_callback_method,
-            conference_status_callback_event=conference_status_callback_event,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            region=region,
-            conference_recording_status_callback=conference_recording_status_callback,
-            conference_recording_status_callback_method=conference_recording_status_callback_method,
-            recording_status_callback_event=recording_status_callback_event,
-            conference_recording_status_callback_event=conference_recording_status_callback_event,
-            coaching=coaching,
-            call_sid_to_coach=call_sid_to_coach,
-            jitter_buffer_size=jitter_buffer_size,
-            byoc=byoc,
-            caller_id=caller_id,
-            call_reason=call_reason,
-            recording_track=recording_track,
-            time_limit=time_limit,
-            machine_detection=machine_detection,
-            machine_detection_timeout=machine_detection_timeout,
-            machine_detection_speech_threshold=machine_detection_speech_threshold,
-            machine_detection_speech_end_threshold=machine_detection_speech_end_threshold,
-            machine_detection_silence_timeout=machine_detection_silence_timeout,
-            amd_status_callback=amd_status_callback,
-            amd_status_callback_method=amd_status_callback_method,
-            trim=trim,
-            call_token=call_token,
-            client_notification_url=client_notification_url,
-            caller_display_name=caller_display_name,
-        )
-        return ParticipantInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -1371,65 +981,7 @@ class ParticipantList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            from_=from_,
-            to=to,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            status_callback_event=status_callback_event,
-            label=label,
-            timeout=timeout,
-            record=record,
-            muted=muted,
-            beep=beep,
-            start_conference_on_enter=start_conference_on_enter,
-            end_conference_on_exit=end_conference_on_exit,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            early_media=early_media,
-            max_participants=max_participants,
-            conference_record=conference_record,
-            conference_trim=conference_trim,
-            conference_status_callback=conference_status_callback,
-            conference_status_callback_method=conference_status_callback_method,
-            conference_status_callback_event=conference_status_callback_event,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            region=region,
-            conference_recording_status_callback=conference_recording_status_callback,
-            conference_recording_status_callback_method=conference_recording_status_callback_method,
-            recording_status_callback_event=recording_status_callback_event,
-            conference_recording_status_callback_event=conference_recording_status_callback_event,
-            coaching=coaching,
-            call_sid_to_coach=call_sid_to_coach,
-            jitter_buffer_size=jitter_buffer_size,
-            byoc=byoc,
-            caller_id=caller_id,
-            call_reason=call_reason,
-            recording_track=recording_track,
-            time_limit=time_limit,
-            machine_detection=machine_detection,
-            machine_detection_timeout=machine_detection_timeout,
-            machine_detection_speech_threshold=machine_detection_speech_threshold,
-            machine_detection_speech_end_threshold=machine_detection_speech_end_threshold,
-            machine_detection_silence_timeout=machine_detection_silence_timeout,
-            amd_status_callback=amd_status_callback,
-            amd_status_callback_method=amd_status_callback_method,
-            trim=trim,
-            call_token=call_token,
-            client_notification_url=client_notification_url,
-            caller_display_name=caller_display_name,
-        )
-        instance = ParticipantInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -1492,82 +1044,7 @@ class ParticipantList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "From": from_,
-                "To": to,
-                "StatusCallback": status_callback,
-                "StatusCallbackMethod": status_callback_method,
-                "StatusCallbackEvent": serialize.map(
-                    status_callback_event, lambda e: e
-                ),
-                "Label": label,
-                "Timeout": timeout,
-                "Record": serialize.boolean_to_string(record),
-                "Muted": serialize.boolean_to_string(muted),
-                "Beep": beep,
-                "StartConferenceOnEnter": serialize.boolean_to_string(
-                    start_conference_on_enter
-                ),
-                "EndConferenceOnExit": serialize.boolean_to_string(
-                    end_conference_on_exit
-                ),
-                "WaitUrl": wait_url,
-                "WaitMethod": wait_method,
-                "EarlyMedia": serialize.boolean_to_string(early_media),
-                "MaxParticipants": max_participants,
-                "ConferenceRecord": conference_record,
-                "ConferenceTrim": conference_trim,
-                "ConferenceStatusCallback": conference_status_callback,
-                "ConferenceStatusCallbackMethod": conference_status_callback_method,
-                "ConferenceStatusCallbackEvent": serialize.map(
-                    conference_status_callback_event, lambda e: e
-                ),
-                "RecordingChannels": recording_channels,
-                "RecordingStatusCallback": recording_status_callback,
-                "RecordingStatusCallbackMethod": recording_status_callback_method,
-                "SipAuthUsername": sip_auth_username,
-                "SipAuthPassword": sip_auth_password,
-                "Region": region,
-                "ConferenceRecordingStatusCallback": conference_recording_status_callback,
-                "ConferenceRecordingStatusCallbackMethod": conference_recording_status_callback_method,
-                "RecordingStatusCallbackEvent": serialize.map(
-                    recording_status_callback_event, lambda e: e
-                ),
-                "ConferenceRecordingStatusCallbackEvent": serialize.map(
-                    conference_recording_status_callback_event, lambda e: e
-                ),
-                "Coaching": serialize.boolean_to_string(coaching),
-                "CallSidToCoach": call_sid_to_coach,
-                "JitterBufferSize": jitter_buffer_size,
-                "Byoc": byoc,
-                "CallerId": caller_id,
-                "CallReason": call_reason,
-                "RecordingTrack": recording_track,
-                "TimeLimit": time_limit,
-                "MachineDetection": machine_detection,
-                "MachineDetectionTimeout": machine_detection_timeout,
-                "MachineDetectionSpeechThreshold": machine_detection_speech_threshold,
-                "MachineDetectionSpeechEndThreshold": machine_detection_speech_end_threshold,
-                "MachineDetectionSilenceTimeout": machine_detection_silence_timeout,
-                "AmdStatusCallback": amd_status_callback,
-                "AmdStatusCallbackMethod": amd_status_callback_method,
-                "Trim": trim,
-                "CallToken": call_token,
-                "ClientNotificationUrl": client_notification_url,
-                "CallerDisplayName": caller_display_name,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -1680,64 +1157,7 @@ class ParticipantList(ListResource):
 
         :returns: The created ParticipantInstance
         """
-        payload, _, _ = await self._create_async(
-            from_=from_,
-            to=to,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            status_callback_event=status_callback_event,
-            label=label,
-            timeout=timeout,
-            record=record,
-            muted=muted,
-            beep=beep,
-            start_conference_on_enter=start_conference_on_enter,
-            end_conference_on_exit=end_conference_on_exit,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            early_media=early_media,
-            max_participants=max_participants,
-            conference_record=conference_record,
-            conference_trim=conference_trim,
-            conference_status_callback=conference_status_callback,
-            conference_status_callback_method=conference_status_callback_method,
-            conference_status_callback_event=conference_status_callback_event,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            region=region,
-            conference_recording_status_callback=conference_recording_status_callback,
-            conference_recording_status_callback_method=conference_recording_status_callback_method,
-            recording_status_callback_event=recording_status_callback_event,
-            conference_recording_status_callback_event=conference_recording_status_callback_event,
-            coaching=coaching,
-            call_sid_to_coach=call_sid_to_coach,
-            jitter_buffer_size=jitter_buffer_size,
-            byoc=byoc,
-            caller_id=caller_id,
-            call_reason=call_reason,
-            recording_track=recording_track,
-            time_limit=time_limit,
-            machine_detection=machine_detection,
-            machine_detection_timeout=machine_detection_timeout,
-            machine_detection_speech_threshold=machine_detection_speech_threshold,
-            machine_detection_speech_end_threshold=machine_detection_speech_end_threshold,
-            machine_detection_silence_timeout=machine_detection_silence_timeout,
-            amd_status_callback=amd_status_callback,
-            amd_status_callback_method=amd_status_callback_method,
-            trim=trim,
-            call_token=call_token,
-            client_notification_url=client_notification_url,
-            caller_display_name=caller_display_name,
-        )
-        return ParticipantInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -1850,65 +1270,7 @@ class ParticipantList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            from_=from_,
-            to=to,
-            status_callback=status_callback,
-            status_callback_method=status_callback_method,
-            status_callback_event=status_callback_event,
-            label=label,
-            timeout=timeout,
-            record=record,
-            muted=muted,
-            beep=beep,
-            start_conference_on_enter=start_conference_on_enter,
-            end_conference_on_exit=end_conference_on_exit,
-            wait_url=wait_url,
-            wait_method=wait_method,
-            early_media=early_media,
-            max_participants=max_participants,
-            conference_record=conference_record,
-            conference_trim=conference_trim,
-            conference_status_callback=conference_status_callback,
-            conference_status_callback_method=conference_status_callback_method,
-            conference_status_callback_event=conference_status_callback_event,
-            recording_channels=recording_channels,
-            recording_status_callback=recording_status_callback,
-            recording_status_callback_method=recording_status_callback_method,
-            sip_auth_username=sip_auth_username,
-            sip_auth_password=sip_auth_password,
-            region=region,
-            conference_recording_status_callback=conference_recording_status_callback,
-            conference_recording_status_callback_method=conference_recording_status_callback_method,
-            recording_status_callback_event=recording_status_callback_event,
-            conference_recording_status_callback_event=conference_recording_status_callback_event,
-            coaching=coaching,
-            call_sid_to_coach=call_sid_to_coach,
-            jitter_buffer_size=jitter_buffer_size,
-            byoc=byoc,
-            caller_id=caller_id,
-            call_reason=call_reason,
-            recording_track=recording_track,
-            time_limit=time_limit,
-            machine_detection=machine_detection,
-            machine_detection_timeout=machine_detection_timeout,
-            machine_detection_speech_threshold=machine_detection_speech_threshold,
-            machine_detection_speech_end_threshold=machine_detection_speech_end_threshold,
-            machine_detection_silence_timeout=machine_detection_silence_timeout,
-            amd_status_callback=amd_status_callback,
-            amd_status_callback_method=amd_status_callback_method,
-            trim=trim,
-            call_token=call_token,
-            client_notification_url=client_notification_url,
-            caller_display_name=caller_display_name,
-        )
-        instance = ParticipantInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -1936,12 +1298,7 @@ class ParticipantList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            muted=muted, hold=hold, coaching=coaching, page_size=limits["page_size"]
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -1969,12 +1326,7 @@ class ParticipantList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            muted=muted, hold=hold, coaching=coaching, page_size=limits["page_size"]
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -2000,13 +1352,7 @@ class ParticipantList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            muted=muted, hold=hold, coaching=coaching, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -2032,13 +1378,7 @@ class ParticipantList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            muted=muted, hold=hold, coaching=coaching, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -2065,15 +1405,7 @@ class ParticipantList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                muted=muted,
-                hold=hold,
-                coaching=coaching,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -2100,16 +1432,7 @@ class ParticipantList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                muted=muted,
-                hold=hold,
-                coaching=coaching,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -2135,15 +1458,7 @@ class ParticipantList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            muted=muted,
-            hold=hold,
-            coaching=coaching,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -2169,15 +1484,7 @@ class ParticipantList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            muted=muted,
-            hold=hold,
-            coaching=coaching,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -2201,25 +1508,7 @@ class ParticipantList(ListResource):
 
         :returns: Page of ParticipantInstance
         """
-        data = values.of(
-            {
-                "Muted": serialize.boolean_to_string(muted),
-                "Hold": serialize.boolean_to_string(hold),
-                "Coaching": serialize.boolean_to_string(coaching),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ParticipantPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -2243,25 +1532,7 @@ class ParticipantList(ListResource):
 
         :returns: Page of ParticipantInstance
         """
-        data = values.of(
-            {
-                "Muted": serialize.boolean_to_string(muted),
-                "Hold": serialize.boolean_to_string(hold),
-                "Coaching": serialize.boolean_to_string(coaching),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ParticipantPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -2285,26 +1556,7 @@ class ParticipantList(ListResource):
 
         :returns: ApiResponse with ParticipantPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Muted": serialize.boolean_to_string(muted),
-                "Hold": serialize.boolean_to_string(hold),
-                "Coaching": serialize.boolean_to_string(coaching),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = ParticipantPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -2328,28 +1580,7 @@ class ParticipantList(ListResource):
 
         :returns: ApiResponse with ParticipantPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Muted": serialize.boolean_to_string(muted),
-                "Hold": serialize.boolean_to_string(hold),
-                "Coaching": serialize.boolean_to_string(coaching),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = ParticipantPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> ParticipantPage:
         """
@@ -2360,8 +1591,7 @@ class ParticipantList(ListResource):
 
         :returns: Page of ParticipantInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return ParticipantPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> ParticipantPage:
         """
@@ -2372,8 +1602,7 @@ class ParticipantList(ListResource):
 
         :returns: Page of ParticipantInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return ParticipantPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, call_sid: str) -> ParticipantContext:
         """
@@ -2381,12 +1610,7 @@ class ParticipantList(ListResource):
 
         :param call_sid: The [Call](https://www.twilio.com/docs/voice/api/call-resource) SID or label of the participant to update. Non URL safe characters in a label must be percent encoded, for example, a space character is represented as %20.
         """
-        return ParticipantContext(
-            self._version,
-            account_sid=self._solution["account_sid"],
-            conference_sid=self._solution["conference_sid"],
-            call_sid=call_sid,
-        )
+        pass
 
     def __call__(self, call_sid: str) -> ParticipantContext:
         """

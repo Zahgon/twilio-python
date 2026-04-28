@@ -121,12 +121,7 @@ class WorkspaceCumulativeStatisticsInstance(InstanceResource):
 
         :returns: WorkspaceCumulativeStatisticsContext for this WorkspaceCumulativeStatisticsInstance
         """
-        if self._context is None:
-            self._context = WorkspaceCumulativeStatisticsContext(
-                self._version,
-                workspace_sid=self._solution["workspace_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(
         self,
@@ -147,13 +142,7 @@ class WorkspaceCumulativeStatisticsInstance(InstanceResource):
 
         :returns: The fetched WorkspaceCumulativeStatisticsInstance
         """
-        return self._proxy.fetch(
-            end_date=end_date,
-            minutes=minutes,
-            start_date=start_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -174,13 +163,7 @@ class WorkspaceCumulativeStatisticsInstance(InstanceResource):
 
         :returns: The fetched WorkspaceCumulativeStatisticsInstance
         """
-        return await self._proxy.fetch_async(
-            end_date=end_date,
-            minutes=minutes,
-            start_date=start_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
+        pass
 
     def fetch_with_http_info(
         self,
@@ -201,13 +184,7 @@ class WorkspaceCumulativeStatisticsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            end_date=end_date,
-            minutes=minutes,
-            start_date=start_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self,
@@ -228,13 +205,7 @@ class WorkspaceCumulativeStatisticsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            end_date=end_date,
-            minutes=minutes,
-            start_date=start_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -281,24 +252,7 @@ class WorkspaceCumulativeStatisticsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "EndDate": serialize.iso8601_datetime(end_date),
-                "Minutes": minutes,
-                "StartDate": serialize.iso8601_datetime(start_date),
-                "TaskChannel": task_channel,
-                "SplitByWaitTime": split_by_wait_time,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(
         self,
@@ -319,18 +273,7 @@ class WorkspaceCumulativeStatisticsContext(InstanceContext):
 
         :returns: The fetched WorkspaceCumulativeStatisticsInstance
         """
-        payload, _, _ = self._fetch(
-            end_date=end_date,
-            minutes=minutes,
-            start_date=start_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
-        return WorkspaceCumulativeStatisticsInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-        )
+        pass
 
     def fetch_with_http_info(
         self,
@@ -351,19 +294,7 @@ class WorkspaceCumulativeStatisticsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(
-            end_date=end_date,
-            minutes=minutes,
-            start_date=start_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
-        instance = WorkspaceCumulativeStatisticsInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self,
@@ -379,24 +310,7 @@ class WorkspaceCumulativeStatisticsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "EndDate": serialize.iso8601_datetime(end_date),
-                "Minutes": minutes,
-                "StartDate": serialize.iso8601_datetime(start_date),
-                "TaskChannel": task_channel,
-                "SplitByWaitTime": split_by_wait_time,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -417,18 +331,7 @@ class WorkspaceCumulativeStatisticsContext(InstanceContext):
 
         :returns: The fetched WorkspaceCumulativeStatisticsInstance
         """
-        payload, _, _ = await self._fetch_async(
-            end_date=end_date,
-            minutes=minutes,
-            start_date=start_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
-        return WorkspaceCumulativeStatisticsInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self,
@@ -449,19 +352,7 @@ class WorkspaceCumulativeStatisticsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            end_date=end_date,
-            minutes=minutes,
-            start_date=start_date,
-            task_channel=task_channel,
-            split_by_wait_time=split_by_wait_time,
-        )
-        instance = WorkspaceCumulativeStatisticsInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -497,9 +388,7 @@ class WorkspaceCumulativeStatisticsList(ListResource):
         Constructs a WorkspaceCumulativeStatisticsContext
 
         """
-        return WorkspaceCumulativeStatisticsContext(
-            self._version, workspace_sid=self._solution["workspace_sid"]
-        )
+        pass
 
     def __call__(self) -> WorkspaceCumulativeStatisticsContext:
         """

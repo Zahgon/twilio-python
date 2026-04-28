@@ -56,11 +56,7 @@ class ClientCapabilityToken(Jwt):
 
         :param str application_sid: Application to contact
         """
-        scope = ScopeURI("client", "outgoing", {"appSid": application_sid})
-        if kwargs:
-            scope.add_param("appParams", urlencode(kwargs, doseq=True))
-
-        self.capabilities["outgoing"] = scope
+        pass
 
     def allow_client_incoming(self, client_name):
         """
@@ -68,29 +64,16 @@ class ClientCapabilityToken(Jwt):
 
         :param str client_name: Client name to accept calls from
         """
-        self.client_name = client_name
-        self.capabilities["incoming"] = ScopeURI(
-            "client", "incoming", {"clientName": client_name}
-        )
+        pass
 
     def allow_event_stream(self, **kwargs):
         """
         Allow the user of this token to access their event stream.
         """
-        scope = ScopeURI("stream", "subscribe", {"path": "/2010-04-01/Events"})
-        if kwargs:
-            scope.add_param("params", urlencode(kwargs, doseq=True))
-
-        self.capabilities["events"] = scope
+        pass
 
     def _generate_payload(self):
-        if "outgoing" in self.capabilities and self.client_name is not None:
-            self.capabilities["outgoing"].add_param("clientName", self.client_name)
-
-        scope_uris = [
-            scope_uri.to_payload() for scope_uri in self.capabilities.values()
-        ]
-        return {"scope": " ".join(scope_uris)}
+        pass
 
 
 class ScopeURI(object):
@@ -102,16 +85,10 @@ class ScopeURI(object):
         self.params = params or {}
 
     def add_param(self, key, value):
-        self.params[key] = value
+        pass
 
     def to_payload(self):
-        if self.params:
-            sorted_params = sorted([(k, v) for k, v in self.params.items()])
-            encoded_params = urlencode(sorted_params)
-            param_string = "?{}".format(encoded_params)
-        else:
-            param_string = ""
-        return "scope:{}:{}{}".format(self.service, self.privilege, param_string)
+        pass
 
     def __str__(self):
         return "<ScopeURI {}>".format(self.to_payload())

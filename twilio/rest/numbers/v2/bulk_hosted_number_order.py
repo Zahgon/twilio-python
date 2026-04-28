@@ -80,12 +80,7 @@ class BulkHostedNumberOrderInstance(InstanceResource):
 
         :returns: BulkHostedNumberOrderContext for this BulkHostedNumberOrderInstance
         """
-        if self._context is None:
-            self._context = BulkHostedNumberOrderContext(
-                self._version,
-                bulk_hosting_sid=self._solution["bulk_hosting_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(
         self, order_status: Union[str, object] = values.unset
@@ -97,9 +92,7 @@ class BulkHostedNumberOrderInstance(InstanceResource):
 
         :returns: The fetched BulkHostedNumberOrderInstance
         """
-        return self._proxy.fetch(
-            order_status=order_status,
-        )
+        pass
 
     async def fetch_async(
         self, order_status: Union[str, object] = values.unset
@@ -111,9 +104,7 @@ class BulkHostedNumberOrderInstance(InstanceResource):
 
         :returns: The fetched BulkHostedNumberOrderInstance
         """
-        return await self._proxy.fetch_async(
-            order_status=order_status,
-        )
+        pass
 
     def fetch_with_http_info(
         self, order_status: Union[str, object] = values.unset
@@ -125,9 +116,7 @@ class BulkHostedNumberOrderInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            order_status=order_status,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, order_status: Union[str, object] = values.unset
@@ -139,9 +128,7 @@ class BulkHostedNumberOrderInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            order_status=order_status,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -179,20 +166,7 @@ class BulkHostedNumberOrderContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "OrderStatus": order_status,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(
         self, order_status: Union[str, object] = values.unset
@@ -204,12 +178,7 @@ class BulkHostedNumberOrderContext(InstanceContext):
 
         :returns: The fetched BulkHostedNumberOrderInstance
         """
-        payload, _, _ = self._fetch(order_status=order_status)
-        return BulkHostedNumberOrderInstance(
-            self._version,
-            payload,
-            bulk_hosting_sid=self._solution["bulk_hosting_sid"],
-        )
+        pass
 
     def fetch_with_http_info(
         self, order_status: Union[str, object] = values.unset
@@ -221,13 +190,7 @@ class BulkHostedNumberOrderContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(order_status=order_status)
-        instance = BulkHostedNumberOrderInstance(
-            self._version,
-            payload,
-            bulk_hosting_sid=self._solution["bulk_hosting_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self, order_status: Union[str, object] = values.unset
@@ -238,20 +201,7 @@ class BulkHostedNumberOrderContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "OrderStatus": order_status,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self, order_status: Union[str, object] = values.unset
@@ -263,12 +213,7 @@ class BulkHostedNumberOrderContext(InstanceContext):
 
         :returns: The fetched BulkHostedNumberOrderInstance
         """
-        payload, _, _ = await self._fetch_async(order_status=order_status)
-        return BulkHostedNumberOrderInstance(
-            self._version,
-            payload,
-            bulk_hosting_sid=self._solution["bulk_hosting_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, order_status: Union[str, object] = values.unset
@@ -280,15 +225,7 @@ class BulkHostedNumberOrderContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            order_status=order_status
-        )
-        instance = BulkHostedNumberOrderInstance(
-            self._version,
-            payload,
-            bulk_hosting_sid=self._solution["bulk_hosting_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -320,17 +257,7 @@ class BulkHostedNumberOrderList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = body.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self, body: Union[object, object] = values.unset
@@ -342,8 +269,7 @@ class BulkHostedNumberOrderList(ListResource):
 
         :returns: The created BulkHostedNumberOrderInstance
         """
-        payload, _, _ = self._create(body=body)
-        return BulkHostedNumberOrderInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self, body: Union[object, object] = values.unset
@@ -355,9 +281,7 @@ class BulkHostedNumberOrderList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(body=body)
-        instance = BulkHostedNumberOrderInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self, body: Union[object, object] = values.unset) -> tuple:
         """
@@ -366,17 +290,7 @@ class BulkHostedNumberOrderList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = body.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self, body: Union[object, object] = values.unset
@@ -388,8 +302,7 @@ class BulkHostedNumberOrderList(ListResource):
 
         :returns: The created BulkHostedNumberOrderInstance
         """
-        payload, _, _ = await self._create_async(body=body)
-        return BulkHostedNumberOrderInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self, body: Union[object, object] = values.unset
@@ -401,9 +314,7 @@ class BulkHostedNumberOrderList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(body=body)
-        instance = BulkHostedNumberOrderInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def get(self, bulk_hosting_sid: str) -> BulkHostedNumberOrderContext:
         """
@@ -411,9 +322,7 @@ class BulkHostedNumberOrderList(ListResource):
 
         :param bulk_hosting_sid: A 34 character string that uniquely identifies this BulkHostedNumberOrder.
         """
-        return BulkHostedNumberOrderContext(
-            self._version, bulk_hosting_sid=bulk_hosting_sid
-        )
+        pass
 
     def __call__(self, bulk_hosting_sid: str) -> BulkHostedNumberOrderContext:
         """

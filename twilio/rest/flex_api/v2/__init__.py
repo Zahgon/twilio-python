@@ -33,15 +33,11 @@ class V2(Version):
 
     @property
     def flex_user(self) -> FlexUserList:
-        if self._flex_user is None:
-            self._flex_user = FlexUserList(self)
-        return self._flex_user
+        pass
 
     @property
     def web_channels(self) -> WebChannelsList:
-        if self._web_channels is None:
-            self._web_channels = WebChannelsList(self)
-        return self._web_channels
+        pass
 
     def __repr__(self) -> str:
         """

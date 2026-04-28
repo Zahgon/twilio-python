@@ -81,12 +81,7 @@ class AuthorizationDocumentInstance(InstanceResource):
 
         :returns: AuthorizationDocumentContext for this AuthorizationDocumentInstance
         """
-        if self._context is None:
-            self._context = AuthorizationDocumentContext(
-                self._version,
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -95,7 +90,7 @@ class AuthorizationDocumentInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -104,7 +99,7 @@ class AuthorizationDocumentInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -113,7 +108,7 @@ class AuthorizationDocumentInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -122,7 +117,7 @@ class AuthorizationDocumentInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "AuthorizationDocumentInstance":
         """
@@ -131,7 +126,7 @@ class AuthorizationDocumentInstance(InstanceResource):
 
         :returns: The fetched AuthorizationDocumentInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "AuthorizationDocumentInstance":
         """
@@ -140,7 +135,7 @@ class AuthorizationDocumentInstance(InstanceResource):
 
         :returns: The fetched AuthorizationDocumentInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -149,7 +144,7 @@ class AuthorizationDocumentInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -158,14 +153,14 @@ class AuthorizationDocumentInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     @property
     def dependent_hosted_number_orders(self) -> DependentHostedNumberOrderList:
         """
         Access the dependent_hosted_number_orders
         """
-        return self._proxy.dependent_hosted_number_orders
+        pass
 
     def __repr__(self) -> str:
         """
@@ -207,12 +202,7 @@ class AuthorizationDocumentContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -221,8 +211,7 @@ class AuthorizationDocumentContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -231,8 +220,7 @@ class AuthorizationDocumentContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -241,12 +229,7 @@ class AuthorizationDocumentContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -255,8 +238,7 @@ class AuthorizationDocumentContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -265,8 +247,7 @@ class AuthorizationDocumentContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -275,14 +256,7 @@ class AuthorizationDocumentContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> AuthorizationDocumentInstance:
         """
@@ -291,12 +265,7 @@ class AuthorizationDocumentContext(InstanceContext):
 
         :returns: The fetched AuthorizationDocumentInstance
         """
-        payload, _, _ = self._fetch()
-        return AuthorizationDocumentInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -305,13 +274,7 @@ class AuthorizationDocumentContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = AuthorizationDocumentInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -320,14 +283,7 @@ class AuthorizationDocumentContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> AuthorizationDocumentInstance:
         """
@@ -336,12 +292,7 @@ class AuthorizationDocumentContext(InstanceContext):
 
         :returns: The fetched AuthorizationDocumentInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return AuthorizationDocumentInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -350,25 +301,14 @@ class AuthorizationDocumentContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = AuthorizationDocumentInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def dependent_hosted_number_orders(self) -> DependentHostedNumberOrderList:
         """
         Access the dependent_hosted_number_orders
         """
-        if self._dependent_hosted_number_orders is None:
-            self._dependent_hosted_number_orders = DependentHostedNumberOrderList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._dependent_hosted_number_orders
+        pass
 
     def __repr__(self) -> str:
         """
@@ -388,7 +328,7 @@ class AuthorizationDocumentPage(Page):
 
         :param payload: Payload response from the API
         """
-        return AuthorizationDocumentInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -427,28 +367,7 @@ class AuthorizationDocumentList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "AddressSid": address_sid,
-                "Email": email,
-                "ContactPhoneNumber": contact_phone_number,
-                "HostedNumberOrderSids": serialize.map(
-                    hosted_number_order_sids, lambda e: e
-                ),
-                "ContactTitle": contact_title,
-                "CcEmails": serialize.map(cc_emails, lambda e: e),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -471,15 +390,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: The created AuthorizationDocumentInstance
         """
-        payload, _, _ = self._create(
-            address_sid=address_sid,
-            email=email,
-            contact_phone_number=contact_phone_number,
-            hosted_number_order_sids=hosted_number_order_sids,
-            contact_title=contact_title,
-            cc_emails=cc_emails,
-        )
-        return AuthorizationDocumentInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -502,16 +413,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            address_sid=address_sid,
-            email=email,
-            contact_phone_number=contact_phone_number,
-            hosted_number_order_sids=hosted_number_order_sids,
-            contact_title=contact_title,
-            cc_emails=cc_emails,
-        )
-        instance = AuthorizationDocumentInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -528,28 +430,7 @@ class AuthorizationDocumentList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "AddressSid": address_sid,
-                "Email": email,
-                "ContactPhoneNumber": contact_phone_number,
-                "HostedNumberOrderSids": serialize.map(
-                    hosted_number_order_sids, lambda e: e
-                ),
-                "ContactTitle": contact_title,
-                "CcEmails": serialize.map(cc_emails, lambda e: e),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -572,15 +453,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: The created AuthorizationDocumentInstance
         """
-        payload, _, _ = await self._create_async(
-            address_sid=address_sid,
-            email=email,
-            contact_phone_number=contact_phone_number,
-            hosted_number_order_sids=hosted_number_order_sids,
-            contact_title=contact_title,
-            cc_emails=cc_emails,
-        )
-        return AuthorizationDocumentInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -603,16 +476,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            address_sid=address_sid,
-            email=email,
-            contact_phone_number=contact_phone_number,
-            hosted_number_order_sids=hosted_number_order_sids,
-            contact_title=contact_title,
-            cc_emails=cc_emails,
-        )
-        instance = AuthorizationDocumentInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -638,10 +502,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(email=email, status=status, page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -667,12 +528,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            email=email, status=status, page_size=limits["page_size"]
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -696,13 +552,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            email=email, status=status, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -726,13 +576,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            email=email, status=status, page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -757,14 +601,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                email=email,
-                status=status,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -789,15 +626,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                email=email,
-                status=status,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -821,14 +650,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            email=email,
-            status=status,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -852,14 +674,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            email=email,
-            status=status,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -881,24 +696,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: Page of AuthorizationDocumentInstance
         """
-        data = values.of(
-            {
-                "Email": email,
-                "Status": status,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return AuthorizationDocumentPage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -920,24 +718,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: Page of AuthorizationDocumentInstance
         """
-        data = values.of(
-            {
-                "Email": email,
-                "Status": status,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return AuthorizationDocumentPage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -959,25 +740,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: ApiResponse with AuthorizationDocumentPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Email": email,
-                "Status": status,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = AuthorizationDocumentPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -999,27 +762,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: ApiResponse with AuthorizationDocumentPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Email": email,
-                "Status": status,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = AuthorizationDocumentPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> AuthorizationDocumentPage:
         """
@@ -1030,8 +773,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: Page of AuthorizationDocumentInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return AuthorizationDocumentPage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> AuthorizationDocumentPage:
         """
@@ -1042,8 +784,7 @@ class AuthorizationDocumentList(ListResource):
 
         :returns: Page of AuthorizationDocumentInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return AuthorizationDocumentPage(self._version, response)
+        pass
 
     def get(self, sid: str) -> AuthorizationDocumentContext:
         """
@@ -1051,7 +792,7 @@ class AuthorizationDocumentList(ListResource):
 
         :param sid: A 34 character string that uniquely identifies this AuthorizationDocument.
         """
-        return AuthorizationDocumentContext(self._version, sid=sid)
+        pass
 
     def __call__(self, sid: str) -> AuthorizationDocumentContext:
         """

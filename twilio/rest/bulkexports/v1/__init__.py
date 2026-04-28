@@ -33,15 +33,11 @@ class V1(Version):
 
     @property
     def exports(self) -> ExportList:
-        if self._exports is None:
-            self._exports = ExportList(self)
-        return self._exports
+        pass
 
     @property
     def export_configuration(self) -> ExportConfigurationList:
-        if self._export_configuration is None:
-            self._export_configuration = ExportConfigurationList(self)
-        return self._export_configuration
+        pass
 
     def __repr__(self) -> str:
         """

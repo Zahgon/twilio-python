@@ -95,12 +95,7 @@ class TrustProductsInstance(InstanceResource):
 
         :returns: TrustProductsContext for this TrustProductsInstance
         """
-        if self._context is None:
-            self._context = TrustProductsContext(
-                self._version,
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -109,7 +104,7 @@ class TrustProductsInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -118,7 +113,7 @@ class TrustProductsInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -127,7 +122,7 @@ class TrustProductsInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -136,7 +131,7 @@ class TrustProductsInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "TrustProductsInstance":
         """
@@ -145,7 +140,7 @@ class TrustProductsInstance(InstanceResource):
 
         :returns: The fetched TrustProductsInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "TrustProductsInstance":
         """
@@ -154,7 +149,7 @@ class TrustProductsInstance(InstanceResource):
 
         :returns: The fetched TrustProductsInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -163,7 +158,7 @@ class TrustProductsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -172,7 +167,7 @@ class TrustProductsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -191,12 +186,7 @@ class TrustProductsInstance(InstanceResource):
 
         :returns: The updated TrustProductsInstance
         """
-        return self._proxy.update(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
+        pass
 
     async def update_async(
         self,
@@ -215,12 +205,7 @@ class TrustProductsInstance(InstanceResource):
 
         :returns: The updated TrustProductsInstance
         """
-        return await self._proxy.update_async(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -239,12 +224,7 @@ class TrustProductsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -263,12 +243,7 @@ class TrustProductsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
+        pass
 
     @property
     def trust_products_channel_endpoint_assignment(
@@ -277,21 +252,21 @@ class TrustProductsInstance(InstanceResource):
         """
         Access the trust_products_channel_endpoint_assignment
         """
-        return self._proxy.trust_products_channel_endpoint_assignment
+        pass
 
     @property
     def trust_products_entity_assignments(self) -> TrustProductsEntityAssignmentsList:
         """
         Access the trust_products_entity_assignments
         """
-        return self._proxy.trust_products_entity_assignments
+        pass
 
     @property
     def trust_products_evaluations(self) -> TrustProductsEvaluationsList:
         """
         Access the trust_products_evaluations
         """
-        return self._proxy.trust_products_evaluations
+        pass
 
     def __repr__(self) -> str:
         """
@@ -335,12 +310,7 @@ class TrustProductsContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -349,8 +319,7 @@ class TrustProductsContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -359,8 +328,7 @@ class TrustProductsContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -369,12 +337,7 @@ class TrustProductsContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -383,8 +346,7 @@ class TrustProductsContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -393,8 +355,7 @@ class TrustProductsContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -403,14 +364,7 @@ class TrustProductsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> TrustProductsInstance:
         """
@@ -419,12 +373,7 @@ class TrustProductsContext(InstanceContext):
 
         :returns: The fetched TrustProductsInstance
         """
-        payload, _, _ = self._fetch()
-        return TrustProductsInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -433,13 +382,7 @@ class TrustProductsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = TrustProductsInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -448,14 +391,7 @@ class TrustProductsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> TrustProductsInstance:
         """
@@ -464,12 +400,7 @@ class TrustProductsContext(InstanceContext):
 
         :returns: The fetched TrustProductsInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return TrustProductsInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -478,13 +409,7 @@ class TrustProductsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = TrustProductsInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -499,24 +424,7 @@ class TrustProductsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Status": status,
-                "StatusCallback": status_callback,
-                "FriendlyName": friendly_name,
-                "Email": email,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -535,13 +443,7 @@ class TrustProductsContext(InstanceContext):
 
         :returns: The updated TrustProductsInstance
         """
-        payload, _, _ = self._update(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
-        return TrustProductsInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     def update_with_http_info(
         self,
@@ -560,16 +462,7 @@ class TrustProductsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
-        instance = TrustProductsInstance(
-            self._version, payload, sid=self._solution["sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -584,24 +477,7 @@ class TrustProductsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Status": status,
-                "StatusCallback": status_callback,
-                "FriendlyName": friendly_name,
-                "Email": email,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -620,13 +496,7 @@ class TrustProductsContext(InstanceContext):
 
         :returns: The updated TrustProductsInstance
         """
-        payload, _, _ = await self._update_async(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
-        return TrustProductsInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -645,16 +515,7 @@ class TrustProductsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
-        instance = TrustProductsInstance(
-            self._version, payload, sid=self._solution["sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def trust_products_channel_endpoint_assignment(
@@ -663,40 +524,21 @@ class TrustProductsContext(InstanceContext):
         """
         Access the trust_products_channel_endpoint_assignment
         """
-        if self._trust_products_channel_endpoint_assignment is None:
-            self._trust_products_channel_endpoint_assignment = (
-                TrustProductsChannelEndpointAssignmentList(
-                    self._version,
-                    self._solution["sid"],
-                )
-            )
-        return self._trust_products_channel_endpoint_assignment
+        pass
 
     @property
     def trust_products_entity_assignments(self) -> TrustProductsEntityAssignmentsList:
         """
         Access the trust_products_entity_assignments
         """
-        if self._trust_products_entity_assignments is None:
-            self._trust_products_entity_assignments = (
-                TrustProductsEntityAssignmentsList(
-                    self._version,
-                    self._solution["sid"],
-                )
-            )
-        return self._trust_products_entity_assignments
+        pass
 
     @property
     def trust_products_evaluations(self) -> TrustProductsEvaluationsList:
         """
         Access the trust_products_evaluations
         """
-        if self._trust_products_evaluations is None:
-            self._trust_products_evaluations = TrustProductsEvaluationsList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._trust_products_evaluations
+        pass
 
     def __repr__(self) -> str:
         """
@@ -716,7 +558,7 @@ class TrustProductsPage(Page):
 
         :param payload: Payload response from the API
         """
-        return TrustProductsInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -753,24 +595,7 @@ class TrustProductsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "Email": email,
-                "PolicySid": policy_sid,
-                "StatusCallback": status_callback,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -789,13 +614,7 @@ class TrustProductsList(ListResource):
 
         :returns: The created TrustProductsInstance
         """
-        payload, _, _ = self._create(
-            friendly_name=friendly_name,
-            email=email,
-            policy_sid=policy_sid,
-            status_callback=status_callback,
-        )
-        return TrustProductsInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -814,14 +633,7 @@ class TrustProductsList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            friendly_name=friendly_name,
-            email=email,
-            policy_sid=policy_sid,
-            status_callback=status_callback,
-        )
-        instance = TrustProductsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -836,24 +648,7 @@ class TrustProductsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "Email": email,
-                "PolicySid": policy_sid,
-                "StatusCallback": status_callback,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -872,13 +667,7 @@ class TrustProductsList(ListResource):
 
         :returns: The created TrustProductsInstance
         """
-        payload, _, _ = await self._create_async(
-            friendly_name=friendly_name,
-            email=email,
-            policy_sid=policy_sid,
-            status_callback=status_callback,
-        )
-        return TrustProductsInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -897,14 +686,7 @@ class TrustProductsList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            friendly_name=friendly_name,
-            email=email,
-            policy_sid=policy_sid,
-            status_callback=status_callback,
-        )
-        instance = TrustProductsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -932,15 +714,7 @@ class TrustProductsList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            status=status,
-            friendly_name=friendly_name,
-            policy_sid=policy_sid,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -968,15 +742,7 @@ class TrustProductsList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            status=status,
-            friendly_name=friendly_name,
-            policy_sid=policy_sid,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -1002,16 +768,7 @@ class TrustProductsList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            status=status,
-            friendly_name=friendly_name,
-            policy_sid=policy_sid,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -1037,16 +794,7 @@ class TrustProductsList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            status=status,
-            friendly_name=friendly_name,
-            policy_sid=policy_sid,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -1073,15 +821,7 @@ class TrustProductsList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                status=status,
-                friendly_name=friendly_name,
-                policy_sid=policy_sid,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -1108,16 +848,7 @@ class TrustProductsList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                status=status,
-                friendly_name=friendly_name,
-                policy_sid=policy_sid,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -1143,15 +874,7 @@ class TrustProductsList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            status=status,
-            friendly_name=friendly_name,
-            policy_sid=policy_sid,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1177,15 +900,7 @@ class TrustProductsList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            status=status,
-            friendly_name=friendly_name,
-            policy_sid=policy_sid,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1209,25 +924,7 @@ class TrustProductsList(ListResource):
 
         :returns: Page of TrustProductsInstance
         """
-        data = values.of(
-            {
-                "Status": status,
-                "FriendlyName": friendly_name,
-                "PolicySid": policy_sid,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return TrustProductsPage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -1251,25 +948,7 @@ class TrustProductsList(ListResource):
 
         :returns: Page of TrustProductsInstance
         """
-        data = values.of(
-            {
-                "Status": status,
-                "FriendlyName": friendly_name,
-                "PolicySid": policy_sid,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return TrustProductsPage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -1293,26 +972,7 @@ class TrustProductsList(ListResource):
 
         :returns: ApiResponse with TrustProductsPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Status": status,
-                "FriendlyName": friendly_name,
-                "PolicySid": policy_sid,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = TrustProductsPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1336,28 +996,7 @@ class TrustProductsList(ListResource):
 
         :returns: ApiResponse with TrustProductsPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Status": status,
-                "FriendlyName": friendly_name,
-                "PolicySid": policy_sid,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = TrustProductsPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> TrustProductsPage:
         """
@@ -1368,8 +1007,7 @@ class TrustProductsList(ListResource):
 
         :returns: Page of TrustProductsInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return TrustProductsPage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> TrustProductsPage:
         """
@@ -1380,8 +1018,7 @@ class TrustProductsList(ListResource):
 
         :returns: Page of TrustProductsInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return TrustProductsPage(self._version, response)
+        pass
 
     def get(self, sid: str) -> TrustProductsContext:
         """
@@ -1389,7 +1026,7 @@ class TrustProductsList(ListResource):
 
         :param sid: The unique string that we created to identify the Trust Product resource.
         """
-        return TrustProductsContext(self._version, sid=sid)
+        pass
 
     def __call__(self, sid: str) -> TrustProductsContext:
         """

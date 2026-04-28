@@ -36,27 +36,21 @@ class NumbersBase(Domain):
         """
         :returns: Versions v1 of Numbers
         """
-        if self._v1 is None:
-            self._v1 = V1(self)
-        return self._v1
+        pass
 
     @property
     def v2(self) -> V2:
         """
         :returns: Versions v2 of Numbers
         """
-        if self._v2 is None:
-            self._v2 = V2(self)
-        return self._v2
+        pass
 
     @property
     def v3(self) -> V3:
         """
         :returns: Versions v3 of Numbers
         """
-        if self._v3 is None:
-            self._v3 = V3(self)
-        return self._v3
+        pass
 
     def __repr__(self) -> str:
         """

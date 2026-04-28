@@ -31,9 +31,7 @@ class V3(Version):
 
     @property
     def hosted_number_orders(self) -> HostedNumberOrderList:
-        if self._hosted_number_orders is None:
-            self._hosted_number_orders = HostedNumberOrderList(self)
-        return self._hosted_number_orders
+        pass
 
     def __repr__(self) -> str:
         """

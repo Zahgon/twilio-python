@@ -32,9 +32,7 @@ class RoutesBase(Domain):
         """
         :returns: Versions v2 of Routes
         """
-        if self._v2 is None:
-            self._v2 = V2(self)
-        return self._v2
+        pass
 
     def __repr__(self) -> str:
         """

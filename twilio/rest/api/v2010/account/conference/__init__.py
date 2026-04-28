@@ -107,13 +107,7 @@ class ConferenceInstance(InstanceResource):
 
         :returns: ConferenceContext for this ConferenceInstance
         """
-        if self._context is None:
-            self._context = ConferenceContext(
-                self._version,
-                account_sid=self._solution["account_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "ConferenceInstance":
         """
@@ -122,7 +116,7 @@ class ConferenceInstance(InstanceResource):
 
         :returns: The fetched ConferenceInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "ConferenceInstance":
         """
@@ -131,7 +125,7 @@ class ConferenceInstance(InstanceResource):
 
         :returns: The fetched ConferenceInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -140,7 +134,7 @@ class ConferenceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -149,7 +143,7 @@ class ConferenceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -166,11 +160,7 @@ class ConferenceInstance(InstanceResource):
 
         :returns: The updated ConferenceInstance
         """
-        return self._proxy.update(
-            status=status,
-            announce_url=announce_url,
-            announce_method=announce_method,
-        )
+        pass
 
     async def update_async(
         self,
@@ -187,11 +177,7 @@ class ConferenceInstance(InstanceResource):
 
         :returns: The updated ConferenceInstance
         """
-        return await self._proxy.update_async(
-            status=status,
-            announce_url=announce_url,
-            announce_method=announce_method,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -208,11 +194,7 @@ class ConferenceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            status=status,
-            announce_url=announce_url,
-            announce_method=announce_method,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -229,25 +211,21 @@ class ConferenceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            status=status,
-            announce_url=announce_url,
-            announce_method=announce_method,
-        )
+        pass
 
     @property
     def participants(self) -> ParticipantList:
         """
         Access the participants
         """
-        return self._proxy.participants
+        pass
 
     @property
     def recordings(self) -> RecordingList:
         """
         Access the recordings
         """
-        return self._proxy.recordings
+        pass
 
     def __repr__(self) -> str:
         """
@@ -290,14 +268,7 @@ class ConferenceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> ConferenceInstance:
         """
@@ -306,13 +277,7 @@ class ConferenceContext(InstanceContext):
 
         :returns: The fetched ConferenceInstance
         """
-        payload, _, _ = self._fetch()
-        return ConferenceInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -321,14 +286,7 @@ class ConferenceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = ConferenceInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -337,14 +295,7 @@ class ConferenceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> ConferenceInstance:
         """
@@ -353,13 +304,7 @@ class ConferenceContext(InstanceContext):
 
         :returns: The fetched ConferenceInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return ConferenceInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -368,14 +313,7 @@ class ConferenceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = ConferenceInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -389,23 +327,7 @@ class ConferenceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Status": status,
-                "AnnounceUrl": announce_url,
-                "AnnounceMethod": announce_method,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -422,15 +344,7 @@ class ConferenceContext(InstanceContext):
 
         :returns: The updated ConferenceInstance
         """
-        payload, _, _ = self._update(
-            status=status, announce_url=announce_url, announce_method=announce_method
-        )
-        return ConferenceInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -447,16 +361,7 @@ class ConferenceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            status=status, announce_url=announce_url, announce_method=announce_method
-        )
-        instance = ConferenceInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -470,23 +375,7 @@ class ConferenceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Status": status,
-                "AnnounceUrl": announce_url,
-                "AnnounceMethod": announce_method,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -503,15 +392,7 @@ class ConferenceContext(InstanceContext):
 
         :returns: The updated ConferenceInstance
         """
-        payload, _, _ = await self._update_async(
-            status=status, announce_url=announce_url, announce_method=announce_method
-        )
-        return ConferenceInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -528,42 +409,21 @@ class ConferenceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            status=status, announce_url=announce_url, announce_method=announce_method
-        )
-        instance = ConferenceInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def participants(self) -> ParticipantList:
         """
         Access the participants
         """
-        if self._participants is None:
-            self._participants = ParticipantList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._participants
+        pass
 
     @property
     def recordings(self) -> RecordingList:
         """
         Access the recordings
         """
-        if self._recordings is None:
-            self._recordings = RecordingList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._recordings
+        pass
 
     def __repr__(self) -> str:
         """
@@ -583,9 +443,7 @@ class ConferencePage(Page):
 
         :param payload: Payload response from the API
         """
-        return ConferenceInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -650,20 +508,7 @@ class ConferenceList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            date_created=date_created,
-            date_created_before=date_created_before,
-            date_created_after=date_created_after,
-            date_updated=date_updated,
-            date_updated_before=date_updated_before,
-            date_updated_after=date_updated_after,
-            friendly_name=friendly_name,
-            status=status,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -701,20 +546,7 @@ class ConferenceList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            date_created=date_created,
-            date_created_before=date_created_before,
-            date_created_after=date_created_after,
-            date_updated=date_updated,
-            date_updated_before=date_updated_before,
-            date_updated_after=date_updated_after,
-            friendly_name=friendly_name,
-            status=status,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -750,21 +582,7 @@ class ConferenceList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            date_created=date_created,
-            date_created_before=date_created_before,
-            date_created_after=date_created_after,
-            date_updated=date_updated,
-            date_updated_before=date_updated_before,
-            date_updated_after=date_updated_after,
-            friendly_name=friendly_name,
-            status=status,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -800,21 +618,7 @@ class ConferenceList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            date_created=date_created,
-            date_created_before=date_created_before,
-            date_created_after=date_created_after,
-            date_updated=date_updated,
-            date_updated_before=date_updated_before,
-            date_updated_after=date_updated_after,
-            friendly_name=friendly_name,
-            status=status,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -851,20 +655,7 @@ class ConferenceList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                date_created=date_created,
-                date_created_before=date_created_before,
-                date_created_after=date_created_after,
-                date_updated=date_updated,
-                date_updated_before=date_updated_before,
-                date_updated_after=date_updated_after,
-                friendly_name=friendly_name,
-                status=status,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -901,21 +692,7 @@ class ConferenceList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                date_created=date_created,
-                date_created_before=date_created_before,
-                date_created_after=date_created_after,
-                date_updated=date_updated,
-                date_updated_before=date_updated_before,
-                date_updated_after=date_updated_after,
-                friendly_name=friendly_name,
-                status=status,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -951,20 +728,7 @@ class ConferenceList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            date_created=date_created,
-            date_created_before=date_created_before,
-            date_created_after=date_created_after,
-            date_updated=date_updated,
-            date_updated_before=date_updated_before,
-            date_updated_after=date_updated_after,
-            friendly_name=friendly_name,
-            status=status,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1000,20 +764,7 @@ class ConferenceList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            date_created=date_created,
-            date_created_before=date_created_before,
-            date_created_after=date_created_after,
-            date_updated=date_updated,
-            date_updated_before=date_updated_before,
-            date_updated_after=date_updated_after,
-            friendly_name=friendly_name,
-            status=status,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1047,30 +798,7 @@ class ConferenceList(ListResource):
 
         :returns: Page of ConferenceInstance
         """
-        data = values.of(
-            {
-                "DateCreated": serialize.iso8601_date(date_created),
-                "DateCreated<": serialize.iso8601_date(date_created_before),
-                "DateCreated>": serialize.iso8601_date(date_created_after),
-                "DateUpdated": serialize.iso8601_date(date_updated),
-                "DateUpdated<": serialize.iso8601_date(date_updated_before),
-                "DateUpdated>": serialize.iso8601_date(date_updated_after),
-                "FriendlyName": friendly_name,
-                "Status": status,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ConferencePage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -1104,30 +832,7 @@ class ConferenceList(ListResource):
 
         :returns: Page of ConferenceInstance
         """
-        data = values.of(
-            {
-                "DateCreated": serialize.iso8601_date(date_created),
-                "DateCreated<": serialize.iso8601_date(date_created_before),
-                "DateCreated>": serialize.iso8601_date(date_created_after),
-                "DateUpdated": serialize.iso8601_date(date_updated),
-                "DateUpdated<": serialize.iso8601_date(date_updated_before),
-                "DateUpdated>": serialize.iso8601_date(date_updated_after),
-                "FriendlyName": friendly_name,
-                "Status": status,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ConferencePage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -1161,31 +866,7 @@ class ConferenceList(ListResource):
 
         :returns: ApiResponse with ConferencePage, status code, and headers
         """
-        data = values.of(
-            {
-                "DateCreated": serialize.iso8601_date(date_created),
-                "DateCreated<": serialize.iso8601_date(date_created_before),
-                "DateCreated>": serialize.iso8601_date(date_created_after),
-                "DateUpdated": serialize.iso8601_date(date_updated),
-                "DateUpdated<": serialize.iso8601_date(date_updated_before),
-                "DateUpdated>": serialize.iso8601_date(date_updated_after),
-                "FriendlyName": friendly_name,
-                "Status": status,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = ConferencePage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1219,33 +900,7 @@ class ConferenceList(ListResource):
 
         :returns: ApiResponse with ConferencePage, status code, and headers
         """
-        data = values.of(
-            {
-                "DateCreated": serialize.iso8601_date(date_created),
-                "DateCreated<": serialize.iso8601_date(date_created_before),
-                "DateCreated>": serialize.iso8601_date(date_created_after),
-                "DateUpdated": serialize.iso8601_date(date_updated),
-                "DateUpdated<": serialize.iso8601_date(date_updated_before),
-                "DateUpdated>": serialize.iso8601_date(date_updated_after),
-                "FriendlyName": friendly_name,
-                "Status": status,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = ConferencePage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> ConferencePage:
         """
@@ -1256,8 +911,7 @@ class ConferenceList(ListResource):
 
         :returns: Page of ConferenceInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return ConferencePage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> ConferencePage:
         """
@@ -1268,8 +922,7 @@ class ConferenceList(ListResource):
 
         :returns: Page of ConferenceInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return ConferencePage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, sid: str) -> ConferenceContext:
         """
@@ -1277,9 +930,7 @@ class ConferenceList(ListResource):
 
         :param sid: The Twilio-provided string that uniquely identifies the Conference resource to update
         """
-        return ConferenceContext(
-            self._version, account_sid=self._solution["account_sid"], sid=sid
-        )
+        pass
 
     def __call__(self, sid: str) -> ConferenceContext:
         """

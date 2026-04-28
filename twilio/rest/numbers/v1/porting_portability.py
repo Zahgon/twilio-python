@@ -78,12 +78,7 @@ class PortingPortabilityInstance(InstanceResource):
 
         :returns: PortingPortabilityContext for this PortingPortabilityInstance
         """
-        if self._context is None:
-            self._context = PortingPortabilityContext(
-                self._version,
-                phone_number=self._solution["phone_number"],
-            )
-        return self._context
+        pass
 
     def fetch(
         self,
@@ -98,10 +93,7 @@ class PortingPortabilityInstance(InstanceResource):
 
         :returns: The fetched PortingPortabilityInstance
         """
-        return self._proxy.fetch(
-            target_account_sid=target_account_sid,
-            address_sid=address_sid,
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -116,10 +108,7 @@ class PortingPortabilityInstance(InstanceResource):
 
         :returns: The fetched PortingPortabilityInstance
         """
-        return await self._proxy.fetch_async(
-            target_account_sid=target_account_sid,
-            address_sid=address_sid,
-        )
+        pass
 
     def fetch_with_http_info(
         self,
@@ -134,10 +123,7 @@ class PortingPortabilityInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            target_account_sid=target_account_sid,
-            address_sid=address_sid,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self,
@@ -152,10 +138,7 @@ class PortingPortabilityInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            target_account_sid=target_account_sid,
-            address_sid=address_sid,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -197,21 +180,7 @@ class PortingPortabilityContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "TargetAccountSid": target_account_sid,
-                "AddressSid": address_sid,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(
         self,
@@ -226,14 +195,7 @@ class PortingPortabilityContext(InstanceContext):
 
         :returns: The fetched PortingPortabilityInstance
         """
-        payload, _, _ = self._fetch(
-            target_account_sid=target_account_sid, address_sid=address_sid
-        )
-        return PortingPortabilityInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
+        pass
 
     def fetch_with_http_info(
         self,
@@ -248,15 +210,7 @@ class PortingPortabilityContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(
-            target_account_sid=target_account_sid, address_sid=address_sid
-        )
-        instance = PortingPortabilityInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self,
@@ -269,21 +223,7 @@ class PortingPortabilityContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "TargetAccountSid": target_account_sid,
-                "AddressSid": address_sid,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self,
@@ -298,14 +238,7 @@ class PortingPortabilityContext(InstanceContext):
 
         :returns: The fetched PortingPortabilityInstance
         """
-        payload, _, _ = await self._fetch_async(
-            target_account_sid=target_account_sid, address_sid=address_sid
-        )
-        return PortingPortabilityInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self,
@@ -320,15 +253,7 @@ class PortingPortabilityContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            target_account_sid=target_account_sid, address_sid=address_sid
-        )
-        instance = PortingPortabilityInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -357,7 +282,7 @@ class PortingPortabilityList(ListResource):
 
         :param phone_number: Phone number to check portability in e164 format.
         """
-        return PortingPortabilityContext(self._version, phone_number=phone_number)
+        pass
 
     def __call__(self, phone_number: str) -> PortingPortabilityContext:
         """

@@ -33,153 +33,68 @@ from twilio.rest.flex_api.v2.web_channels import WebChannelsList
 class FlexApi(FlexApiBase):
     @property
     def assessments(self) -> AssessmentsList:
-        warn(
-            "assessments is deprecated. Use v1.assessments instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.assessments
+        pass
 
     @property
     def channel(self) -> ChannelList:
-        warn(
-            "channel is deprecated. Use v1.channel instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.channel
+        pass
 
     @property
     def configuration(self) -> ConfigurationList:
-        warn(
-            "configuration is deprecated. Use v1.configuration instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.configuration
+        pass
 
     @property
     def flex_flow(self) -> FlexFlowList:
-        warn(
-            "flex_flow is deprecated. Use v1.flex_flow instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.flex_flow
+        pass
 
     @property
     def insights_assessments_comment(self) -> InsightsAssessmentsCommentList:
-        warn(
-            "insights_assessments_comment is deprecated. Use v1.insights_assessments_comment instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.insights_assessments_comment
+        pass
 
     @property
     def insights_conversations(self) -> InsightsConversationsList:
-        warn(
-            "insights_conversations is deprecated. Use v1.insights_conversations instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.insights_conversations
+        pass
 
     @property
     def insights_questionnaires(self) -> InsightsQuestionnairesList:
-        warn(
-            "insights_questionnaires is deprecated. Use v1.insights_questionnaires instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.insights_questionnaires
+        pass
 
     @property
     def insights_questionnaires_category(self) -> InsightsQuestionnairesCategoryList:
-        warn(
-            "insights_questionnaires_category is deprecated. Use v1.insights_questionnaires_category instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.insights_questionnaires_category
+        pass
 
     @property
     def insights_questionnaires_question(self) -> InsightsQuestionnairesQuestionList:
-        warn(
-            "insights_questionnaires_question is deprecated. Use v1.insights_questionnaires_question instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.insights_questionnaires_question
+        pass
 
     @property
     def insights_segments(self) -> InsightsSegmentsList:
-        warn(
-            "insights_segments is deprecated. Use v1.insights_segments instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.insights_segments
+        pass
 
     @property
     def insights_session(self) -> InsightsSessionList:
-        warn(
-            "insights_session is deprecated. Use v1.insights_session instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.insights_session
+        pass
 
     @property
     def insights_settings_answer_sets(self) -> InsightsSettingsAnswerSetsList:
-        warn(
-            "insights_settings_answer_sets is deprecated. Use v1.insights_settings_answer_sets instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.insights_settings_answer_sets
+        pass
 
     @property
     def insights_settings_comment(self) -> InsightsSettingsCommentList:
-        warn(
-            "insights_settings_comment is deprecated. Use v1.insights_settings_comment instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.insights_settings_comment
+        pass
 
     @property
     def insights_user_roles(self) -> InsightsUserRolesList:
-        warn(
-            "insights_user_roles is deprecated. Use v1.insights_user_roles instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.insights_user_roles
+        pass
 
     @property
     def interaction(self) -> InteractionList:
-        warn(
-            "interaction is deprecated. Use v1.interaction instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.interaction
+        pass
 
     @property
     def web_channel(self) -> WebChannelList:
-        warn(
-            "web_channel is deprecated. Use v1.web_channel instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.web_channel
+        pass
 
     @property
     def web_channels(self) -> WebChannelsList:
-        warn(
-            "web_channels is deprecated. Use v2.web_channels instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v2.web_channels
+        pass

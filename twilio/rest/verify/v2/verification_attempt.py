@@ -88,12 +88,7 @@ class VerificationAttemptInstance(InstanceResource):
 
         :returns: VerificationAttemptContext for this VerificationAttemptInstance
         """
-        if self._context is None:
-            self._context = VerificationAttemptContext(
-                self._version,
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "VerificationAttemptInstance":
         """
@@ -102,7 +97,7 @@ class VerificationAttemptInstance(InstanceResource):
 
         :returns: The fetched VerificationAttemptInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "VerificationAttemptInstance":
         """
@@ -111,7 +106,7 @@ class VerificationAttemptInstance(InstanceResource):
 
         :returns: The fetched VerificationAttemptInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -120,7 +115,7 @@ class VerificationAttemptInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -129,7 +124,7 @@ class VerificationAttemptInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -165,14 +160,7 @@ class VerificationAttemptContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> VerificationAttemptInstance:
         """
@@ -181,12 +169,7 @@ class VerificationAttemptContext(InstanceContext):
 
         :returns: The fetched VerificationAttemptInstance
         """
-        payload, _, _ = self._fetch()
-        return VerificationAttemptInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -195,13 +178,7 @@ class VerificationAttemptContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = VerificationAttemptInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -210,14 +187,7 @@ class VerificationAttemptContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> VerificationAttemptInstance:
         """
@@ -226,12 +196,7 @@ class VerificationAttemptContext(InstanceContext):
 
         :returns: The fetched VerificationAttemptInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return VerificationAttemptInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -240,13 +205,7 @@ class VerificationAttemptContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = VerificationAttemptInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -266,7 +225,7 @@ class VerificationAttemptPage(Page):
 
         :param payload: Payload response from the API
         """
-        return VerificationAttemptInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -328,20 +287,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            date_created_after=date_created_after,
-            date_created_before=date_created_before,
-            channel_data_to=channel_data_to,
-            country=country,
-            channel=channel,
-            verify_service_sid=verify_service_sid,
-            verification_sid=verification_sid,
-            status=status,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -381,20 +327,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            date_created_after=date_created_after,
-            date_created_before=date_created_before,
-            channel_data_to=channel_data_to,
-            country=country,
-            channel=channel,
-            verify_service_sid=verify_service_sid,
-            verification_sid=verification_sid,
-            status=status,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -432,21 +365,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            date_created_after=date_created_after,
-            date_created_before=date_created_before,
-            channel_data_to=channel_data_to,
-            country=country,
-            channel=channel,
-            verify_service_sid=verify_service_sid,
-            verification_sid=verification_sid,
-            status=status,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -484,21 +403,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            date_created_after=date_created_after,
-            date_created_before=date_created_before,
-            channel_data_to=channel_data_to,
-            country=country,
-            channel=channel,
-            verify_service_sid=verify_service_sid,
-            verification_sid=verification_sid,
-            status=status,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -537,20 +442,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                date_created_after=date_created_after,
-                date_created_before=date_created_before,
-                channel_data_to=channel_data_to,
-                country=country,
-                channel=channel,
-                verify_service_sid=verify_service_sid,
-                verification_sid=verification_sid,
-                status=status,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -589,21 +481,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                date_created_after=date_created_after,
-                date_created_before=date_created_before,
-                channel_data_to=channel_data_to,
-                country=country,
-                channel=channel,
-                verify_service_sid=verify_service_sid,
-                verification_sid=verification_sid,
-                status=status,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -641,20 +519,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            date_created_after=date_created_after,
-            date_created_before=date_created_before,
-            channel_data_to=channel_data_to,
-            country=country,
-            channel=channel,
-            verify_service_sid=verify_service_sid,
-            verification_sid=verification_sid,
-            status=status,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -692,20 +557,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            date_created_after=date_created_after,
-            date_created_before=date_created_before,
-            channel_data_to=channel_data_to,
-            country=country,
-            channel=channel,
-            verify_service_sid=verify_service_sid,
-            verification_sid=verification_sid,
-            status=status,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -741,30 +593,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: Page of VerificationAttemptInstance
         """
-        data = values.of(
-            {
-                "DateCreatedAfter": serialize.iso8601_datetime(date_created_after),
-                "DateCreatedBefore": serialize.iso8601_datetime(date_created_before),
-                "ChannelData.To": channel_data_to,
-                "Country": country,
-                "Channel": channel,
-                "VerifyServiceSid": verify_service_sid,
-                "VerificationSid": verification_sid,
-                "Status": status,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return VerificationAttemptPage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -800,30 +629,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: Page of VerificationAttemptInstance
         """
-        data = values.of(
-            {
-                "DateCreatedAfter": serialize.iso8601_datetime(date_created_after),
-                "DateCreatedBefore": serialize.iso8601_datetime(date_created_before),
-                "ChannelData.To": channel_data_to,
-                "Country": country,
-                "Channel": channel,
-                "VerifyServiceSid": verify_service_sid,
-                "VerificationSid": verification_sid,
-                "Status": status,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return VerificationAttemptPage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -859,31 +665,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: ApiResponse with VerificationAttemptPage, status code, and headers
         """
-        data = values.of(
-            {
-                "DateCreatedAfter": serialize.iso8601_datetime(date_created_after),
-                "DateCreatedBefore": serialize.iso8601_datetime(date_created_before),
-                "ChannelData.To": channel_data_to,
-                "Country": country,
-                "Channel": channel,
-                "VerifyServiceSid": verify_service_sid,
-                "VerificationSid": verification_sid,
-                "Status": status,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = VerificationAttemptPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -919,33 +701,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: ApiResponse with VerificationAttemptPage, status code, and headers
         """
-        data = values.of(
-            {
-                "DateCreatedAfter": serialize.iso8601_datetime(date_created_after),
-                "DateCreatedBefore": serialize.iso8601_datetime(date_created_before),
-                "ChannelData.To": channel_data_to,
-                "Country": country,
-                "Channel": channel,
-                "VerifyServiceSid": verify_service_sid,
-                "VerificationSid": verification_sid,
-                "Status": status,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = VerificationAttemptPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> VerificationAttemptPage:
         """
@@ -956,8 +712,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: Page of VerificationAttemptInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return VerificationAttemptPage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> VerificationAttemptPage:
         """
@@ -968,8 +723,7 @@ class VerificationAttemptList(ListResource):
 
         :returns: Page of VerificationAttemptInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return VerificationAttemptPage(self._version, response)
+        pass
 
     def get(self, sid: str) -> VerificationAttemptContext:
         """
@@ -977,7 +731,7 @@ class VerificationAttemptList(ListResource):
 
         :param sid: The unique SID identifier of a Verification Attempt
         """
-        return VerificationAttemptContext(self._version, sid=sid)
+        pass
 
     def __call__(self, sid: str) -> VerificationAttemptContext:
         """

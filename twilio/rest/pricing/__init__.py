@@ -11,45 +11,20 @@ from twilio.rest.pricing.v2.voice import VoiceList
 class Pricing(PricingBase):
     @property
     def messaging(self) -> MessagingList:
-        warn(
-            "messaging is deprecated. Use v1.messaging instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.messaging
+        pass
 
     @property
     def phone_numbers(self) -> PhoneNumberList:
-        warn(
-            "phone_numbers is deprecated. Use v1.phone_numbers instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v1.phone_numbers
+        pass
 
     @property
     def voice(self) -> VoiceList:
-        warn(
-            "voice is deprecated. Use v2.voice instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v2.voice
+        pass
 
     @property
     def countries(self) -> CountryList:
-        warn(
-            "countries is deprecated. Use v2.countries instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v2.countries
+        pass
 
     @property
     def numbers(self) -> NumberList:
-        warn(
-            "numbers is deprecated. Use v2.numbers instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v2.numbers
+        pass

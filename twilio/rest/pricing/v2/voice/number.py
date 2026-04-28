@@ -65,12 +65,7 @@ class NumberInstance(InstanceResource):
 
         :returns: NumberContext for this NumberInstance
         """
-        if self._context is None:
-            self._context = NumberContext(
-                self._version,
-                destination_number=self._solution["destination_number"],
-            )
-        return self._context
+        pass
 
     def fetch(
         self, origination_number: Union[str, object] = values.unset
@@ -82,9 +77,7 @@ class NumberInstance(InstanceResource):
 
         :returns: The fetched NumberInstance
         """
-        return self._proxy.fetch(
-            origination_number=origination_number,
-        )
+        pass
 
     async def fetch_async(
         self, origination_number: Union[str, object] = values.unset
@@ -96,9 +89,7 @@ class NumberInstance(InstanceResource):
 
         :returns: The fetched NumberInstance
         """
-        return await self._proxy.fetch_async(
-            origination_number=origination_number,
-        )
+        pass
 
     def fetch_with_http_info(
         self, origination_number: Union[str, object] = values.unset
@@ -110,9 +101,7 @@ class NumberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            origination_number=origination_number,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, origination_number: Union[str, object] = values.unset
@@ -124,9 +113,7 @@ class NumberInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            origination_number=origination_number,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -162,20 +149,7 @@ class NumberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "OriginationNumber": origination_number,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(
         self, origination_number: Union[str, object] = values.unset
@@ -187,12 +161,7 @@ class NumberContext(InstanceContext):
 
         :returns: The fetched NumberInstance
         """
-        payload, _, _ = self._fetch(origination_number=origination_number)
-        return NumberInstance(
-            self._version,
-            payload,
-            destination_number=self._solution["destination_number"],
-        )
+        pass
 
     def fetch_with_http_info(
         self, origination_number: Union[str, object] = values.unset
@@ -204,15 +173,7 @@ class NumberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(
-            origination_number=origination_number
-        )
-        instance = NumberInstance(
-            self._version,
-            payload,
-            destination_number=self._solution["destination_number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self, origination_number: Union[str, object] = values.unset
@@ -223,20 +184,7 @@ class NumberContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "OriginationNumber": origination_number,
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self, origination_number: Union[str, object] = values.unset
@@ -248,12 +196,7 @@ class NumberContext(InstanceContext):
 
         :returns: The fetched NumberInstance
         """
-        payload, _, _ = await self._fetch_async(origination_number=origination_number)
-        return NumberInstance(
-            self._version,
-            payload,
-            destination_number=self._solution["destination_number"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, origination_number: Union[str, object] = values.unset
@@ -265,15 +208,7 @@ class NumberContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            origination_number=origination_number
-        )
-        instance = NumberInstance(
-            self._version,
-            payload,
-            destination_number=self._solution["destination_number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -302,7 +237,7 @@ class NumberList(ListResource):
 
         :param destination_number: The destination phone number, in [E.164](https://www.twilio.com/docs/glossary/what-e164) format, for which to fetch the origin-based voice pricing information. E.164 format consists of a + followed by the country code and subscriber number.
         """
-        return NumberContext(self._version, destination_number=destination_number)
+        pass
 
     def __call__(self, destination_number: str) -> NumberContext:
         """

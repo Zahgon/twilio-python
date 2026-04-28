@@ -88,13 +88,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ParticipantContext for this ParticipantInstance
         """
-        if self._context is None:
-            self._context = ParticipantContext(
-                self._version,
-                conversation_sid=self._solution["conversation_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(
         self,
@@ -109,9 +103,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-        )
+        pass
 
     async def delete_async(
         self,
@@ -126,9 +118,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-        )
+        pass
 
     def delete_with_http_info(
         self,
@@ -143,9 +133,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-        )
+        pass
 
     async def delete_with_http_info_async(
         self,
@@ -160,9 +148,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-        )
+        pass
 
     def fetch(self) -> "ParticipantInstance":
         """
@@ -171,7 +157,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: The fetched ParticipantInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "ParticipantInstance":
         """
@@ -180,7 +166,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: The fetched ParticipantInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -189,7 +175,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -198,7 +184,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -231,18 +217,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: The updated ParticipantInstance
         """
-        return self._proxy.update(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            date_created=date_created,
-            date_updated=date_updated,
-            attributes=attributes,
-            role_sid=role_sid,
-            messaging_binding_proxy_address=messaging_binding_proxy_address,
-            messaging_binding_projected_address=messaging_binding_projected_address,
-            identity=identity,
-            last_read_message_index=last_read_message_index,
-            last_read_timestamp=last_read_timestamp,
-        )
+        pass
 
     async def update_async(
         self,
@@ -275,18 +250,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: The updated ParticipantInstance
         """
-        return await self._proxy.update_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            date_created=date_created,
-            date_updated=date_updated,
-            attributes=attributes,
-            role_sid=role_sid,
-            messaging_binding_proxy_address=messaging_binding_proxy_address,
-            messaging_binding_projected_address=messaging_binding_projected_address,
-            identity=identity,
-            last_read_message_index=last_read_message_index,
-            last_read_timestamp=last_read_timestamp,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -319,18 +283,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            date_created=date_created,
-            date_updated=date_updated,
-            attributes=attributes,
-            role_sid=role_sid,
-            messaging_binding_proxy_address=messaging_binding_proxy_address,
-            messaging_binding_projected_address=messaging_binding_projected_address,
-            identity=identity,
-            last_read_message_index=last_read_message_index,
-            last_read_timestamp=last_read_timestamp,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -363,18 +316,7 @@ class ParticipantInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            date_created=date_created,
-            date_updated=date_updated,
-            attributes=attributes,
-            role_sid=role_sid,
-            messaging_binding_proxy_address=messaging_binding_proxy_address,
-            messaging_binding_projected_address=messaging_binding_projected_address,
-            identity=identity,
-            last_read_message_index=last_read_message_index,
-            last_read_timestamp=last_read_timestamp,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -419,17 +361,7 @@ class ParticipantContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-        headers = values.of(
-            {
-                "X-Twilio-Webhook-Enabled": x_twilio_webhook_enabled,
-            }
-        )
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(
         self,
@@ -444,8 +376,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete(x_twilio_webhook_enabled=x_twilio_webhook_enabled)
-        return success
+        pass
 
     def delete_with_http_info(
         self,
@@ -460,10 +391,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled
-        )
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(
         self,
@@ -477,17 +405,7 @@ class ParticipantContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-        headers = values.of(
-            {
-                "X-Twilio-Webhook-Enabled": x_twilio_webhook_enabled,
-            }
-        )
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(
         self,
@@ -502,10 +420,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled
-        )
-        return success
+        pass
 
     async def delete_with_http_info_async(
         self,
@@ -520,10 +435,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled
-        )
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -532,14 +444,7 @@ class ParticipantContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> ParticipantInstance:
         """
@@ -548,13 +453,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: The fetched ParticipantInstance
         """
-        payload, _, _ = self._fetch()
-        return ParticipantInstance(
-            self._version,
-            payload,
-            conversation_sid=self._solution["conversation_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -563,14 +462,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = ParticipantInstance(
-            self._version,
-            payload,
-            conversation_sid=self._solution["conversation_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -579,14 +471,7 @@ class ParticipantContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> ParticipantInstance:
         """
@@ -595,13 +480,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: The fetched ParticipantInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return ParticipantInstance(
-            self._version,
-            payload,
-            conversation_sid=self._solution["conversation_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -610,14 +489,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = ParticipantInstance(
-            self._version,
-            payload,
-            conversation_sid=self._solution["conversation_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -640,38 +512,7 @@ class ParticipantContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "DateCreated": serialize.iso8601_datetime(date_created),
-                "DateUpdated": serialize.iso8601_datetime(date_updated),
-                "Attributes": attributes,
-                "RoleSid": role_sid,
-                "MessagingBinding.ProxyAddress": messaging_binding_proxy_address,
-                "MessagingBinding.ProjectedAddress": messaging_binding_projected_address,
-                "Identity": identity,
-                "LastReadMessageIndex": last_read_message_index,
-                "LastReadTimestamp": last_read_timestamp,
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            x_twilio_webhook_enabled is values.unset
-            or (
-                isinstance(x_twilio_webhook_enabled, str)
-                and not x_twilio_webhook_enabled
-            )
-        ):
-            headers["X-Twilio-Webhook-Enabled"] = x_twilio_webhook_enabled
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -704,24 +545,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: The updated ParticipantInstance
         """
-        payload, _, _ = self._update(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            date_created=date_created,
-            date_updated=date_updated,
-            attributes=attributes,
-            role_sid=role_sid,
-            messaging_binding_proxy_address=messaging_binding_proxy_address,
-            messaging_binding_projected_address=messaging_binding_projected_address,
-            identity=identity,
-            last_read_message_index=last_read_message_index,
-            last_read_timestamp=last_read_timestamp,
-        )
-        return ParticipantInstance(
-            self._version,
-            payload,
-            conversation_sid=self._solution["conversation_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -754,25 +578,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            date_created=date_created,
-            date_updated=date_updated,
-            attributes=attributes,
-            role_sid=role_sid,
-            messaging_binding_proxy_address=messaging_binding_proxy_address,
-            messaging_binding_projected_address=messaging_binding_projected_address,
-            identity=identity,
-            last_read_message_index=last_read_message_index,
-            last_read_timestamp=last_read_timestamp,
-        )
-        instance = ParticipantInstance(
-            self._version,
-            payload,
-            conversation_sid=self._solution["conversation_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -795,38 +601,7 @@ class ParticipantContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "DateCreated": serialize.iso8601_datetime(date_created),
-                "DateUpdated": serialize.iso8601_datetime(date_updated),
-                "Attributes": attributes,
-                "RoleSid": role_sid,
-                "MessagingBinding.ProxyAddress": messaging_binding_proxy_address,
-                "MessagingBinding.ProjectedAddress": messaging_binding_projected_address,
-                "Identity": identity,
-                "LastReadMessageIndex": last_read_message_index,
-                "LastReadTimestamp": last_read_timestamp,
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            x_twilio_webhook_enabled is values.unset
-            or (
-                isinstance(x_twilio_webhook_enabled, str)
-                and not x_twilio_webhook_enabled
-            )
-        ):
-            headers["X-Twilio-Webhook-Enabled"] = x_twilio_webhook_enabled
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -859,24 +634,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: The updated ParticipantInstance
         """
-        payload, _, _ = await self._update_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            date_created=date_created,
-            date_updated=date_updated,
-            attributes=attributes,
-            role_sid=role_sid,
-            messaging_binding_proxy_address=messaging_binding_proxy_address,
-            messaging_binding_projected_address=messaging_binding_projected_address,
-            identity=identity,
-            last_read_message_index=last_read_message_index,
-            last_read_timestamp=last_read_timestamp,
-        )
-        return ParticipantInstance(
-            self._version,
-            payload,
-            conversation_sid=self._solution["conversation_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -909,25 +667,7 @@ class ParticipantContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            date_created=date_created,
-            date_updated=date_updated,
-            attributes=attributes,
-            role_sid=role_sid,
-            messaging_binding_proxy_address=messaging_binding_proxy_address,
-            messaging_binding_projected_address=messaging_binding_projected_address,
-            identity=identity,
-            last_read_message_index=last_read_message_index,
-            last_read_timestamp=last_read_timestamp,
-        )
-        instance = ParticipantInstance(
-            self._version,
-            payload,
-            conversation_sid=self._solution["conversation_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -947,9 +687,7 @@ class ParticipantPage(Page):
 
         :param payload: Payload response from the API
         """
-        return ParticipantInstance(
-            self._version, payload, conversation_sid=self._solution["conversation_sid"]
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -1000,33 +738,7 @@ class ParticipantList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Identity": identity,
-                "MessagingBinding.Address": messaging_binding_address,
-                "MessagingBinding.ProxyAddress": messaging_binding_proxy_address,
-                "DateCreated": serialize.iso8601_datetime(date_created),
-                "DateUpdated": serialize.iso8601_datetime(date_updated),
-                "Attributes": attributes,
-                "MessagingBinding.ProjectedAddress": messaging_binding_projected_address,
-                "RoleSid": role_sid,
-            }
-        )
-        headers = values.of(
-            {
-                "X-Twilio-Webhook-Enabled": x_twilio_webhook_enabled,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -1057,20 +769,7 @@ class ParticipantList(ListResource):
 
         :returns: The created ParticipantInstance
         """
-        payload, _, _ = self._create(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            identity=identity,
-            messaging_binding_address=messaging_binding_address,
-            messaging_binding_proxy_address=messaging_binding_proxy_address,
-            date_created=date_created,
-            date_updated=date_updated,
-            attributes=attributes,
-            messaging_binding_projected_address=messaging_binding_projected_address,
-            role_sid=role_sid,
-        )
-        return ParticipantInstance(
-            self._version, payload, conversation_sid=self._solution["conversation_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -1101,21 +800,7 @@ class ParticipantList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            identity=identity,
-            messaging_binding_address=messaging_binding_address,
-            messaging_binding_proxy_address=messaging_binding_proxy_address,
-            date_created=date_created,
-            date_updated=date_updated,
-            attributes=attributes,
-            messaging_binding_projected_address=messaging_binding_projected_address,
-            role_sid=role_sid,
-        )
-        instance = ParticipantInstance(
-            self._version, payload, conversation_sid=self._solution["conversation_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -1137,33 +822,7 @@ class ParticipantList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Identity": identity,
-                "MessagingBinding.Address": messaging_binding_address,
-                "MessagingBinding.ProxyAddress": messaging_binding_proxy_address,
-                "DateCreated": serialize.iso8601_datetime(date_created),
-                "DateUpdated": serialize.iso8601_datetime(date_updated),
-                "Attributes": attributes,
-                "MessagingBinding.ProjectedAddress": messaging_binding_projected_address,
-                "RoleSid": role_sid,
-            }
-        )
-        headers = values.of(
-            {
-                "X-Twilio-Webhook-Enabled": x_twilio_webhook_enabled,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -1194,20 +853,7 @@ class ParticipantList(ListResource):
 
         :returns: The created ParticipantInstance
         """
-        payload, _, _ = await self._create_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            identity=identity,
-            messaging_binding_address=messaging_binding_address,
-            messaging_binding_proxy_address=messaging_binding_proxy_address,
-            date_created=date_created,
-            date_updated=date_updated,
-            attributes=attributes,
-            messaging_binding_projected_address=messaging_binding_projected_address,
-            role_sid=role_sid,
-        )
-        return ParticipantInstance(
-            self._version, payload, conversation_sid=self._solution["conversation_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -1238,21 +884,7 @@ class ParticipantList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            x_twilio_webhook_enabled=x_twilio_webhook_enabled,
-            identity=identity,
-            messaging_binding_address=messaging_binding_address,
-            messaging_binding_proxy_address=messaging_binding_proxy_address,
-            date_created=date_created,
-            date_updated=date_updated,
-            attributes=attributes,
-            messaging_binding_projected_address=messaging_binding_projected_address,
-            role_sid=role_sid,
-        )
-        instance = ParticipantInstance(
-            self._version, payload, conversation_sid=self._solution["conversation_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -1274,10 +906,7 @@ class ParticipantList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -1299,10 +928,7 @@ class ParticipantList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -1322,11 +948,7 @@ class ParticipantList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -1346,13 +968,7 @@ class ParticipantList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -1373,12 +989,7 @@ class ParticipantList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -1399,13 +1010,7 @@ class ParticipantList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -1425,12 +1030,7 @@ class ParticipantList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1450,12 +1050,7 @@ class ParticipantList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1473,22 +1068,7 @@ class ParticipantList(ListResource):
 
         :returns: Page of ParticipantInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ParticipantPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -1506,22 +1086,7 @@ class ParticipantList(ListResource):
 
         :returns: Page of ParticipantInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ParticipantPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -1539,23 +1104,7 @@ class ParticipantList(ListResource):
 
         :returns: ApiResponse with ParticipantPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = ParticipantPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1573,25 +1122,7 @@ class ParticipantList(ListResource):
 
         :returns: ApiResponse with ParticipantPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = ParticipantPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> ParticipantPage:
         """
@@ -1602,8 +1133,7 @@ class ParticipantList(ListResource):
 
         :returns: Page of ParticipantInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return ParticipantPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> ParticipantPage:
         """
@@ -1614,8 +1144,7 @@ class ParticipantList(ListResource):
 
         :returns: Page of ParticipantInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return ParticipantPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, sid: str) -> ParticipantContext:
         """
@@ -1623,9 +1152,7 @@ class ParticipantList(ListResource):
 
         :param sid: A 34 character string that uniquely identifies this resource.
         """
-        return ParticipantContext(
-            self._version, conversation_sid=self._solution["conversation_sid"], sid=sid
-        )
+        pass
 
     def __call__(self, sid: str) -> ParticipantContext:
         """

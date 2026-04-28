@@ -39,16 +39,7 @@ class FaxResponse(TwiML):
 
         :returns: <Receive> element
         """
-        return self.nest(
-            Receive(
-                action=action,
-                method=method,
-                media_type=media_type,
-                page_size=page_size,
-                store_media=store_media,
-                **kwargs
-            )
-        )
+        pass
 
 
 class Receive(TwiML):

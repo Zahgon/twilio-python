@@ -87,32 +87,7 @@ class ClientBase(object):
 
         :returns: Response from the Twilio API
         """
-        headers = self.get_headers(method, headers)
-
-        if self.credential_provider:
-
-            auth_strategy = self.credential_provider.to_auth_strategy()
-            headers["Authorization"] = auth_strategy.get_auth_string()
-        elif self.username is not None and self.password is not None:
-            auth = self.get_auth(auth)
-        else:
-            auth = None
-
-        if method == "DELETE":
-            del headers["Accept"]
-
-        uri = self.get_hostname(uri)
-        filtered_data = self.copy_non_none_values(data)
-        return self.http_client.request(
-            method,
-            uri,
-            params=params,
-            data=filtered_data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
+        pass
 
     async def request_async(
         self,
@@ -141,48 +116,10 @@ class ClientBase(object):
 
         :returns: Response from the Twilio API
         """
-        if not self.http_client.is_async:
-            raise RuntimeError(
-                "http_client must be asynchronous to support async API requests"
-            )
-
-        headers = self.get_headers(method, headers)
-        if method == "DELETE":
-            del headers["Accept"]
-
-        if self.credential_provider:
-            auth_strategy = self.credential_provider.to_auth_strategy()
-            headers["Authorization"] = auth_strategy.get_auth_string()
-        elif self.username is not None and self.password is not None:
-            auth = self.get_auth(auth)
-        else:
-            auth = None
-
-        uri = self.get_hostname(uri)
-        filtered_data = self.copy_non_none_values(data)
-        return await self.http_client.request(
-            method,
-            uri,
-            params=params,
-            data=filtered_data,
-            headers=headers,
-            auth=auth,
-            timeout=timeout,
-            allow_redirects=allow_redirects,
-        )
+        pass
 
     def copy_non_none_values(self, data):
-        if isinstance(data, dict):
-            return {
-                k: self.copy_non_none_values(v)
-                for k, v in data.items()
-                if v is not None
-            }
-        elif isinstance(data, list):
-            return [
-                self.copy_non_none_values(item) for item in data if item is not None
-            ]
-        return data
+        pass
 
     def get_auth(self, auth: Optional[Tuple[str, str]]) -> Tuple[str, str]:
         """
@@ -190,7 +127,7 @@ class ClientBase(object):
         :param auth: Authentication (username, password)
         :returns: The authentication object
         """
-        return auth or self.auth
+        pass
 
     def get_headers(
         self, method: str, headers: Optional[Dict[str, str]]
@@ -201,32 +138,7 @@ class ClientBase(object):
         :param headers: HTTP headers
         :returns: HTTP headers
         """
-        headers = headers or {}
-
-        # Set User-Agent
-        pkg_version = __version__
-        os_name = platform.system()
-        os_arch = platform.machine()
-        python_version = platform.python_version()
-        headers["User-Agent"] = "twilio-python/{} ({} {}) Python/{}".format(
-            pkg_version,
-            os_name,
-            os_arch,
-            python_version,
-        )
-        # Extensions
-        for extension in self.user_agent_extensions:
-            headers["User-Agent"] += " {}".format(extension)
-        headers["X-Twilio-Client"] = "python-{}".format(__version__)
-
-        # Types, encodings, etc.
-        headers["Accept-Charset"] = "utf-8"
-        if (method == "POST" or method == "PUT") and ("Content-Type" not in headers):
-            headers["Content-Type"] = "application/x-www-form-urlencoded"
-        if "Accept" not in headers:
-            headers["Accept"] = "application/json"
-
-        return headers
+        pass
 
     def get_hostname(self, uri: str) -> str:
         """
@@ -237,30 +149,7 @@ class ClientBase(object):
 
         :returns: The final uri used to make the request
         """
-        if not self.edge and not self.region:
-            return uri
-
-        parsed_url = urlparse(uri)
-        pieces = parsed_url.netloc.split(".")
-        prefix = pieces[0]
-        suffix = ".".join(pieces[-2:])
-        region = None
-        edge = None
-        if len(pieces) == 4:
-            # product.region.twilio.com
-            region = pieces[1]
-        elif len(pieces) == 5:
-            # product.edge.region.twilio.com
-            edge = pieces[1]
-            region = pieces[2]
-
-        edge = self.edge or edge
-        region = self.region or region or (edge and "us1")
-
-        parsed_url = parsed_url._replace(
-            netloc=".".join([part for part in [prefix, edge, region, suffix] if part])
-        )
-        return str(urlunparse(parsed_url))
+        pass
 
     def __repr__(self) -> str:
         """

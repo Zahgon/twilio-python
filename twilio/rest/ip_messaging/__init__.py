@@ -8,18 +8,8 @@ from twilio.rest.ip_messaging.v2.service import ServiceList
 class IpMessaging(IpMessagingBase):
     @property
     def credentials(self) -> CredentialList:
-        warn(
-            "credentials is deprecated. Use v2.credentials instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v2.credentials
+        pass
 
     @property
     def services(self) -> ServiceList:
-        warn(
-            "services is deprecated. Use v2.services instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.v2.services
+        pass

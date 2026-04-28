@@ -29,13 +29,4 @@ class ClientTokenManager(TokenManager):
         self.client = Client()
 
     def fetch_access_token(self):
-        token_instance = self.client.oauth.v2.token.create(
-            grant_type=self.grant_type,
-            client_id=self.client_id,
-            client_secret=self.client_secret,
-            code=self.code,
-            redirect_uri=self.redirect_uri,
-            audience=self.audience,
-            scope=self.scope,
-        )
-        return token_instance.access_token
+        pass

@@ -97,145 +97,95 @@ class V1(Version):
 
     @property
     def assessments(self) -> AssessmentsList:
-        if self._assessments is None:
-            self._assessments = AssessmentsList(self)
-        return self._assessments
+        pass
 
     @property
     def channel(self) -> ChannelList:
-        if self._channel is None:
-            self._channel = ChannelList(self)
-        return self._channel
+        pass
 
     @property
     def configuration(self) -> ConfigurationList:
-        if self._configuration is None:
-            self._configuration = ConfigurationList(self)
-        return self._configuration
+        pass
 
     @property
     def flex_flow(self) -> FlexFlowList:
-        if self._flex_flow is None:
-            self._flex_flow = FlexFlowList(self)
-        return self._flex_flow
+        pass
 
     @property
     def insights_assessments_comment(self) -> InsightsAssessmentsCommentList:
-        if self._insights_assessments_comment is None:
-            self._insights_assessments_comment = InsightsAssessmentsCommentList(self)
-        return self._insights_assessments_comment
+        pass
 
     @property
     def insights_conversations(self) -> InsightsConversationsList:
-        if self._insights_conversations is None:
-            self._insights_conversations = InsightsConversationsList(self)
-        return self._insights_conversations
+        pass
 
     @property
     def insights_questionnaires(self) -> InsightsQuestionnairesList:
-        if self._insights_questionnaires is None:
-            self._insights_questionnaires = InsightsQuestionnairesList(self)
-        return self._insights_questionnaires
+        pass
 
     @property
     def insights_questionnaires_category(self) -> InsightsQuestionnairesCategoryList:
-        if self._insights_questionnaires_category is None:
-            self._insights_questionnaires_category = InsightsQuestionnairesCategoryList(
-                self
-            )
-        return self._insights_questionnaires_category
+        pass
 
     @property
     def insights_questionnaires_question(self) -> InsightsQuestionnairesQuestionList:
-        if self._insights_questionnaires_question is None:
-            self._insights_questionnaires_question = InsightsQuestionnairesQuestionList(
-                self
-            )
-        return self._insights_questionnaires_question
+        pass
 
     @property
     def insights_segments(self) -> InsightsSegmentsList:
-        if self._insights_segments is None:
-            self._insights_segments = InsightsSegmentsList(self)
-        return self._insights_segments
+        pass
 
     @property
     def insights_session(self) -> InsightsSessionList:
-        if self._insights_session is None:
-            self._insights_session = InsightsSessionList(self)
-        return self._insights_session
+        pass
 
     @property
     def insights_settings_answer_sets(self) -> InsightsSettingsAnswerSetsList:
-        if self._insights_settings_answer_sets is None:
-            self._insights_settings_answer_sets = InsightsSettingsAnswerSetsList(self)
-        return self._insights_settings_answer_sets
+        pass
 
     @property
     def insights_settings_comment(self) -> InsightsSettingsCommentList:
-        if self._insights_settings_comment is None:
-            self._insights_settings_comment = InsightsSettingsCommentList(self)
-        return self._insights_settings_comment
+        pass
 
     @property
     def insights_user_roles(self) -> InsightsUserRolesList:
-        if self._insights_user_roles is None:
-            self._insights_user_roles = InsightsUserRolesList(self)
-        return self._insights_user_roles
+        pass
 
     @property
     def interaction(self) -> InteractionList:
-        if self._interaction is None:
-            self._interaction = InteractionList(self)
-        return self._interaction
+        pass
 
     @property
     def plugins(self) -> PluginList:
-        if self._plugins is None:
-            self._plugins = PluginList(self)
-        return self._plugins
+        pass
 
     @property
     def plugin_archive(self) -> PluginArchiveList:
-        if self._plugin_archive is None:
-            self._plugin_archive = PluginArchiveList(self)
-        return self._plugin_archive
+        pass
 
     @property
     def plugin_configurations(self) -> PluginConfigurationList:
-        if self._plugin_configurations is None:
-            self._plugin_configurations = PluginConfigurationList(self)
-        return self._plugin_configurations
+        pass
 
     @property
     def plugin_configuration_archive(self) -> PluginConfigurationArchiveList:
-        if self._plugin_configuration_archive is None:
-            self._plugin_configuration_archive = PluginConfigurationArchiveList(self)
-        return self._plugin_configuration_archive
+        pass
 
     @property
     def plugin_releases(self) -> PluginReleaseList:
-        if self._plugin_releases is None:
-            self._plugin_releases = PluginReleaseList(self)
-        return self._plugin_releases
+        pass
 
     @property
     def plugin_version_archive(self) -> PluginVersionArchiveList:
-        if self._plugin_version_archive is None:
-            self._plugin_version_archive = PluginVersionArchiveList(self)
-        return self._plugin_version_archive
+        pass
 
     @property
     def provisioning_status(self) -> ProvisioningStatusList:
-        if self._provisioning_status is None:
-            self._provisioning_status = ProvisioningStatusList(self)
-        return self._provisioning_status
+        pass
 
     @property
     def web_channel(self) -> WebChannelList:
-        if self._web_channel is None:
-            self._web_channel = WebChannelList(self)
-        return self._web_channel
+        pass
 
     def __repr__(self) -> str:
         """

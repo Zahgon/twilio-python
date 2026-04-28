@@ -125,13 +125,7 @@ class TaskInstance(InstanceResource):
 
         :returns: TaskContext for this TaskInstance
         """
-        if self._context is None:
-            self._context = TaskContext(
-                self._version,
-                workspace_sid=self._solution["workspace_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self, if_match: Union[str, object] = values.unset) -> bool:
         """
@@ -141,9 +135,7 @@ class TaskInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete(
-            if_match=if_match,
-        )
+        pass
 
     async def delete_async(self, if_match: Union[str, object] = values.unset) -> bool:
         """
@@ -153,9 +145,7 @@ class TaskInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async(
-            if_match=if_match,
-        )
+        pass
 
     def delete_with_http_info(
         self, if_match: Union[str, object] = values.unset
@@ -167,9 +157,7 @@ class TaskInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info(
-            if_match=if_match,
-        )
+        pass
 
     async def delete_with_http_info_async(
         self, if_match: Union[str, object] = values.unset
@@ -181,9 +169,7 @@ class TaskInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async(
-            if_match=if_match,
-        )
+        pass
 
     def fetch(self) -> "TaskInstance":
         """
@@ -192,7 +178,7 @@ class TaskInstance(InstanceResource):
 
         :returns: The fetched TaskInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "TaskInstance":
         """
@@ -201,7 +187,7 @@ class TaskInstance(InstanceResource):
 
         :returns: The fetched TaskInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -210,7 +196,7 @@ class TaskInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -219,7 +205,7 @@ class TaskInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -244,15 +230,7 @@ class TaskInstance(InstanceResource):
 
         :returns: The updated TaskInstance
         """
-        return self._proxy.update(
-            if_match=if_match,
-            attributes=attributes,
-            assignment_status=assignment_status,
-            reason=reason,
-            priority=priority,
-            task_channel=task_channel,
-            virtual_start_time=virtual_start_time,
-        )
+        pass
 
     async def update_async(
         self,
@@ -277,15 +255,7 @@ class TaskInstance(InstanceResource):
 
         :returns: The updated TaskInstance
         """
-        return await self._proxy.update_async(
-            if_match=if_match,
-            attributes=attributes,
-            assignment_status=assignment_status,
-            reason=reason,
-            priority=priority,
-            task_channel=task_channel,
-            virtual_start_time=virtual_start_time,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -310,15 +280,7 @@ class TaskInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            if_match=if_match,
-            attributes=attributes,
-            assignment_status=assignment_status,
-            reason=reason,
-            priority=priority,
-            task_channel=task_channel,
-            virtual_start_time=virtual_start_time,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -343,22 +305,14 @@ class TaskInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            if_match=if_match,
-            attributes=attributes,
-            assignment_status=assignment_status,
-            reason=reason,
-            priority=priority,
-            task_channel=task_channel,
-            virtual_start_time=virtual_start_time,
-        )
+        pass
 
     @property
     def reservations(self) -> ReservationList:
         """
         Access the reservations
         """
-        return self._proxy.reservations
+        pass
 
     def __repr__(self) -> str:
         """
@@ -398,17 +352,7 @@ class TaskContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-        headers = values.of(
-            {
-                "If-Match": if_match,
-            }
-        )
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self, if_match: Union[str, object] = values.unset) -> bool:
         """
@@ -418,8 +362,7 @@ class TaskContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete(if_match=if_match)
-        return success
+        pass
 
     def delete_with_http_info(
         self, if_match: Union[str, object] = values.unset
@@ -431,8 +374,7 @@ class TaskContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete(if_match=if_match)
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self, if_match: Union[str, object] = values.unset) -> tuple:
         """
@@ -441,17 +383,7 @@ class TaskContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-        headers = values.of(
-            {
-                "If-Match": if_match,
-            }
-        )
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self, if_match: Union[str, object] = values.unset) -> bool:
         """
@@ -461,8 +393,7 @@ class TaskContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async(if_match=if_match)
-        return success
+        pass
 
     async def delete_with_http_info_async(
         self, if_match: Union[str, object] = values.unset
@@ -474,8 +405,7 @@ class TaskContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async(if_match=if_match)
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -484,14 +414,7 @@ class TaskContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> TaskInstance:
         """
@@ -500,13 +423,7 @@ class TaskContext(InstanceContext):
 
         :returns: The fetched TaskInstance
         """
-        payload, _, _ = self._fetch()
-        return TaskInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -515,14 +432,7 @@ class TaskContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = TaskInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -531,14 +441,7 @@ class TaskContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> TaskInstance:
         """
@@ -547,13 +450,7 @@ class TaskContext(InstanceContext):
 
         :returns: The fetched TaskInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return TaskInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -562,14 +459,7 @@ class TaskContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = TaskInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -587,31 +477,7 @@ class TaskContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Attributes": attributes,
-                "AssignmentStatus": assignment_status,
-                "Reason": reason,
-                "Priority": priority,
-                "TaskChannel": task_channel,
-                "VirtualStartTime": serialize.iso8601_datetime(virtual_start_time),
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            if_match is values.unset or (isinstance(if_match, str) and not if_match)
-        ):
-            headers["If-Match"] = if_match
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -636,21 +502,7 @@ class TaskContext(InstanceContext):
 
         :returns: The updated TaskInstance
         """
-        payload, _, _ = self._update(
-            if_match=if_match,
-            attributes=attributes,
-            assignment_status=assignment_status,
-            reason=reason,
-            priority=priority,
-            task_channel=task_channel,
-            virtual_start_time=virtual_start_time,
-        )
-        return TaskInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -675,22 +527,7 @@ class TaskContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            if_match=if_match,
-            attributes=attributes,
-            assignment_status=assignment_status,
-            reason=reason,
-            priority=priority,
-            task_channel=task_channel,
-            virtual_start_time=virtual_start_time,
-        )
-        instance = TaskInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -708,31 +545,7 @@ class TaskContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Attributes": attributes,
-                "AssignmentStatus": assignment_status,
-                "Reason": reason,
-                "Priority": priority,
-                "TaskChannel": task_channel,
-                "VirtualStartTime": serialize.iso8601_datetime(virtual_start_time),
-            }
-        )
-        headers = values.of({})
-
-        if not (
-            if_match is values.unset or (isinstance(if_match, str) and not if_match)
-        ):
-            headers["If-Match"] = if_match
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -757,21 +570,7 @@ class TaskContext(InstanceContext):
 
         :returns: The updated TaskInstance
         """
-        payload, _, _ = await self._update_async(
-            if_match=if_match,
-            attributes=attributes,
-            assignment_status=assignment_status,
-            reason=reason,
-            priority=priority,
-            task_channel=task_channel,
-            virtual_start_time=virtual_start_time,
-        )
-        return TaskInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -796,35 +595,14 @@ class TaskContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            if_match=if_match,
-            attributes=attributes,
-            assignment_status=assignment_status,
-            reason=reason,
-            priority=priority,
-            task_channel=task_channel,
-            virtual_start_time=virtual_start_time,
-        )
-        instance = TaskInstance(
-            self._version,
-            payload,
-            workspace_sid=self._solution["workspace_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def reservations(self) -> ReservationList:
         """
         Access the reservations
         """
-        if self._reservations is None:
-            self._reservations = ReservationList(
-                self._version,
-                self._solution["workspace_sid"],
-                self._solution["sid"],
-            )
-        return self._reservations
+        pass
 
     def __repr__(self) -> str:
         """
@@ -844,9 +622,7 @@ class TaskPage(Page):
 
         :param payload: Payload response from the API
         """
-        return TaskInstance(
-            self._version, payload, workspace_sid=self._solution["workspace_sid"]
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -893,29 +669,7 @@ class TaskList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Timeout": timeout,
-                "Priority": priority,
-                "TaskChannel": task_channel,
-                "WorkflowSid": workflow_sid,
-                "Attributes": attributes,
-                "VirtualStartTime": serialize.iso8601_datetime(virtual_start_time),
-                "RoutingTarget": routing_target,
-                "IgnoreCapacity": ignore_capacity,
-                "TaskQueueSid": task_queue_sid,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -944,20 +698,7 @@ class TaskList(ListResource):
 
         :returns: The created TaskInstance
         """
-        payload, _, _ = self._create(
-            timeout=timeout,
-            priority=priority,
-            task_channel=task_channel,
-            workflow_sid=workflow_sid,
-            attributes=attributes,
-            virtual_start_time=virtual_start_time,
-            routing_target=routing_target,
-            ignore_capacity=ignore_capacity,
-            task_queue_sid=task_queue_sid,
-        )
-        return TaskInstance(
-            self._version, payload, workspace_sid=self._solution["workspace_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -986,21 +727,7 @@ class TaskList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            timeout=timeout,
-            priority=priority,
-            task_channel=task_channel,
-            workflow_sid=workflow_sid,
-            attributes=attributes,
-            virtual_start_time=virtual_start_time,
-            routing_target=routing_target,
-            ignore_capacity=ignore_capacity,
-            task_queue_sid=task_queue_sid,
-        )
-        instance = TaskInstance(
-            self._version, payload, workspace_sid=self._solution["workspace_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -1020,29 +747,7 @@ class TaskList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Timeout": timeout,
-                "Priority": priority,
-                "TaskChannel": task_channel,
-                "WorkflowSid": workflow_sid,
-                "Attributes": attributes,
-                "VirtualStartTime": serialize.iso8601_datetime(virtual_start_time),
-                "RoutingTarget": routing_target,
-                "IgnoreCapacity": ignore_capacity,
-                "TaskQueueSid": task_queue_sid,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -1071,20 +776,7 @@ class TaskList(ListResource):
 
         :returns: The created TaskInstance
         """
-        payload, _, _ = await self._create_async(
-            timeout=timeout,
-            priority=priority,
-            task_channel=task_channel,
-            workflow_sid=workflow_sid,
-            attributes=attributes,
-            virtual_start_time=virtual_start_time,
-            routing_target=routing_target,
-            ignore_capacity=ignore_capacity,
-            task_queue_sid=task_queue_sid,
-        )
-        return TaskInstance(
-            self._version, payload, workspace_sid=self._solution["workspace_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -1113,21 +805,7 @@ class TaskList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            timeout=timeout,
-            priority=priority,
-            task_channel=task_channel,
-            workflow_sid=workflow_sid,
-            attributes=attributes,
-            virtual_start_time=virtual_start_time,
-            routing_target=routing_target,
-            ignore_capacity=ignore_capacity,
-            task_queue_sid=task_queue_sid,
-        )
-        instance = TaskInstance(
-            self._version, payload, workspace_sid=self._solution["workspace_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -1169,22 +847,7 @@ class TaskList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            priority=priority,
-            assignment_status=assignment_status,
-            workflow_sid=workflow_sid,
-            workflow_name=workflow_name,
-            task_queue_sid=task_queue_sid,
-            task_queue_name=task_queue_name,
-            evaluate_task_attributes=evaluate_task_attributes,
-            routing_target=routing_target,
-            ordering=ordering,
-            has_addons=has_addons,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -1226,22 +889,7 @@ class TaskList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            priority=priority,
-            assignment_status=assignment_status,
-            workflow_sid=workflow_sid,
-            workflow_name=workflow_name,
-            task_queue_sid=task_queue_sid,
-            task_queue_name=task_queue_name,
-            evaluate_task_attributes=evaluate_task_attributes,
-            routing_target=routing_target,
-            ordering=ordering,
-            has_addons=has_addons,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -1281,23 +929,7 @@ class TaskList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            priority=priority,
-            assignment_status=assignment_status,
-            workflow_sid=workflow_sid,
-            workflow_name=workflow_name,
-            task_queue_sid=task_queue_sid,
-            task_queue_name=task_queue_name,
-            evaluate_task_attributes=evaluate_task_attributes,
-            routing_target=routing_target,
-            ordering=ordering,
-            has_addons=has_addons,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -1337,23 +969,7 @@ class TaskList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            priority=priority,
-            assignment_status=assignment_status,
-            workflow_sid=workflow_sid,
-            workflow_name=workflow_name,
-            task_queue_sid=task_queue_sid,
-            task_queue_name=task_queue_name,
-            evaluate_task_attributes=evaluate_task_attributes,
-            routing_target=routing_target,
-            ordering=ordering,
-            has_addons=has_addons,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -1394,22 +1010,7 @@ class TaskList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                priority=priority,
-                assignment_status=assignment_status,
-                workflow_sid=workflow_sid,
-                workflow_name=workflow_name,
-                task_queue_sid=task_queue_sid,
-                task_queue_name=task_queue_name,
-                evaluate_task_attributes=evaluate_task_attributes,
-                routing_target=routing_target,
-                ordering=ordering,
-                has_addons=has_addons,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -1450,23 +1051,7 @@ class TaskList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                priority=priority,
-                assignment_status=assignment_status,
-                workflow_sid=workflow_sid,
-                workflow_name=workflow_name,
-                task_queue_sid=task_queue_sid,
-                task_queue_name=task_queue_name,
-                evaluate_task_attributes=evaluate_task_attributes,
-                routing_target=routing_target,
-                ordering=ordering,
-                has_addons=has_addons,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -1506,22 +1091,7 @@ class TaskList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            priority=priority,
-            assignment_status=assignment_status,
-            workflow_sid=workflow_sid,
-            workflow_name=workflow_name,
-            task_queue_sid=task_queue_sid,
-            task_queue_name=task_queue_name,
-            evaluate_task_attributes=evaluate_task_attributes,
-            routing_target=routing_target,
-            ordering=ordering,
-            has_addons=has_addons,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1561,22 +1131,7 @@ class TaskList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            priority=priority,
-            assignment_status=assignment_status,
-            workflow_sid=workflow_sid,
-            workflow_name=workflow_name,
-            task_queue_sid=task_queue_sid,
-            task_queue_name=task_queue_name,
-            evaluate_task_attributes=evaluate_task_attributes,
-            routing_target=routing_target,
-            ordering=ordering,
-            has_addons=has_addons,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1614,32 +1169,7 @@ class TaskList(ListResource):
 
         :returns: Page of TaskInstance
         """
-        data = values.of(
-            {
-                "Priority": priority,
-                "AssignmentStatus": serialize.map(assignment_status, lambda e: e),
-                "WorkflowSid": workflow_sid,
-                "WorkflowName": workflow_name,
-                "TaskQueueSid": task_queue_sid,
-                "TaskQueueName": task_queue_name,
-                "EvaluateTaskAttributes": evaluate_task_attributes,
-                "RoutingTarget": routing_target,
-                "Ordering": ordering,
-                "HasAddons": serialize.boolean_to_string(has_addons),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return TaskPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -1677,32 +1207,7 @@ class TaskList(ListResource):
 
         :returns: Page of TaskInstance
         """
-        data = values.of(
-            {
-                "Priority": priority,
-                "AssignmentStatus": serialize.map(assignment_status, lambda e: e),
-                "WorkflowSid": workflow_sid,
-                "WorkflowName": workflow_name,
-                "TaskQueueSid": task_queue_sid,
-                "TaskQueueName": task_queue_name,
-                "EvaluateTaskAttributes": evaluate_task_attributes,
-                "RoutingTarget": routing_target,
-                "Ordering": ordering,
-                "HasAddons": serialize.boolean_to_string(has_addons),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return TaskPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -1740,33 +1245,7 @@ class TaskList(ListResource):
 
         :returns: ApiResponse with TaskPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Priority": priority,
-                "AssignmentStatus": serialize.map(assignment_status, lambda e: e),
-                "WorkflowSid": workflow_sid,
-                "WorkflowName": workflow_name,
-                "TaskQueueSid": task_queue_sid,
-                "TaskQueueName": task_queue_name,
-                "EvaluateTaskAttributes": evaluate_task_attributes,
-                "RoutingTarget": routing_target,
-                "Ordering": ordering,
-                "HasAddons": serialize.boolean_to_string(has_addons),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = TaskPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1804,35 +1283,7 @@ class TaskList(ListResource):
 
         :returns: ApiResponse with TaskPage, status code, and headers
         """
-        data = values.of(
-            {
-                "Priority": priority,
-                "AssignmentStatus": serialize.map(assignment_status, lambda e: e),
-                "WorkflowSid": workflow_sid,
-                "WorkflowName": workflow_name,
-                "TaskQueueSid": task_queue_sid,
-                "TaskQueueName": task_queue_name,
-                "EvaluateTaskAttributes": evaluate_task_attributes,
-                "RoutingTarget": routing_target,
-                "Ordering": ordering,
-                "HasAddons": serialize.boolean_to_string(has_addons),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = TaskPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> TaskPage:
         """
@@ -1843,8 +1294,7 @@ class TaskList(ListResource):
 
         :returns: Page of TaskInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return TaskPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> TaskPage:
         """
@@ -1855,8 +1305,7 @@ class TaskList(ListResource):
 
         :returns: Page of TaskInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return TaskPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, sid: str) -> TaskContext:
         """
@@ -1864,9 +1313,7 @@ class TaskList(ListResource):
 
         :param sid: The SID of the Task resource to update.
         """
-        return TaskContext(
-            self._version, workspace_sid=self._solution["workspace_sid"], sid=sid
-        )
+        pass
 
     def __call__(self, sid: str) -> TaskContext:
         """

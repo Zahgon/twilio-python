@@ -35,224 +35,104 @@ from twilio.rest.api.v2010.account.validation_request import ValidationRequestLi
 class Api(ApiBase):
     @property
     def account(self) -> AccountContext:
-        return self.v2010.account
+        pass
 
     @property
     def accounts(self) -> AccountList:
-        return self.v2010.accounts
+        pass
 
     @property
     def addresses(self) -> AddressList:
-        warn(
-            "addresses is deprecated. Use account.addresses instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.addresses
+        pass
 
     @property
     def applications(self) -> ApplicationList:
-        warn(
-            "applications is deprecated. Use account.applications instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.applications
+        pass
 
     @property
     def authorized_connect_apps(self) -> AuthorizedConnectAppList:
-        warn(
-            "authorized_connect_apps is deprecated. Use account.authorized_connect_apps instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.authorized_connect_apps
+        pass
 
     @property
     def available_phone_numbers(self) -> AvailablePhoneNumberCountryList:
-        warn(
-            "available_phone_numbers is deprecated. Use account.available_phone_numbers instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.available_phone_numbers
+        pass
 
     @property
     def balance(self) -> BalanceList:
-        warn(
-            "balance is deprecated. Use account.balance instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.balance
+        pass
 
     @property
     def calls(self) -> CallList:
-        warn(
-            "calls is deprecated. Use account.calls instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.calls
+        pass
 
     @property
     def conferences(self) -> ConferenceList:
-        warn(
-            "conferences is deprecated. Use account.conferences instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.conferences
+        pass
 
     @property
     def connect_apps(self) -> ConnectAppList:
-        warn(
-            "connect_apps is deprecated. Use account.connect_apps instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.connect_apps
+        pass
 
     @property
     def incoming_phone_numbers(self) -> IncomingPhoneNumberList:
-        warn(
-            "incoming_phone_numbers is deprecated. Use account.incoming_phone_numbers instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.incoming_phone_numbers
+        pass
 
     @property
     def keys(self) -> KeyList:
-        warn(
-            "keys is deprecated. Use account.keys instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.keys
+        pass
 
     @property
     def messages(self) -> MessageList:
-        warn(
-            "messages is deprecated. Use account.messages instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.messages
+        pass
 
     @property
     def new_keys(self) -> NewKeyList:
-        warn(
-            "new_keys is deprecated. Use account.new_keys instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.new_keys
+        pass
 
     @property
     def new_signing_keys(self) -> NewSigningKeyList:
-        warn(
-            "new_signing_keys is deprecated. Use account.new_signing_keys instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.new_signing_keys
+        pass
 
     @property
     def notifications(self) -> NotificationList:
-        warn(
-            "notifications is deprecated. Use account.notifications instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.notifications
+        pass
 
     @property
     def outgoing_caller_ids(self) -> OutgoingCallerIdList:
-        warn(
-            "outgoing_caller_ids is deprecated. Use account.outgoing_caller_ids instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.outgoing_caller_ids
+        pass
 
     @property
     def queues(self) -> QueueList:
-        warn(
-            "queues is deprecated. Use account.queues instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.queues
+        pass
 
     @property
     def recordings(self) -> RecordingList:
-        warn(
-            "recordings is deprecated. Use account.recordings instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.recordings
+        pass
 
     @property
     def signing_keys(self) -> SigningKeyList:
-        warn(
-            "signing_keys is deprecated. Use account.signing_keys instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.signing_keys
+        pass
 
     @property
     def sip(self) -> SipList:
-        warn(
-            "sip is deprecated. Use account.sip instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.sip
+        pass
 
     @property
     def short_codes(self) -> ShortCodeList:
-        warn(
-            "short_codes is deprecated. Use account.short_codes instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.short_codes
+        pass
 
     @property
     def tokens(self) -> TokenList:
-        warn(
-            "tokens is deprecated. Use account.tokens instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.tokens
+        pass
 
     @property
     def transcriptions(self) -> TranscriptionList:
-        warn(
-            "transcriptions is deprecated. Use account.transcriptions instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.transcriptions
+        pass
 
     @property
     def usage(self) -> UsageList:
-        warn(
-            "usage is deprecated. Use account.usage instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.usage
+        pass
 
     @property
     def validation_requests(self) -> ValidationRequestList:
-        warn(
-            "validation_requests is deprecated. Use account.validation_requests instead.",
-            DeprecationWarning,
-            stacklevel=2,
-        )
-        return self.account.validation_requests
+        pass

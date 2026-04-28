@@ -70,12 +70,7 @@ class DomainConfigInstance(InstanceResource):
 
         :returns: DomainConfigContext for this DomainConfigInstance
         """
-        if self._context is None:
-            self._context = DomainConfigContext(
-                self._version,
-                domain_sid=self._solution["domain_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "DomainConfigInstance":
         """
@@ -84,7 +79,7 @@ class DomainConfigInstance(InstanceResource):
 
         :returns: The fetched DomainConfigInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "DomainConfigInstance":
         """
@@ -93,7 +88,7 @@ class DomainConfigInstance(InstanceResource):
 
         :returns: The fetched DomainConfigInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -102,7 +97,7 @@ class DomainConfigInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -111,7 +106,7 @@ class DomainConfigInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -130,12 +125,7 @@ class DomainConfigInstance(InstanceResource):
 
         :returns: The updated DomainConfigInstance
         """
-        return self._proxy.update(
-            fallback_url=fallback_url,
-            callback_url=callback_url,
-            continue_on_failure=continue_on_failure,
-            disable_https=disable_https,
-        )
+        pass
 
     async def update_async(
         self,
@@ -154,12 +144,7 @@ class DomainConfigInstance(InstanceResource):
 
         :returns: The updated DomainConfigInstance
         """
-        return await self._proxy.update_async(
-            fallback_url=fallback_url,
-            callback_url=callback_url,
-            continue_on_failure=continue_on_failure,
-            disable_https=disable_https,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -178,12 +163,7 @@ class DomainConfigInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            fallback_url=fallback_url,
-            callback_url=callback_url,
-            continue_on_failure=continue_on_failure,
-            disable_https=disable_https,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -202,12 +182,7 @@ class DomainConfigInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            fallback_url=fallback_url,
-            callback_url=callback_url,
-            continue_on_failure=continue_on_failure,
-            disable_https=disable_https,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -245,14 +220,7 @@ class DomainConfigContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> DomainConfigInstance:
         """
@@ -261,12 +229,7 @@ class DomainConfigContext(InstanceContext):
 
         :returns: The fetched DomainConfigInstance
         """
-        payload, _, _ = self._fetch()
-        return DomainConfigInstance(
-            self._version,
-            payload,
-            domain_sid=self._solution["domain_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -275,13 +238,7 @@ class DomainConfigContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = DomainConfigInstance(
-            self._version,
-            payload,
-            domain_sid=self._solution["domain_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -290,14 +247,7 @@ class DomainConfigContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> DomainConfigInstance:
         """
@@ -306,12 +256,7 @@ class DomainConfigContext(InstanceContext):
 
         :returns: The fetched DomainConfigInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return DomainConfigInstance(
-            self._version,
-            payload,
-            domain_sid=self._solution["domain_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -320,13 +265,7 @@ class DomainConfigContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = DomainConfigInstance(
-            self._version,
-            payload,
-            domain_sid=self._solution["domain_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -341,24 +280,7 @@ class DomainConfigContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FallbackUrl": fallback_url,
-                "CallbackUrl": callback_url,
-                "ContinueOnFailure": serialize.boolean_to_string(continue_on_failure),
-                "DisableHttps": serialize.boolean_to_string(disable_https),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -377,15 +299,7 @@ class DomainConfigContext(InstanceContext):
 
         :returns: The updated DomainConfigInstance
         """
-        payload, _, _ = self._update(
-            fallback_url=fallback_url,
-            callback_url=callback_url,
-            continue_on_failure=continue_on_failure,
-            disable_https=disable_https,
-        )
-        return DomainConfigInstance(
-            self._version, payload, domain_sid=self._solution["domain_sid"]
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -404,16 +318,7 @@ class DomainConfigContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            fallback_url=fallback_url,
-            callback_url=callback_url,
-            continue_on_failure=continue_on_failure,
-            disable_https=disable_https,
-        )
-        instance = DomainConfigInstance(
-            self._version, payload, domain_sid=self._solution["domain_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -428,24 +333,7 @@ class DomainConfigContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FallbackUrl": fallback_url,
-                "CallbackUrl": callback_url,
-                "ContinueOnFailure": serialize.boolean_to_string(continue_on_failure),
-                "DisableHttps": serialize.boolean_to_string(disable_https),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -464,15 +352,7 @@ class DomainConfigContext(InstanceContext):
 
         :returns: The updated DomainConfigInstance
         """
-        payload, _, _ = await self._update_async(
-            fallback_url=fallback_url,
-            callback_url=callback_url,
-            continue_on_failure=continue_on_failure,
-            disable_https=disable_https,
-        )
-        return DomainConfigInstance(
-            self._version, payload, domain_sid=self._solution["domain_sid"]
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -491,16 +371,7 @@ class DomainConfigContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            fallback_url=fallback_url,
-            callback_url=callback_url,
-            continue_on_failure=continue_on_failure,
-            disable_https=disable_https,
-        )
-        instance = DomainConfigInstance(
-            self._version, payload, domain_sid=self._solution["domain_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -529,7 +400,7 @@ class DomainConfigList(ListResource):
 
         :param domain_sid: Unique string used to identify the domain that this config should be associated with.
         """
-        return DomainConfigContext(self._version, domain_sid=domain_sid)
+        pass
 
     def __call__(self, domain_sid: str) -> DomainConfigContext:
         """

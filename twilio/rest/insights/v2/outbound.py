@@ -43,12 +43,7 @@ class OutboundInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "carrier": self.carrier,
-                "total_calls": self.total_calls,
-                "blocked_calls": self.blocked_calls,
-                "blocked_calls_percentage": self.blocked_calls_percentage,
-            }
+            pass
 
     class InsightsV2CreatePhoneNumbersReportRequest(object):
         """
@@ -68,17 +63,7 @@ class OutboundInstance(InstanceResource):
             self.size: Optional[int] = payload.get("size")
 
         def to_dict(self):
-            return {
-                "time_range": (
-                    self.time_range.to_dict() if self.time_range is not None else None
-                ),
-                "filters": (
-                    [filters.to_dict() for filters in self.filters]
-                    if self.filters is not None
-                    else None
-                ),
-                "size": self.size,
-            }
+            pass
 
     class InsightsV2CreatePhoneNumbersReportRequestTimeRange(object):
         """
@@ -92,10 +77,7 @@ class OutboundInstance(InstanceResource):
             self.end_datetime: Optional[datetime] = payload.get("end_datetime")
 
         def to_dict(self):
-            return {
-                "start_datetime": self.start_datetime,
-                "end_datetime": self.end_datetime,
-            }
+            pass
 
     class PhoneNumberReportFilter(object):
         """
@@ -109,10 +91,7 @@ class OutboundInstance(InstanceResource):
             self.values: Optional[List[str]] = payload.get("values")
 
         def to_dict(self):
-            return {
-                "key": self.key,
-                "values": self.values,
-            }
+            pass
 
     class ReportFilter(object):
         """
@@ -126,10 +105,7 @@ class OutboundInstance(InstanceResource):
             self.values: Optional[List[str]] = payload.get("values")
 
         def to_dict(self):
-            return {
-                "key": self.key,
-                "values": self.values,
-            }
+            pass
 
     class ReportStatus(object):
         CREATED = "created"
@@ -210,12 +186,7 @@ class OutboundInstance(InstanceResource):
 
         :returns: OutboundContext for this OutboundInstance
         """
-        if self._context is None:
-            self._context = OutboundContext(
-                self._version,
-                report_id=self._solution["report_id"],
-            )
-        return self._context
+        pass
 
     def create(
         self,
@@ -230,9 +201,7 @@ class OutboundInstance(InstanceResource):
 
         :returns: The created OutboundInstance
         """
-        return self._proxy.create(
-            insights_v2_create_phone_numbers_report_request=insights_v2_create_phone_numbers_report_request,
-        )
+        pass
 
     async def create_async(
         self,
@@ -247,9 +216,7 @@ class OutboundInstance(InstanceResource):
 
         :returns: The created OutboundInstance
         """
-        return await self._proxy.create_async(
-            insights_v2_create_phone_numbers_report_request=insights_v2_create_phone_numbers_report_request,
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -264,9 +231,7 @@ class OutboundInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.create_with_http_info(
-            insights_v2_create_phone_numbers_report_request=insights_v2_create_phone_numbers_report_request,
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -281,9 +246,7 @@ class OutboundInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.create_with_http_info_async(
-            insights_v2_create_phone_numbers_report_request=insights_v2_create_phone_numbers_report_request,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -315,12 +278,7 @@ class OutboundContext(InstanceContext):
             )
 
         def to_dict(self):
-            return {
-                "carrier": self.carrier,
-                "total_calls": self.total_calls,
-                "blocked_calls": self.blocked_calls,
-                "blocked_calls_percentage": self.blocked_calls_percentage,
-            }
+            pass
 
     class InsightsV2CreatePhoneNumbersReportRequest(object):
         """
@@ -340,17 +298,7 @@ class OutboundContext(InstanceContext):
             self.size: Optional[int] = payload.get("size")
 
         def to_dict(self):
-            return {
-                "time_range": (
-                    self.time_range.to_dict() if self.time_range is not None else None
-                ),
-                "filters": (
-                    [filters.to_dict() for filters in self.filters]
-                    if self.filters is not None
-                    else None
-                ),
-                "size": self.size,
-            }
+            pass
 
     class InsightsV2CreatePhoneNumbersReportRequestTimeRange(object):
         """
@@ -364,10 +312,7 @@ class OutboundContext(InstanceContext):
             self.end_datetime: Optional[datetime] = payload.get("end_datetime")
 
         def to_dict(self):
-            return {
-                "start_datetime": self.start_datetime,
-                "end_datetime": self.end_datetime,
-            }
+            pass
 
     class PhoneNumberReportFilter(object):
         """
@@ -381,10 +326,7 @@ class OutboundContext(InstanceContext):
             self.values: Optional[List[str]] = payload.get("values")
 
         def to_dict(self):
-            return {
-                "key": self.key,
-                "values": self.values,
-            }
+            pass
 
     class ReportFilter(object):
         """
@@ -398,10 +340,7 @@ class OutboundContext(InstanceContext):
             self.values: Optional[List[str]] = payload.get("values")
 
         def to_dict(self):
-            return {
-                "key": self.key,
-                "values": self.values,
-            }
+            pass
 
     def __init__(self, version: Version, report_id: str):
         """
@@ -430,17 +369,7 @@ class OutboundContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = insights_v2_create_phone_numbers_report_request.to_dict()
-
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -455,12 +384,7 @@ class OutboundContext(InstanceContext):
 
         :returns: The created OutboundInstance
         """
-        payload, _, _ = self._create(
-            insights_v2_create_phone_numbers_report_request=insights_v2_create_phone_numbers_report_request
-        )
-        return OutboundInstance(
-            self._version, payload, report_id=self._solution["report_id"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -475,13 +399,7 @@ class OutboundContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            insights_v2_create_phone_numbers_report_request=insights_v2_create_phone_numbers_report_request
-        )
-        instance = OutboundInstance(
-            self._version, payload, report_id=self._solution["report_id"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -495,17 +413,7 @@ class OutboundContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = insights_v2_create_phone_numbers_report_request.to_dict()
-
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -520,12 +428,7 @@ class OutboundContext(InstanceContext):
 
         :returns: The created OutboundInstance
         """
-        payload, _, _ = await self._create_async(
-            insights_v2_create_phone_numbers_report_request=insights_v2_create_phone_numbers_report_request
-        )
-        return OutboundInstance(
-            self._version, payload, report_id=self._solution["report_id"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -540,13 +443,7 @@ class OutboundContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            insights_v2_create_phone_numbers_report_request=insights_v2_create_phone_numbers_report_request
-        )
-        instance = OutboundInstance(
-            self._version, payload, report_id=self._solution["report_id"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -566,9 +463,7 @@ class OutboundPage(Page):
 
         :param payload: Payload response from the API
         """
-        return OutboundInstance(
-            self._version, payload, report_id=self._solution["report_id"]
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -599,12 +494,7 @@ class OutboundList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "carrier": self.carrier,
-                "total_calls": self.total_calls,
-                "blocked_calls": self.blocked_calls,
-                "blocked_calls_percentage": self.blocked_calls_percentage,
-            }
+            pass
 
     class InsightsV2CreatePhoneNumbersReportRequest(object):
         """
@@ -624,17 +514,7 @@ class OutboundList(ListResource):
             self.size: Optional[int] = payload.get("size")
 
         def to_dict(self):
-            return {
-                "time_range": (
-                    self.time_range.to_dict() if self.time_range is not None else None
-                ),
-                "filters": (
-                    [filters.to_dict() for filters in self.filters]
-                    if self.filters is not None
-                    else None
-                ),
-                "size": self.size,
-            }
+            pass
 
     class InsightsV2CreatePhoneNumbersReportRequestTimeRange(object):
         """
@@ -648,10 +528,7 @@ class OutboundList(ListResource):
             self.end_datetime: Optional[datetime] = payload.get("end_datetime")
 
         def to_dict(self):
-            return {
-                "start_datetime": self.start_datetime,
-                "end_datetime": self.end_datetime,
-            }
+            pass
 
     class PhoneNumberReportFilter(object):
         """
@@ -665,10 +542,7 @@ class OutboundList(ListResource):
             self.values: Optional[List[str]] = payload.get("values")
 
         def to_dict(self):
-            return {
-                "key": self.key,
-                "values": self.values,
-            }
+            pass
 
     class ReportFilter(object):
         """
@@ -682,10 +556,7 @@ class OutboundList(ListResource):
             self.values: Optional[List[str]] = payload.get("values")
 
         def to_dict(self):
-            return {
-                "key": self.key,
-                "values": self.values,
-            }
+            pass
 
     def __init__(self, version: Version, report_id: str):
         """
@@ -717,17 +588,7 @@ class OutboundList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = insights_v2_create_phone_numbers_report_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -742,12 +603,7 @@ class OutboundList(ListResource):
 
         :returns: The created OutboundInstance
         """
-        payload, _, _ = self._create(
-            insights_v2_create_phone_numbers_report_request=insights_v2_create_phone_numbers_report_request
-        )
-        return OutboundInstance(
-            self._version, payload, report_id=self._solution["report_id"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -762,13 +618,7 @@ class OutboundList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            insights_v2_create_phone_numbers_report_request=insights_v2_create_phone_numbers_report_request
-        )
-        instance = OutboundInstance(
-            self._version, payload, report_id=self._solution["report_id"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -782,17 +632,7 @@ class OutboundList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = insights_v2_create_phone_numbers_report_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -807,12 +647,7 @@ class OutboundList(ListResource):
 
         :returns: The created OutboundInstance
         """
-        payload, _, _ = await self._create_async(
-            insights_v2_create_phone_numbers_report_request=insights_v2_create_phone_numbers_report_request
-        )
-        return OutboundInstance(
-            self._version, payload, report_id=self._solution["report_id"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -827,13 +662,7 @@ class OutboundList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            insights_v2_create_phone_numbers_report_request=insights_v2_create_phone_numbers_report_request
-        )
-        instance = OutboundInstance(
-            self._version, payload, report_id=self._solution["report_id"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -855,10 +684,7 @@ class OutboundList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -880,10 +706,7 @@ class OutboundList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -903,11 +726,7 @@ class OutboundList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -927,13 +746,7 @@ class OutboundList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -954,12 +767,7 @@ class OutboundList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -980,13 +788,7 @@ class OutboundList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -1006,12 +808,7 @@ class OutboundList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1031,12 +828,7 @@ class OutboundList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1054,22 +846,7 @@ class OutboundList(ListResource):
 
         :returns: Page of OutboundInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return OutboundPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -1087,22 +864,7 @@ class OutboundList(ListResource):
 
         :returns: Page of OutboundInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return OutboundPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -1120,23 +882,7 @@ class OutboundList(ListResource):
 
         :returns: ApiResponse with OutboundPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = OutboundPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1154,25 +900,7 @@ class OutboundList(ListResource):
 
         :returns: ApiResponse with OutboundPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = OutboundPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> OutboundPage:
         """
@@ -1183,8 +911,7 @@ class OutboundList(ListResource):
 
         :returns: Page of OutboundInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return OutboundPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> OutboundPage:
         """
@@ -1195,8 +922,7 @@ class OutboundList(ListResource):
 
         :returns: Page of OutboundInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return OutboundPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, report_id: str) -> OutboundContext:
         """
@@ -1204,7 +930,7 @@ class OutboundList(ListResource):
 
         :param report_id: A unique Report Id.
         """
-        return OutboundContext(self._version, report_id=report_id)
+        pass
 
     def __call__(self, report_id: str) -> OutboundContext:
         """

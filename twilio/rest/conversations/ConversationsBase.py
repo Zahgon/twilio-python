@@ -32,9 +32,7 @@ class ConversationsBase(Domain):
         """
         :returns: Versions v1 of Conversations
         """
-        if self._v1 is None:
-            self._v1 = V1(self)
-        return self._v1
+        pass
 
     def __repr__(self) -> str:
         """

@@ -87,21 +87,7 @@ class TokenList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Ttl": ttl,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(self, ttl: Union[int, object] = values.unset) -> TokenInstance:
         """
@@ -111,10 +97,7 @@ class TokenList(ListResource):
 
         :returns: The created TokenInstance
         """
-        payload, _, _ = self._create(ttl=ttl)
-        return TokenInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self, ttl: Union[int, object] = values.unset
@@ -126,11 +109,7 @@ class TokenList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(ttl=ttl)
-        instance = TokenInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self, ttl: Union[int, object] = values.unset) -> tuple:
         """
@@ -139,21 +118,7 @@ class TokenList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Ttl": ttl,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self, ttl: Union[int, object] = values.unset
@@ -165,10 +130,7 @@ class TokenList(ListResource):
 
         :returns: The created TokenInstance
         """
-        payload, _, _ = await self._create_async(ttl=ttl)
-        return TokenInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self, ttl: Union[int, object] = values.unset
@@ -180,11 +142,7 @@ class TokenList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(ttl=ttl)
-        instance = TokenInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

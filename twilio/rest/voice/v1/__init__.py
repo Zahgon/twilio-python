@@ -41,39 +41,27 @@ class V1(Version):
 
     @property
     def archived_calls(self) -> ArchivedCallList:
-        if self._archived_calls is None:
-            self._archived_calls = ArchivedCallList(self)
-        return self._archived_calls
+        pass
 
     @property
     def byoc_trunks(self) -> ByocTrunkList:
-        if self._byoc_trunks is None:
-            self._byoc_trunks = ByocTrunkList(self)
-        return self._byoc_trunks
+        pass
 
     @property
     def connection_policies(self) -> ConnectionPolicyList:
-        if self._connection_policies is None:
-            self._connection_policies = ConnectionPolicyList(self)
-        return self._connection_policies
+        pass
 
     @property
     def dialing_permissions(self) -> DialingPermissionsList:
-        if self._dialing_permissions is None:
-            self._dialing_permissions = DialingPermissionsList(self)
-        return self._dialing_permissions
+        pass
 
     @property
     def ip_records(self) -> IpRecordList:
-        if self._ip_records is None:
-            self._ip_records = IpRecordList(self)
-        return self._ip_records
+        pass
 
     @property
     def source_ip_mappings(self) -> SourceIpMappingList:
-        if self._source_ip_mappings is None:
-            self._source_ip_mappings = SourceIpMappingList(self)
-        return self._source_ip_mappings
+        pass
 
     def __repr__(self) -> str:
         """

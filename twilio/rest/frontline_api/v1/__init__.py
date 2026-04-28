@@ -31,9 +31,7 @@ class V1(Version):
 
     @property
     def users(self) -> UserList:
-        if self._users is None:
-            self._users = UserList(self)
-        return self._users
+        pass
 
     def __repr__(self) -> str:
         """

@@ -152,7 +152,7 @@ class CallSummariesPage(Page):
 
         :param payload: Payload response from the API
         """
-        return CallSummariesInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -270,48 +270,7 @@ class CallSummariesList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            from_=from_,
-            to=to,
-            from_carrier=from_carrier,
-            to_carrier=to_carrier,
-            from_country_code=from_country_code,
-            to_country_code=to_country_code,
-            verified_caller=verified_caller,
-            has_tag=has_tag,
-            start_time=start_time,
-            end_time=end_time,
-            call_type=call_type,
-            call_state=call_state,
-            direction=direction,
-            processing_state=processing_state,
-            sort_by=sort_by,
-            subaccount=subaccount,
-            abnormal_session=abnormal_session,
-            answered_by=answered_by,
-            answered_by_annotation=answered_by_annotation,
-            connectivity_issue_annotation=connectivity_issue_annotation,
-            quality_issue_annotation=quality_issue_annotation,
-            spam_annotation=spam_annotation,
-            call_score_annotation=call_score_annotation,
-            branded_enabled=branded_enabled,
-            voice_integrity_enabled=voice_integrity_enabled,
-            branded_bundle_sid=branded_bundle_sid,
-            branded_logo=branded_logo,
-            branded_type=branded_type,
-            branded_use_case=branded_use_case,
-            branded_call_reason=branded_call_reason,
-            voice_integrity_bundle_sid=voice_integrity_bundle_sid,
-            voice_integrity_use_case=voice_integrity_use_case,
-            business_profile_identity=business_profile_identity,
-            business_profile_industry=business_profile_industry,
-            business_profile_bundle_sid=business_profile_bundle_sid,
-            business_profile_type=business_profile_type,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -407,48 +366,7 @@ class CallSummariesList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            from_=from_,
-            to=to,
-            from_carrier=from_carrier,
-            to_carrier=to_carrier,
-            from_country_code=from_country_code,
-            to_country_code=to_country_code,
-            verified_caller=verified_caller,
-            has_tag=has_tag,
-            start_time=start_time,
-            end_time=end_time,
-            call_type=call_type,
-            call_state=call_state,
-            direction=direction,
-            processing_state=processing_state,
-            sort_by=sort_by,
-            subaccount=subaccount,
-            abnormal_session=abnormal_session,
-            answered_by=answered_by,
-            answered_by_annotation=answered_by_annotation,
-            connectivity_issue_annotation=connectivity_issue_annotation,
-            quality_issue_annotation=quality_issue_annotation,
-            spam_annotation=spam_annotation,
-            call_score_annotation=call_score_annotation,
-            branded_enabled=branded_enabled,
-            voice_integrity_enabled=voice_integrity_enabled,
-            branded_bundle_sid=branded_bundle_sid,
-            branded_logo=branded_logo,
-            branded_type=branded_type,
-            branded_use_case=branded_use_case,
-            branded_call_reason=branded_call_reason,
-            voice_integrity_bundle_sid=voice_integrity_bundle_sid,
-            voice_integrity_use_case=voice_integrity_use_case,
-            business_profile_identity=business_profile_identity,
-            business_profile_industry=business_profile_industry,
-            business_profile_bundle_sid=business_profile_bundle_sid,
-            business_profile_type=business_profile_type,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -542,49 +460,7 @@ class CallSummariesList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            from_=from_,
-            to=to,
-            from_carrier=from_carrier,
-            to_carrier=to_carrier,
-            from_country_code=from_country_code,
-            to_country_code=to_country_code,
-            verified_caller=verified_caller,
-            has_tag=has_tag,
-            start_time=start_time,
-            end_time=end_time,
-            call_type=call_type,
-            call_state=call_state,
-            direction=direction,
-            processing_state=processing_state,
-            sort_by=sort_by,
-            subaccount=subaccount,
-            abnormal_session=abnormal_session,
-            answered_by=answered_by,
-            answered_by_annotation=answered_by_annotation,
-            connectivity_issue_annotation=connectivity_issue_annotation,
-            quality_issue_annotation=quality_issue_annotation,
-            spam_annotation=spam_annotation,
-            call_score_annotation=call_score_annotation,
-            branded_enabled=branded_enabled,
-            voice_integrity_enabled=voice_integrity_enabled,
-            branded_bundle_sid=branded_bundle_sid,
-            branded_logo=branded_logo,
-            branded_type=branded_type,
-            branded_use_case=branded_use_case,
-            branded_call_reason=branded_call_reason,
-            voice_integrity_bundle_sid=voice_integrity_bundle_sid,
-            voice_integrity_use_case=voice_integrity_use_case,
-            business_profile_identity=business_profile_identity,
-            business_profile_industry=business_profile_industry,
-            business_profile_bundle_sid=business_profile_bundle_sid,
-            business_profile_type=business_profile_type,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -678,49 +554,7 @@ class CallSummariesList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            from_=from_,
-            to=to,
-            from_carrier=from_carrier,
-            to_carrier=to_carrier,
-            from_country_code=from_country_code,
-            to_country_code=to_country_code,
-            verified_caller=verified_caller,
-            has_tag=has_tag,
-            start_time=start_time,
-            end_time=end_time,
-            call_type=call_type,
-            call_state=call_state,
-            direction=direction,
-            processing_state=processing_state,
-            sort_by=sort_by,
-            subaccount=subaccount,
-            abnormal_session=abnormal_session,
-            answered_by=answered_by,
-            answered_by_annotation=answered_by_annotation,
-            connectivity_issue_annotation=connectivity_issue_annotation,
-            quality_issue_annotation=quality_issue_annotation,
-            spam_annotation=spam_annotation,
-            call_score_annotation=call_score_annotation,
-            branded_enabled=branded_enabled,
-            voice_integrity_enabled=voice_integrity_enabled,
-            branded_bundle_sid=branded_bundle_sid,
-            branded_logo=branded_logo,
-            branded_type=branded_type,
-            branded_use_case=branded_use_case,
-            branded_call_reason=branded_call_reason,
-            voice_integrity_bundle_sid=voice_integrity_bundle_sid,
-            voice_integrity_use_case=voice_integrity_use_case,
-            business_profile_identity=business_profile_identity,
-            business_profile_industry=business_profile_industry,
-            business_profile_bundle_sid=business_profile_bundle_sid,
-            business_profile_type=business_profile_type,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -815,48 +649,7 @@ class CallSummariesList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                from_=from_,
-                to=to,
-                from_carrier=from_carrier,
-                to_carrier=to_carrier,
-                from_country_code=from_country_code,
-                to_country_code=to_country_code,
-                verified_caller=verified_caller,
-                has_tag=has_tag,
-                start_time=start_time,
-                end_time=end_time,
-                call_type=call_type,
-                call_state=call_state,
-                direction=direction,
-                processing_state=processing_state,
-                sort_by=sort_by,
-                subaccount=subaccount,
-                abnormal_session=abnormal_session,
-                answered_by=answered_by,
-                answered_by_annotation=answered_by_annotation,
-                connectivity_issue_annotation=connectivity_issue_annotation,
-                quality_issue_annotation=quality_issue_annotation,
-                spam_annotation=spam_annotation,
-                call_score_annotation=call_score_annotation,
-                branded_enabled=branded_enabled,
-                voice_integrity_enabled=voice_integrity_enabled,
-                branded_bundle_sid=branded_bundle_sid,
-                branded_logo=branded_logo,
-                branded_type=branded_type,
-                branded_use_case=branded_use_case,
-                branded_call_reason=branded_call_reason,
-                voice_integrity_bundle_sid=voice_integrity_bundle_sid,
-                voice_integrity_use_case=voice_integrity_use_case,
-                business_profile_identity=business_profile_identity,
-                business_profile_industry=business_profile_industry,
-                business_profile_bundle_sid=business_profile_bundle_sid,
-                business_profile_type=business_profile_type,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -951,49 +744,7 @@ class CallSummariesList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                from_=from_,
-                to=to,
-                from_carrier=from_carrier,
-                to_carrier=to_carrier,
-                from_country_code=from_country_code,
-                to_country_code=to_country_code,
-                verified_caller=verified_caller,
-                has_tag=has_tag,
-                start_time=start_time,
-                end_time=end_time,
-                call_type=call_type,
-                call_state=call_state,
-                direction=direction,
-                processing_state=processing_state,
-                sort_by=sort_by,
-                subaccount=subaccount,
-                abnormal_session=abnormal_session,
-                answered_by=answered_by,
-                answered_by_annotation=answered_by_annotation,
-                connectivity_issue_annotation=connectivity_issue_annotation,
-                quality_issue_annotation=quality_issue_annotation,
-                spam_annotation=spam_annotation,
-                call_score_annotation=call_score_annotation,
-                branded_enabled=branded_enabled,
-                voice_integrity_enabled=voice_integrity_enabled,
-                branded_bundle_sid=branded_bundle_sid,
-                branded_logo=branded_logo,
-                branded_type=branded_type,
-                branded_use_case=branded_use_case,
-                branded_call_reason=branded_call_reason,
-                voice_integrity_bundle_sid=voice_integrity_bundle_sid,
-                voice_integrity_use_case=voice_integrity_use_case,
-                business_profile_identity=business_profile_identity,
-                business_profile_industry=business_profile_industry,
-                business_profile_bundle_sid=business_profile_bundle_sid,
-                business_profile_type=business_profile_type,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -1087,48 +838,7 @@ class CallSummariesList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            from_=from_,
-            to=to,
-            from_carrier=from_carrier,
-            to_carrier=to_carrier,
-            from_country_code=from_country_code,
-            to_country_code=to_country_code,
-            verified_caller=verified_caller,
-            has_tag=has_tag,
-            start_time=start_time,
-            end_time=end_time,
-            call_type=call_type,
-            call_state=call_state,
-            direction=direction,
-            processing_state=processing_state,
-            sort_by=sort_by,
-            subaccount=subaccount,
-            abnormal_session=abnormal_session,
-            answered_by=answered_by,
-            answered_by_annotation=answered_by_annotation,
-            connectivity_issue_annotation=connectivity_issue_annotation,
-            quality_issue_annotation=quality_issue_annotation,
-            spam_annotation=spam_annotation,
-            call_score_annotation=call_score_annotation,
-            branded_enabled=branded_enabled,
-            voice_integrity_enabled=voice_integrity_enabled,
-            branded_bundle_sid=branded_bundle_sid,
-            branded_logo=branded_logo,
-            branded_type=branded_type,
-            branded_use_case=branded_use_case,
-            branded_call_reason=branded_call_reason,
-            voice_integrity_bundle_sid=voice_integrity_bundle_sid,
-            voice_integrity_use_case=voice_integrity_use_case,
-            business_profile_identity=business_profile_identity,
-            business_profile_industry=business_profile_industry,
-            business_profile_bundle_sid=business_profile_bundle_sid,
-            business_profile_type=business_profile_type,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1222,48 +932,7 @@ class CallSummariesList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            from_=from_,
-            to=to,
-            from_carrier=from_carrier,
-            to_carrier=to_carrier,
-            from_country_code=from_country_code,
-            to_country_code=to_country_code,
-            verified_caller=verified_caller,
-            has_tag=has_tag,
-            start_time=start_time,
-            end_time=end_time,
-            call_type=call_type,
-            call_state=call_state,
-            direction=direction,
-            processing_state=processing_state,
-            sort_by=sort_by,
-            subaccount=subaccount,
-            abnormal_session=abnormal_session,
-            answered_by=answered_by,
-            answered_by_annotation=answered_by_annotation,
-            connectivity_issue_annotation=connectivity_issue_annotation,
-            quality_issue_annotation=quality_issue_annotation,
-            spam_annotation=spam_annotation,
-            call_score_annotation=call_score_annotation,
-            branded_enabled=branded_enabled,
-            voice_integrity_enabled=voice_integrity_enabled,
-            branded_bundle_sid=branded_bundle_sid,
-            branded_logo=branded_logo,
-            branded_type=branded_type,
-            branded_use_case=branded_use_case,
-            branded_call_reason=branded_call_reason,
-            voice_integrity_bundle_sid=voice_integrity_bundle_sid,
-            voice_integrity_use_case=voice_integrity_use_case,
-            business_profile_identity=business_profile_identity,
-            business_profile_industry=business_profile_industry,
-            business_profile_bundle_sid=business_profile_bundle_sid,
-            business_profile_type=business_profile_type,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1355,60 +1024,7 @@ class CallSummariesList(ListResource):
 
         :returns: Page of CallSummariesInstance
         """
-        data = values.of(
-            {
-                "From": from_,
-                "To": to,
-                "FromCarrier": from_carrier,
-                "ToCarrier": to_carrier,
-                "FromCountryCode": from_country_code,
-                "ToCountryCode": to_country_code,
-                "VerifiedCaller": serialize.boolean_to_string(verified_caller),
-                "HasTag": serialize.boolean_to_string(has_tag),
-                "StartTime": start_time,
-                "EndTime": end_time,
-                "CallType": call_type,
-                "CallState": call_state,
-                "Direction": direction,
-                "ProcessingState": processing_state,
-                "SortBy": sort_by,
-                "Subaccount": subaccount,
-                "AbnormalSession": serialize.boolean_to_string(abnormal_session),
-                "AnsweredBy": answered_by,
-                "AnsweredByAnnotation": answered_by_annotation,
-                "ConnectivityIssueAnnotation": connectivity_issue_annotation,
-                "QualityIssueAnnotation": quality_issue_annotation,
-                "SpamAnnotation": serialize.boolean_to_string(spam_annotation),
-                "CallScoreAnnotation": call_score_annotation,
-                "BrandedEnabled": serialize.boolean_to_string(branded_enabled),
-                "VoiceIntegrityEnabled": serialize.boolean_to_string(
-                    voice_integrity_enabled
-                ),
-                "BrandedBundleSid": branded_bundle_sid,
-                "BrandedLogo": serialize.boolean_to_string(branded_logo),
-                "BrandedType": branded_type,
-                "BrandedUseCase": branded_use_case,
-                "BrandedCallReason": branded_call_reason,
-                "VoiceIntegrityBundleSid": voice_integrity_bundle_sid,
-                "VoiceIntegrityUseCase": voice_integrity_use_case,
-                "BusinessProfileIdentity": business_profile_identity,
-                "BusinessProfileIndustry": business_profile_industry,
-                "BusinessProfileBundleSid": business_profile_bundle_sid,
-                "BusinessProfileType": business_profile_type,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return CallSummariesPage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -1500,60 +1116,7 @@ class CallSummariesList(ListResource):
 
         :returns: Page of CallSummariesInstance
         """
-        data = values.of(
-            {
-                "From": from_,
-                "To": to,
-                "FromCarrier": from_carrier,
-                "ToCarrier": to_carrier,
-                "FromCountryCode": from_country_code,
-                "ToCountryCode": to_country_code,
-                "VerifiedCaller": serialize.boolean_to_string(verified_caller),
-                "HasTag": serialize.boolean_to_string(has_tag),
-                "StartTime": start_time,
-                "EndTime": end_time,
-                "CallType": call_type,
-                "CallState": call_state,
-                "Direction": direction,
-                "ProcessingState": processing_state,
-                "SortBy": sort_by,
-                "Subaccount": subaccount,
-                "AbnormalSession": serialize.boolean_to_string(abnormal_session),
-                "AnsweredBy": answered_by,
-                "AnsweredByAnnotation": answered_by_annotation,
-                "ConnectivityIssueAnnotation": connectivity_issue_annotation,
-                "QualityIssueAnnotation": quality_issue_annotation,
-                "SpamAnnotation": serialize.boolean_to_string(spam_annotation),
-                "CallScoreAnnotation": call_score_annotation,
-                "BrandedEnabled": serialize.boolean_to_string(branded_enabled),
-                "VoiceIntegrityEnabled": serialize.boolean_to_string(
-                    voice_integrity_enabled
-                ),
-                "BrandedBundleSid": branded_bundle_sid,
-                "BrandedLogo": serialize.boolean_to_string(branded_logo),
-                "BrandedType": branded_type,
-                "BrandedUseCase": branded_use_case,
-                "BrandedCallReason": branded_call_reason,
-                "VoiceIntegrityBundleSid": voice_integrity_bundle_sid,
-                "VoiceIntegrityUseCase": voice_integrity_use_case,
-                "BusinessProfileIdentity": business_profile_identity,
-                "BusinessProfileIndustry": business_profile_industry,
-                "BusinessProfileBundleSid": business_profile_bundle_sid,
-                "BusinessProfileType": business_profile_type,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return CallSummariesPage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -1645,61 +1208,7 @@ class CallSummariesList(ListResource):
 
         :returns: ApiResponse with CallSummariesPage, status code, and headers
         """
-        data = values.of(
-            {
-                "From": from_,
-                "To": to,
-                "FromCarrier": from_carrier,
-                "ToCarrier": to_carrier,
-                "FromCountryCode": from_country_code,
-                "ToCountryCode": to_country_code,
-                "VerifiedCaller": serialize.boolean_to_string(verified_caller),
-                "HasTag": serialize.boolean_to_string(has_tag),
-                "StartTime": start_time,
-                "EndTime": end_time,
-                "CallType": call_type,
-                "CallState": call_state,
-                "Direction": direction,
-                "ProcessingState": processing_state,
-                "SortBy": sort_by,
-                "Subaccount": subaccount,
-                "AbnormalSession": serialize.boolean_to_string(abnormal_session),
-                "AnsweredBy": answered_by,
-                "AnsweredByAnnotation": answered_by_annotation,
-                "ConnectivityIssueAnnotation": connectivity_issue_annotation,
-                "QualityIssueAnnotation": quality_issue_annotation,
-                "SpamAnnotation": serialize.boolean_to_string(spam_annotation),
-                "CallScoreAnnotation": call_score_annotation,
-                "BrandedEnabled": serialize.boolean_to_string(branded_enabled),
-                "VoiceIntegrityEnabled": serialize.boolean_to_string(
-                    voice_integrity_enabled
-                ),
-                "BrandedBundleSid": branded_bundle_sid,
-                "BrandedLogo": serialize.boolean_to_string(branded_logo),
-                "BrandedType": branded_type,
-                "BrandedUseCase": branded_use_case,
-                "BrandedCallReason": branded_call_reason,
-                "VoiceIntegrityBundleSid": voice_integrity_bundle_sid,
-                "VoiceIntegrityUseCase": voice_integrity_use_case,
-                "BusinessProfileIdentity": business_profile_identity,
-                "BusinessProfileIndustry": business_profile_industry,
-                "BusinessProfileBundleSid": business_profile_bundle_sid,
-                "BusinessProfileType": business_profile_type,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = CallSummariesPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1791,63 +1300,7 @@ class CallSummariesList(ListResource):
 
         :returns: ApiResponse with CallSummariesPage, status code, and headers
         """
-        data = values.of(
-            {
-                "From": from_,
-                "To": to,
-                "FromCarrier": from_carrier,
-                "ToCarrier": to_carrier,
-                "FromCountryCode": from_country_code,
-                "ToCountryCode": to_country_code,
-                "VerifiedCaller": serialize.boolean_to_string(verified_caller),
-                "HasTag": serialize.boolean_to_string(has_tag),
-                "StartTime": start_time,
-                "EndTime": end_time,
-                "CallType": call_type,
-                "CallState": call_state,
-                "Direction": direction,
-                "ProcessingState": processing_state,
-                "SortBy": sort_by,
-                "Subaccount": subaccount,
-                "AbnormalSession": serialize.boolean_to_string(abnormal_session),
-                "AnsweredBy": answered_by,
-                "AnsweredByAnnotation": answered_by_annotation,
-                "ConnectivityIssueAnnotation": connectivity_issue_annotation,
-                "QualityIssueAnnotation": quality_issue_annotation,
-                "SpamAnnotation": serialize.boolean_to_string(spam_annotation),
-                "CallScoreAnnotation": call_score_annotation,
-                "BrandedEnabled": serialize.boolean_to_string(branded_enabled),
-                "VoiceIntegrityEnabled": serialize.boolean_to_string(
-                    voice_integrity_enabled
-                ),
-                "BrandedBundleSid": branded_bundle_sid,
-                "BrandedLogo": serialize.boolean_to_string(branded_logo),
-                "BrandedType": branded_type,
-                "BrandedUseCase": branded_use_case,
-                "BrandedCallReason": branded_call_reason,
-                "VoiceIntegrityBundleSid": voice_integrity_bundle_sid,
-                "VoiceIntegrityUseCase": voice_integrity_use_case,
-                "BusinessProfileIdentity": business_profile_identity,
-                "BusinessProfileIndustry": business_profile_industry,
-                "BusinessProfileBundleSid": business_profile_bundle_sid,
-                "BusinessProfileType": business_profile_type,
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = CallSummariesPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> CallSummariesPage:
         """
@@ -1858,8 +1311,7 @@ class CallSummariesList(ListResource):
 
         :returns: Page of CallSummariesInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return CallSummariesPage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> CallSummariesPage:
         """
@@ -1870,8 +1322,7 @@ class CallSummariesList(ListResource):
 
         :returns: Page of CallSummariesInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return CallSummariesPage(self._version, response)
+        pass
 
     def __repr__(self) -> str:
         """

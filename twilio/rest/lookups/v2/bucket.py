@@ -35,10 +35,7 @@ class BucketInstance(InstanceResource):
             self.ttl: Optional[int] = payload.get("ttl")
 
         def to_dict(self):
-            return {
-                "limit": self.limit,
-                "ttl": self.ttl,
-            }
+            pass
 
     """
     :ivar code: Twilio-specific error code
@@ -85,13 +82,7 @@ class BucketInstance(InstanceResource):
 
         :returns: BucketContext for this BucketInstance
         """
-        if self._context is None:
-            self._context = BucketContext(
-                self._version,
-                field=self._solution["field"],
-                bucket=self._solution["bucket"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -100,7 +91,7 @@ class BucketInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -109,7 +100,7 @@ class BucketInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -118,7 +109,7 @@ class BucketInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -127,7 +118,7 @@ class BucketInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "BucketInstance":
         """
@@ -136,7 +127,7 @@ class BucketInstance(InstanceResource):
 
         :returns: The fetched BucketInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "BucketInstance":
         """
@@ -145,7 +136,7 @@ class BucketInstance(InstanceResource):
 
         :returns: The fetched BucketInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -154,7 +145,7 @@ class BucketInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -163,7 +154,7 @@ class BucketInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self, rate_limit_request: Union[RateLimitRequest, object] = values.unset
@@ -175,9 +166,7 @@ class BucketInstance(InstanceResource):
 
         :returns: The updated BucketInstance
         """
-        return self._proxy.update(
-            rate_limit_request=rate_limit_request,
-        )
+        pass
 
     async def update_async(
         self, rate_limit_request: Union[RateLimitRequest, object] = values.unset
@@ -189,9 +178,7 @@ class BucketInstance(InstanceResource):
 
         :returns: The updated BucketInstance
         """
-        return await self._proxy.update_async(
-            rate_limit_request=rate_limit_request,
-        )
+        pass
 
     def update_with_http_info(
         self, rate_limit_request: Union[RateLimitRequest, object] = values.unset
@@ -203,9 +190,7 @@ class BucketInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            rate_limit_request=rate_limit_request,
-        )
+        pass
 
     async def update_with_http_info_async(
         self, rate_limit_request: Union[RateLimitRequest, object] = values.unset
@@ -217,9 +202,7 @@ class BucketInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            rate_limit_request=rate_limit_request,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -245,10 +228,7 @@ class BucketContext(InstanceContext):
             self.ttl: Optional[int] = payload.get("ttl")
 
         def to_dict(self):
-            return {
-                "limit": self.limit,
-                "ttl": self.ttl,
-            }
+            pass
 
     def __init__(self, version: Version, field: str, bucket: str):
         """
@@ -276,14 +256,7 @@ class BucketContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -292,8 +265,7 @@ class BucketContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -302,8 +274,7 @@ class BucketContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -312,14 +283,7 @@ class BucketContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -328,8 +292,7 @@ class BucketContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -338,8 +301,7 @@ class BucketContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -348,14 +310,7 @@ class BucketContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> BucketInstance:
         """
@@ -364,13 +319,7 @@ class BucketContext(InstanceContext):
 
         :returns: The fetched BucketInstance
         """
-        payload, _, _ = self._fetch()
-        return BucketInstance(
-            self._version,
-            payload,
-            field=self._solution["field"],
-            bucket=self._solution["bucket"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -379,14 +328,7 @@ class BucketContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = BucketInstance(
-            self._version,
-            payload,
-            field=self._solution["field"],
-            bucket=self._solution["bucket"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -395,14 +337,7 @@ class BucketContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> BucketInstance:
         """
@@ -411,13 +346,7 @@ class BucketContext(InstanceContext):
 
         :returns: The fetched BucketInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return BucketInstance(
-            self._version,
-            payload,
-            field=self._solution["field"],
-            bucket=self._solution["bucket"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -426,14 +355,7 @@ class BucketContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = BucketInstance(
-            self._version,
-            payload,
-            field=self._solution["field"],
-            bucket=self._solution["bucket"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self, rate_limit_request: Union[RateLimitRequest, object] = values.unset
@@ -444,17 +366,7 @@ class BucketContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = rate_limit_request.to_dict()
-
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="PUT", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self, rate_limit_request: Union[RateLimitRequest, object] = values.unset
@@ -466,13 +378,7 @@ class BucketContext(InstanceContext):
 
         :returns: The updated BucketInstance
         """
-        payload, _, _ = self._update(rate_limit_request=rate_limit_request)
-        return BucketInstance(
-            self._version,
-            payload,
-            field=self._solution["field"],
-            bucket=self._solution["bucket"],
-        )
+        pass
 
     def update_with_http_info(
         self, rate_limit_request: Union[RateLimitRequest, object] = values.unset
@@ -484,16 +390,7 @@ class BucketContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            rate_limit_request=rate_limit_request
-        )
-        instance = BucketInstance(
-            self._version,
-            payload,
-            field=self._solution["field"],
-            bucket=self._solution["bucket"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self, rate_limit_request: Union[RateLimitRequest, object] = values.unset
@@ -504,17 +401,7 @@ class BucketContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = rate_limit_request.to_dict()
-
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="PUT", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, rate_limit_request: Union[RateLimitRequest, object] = values.unset
@@ -526,13 +413,7 @@ class BucketContext(InstanceContext):
 
         :returns: The updated BucketInstance
         """
-        payload, _, _ = await self._update_async(rate_limit_request=rate_limit_request)
-        return BucketInstance(
-            self._version,
-            payload,
-            field=self._solution["field"],
-            bucket=self._solution["bucket"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self, rate_limit_request: Union[RateLimitRequest, object] = values.unset
@@ -544,16 +425,7 @@ class BucketContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            rate_limit_request=rate_limit_request
-        )
-        instance = BucketInstance(
-            self._version,
-            payload,
-            field=self._solution["field"],
-            bucket=self._solution["bucket"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -579,10 +451,7 @@ class BucketList(ListResource):
             self.ttl: Optional[int] = payload.get("ttl")
 
         def to_dict(self):
-            return {
-                "limit": self.limit,
-                "ttl": self.ttl,
-            }
+            pass
 
     def __init__(self, version: Version):
         """
@@ -600,7 +469,7 @@ class BucketList(ListResource):
         :param field: field name
         :param bucket: bucket name
         """
-        return BucketContext(self._version, field=field, bucket=bucket)
+        pass
 
     def __call__(self, field: str, bucket: str) -> BucketContext:
         """

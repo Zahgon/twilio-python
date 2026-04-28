@@ -31,9 +31,7 @@ class V3(Version):
 
     @property
     def channels(self) -> ChannelList:
-        if self._channels is None:
-            self._channels = ChannelList(self)
-        return self._channels
+        pass
 
     def __repr__(self) -> str:
         """

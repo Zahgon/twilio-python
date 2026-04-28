@@ -43,13 +43,7 @@ class TypingIndicatorInstance(InstanceResource):
             self.event: Optional["TypingIndicatorInstance.str"] = payload.get("event")
 
         def to_dict(self):
-            return {
-                "channel": self.channel,
-                "messageId": self.message_id,
-                "from": self._from,
-                "to": self.to,
-                "event": self.event,
-            }
+            pass
 
     """
     :ivar success: Indicates if the typing indicator was sent successfully.
@@ -92,13 +86,7 @@ class TypingIndicatorList(ListResource):
             self.event: Optional["TypingIndicatorInstance.str"] = payload.get("event")
 
         def to_dict(self):
-            return {
-                "channel": self.channel,
-                "messageId": self.message_id,
-                "from": self._from,
-                "to": self.to,
-                "event": self.event,
-            }
+            pass
 
     def __init__(self, version: Version):
         """
@@ -118,17 +106,7 @@ class TypingIndicatorList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = typing_indicator_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self, typing_indicator_request: TypingIndicatorRequest
@@ -140,8 +118,7 @@ class TypingIndicatorList(ListResource):
 
         :returns: The created TypingIndicatorInstance
         """
-        payload, _, _ = self._create(typing_indicator_request=typing_indicator_request)
-        return TypingIndicatorInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self, typing_indicator_request: TypingIndicatorRequest
@@ -153,11 +130,7 @@ class TypingIndicatorList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            typing_indicator_request=typing_indicator_request
-        )
-        instance = TypingIndicatorInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self, typing_indicator_request: TypingIndicatorRequest
@@ -168,17 +141,7 @@ class TypingIndicatorList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = typing_indicator_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self, typing_indicator_request: TypingIndicatorRequest
@@ -190,10 +153,7 @@ class TypingIndicatorList(ListResource):
 
         :returns: The created TypingIndicatorInstance
         """
-        payload, _, _ = await self._create_async(
-            typing_indicator_request=typing_indicator_request
-        )
-        return TypingIndicatorInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self, typing_indicator_request: TypingIndicatorRequest
@@ -205,11 +165,7 @@ class TypingIndicatorList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            typing_indicator_request=typing_indicator_request
-        )
-        instance = TypingIndicatorInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

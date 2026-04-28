@@ -55,15 +55,7 @@ class DataInstance(InstanceResource):
 
         :returns: DataContext for this DataInstance
         """
-        if self._context is None:
-            self._context = DataContext(
-                self._version,
-                account_sid=self._solution["account_sid"],
-                reference_sid=self._solution["reference_sid"],
-                add_on_result_sid=self._solution["add_on_result_sid"],
-                payload_sid=self._solution["payload_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "DataInstance":
         """
@@ -72,7 +64,7 @@ class DataInstance(InstanceResource):
 
         :returns: The fetched DataInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "DataInstance":
         """
@@ -81,7 +73,7 @@ class DataInstance(InstanceResource):
 
         :returns: The fetched DataInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -90,7 +82,7 @@ class DataInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -99,7 +91,7 @@ class DataInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -150,14 +142,7 @@ class DataContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> DataInstance:
         """
@@ -166,15 +151,7 @@ class DataContext(InstanceContext):
 
         :returns: The fetched DataInstance
         """
-        payload, _, _ = self._fetch()
-        return DataInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            reference_sid=self._solution["reference_sid"],
-            add_on_result_sid=self._solution["add_on_result_sid"],
-            payload_sid=self._solution["payload_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -183,16 +160,7 @@ class DataContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = DataInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            reference_sid=self._solution["reference_sid"],
-            add_on_result_sid=self._solution["add_on_result_sid"],
-            payload_sid=self._solution["payload_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -201,14 +169,7 @@ class DataContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> DataInstance:
         """
@@ -217,15 +178,7 @@ class DataContext(InstanceContext):
 
         :returns: The fetched DataInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return DataInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            reference_sid=self._solution["reference_sid"],
-            add_on_result_sid=self._solution["add_on_result_sid"],
-            payload_sid=self._solution["payload_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -234,16 +187,7 @@ class DataContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = DataInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            reference_sid=self._solution["reference_sid"],
-            add_on_result_sid=self._solution["add_on_result_sid"],
-            payload_sid=self._solution["payload_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -290,13 +234,7 @@ class DataList(ListResource):
         Constructs a DataContext
 
         """
-        return DataContext(
-            self._version,
-            account_sid=self._solution["account_sid"],
-            reference_sid=self._solution["reference_sid"],
-            add_on_result_sid=self._solution["add_on_result_sid"],
-            payload_sid=self._solution["payload_sid"],
-        )
+        pass
 
     def __call__(self) -> DataContext:
         """

@@ -64,14 +64,7 @@ class UserDefinedMessageSubscriptionInstance(InstanceResource):
 
         :returns: UserDefinedMessageSubscriptionContext for this UserDefinedMessageSubscriptionInstance
         """
-        if self._context is None:
-            self._context = UserDefinedMessageSubscriptionContext(
-                self._version,
-                account_sid=self._solution["account_sid"],
-                call_sid=self._solution["call_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -80,7 +73,7 @@ class UserDefinedMessageSubscriptionInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -89,7 +82,7 @@ class UserDefinedMessageSubscriptionInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -98,7 +91,7 @@ class UserDefinedMessageSubscriptionInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -107,7 +100,7 @@ class UserDefinedMessageSubscriptionInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -151,12 +144,7 @@ class UserDefinedMessageSubscriptionContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -165,8 +153,7 @@ class UserDefinedMessageSubscriptionContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -175,8 +162,7 @@ class UserDefinedMessageSubscriptionContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -185,12 +171,7 @@ class UserDefinedMessageSubscriptionContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -199,8 +180,7 @@ class UserDefinedMessageSubscriptionContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -209,8 +189,7 @@ class UserDefinedMessageSubscriptionContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -258,23 +237,7 @@ class UserDefinedMessageSubscriptionList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Callback": callback,
-                "IdempotencyKey": idempotency_key,
-                "Method": method,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -291,15 +254,7 @@ class UserDefinedMessageSubscriptionList(ListResource):
 
         :returns: The created UserDefinedMessageSubscriptionInstance
         """
-        payload, _, _ = self._create(
-            callback=callback, idempotency_key=idempotency_key, method=method
-        )
-        return UserDefinedMessageSubscriptionInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -316,16 +271,7 @@ class UserDefinedMessageSubscriptionList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            callback=callback, idempotency_key=idempotency_key, method=method
-        )
-        instance = UserDefinedMessageSubscriptionInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -339,23 +285,7 @@ class UserDefinedMessageSubscriptionList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Callback": callback,
-                "IdempotencyKey": idempotency_key,
-                "Method": method,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -372,15 +302,7 @@ class UserDefinedMessageSubscriptionList(ListResource):
 
         :returns: The created UserDefinedMessageSubscriptionInstance
         """
-        payload, _, _ = await self._create_async(
-            callback=callback, idempotency_key=idempotency_key, method=method
-        )
-        return UserDefinedMessageSubscriptionInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -397,16 +319,7 @@ class UserDefinedMessageSubscriptionList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            callback=callback, idempotency_key=idempotency_key, method=method
-        )
-        instance = UserDefinedMessageSubscriptionInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def get(self, sid: str) -> UserDefinedMessageSubscriptionContext:
         """
@@ -414,12 +327,7 @@ class UserDefinedMessageSubscriptionList(ListResource):
 
         :param sid: The SID that uniquely identifies this User Defined Message Subscription.
         """
-        return UserDefinedMessageSubscriptionContext(
-            self._version,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-            sid=sid,
-        )
+        pass
 
     def __call__(self, sid: str) -> UserDefinedMessageSubscriptionContext:
         """

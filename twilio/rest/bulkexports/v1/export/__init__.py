@@ -57,12 +57,7 @@ class ExportInstance(InstanceResource):
 
         :returns: ExportContext for this ExportInstance
         """
-        if self._context is None:
-            self._context = ExportContext(
-                self._version,
-                resource_type=self._solution["resource_type"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "ExportInstance":
         """
@@ -71,7 +66,7 @@ class ExportInstance(InstanceResource):
 
         :returns: The fetched ExportInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "ExportInstance":
         """
@@ -80,7 +75,7 @@ class ExportInstance(InstanceResource):
 
         :returns: The fetched ExportInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -89,7 +84,7 @@ class ExportInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -98,21 +93,21 @@ class ExportInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     @property
     def days(self) -> DayList:
         """
         Access the days
         """
-        return self._proxy.days
+        pass
 
     @property
     def export_custom_jobs(self) -> ExportCustomJobList:
         """
         Access the export_custom_jobs
         """
-        return self._proxy.export_custom_jobs
+        pass
 
     def __repr__(self) -> str:
         """
@@ -151,14 +146,7 @@ class ExportContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> ExportInstance:
         """
@@ -167,12 +155,7 @@ class ExportContext(InstanceContext):
 
         :returns: The fetched ExportInstance
         """
-        payload, _, _ = self._fetch()
-        return ExportInstance(
-            self._version,
-            payload,
-            resource_type=self._solution["resource_type"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -181,13 +164,7 @@ class ExportContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = ExportInstance(
-            self._version,
-            payload,
-            resource_type=self._solution["resource_type"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -196,14 +173,7 @@ class ExportContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> ExportInstance:
         """
@@ -212,12 +182,7 @@ class ExportContext(InstanceContext):
 
         :returns: The fetched ExportInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return ExportInstance(
-            self._version,
-            payload,
-            resource_type=self._solution["resource_type"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -226,37 +191,21 @@ class ExportContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = ExportInstance(
-            self._version,
-            payload,
-            resource_type=self._solution["resource_type"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def days(self) -> DayList:
         """
         Access the days
         """
-        if self._days is None:
-            self._days = DayList(
-                self._version,
-                self._solution["resource_type"],
-            )
-        return self._days
+        pass
 
     @property
     def export_custom_jobs(self) -> ExportCustomJobList:
         """
         Access the export_custom_jobs
         """
-        if self._export_custom_jobs is None:
-            self._export_custom_jobs = ExportCustomJobList(
-                self._version,
-                self._solution["resource_type"],
-            )
-        return self._export_custom_jobs
+        pass
 
     def __repr__(self) -> str:
         """
@@ -288,9 +237,7 @@ class ExportList(ListResource):
         """
         Access the jobs
         """
-        if self._jobs is None:
-            self._jobs = JobList(self._version)
-        return self._jobs
+        pass
 
     def get(self, resource_type: str) -> ExportContext:
         """
@@ -298,7 +245,7 @@ class ExportList(ListResource):
 
         :param resource_type: The type of communication – Messages, Calls, Conferences, and Participants
         """
-        return ExportContext(self._version, resource_type=resource_type)
+        pass
 
     def __call__(self, resource_type: str) -> ExportContext:
         """

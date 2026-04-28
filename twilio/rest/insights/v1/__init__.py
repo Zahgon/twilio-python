@@ -39,33 +39,23 @@ class V1(Version):
 
     @property
     def calls(self) -> CallList:
-        if self._calls is None:
-            self._calls = CallList(self)
-        return self._calls
+        pass
 
     @property
     def call_summaries(self) -> CallSummariesList:
-        if self._call_summaries is None:
-            self._call_summaries = CallSummariesList(self)
-        return self._call_summaries
+        pass
 
     @property
     def conferences(self) -> ConferenceList:
-        if self._conferences is None:
-            self._conferences = ConferenceList(self)
-        return self._conferences
+        pass
 
     @property
     def rooms(self) -> RoomList:
-        if self._rooms is None:
-            self._rooms = RoomList(self)
-        return self._rooms
+        pass
 
     @property
     def settings(self) -> SettingList:
-        if self._settings is None:
-            self._settings = SettingList(self)
-        return self._settings
+        pass
 
     def __repr__(self) -> str:
         """

@@ -89,14 +89,7 @@ class DeliveryReceiptInstance(InstanceResource):
 
         :returns: DeliveryReceiptContext for this DeliveryReceiptInstance
         """
-        if self._context is None:
-            self._context = DeliveryReceiptContext(
-                self._version,
-                conversation_sid=self._solution["conversation_sid"],
-                message_sid=self._solution["message_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "DeliveryReceiptInstance":
         """
@@ -105,7 +98,7 @@ class DeliveryReceiptInstance(InstanceResource):
 
         :returns: The fetched DeliveryReceiptInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "DeliveryReceiptInstance":
         """
@@ -114,7 +107,7 @@ class DeliveryReceiptInstance(InstanceResource):
 
         :returns: The fetched DeliveryReceiptInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -123,7 +116,7 @@ class DeliveryReceiptInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -132,7 +125,7 @@ class DeliveryReceiptInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -176,14 +169,7 @@ class DeliveryReceiptContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> DeliveryReceiptInstance:
         """
@@ -192,14 +178,7 @@ class DeliveryReceiptContext(InstanceContext):
 
         :returns: The fetched DeliveryReceiptInstance
         """
-        payload, _, _ = self._fetch()
-        return DeliveryReceiptInstance(
-            self._version,
-            payload,
-            conversation_sid=self._solution["conversation_sid"],
-            message_sid=self._solution["message_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -208,15 +187,7 @@ class DeliveryReceiptContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = DeliveryReceiptInstance(
-            self._version,
-            payload,
-            conversation_sid=self._solution["conversation_sid"],
-            message_sid=self._solution["message_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -225,14 +196,7 @@ class DeliveryReceiptContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> DeliveryReceiptInstance:
         """
@@ -241,14 +205,7 @@ class DeliveryReceiptContext(InstanceContext):
 
         :returns: The fetched DeliveryReceiptInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return DeliveryReceiptInstance(
-            self._version,
-            payload,
-            conversation_sid=self._solution["conversation_sid"],
-            message_sid=self._solution["message_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -257,15 +214,7 @@ class DeliveryReceiptContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = DeliveryReceiptInstance(
-            self._version,
-            payload,
-            conversation_sid=self._solution["conversation_sid"],
-            message_sid=self._solution["message_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -285,12 +234,7 @@ class DeliveryReceiptPage(Page):
 
         :param payload: Payload response from the API
         """
-        return DeliveryReceiptInstance(
-            self._version,
-            payload,
-            conversation_sid=self._solution["conversation_sid"],
-            message_sid=self._solution["message_sid"],
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -345,10 +289,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -370,10 +311,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -393,11 +331,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -417,13 +351,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -444,12 +372,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -470,13 +393,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -496,12 +413,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -521,12 +433,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -544,22 +451,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: Page of DeliveryReceiptInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return DeliveryReceiptPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -577,22 +469,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: Page of DeliveryReceiptInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return DeliveryReceiptPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -610,23 +487,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: ApiResponse with DeliveryReceiptPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = DeliveryReceiptPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -644,25 +505,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: ApiResponse with DeliveryReceiptPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = DeliveryReceiptPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> DeliveryReceiptPage:
         """
@@ -673,8 +516,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: Page of DeliveryReceiptInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return DeliveryReceiptPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> DeliveryReceiptPage:
         """
@@ -685,8 +527,7 @@ class DeliveryReceiptList(ListResource):
 
         :returns: Page of DeliveryReceiptInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return DeliveryReceiptPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, sid: str) -> DeliveryReceiptContext:
         """
@@ -694,12 +535,7 @@ class DeliveryReceiptList(ListResource):
 
         :param sid: A 34 character string that uniquely identifies this resource.
         """
-        return DeliveryReceiptContext(
-            self._version,
-            conversation_sid=self._solution["conversation_sid"],
-            message_sid=self._solution["message_sid"],
-            sid=sid,
-        )
+        pass
 
     def __call__(self, sid: str) -> DeliveryReceiptContext:
         """

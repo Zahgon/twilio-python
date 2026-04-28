@@ -81,14 +81,7 @@ class TranscriptionInstance(InstanceResource):
 
         :returns: TranscriptionContext for this TranscriptionInstance
         """
-        if self._context is None:
-            self._context = TranscriptionContext(
-                self._version,
-                account_sid=self._solution["account_sid"],
-                call_sid=self._solution["call_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def update(
         self, status: "TranscriptionInstance.UpdateStatus"
@@ -100,9 +93,7 @@ class TranscriptionInstance(InstanceResource):
 
         :returns: The updated TranscriptionInstance
         """
-        return self._proxy.update(
-            status=status,
-        )
+        pass
 
     async def update_async(
         self, status: "TranscriptionInstance.UpdateStatus"
@@ -114,9 +105,7 @@ class TranscriptionInstance(InstanceResource):
 
         :returns: The updated TranscriptionInstance
         """
-        return await self._proxy.update_async(
-            status=status,
-        )
+        pass
 
     def update_with_http_info(
         self, status: "TranscriptionInstance.UpdateStatus"
@@ -128,9 +117,7 @@ class TranscriptionInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            status=status,
-        )
+        pass
 
     async def update_with_http_info_async(
         self, status: "TranscriptionInstance.UpdateStatus"
@@ -142,9 +129,7 @@ class TranscriptionInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            status=status,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -188,21 +173,7 @@ class TranscriptionContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Status": status,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self, status: "TranscriptionInstance.UpdateStatus"
@@ -214,14 +185,7 @@ class TranscriptionContext(InstanceContext):
 
         :returns: The updated TranscriptionInstance
         """
-        payload, _, _ = self._update(status=status)
-        return TranscriptionInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def update_with_http_info(
         self, status: "TranscriptionInstance.UpdateStatus"
@@ -233,15 +197,7 @@ class TranscriptionContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(status=status)
-        instance = TranscriptionInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self, status: "TranscriptionInstance.UpdateStatus"
@@ -252,21 +208,7 @@ class TranscriptionContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Status": status,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, status: "TranscriptionInstance.UpdateStatus"
@@ -278,14 +220,7 @@ class TranscriptionContext(InstanceContext):
 
         :returns: The updated TranscriptionInstance
         """
-        payload, _, _ = await self._update_async(status=status)
-        return TranscriptionInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self, status: "TranscriptionInstance.UpdateStatus"
@@ -297,15 +232,7 @@ class TranscriptionContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(status=status)
-        instance = TranscriptionInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -368,40 +295,7 @@ class TranscriptionList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Name": name,
-                "Track": track,
-                "StatusCallbackUrl": status_callback_url,
-                "StatusCallbackMethod": status_callback_method,
-                "InboundTrackLabel": inbound_track_label,
-                "OutboundTrackLabel": outbound_track_label,
-                "PartialResults": serialize.boolean_to_string(partial_results),
-                "LanguageCode": language_code,
-                "TranscriptionEngine": transcription_engine,
-                "ProfanityFilter": serialize.boolean_to_string(profanity_filter),
-                "SpeechModel": speech_model,
-                "Hints": hints,
-                "EnableAutomaticPunctuation": serialize.boolean_to_string(
-                    enable_automatic_punctuation
-                ),
-                "IntelligenceService": intelligence_service,
-                "ConversationConfiguration": conversation_configuration,
-                "ConversationId": conversation_id,
-                "ConfigurationId": configuration_id,
-                "EnableProviderData": serialize.boolean_to_string(enable_provider_data),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -448,32 +342,7 @@ class TranscriptionList(ListResource):
 
         :returns: The created TranscriptionInstance
         """
-        payload, _, _ = self._create(
-            name=name,
-            track=track,
-            status_callback_url=status_callback_url,
-            status_callback_method=status_callback_method,
-            inbound_track_label=inbound_track_label,
-            outbound_track_label=outbound_track_label,
-            partial_results=partial_results,
-            language_code=language_code,
-            transcription_engine=transcription_engine,
-            profanity_filter=profanity_filter,
-            speech_model=speech_model,
-            hints=hints,
-            enable_automatic_punctuation=enable_automatic_punctuation,
-            intelligence_service=intelligence_service,
-            conversation_configuration=conversation_configuration,
-            conversation_id=conversation_id,
-            configuration_id=configuration_id,
-            enable_provider_data=enable_provider_data,
-        )
-        return TranscriptionInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -520,33 +389,7 @@ class TranscriptionList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            name=name,
-            track=track,
-            status_callback_url=status_callback_url,
-            status_callback_method=status_callback_method,
-            inbound_track_label=inbound_track_label,
-            outbound_track_label=outbound_track_label,
-            partial_results=partial_results,
-            language_code=language_code,
-            transcription_engine=transcription_engine,
-            profanity_filter=profanity_filter,
-            speech_model=speech_model,
-            hints=hints,
-            enable_automatic_punctuation=enable_automatic_punctuation,
-            intelligence_service=intelligence_service,
-            conversation_configuration=conversation_configuration,
-            conversation_id=conversation_id,
-            configuration_id=configuration_id,
-            enable_provider_data=enable_provider_data,
-        )
-        instance = TranscriptionInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -575,40 +418,7 @@ class TranscriptionList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Name": name,
-                "Track": track,
-                "StatusCallbackUrl": status_callback_url,
-                "StatusCallbackMethod": status_callback_method,
-                "InboundTrackLabel": inbound_track_label,
-                "OutboundTrackLabel": outbound_track_label,
-                "PartialResults": serialize.boolean_to_string(partial_results),
-                "LanguageCode": language_code,
-                "TranscriptionEngine": transcription_engine,
-                "ProfanityFilter": serialize.boolean_to_string(profanity_filter),
-                "SpeechModel": speech_model,
-                "Hints": hints,
-                "EnableAutomaticPunctuation": serialize.boolean_to_string(
-                    enable_automatic_punctuation
-                ),
-                "IntelligenceService": intelligence_service,
-                "ConversationConfiguration": conversation_configuration,
-                "ConversationId": conversation_id,
-                "ConfigurationId": configuration_id,
-                "EnableProviderData": serialize.boolean_to_string(enable_provider_data),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -655,32 +465,7 @@ class TranscriptionList(ListResource):
 
         :returns: The created TranscriptionInstance
         """
-        payload, _, _ = await self._create_async(
-            name=name,
-            track=track,
-            status_callback_url=status_callback_url,
-            status_callback_method=status_callback_method,
-            inbound_track_label=inbound_track_label,
-            outbound_track_label=outbound_track_label,
-            partial_results=partial_results,
-            language_code=language_code,
-            transcription_engine=transcription_engine,
-            profanity_filter=profanity_filter,
-            speech_model=speech_model,
-            hints=hints,
-            enable_automatic_punctuation=enable_automatic_punctuation,
-            intelligence_service=intelligence_service,
-            conversation_configuration=conversation_configuration,
-            conversation_id=conversation_id,
-            configuration_id=configuration_id,
-            enable_provider_data=enable_provider_data,
-        )
-        return TranscriptionInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -727,33 +512,7 @@ class TranscriptionList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            name=name,
-            track=track,
-            status_callback_url=status_callback_url,
-            status_callback_method=status_callback_method,
-            inbound_track_label=inbound_track_label,
-            outbound_track_label=outbound_track_label,
-            partial_results=partial_results,
-            language_code=language_code,
-            transcription_engine=transcription_engine,
-            profanity_filter=profanity_filter,
-            speech_model=speech_model,
-            hints=hints,
-            enable_automatic_punctuation=enable_automatic_punctuation,
-            intelligence_service=intelligence_service,
-            conversation_configuration=conversation_configuration,
-            conversation_id=conversation_id,
-            configuration_id=configuration_id,
-            enable_provider_data=enable_provider_data,
-        )
-        instance = TranscriptionInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def get(self, sid: str) -> TranscriptionContext:
         """
@@ -761,12 +520,7 @@ class TranscriptionList(ListResource):
 
         :param sid: The SID of the Transcription resource, or the `name` used when creating the resource
         """
-        return TranscriptionContext(
-            self._version,
-            account_sid=self._solution["account_sid"],
-            call_sid=self._solution["call_sid"],
-            sid=sid,
-        )
+        pass
 
     def __call__(self, sid: str) -> TranscriptionContext:
         """

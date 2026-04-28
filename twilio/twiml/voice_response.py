@@ -28,7 +28,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Connect> element
         """
-        return self.nest(Connect(action=action, method=method, **kwargs))
+        pass
 
     def dial(
         self,
@@ -79,30 +79,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Dial> element
         """
-        return self.nest(
-            Dial(
-                number=number,
-                action=action,
-                method=method,
-                timeout=timeout,
-                hangup_on_star=hangup_on_star,
-                time_limit=time_limit,
-                caller_id=caller_id,
-                record=record,
-                trim=trim,
-                recording_status_callback=recording_status_callback,
-                recording_status_callback_method=recording_status_callback_method,
-                recording_status_callback_event=recording_status_callback_event,
-                answer_on_bridge=answer_on_bridge,
-                ring_tone=ring_tone,
-                recording_track=recording_track,
-                sequential=sequential,
-                refer_url=refer_url,
-                refer_method=refer_method,
-                events=events,
-                **kwargs
-            )
-        )
+        pass
 
     def echo(self, **kwargs):
         """
@@ -112,7 +89,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Echo> element
         """
-        return self.nest(Echo(**kwargs))
+        pass
 
     def enqueue(
         self,
@@ -139,18 +116,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Enqueue> element
         """
-        return self.nest(
-            Enqueue(
-                name=name,
-                action=action,
-                max_queue_size=max_queue_size,
-                method=method,
-                wait_url=wait_url,
-                wait_url_method=wait_url_method,
-                workflow_sid=workflow_sid,
-                **kwargs
-            )
-        )
+        pass
 
     def gather(
         self,
@@ -199,29 +165,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Gather> element
         """
-        return self.nest(
-            Gather(
-                input=input,
-                action=action,
-                method=method,
-                timeout=timeout,
-                speech_timeout=speech_timeout,
-                max_speech_time=max_speech_time,
-                profanity_filter=profanity_filter,
-                finish_on_key=finish_on_key,
-                num_digits=num_digits,
-                partial_result_callback=partial_result_callback,
-                partial_result_callback_method=partial_result_callback_method,
-                language=language,
-                hints=hints,
-                barge_in=barge_in,
-                debug=debug,
-                action_on_empty_result=action_on_empty_result,
-                speech_model=speech_model,
-                enhanced=enhanced,
-                **kwargs
-            )
-        )
+        pass
 
     def hangup(self, **kwargs):
         """
@@ -231,7 +175,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Hangup> element
         """
-        return self.nest(Hangup(**kwargs))
+        pass
 
     def leave(self, **kwargs):
         """
@@ -241,7 +185,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Leave> element
         """
-        return self.nest(Leave(**kwargs))
+        pass
 
     def pause(self, length=None, **kwargs):
         """
@@ -252,7 +196,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Pause> element
         """
-        return self.nest(Pause(length=length, **kwargs))
+        pass
 
     def play(self, url=None, loop=None, digits=None, **kwargs):
         """
@@ -265,7 +209,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Play> element
         """
-        return self.nest(Play(url=url, loop=loop, digits=digits, **kwargs))
+        pass
 
     def queue(
         self,
@@ -288,16 +232,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Queue> element
         """
-        return self.nest(
-            Queue(
-                name,
-                url=url,
-                method=method,
-                reservation_sid=reservation_sid,
-                post_work_activity_sid=post_work_activity_sid,
-                **kwargs
-            )
-        )
+        pass
 
     def record(
         self,
@@ -334,23 +269,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Record> element
         """
-        return self.nest(
-            Record(
-                action=action,
-                method=method,
-                timeout=timeout,
-                finish_on_key=finish_on_key,
-                max_length=max_length,
-                play_beep=play_beep,
-                trim=trim,
-                recording_status_callback=recording_status_callback,
-                recording_status_callback_method=recording_status_callback_method,
-                recording_status_callback_event=recording_status_callback_event,
-                transcribe=transcribe,
-                transcribe_callback=transcribe_callback,
-                **kwargs
-            )
-        )
+        pass
 
     def redirect(self, url, method=None, **kwargs):
         """
@@ -362,7 +281,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Redirect> element
         """
-        return self.nest(Redirect(url, method=method, **kwargs))
+        pass
 
     def reject(self, reason=None, **kwargs):
         """
@@ -373,7 +292,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Reject> element
         """
-        return self.nest(Reject(reason=reason, **kwargs))
+        pass
 
     def say(self, message=None, voice=None, loop=None, language=None, **kwargs):
         """
@@ -387,9 +306,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Say> element
         """
-        return self.nest(
-            Say(message=message, voice=voice, loop=loop, language=language, **kwargs)
-        )
+        pass
 
     def sms(
         self,
@@ -414,17 +331,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Sms> element
         """
-        return self.nest(
-            Sms(
-                message,
-                to=to,
-                from_=from_,
-                action=action,
-                method=method,
-                status_callback=status_callback,
-                **kwargs
-            )
-        )
+        pass
 
     def pay(
         self,
@@ -473,29 +380,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Pay> element
         """
-        return self.nest(
-            Pay(
-                input=input,
-                action=action,
-                bank_account_type=bank_account_type,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                timeout=timeout,
-                max_attempts=max_attempts,
-                security_code=security_code,
-                postal_code=postal_code,
-                min_postal_code_length=min_postal_code_length,
-                payment_connector=payment_connector,
-                payment_method=payment_method,
-                token_type=token_type,
-                charge_amount=charge_amount,
-                currency=currency,
-                description=description,
-                valid_card_types=valid_card_types,
-                language=language,
-                **kwargs
-            )
-        )
+        pass
 
     def prompt(
         self,
@@ -518,16 +403,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Prompt> element
         """
-        return self.nest(
-            Prompt(
-                for_=for_,
-                error_type=error_type,
-                card_type=card_type,
-                attempt=attempt,
-                require_matching_inputs=require_matching_inputs,
-                **kwargs
-            )
-        )
+        pass
 
     def start(self, action=None, method=None, **kwargs):
         """
@@ -539,7 +415,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Start> element
         """
-        return self.nest(Start(action=action, method=method, **kwargs))
+        pass
 
     def stop(self, **kwargs):
         """
@@ -549,7 +425,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Stop> element
         """
-        return self.nest(Stop(**kwargs))
+        pass
 
     def refer(self, action=None, method=None, **kwargs):
         """
@@ -561,7 +437,7 @@ class VoiceResponse(TwiML):
 
         :returns: <Refer> element
         """
-        return self.nest(Refer(action=action, method=method, **kwargs))
+        pass
 
 
 class Refer(TwiML):
@@ -580,7 +456,7 @@ class Refer(TwiML):
 
         :returns: <Sip> element
         """
-        return self.nest(ReferSip(sip_url, **kwargs))
+        pass
 
 
 class ReferSip(TwiML):
@@ -622,17 +498,7 @@ class Stop(TwiML):
 
         :returns: <Stream> element
         """
-        return self.nest(
-            Stream(
-                name=name,
-                connector_name=connector_name,
-                url=url,
-                track=track,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                **kwargs
-            )
-        )
+        pass
 
     def siprec(
         self,
@@ -655,16 +521,7 @@ class Stop(TwiML):
 
         :returns: <Siprec> element
         """
-        return self.nest(
-            Siprec(
-                name=name,
-                connector_name=connector_name,
-                track=track,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                **kwargs
-            )
-        )
+        pass
 
     def transcription(
         self,
@@ -705,25 +562,7 @@ class Stop(TwiML):
 
         :returns: <Transcription> element
         """
-        return self.nest(
-            Transcription(
-                name=name,
-                track=track,
-                status_callback_url=status_callback_url,
-                status_callback_method=status_callback_method,
-                inbound_track_label=inbound_track_label,
-                outbound_track_label=outbound_track_label,
-                partial_results=partial_results,
-                language_code=language_code,
-                transcription_engine=transcription_engine,
-                profanity_filter=profanity_filter,
-                speech_model=speech_model,
-                hints=hints,
-                enable_automatic_punctuation=enable_automatic_punctuation,
-                intelligence_service=intelligence_service,
-                **kwargs
-            )
-        )
+        pass
 
 
 class Transcription(TwiML):
@@ -743,7 +582,7 @@ class Transcription(TwiML):
 
         :returns: <Config> element
         """
-        return self.nest(Config(name=name, value=value, **kwargs))
+        pass
 
     def parameter(self, name=None, value=None, **kwargs):
         """
@@ -755,7 +594,7 @@ class Transcription(TwiML):
 
         :returns: <Parameter> element
         """
-        return self.nest(Parameter(name=name, value=value, **kwargs))
+        pass
 
 
 class Parameter(TwiML):
@@ -791,7 +630,7 @@ class Siprec(TwiML):
 
         :returns: <Parameter> element
         """
-        return self.nest(Parameter(name=name, value=value, **kwargs))
+        pass
 
 
 class Stream(TwiML):
@@ -811,7 +650,7 @@ class Stream(TwiML):
 
         :returns: <Parameter> element
         """
-        return self.nest(Parameter(name=name, value=value, **kwargs))
+        pass
 
 
 class Start(TwiML):
@@ -844,17 +683,7 @@ class Start(TwiML):
 
         :returns: <Stream> element
         """
-        return self.nest(
-            Stream(
-                name=name,
-                connector_name=connector_name,
-                url=url,
-                track=track,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                **kwargs
-            )
-        )
+        pass
 
     def siprec(
         self,
@@ -877,16 +706,7 @@ class Start(TwiML):
 
         :returns: <Siprec> element
         """
-        return self.nest(
-            Siprec(
-                name=name,
-                connector_name=connector_name,
-                track=track,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                **kwargs
-            )
-        )
+        pass
 
     def transcription(
         self,
@@ -927,25 +747,7 @@ class Start(TwiML):
 
         :returns: <Transcription> element
         """
-        return self.nest(
-            Transcription(
-                name=name,
-                track=track,
-                status_callback_url=status_callback_url,
-                status_callback_method=status_callback_method,
-                inbound_track_label=inbound_track_label,
-                outbound_track_label=outbound_track_label,
-                partial_results=partial_results,
-                language_code=language_code,
-                transcription_engine=transcription_engine,
-                profanity_filter=profanity_filter,
-                speech_model=speech_model,
-                hints=hints,
-                enable_automatic_punctuation=enable_automatic_punctuation,
-                intelligence_service=intelligence_service,
-                **kwargs
-            )
-        )
+        pass
 
     def recording(
         self,
@@ -970,17 +772,7 @@ class Start(TwiML):
 
         :returns: <Recording> element
         """
-        return self.nest(
-            Recording(
-                recording_status_callback=recording_status_callback,
-                recording_status_callback_method=recording_status_callback_method,
-                recording_status_callback_event=recording_status_callback_event,
-                trim=trim,
-                track=track,
-                channels=channels,
-                **kwargs
-            )
-        )
+        pass
 
 
 class Recording(TwiML):
@@ -1010,9 +802,7 @@ class Prompt(TwiML):
 
         :returns: <Say> element
         """
-        return self.nest(
-            Say(message=message, voice=voice, loop=loop, language=language, **kwargs)
-        )
+        pass
 
     def play(self, url=None, loop=None, digits=None, **kwargs):
         """
@@ -1025,7 +815,7 @@ class Prompt(TwiML):
 
         :returns: <Play> element
         """
-        return self.nest(Play(url=url, loop=loop, digits=digits, **kwargs))
+        pass
 
     def pause(self, length=None, **kwargs):
         """
@@ -1036,7 +826,7 @@ class Prompt(TwiML):
 
         :returns: <Pause> element
         """
-        return self.nest(Pause(length=length, **kwargs))
+        pass
 
 
 class Pause(TwiML):
@@ -1076,7 +866,7 @@ class Say(TwiML):
 
         :returns: <Break> element
         """
-        return self.nest(SsmlBreak(strength=strength, time=time, **kwargs))
+        pass
 
     def emphasis(self, words=None, level=None, **kwargs):
         """
@@ -1088,7 +878,7 @@ class Say(TwiML):
 
         :returns: <Emphasis> element
         """
-        return self.nest(SsmlEmphasis(words=words, level=level, **kwargs))
+        pass
 
     def lang(self, words=None, xml_lang=None, **kwargs):
         """
@@ -1100,7 +890,7 @@ class Say(TwiML):
 
         :returns: <Lang> element
         """
-        return self.nest(SsmlLang(words=words, xml_lang=xml_lang, **kwargs))
+        pass
 
     def p(self, words=None, **kwargs):
         """
@@ -1111,7 +901,7 @@ class Say(TwiML):
 
         :returns: <P> element
         """
-        return self.nest(SsmlP(words=words, **kwargs))
+        pass
 
     def phoneme(self, words, alphabet=None, ph=None, **kwargs):
         """
@@ -1124,7 +914,7 @@ class Say(TwiML):
 
         :returns: <Phoneme> element
         """
-        return self.nest(SsmlPhoneme(words, alphabet=alphabet, ph=ph, **kwargs))
+        pass
 
     def prosody(self, words=None, volume=None, rate=None, pitch=None, **kwargs):
         """
@@ -1138,9 +928,7 @@ class Say(TwiML):
 
         :returns: <Prosody> element
         """
-        return self.nest(
-            SsmlProsody(words=words, volume=volume, rate=rate, pitch=pitch, **kwargs)
-        )
+        pass
 
     def s(self, words=None, **kwargs):
         """
@@ -1151,7 +939,7 @@ class Say(TwiML):
 
         :returns: <S> element
         """
-        return self.nest(SsmlS(words=words, **kwargs))
+        pass
 
     def say_as(self, words, interpret_as=None, format=None, **kwargs):
         """
@@ -1164,9 +952,7 @@ class Say(TwiML):
 
         :returns: <Say-As> element
         """
-        return self.nest(
-            SsmlSayAs(words, interpret_as=interpret_as, format=format, **kwargs)
-        )
+        pass
 
     def sub(self, words, alias=None, **kwargs):
         """
@@ -1178,7 +964,7 @@ class Say(TwiML):
 
         :returns: <Sub> element
         """
-        return self.nest(SsmlSub(words, alias=alias, **kwargs))
+        pass
 
     def w(self, words=None, role=None, **kwargs):
         """
@@ -1190,7 +976,7 @@ class Say(TwiML):
 
         :returns: <W> element
         """
-        return self.nest(SsmlW(words=words, role=role, **kwargs))
+        pass
 
 
 class SsmlW(TwiML):
@@ -1212,7 +998,7 @@ class SsmlW(TwiML):
 
         :returns: <Break> element
         """
-        return self.nest(SsmlBreak(strength=strength, time=time, **kwargs))
+        pass
 
     def emphasis(self, words=None, level=None, **kwargs):
         """
@@ -1224,7 +1010,7 @@ class SsmlW(TwiML):
 
         :returns: <Emphasis> element
         """
-        return self.nest(SsmlEmphasis(words=words, level=level, **kwargs))
+        pass
 
     def phoneme(self, words, alphabet=None, ph=None, **kwargs):
         """
@@ -1237,7 +1023,7 @@ class SsmlW(TwiML):
 
         :returns: <Phoneme> element
         """
-        return self.nest(SsmlPhoneme(words, alphabet=alphabet, ph=ph, **kwargs))
+        pass
 
     def prosody(self, words=None, volume=None, rate=None, pitch=None, **kwargs):
         """
@@ -1251,9 +1037,7 @@ class SsmlW(TwiML):
 
         :returns: <Prosody> element
         """
-        return self.nest(
-            SsmlProsody(words=words, volume=volume, rate=rate, pitch=pitch, **kwargs)
-        )
+        pass
 
     def say_as(self, words, interpret_as=None, format=None, **kwargs):
         """
@@ -1266,9 +1050,7 @@ class SsmlW(TwiML):
 
         :returns: <Say-As> element
         """
-        return self.nest(
-            SsmlSayAs(words, interpret_as=interpret_as, format=format, **kwargs)
-        )
+        pass
 
     def sub(self, words, alias=None, **kwargs):
         """
@@ -1280,7 +1062,7 @@ class SsmlW(TwiML):
 
         :returns: <Sub> element
         """
-        return self.nest(SsmlSub(words, alias=alias, **kwargs))
+        pass
 
 
 class SsmlSub(TwiML):
@@ -1320,7 +1102,7 @@ class SsmlProsody(TwiML):
 
         :returns: <Break> element
         """
-        return self.nest(SsmlBreak(strength=strength, time=time, **kwargs))
+        pass
 
     def emphasis(self, words=None, level=None, **kwargs):
         """
@@ -1332,7 +1114,7 @@ class SsmlProsody(TwiML):
 
         :returns: <Emphasis> element
         """
-        return self.nest(SsmlEmphasis(words=words, level=level, **kwargs))
+        pass
 
     def lang(self, words=None, xml_lang=None, **kwargs):
         """
@@ -1344,7 +1126,7 @@ class SsmlProsody(TwiML):
 
         :returns: <Lang> element
         """
-        return self.nest(SsmlLang(words=words, xml_lang=xml_lang, **kwargs))
+        pass
 
     def p(self, words=None, **kwargs):
         """
@@ -1355,7 +1137,7 @@ class SsmlProsody(TwiML):
 
         :returns: <P> element
         """
-        return self.nest(SsmlP(words=words, **kwargs))
+        pass
 
     def phoneme(self, words, alphabet=None, ph=None, **kwargs):
         """
@@ -1368,7 +1150,7 @@ class SsmlProsody(TwiML):
 
         :returns: <Phoneme> element
         """
-        return self.nest(SsmlPhoneme(words, alphabet=alphabet, ph=ph, **kwargs))
+        pass
 
     def prosody(self, words=None, volume=None, rate=None, pitch=None, **kwargs):
         """
@@ -1382,9 +1164,7 @@ class SsmlProsody(TwiML):
 
         :returns: <Prosody> element
         """
-        return self.nest(
-            SsmlProsody(words=words, volume=volume, rate=rate, pitch=pitch, **kwargs)
-        )
+        pass
 
     def s(self, words=None, **kwargs):
         """
@@ -1395,7 +1175,7 @@ class SsmlProsody(TwiML):
 
         :returns: <S> element
         """
-        return self.nest(SsmlS(words=words, **kwargs))
+        pass
 
     def say_as(self, words, interpret_as=None, format=None, **kwargs):
         """
@@ -1408,9 +1188,7 @@ class SsmlProsody(TwiML):
 
         :returns: <Say-As> element
         """
-        return self.nest(
-            SsmlSayAs(words, interpret_as=interpret_as, format=format, **kwargs)
-        )
+        pass
 
     def sub(self, words, alias=None, **kwargs):
         """
@@ -1422,7 +1200,7 @@ class SsmlProsody(TwiML):
 
         :returns: <Sub> element
         """
-        return self.nest(SsmlSub(words, alias=alias, **kwargs))
+        pass
 
     def w(self, words=None, role=None, **kwargs):
         """
@@ -1434,7 +1212,7 @@ class SsmlProsody(TwiML):
 
         :returns: <W> element
         """
-        return self.nest(SsmlW(words=words, role=role, **kwargs))
+        pass
 
 
 class SsmlS(TwiML):
@@ -1456,7 +1234,7 @@ class SsmlS(TwiML):
 
         :returns: <Break> element
         """
-        return self.nest(SsmlBreak(strength=strength, time=time, **kwargs))
+        pass
 
     def emphasis(self, words=None, level=None, **kwargs):
         """
@@ -1468,7 +1246,7 @@ class SsmlS(TwiML):
 
         :returns: <Emphasis> element
         """
-        return self.nest(SsmlEmphasis(words=words, level=level, **kwargs))
+        pass
 
     def lang(self, words=None, xml_lang=None, **kwargs):
         """
@@ -1480,7 +1258,7 @@ class SsmlS(TwiML):
 
         :returns: <Lang> element
         """
-        return self.nest(SsmlLang(words=words, xml_lang=xml_lang, **kwargs))
+        pass
 
     def phoneme(self, words, alphabet=None, ph=None, **kwargs):
         """
@@ -1493,7 +1271,7 @@ class SsmlS(TwiML):
 
         :returns: <Phoneme> element
         """
-        return self.nest(SsmlPhoneme(words, alphabet=alphabet, ph=ph, **kwargs))
+        pass
 
     def prosody(self, words=None, volume=None, rate=None, pitch=None, **kwargs):
         """
@@ -1507,9 +1285,7 @@ class SsmlS(TwiML):
 
         :returns: <Prosody> element
         """
-        return self.nest(
-            SsmlProsody(words=words, volume=volume, rate=rate, pitch=pitch, **kwargs)
-        )
+        pass
 
     def say_as(self, words, interpret_as=None, format=None, **kwargs):
         """
@@ -1522,9 +1298,7 @@ class SsmlS(TwiML):
 
         :returns: <Say-As> element
         """
-        return self.nest(
-            SsmlSayAs(words, interpret_as=interpret_as, format=format, **kwargs)
-        )
+        pass
 
     def sub(self, words, alias=None, **kwargs):
         """
@@ -1536,7 +1310,7 @@ class SsmlS(TwiML):
 
         :returns: <Sub> element
         """
-        return self.nest(SsmlSub(words, alias=alias, **kwargs))
+        pass
 
     def w(self, words=None, role=None, **kwargs):
         """
@@ -1548,7 +1322,7 @@ class SsmlS(TwiML):
 
         :returns: <W> element
         """
-        return self.nest(SsmlW(words=words, role=role, **kwargs))
+        pass
 
 
 class SsmlPhoneme(TwiML):
@@ -1579,7 +1353,7 @@ class SsmlLang(TwiML):
 
         :returns: <Break> element
         """
-        return self.nest(SsmlBreak(strength=strength, time=time, **kwargs))
+        pass
 
     def emphasis(self, words=None, level=None, **kwargs):
         """
@@ -1591,7 +1365,7 @@ class SsmlLang(TwiML):
 
         :returns: <Emphasis> element
         """
-        return self.nest(SsmlEmphasis(words=words, level=level, **kwargs))
+        pass
 
     def lang(self, words=None, xml_lang=None, **kwargs):
         """
@@ -1603,7 +1377,7 @@ class SsmlLang(TwiML):
 
         :returns: <Lang> element
         """
-        return self.nest(SsmlLang(words=words, xml_lang=xml_lang, **kwargs))
+        pass
 
     def p(self, words=None, **kwargs):
         """
@@ -1614,7 +1388,7 @@ class SsmlLang(TwiML):
 
         :returns: <P> element
         """
-        return self.nest(SsmlP(words=words, **kwargs))
+        pass
 
     def phoneme(self, words, alphabet=None, ph=None, **kwargs):
         """
@@ -1627,7 +1401,7 @@ class SsmlLang(TwiML):
 
         :returns: <Phoneme> element
         """
-        return self.nest(SsmlPhoneme(words, alphabet=alphabet, ph=ph, **kwargs))
+        pass
 
     def prosody(self, words=None, volume=None, rate=None, pitch=None, **kwargs):
         """
@@ -1641,9 +1415,7 @@ class SsmlLang(TwiML):
 
         :returns: <Prosody> element
         """
-        return self.nest(
-            SsmlProsody(words=words, volume=volume, rate=rate, pitch=pitch, **kwargs)
-        )
+        pass
 
     def s(self, words=None, **kwargs):
         """
@@ -1654,7 +1426,7 @@ class SsmlLang(TwiML):
 
         :returns: <S> element
         """
-        return self.nest(SsmlS(words=words, **kwargs))
+        pass
 
     def say_as(self, words, interpret_as=None, format=None, **kwargs):
         """
@@ -1667,9 +1439,7 @@ class SsmlLang(TwiML):
 
         :returns: <Say-As> element
         """
-        return self.nest(
-            SsmlSayAs(words, interpret_as=interpret_as, format=format, **kwargs)
-        )
+        pass
 
     def sub(self, words, alias=None, **kwargs):
         """
@@ -1681,7 +1451,7 @@ class SsmlLang(TwiML):
 
         :returns: <Sub> element
         """
-        return self.nest(SsmlSub(words, alias=alias, **kwargs))
+        pass
 
     def w(self, words=None, role=None, **kwargs):
         """
@@ -1693,7 +1463,7 @@ class SsmlLang(TwiML):
 
         :returns: <W> element
         """
-        return self.nest(SsmlW(words=words, role=role, **kwargs))
+        pass
 
 
 class SsmlP(TwiML):
@@ -1715,7 +1485,7 @@ class SsmlP(TwiML):
 
         :returns: <Break> element
         """
-        return self.nest(SsmlBreak(strength=strength, time=time, **kwargs))
+        pass
 
     def emphasis(self, words=None, level=None, **kwargs):
         """
@@ -1727,7 +1497,7 @@ class SsmlP(TwiML):
 
         :returns: <Emphasis> element
         """
-        return self.nest(SsmlEmphasis(words=words, level=level, **kwargs))
+        pass
 
     def lang(self, words=None, xml_lang=None, **kwargs):
         """
@@ -1739,7 +1509,7 @@ class SsmlP(TwiML):
 
         :returns: <Lang> element
         """
-        return self.nest(SsmlLang(words=words, xml_lang=xml_lang, **kwargs))
+        pass
 
     def phoneme(self, words, alphabet=None, ph=None, **kwargs):
         """
@@ -1752,7 +1522,7 @@ class SsmlP(TwiML):
 
         :returns: <Phoneme> element
         """
-        return self.nest(SsmlPhoneme(words, alphabet=alphabet, ph=ph, **kwargs))
+        pass
 
     def prosody(self, words=None, volume=None, rate=None, pitch=None, **kwargs):
         """
@@ -1766,9 +1536,7 @@ class SsmlP(TwiML):
 
         :returns: <Prosody> element
         """
-        return self.nest(
-            SsmlProsody(words=words, volume=volume, rate=rate, pitch=pitch, **kwargs)
-        )
+        pass
 
     def s(self, words=None, **kwargs):
         """
@@ -1779,7 +1547,7 @@ class SsmlP(TwiML):
 
         :returns: <S> element
         """
-        return self.nest(SsmlS(words=words, **kwargs))
+        pass
 
     def say_as(self, words, interpret_as=None, format=None, **kwargs):
         """
@@ -1792,9 +1560,7 @@ class SsmlP(TwiML):
 
         :returns: <Say-As> element
         """
-        return self.nest(
-            SsmlSayAs(words, interpret_as=interpret_as, format=format, **kwargs)
-        )
+        pass
 
     def sub(self, words, alias=None, **kwargs):
         """
@@ -1806,7 +1572,7 @@ class SsmlP(TwiML):
 
         :returns: <Sub> element
         """
-        return self.nest(SsmlSub(words, alias=alias, **kwargs))
+        pass
 
     def w(self, words=None, role=None, **kwargs):
         """
@@ -1818,7 +1584,7 @@ class SsmlP(TwiML):
 
         :returns: <W> element
         """
-        return self.nest(SsmlW(words=words, role=role, **kwargs))
+        pass
 
 
 class SsmlEmphasis(TwiML):
@@ -1840,7 +1606,7 @@ class SsmlEmphasis(TwiML):
 
         :returns: <Break> element
         """
-        return self.nest(SsmlBreak(strength=strength, time=time, **kwargs))
+        pass
 
     def emphasis(self, words=None, level=None, **kwargs):
         """
@@ -1852,7 +1618,7 @@ class SsmlEmphasis(TwiML):
 
         :returns: <Emphasis> element
         """
-        return self.nest(SsmlEmphasis(words=words, level=level, **kwargs))
+        pass
 
     def lang(self, words=None, xml_lang=None, **kwargs):
         """
@@ -1864,7 +1630,7 @@ class SsmlEmphasis(TwiML):
 
         :returns: <Lang> element
         """
-        return self.nest(SsmlLang(words=words, xml_lang=xml_lang, **kwargs))
+        pass
 
     def phoneme(self, words, alphabet=None, ph=None, **kwargs):
         """
@@ -1877,7 +1643,7 @@ class SsmlEmphasis(TwiML):
 
         :returns: <Phoneme> element
         """
-        return self.nest(SsmlPhoneme(words, alphabet=alphabet, ph=ph, **kwargs))
+        pass
 
     def prosody(self, words=None, volume=None, rate=None, pitch=None, **kwargs):
         """
@@ -1891,9 +1657,7 @@ class SsmlEmphasis(TwiML):
 
         :returns: <Prosody> element
         """
-        return self.nest(
-            SsmlProsody(words=words, volume=volume, rate=rate, pitch=pitch, **kwargs)
-        )
+        pass
 
     def say_as(self, words, interpret_as=None, format=None, **kwargs):
         """
@@ -1906,9 +1670,7 @@ class SsmlEmphasis(TwiML):
 
         :returns: <Say-As> element
         """
-        return self.nest(
-            SsmlSayAs(words, interpret_as=interpret_as, format=format, **kwargs)
-        )
+        pass
 
     def sub(self, words, alias=None, **kwargs):
         """
@@ -1920,7 +1682,7 @@ class SsmlEmphasis(TwiML):
 
         :returns: <Sub> element
         """
-        return self.nest(SsmlSub(words, alias=alias, **kwargs))
+        pass
 
     def w(self, words=None, role=None, **kwargs):
         """
@@ -1932,7 +1694,7 @@ class SsmlEmphasis(TwiML):
 
         :returns: <W> element
         """
-        return self.nest(SsmlW(words=words, role=role, **kwargs))
+        pass
 
 
 class SsmlBreak(TwiML):
@@ -1971,16 +1733,7 @@ class Pay(TwiML):
 
         :returns: <Prompt> element
         """
-        return self.nest(
-            Prompt(
-                for_=for_,
-                error_type=error_type,
-                card_type=card_type,
-                attempt=attempt,
-                require_matching_inputs=require_matching_inputs,
-                **kwargs
-            )
-        )
+        pass
 
     def parameter(self, name=None, value=None, **kwargs):
         """
@@ -1992,7 +1745,7 @@ class Pay(TwiML):
 
         :returns: <Parameter> element
         """
-        return self.nest(Parameter(name=name, value=value, **kwargs))
+        pass
 
 
 class Sms(TwiML):
@@ -2021,7 +1774,7 @@ class Reject(TwiML):
 
         :returns: <Parameter> element
         """
-        return self.nest(Parameter(name=name, value=value, **kwargs))
+        pass
 
 
 class Redirect(TwiML):
@@ -2075,7 +1828,7 @@ class Hangup(TwiML):
 
         :returns: <Parameter> element
         """
-        return self.nest(Parameter(name=name, value=value, **kwargs))
+        pass
 
 
 class Gather(TwiML):
@@ -2097,9 +1850,7 @@ class Gather(TwiML):
 
         :returns: <Say> element
         """
-        return self.nest(
-            Say(message=message, voice=voice, loop=loop, language=language, **kwargs)
-        )
+        pass
 
     def pause(self, length=None, **kwargs):
         """
@@ -2110,7 +1861,7 @@ class Gather(TwiML):
 
         :returns: <Pause> element
         """
-        return self.nest(Pause(length=length, **kwargs))
+        pass
 
     def play(self, url=None, loop=None, digits=None, **kwargs):
         """
@@ -2123,7 +1874,7 @@ class Gather(TwiML):
 
         :returns: <Play> element
         """
-        return self.nest(Play(url=url, loop=loop, digits=digits, **kwargs))
+        pass
 
 
 class Enqueue(TwiML):
@@ -2146,7 +1897,7 @@ class Enqueue(TwiML):
 
         :returns: <Task> element
         """
-        return self.nest(Task(body, priority=priority, timeout=timeout, **kwargs))
+        pass
 
 
 class Task(TwiML):
@@ -2198,17 +1949,7 @@ class Dial(TwiML):
 
         :returns: <Client> element
         """
-        return self.nest(
-            Client(
-                identity=identity,
-                url=url,
-                method=method,
-                status_callback_event=status_callback_event,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                **kwargs
-            )
-        )
+        pass
 
     def conference(
         self,
@@ -2263,32 +2004,7 @@ class Dial(TwiML):
 
         :returns: <Conference> element
         """
-        return self.nest(
-            Conference(
-                name,
-                muted=muted,
-                beep=beep,
-                start_conference_on_enter=start_conference_on_enter,
-                end_conference_on_exit=end_conference_on_exit,
-                wait_url=wait_url,
-                wait_method=wait_method,
-                max_participants=max_participants,
-                record=record,
-                region=region,
-                coach=coach,
-                trim=trim,
-                status_callback_event=status_callback_event,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                recording_status_callback=recording_status_callback,
-                recording_status_callback_method=recording_status_callback_method,
-                recording_status_callback_event=recording_status_callback_event,
-                event_callback_url=event_callback_url,
-                jitter_buffer_size=jitter_buffer_size,
-                participant_label=participant_label,
-                **kwargs
-            )
-        )
+        pass
 
     def number(
         self,
@@ -2331,26 +2047,7 @@ class Dial(TwiML):
 
         :returns: <Number> element
         """
-        return self.nest(
-            Number(
-                phone_number,
-                send_digits=send_digits,
-                url=url,
-                method=method,
-                status_callback_event=status_callback_event,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                byoc=byoc,
-                machine_detection=machine_detection,
-                amd_status_callback_method=amd_status_callback_method,
-                amd_status_callback=amd_status_callback,
-                machine_detection_timeout=machine_detection_timeout,
-                machine_detection_speech_threshold=machine_detection_speech_threshold,
-                machine_detection_speech_end_threshold=machine_detection_speech_end_threshold,
-                machine_detection_silence_timeout=machine_detection_silence_timeout,
-                **kwargs
-            )
-        )
+        pass
 
     def queue(
         self,
@@ -2373,16 +2070,7 @@ class Dial(TwiML):
 
         :returns: <Queue> element
         """
-        return self.nest(
-            Queue(
-                name,
-                url=url,
-                method=method,
-                reservation_sid=reservation_sid,
-                post_work_activity_sid=post_work_activity_sid,
-                **kwargs
-            )
-        )
+        pass
 
     def sim(self, sim_sid, **kwargs):
         """
@@ -2393,7 +2081,7 @@ class Dial(TwiML):
 
         :returns: <Sim> element
         """
-        return self.nest(Sim(sim_sid, **kwargs))
+        pass
 
     def sip(
         self,
@@ -2436,26 +2124,7 @@ class Dial(TwiML):
 
         :returns: <Sip> element
         """
-        return self.nest(
-            Sip(
-                sip_url=sip_url,
-                username=username,
-                password=password,
-                url=url,
-                method=method,
-                status_callback_event=status_callback_event,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                machine_detection=machine_detection,
-                amd_status_callback_method=amd_status_callback_method,
-                amd_status_callback=amd_status_callback,
-                machine_detection_timeout=machine_detection_timeout,
-                machine_detection_speech_threshold=machine_detection_speech_threshold,
-                machine_detection_speech_end_threshold=machine_detection_speech_end_threshold,
-                machine_detection_silence_timeout=machine_detection_silence_timeout,
-                **kwargs
-            )
-        )
+        pass
 
     def application(
         self,
@@ -2484,19 +2153,7 @@ class Dial(TwiML):
 
         :returns: <Application> element
         """
-        return self.nest(
-            Application(
-                application_sid=application_sid,
-                url=url,
-                method=method,
-                status_callback_event=status_callback_event,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                customer_id=customer_id,
-                copy_parent_to=copy_parent_to,
-                **kwargs
-            )
-        )
+        pass
 
     def whats_app(
         self,
@@ -2521,17 +2178,7 @@ class Dial(TwiML):
 
         :returns: <WhatsApp> element
         """
-        return self.nest(
-            WhatsApp(
-                phone_number,
-                url=url,
-                method=method,
-                status_callback_event=status_callback_event,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                **kwargs
-            )
-        )
+        pass
 
 
 class WhatsApp(TwiML):
@@ -2561,7 +2208,7 @@ class Application(TwiML):
 
         :returns: <ApplicationSid> element
         """
-        return self.nest(ApplicationSid(sid, **kwargs))
+        pass
 
     def parameter(self, name=None, value=None, **kwargs):
         """
@@ -2573,7 +2220,7 @@ class Application(TwiML):
 
         :returns: <Parameter> element
         """
-        return self.nest(Parameter(name=name, value=value, **kwargs))
+        pass
 
 
 class ApplicationSid(TwiML):
@@ -2615,16 +2262,7 @@ class Sip(TwiML):
 
         :returns: <Uri> element
         """
-        return self.nest(
-            SipUri(
-                sip_url=sip_url,
-                priority=priority,
-                weight=weight,
-                username=username,
-                password=password,
-                **kwargs
-            )
-        )
+        pass
 
     def headers(self, **kwargs):
         """
@@ -2634,7 +2272,7 @@ class Sip(TwiML):
 
         :returns: <Headers> element
         """
-        return self.nest(Headers(**kwargs))
+        pass
 
 
 class Headers(TwiML):
@@ -2654,7 +2292,7 @@ class Headers(TwiML):
 
         :returns: <Header> element
         """
-        return self.nest(Header(name=name, value=value, **kwargs))
+        pass
 
 
 class Header(TwiML):
@@ -2722,7 +2360,7 @@ class Client(TwiML):
 
         :returns: <Identity> element
         """
-        return self.nest(Identity(client_identity, **kwargs))
+        pass
 
     def parameter(self, name=None, value=None, **kwargs):
         """
@@ -2734,7 +2372,7 @@ class Client(TwiML):
 
         :returns: <Parameter> element
         """
-        return self.nest(Parameter(name=name, value=value, **kwargs))
+        pass
 
 
 class Identity(TwiML):
@@ -2763,9 +2401,7 @@ class Connect(TwiML):
 
         :returns: <Room> element
         """
-        return self.nest(
-            Room(name, participant_identity=participant_identity, **kwargs)
-        )
+        pass
 
     def autopilot(self, name, **kwargs):
         """
@@ -2776,7 +2412,7 @@ class Connect(TwiML):
 
         :returns: <Autopilot> element
         """
-        return self.nest(Autopilot(name, **kwargs))
+        pass
 
     def stream(
         self,
@@ -2801,17 +2437,7 @@ class Connect(TwiML):
 
         :returns: <Stream> element
         """
-        return self.nest(
-            Stream(
-                name=name,
-                connector_name=connector_name,
-                url=url,
-                track=track,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                **kwargs
-            )
-        )
+        pass
 
     def virtual_agent(
         self,
@@ -2834,16 +2460,7 @@ class Connect(TwiML):
 
         :returns: <VirtualAgent> element
         """
-        return self.nest(
-            VirtualAgent(
-                connector_name=connector_name,
-                language=language,
-                sentiment_analysis=sentiment_analysis,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                **kwargs
-            )
-        )
+        pass
 
     def conversation(
         self,
@@ -2884,25 +2501,7 @@ class Connect(TwiML):
 
         :returns: <Conversation> element
         """
-        return self.nest(
-            Conversation(
-                service_instance_sid=service_instance_sid,
-                inbound_autocreation=inbound_autocreation,
-                routing_assignment_timeout=routing_assignment_timeout,
-                inbound_timeout=inbound_timeout,
-                url=url,
-                method=method,
-                record=record,
-                trim=trim,
-                recording_status_callback=recording_status_callback,
-                recording_status_callback_method=recording_status_callback_method,
-                recording_status_callback_event=recording_status_callback_event,
-                status_callback=status_callback,
-                status_callback_method=status_callback_method,
-                status_callback_event=status_callback_event,
-                **kwargs
-            )
-        )
+        pass
 
     def conversation_relay(
         self,
@@ -2967,37 +2566,7 @@ class Connect(TwiML):
 
         :returns: <ConversationRelay> element
         """
-        return self.nest(
-            ConversationRelay(
-                url=url,
-                language=language,
-                tts_language=tts_language,
-                transcription_language=transcription_language,
-                tts_provider=tts_provider,
-                voice=voice,
-                transcription_provider=transcription_provider,
-                speech_model=speech_model,
-                profanity_filter=profanity_filter,
-                dtmf_detection=dtmf_detection,
-                welcome_greeting=welcome_greeting,
-                partial_prompts=partial_prompts,
-                welcome_greeting_interruptible=welcome_greeting_interruptible,
-                interruptible=interruptible,
-                preemptible=preemptible,
-                hints=hints,
-                intelligence_service=intelligence_service,
-                report_input_during_agent_speech=report_input_during_agent_speech,
-                elevenlabs_text_normalization=elevenlabs_text_normalization,
-                interrupt_sensitivity=interrupt_sensitivity,
-                debug=debug,
-                backgroundNoiseReduction=backgroundNoiseReduction,
-                speechTimeout=speechTimeout,
-                deepgramSmartFormat=deepgramSmartFormat,
-                ignoreBackchannel=ignoreBackchannel,
-                events=events,
-                **kwargs
-            )
-        )
+        pass
 
     def assistant(
         self,
@@ -3052,32 +2621,7 @@ class Connect(TwiML):
 
         :returns: <Assistant> element
         """
-        return self.nest(
-            Assistant(
-                id=id,
-                language=language,
-                tts_language=tts_language,
-                transcription_language=transcription_language,
-                tts_provider=tts_provider,
-                voice=voice,
-                transcription_provider=transcription_provider,
-                speech_model=speech_model,
-                profanity_filter=profanity_filter,
-                dtmf_detection=dtmf_detection,
-                welcome_greeting=welcome_greeting,
-                partial_prompts=partial_prompts,
-                welcome_greeting_interruptible=welcome_greeting_interruptible,
-                interruptible=interruptible,
-                preemptible=preemptible,
-                hints=hints,
-                intelligence_service=intelligence_service,
-                report_input_during_agent_speech=report_input_during_agent_speech,
-                elevenlabs_text_normalization=elevenlabs_text_normalization,
-                interrupt_sensitivity=interrupt_sensitivity,
-                debug=debug,
-                **kwargs
-            )
-        )
+        pass
 
     def ai_session(self, ai_connector=None, ai_session_configuration=None, **kwargs):
         """
@@ -3089,13 +2633,7 @@ class Connect(TwiML):
 
         :returns: <AiSession> element
         """
-        return self.nest(
-            AiSession(
-                ai_connector=ai_connector,
-                ai_session_configuration=ai_session_configuration,
-                **kwargs
-            )
-        )
+        pass
 
     def conversation_relay_session(
         self, connector=None, session_configuration=None, **kwargs
@@ -3109,13 +2647,7 @@ class Connect(TwiML):
 
         :returns: <ConversationRelaySession> element
         """
-        return self.nest(
-            ConversationRelaySession(
-                connector=connector,
-                session_configuration=session_configuration,
-                **kwargs
-            )
-        )
+        pass
 
 
 class ConversationRelaySession(TwiML):
@@ -3162,16 +2694,7 @@ class Assistant(TwiML):
 
         :returns: <Language> element
         """
-        return self.nest(
-            Language(
-                code=code,
-                tts_provider=tts_provider,
-                voice=voice,
-                transcription_provider=transcription_provider,
-                speech_model=speech_model,
-                **kwargs
-            )
-        )
+        pass
 
     def parameter(self, name=None, value=None, **kwargs):
         """
@@ -3183,7 +2706,7 @@ class Assistant(TwiML):
 
         :returns: <Parameter> element
         """
-        return self.nest(Parameter(name=name, value=value, **kwargs))
+        pass
 
 
 class Language(TwiML):
@@ -3222,16 +2745,7 @@ class ConversationRelay(TwiML):
 
         :returns: <Language> element
         """
-        return self.nest(
-            Language(
-                code=code,
-                tts_provider=tts_provider,
-                voice=voice,
-                transcription_provider=transcription_provider,
-                speech_model=speech_model,
-                **kwargs
-            )
-        )
+        pass
 
     def parameter(self, name=None, value=None, **kwargs):
         """
@@ -3243,7 +2757,7 @@ class ConversationRelay(TwiML):
 
         :returns: <Parameter> element
         """
-        return self.nest(Parameter(name=name, value=value, **kwargs))
+        pass
 
 
 class Conversation(TwiML):
@@ -3271,7 +2785,7 @@ class VirtualAgent(TwiML):
 
         :returns: <Config> element
         """
-        return self.nest(Config(name=name, value=value, **kwargs))
+        pass
 
     def parameter(self, name=None, value=None, **kwargs):
         """
@@ -3283,7 +2797,7 @@ class VirtualAgent(TwiML):
 
         :returns: <Parameter> element
         """
-        return self.nest(Parameter(name=name, value=value, **kwargs))
+        pass
 
 
 class Autopilot(TwiML):

@@ -61,19 +61,7 @@ class MessagingGeopermissionsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        params = values.of(
-            {
-                "CountryCode": country_code,
-            }
-        )
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers, params=params
-        )
+        pass
 
     def fetch(
         self, country_code: Union[str, object] = values.unset
@@ -84,8 +72,7 @@ class MessagingGeopermissionsList(ListResource):
         :param country_code: The country code to filter the geo permissions. If provided, only the geo permission for the specified country will be returned.
         :returns: The fetched MessagingGeopermissionsInstance
         """
-        payload, _, _ = self._fetch(country_code=country_code)
-        return MessagingGeopermissionsInstance(self._version, payload)
+        pass
 
     def fetch_with_http_info(
         self, country_code: Union[str, object] = values.unset
@@ -96,9 +83,7 @@ class MessagingGeopermissionsList(ListResource):
         :param country_code: The country code to filter the geo permissions. If provided, only the geo permission for the specified country will be returned.
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(country_code=country_code)
-        instance = MessagingGeopermissionsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self, country_code: Union[str, object] = values.unset
@@ -109,19 +94,7 @@ class MessagingGeopermissionsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        params = values.of(
-            {
-                "CountryCode": country_code,
-            }
-        )
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers, params=params
-        )
+        pass
 
     async def fetch_async(
         self, country_code: Union[str, object] = values.unset
@@ -132,8 +105,7 @@ class MessagingGeopermissionsList(ListResource):
         :param country_code: The country code to filter the geo permissions. If provided, only the geo permission for the specified country will be returned.
         :returns: The fetched MessagingGeopermissionsInstance
         """
-        payload, _, _ = await self._fetch_async(country_code=country_code)
-        return MessagingGeopermissionsInstance(self._version, payload)
+        pass
 
     async def fetch_with_http_info_async(
         self, country_code: Union[str, object] = values.unset
@@ -144,11 +116,7 @@ class MessagingGeopermissionsList(ListResource):
         :param country_code: The country code to filter the geo permissions. If provided, only the geo permission for the specified country will be returned.
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            country_code=country_code
-        )
-        instance = MessagingGeopermissionsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(self, permissions: List[object]) -> tuple:
         """
@@ -157,23 +125,7 @@ class MessagingGeopermissionsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Permissions": serialize.map(
-                    permissions, lambda e: serialize.object(e)
-                ),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="PATCH", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(self, permissions: List[object]) -> MessagingGeopermissionsInstance:
         """
@@ -183,8 +135,7 @@ class MessagingGeopermissionsList(ListResource):
 
         :returns: The updated MessagingGeopermissionsInstance
         """
-        payload, _, _ = self._update(permissions=permissions)
-        return MessagingGeopermissionsInstance(self._version, payload)
+        pass
 
     def update_with_http_info(self, permissions: List[object]) -> ApiResponse:
         """
@@ -194,9 +145,7 @@ class MessagingGeopermissionsList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(permissions=permissions)
-        instance = MessagingGeopermissionsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(self, permissions: List[object]) -> tuple:
         """
@@ -205,23 +154,7 @@ class MessagingGeopermissionsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Permissions": serialize.map(
-                    permissions, lambda e: serialize.object(e)
-                ),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="PATCH", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self, permissions: List[object]
@@ -233,8 +166,7 @@ class MessagingGeopermissionsList(ListResource):
 
         :returns: The updated MessagingGeopermissionsInstance
         """
-        payload, _, _ = await self._update_async(permissions=permissions)
-        return MessagingGeopermissionsInstance(self._version, payload)
+        pass
 
     async def update_with_http_info_async(
         self, permissions: List[object]
@@ -246,11 +178,7 @@ class MessagingGeopermissionsList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            permissions=permissions
-        )
-        instance = MessagingGeopermissionsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

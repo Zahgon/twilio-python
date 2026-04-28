@@ -66,12 +66,7 @@ class BulkEligibilityInstance(InstanceResource):
 
         :returns: BulkEligibilityContext for this BulkEligibilityInstance
         """
-        if self._context is None:
-            self._context = BulkEligibilityContext(
-                self._version,
-                request_id=self._solution["request_id"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "BulkEligibilityInstance":
         """
@@ -80,7 +75,7 @@ class BulkEligibilityInstance(InstanceResource):
 
         :returns: The fetched BulkEligibilityInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "BulkEligibilityInstance":
         """
@@ -89,7 +84,7 @@ class BulkEligibilityInstance(InstanceResource):
 
         :returns: The fetched BulkEligibilityInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -98,7 +93,7 @@ class BulkEligibilityInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -107,7 +102,7 @@ class BulkEligibilityInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -145,14 +140,7 @@ class BulkEligibilityContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> BulkEligibilityInstance:
         """
@@ -161,12 +149,7 @@ class BulkEligibilityContext(InstanceContext):
 
         :returns: The fetched BulkEligibilityInstance
         """
-        payload, _, _ = self._fetch()
-        return BulkEligibilityInstance(
-            self._version,
-            payload,
-            request_id=self._solution["request_id"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -175,13 +158,7 @@ class BulkEligibilityContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = BulkEligibilityInstance(
-            self._version,
-            payload,
-            request_id=self._solution["request_id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -190,14 +167,7 @@ class BulkEligibilityContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> BulkEligibilityInstance:
         """
@@ -206,12 +176,7 @@ class BulkEligibilityContext(InstanceContext):
 
         :returns: The fetched BulkEligibilityInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return BulkEligibilityInstance(
-            self._version,
-            payload,
-            request_id=self._solution["request_id"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -220,13 +185,7 @@ class BulkEligibilityContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = BulkEligibilityInstance(
-            self._version,
-            payload,
-            request_id=self._solution["request_id"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -258,17 +217,7 @@ class BulkEligibilityList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = body.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self, body: Union[object, object] = values.unset
@@ -280,8 +229,7 @@ class BulkEligibilityList(ListResource):
 
         :returns: The created BulkEligibilityInstance
         """
-        payload, _, _ = self._create(body=body)
-        return BulkEligibilityInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self, body: Union[object, object] = values.unset
@@ -293,9 +241,7 @@ class BulkEligibilityList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(body=body)
-        instance = BulkEligibilityInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self, body: Union[object, object] = values.unset) -> tuple:
         """
@@ -304,17 +250,7 @@ class BulkEligibilityList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = body.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self, body: Union[object, object] = values.unset
@@ -326,8 +262,7 @@ class BulkEligibilityList(ListResource):
 
         :returns: The created BulkEligibilityInstance
         """
-        payload, _, _ = await self._create_async(body=body)
-        return BulkEligibilityInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self, body: Union[object, object] = values.unset
@@ -339,9 +274,7 @@ class BulkEligibilityList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(body=body)
-        instance = BulkEligibilityInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def get(self, request_id: str) -> BulkEligibilityContext:
         """
@@ -349,7 +282,7 @@ class BulkEligibilityList(ListResource):
 
         :param request_id: The SID of the bulk eligibility check that you want to know about.
         """
-        return BulkEligibilityContext(self._version, request_id=request_id)
+        pass
 
     def __call__(self, request_id: str) -> BulkEligibilityContext:
         """

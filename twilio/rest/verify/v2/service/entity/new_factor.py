@@ -152,34 +152,7 @@ class NewFactorList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "FactorType": factor_type,
-                "Binding.Alg": binding_alg,
-                "Binding.PublicKey": binding_public_key,
-                "Config.AppId": config_app_id,
-                "Config.NotificationPlatform": config_notification_platform,
-                "Config.NotificationToken": config_notification_token,
-                "Config.SdkVersion": config_sdk_version,
-                "Binding.Secret": binding_secret,
-                "Config.TimeStep": config_time_step,
-                "Config.Skew": config_skew,
-                "Config.CodeLength": config_code_length,
-                "Config.Alg": config_alg,
-                "Metadata": serialize.object(metadata),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -220,28 +193,7 @@ class NewFactorList(ListResource):
 
         :returns: The created NewFactorInstance
         """
-        payload, _, _ = self._create(
-            friendly_name=friendly_name,
-            factor_type=factor_type,
-            binding_alg=binding_alg,
-            binding_public_key=binding_public_key,
-            config_app_id=config_app_id,
-            config_notification_platform=config_notification_platform,
-            config_notification_token=config_notification_token,
-            config_sdk_version=config_sdk_version,
-            binding_secret=binding_secret,
-            config_time_step=config_time_step,
-            config_skew=config_skew,
-            config_code_length=config_code_length,
-            config_alg=config_alg,
-            metadata=metadata,
-        )
-        return NewFactorInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            identity=self._solution["identity"],
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -282,29 +234,7 @@ class NewFactorList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            friendly_name=friendly_name,
-            factor_type=factor_type,
-            binding_alg=binding_alg,
-            binding_public_key=binding_public_key,
-            config_app_id=config_app_id,
-            config_notification_platform=config_notification_platform,
-            config_notification_token=config_notification_token,
-            config_sdk_version=config_sdk_version,
-            binding_secret=binding_secret,
-            config_time_step=config_time_step,
-            config_skew=config_skew,
-            config_code_length=config_code_length,
-            config_alg=config_alg,
-            metadata=metadata,
-        )
-        instance = NewFactorInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            identity=self._solution["identity"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -331,34 +261,7 @@ class NewFactorList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "FactorType": factor_type,
-                "Binding.Alg": binding_alg,
-                "Binding.PublicKey": binding_public_key,
-                "Config.AppId": config_app_id,
-                "Config.NotificationPlatform": config_notification_platform,
-                "Config.NotificationToken": config_notification_token,
-                "Config.SdkVersion": config_sdk_version,
-                "Binding.Secret": binding_secret,
-                "Config.TimeStep": config_time_step,
-                "Config.Skew": config_skew,
-                "Config.CodeLength": config_code_length,
-                "Config.Alg": config_alg,
-                "Metadata": serialize.object(metadata),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -399,28 +302,7 @@ class NewFactorList(ListResource):
 
         :returns: The created NewFactorInstance
         """
-        payload, _, _ = await self._create_async(
-            friendly_name=friendly_name,
-            factor_type=factor_type,
-            binding_alg=binding_alg,
-            binding_public_key=binding_public_key,
-            config_app_id=config_app_id,
-            config_notification_platform=config_notification_platform,
-            config_notification_token=config_notification_token,
-            config_sdk_version=config_sdk_version,
-            binding_secret=binding_secret,
-            config_time_step=config_time_step,
-            config_skew=config_skew,
-            config_code_length=config_code_length,
-            config_alg=config_alg,
-            metadata=metadata,
-        )
-        return NewFactorInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            identity=self._solution["identity"],
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -461,29 +343,7 @@ class NewFactorList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            friendly_name=friendly_name,
-            factor_type=factor_type,
-            binding_alg=binding_alg,
-            binding_public_key=binding_public_key,
-            config_app_id=config_app_id,
-            config_notification_platform=config_notification_platform,
-            config_notification_token=config_notification_token,
-            config_sdk_version=config_sdk_version,
-            binding_secret=binding_secret,
-            config_time_step=config_time_step,
-            config_skew=config_skew,
-            config_code_length=config_code_length,
-            config_alg=config_alg,
-            metadata=metadata,
-        )
-        instance = NewFactorInstance(
-            self._version,
-            payload,
-            service_sid=self._solution["service_sid"],
-            identity=self._solution["identity"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

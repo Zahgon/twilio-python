@@ -109,12 +109,7 @@ class BundleInstance(InstanceResource):
 
         :returns: BundleContext for this BundleInstance
         """
-        if self._context is None:
-            self._context = BundleContext(
-                self._version,
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -123,7 +118,7 @@ class BundleInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -132,7 +127,7 @@ class BundleInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -141,7 +136,7 @@ class BundleInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -150,7 +145,7 @@ class BundleInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "BundleInstance":
         """
@@ -159,7 +154,7 @@ class BundleInstance(InstanceResource):
 
         :returns: The fetched BundleInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "BundleInstance":
         """
@@ -168,7 +163,7 @@ class BundleInstance(InstanceResource):
 
         :returns: The fetched BundleInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -177,7 +172,7 @@ class BundleInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -186,7 +181,7 @@ class BundleInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -205,12 +200,7 @@ class BundleInstance(InstanceResource):
 
         :returns: The updated BundleInstance
         """
-        return self._proxy.update(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
+        pass
 
     async def update_async(
         self,
@@ -229,12 +219,7 @@ class BundleInstance(InstanceResource):
 
         :returns: The updated BundleInstance
         """
-        return await self._proxy.update_async(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -253,12 +238,7 @@ class BundleInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -277,40 +257,35 @@ class BundleInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
+        pass
 
     @property
     def bundle_copies(self) -> BundleCopyList:
         """
         Access the bundle_copies
         """
-        return self._proxy.bundle_copies
+        pass
 
     @property
     def evaluations(self) -> EvaluationList:
         """
         Access the evaluations
         """
-        return self._proxy.evaluations
+        pass
 
     @property
     def item_assignments(self) -> ItemAssignmentList:
         """
         Access the item_assignments
         """
-        return self._proxy.item_assignments
+        pass
 
     @property
     def replace_items(self) -> ReplaceItemsList:
         """
         Access the replace_items
         """
-        return self._proxy.replace_items
+        pass
 
     def __repr__(self) -> str:
         """
@@ -351,12 +326,7 @@ class BundleContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -365,8 +335,7 @@ class BundleContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -375,8 +344,7 @@ class BundleContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -385,12 +353,7 @@ class BundleContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -399,8 +362,7 @@ class BundleContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -409,8 +371,7 @@ class BundleContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -419,14 +380,7 @@ class BundleContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> BundleInstance:
         """
@@ -435,12 +389,7 @@ class BundleContext(InstanceContext):
 
         :returns: The fetched BundleInstance
         """
-        payload, _, _ = self._fetch()
-        return BundleInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -449,13 +398,7 @@ class BundleContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = BundleInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -464,14 +407,7 @@ class BundleContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> BundleInstance:
         """
@@ -480,12 +416,7 @@ class BundleContext(InstanceContext):
 
         :returns: The fetched BundleInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return BundleInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -494,13 +425,7 @@ class BundleContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = BundleInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -515,24 +440,7 @@ class BundleContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Status": status,
-                "StatusCallback": status_callback,
-                "FriendlyName": friendly_name,
-                "Email": email,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -551,13 +459,7 @@ class BundleContext(InstanceContext):
 
         :returns: The updated BundleInstance
         """
-        payload, _, _ = self._update(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
-        return BundleInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     def update_with_http_info(
         self,
@@ -576,14 +478,7 @@ class BundleContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
-        instance = BundleInstance(self._version, payload, sid=self._solution["sid"])
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -598,24 +493,7 @@ class BundleContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Status": status,
-                "StatusCallback": status_callback,
-                "FriendlyName": friendly_name,
-                "Email": email,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -634,13 +512,7 @@ class BundleContext(InstanceContext):
 
         :returns: The updated BundleInstance
         """
-        payload, _, _ = await self._update_async(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
-        return BundleInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -659,62 +531,35 @@ class BundleContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            status=status,
-            status_callback=status_callback,
-            friendly_name=friendly_name,
-            email=email,
-        )
-        instance = BundleInstance(self._version, payload, sid=self._solution["sid"])
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def bundle_copies(self) -> BundleCopyList:
         """
         Access the bundle_copies
         """
-        if self._bundle_copies is None:
-            self._bundle_copies = BundleCopyList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._bundle_copies
+        pass
 
     @property
     def evaluations(self) -> EvaluationList:
         """
         Access the evaluations
         """
-        if self._evaluations is None:
-            self._evaluations = EvaluationList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._evaluations
+        pass
 
     @property
     def item_assignments(self) -> ItemAssignmentList:
         """
         Access the item_assignments
         """
-        if self._item_assignments is None:
-            self._item_assignments = ItemAssignmentList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._item_assignments
+        pass
 
     @property
     def replace_items(self) -> ReplaceItemsList:
         """
         Access the replace_items
         """
-        if self._replace_items is None:
-            self._replace_items = ReplaceItemsList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._replace_items
+        pass
 
     def __repr__(self) -> str:
         """
@@ -734,7 +579,7 @@ class BundlePage(Page):
 
         :param payload: Payload response from the API
         """
-        return BundleInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -775,28 +620,7 @@ class BundleList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "Email": email,
-                "StatusCallback": status_callback,
-                "RegulationSid": regulation_sid,
-                "IsoCountry": iso_country,
-                "EndUserType": end_user_type,
-                "NumberType": number_type,
-                "IsTest": serialize.boolean_to_string(is_test),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -823,17 +647,7 @@ class BundleList(ListResource):
 
         :returns: The created BundleInstance
         """
-        payload, _, _ = self._create(
-            friendly_name=friendly_name,
-            email=email,
-            status_callback=status_callback,
-            regulation_sid=regulation_sid,
-            iso_country=iso_country,
-            end_user_type=end_user_type,
-            number_type=number_type,
-            is_test=is_test,
-        )
-        return BundleInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -860,18 +674,7 @@ class BundleList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            friendly_name=friendly_name,
-            email=email,
-            status_callback=status_callback,
-            regulation_sid=regulation_sid,
-            iso_country=iso_country,
-            end_user_type=end_user_type,
-            number_type=number_type,
-            is_test=is_test,
-        )
-        instance = BundleInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -890,28 +693,7 @@ class BundleList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "Email": email,
-                "StatusCallback": status_callback,
-                "RegulationSid": regulation_sid,
-                "IsoCountry": iso_country,
-                "EndUserType": end_user_type,
-                "NumberType": number_type,
-                "IsTest": serialize.boolean_to_string(is_test),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -938,17 +720,7 @@ class BundleList(ListResource):
 
         :returns: The created BundleInstance
         """
-        payload, _, _ = await self._create_async(
-            friendly_name=friendly_name,
-            email=email,
-            status_callback=status_callback,
-            regulation_sid=regulation_sid,
-            iso_country=iso_country,
-            end_user_type=end_user_type,
-            number_type=number_type,
-            is_test=is_test,
-        )
-        return BundleInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -975,18 +747,7 @@ class BundleList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            friendly_name=friendly_name,
-            email=email,
-            status_callback=status_callback,
-            regulation_sid=regulation_sid,
-            iso_country=iso_country,
-            end_user_type=end_user_type,
-            number_type=number_type,
-            is_test=is_test,
-        )
-        instance = BundleInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -1034,25 +795,7 @@ class BundleList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            status=status,
-            bundle_sids=bundle_sids,
-            friendly_name=friendly_name,
-            regulation_sid=regulation_sid,
-            iso_country=iso_country,
-            number_type=number_type,
-            end_user_type=end_user_type,
-            has_valid_until_date=has_valid_until_date,
-            sort_by=sort_by,
-            sort_direction=sort_direction,
-            valid_until_date=valid_until_date,
-            valid_until_date_before=valid_until_date_before,
-            valid_until_date_after=valid_until_date_after,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -1100,25 +843,7 @@ class BundleList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            status=status,
-            bundle_sids=bundle_sids,
-            friendly_name=friendly_name,
-            regulation_sid=regulation_sid,
-            iso_country=iso_country,
-            number_type=number_type,
-            end_user_type=end_user_type,
-            has_valid_until_date=has_valid_until_date,
-            sort_by=sort_by,
-            sort_direction=sort_direction,
-            valid_until_date=valid_until_date,
-            valid_until_date_before=valid_until_date_before,
-            valid_until_date_after=valid_until_date_after,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -1164,26 +889,7 @@ class BundleList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            status=status,
-            bundle_sids=bundle_sids,
-            friendly_name=friendly_name,
-            regulation_sid=regulation_sid,
-            iso_country=iso_country,
-            number_type=number_type,
-            end_user_type=end_user_type,
-            has_valid_until_date=has_valid_until_date,
-            sort_by=sort_by,
-            sort_direction=sort_direction,
-            valid_until_date=valid_until_date,
-            valid_until_date_before=valid_until_date_before,
-            valid_until_date_after=valid_until_date_after,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -1229,26 +935,7 @@ class BundleList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            status=status,
-            bundle_sids=bundle_sids,
-            friendly_name=friendly_name,
-            regulation_sid=regulation_sid,
-            iso_country=iso_country,
-            number_type=number_type,
-            end_user_type=end_user_type,
-            has_valid_until_date=has_valid_until_date,
-            sort_by=sort_by,
-            sort_direction=sort_direction,
-            valid_until_date=valid_until_date,
-            valid_until_date_before=valid_until_date_before,
-            valid_until_date_after=valid_until_date_after,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -1295,25 +982,7 @@ class BundleList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                status=status,
-                bundle_sids=bundle_sids,
-                friendly_name=friendly_name,
-                regulation_sid=regulation_sid,
-                iso_country=iso_country,
-                number_type=number_type,
-                end_user_type=end_user_type,
-                has_valid_until_date=has_valid_until_date,
-                sort_by=sort_by,
-                sort_direction=sort_direction,
-                valid_until_date=valid_until_date,
-                valid_until_date_before=valid_until_date_before,
-                valid_until_date_after=valid_until_date_after,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -1360,26 +1029,7 @@ class BundleList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                status=status,
-                bundle_sids=bundle_sids,
-                friendly_name=friendly_name,
-                regulation_sid=regulation_sid,
-                iso_country=iso_country,
-                number_type=number_type,
-                end_user_type=end_user_type,
-                has_valid_until_date=has_valid_until_date,
-                sort_by=sort_by,
-                sort_direction=sort_direction,
-                valid_until_date=valid_until_date,
-                valid_until_date_before=valid_until_date_before,
-                valid_until_date_after=valid_until_date_after,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -1425,25 +1075,7 @@ class BundleList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            status=status,
-            bundle_sids=bundle_sids,
-            friendly_name=friendly_name,
-            regulation_sid=regulation_sid,
-            iso_country=iso_country,
-            number_type=number_type,
-            end_user_type=end_user_type,
-            has_valid_until_date=has_valid_until_date,
-            sort_by=sort_by,
-            sort_direction=sort_direction,
-            valid_until_date=valid_until_date,
-            valid_until_date_before=valid_until_date_before,
-            valid_until_date_after=valid_until_date_after,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1489,25 +1121,7 @@ class BundleList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            status=status,
-            bundle_sids=bundle_sids,
-            friendly_name=friendly_name,
-            regulation_sid=regulation_sid,
-            iso_country=iso_country,
-            number_type=number_type,
-            end_user_type=end_user_type,
-            has_valid_until_date=has_valid_until_date,
-            sort_by=sort_by,
-            sort_direction=sort_direction,
-            valid_until_date=valid_until_date,
-            valid_until_date_before=valid_until_date_before,
-            valid_until_date_after=valid_until_date_after,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1551,35 +1165,7 @@ class BundleList(ListResource):
 
         :returns: Page of BundleInstance
         """
-        data = values.of(
-            {
-                "Status": status,
-                "BundleSids": bundle_sids,
-                "FriendlyName": friendly_name,
-                "RegulationSid": regulation_sid,
-                "IsoCountry": iso_country,
-                "NumberType": number_type,
-                "EndUserType": end_user_type,
-                "HasValidUntilDate": serialize.boolean_to_string(has_valid_until_date),
-                "SortBy": sort_by,
-                "SortDirection": sort_direction,
-                "ValidUntilDate": serialize.iso8601_datetime(valid_until_date),
-                "ValidUntilDate<": serialize.iso8601_datetime(valid_until_date_before),
-                "ValidUntilDate>": serialize.iso8601_datetime(valid_until_date_after),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return BundlePage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -1623,35 +1209,7 @@ class BundleList(ListResource):
 
         :returns: Page of BundleInstance
         """
-        data = values.of(
-            {
-                "Status": status,
-                "BundleSids": bundle_sids,
-                "FriendlyName": friendly_name,
-                "RegulationSid": regulation_sid,
-                "IsoCountry": iso_country,
-                "NumberType": number_type,
-                "EndUserType": end_user_type,
-                "HasValidUntilDate": serialize.boolean_to_string(has_valid_until_date),
-                "SortBy": sort_by,
-                "SortDirection": sort_direction,
-                "ValidUntilDate": serialize.iso8601_datetime(valid_until_date),
-                "ValidUntilDate<": serialize.iso8601_datetime(valid_until_date_before),
-                "ValidUntilDate>": serialize.iso8601_datetime(valid_until_date_after),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return BundlePage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -1695,36 +1253,7 @@ class BundleList(ListResource):
 
         :returns: ApiResponse with BundlePage, status code, and headers
         """
-        data = values.of(
-            {
-                "Status": status,
-                "BundleSids": bundle_sids,
-                "FriendlyName": friendly_name,
-                "RegulationSid": regulation_sid,
-                "IsoCountry": iso_country,
-                "NumberType": number_type,
-                "EndUserType": end_user_type,
-                "HasValidUntilDate": serialize.boolean_to_string(has_valid_until_date),
-                "SortBy": sort_by,
-                "SortDirection": sort_direction,
-                "ValidUntilDate": serialize.iso8601_datetime(valid_until_date),
-                "ValidUntilDate<": serialize.iso8601_datetime(valid_until_date_before),
-                "ValidUntilDate>": serialize.iso8601_datetime(valid_until_date_after),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = BundlePage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1768,38 +1297,7 @@ class BundleList(ListResource):
 
         :returns: ApiResponse with BundlePage, status code, and headers
         """
-        data = values.of(
-            {
-                "Status": status,
-                "BundleSids": bundle_sids,
-                "FriendlyName": friendly_name,
-                "RegulationSid": regulation_sid,
-                "IsoCountry": iso_country,
-                "NumberType": number_type,
-                "EndUserType": end_user_type,
-                "HasValidUntilDate": serialize.boolean_to_string(has_valid_until_date),
-                "SortBy": sort_by,
-                "SortDirection": sort_direction,
-                "ValidUntilDate": serialize.iso8601_datetime(valid_until_date),
-                "ValidUntilDate<": serialize.iso8601_datetime(valid_until_date_before),
-                "ValidUntilDate>": serialize.iso8601_datetime(valid_until_date_after),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = BundlePage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> BundlePage:
         """
@@ -1810,8 +1308,7 @@ class BundleList(ListResource):
 
         :returns: Page of BundleInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return BundlePage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> BundlePage:
         """
@@ -1822,8 +1319,7 @@ class BundleList(ListResource):
 
         :returns: Page of BundleInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return BundlePage(self._version, response)
+        pass
 
     def get(self, sid: str) -> BundleContext:
         """
@@ -1831,7 +1327,7 @@ class BundleList(ListResource):
 
         :param sid: The unique string that we created to identify the Bundle resource.
         """
-        return BundleContext(self._version, sid=sid)
+        pass
 
     def __call__(self, sid: str) -> BundleContext:
         """

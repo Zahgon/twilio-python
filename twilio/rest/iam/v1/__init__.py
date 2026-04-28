@@ -41,39 +41,27 @@ class V1(Version):
 
     @property
     def api_key(self) -> ApiKeyList:
-        if self._api_key is None:
-            self._api_key = ApiKeyList(self)
-        return self._api_key
+        pass
 
     @property
     def get_api_keys(self) -> GetApiKeysList:
-        if self._get_api_keys is None:
-            self._get_api_keys = GetApiKeysList(self)
-        return self._get_api_keys
+        pass
 
     @property
     def new_api_key(self) -> NewApiKeyList:
-        if self._new_api_key is None:
-            self._new_api_key = NewApiKeyList(self)
-        return self._new_api_key
+        pass
 
     @property
     def o_auth_apps(self) -> OAuthAppList:
-        if self._o_auth_apps is None:
-            self._o_auth_apps = OAuthAppList(self)
-        return self._o_auth_apps
+        pass
 
     @property
     def role_permission(self) -> RolePermissionList:
-        if self._role_permission is None:
-            self._role_permission = RolePermissionList(self)
-        return self._role_permission
+        pass
 
     @property
     def token(self) -> TokenList:
-        if self._token is None:
-            self._token = TokenList(self)
-        return self._token
+        pass
 
     def __repr__(self) -> str:
         """

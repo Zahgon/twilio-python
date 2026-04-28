@@ -71,18 +71,7 @@ class InsightsSettingsAnswerSetsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of(
-            {
-                "Authorization": authorization,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(
         self, authorization: Union[str, object] = values.unset
@@ -93,8 +82,7 @@ class InsightsSettingsAnswerSetsList(ListResource):
         :param authorization: The Authorization HTTP request header
         :returns: The fetched InsightsSettingsAnswerSetsInstance
         """
-        payload, _, _ = self._fetch(authorization=authorization)
-        return InsightsSettingsAnswerSetsInstance(self._version, payload)
+        pass
 
     def fetch_with_http_info(
         self, authorization: Union[str, object] = values.unset
@@ -105,9 +93,7 @@ class InsightsSettingsAnswerSetsList(ListResource):
         :param authorization: The Authorization HTTP request header
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(authorization=authorization)
-        instance = InsightsSettingsAnswerSetsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(
         self, authorization: Union[str, object] = values.unset
@@ -118,18 +104,7 @@ class InsightsSettingsAnswerSetsList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        headers = values.of(
-            {
-                "Authorization": authorization,
-                "Content-Type": "application/x-www-form-urlencoded",
-            }
-        )
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self, authorization: Union[str, object] = values.unset
@@ -140,8 +115,7 @@ class InsightsSettingsAnswerSetsList(ListResource):
         :param authorization: The Authorization HTTP request header
         :returns: The fetched InsightsSettingsAnswerSetsInstance
         """
-        payload, _, _ = await self._fetch_async(authorization=authorization)
-        return InsightsSettingsAnswerSetsInstance(self._version, payload)
+        pass
 
     async def fetch_with_http_info_async(
         self, authorization: Union[str, object] = values.unset
@@ -152,11 +126,7 @@ class InsightsSettingsAnswerSetsList(ListResource):
         :param authorization: The Authorization HTTP request header
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(
-            authorization=authorization
-        )
-        instance = InsightsSettingsAnswerSetsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

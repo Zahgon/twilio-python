@@ -33,15 +33,11 @@ class V2(Version):
 
     @property
     def contents(self) -> ContentList:
-        if self._contents is None:
-            self._contents = ContentList(self)
-        return self._contents
+        pass
 
     @property
     def content_and_approvals(self) -> ContentAndApprovalsList:
-        if self._content_and_approvals is None:
-            self._content_and_approvals = ContentAndApprovalsList(self)
-        return self._content_and_approvals
+        pass
 
     def __repr__(self) -> str:
         """

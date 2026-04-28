@@ -85,12 +85,7 @@ class BundleCloneInstance(InstanceResource):
 
         :returns: BundleCloneContext for this BundleCloneInstance
         """
-        if self._context is None:
-            self._context = BundleCloneContext(
-                self._version,
-                bundle_sid=self._solution["bundle_sid"],
-            )
-        return self._context
+        pass
 
     def create(
         self,
@@ -107,11 +102,7 @@ class BundleCloneInstance(InstanceResource):
 
         :returns: The created BundleCloneInstance
         """
-        return self._proxy.create(
-            target_account_sid,
-            move_to_draft=move_to_draft,
-            friendly_name=friendly_name,
-        )
+        pass
 
     async def create_async(
         self,
@@ -128,11 +119,7 @@ class BundleCloneInstance(InstanceResource):
 
         :returns: The created BundleCloneInstance
         """
-        return await self._proxy.create_async(
-            target_account_sid,
-            move_to_draft=move_to_draft,
-            friendly_name=friendly_name,
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -149,11 +136,7 @@ class BundleCloneInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.create_with_http_info(
-            target_account_sid,
-            move_to_draft=move_to_draft,
-            friendly_name=friendly_name,
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -170,11 +153,7 @@ class BundleCloneInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.create_with_http_info_async(
-            target_account_sid,
-            move_to_draft=move_to_draft,
-            friendly_name=friendly_name,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -217,23 +196,7 @@ class BundleCloneContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "TargetAccountSid": target_account_sid,
-                "MoveToDraft": serialize.boolean_to_string(move_to_draft),
-                "FriendlyName": friendly_name,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -250,14 +213,7 @@ class BundleCloneContext(InstanceContext):
 
         :returns: The created BundleCloneInstance
         """
-        payload, _, _ = self._create(
-            target_account_sid=target_account_sid,
-            move_to_draft=move_to_draft,
-            friendly_name=friendly_name,
-        )
-        return BundleCloneInstance(
-            self._version, payload, bundle_sid=self._solution["bundle_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -274,15 +230,7 @@ class BundleCloneContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            target_account_sid=target_account_sid,
-            move_to_draft=move_to_draft,
-            friendly_name=friendly_name,
-        )
-        instance = BundleCloneInstance(
-            self._version, payload, bundle_sid=self._solution["bundle_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -296,23 +244,7 @@ class BundleCloneContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "TargetAccountSid": target_account_sid,
-                "MoveToDraft": serialize.boolean_to_string(move_to_draft),
-                "FriendlyName": friendly_name,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -329,14 +261,7 @@ class BundleCloneContext(InstanceContext):
 
         :returns: The created BundleCloneInstance
         """
-        payload, _, _ = await self._create_async(
-            target_account_sid=target_account_sid,
-            move_to_draft=move_to_draft,
-            friendly_name=friendly_name,
-        )
-        return BundleCloneInstance(
-            self._version, payload, bundle_sid=self._solution["bundle_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -353,15 +278,7 @@ class BundleCloneContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            target_account_sid=target_account_sid,
-            move_to_draft=move_to_draft,
-            friendly_name=friendly_name,
-        )
-        instance = BundleCloneInstance(
-            self._version, payload, bundle_sid=self._solution["bundle_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -390,7 +307,7 @@ class BundleCloneList(ListResource):
 
         :param bundle_sid: The unique string that identifies the Bundle to be cloned.
         """
-        return BundleCloneContext(self._version, bundle_sid=bundle_sid)
+        pass
 
     def __call__(self, bundle_sid: str) -> BundleCloneContext:
         """

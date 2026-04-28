@@ -50,16 +50,7 @@ class SenderIdRegistrationInstance(InstanceResource):
             self.data: Optional[Dict[str, object]] = payload.get("data")
 
         def to_dict(self):
-            return {
-                "regulationId": self.regulation_id,
-                "regulationVersion": self.regulation_version,
-                "friendlyName": self.friendly_name,
-                "statusNotificationEmail": self.status_notification_email,
-                "statusCallbackUrl": self.status_callback_url,
-                "comments": self.comments,
-                "themeSetId": self.theme_set_id,
-                "data": self.data,
-            }
+            pass
 
     """
     :ivar id: Registration identifier (BU-prefixed).
@@ -138,16 +129,7 @@ class SenderIdRegistrationList(ListResource):
             self.data: Optional[Dict[str, object]] = payload.get("data")
 
         def to_dict(self):
-            return {
-                "regulationId": self.regulation_id,
-                "regulationVersion": self.regulation_version,
-                "friendlyName": self.friendly_name,
-                "statusNotificationEmail": self.status_notification_email,
-                "statusCallbackUrl": self.status_callback_url,
-                "comments": self.comments,
-                "themeSetId": self.theme_set_id,
-                "data": self.data,
-            }
+            pass
 
     def __init__(self, version: Version):
         """
@@ -170,17 +152,7 @@ class SenderIdRegistrationList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = numbers_v1_create_embedded_registration_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -193,10 +165,7 @@ class SenderIdRegistrationList(ListResource):
 
         :returns: The created SenderIdRegistrationInstance
         """
-        payload, _, _ = self._create(
-            numbers_v1_create_embedded_registration_request=numbers_v1_create_embedded_registration_request
-        )
-        return SenderIdRegistrationInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -209,11 +178,7 @@ class SenderIdRegistrationList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            numbers_v1_create_embedded_registration_request=numbers_v1_create_embedded_registration_request
-        )
-        instance = SenderIdRegistrationInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -225,17 +190,7 @@ class SenderIdRegistrationList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = numbers_v1_create_embedded_registration_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -248,10 +203,7 @@ class SenderIdRegistrationList(ListResource):
 
         :returns: The created SenderIdRegistrationInstance
         """
-        payload, _, _ = await self._create_async(
-            numbers_v1_create_embedded_registration_request=numbers_v1_create_embedded_registration_request
-        )
-        return SenderIdRegistrationInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -264,11 +216,7 @@ class SenderIdRegistrationList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            numbers_v1_create_embedded_registration_request=numbers_v1_create_embedded_registration_request
-        )
-        instance = SenderIdRegistrationInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

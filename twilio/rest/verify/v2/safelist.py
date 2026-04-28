@@ -53,12 +53,7 @@ class SafelistInstance(InstanceResource):
 
         :returns: SafelistContext for this SafelistInstance
         """
-        if self._context is None:
-            self._context = SafelistContext(
-                self._version,
-                phone_number=self._solution["phone_number"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -67,7 +62,7 @@ class SafelistInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -76,7 +71,7 @@ class SafelistInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -85,7 +80,7 @@ class SafelistInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -94,7 +89,7 @@ class SafelistInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "SafelistInstance":
         """
@@ -103,7 +98,7 @@ class SafelistInstance(InstanceResource):
 
         :returns: The fetched SafelistInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "SafelistInstance":
         """
@@ -112,7 +107,7 @@ class SafelistInstance(InstanceResource):
 
         :returns: The fetched SafelistInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -121,7 +116,7 @@ class SafelistInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -130,7 +125,7 @@ class SafelistInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -166,12 +161,7 @@ class SafelistContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -180,8 +170,7 @@ class SafelistContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -190,8 +179,7 @@ class SafelistContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -200,12 +188,7 @@ class SafelistContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -214,8 +197,7 @@ class SafelistContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -224,8 +206,7 @@ class SafelistContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -234,14 +215,7 @@ class SafelistContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> SafelistInstance:
         """
@@ -250,12 +224,7 @@ class SafelistContext(InstanceContext):
 
         :returns: The fetched SafelistInstance
         """
-        payload, _, _ = self._fetch()
-        return SafelistInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -264,13 +233,7 @@ class SafelistContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = SafelistInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -279,14 +242,7 @@ class SafelistContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> SafelistInstance:
         """
@@ -295,12 +251,7 @@ class SafelistContext(InstanceContext):
 
         :returns: The fetched SafelistInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return SafelistInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -309,13 +260,7 @@ class SafelistContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = SafelistInstance(
-            self._version,
-            payload,
-            phone_number=self._solution["phone_number"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -347,21 +292,7 @@ class SafelistList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "PhoneNumber": phone_number,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(self, phone_number: str) -> SafelistInstance:
         """
@@ -371,8 +302,7 @@ class SafelistList(ListResource):
 
         :returns: The created SafelistInstance
         """
-        payload, _, _ = self._create(phone_number=phone_number)
-        return SafelistInstance(self._version, payload)
+        pass
 
     def create_with_http_info(self, phone_number: str) -> ApiResponse:
         """
@@ -382,9 +312,7 @@ class SafelistList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(phone_number=phone_number)
-        instance = SafelistInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(self, phone_number: str) -> tuple:
         """
@@ -393,21 +321,7 @@ class SafelistList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "PhoneNumber": phone_number,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(self, phone_number: str) -> SafelistInstance:
         """
@@ -417,8 +331,7 @@ class SafelistList(ListResource):
 
         :returns: The created SafelistInstance
         """
-        payload, _, _ = await self._create_async(phone_number=phone_number)
-        return SafelistInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(self, phone_number: str) -> ApiResponse:
         """
@@ -428,11 +341,7 @@ class SafelistList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            phone_number=phone_number
-        )
-        instance = SafelistInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def get(self, phone_number: str) -> SafelistContext:
         """
@@ -440,7 +349,7 @@ class SafelistList(ListResource):
 
         :param phone_number: The phone number to be fetched from SafeList. Phone numbers must be in [E.164 format](https://www.twilio.com/docs/glossary/what-e164).
         """
-        return SafelistContext(self._version, phone_number=phone_number)
+        pass
 
     def __call__(self, phone_number: str) -> SafelistContext:
         """

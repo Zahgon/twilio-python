@@ -31,9 +31,7 @@ class V1(Version):
 
     @property
     def knowledge(self) -> KnowledgeList:
-        if self._knowledge is None:
-            self._knowledge = KnowledgeList(self)
-        return self._knowledge
+        pass
 
     def __repr__(self) -> str:
         """

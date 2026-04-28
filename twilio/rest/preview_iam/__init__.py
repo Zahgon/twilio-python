@@ -15,12 +15,12 @@ from twilio.rest.preview_iam.versionless import Versionless
 class PreviewIam(PreviewIamBase):
     @property
     def organization(self) -> OrganizationList:
-        return Versionless(self).organization
+        pass
 
     @property
     def authorize(self) -> AuthorizeList:
-        return self.v1.authorize
+        pass
 
     @property
     def token(self) -> TokenList:
-        return self.v1.token
+        pass

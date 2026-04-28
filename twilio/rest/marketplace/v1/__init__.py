@@ -39,33 +39,23 @@ class V1(Version):
 
     @property
     def available_add_ons(self) -> AvailableAddOnList:
-        if self._available_add_ons is None:
-            self._available_add_ons = AvailableAddOnList(self)
-        return self._available_add_ons
+        pass
 
     @property
     def installed_add_ons(self) -> InstalledAddOnList:
-        if self._installed_add_ons is None:
-            self._installed_add_ons = InstalledAddOnList(self)
-        return self._installed_add_ons
+        pass
 
     @property
     def module_data(self) -> ModuleDataList:
-        if self._module_data is None:
-            self._module_data = ModuleDataList(self)
-        return self._module_data
+        pass
 
     @property
     def module_data_management(self) -> ModuleDataManagementList:
-        if self._module_data_management is None:
-            self._module_data_management = ModuleDataManagementList(self)
-        return self._module_data_management
+        pass
 
     @property
     def referral_conversion(self) -> ReferralConversionList:
-        if self._referral_conversion is None:
-            self._referral_conversion = ReferralConversionList(self)
-        return self._referral_conversion
+        pass
 
     def __repr__(self) -> str:
         """

@@ -55,11 +55,7 @@ class RecordingSettingsInstance(InstanceResource):
 
         :returns: RecordingSettingsContext for this RecordingSettingsInstance
         """
-        if self._context is None:
-            self._context = RecordingSettingsContext(
-                self._version,
-            )
-        return self._context
+        pass
 
     def create(
         self,
@@ -82,14 +78,7 @@ class RecordingSettingsInstance(InstanceResource):
 
         :returns: The created RecordingSettingsInstance
         """
-        return self._proxy.create(
-            friendly_name,
-            aws_credentials_sid=aws_credentials_sid,
-            encryption_key_sid=encryption_key_sid,
-            aws_s3_url=aws_s3_url,
-            aws_storage_enabled=aws_storage_enabled,
-            encryption_enabled=encryption_enabled,
-        )
+        pass
 
     async def create_async(
         self,
@@ -112,14 +101,7 @@ class RecordingSettingsInstance(InstanceResource):
 
         :returns: The created RecordingSettingsInstance
         """
-        return await self._proxy.create_async(
-            friendly_name,
-            aws_credentials_sid=aws_credentials_sid,
-            encryption_key_sid=encryption_key_sid,
-            aws_s3_url=aws_s3_url,
-            aws_storage_enabled=aws_storage_enabled,
-            encryption_enabled=encryption_enabled,
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -142,14 +124,7 @@ class RecordingSettingsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.create_with_http_info(
-            friendly_name,
-            aws_credentials_sid=aws_credentials_sid,
-            encryption_key_sid=encryption_key_sid,
-            aws_s3_url=aws_s3_url,
-            aws_storage_enabled=aws_storage_enabled,
-            encryption_enabled=encryption_enabled,
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -172,14 +147,7 @@ class RecordingSettingsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.create_with_http_info_async(
-            friendly_name,
-            aws_credentials_sid=aws_credentials_sid,
-            encryption_key_sid=encryption_key_sid,
-            aws_s3_url=aws_s3_url,
-            aws_storage_enabled=aws_storage_enabled,
-            encryption_enabled=encryption_enabled,
-        )
+        pass
 
     def fetch(self) -> "RecordingSettingsInstance":
         """
@@ -188,7 +156,7 @@ class RecordingSettingsInstance(InstanceResource):
 
         :returns: The fetched RecordingSettingsInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "RecordingSettingsInstance":
         """
@@ -197,7 +165,7 @@ class RecordingSettingsInstance(InstanceResource):
 
         :returns: The fetched RecordingSettingsInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -206,7 +174,7 @@ class RecordingSettingsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -215,7 +183,7 @@ class RecordingSettingsInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def __repr__(self) -> str:
         """
@@ -254,26 +222,7 @@ class RecordingSettingsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "AwsCredentialsSid": aws_credentials_sid,
-                "EncryptionKeySid": encryption_key_sid,
-                "AwsS3Url": aws_s3_url,
-                "AwsStorageEnabled": serialize.boolean_to_string(aws_storage_enabled),
-                "EncryptionEnabled": serialize.boolean_to_string(encryption_enabled),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -296,15 +245,7 @@ class RecordingSettingsContext(InstanceContext):
 
         :returns: The created RecordingSettingsInstance
         """
-        payload, _, _ = self._create(
-            friendly_name=friendly_name,
-            aws_credentials_sid=aws_credentials_sid,
-            encryption_key_sid=encryption_key_sid,
-            aws_s3_url=aws_s3_url,
-            aws_storage_enabled=aws_storage_enabled,
-            encryption_enabled=encryption_enabled,
-        )
-        return RecordingSettingsInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -327,16 +268,7 @@ class RecordingSettingsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            friendly_name=friendly_name,
-            aws_credentials_sid=aws_credentials_sid,
-            encryption_key_sid=encryption_key_sid,
-            aws_s3_url=aws_s3_url,
-            aws_storage_enabled=aws_storage_enabled,
-            encryption_enabled=encryption_enabled,
-        )
-        instance = RecordingSettingsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -353,26 +285,7 @@ class RecordingSettingsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "AwsCredentialsSid": aws_credentials_sid,
-                "EncryptionKeySid": encryption_key_sid,
-                "AwsS3Url": aws_s3_url,
-                "AwsStorageEnabled": serialize.boolean_to_string(aws_storage_enabled),
-                "EncryptionEnabled": serialize.boolean_to_string(encryption_enabled),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -395,15 +308,7 @@ class RecordingSettingsContext(InstanceContext):
 
         :returns: The created RecordingSettingsInstance
         """
-        payload, _, _ = await self._create_async(
-            friendly_name=friendly_name,
-            aws_credentials_sid=aws_credentials_sid,
-            encryption_key_sid=encryption_key_sid,
-            aws_s3_url=aws_s3_url,
-            aws_storage_enabled=aws_storage_enabled,
-            encryption_enabled=encryption_enabled,
-        )
-        return RecordingSettingsInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -426,16 +331,7 @@ class RecordingSettingsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            friendly_name=friendly_name,
-            aws_credentials_sid=aws_credentials_sid,
-            encryption_key_sid=encryption_key_sid,
-            aws_s3_url=aws_s3_url,
-            aws_storage_enabled=aws_storage_enabled,
-            encryption_enabled=encryption_enabled,
-        )
-        instance = RecordingSettingsInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -444,14 +340,7 @@ class RecordingSettingsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> RecordingSettingsInstance:
         """
@@ -460,11 +349,7 @@ class RecordingSettingsContext(InstanceContext):
 
         :returns: The fetched RecordingSettingsInstance
         """
-        payload, _, _ = self._fetch()
-        return RecordingSettingsInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -473,12 +358,7 @@ class RecordingSettingsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = RecordingSettingsInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -487,14 +367,7 @@ class RecordingSettingsContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> RecordingSettingsInstance:
         """
@@ -503,11 +376,7 @@ class RecordingSettingsContext(InstanceContext):
 
         :returns: The fetched RecordingSettingsInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return RecordingSettingsInstance(
-            self._version,
-            payload,
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -516,12 +385,7 @@ class RecordingSettingsContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = RecordingSettingsInstance(
-            self._version,
-            payload,
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -549,7 +413,7 @@ class RecordingSettingsList(ListResource):
         Constructs a RecordingSettingsContext
 
         """
-        return RecordingSettingsContext(self._version)
+        pass
 
     def __call__(self) -> RecordingSettingsContext:
         """

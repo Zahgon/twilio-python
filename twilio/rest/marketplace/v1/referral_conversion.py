@@ -35,9 +35,7 @@ class ReferralConversionInstance(InstanceResource):
             )
 
         def to_dict(self):
-            return {
-                "referral_account_sid": self.referral_account_sid,
-            }
+            pass
 
     """
     :ivar converted_account_sid: 
@@ -72,9 +70,7 @@ class ReferralConversionList(ListResource):
             )
 
         def to_dict(self):
-            return {
-                "referral_account_sid": self.referral_account_sid,
-            }
+            pass
 
     def __init__(self, version: Version):
         """
@@ -96,17 +92,7 @@ class ReferralConversionList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = create_referral_conversion_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self, create_referral_conversion_request: CreateReferralConversionRequest
@@ -118,10 +104,7 @@ class ReferralConversionList(ListResource):
 
         :returns: The created ReferralConversionInstance
         """
-        payload, _, _ = self._create(
-            create_referral_conversion_request=create_referral_conversion_request
-        )
-        return ReferralConversionInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self, create_referral_conversion_request: CreateReferralConversionRequest
@@ -133,11 +116,7 @@ class ReferralConversionList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            create_referral_conversion_request=create_referral_conversion_request
-        )
-        instance = ReferralConversionInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self, create_referral_conversion_request: CreateReferralConversionRequest
@@ -148,17 +127,7 @@ class ReferralConversionList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = create_referral_conversion_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self, create_referral_conversion_request: CreateReferralConversionRequest
@@ -170,10 +139,7 @@ class ReferralConversionList(ListResource):
 
         :returns: The created ReferralConversionInstance
         """
-        payload, _, _ = await self._create_async(
-            create_referral_conversion_request=create_referral_conversion_request
-        )
-        return ReferralConversionInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self, create_referral_conversion_request: CreateReferralConversionRequest
@@ -185,11 +151,7 @@ class ReferralConversionList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            create_referral_conversion_request=create_referral_conversion_request
-        )
-        instance = ReferralConversionInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

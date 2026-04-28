@@ -76,12 +76,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: ServiceContext for this ServiceInstance
         """
-        if self._context is None:
-            self._context = ServiceContext(
-                self._version,
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -90,7 +85,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -99,7 +94,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -108,7 +103,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -117,7 +112,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "ServiceInstance":
         """
@@ -126,7 +121,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: The fetched ServiceInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "ServiceInstance":
         """
@@ -135,7 +130,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: The fetched ServiceInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -144,7 +139,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -153,7 +148,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -170,11 +165,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: The updated ServiceInstance
         """
-        return self._proxy.update(
-            include_credentials=include_credentials,
-            friendly_name=friendly_name,
-            ui_editable=ui_editable,
-        )
+        pass
 
     async def update_async(
         self,
@@ -191,11 +182,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: The updated ServiceInstance
         """
-        return await self._proxy.update_async(
-            include_credentials=include_credentials,
-            friendly_name=friendly_name,
-            ui_editable=ui_editable,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -212,11 +199,7 @@ class ServiceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            include_credentials=include_credentials,
-            friendly_name=friendly_name,
-            ui_editable=ui_editable,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -233,39 +216,35 @@ class ServiceInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            include_credentials=include_credentials,
-            friendly_name=friendly_name,
-            ui_editable=ui_editable,
-        )
+        pass
 
     @property
     def assets(self) -> AssetList:
         """
         Access the assets
         """
-        return self._proxy.assets
+        pass
 
     @property
     def builds(self) -> BuildList:
         """
         Access the builds
         """
-        return self._proxy.builds
+        pass
 
     @property
     def environments(self) -> EnvironmentList:
         """
         Access the environments
         """
-        return self._proxy.environments
+        pass
 
     @property
     def functions(self) -> FunctionList:
         """
         Access the functions
         """
-        return self._proxy.functions
+        pass
 
     def __repr__(self) -> str:
         """
@@ -306,12 +285,7 @@ class ServiceContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -320,8 +294,7 @@ class ServiceContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -330,8 +303,7 @@ class ServiceContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -340,12 +312,7 @@ class ServiceContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -354,8 +321,7 @@ class ServiceContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -364,8 +330,7 @@ class ServiceContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -374,14 +339,7 @@ class ServiceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> ServiceInstance:
         """
@@ -390,12 +348,7 @@ class ServiceContext(InstanceContext):
 
         :returns: The fetched ServiceInstance
         """
-        payload, _, _ = self._fetch()
-        return ServiceInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -404,13 +357,7 @@ class ServiceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = ServiceInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -419,14 +366,7 @@ class ServiceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> ServiceInstance:
         """
@@ -435,12 +375,7 @@ class ServiceContext(InstanceContext):
 
         :returns: The fetched ServiceInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return ServiceInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -449,13 +384,7 @@ class ServiceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = ServiceInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -469,23 +398,7 @@ class ServiceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "IncludeCredentials": serialize.boolean_to_string(include_credentials),
-                "FriendlyName": friendly_name,
-                "UiEditable": serialize.boolean_to_string(ui_editable),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -502,12 +415,7 @@ class ServiceContext(InstanceContext):
 
         :returns: The updated ServiceInstance
         """
-        payload, _, _ = self._update(
-            include_credentials=include_credentials,
-            friendly_name=friendly_name,
-            ui_editable=ui_editable,
-        )
-        return ServiceInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     def update_with_http_info(
         self,
@@ -524,13 +432,7 @@ class ServiceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            include_credentials=include_credentials,
-            friendly_name=friendly_name,
-            ui_editable=ui_editable,
-        )
-        instance = ServiceInstance(self._version, payload, sid=self._solution["sid"])
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -544,23 +446,7 @@ class ServiceContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "IncludeCredentials": serialize.boolean_to_string(include_credentials),
-                "FriendlyName": friendly_name,
-                "UiEditable": serialize.boolean_to_string(ui_editable),
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -577,12 +463,7 @@ class ServiceContext(InstanceContext):
 
         :returns: The updated ServiceInstance
         """
-        payload, _, _ = await self._update_async(
-            include_credentials=include_credentials,
-            friendly_name=friendly_name,
-            ui_editable=ui_editable,
-        )
-        return ServiceInstance(self._version, payload, sid=self._solution["sid"])
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -599,61 +480,35 @@ class ServiceContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            include_credentials=include_credentials,
-            friendly_name=friendly_name,
-            ui_editable=ui_editable,
-        )
-        instance = ServiceInstance(self._version, payload, sid=self._solution["sid"])
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def assets(self) -> AssetList:
         """
         Access the assets
         """
-        if self._assets is None:
-            self._assets = AssetList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._assets
+        pass
 
     @property
     def builds(self) -> BuildList:
         """
         Access the builds
         """
-        if self._builds is None:
-            self._builds = BuildList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._builds
+        pass
 
     @property
     def environments(self) -> EnvironmentList:
         """
         Access the environments
         """
-        if self._environments is None:
-            self._environments = EnvironmentList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._environments
+        pass
 
     @property
     def functions(self) -> FunctionList:
         """
         Access the functions
         """
-        if self._functions is None:
-            self._functions = FunctionList(
-                self._version,
-                self._solution["sid"],
-            )
-        return self._functions
+        pass
 
     def __repr__(self) -> str:
         """
@@ -673,7 +528,7 @@ class ServicePage(Page):
 
         :param payload: Payload response from the API
         """
-        return ServiceInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -710,24 +565,7 @@ class ServiceList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "UniqueName": unique_name,
-                "FriendlyName": friendly_name,
-                "IncludeCredentials": serialize.boolean_to_string(include_credentials),
-                "UiEditable": serialize.boolean_to_string(ui_editable),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -746,13 +584,7 @@ class ServiceList(ListResource):
 
         :returns: The created ServiceInstance
         """
-        payload, _, _ = self._create(
-            unique_name=unique_name,
-            friendly_name=friendly_name,
-            include_credentials=include_credentials,
-            ui_editable=ui_editable,
-        )
-        return ServiceInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -771,14 +603,7 @@ class ServiceList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            unique_name=unique_name,
-            friendly_name=friendly_name,
-            include_credentials=include_credentials,
-            ui_editable=ui_editable,
-        )
-        instance = ServiceInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -793,24 +618,7 @@ class ServiceList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "UniqueName": unique_name,
-                "FriendlyName": friendly_name,
-                "IncludeCredentials": serialize.boolean_to_string(include_credentials),
-                "UiEditable": serialize.boolean_to_string(ui_editable),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -829,13 +637,7 @@ class ServiceList(ListResource):
 
         :returns: The created ServiceInstance
         """
-        payload, _, _ = await self._create_async(
-            unique_name=unique_name,
-            friendly_name=friendly_name,
-            include_credentials=include_credentials,
-            ui_editable=ui_editable,
-        )
-        return ServiceInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -854,14 +656,7 @@ class ServiceList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            unique_name=unique_name,
-            friendly_name=friendly_name,
-            include_credentials=include_credentials,
-            ui_editable=ui_editable,
-        )
-        instance = ServiceInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -883,10 +678,7 @@ class ServiceList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -908,10 +700,7 @@ class ServiceList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -931,11 +720,7 @@ class ServiceList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -955,13 +740,7 @@ class ServiceList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -982,12 +761,7 @@ class ServiceList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -1008,13 +782,7 @@ class ServiceList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -1034,12 +802,7 @@ class ServiceList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1059,12 +822,7 @@ class ServiceList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1082,22 +840,7 @@ class ServiceList(ListResource):
 
         :returns: Page of ServiceInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ServicePage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -1115,22 +858,7 @@ class ServiceList(ListResource):
 
         :returns: Page of ServiceInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return ServicePage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -1148,23 +876,7 @@ class ServiceList(ListResource):
 
         :returns: ApiResponse with ServicePage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = ServicePage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1182,25 +894,7 @@ class ServiceList(ListResource):
 
         :returns: ApiResponse with ServicePage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = ServicePage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> ServicePage:
         """
@@ -1211,8 +905,7 @@ class ServiceList(ListResource):
 
         :returns: Page of ServiceInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return ServicePage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> ServicePage:
         """
@@ -1223,8 +916,7 @@ class ServiceList(ListResource):
 
         :returns: Page of ServiceInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return ServicePage(self._version, response)
+        pass
 
     def get(self, sid: str) -> ServiceContext:
         """
@@ -1232,7 +924,7 @@ class ServiceList(ListResource):
 
         :param sid: The `sid` or `unique_name` of the Service resource to update.
         """
-        return ServiceContext(self._version, sid=sid)
+        pass
 
     def __call__(self, sid: str) -> ServiceContext:
         """

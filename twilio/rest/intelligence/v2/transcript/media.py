@@ -52,12 +52,7 @@ class MediaInstance(InstanceResource):
 
         :returns: MediaContext for this MediaInstance
         """
-        if self._context is None:
-            self._context = MediaContext(
-                self._version,
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self, redacted: Union[bool, object] = values.unset) -> "MediaInstance":
         """
@@ -67,9 +62,7 @@ class MediaInstance(InstanceResource):
 
         :returns: The fetched MediaInstance
         """
-        return self._proxy.fetch(
-            redacted=redacted,
-        )
+        pass
 
     async def fetch_async(
         self, redacted: Union[bool, object] = values.unset
@@ -81,9 +74,7 @@ class MediaInstance(InstanceResource):
 
         :returns: The fetched MediaInstance
         """
-        return await self._proxy.fetch_async(
-            redacted=redacted,
-        )
+        pass
 
     def fetch_with_http_info(
         self, redacted: Union[bool, object] = values.unset
@@ -95,9 +86,7 @@ class MediaInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info(
-            redacted=redacted,
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, redacted: Union[bool, object] = values.unset
@@ -109,9 +98,7 @@ class MediaInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async(
-            redacted=redacted,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -147,20 +134,7 @@ class MediaContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "Redacted": serialize.boolean_to_string(redacted),
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     def fetch(self, redacted: Union[bool, object] = values.unset) -> MediaInstance:
         """
@@ -170,12 +144,7 @@ class MediaContext(InstanceContext):
 
         :returns: The fetched MediaInstance
         """
-        payload, _, _ = self._fetch(redacted=redacted)
-        return MediaInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(
         self, redacted: Union[bool, object] = values.unset
@@ -187,13 +156,7 @@ class MediaContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch(redacted=redacted)
-        instance = MediaInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self, redacted: Union[bool, object] = values.unset) -> tuple:
         """
@@ -202,20 +165,7 @@ class MediaContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        params = values.of(
-            {
-                "Redacted": serialize.boolean_to_string(redacted),
-            }
-        )
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, params=params, headers=headers
-        )
+        pass
 
     async def fetch_async(
         self, redacted: Union[bool, object] = values.unset
@@ -227,12 +177,7 @@ class MediaContext(InstanceContext):
 
         :returns: The fetched MediaInstance
         """
-        payload, _, _ = await self._fetch_async(redacted=redacted)
-        return MediaInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(
         self, redacted: Union[bool, object] = values.unset
@@ -244,13 +189,7 @@ class MediaContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async(redacted=redacted)
-        instance = MediaInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -284,7 +223,7 @@ class MediaList(ListResource):
         Constructs a MediaContext
 
         """
-        return MediaContext(self._version, sid=self._solution["sid"])
+        pass
 
     def __call__(self) -> MediaContext:
         """

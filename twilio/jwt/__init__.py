@@ -48,7 +48,7 @@ class Jwt(object):
 
     def _generate_headers(self):
         """:rtype dict: Additional headers to include in the JWT, defaults to an empty dict"""
-        return {}
+        pass
 
     @classmethod
     def _from_jwt(cls, headers, payload, key=None):
@@ -57,47 +57,15 @@ class Jwt(object):
         and instance of this Class with jwt information loaded.
         :return: Jwt object containing the headers, payload and key
         """
-        jwt = Jwt(
-            secret_key=key,
-            issuer=payload.get("iss", None),
-            subject=payload.get("sub", None),
-            algorithm=headers.get("alg", None),
-            valid_until=payload.get("exp", None),
-            nbf=payload.get("nbf", None),
-        )
-        jwt.__decoded_payload = payload
-        jwt.__decoded_headers = headers
-        return jwt
+        pass
 
     @property
     def payload(self):
-        if self.__decoded_payload:
-            return self.__decoded_payload
-
-        payload = self._generate_payload().copy()
-        payload["iss"] = self.issuer
-        payload["exp"] = int(time.time()) + self.ttl
-        if self.nbf is not None:
-            if self.nbf == self.GENERATE:
-                payload["nbf"] = int(time.time())
-            else:
-                payload["nbf"] = self.nbf
-        if self.valid_until:
-            payload["exp"] = self.valid_until
-        if self.subject:
-            payload["sub"] = self.subject
-
-        return payload
+        pass
 
     @property
     def headers(self):
-        if self.__decoded_headers:
-            return self.__decoded_headers
-
-        headers = self._generate_headers().copy()
-        headers["typ"] = "JWT"
-        headers["alg"] = self.algorithm
-        return headers
+        pass
 
     def to_jwt(self, ttl=None):
         """
@@ -105,19 +73,7 @@ class Jwt(object):
         :param int ttl: override the ttl configured in the constructor
         :rtype: str The JWT string
         """
-
-        if not self.secret_key:
-            raise ValueError("JWT does not have a signing key configured.")
-
-        headers = self.headers.copy()
-
-        payload = self.payload.copy()
-        if ttl:
-            payload["exp"] = int(time.time()) + ttl
-
-        return jwt_lib.encode(
-            payload, self.secret_key, algorithm=self.algorithm, headers=headers
-        )
+        pass
 
     @classmethod
     def from_jwt(cls, jwt, key=""):
@@ -129,32 +85,7 @@ class Jwt(object):
         :raises JwtDecodeError if decoding JWT fails for any reason.
         :return: A DecodedJwt object containing the jwt information.
         """
-        verify = True if key else False
-
-        try:
-            headers = jwt_lib.get_unverified_header(jwt)
-
-            alg = headers.get("alg")
-            if alg != cls.ALGORITHM:
-                raise ValueError(
-                    f"Incorrect decoding algorithm {alg}, "
-                    f"expecting {cls.ALGORITHM}."
-                )
-
-            payload = jwt_lib.decode(
-                jwt,
-                key,
-                algorithms=[cls.ALGORITHM],
-                options={
-                    "verify_signature": verify,
-                    "verify_exp": True,
-                    "verify_nbf": True,
-                },
-            )
-        except Exception as e:
-            raise JwtDecodeError(getattr(e, "message", str(e)))
-
-        return cls._from_jwt(headers, payload, key)
+        pass
 
     def __str__(self):
         return "<JWT {}>".format(self.to_jwt())

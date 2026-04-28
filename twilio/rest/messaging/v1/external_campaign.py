@@ -77,23 +77,7 @@ class ExternalCampaignList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "CampaignId": campaign_id,
-                "MessagingServiceSid": messaging_service_sid,
-                "CnpMigration": serialize.boolean_to_string(cnp_migration),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -110,12 +94,7 @@ class ExternalCampaignList(ListResource):
 
         :returns: The created ExternalCampaignInstance
         """
-        payload, _, _ = self._create(
-            campaign_id=campaign_id,
-            messaging_service_sid=messaging_service_sid,
-            cnp_migration=cnp_migration,
-        )
-        return ExternalCampaignInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -132,13 +111,7 @@ class ExternalCampaignList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            campaign_id=campaign_id,
-            messaging_service_sid=messaging_service_sid,
-            cnp_migration=cnp_migration,
-        )
-        instance = ExternalCampaignInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -152,23 +125,7 @@ class ExternalCampaignList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "CampaignId": campaign_id,
-                "MessagingServiceSid": messaging_service_sid,
-                "CnpMigration": serialize.boolean_to_string(cnp_migration),
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -185,12 +142,7 @@ class ExternalCampaignList(ListResource):
 
         :returns: The created ExternalCampaignInstance
         """
-        payload, _, _ = await self._create_async(
-            campaign_id=campaign_id,
-            messaging_service_sid=messaging_service_sid,
-            cnp_migration=cnp_migration,
-        )
-        return ExternalCampaignInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -207,13 +159,7 @@ class ExternalCampaignList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            campaign_id=campaign_id,
-            messaging_service_sid=messaging_service_sid,
-            cnp_migration=cnp_migration,
-        )
-        instance = ExternalCampaignInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

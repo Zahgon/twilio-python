@@ -57,25 +57,13 @@ class AccessToken(Jwt):
 
     def add_grant(self, grant):
         """Add a grant to this AccessToken"""
-        if not isinstance(grant, AccessTokenGrant):
-            raise ValueError("Grant must be an instance of AccessTokenGrant.")
-        self.grants.append(grant)
+        pass
 
     def _generate_headers(self):
-        headers = {"cty": "twilio-fpa;v=1"}
-        if self.region and isinstance(self.region, str):
-            headers["twr"] = self.region
-        return headers
+        pass
 
     def _generate_payload(self):
-        now = int(time.time())
-        payload = {
-            "jti": "{}-{}".format(self.signing_key_sid, now),
-            "grants": {grant.key: grant.to_payload() for grant in self.grants},
-        }
-        if self.identity:
-            payload["grants"]["identity"] = self.identity
-        return payload
+        pass
 
     def __str__(self):
         return "<{} {}>".format(self.__class__.__name__, self.to_jwt())

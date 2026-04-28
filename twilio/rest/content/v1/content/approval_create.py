@@ -35,10 +35,7 @@ class ApprovalCreateInstance(InstanceResource):
             self.category: Optional[str] = payload.get("category")
 
         def to_dict(self):
-            return {
-                "name": self.name,
-                "category": self.category,
-            }
+            pass
 
     """
     :ivar name: 
@@ -89,10 +86,7 @@ class ApprovalCreateList(ListResource):
             self.category: Optional[str] = payload.get("category")
 
         def to_dict(self):
-            return {
-                "name": self.name,
-                "category": self.category,
-            }
+            pass
 
     def __init__(self, version: Version, content_sid: str):
         """
@@ -119,17 +113,7 @@ class ApprovalCreateList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = content_approval_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self, content_approval_request: ContentApprovalRequest
@@ -141,10 +125,7 @@ class ApprovalCreateList(ListResource):
 
         :returns: The created ApprovalCreateInstance
         """
-        payload, _, _ = self._create(content_approval_request=content_approval_request)
-        return ApprovalCreateInstance(
-            self._version, payload, content_sid=self._solution["content_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self, content_approval_request: ContentApprovalRequest
@@ -156,13 +137,7 @@ class ApprovalCreateList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            content_approval_request=content_approval_request
-        )
-        instance = ApprovalCreateInstance(
-            self._version, payload, content_sid=self._solution["content_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self, content_approval_request: ContentApprovalRequest
@@ -173,17 +148,7 @@ class ApprovalCreateList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = content_approval_request.to_dict()
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self, content_approval_request: ContentApprovalRequest
@@ -195,12 +160,7 @@ class ApprovalCreateList(ListResource):
 
         :returns: The created ApprovalCreateInstance
         """
-        payload, _, _ = await self._create_async(
-            content_approval_request=content_approval_request
-        )
-        return ApprovalCreateInstance(
-            self._version, payload, content_sid=self._solution["content_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self, content_approval_request: ContentApprovalRequest
@@ -212,13 +172,7 @@ class ApprovalCreateList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            content_approval_request=content_approval_request
-        )
-        instance = ApprovalCreateInstance(
-            self._version, payload, content_sid=self._solution["content_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """

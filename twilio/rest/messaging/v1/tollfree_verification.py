@@ -250,12 +250,7 @@ class TollfreeVerificationInstance(InstanceResource):
 
         :returns: TollfreeVerificationContext for this TollfreeVerificationInstance
         """
-        if self._context is None:
-            self._context = TollfreeVerificationContext(
-                self._version,
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -264,7 +259,7 @@ class TollfreeVerificationInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -273,7 +268,7 @@ class TollfreeVerificationInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -282,7 +277,7 @@ class TollfreeVerificationInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -291,7 +286,7 @@ class TollfreeVerificationInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "TollfreeVerificationInstance":
         """
@@ -300,7 +295,7 @@ class TollfreeVerificationInstance(InstanceResource):
 
         :returns: The fetched TollfreeVerificationInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "TollfreeVerificationInstance":
         """
@@ -309,7 +304,7 @@ class TollfreeVerificationInstance(InstanceResource):
 
         :returns: The fetched TollfreeVerificationInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -318,7 +313,7 @@ class TollfreeVerificationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -327,7 +322,7 @@ class TollfreeVerificationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -416,43 +411,7 @@ class TollfreeVerificationInstance(InstanceResource):
 
         :returns: The updated TollfreeVerificationInstance
         """
-        return self._proxy.update(
-            business_name=business_name,
-            business_website=business_website,
-            notification_email=notification_email,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            edit_reason=edit_reason,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            business_registration_phone_number=business_registration_phone_number,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            opt_in_keywords=opt_in_keywords,
-            vetting_provider=vetting_provider,
-            vetting_id=vetting_id,
-        )
+        pass
 
     async def update_async(
         self,
@@ -541,43 +500,7 @@ class TollfreeVerificationInstance(InstanceResource):
 
         :returns: The updated TollfreeVerificationInstance
         """
-        return await self._proxy.update_async(
-            business_name=business_name,
-            business_website=business_website,
-            notification_email=notification_email,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            edit_reason=edit_reason,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            business_registration_phone_number=business_registration_phone_number,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            opt_in_keywords=opt_in_keywords,
-            vetting_provider=vetting_provider,
-            vetting_id=vetting_id,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -666,43 +589,7 @@ class TollfreeVerificationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            business_name=business_name,
-            business_website=business_website,
-            notification_email=notification_email,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            edit_reason=edit_reason,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            business_registration_phone_number=business_registration_phone_number,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            opt_in_keywords=opt_in_keywords,
-            vetting_provider=vetting_provider,
-            vetting_id=vetting_id,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -791,43 +678,7 @@ class TollfreeVerificationInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            business_name=business_name,
-            business_website=business_website,
-            notification_email=notification_email,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            edit_reason=edit_reason,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            business_registration_phone_number=business_registration_phone_number,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            opt_in_keywords=opt_in_keywords,
-            vetting_provider=vetting_provider,
-            vetting_id=vetting_id,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -863,12 +714,7 @@ class TollfreeVerificationContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -877,8 +723,7 @@ class TollfreeVerificationContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -887,8 +732,7 @@ class TollfreeVerificationContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -897,12 +741,7 @@ class TollfreeVerificationContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -911,8 +750,7 @@ class TollfreeVerificationContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -921,8 +759,7 @@ class TollfreeVerificationContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -931,14 +768,7 @@ class TollfreeVerificationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> TollfreeVerificationInstance:
         """
@@ -947,12 +777,7 @@ class TollfreeVerificationContext(InstanceContext):
 
         :returns: The fetched TollfreeVerificationInstance
         """
-        payload, _, _ = self._fetch()
-        return TollfreeVerificationInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -961,13 +786,7 @@ class TollfreeVerificationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = TollfreeVerificationInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -976,14 +795,7 @@ class TollfreeVerificationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> TollfreeVerificationInstance:
         """
@@ -992,12 +804,7 @@ class TollfreeVerificationContext(InstanceContext):
 
         :returns: The fetched TollfreeVerificationInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return TollfreeVerificationInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -1006,13 +813,7 @@ class TollfreeVerificationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = TollfreeVerificationInstance(
-            self._version,
-            payload,
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -1066,55 +867,7 @@ class TollfreeVerificationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "BusinessName": business_name,
-                "BusinessWebsite": business_website,
-                "NotificationEmail": notification_email,
-                "UseCaseCategories": serialize.map(use_case_categories, lambda e: e),
-                "UseCaseSummary": use_case_summary,
-                "ProductionMessageSample": production_message_sample,
-                "OptInImageUrls": serialize.map(opt_in_image_urls, lambda e: e),
-                "OptInType": opt_in_type,
-                "MessageVolume": message_volume,
-                "BusinessStreetAddress": business_street_address,
-                "BusinessStreetAddress2": business_street_address2,
-                "BusinessCity": business_city,
-                "BusinessStateProvinceRegion": business_state_province_region,
-                "BusinessPostalCode": business_postal_code,
-                "BusinessCountry": business_country,
-                "AdditionalInformation": additional_information,
-                "BusinessContactFirstName": business_contact_first_name,
-                "BusinessContactLastName": business_contact_last_name,
-                "BusinessContactEmail": business_contact_email,
-                "BusinessContactPhone": business_contact_phone,
-                "EditReason": edit_reason,
-                "BusinessRegistrationNumber": business_registration_number,
-                "BusinessRegistrationAuthority": business_registration_authority,
-                "BusinessRegistrationCountry": business_registration_country,
-                "BusinessType": business_type,
-                "BusinessRegistrationPhoneNumber": business_registration_phone_number,
-                "DoingBusinessAs": doing_business_as,
-                "OptInConfirmationMessage": opt_in_confirmation_message,
-                "HelpMessageSample": help_message_sample,
-                "PrivacyPolicyUrl": privacy_policy_url,
-                "TermsAndConditionsUrl": terms_and_conditions_url,
-                "AgeGatedContent": serialize.boolean_to_string(age_gated_content),
-                "OptInKeywords": serialize.map(opt_in_keywords, lambda e: e),
-                "VettingProvider": vetting_provider,
-                "VettingId": vetting_id,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -1203,46 +956,7 @@ class TollfreeVerificationContext(InstanceContext):
 
         :returns: The updated TollfreeVerificationInstance
         """
-        payload, _, _ = self._update(
-            business_name=business_name,
-            business_website=business_website,
-            notification_email=notification_email,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            edit_reason=edit_reason,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            business_registration_phone_number=business_registration_phone_number,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            opt_in_keywords=opt_in_keywords,
-            vetting_provider=vetting_provider,
-            vetting_id=vetting_id,
-        )
-        return TollfreeVerificationInstance(
-            self._version, payload, sid=self._solution["sid"]
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -1331,47 +1045,7 @@ class TollfreeVerificationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            business_name=business_name,
-            business_website=business_website,
-            notification_email=notification_email,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            edit_reason=edit_reason,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            business_registration_phone_number=business_registration_phone_number,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            opt_in_keywords=opt_in_keywords,
-            vetting_provider=vetting_provider,
-            vetting_id=vetting_id,
-        )
-        instance = TollfreeVerificationInstance(
-            self._version, payload, sid=self._solution["sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -1425,55 +1099,7 @@ class TollfreeVerificationContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "BusinessName": business_name,
-                "BusinessWebsite": business_website,
-                "NotificationEmail": notification_email,
-                "UseCaseCategories": serialize.map(use_case_categories, lambda e: e),
-                "UseCaseSummary": use_case_summary,
-                "ProductionMessageSample": production_message_sample,
-                "OptInImageUrls": serialize.map(opt_in_image_urls, lambda e: e),
-                "OptInType": opt_in_type,
-                "MessageVolume": message_volume,
-                "BusinessStreetAddress": business_street_address,
-                "BusinessStreetAddress2": business_street_address2,
-                "BusinessCity": business_city,
-                "BusinessStateProvinceRegion": business_state_province_region,
-                "BusinessPostalCode": business_postal_code,
-                "BusinessCountry": business_country,
-                "AdditionalInformation": additional_information,
-                "BusinessContactFirstName": business_contact_first_name,
-                "BusinessContactLastName": business_contact_last_name,
-                "BusinessContactEmail": business_contact_email,
-                "BusinessContactPhone": business_contact_phone,
-                "EditReason": edit_reason,
-                "BusinessRegistrationNumber": business_registration_number,
-                "BusinessRegistrationAuthority": business_registration_authority,
-                "BusinessRegistrationCountry": business_registration_country,
-                "BusinessType": business_type,
-                "BusinessRegistrationPhoneNumber": business_registration_phone_number,
-                "DoingBusinessAs": doing_business_as,
-                "OptInConfirmationMessage": opt_in_confirmation_message,
-                "HelpMessageSample": help_message_sample,
-                "PrivacyPolicyUrl": privacy_policy_url,
-                "TermsAndConditionsUrl": terms_and_conditions_url,
-                "AgeGatedContent": serialize.boolean_to_string(age_gated_content),
-                "OptInKeywords": serialize.map(opt_in_keywords, lambda e: e),
-                "VettingProvider": vetting_provider,
-                "VettingId": vetting_id,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -1562,46 +1188,7 @@ class TollfreeVerificationContext(InstanceContext):
 
         :returns: The updated TollfreeVerificationInstance
         """
-        payload, _, _ = await self._update_async(
-            business_name=business_name,
-            business_website=business_website,
-            notification_email=notification_email,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            edit_reason=edit_reason,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            business_registration_phone_number=business_registration_phone_number,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            opt_in_keywords=opt_in_keywords,
-            vetting_provider=vetting_provider,
-            vetting_id=vetting_id,
-        )
-        return TollfreeVerificationInstance(
-            self._version, payload, sid=self._solution["sid"]
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -1690,47 +1277,7 @@ class TollfreeVerificationContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            business_name=business_name,
-            business_website=business_website,
-            notification_email=notification_email,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            edit_reason=edit_reason,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            business_registration_phone_number=business_registration_phone_number,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            opt_in_keywords=opt_in_keywords,
-            vetting_provider=vetting_provider,
-            vetting_id=vetting_id,
-        )
-        instance = TollfreeVerificationInstance(
-            self._version, payload, sid=self._solution["sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -1750,7 +1297,7 @@ class TollfreeVerificationPage(Page):
 
         :param payload: Payload response from the API
         """
-        return TollfreeVerificationInstance(self._version, payload)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -1826,57 +1373,7 @@ class TollfreeVerificationList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "BusinessName": business_name,
-                "BusinessWebsite": business_website,
-                "NotificationEmail": notification_email,
-                "UseCaseCategories": serialize.map(use_case_categories, lambda e: e),
-                "UseCaseSummary": use_case_summary,
-                "ProductionMessageSample": production_message_sample,
-                "OptInImageUrls": serialize.map(opt_in_image_urls, lambda e: e),
-                "OptInType": opt_in_type,
-                "MessageVolume": message_volume,
-                "TollfreePhoneNumberSid": tollfree_phone_number_sid,
-                "CustomerProfileSid": customer_profile_sid,
-                "BusinessStreetAddress": business_street_address,
-                "BusinessStreetAddress2": business_street_address2,
-                "BusinessCity": business_city,
-                "BusinessStateProvinceRegion": business_state_province_region,
-                "BusinessPostalCode": business_postal_code,
-                "BusinessCountry": business_country,
-                "AdditionalInformation": additional_information,
-                "BusinessContactFirstName": business_contact_first_name,
-                "BusinessContactLastName": business_contact_last_name,
-                "BusinessContactEmail": business_contact_email,
-                "BusinessContactPhone": business_contact_phone,
-                "ExternalReferenceId": external_reference_id,
-                "BusinessRegistrationNumber": business_registration_number,
-                "BusinessRegistrationAuthority": business_registration_authority,
-                "BusinessRegistrationCountry": business_registration_country,
-                "BusinessType": business_type,
-                "BusinessRegistrationPhoneNumber": business_registration_phone_number,
-                "DoingBusinessAs": doing_business_as,
-                "OptInConfirmationMessage": opt_in_confirmation_message,
-                "HelpMessageSample": help_message_sample,
-                "PrivacyPolicyUrl": privacy_policy_url,
-                "TermsAndConditionsUrl": terms_and_conditions_url,
-                "AgeGatedContent": serialize.boolean_to_string(age_gated_content),
-                "OptInKeywords": serialize.map(opt_in_keywords, lambda e: e),
-                "VettingProvider": vetting_provider,
-                "VettingId": vetting_id,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -1967,46 +1464,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: The created TollfreeVerificationInstance
         """
-        payload, _, _ = self._create(
-            business_name=business_name,
-            business_website=business_website,
-            notification_email=notification_email,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            tollfree_phone_number_sid=tollfree_phone_number_sid,
-            customer_profile_sid=customer_profile_sid,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            external_reference_id=external_reference_id,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            business_registration_phone_number=business_registration_phone_number,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            opt_in_keywords=opt_in_keywords,
-            vetting_provider=vetting_provider,
-            vetting_id=vetting_id,
-        )
-        return TollfreeVerificationInstance(self._version, payload)
+        pass
 
     def create_with_http_info(
         self,
@@ -2097,47 +1555,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            business_name=business_name,
-            business_website=business_website,
-            notification_email=notification_email,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            tollfree_phone_number_sid=tollfree_phone_number_sid,
-            customer_profile_sid=customer_profile_sid,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            external_reference_id=external_reference_id,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            business_registration_phone_number=business_registration_phone_number,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            opt_in_keywords=opt_in_keywords,
-            vetting_provider=vetting_provider,
-            vetting_id=vetting_id,
-        )
-        instance = TollfreeVerificationInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -2191,57 +1609,7 @@ class TollfreeVerificationList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "BusinessName": business_name,
-                "BusinessWebsite": business_website,
-                "NotificationEmail": notification_email,
-                "UseCaseCategories": serialize.map(use_case_categories, lambda e: e),
-                "UseCaseSummary": use_case_summary,
-                "ProductionMessageSample": production_message_sample,
-                "OptInImageUrls": serialize.map(opt_in_image_urls, lambda e: e),
-                "OptInType": opt_in_type,
-                "MessageVolume": message_volume,
-                "TollfreePhoneNumberSid": tollfree_phone_number_sid,
-                "CustomerProfileSid": customer_profile_sid,
-                "BusinessStreetAddress": business_street_address,
-                "BusinessStreetAddress2": business_street_address2,
-                "BusinessCity": business_city,
-                "BusinessStateProvinceRegion": business_state_province_region,
-                "BusinessPostalCode": business_postal_code,
-                "BusinessCountry": business_country,
-                "AdditionalInformation": additional_information,
-                "BusinessContactFirstName": business_contact_first_name,
-                "BusinessContactLastName": business_contact_last_name,
-                "BusinessContactEmail": business_contact_email,
-                "BusinessContactPhone": business_contact_phone,
-                "ExternalReferenceId": external_reference_id,
-                "BusinessRegistrationNumber": business_registration_number,
-                "BusinessRegistrationAuthority": business_registration_authority,
-                "BusinessRegistrationCountry": business_registration_country,
-                "BusinessType": business_type,
-                "BusinessRegistrationPhoneNumber": business_registration_phone_number,
-                "DoingBusinessAs": doing_business_as,
-                "OptInConfirmationMessage": opt_in_confirmation_message,
-                "HelpMessageSample": help_message_sample,
-                "PrivacyPolicyUrl": privacy_policy_url,
-                "TermsAndConditionsUrl": terms_and_conditions_url,
-                "AgeGatedContent": serialize.boolean_to_string(age_gated_content),
-                "OptInKeywords": serialize.map(opt_in_keywords, lambda e: e),
-                "VettingProvider": vetting_provider,
-                "VettingId": vetting_id,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -2332,46 +1700,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: The created TollfreeVerificationInstance
         """
-        payload, _, _ = await self._create_async(
-            business_name=business_name,
-            business_website=business_website,
-            notification_email=notification_email,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            tollfree_phone_number_sid=tollfree_phone_number_sid,
-            customer_profile_sid=customer_profile_sid,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            external_reference_id=external_reference_id,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            business_registration_phone_number=business_registration_phone_number,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            opt_in_keywords=opt_in_keywords,
-            vetting_provider=vetting_provider,
-            vetting_id=vetting_id,
-        )
-        return TollfreeVerificationInstance(self._version, payload)
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -2462,47 +1791,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            business_name=business_name,
-            business_website=business_website,
-            notification_email=notification_email,
-            use_case_categories=use_case_categories,
-            use_case_summary=use_case_summary,
-            production_message_sample=production_message_sample,
-            opt_in_image_urls=opt_in_image_urls,
-            opt_in_type=opt_in_type,
-            message_volume=message_volume,
-            tollfree_phone_number_sid=tollfree_phone_number_sid,
-            customer_profile_sid=customer_profile_sid,
-            business_street_address=business_street_address,
-            business_street_address2=business_street_address2,
-            business_city=business_city,
-            business_state_province_region=business_state_province_region,
-            business_postal_code=business_postal_code,
-            business_country=business_country,
-            additional_information=additional_information,
-            business_contact_first_name=business_contact_first_name,
-            business_contact_last_name=business_contact_last_name,
-            business_contact_email=business_contact_email,
-            business_contact_phone=business_contact_phone,
-            external_reference_id=external_reference_id,
-            business_registration_number=business_registration_number,
-            business_registration_authority=business_registration_authority,
-            business_registration_country=business_registration_country,
-            business_type=business_type,
-            business_registration_phone_number=business_registration_phone_number,
-            doing_business_as=doing_business_as,
-            opt_in_confirmation_message=opt_in_confirmation_message,
-            help_message_sample=help_message_sample,
-            privacy_policy_url=privacy_policy_url,
-            terms_and_conditions_url=terms_and_conditions_url,
-            age_gated_content=age_gated_content,
-            opt_in_keywords=opt_in_keywords,
-            vetting_provider=vetting_provider,
-            vetting_id=vetting_id,
-        )
-        instance = TollfreeVerificationInstance(self._version, payload)
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -2534,17 +1823,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(
-            tollfree_phone_number_sid=tollfree_phone_number_sid,
-            status=status,
-            external_reference_id=external_reference_id,
-            include_sub_accounts=include_sub_accounts,
-            trust_product_sid=trust_product_sid,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -2576,17 +1855,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(
-            tollfree_phone_number_sid=tollfree_phone_number_sid,
-            status=status,
-            external_reference_id=external_reference_id,
-            include_sub_accounts=include_sub_accounts,
-            trust_product_sid=trust_product_sid,
-            page_size=limits["page_size"],
-        )
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -2616,18 +1885,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(
-            tollfree_phone_number_sid=tollfree_phone_number_sid,
-            status=status,
-            external_reference_id=external_reference_id,
-            include_sub_accounts=include_sub_accounts,
-            trust_product_sid=trust_product_sid,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -2657,18 +1915,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            tollfree_phone_number_sid=tollfree_phone_number_sid,
-            status=status,
-            external_reference_id=external_reference_id,
-            include_sub_accounts=include_sub_accounts,
-            trust_product_sid=trust_product_sid,
-            page_size=limits["page_size"],
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -2699,17 +1946,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                tollfree_phone_number_sid=tollfree_phone_number_sid,
-                status=status,
-                external_reference_id=external_reference_id,
-                include_sub_accounts=include_sub_accounts,
-                trust_product_sid=trust_product_sid,
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -2740,18 +1977,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                tollfree_phone_number_sid=tollfree_phone_number_sid,
-                status=status,
-                external_reference_id=external_reference_id,
-                include_sub_accounts=include_sub_accounts,
-                trust_product_sid=trust_product_sid,
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -2781,17 +2007,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            tollfree_phone_number_sid=tollfree_phone_number_sid,
-            status=status,
-            external_reference_id=external_reference_id,
-            include_sub_accounts=include_sub_accounts,
-            trust_product_sid=trust_product_sid,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -2821,17 +2037,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            tollfree_phone_number_sid=tollfree_phone_number_sid,
-            status=status,
-            external_reference_id=external_reference_id,
-            include_sub_accounts=include_sub_accounts,
-            trust_product_sid=trust_product_sid,
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -2859,27 +2065,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: Page of TollfreeVerificationInstance
         """
-        data = values.of(
-            {
-                "TollfreePhoneNumberSid": tollfree_phone_number_sid,
-                "Status": status,
-                "ExternalReferenceId": external_reference_id,
-                "IncludeSubAccounts": serialize.boolean_to_string(include_sub_accounts),
-                "TrustProductSid": serialize.map(trust_product_sid, lambda e: e),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return TollfreeVerificationPage(self._version, response)
+        pass
 
     async def page_async(
         self,
@@ -2907,27 +2093,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: Page of TollfreeVerificationInstance
         """
-        data = values.of(
-            {
-                "TollfreePhoneNumberSid": tollfree_phone_number_sid,
-                "Status": status,
-                "ExternalReferenceId": external_reference_id,
-                "IncludeSubAccounts": serialize.boolean_to_string(include_sub_accounts),
-                "TrustProductSid": serialize.map(trust_product_sid, lambda e: e),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return TollfreeVerificationPage(self._version, response)
+        pass
 
     def page_with_http_info(
         self,
@@ -2955,28 +2121,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: ApiResponse with TollfreeVerificationPage, status code, and headers
         """
-        data = values.of(
-            {
-                "TollfreePhoneNumberSid": tollfree_phone_number_sid,
-                "Status": status,
-                "ExternalReferenceId": external_reference_id,
-                "IncludeSubAccounts": serialize.boolean_to_string(include_sub_accounts),
-                "TrustProductSid": serialize.map(trust_product_sid, lambda e: e),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = TollfreeVerificationPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -3004,30 +2149,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: ApiResponse with TollfreeVerificationPage, status code, and headers
         """
-        data = values.of(
-            {
-                "TollfreePhoneNumberSid": tollfree_phone_number_sid,
-                "Status": status,
-                "ExternalReferenceId": external_reference_id,
-                "IncludeSubAccounts": serialize.boolean_to_string(include_sub_accounts),
-                "TrustProductSid": serialize.map(trust_product_sid, lambda e: e),
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = TollfreeVerificationPage(self._version, response)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> TollfreeVerificationPage:
         """
@@ -3038,8 +2160,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: Page of TollfreeVerificationInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return TollfreeVerificationPage(self._version, response)
+        pass
 
     async def get_page_async(self, target_url: str) -> TollfreeVerificationPage:
         """
@@ -3050,8 +2171,7 @@ class TollfreeVerificationList(ListResource):
 
         :returns: Page of TollfreeVerificationInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return TollfreeVerificationPage(self._version, response)
+        pass
 
     def get(self, sid: str) -> TollfreeVerificationContext:
         """
@@ -3059,7 +2179,7 @@ class TollfreeVerificationList(ListResource):
 
         :param sid: The unique string to identify Tollfree Verification.
         """
-        return TollfreeVerificationContext(self._version, sid=sid)
+        pass
 
     def __call__(self, sid: str) -> TollfreeVerificationContext:
         """

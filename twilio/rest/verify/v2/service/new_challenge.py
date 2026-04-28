@@ -36,10 +36,7 @@ class NewChallengeInstance(InstanceResource):
             self.factor_sid: Optional[str] = payload.get("factor_sid")
 
         def to_dict(self):
-            return {
-                "identity": self.identity,
-                "factor_sid": self.factor_sid,
-            }
+            pass
 
     """
     :ivar sid: A 34 character string that uniquely identifies this Challenge.
@@ -111,12 +108,7 @@ class NewChallengeInstance(InstanceResource):
 
         :returns: NewChallengeContext for this NewChallengeInstance
         """
-        if self._context is None:
-            self._context = NewChallengeContext(
-                self._version,
-                service_sid=self._solution["service_sid"],
-            )
-        return self._context
+        pass
 
     def create(
         self, create_passkeys_challenge_request: CreatePasskeysChallengeRequest
@@ -128,9 +120,7 @@ class NewChallengeInstance(InstanceResource):
 
         :returns: The created NewChallengeInstance
         """
-        return self._proxy.create(
-            create_passkeys_challenge_request,
-        )
+        pass
 
     async def create_async(
         self, create_passkeys_challenge_request: CreatePasskeysChallengeRequest
@@ -142,9 +132,7 @@ class NewChallengeInstance(InstanceResource):
 
         :returns: The created NewChallengeInstance
         """
-        return await self._proxy.create_async(
-            create_passkeys_challenge_request,
-        )
+        pass
 
     def create_with_http_info(
         self, create_passkeys_challenge_request: CreatePasskeysChallengeRequest
@@ -156,9 +144,7 @@ class NewChallengeInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.create_with_http_info(
-            create_passkeys_challenge_request,
-        )
+        pass
 
     async def create_with_http_info_async(
         self, create_passkeys_challenge_request: CreatePasskeysChallengeRequest
@@ -170,9 +156,7 @@ class NewChallengeInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.create_with_http_info_async(
-            create_passkeys_challenge_request,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -198,10 +182,7 @@ class NewChallengeContext(InstanceContext):
             self.factor_sid: Optional[str] = payload.get("factor_sid")
 
         def to_dict(self):
-            return {
-                "identity": self.identity,
-                "factor_sid": self.factor_sid,
-            }
+            pass
 
     def __init__(self, version: Version, service_sid: str):
         """
@@ -229,17 +210,7 @@ class NewChallengeContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = create_passkeys_challenge_request.to_dict()
-
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self, create_passkeys_challenge_request: CreatePasskeysChallengeRequest
@@ -251,12 +222,7 @@ class NewChallengeContext(InstanceContext):
 
         :returns: The created NewChallengeInstance
         """
-        payload, _, _ = self._create(
-            create_passkeys_challenge_request=create_passkeys_challenge_request
-        )
-        return NewChallengeInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self, create_passkeys_challenge_request: CreatePasskeysChallengeRequest
@@ -268,13 +234,7 @@ class NewChallengeContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            create_passkeys_challenge_request=create_passkeys_challenge_request
-        )
-        instance = NewChallengeInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self, create_passkeys_challenge_request: CreatePasskeysChallengeRequest
@@ -285,17 +245,7 @@ class NewChallengeContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-        data = create_passkeys_challenge_request.to_dict()
-
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/json"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self, create_passkeys_challenge_request: CreatePasskeysChallengeRequest
@@ -307,12 +257,7 @@ class NewChallengeContext(InstanceContext):
 
         :returns: The created NewChallengeInstance
         """
-        payload, _, _ = await self._create_async(
-            create_passkeys_challenge_request=create_passkeys_challenge_request
-        )
-        return NewChallengeInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self, create_passkeys_challenge_request: CreatePasskeysChallengeRequest
@@ -324,13 +269,7 @@ class NewChallengeContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            create_passkeys_challenge_request=create_passkeys_challenge_request
-        )
-        instance = NewChallengeInstance(
-            self._version, payload, service_sid=self._solution["service_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -356,10 +295,7 @@ class NewChallengeList(ListResource):
             self.factor_sid: Optional[str] = payload.get("factor_sid")
 
         def to_dict(self):
-            return {
-                "identity": self.identity,
-                "factor_sid": self.factor_sid,
-            }
+            pass
 
     def __init__(self, version: Version, service_sid: str):
         """
@@ -381,9 +317,7 @@ class NewChallengeList(ListResource):
         Constructs a NewChallengeContext
 
         """
-        return NewChallengeContext(
-            self._version, service_sid=self._solution["service_sid"]
-        )
+        pass
 
     def __call__(self) -> NewChallengeContext:
         """

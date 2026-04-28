@@ -112,13 +112,7 @@ class DomainInstance(InstanceResource):
 
         :returns: DomainContext for this DomainInstance
         """
-        if self._context is None:
-            self._context = DomainContext(
-                self._version,
-                account_sid=self._solution["account_sid"],
-                sid=self._solution["sid"],
-            )
-        return self._context
+        pass
 
     def delete(self) -> bool:
         """
@@ -127,7 +121,7 @@ class DomainInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return self._proxy.delete()
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -136,7 +130,7 @@ class DomainInstance(InstanceResource):
 
         :returns: True if delete succeeds, False otherwise
         """
-        return await self._proxy.delete_async()
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -145,7 +139,7 @@ class DomainInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return self._proxy.delete_with_http_info()
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -154,7 +148,7 @@ class DomainInstance(InstanceResource):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        return await self._proxy.delete_with_http_info_async()
+        pass
 
     def fetch(self) -> "DomainInstance":
         """
@@ -163,7 +157,7 @@ class DomainInstance(InstanceResource):
 
         :returns: The fetched DomainInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "DomainInstance":
         """
@@ -172,7 +166,7 @@ class DomainInstance(InstanceResource):
 
         :returns: The fetched DomainInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -181,7 +175,7 @@ class DomainInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -190,7 +184,7 @@ class DomainInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -227,21 +221,7 @@ class DomainInstance(InstanceResource):
 
         :returns: The updated DomainInstance
         """
-        return self._proxy.update(
-            friendly_name=friendly_name,
-            voice_fallback_method=voice_fallback_method,
-            voice_fallback_url=voice_fallback_url,
-            voice_method=voice_method,
-            voice_status_callback_method=voice_status_callback_method,
-            voice_status_callback_url=voice_status_callback_url,
-            voice_url=voice_url,
-            sip_registration=sip_registration,
-            domain_name=domain_name,
-            emergency_calling_enabled=emergency_calling_enabled,
-            secure=secure,
-            byoc_trunk_sid=byoc_trunk_sid,
-            emergency_caller_sid=emergency_caller_sid,
-        )
+        pass
 
     async def update_async(
         self,
@@ -278,21 +258,7 @@ class DomainInstance(InstanceResource):
 
         :returns: The updated DomainInstance
         """
-        return await self._proxy.update_async(
-            friendly_name=friendly_name,
-            voice_fallback_method=voice_fallback_method,
-            voice_fallback_url=voice_fallback_url,
-            voice_method=voice_method,
-            voice_status_callback_method=voice_status_callback_method,
-            voice_status_callback_url=voice_status_callback_url,
-            voice_url=voice_url,
-            sip_registration=sip_registration,
-            domain_name=domain_name,
-            emergency_calling_enabled=emergency_calling_enabled,
-            secure=secure,
-            byoc_trunk_sid=byoc_trunk_sid,
-            emergency_caller_sid=emergency_caller_sid,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -329,21 +295,7 @@ class DomainInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            friendly_name=friendly_name,
-            voice_fallback_method=voice_fallback_method,
-            voice_fallback_url=voice_fallback_url,
-            voice_method=voice_method,
-            voice_status_callback_method=voice_status_callback_method,
-            voice_status_callback_url=voice_status_callback_url,
-            voice_url=voice_url,
-            sip_registration=sip_registration,
-            domain_name=domain_name,
-            emergency_calling_enabled=emergency_calling_enabled,
-            secure=secure,
-            byoc_trunk_sid=byoc_trunk_sid,
-            emergency_caller_sid=emergency_caller_sid,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -380,42 +332,28 @@ class DomainInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            friendly_name=friendly_name,
-            voice_fallback_method=voice_fallback_method,
-            voice_fallback_url=voice_fallback_url,
-            voice_method=voice_method,
-            voice_status_callback_method=voice_status_callback_method,
-            voice_status_callback_url=voice_status_callback_url,
-            voice_url=voice_url,
-            sip_registration=sip_registration,
-            domain_name=domain_name,
-            emergency_calling_enabled=emergency_calling_enabled,
-            secure=secure,
-            byoc_trunk_sid=byoc_trunk_sid,
-            emergency_caller_sid=emergency_caller_sid,
-        )
+        pass
 
     @property
     def auth(self) -> AuthTypesList:
         """
         Access the auth
         """
-        return self._proxy.auth
+        pass
 
     @property
     def credential_list_mappings(self) -> CredentialListMappingList:
         """
         Access the credential_list_mappings
         """
-        return self._proxy.credential_list_mappings
+        pass
 
     @property
     def ip_access_control_list_mappings(self) -> IpAccessControlListMappingList:
         """
         Access the ip_access_control_list_mappings
         """
-        return self._proxy.ip_access_control_list_mappings
+        pass
 
     def __repr__(self) -> str:
         """
@@ -461,12 +399,7 @@ class DomainContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return self._version.delete_with_response_info(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     def delete(self) -> bool:
         """
@@ -475,8 +408,7 @@ class DomainContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = self._delete()
-        return success
+        pass
 
     def delete_with_http_info(self) -> ApiResponse:
         """
@@ -485,8 +417,7 @@ class DomainContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = self._delete()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     async def _delete_async(self) -> tuple:
         """
@@ -495,12 +426,7 @@ class DomainContext(InstanceContext):
         Returns:
             tuple: (success_boolean, status_code, headers)
         """
-
-        headers = values.of({})
-
-        return await self._version.delete_with_response_info_async(
-            method="DELETE", uri=self._uri, headers=headers
-        )
+        pass
 
     async def delete_async(self) -> bool:
         """
@@ -509,8 +435,7 @@ class DomainContext(InstanceContext):
 
         :returns: True if delete succeeds, False otherwise
         """
-        success, _, _ = await self._delete_async()
-        return success
+        pass
 
     async def delete_with_http_info_async(self) -> ApiResponse:
         """
@@ -519,8 +444,7 @@ class DomainContext(InstanceContext):
 
         :returns: ApiResponse with success boolean, status code, and headers
         """
-        success, status_code, headers = await self._delete_async()
-        return ApiResponse(data=success, status_code=status_code, headers=headers)
+        pass
 
     def _fetch(self) -> tuple:
         """
@@ -529,14 +453,7 @@ class DomainContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> DomainInstance:
         """
@@ -545,13 +462,7 @@ class DomainContext(InstanceContext):
 
         :returns: The fetched DomainInstance
         """
-        payload, _, _ = self._fetch()
-        return DomainInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -560,14 +471,7 @@ class DomainContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = DomainInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -576,14 +480,7 @@ class DomainContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> DomainInstance:
         """
@@ -592,13 +489,7 @@ class DomainContext(InstanceContext):
 
         :returns: The fetched DomainInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return DomainInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -607,14 +498,7 @@ class DomainContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = DomainInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -638,35 +522,7 @@ class DomainContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "VoiceFallbackMethod": voice_fallback_method,
-                "VoiceFallbackUrl": voice_fallback_url,
-                "VoiceMethod": voice_method,
-                "VoiceStatusCallbackMethod": voice_status_callback_method,
-                "VoiceStatusCallbackUrl": voice_status_callback_url,
-                "VoiceUrl": voice_url,
-                "SipRegistration": serialize.boolean_to_string(sip_registration),
-                "DomainName": domain_name,
-                "EmergencyCallingEnabled": serialize.boolean_to_string(
-                    emergency_calling_enabled
-                ),
-                "Secure": serialize.boolean_to_string(secure),
-                "ByocTrunkSid": byoc_trunk_sid,
-                "EmergencyCallerSid": emergency_caller_sid,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -703,27 +559,7 @@ class DomainContext(InstanceContext):
 
         :returns: The updated DomainInstance
         """
-        payload, _, _ = self._update(
-            friendly_name=friendly_name,
-            voice_fallback_method=voice_fallback_method,
-            voice_fallback_url=voice_fallback_url,
-            voice_method=voice_method,
-            voice_status_callback_method=voice_status_callback_method,
-            voice_status_callback_url=voice_status_callback_url,
-            voice_url=voice_url,
-            sip_registration=sip_registration,
-            domain_name=domain_name,
-            emergency_calling_enabled=emergency_calling_enabled,
-            secure=secure,
-            byoc_trunk_sid=byoc_trunk_sid,
-            emergency_caller_sid=emergency_caller_sid,
-        )
-        return DomainInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -760,28 +596,7 @@ class DomainContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            friendly_name=friendly_name,
-            voice_fallback_method=voice_fallback_method,
-            voice_fallback_url=voice_fallback_url,
-            voice_method=voice_method,
-            voice_status_callback_method=voice_status_callback_method,
-            voice_status_callback_url=voice_status_callback_url,
-            voice_url=voice_url,
-            sip_registration=sip_registration,
-            domain_name=domain_name,
-            emergency_calling_enabled=emergency_calling_enabled,
-            secure=secure,
-            byoc_trunk_sid=byoc_trunk_sid,
-            emergency_caller_sid=emergency_caller_sid,
-        )
-        instance = DomainInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -805,35 +620,7 @@ class DomainContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "FriendlyName": friendly_name,
-                "VoiceFallbackMethod": voice_fallback_method,
-                "VoiceFallbackUrl": voice_fallback_url,
-                "VoiceMethod": voice_method,
-                "VoiceStatusCallbackMethod": voice_status_callback_method,
-                "VoiceStatusCallbackUrl": voice_status_callback_url,
-                "VoiceUrl": voice_url,
-                "SipRegistration": serialize.boolean_to_string(sip_registration),
-                "DomainName": domain_name,
-                "EmergencyCallingEnabled": serialize.boolean_to_string(
-                    emergency_calling_enabled
-                ),
-                "Secure": serialize.boolean_to_string(secure),
-                "ByocTrunkSid": byoc_trunk_sid,
-                "EmergencyCallerSid": emergency_caller_sid,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -870,27 +657,7 @@ class DomainContext(InstanceContext):
 
         :returns: The updated DomainInstance
         """
-        payload, _, _ = await self._update_async(
-            friendly_name=friendly_name,
-            voice_fallback_method=voice_fallback_method,
-            voice_fallback_url=voice_fallback_url,
-            voice_method=voice_method,
-            voice_status_callback_method=voice_status_callback_method,
-            voice_status_callback_url=voice_status_callback_url,
-            voice_url=voice_url,
-            sip_registration=sip_registration,
-            domain_name=domain_name,
-            emergency_calling_enabled=emergency_calling_enabled,
-            secure=secure,
-            byoc_trunk_sid=byoc_trunk_sid,
-            emergency_caller_sid=emergency_caller_sid,
-        )
-        return DomainInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -927,67 +694,28 @@ class DomainContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            friendly_name=friendly_name,
-            voice_fallback_method=voice_fallback_method,
-            voice_fallback_url=voice_fallback_url,
-            voice_method=voice_method,
-            voice_status_callback_method=voice_status_callback_method,
-            voice_status_callback_url=voice_status_callback_url,
-            voice_url=voice_url,
-            sip_registration=sip_registration,
-            domain_name=domain_name,
-            emergency_calling_enabled=emergency_calling_enabled,
-            secure=secure,
-            byoc_trunk_sid=byoc_trunk_sid,
-            emergency_caller_sid=emergency_caller_sid,
-        )
-        instance = DomainInstance(
-            self._version,
-            payload,
-            account_sid=self._solution["account_sid"],
-            sid=self._solution["sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     @property
     def auth(self) -> AuthTypesList:
         """
         Access the auth
         """
-        if self._auth is None:
-            self._auth = AuthTypesList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._auth
+        pass
 
     @property
     def credential_list_mappings(self) -> CredentialListMappingList:
         """
         Access the credential_list_mappings
         """
-        if self._credential_list_mappings is None:
-            self._credential_list_mappings = CredentialListMappingList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._credential_list_mappings
+        pass
 
     @property
     def ip_access_control_list_mappings(self) -> IpAccessControlListMappingList:
         """
         Access the ip_access_control_list_mappings
         """
-        if self._ip_access_control_list_mappings is None:
-            self._ip_access_control_list_mappings = IpAccessControlListMappingList(
-                self._version,
-                self._solution["account_sid"],
-                self._solution["sid"],
-            )
-        return self._ip_access_control_list_mappings
+        pass
 
     def __repr__(self) -> str:
         """
@@ -1007,9 +735,7 @@ class DomainPage(Page):
 
         :param payload: Payload response from the API
         """
-        return DomainInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -1060,35 +786,7 @@ class DomainList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "DomainName": domain_name,
-                "FriendlyName": friendly_name,
-                "VoiceUrl": voice_url,
-                "VoiceMethod": voice_method,
-                "VoiceFallbackUrl": voice_fallback_url,
-                "VoiceFallbackMethod": voice_fallback_method,
-                "VoiceStatusCallbackUrl": voice_status_callback_url,
-                "VoiceStatusCallbackMethod": voice_status_callback_method,
-                "SipRegistration": serialize.boolean_to_string(sip_registration),
-                "EmergencyCallingEnabled": serialize.boolean_to_string(
-                    emergency_calling_enabled
-                ),
-                "Secure": serialize.boolean_to_string(secure),
-                "ByocTrunkSid": byoc_trunk_sid,
-                "EmergencyCallerSid": emergency_caller_sid,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.create_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def create(
         self,
@@ -1125,24 +823,7 @@ class DomainList(ListResource):
 
         :returns: The created DomainInstance
         """
-        payload, _, _ = self._create(
-            domain_name=domain_name,
-            friendly_name=friendly_name,
-            voice_url=voice_url,
-            voice_method=voice_method,
-            voice_fallback_url=voice_fallback_url,
-            voice_fallback_method=voice_fallback_method,
-            voice_status_callback_url=voice_status_callback_url,
-            voice_status_callback_method=voice_status_callback_method,
-            sip_registration=sip_registration,
-            emergency_calling_enabled=emergency_calling_enabled,
-            secure=secure,
-            byoc_trunk_sid=byoc_trunk_sid,
-            emergency_caller_sid=emergency_caller_sid,
-        )
-        return DomainInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     def create_with_http_info(
         self,
@@ -1179,25 +860,7 @@ class DomainList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._create(
-            domain_name=domain_name,
-            friendly_name=friendly_name,
-            voice_url=voice_url,
-            voice_method=voice_method,
-            voice_fallback_url=voice_fallback_url,
-            voice_fallback_method=voice_fallback_method,
-            voice_status_callback_url=voice_status_callback_url,
-            voice_status_callback_method=voice_status_callback_method,
-            sip_registration=sip_registration,
-            emergency_calling_enabled=emergency_calling_enabled,
-            secure=secure,
-            byoc_trunk_sid=byoc_trunk_sid,
-            emergency_caller_sid=emergency_caller_sid,
-        )
-        instance = DomainInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _create_async(
         self,
@@ -1221,35 +884,7 @@ class DomainList(ListResource):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "DomainName": domain_name,
-                "FriendlyName": friendly_name,
-                "VoiceUrl": voice_url,
-                "VoiceMethod": voice_method,
-                "VoiceFallbackUrl": voice_fallback_url,
-                "VoiceFallbackMethod": voice_fallback_method,
-                "VoiceStatusCallbackUrl": voice_status_callback_url,
-                "VoiceStatusCallbackMethod": voice_status_callback_method,
-                "SipRegistration": serialize.boolean_to_string(sip_registration),
-                "EmergencyCallingEnabled": serialize.boolean_to_string(
-                    emergency_calling_enabled
-                ),
-                "Secure": serialize.boolean_to_string(secure),
-                "ByocTrunkSid": byoc_trunk_sid,
-                "EmergencyCallerSid": emergency_caller_sid,
-            }
-        )
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.create_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def create_async(
         self,
@@ -1286,24 +921,7 @@ class DomainList(ListResource):
 
         :returns: The created DomainInstance
         """
-        payload, _, _ = await self._create_async(
-            domain_name=domain_name,
-            friendly_name=friendly_name,
-            voice_url=voice_url,
-            voice_method=voice_method,
-            voice_fallback_url=voice_fallback_url,
-            voice_fallback_method=voice_fallback_method,
-            voice_status_callback_url=voice_status_callback_url,
-            voice_status_callback_method=voice_status_callback_method,
-            sip_registration=sip_registration,
-            emergency_calling_enabled=emergency_calling_enabled,
-            secure=secure,
-            byoc_trunk_sid=byoc_trunk_sid,
-            emergency_caller_sid=emergency_caller_sid,
-        )
-        return DomainInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
+        pass
 
     async def create_with_http_info_async(
         self,
@@ -1340,25 +958,7 @@ class DomainList(ListResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._create_async(
-            domain_name=domain_name,
-            friendly_name=friendly_name,
-            voice_url=voice_url,
-            voice_method=voice_method,
-            voice_fallback_url=voice_fallback_url,
-            voice_fallback_method=voice_fallback_method,
-            voice_status_callback_url=voice_status_callback_url,
-            voice_status_callback_method=voice_status_callback_method,
-            sip_registration=sip_registration,
-            emergency_calling_enabled=emergency_calling_enabled,
-            secure=secure,
-            byoc_trunk_sid=byoc_trunk_sid,
-            emergency_caller_sid=emergency_caller_sid,
-        )
-        instance = DomainInstance(
-            self._version, payload, account_sid=self._solution["account_sid"]
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def stream(
         self,
@@ -1380,10 +980,7 @@ class DomainList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = self.page(page_size=limits["page_size"])
-
-        return self._version.stream(page, limits["limit"])
+        pass
 
     async def stream_async(
         self,
@@ -1405,10 +1002,7 @@ class DomainList(ListResource):
 
         :returns: Generator that will yield up to limit results
         """
-        limits = self._version.read_limits(limit, page_size)
-        page = await self.page_async(page_size=limits["page_size"])
-
-        return self._version.stream_async(page, limits["limit"])
+        pass
 
     def stream_with_http_info(
         self,
@@ -1428,11 +1022,7 @@ class DomainList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = self.page_with_http_info(page_size=limits["page_size"])
-
-        generator = self._version.stream(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     async def stream_with_http_info_async(
         self,
@@ -1452,13 +1042,7 @@ class DomainList(ListResource):
 
         :returns: tuple of (generator, status_code, headers) where generator yields instances
         """
-        limits = self._version.read_limits(limit, page_size)
-        page_response = await self.page_with_http_info_async(
-            page_size=limits["page_size"]
-        )
-
-        generator = self._version.stream_async(page_response.data, limits["limit"])
-        return (generator, page_response.status_code, page_response.headers)
+        pass
 
     def list(
         self,
@@ -1479,12 +1063,7 @@ class DomainList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return list(
-            self.stream(
-                limit=limit,
-                page_size=page_size,
-            )
-        )
+        pass
 
     async def list_async(
         self,
@@ -1505,13 +1084,7 @@ class DomainList(ListResource):
 
         :returns: list that will contain up to limit results
         """
-        return [
-            record
-            async for record in await self.stream_async(
-                limit=limit,
-                page_size=page_size,
-            )
-        ]
+        pass
 
     def list_with_http_info(
         self,
@@ -1531,12 +1104,7 @@ class DomainList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = self.stream_with_http_info(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = list(generator)
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     async def list_with_http_info_async(
         self,
@@ -1556,12 +1124,7 @@ class DomainList(ListResource):
 
         :returns: ApiResponse with list of instances, status code, and headers
         """
-        generator, status_code, headers = await self.stream_with_http_info_async(
-            limit=limit,
-            page_size=page_size,
-        )
-        items = [record async for record in generator]
-        return ApiResponse(data=items, status_code=status_code, headers=headers)
+        pass
 
     def page(
         self,
@@ -1579,22 +1142,7 @@ class DomainList(ListResource):
 
         :returns: Page of DomainInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = self._version.page(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return DomainPage(self._version, response, solution=self._solution)
+        pass
 
     async def page_async(
         self,
@@ -1612,22 +1160,7 @@ class DomainList(ListResource):
 
         :returns: Page of DomainInstance
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response = await self._version.page_async(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        return DomainPage(self._version, response, solution=self._solution)
+        pass
 
     def page_with_http_info(
         self,
@@ -1645,23 +1178,7 @@ class DomainList(ListResource):
 
         :returns: ApiResponse with DomainPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = self._version.page_with_response_info(
-            method="GET", uri=self._uri, params=data, headers=headers
-        )
-        page = DomainPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     async def page_with_http_info_async(
         self,
@@ -1679,25 +1196,7 @@ class DomainList(ListResource):
 
         :returns: ApiResponse with DomainPage, status code, and headers
         """
-        data = values.of(
-            {
-                "PageToken": page_token,
-                "Page": page_number,
-                "PageSize": page_size,
-            }
-        )
-
-        headers = values.of({"Content-Type": "application/x-www-form-urlencoded"})
-
-        headers["Accept"] = "application/json"
-
-        response, status_code, response_headers = (
-            await self._version.page_with_response_info_async(
-                method="GET", uri=self._uri, params=data, headers=headers
-            )
-        )
-        page = DomainPage(self._version, response, solution=self._solution)
-        return ApiResponse(data=page, status_code=status_code, headers=response_headers)
+        pass
 
     def get_page(self, target_url: str) -> DomainPage:
         """
@@ -1708,8 +1207,7 @@ class DomainList(ListResource):
 
         :returns: Page of DomainInstance
         """
-        response = self._version.domain.twilio.request("GET", target_url)
-        return DomainPage(self._version, response, solution=self._solution)
+        pass
 
     async def get_page_async(self, target_url: str) -> DomainPage:
         """
@@ -1720,8 +1218,7 @@ class DomainList(ListResource):
 
         :returns: Page of DomainInstance
         """
-        response = await self._version.domain.twilio.request_async("GET", target_url)
-        return DomainPage(self._version, response, solution=self._solution)
+        pass
 
     def get(self, sid: str) -> DomainContext:
         """
@@ -1729,9 +1226,7 @@ class DomainList(ListResource):
 
         :param sid: The Twilio-provided string that uniquely identifies the SipDomain resource to update.
         """
-        return DomainContext(
-            self._version, account_sid=self._solution["account_sid"], sid=sid
-        )
+        pass
 
     def __call__(self, sid: str) -> DomainContext:
         """

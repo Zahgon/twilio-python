@@ -39,33 +39,23 @@ class V1(Version):
 
     @property
     def assistants(self) -> AssistantList:
-        if self._assistants is None:
-            self._assistants = AssistantList(self)
-        return self._assistants
+        pass
 
     @property
     def knowledge(self) -> KnowledgeList:
-        if self._knowledge is None:
-            self._knowledge = KnowledgeList(self)
-        return self._knowledge
+        pass
 
     @property
     def policies(self) -> PolicyList:
-        if self._policies is None:
-            self._policies = PolicyList(self)
-        return self._policies
+        pass
 
     @property
     def sessions(self) -> SessionList:
-        if self._sessions is None:
-            self._sessions = SessionList(self)
-        return self._sessions
+        pass
 
     @property
     def tools(self) -> ToolList:
-        if self._tools is None:
-            self._tools = ToolList(self)
-        return self._tools
+        pass
 
     def __repr__(self) -> str:
         """

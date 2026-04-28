@@ -14,14 +14,7 @@ def iso8601_date(s: str) -> Union[datetime.date, str]:
     :param s: ISO 8601-formatted date string (2015-01-25)
     :return:
     """
-    try:
-        return (
-            datetime.datetime.strptime(s, ISO8601_DATE_FORMAT)
-            .replace(tzinfo=datetime.timezone.utc)
-            .date()
-        )
-    except (TypeError, ValueError):
-        return s
+    pass
 
 
 def iso8601_datetime(
@@ -32,12 +25,7 @@ def iso8601_datetime(
     or the string if parsing failed.
     :param s: ISO 8601-formatted datetime string (2015-01-25T12:34:56Z)
     """
-    try:
-        return datetime.datetime.strptime(s, ISO8601_DATETIME_FORMAT).replace(
-            tzinfo=datetime.timezone.utc
-        )
-    except (TypeError, ValueError):
-        return s
+    pass
 
 
 def rfc2822_datetime(s: str) -> Optional[datetime.datetime]:
@@ -47,10 +35,7 @@ def rfc2822_datetime(s: str) -> Optional[datetime.datetime]:
     :param s: RFC 2822-formatted string date
     :return: datetime or str
     """
-    date_tuple = parsedate(s)
-    if date_tuple is None:
-        return None
-    return datetime.datetime(*date_tuple[:6]).replace(tzinfo=datetime.timezone.utc)
+    pass
 
 
 def decimal(d: Optional[str]) -> Union[Decimal, str]:
@@ -58,9 +43,7 @@ def decimal(d: Optional[str]) -> Union[Decimal, str]:
     Parses a decimal string into a Decimal
     :param d: decimal string
     """
-    if not d:
-        return d
-    return Decimal(d, BasicContext)
+    pass
 
 
 def integer(i: str) -> Union[int, str]:
@@ -69,7 +52,4 @@ def integer(i: str) -> Union[int, str]:
     :param i: integer string
     :return: int
     """
-    try:
-        return int(i)
-    except (TypeError, ValueError):
-        return i
+    pass

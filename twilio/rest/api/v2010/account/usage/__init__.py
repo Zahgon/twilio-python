@@ -48,22 +48,14 @@ class UsageList(ListResource):
         """
         Access the records
         """
-        if self._records is None:
-            self._records = RecordList(
-                self._version, account_sid=self._solution["account_sid"]
-            )
-        return self._records
+        pass
 
     @property
     def triggers(self) -> TriggerList:
         """
         Access the triggers
         """
-        if self._triggers is None:
-            self._triggers = TriggerList(
-                self._version, account_sid=self._solution["account_sid"]
-            )
-        return self._triggers
+        pass
 
     def __repr__(self) -> str:
         """

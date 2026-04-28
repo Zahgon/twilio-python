@@ -84,13 +84,7 @@ class FlexUserInstance(InstanceResource):
 
         :returns: FlexUserContext for this FlexUserInstance
         """
-        if self._context is None:
-            self._context = FlexUserContext(
-                self._version,
-                instance_sid=self._solution["instance_sid"],
-                flex_user_sid=self._solution["flex_user_sid"],
-            )
-        return self._context
+        pass
 
     def fetch(self) -> "FlexUserInstance":
         """
@@ -99,7 +93,7 @@ class FlexUserInstance(InstanceResource):
 
         :returns: The fetched FlexUserInstance
         """
-        return self._proxy.fetch()
+        pass
 
     async def fetch_async(self) -> "FlexUserInstance":
         """
@@ -108,7 +102,7 @@ class FlexUserInstance(InstanceResource):
 
         :returns: The fetched FlexUserInstance
         """
-        return await self._proxy.fetch_async()
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -117,7 +111,7 @@ class FlexUserInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.fetch_with_http_info()
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -126,7 +120,7 @@ class FlexUserInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.fetch_with_http_info_async()
+        pass
 
     def update(
         self,
@@ -143,11 +137,7 @@ class FlexUserInstance(InstanceResource):
 
         :returns: The updated FlexUserInstance
         """
-        return self._proxy.update(
-            email=email,
-            user_sid=user_sid,
-            locale=locale,
-        )
+        pass
 
     async def update_async(
         self,
@@ -164,11 +154,7 @@ class FlexUserInstance(InstanceResource):
 
         :returns: The updated FlexUserInstance
         """
-        return await self._proxy.update_async(
-            email=email,
-            user_sid=user_sid,
-            locale=locale,
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -185,11 +171,7 @@ class FlexUserInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return self._proxy.update_with_http_info(
-            email=email,
-            user_sid=user_sid,
-            locale=locale,
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -206,11 +188,7 @@ class FlexUserInstance(InstanceResource):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        return await self._proxy.update_with_http_info_async(
-            email=email,
-            user_sid=user_sid,
-            locale=locale,
-        )
+        pass
 
     def __repr__(self) -> str:
         """
@@ -250,14 +228,7 @@ class FlexUserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return self._version.fetch_with_response_info(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     def fetch(self) -> FlexUserInstance:
         """
@@ -266,13 +237,7 @@ class FlexUserContext(InstanceContext):
 
         :returns: The fetched FlexUserInstance
         """
-        payload, _, _ = self._fetch()
-        return FlexUserInstance(
-            self._version,
-            payload,
-            instance_sid=self._solution["instance_sid"],
-            flex_user_sid=self._solution["flex_user_sid"],
-        )
+        pass
 
     def fetch_with_http_info(self) -> ApiResponse:
         """
@@ -281,14 +246,7 @@ class FlexUserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._fetch()
-        instance = FlexUserInstance(
-            self._version,
-            payload,
-            instance_sid=self._solution["instance_sid"],
-            flex_user_sid=self._solution["flex_user_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _fetch_async(self) -> tuple:
         """
@@ -297,14 +255,7 @@ class FlexUserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        headers = values.of({})
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.fetch_with_response_info_async(
-            method="GET", uri=self._uri, headers=headers
-        )
+        pass
 
     async def fetch_async(self) -> FlexUserInstance:
         """
@@ -313,13 +264,7 @@ class FlexUserContext(InstanceContext):
 
         :returns: The fetched FlexUserInstance
         """
-        payload, _, _ = await self._fetch_async()
-        return FlexUserInstance(
-            self._version,
-            payload,
-            instance_sid=self._solution["instance_sid"],
-            flex_user_sid=self._solution["flex_user_sid"],
-        )
+        pass
 
     async def fetch_with_http_info_async(self) -> ApiResponse:
         """
@@ -328,14 +273,7 @@ class FlexUserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._fetch_async()
-        instance = FlexUserInstance(
-            self._version,
-            payload,
-            instance_sid=self._solution["instance_sid"],
-            flex_user_sid=self._solution["flex_user_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def _update(
         self,
@@ -349,23 +287,7 @@ class FlexUserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Email": email,
-                "UserSid": user_sid,
-                "Locale": locale,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return self._version.update_with_response_info(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     def update(
         self,
@@ -382,13 +304,7 @@ class FlexUserContext(InstanceContext):
 
         :returns: The updated FlexUserInstance
         """
-        payload, _, _ = self._update(email=email, user_sid=user_sid, locale=locale)
-        return FlexUserInstance(
-            self._version,
-            payload,
-            instance_sid=self._solution["instance_sid"],
-            flex_user_sid=self._solution["flex_user_sid"],
-        )
+        pass
 
     def update_with_http_info(
         self,
@@ -405,16 +321,7 @@ class FlexUserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = self._update(
-            email=email, user_sid=user_sid, locale=locale
-        )
-        instance = FlexUserInstance(
-            self._version,
-            payload,
-            instance_sid=self._solution["instance_sid"],
-            flex_user_sid=self._solution["flex_user_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     async def _update_async(
         self,
@@ -428,23 +335,7 @@ class FlexUserContext(InstanceContext):
         Returns:
             tuple: (payload, status_code, headers)
         """
-
-        data = values.of(
-            {
-                "Email": email,
-                "UserSid": user_sid,
-                "Locale": locale,
-            }
-        )
-        headers = values.of({})
-
-        headers["Content-Type"] = "application/x-www-form-urlencoded"
-
-        headers["Accept"] = "application/json"
-
-        return await self._version.update_with_response_info_async(
-            method="POST", uri=self._uri, data=data, headers=headers
-        )
+        pass
 
     async def update_async(
         self,
@@ -461,15 +352,7 @@ class FlexUserContext(InstanceContext):
 
         :returns: The updated FlexUserInstance
         """
-        payload, _, _ = await self._update_async(
-            email=email, user_sid=user_sid, locale=locale
-        )
-        return FlexUserInstance(
-            self._version,
-            payload,
-            instance_sid=self._solution["instance_sid"],
-            flex_user_sid=self._solution["flex_user_sid"],
-        )
+        pass
 
     async def update_with_http_info_async(
         self,
@@ -486,16 +369,7 @@ class FlexUserContext(InstanceContext):
 
         :returns: ApiResponse with instance, status code, and headers
         """
-        payload, status_code, headers = await self._update_async(
-            email=email, user_sid=user_sid, locale=locale
-        )
-        instance = FlexUserInstance(
-            self._version,
-            payload,
-            instance_sid=self._solution["instance_sid"],
-            flex_user_sid=self._solution["flex_user_sid"],
-        )
-        return ApiResponse(data=instance, status_code=status_code, headers=headers)
+        pass
 
     def __repr__(self) -> str:
         """
@@ -525,9 +399,7 @@ class FlexUserList(ListResource):
         :param instance_sid: The unique ID created by Twilio to identify a Flex instance.
         :param flex_user_sid: The unique id for the flex user.
         """
-        return FlexUserContext(
-            self._version, instance_sid=instance_sid, flex_user_sid=flex_user_sid
-        )
+        pass
 
     def __call__(self, instance_sid: str, flex_user_sid: str) -> FlexUserContext:
         """

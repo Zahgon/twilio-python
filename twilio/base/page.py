@@ -48,7 +48,7 @@ class Page(object):
         """
         Returns the next record in the `Page`.
         """
-        return self.get_instance(next(self._records))
+        pass
 
     @classmethod
     def process_response(cls, response: Response) -> Any:
@@ -58,10 +58,7 @@ class Page(object):
         :param response: The HTTP response.
         :return The JSON-loaded content.
         """
-        if response.status_code != 200:
-            raise TwilioException("Unable to fetch page", response)
-
-        return json.loads(response.text)
+        pass
 
     def load_page(self, payload: Dict[str, Any]):
         """
@@ -70,43 +67,21 @@ class Page(object):
         :param payload: The JSON-loaded content.
         :return list: The list of records.
         """
-        if "meta" in payload and "key" in payload["meta"]:
-            return payload[payload["meta"]["key"]]
-        else:
-            keys = set(payload.keys())
-            key = keys - self.META_KEYS
-            if len(key) == 1:
-                return payload[key.pop()]
-            if "Resources" in payload:
-                return payload["Resources"]
-
-        raise TwilioException("Page Records can not be deserialized")
+        pass
 
     @property
     def previous_page_url(self) -> Optional[str]:
         """
         :return str: Returns a link to the previous_page_url or None if doesn't exist.
         """
-        if "meta" in self._payload and "previous_page_url" in self._payload["meta"]:
-            return self._payload["meta"]["previous_page_url"]
-        elif (
-            "previous_page_uri" in self._payload and self._payload["previous_page_uri"]
-        ):
-            return self._version.domain.absolute_url(self._payload["previous_page_uri"])
-
-        return None
+        pass
 
     @property
     def next_page_url(self) -> Optional[str]:
         """
         :return str: Returns a link to the next_page_url or None if doesn't exist.
         """
-        if "meta" in self._payload and "next_page_url" in self._payload["meta"]:
-            return self._payload["meta"]["next_page_url"]
-        elif "next_page_uri" in self._payload and self._payload["next_page_uri"]:
-            return self._version.domain.absolute_url(self._payload["next_page_uri"])
-
-        return None
+        pass
 
     def get_instance(self, payload: Dict[str, Any]) -> Any:
         """
@@ -122,52 +97,28 @@ class Page(object):
         Return the `Page` after this one.
         :return The next page.
         """
-        if not self.next_page_url:
-            return None
-
-        response = self._version.domain.twilio.request("GET", self.next_page_url)
-        cls = type(self)
-        return cls(self._version, response, self._solution)
+        pass
 
     async def next_page_async(self) -> Optional["Page"]:
         """
         Asynchronously return the `Page` after this one.
         :return The next page.
         """
-        if not self.next_page_url:
-            return None
-
-        response = await self._version.domain.twilio.request_async(
-            "GET", self.next_page_url
-        )
-        cls = type(self)
-        return cls(self._version, response, self._solution)
+        pass
 
     def previous_page(self) -> Optional["Page"]:
         """
         Return the `Page` before this one.
         :return The previous page.
         """
-        if not self.previous_page_url:
-            return None
-
-        response = self._version.domain.twilio.request("GET", self.previous_page_url)
-        cls = type(self)
-        return cls(self._version, response, self._solution)
+        pass
 
     async def previous_page_async(self) -> Optional["Page"]:
         """
         Asynchronously return the `Page` before this one.
         :return The previous page.
         """
-        if not self.previous_page_url:
-            return None
-
-        response = await self._version.domain.twilio.request_async(
-            "GET", self.previous_page_url
-        )
-        cls = type(self)
-        return cls(self._version, response, self._solution)
+        pass
 
     def __repr__(self) -> str:
         return "<Page>"

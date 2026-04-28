@@ -53,59 +53,39 @@ class V1(Version):
 
     @property
     def address_configurations(self) -> AddressConfigurationList:
-        if self._address_configurations is None:
-            self._address_configurations = AddressConfigurationList(self)
-        return self._address_configurations
+        pass
 
     @property
     def configuration(self) -> ConfigurationList:
-        if self._configuration is None:
-            self._configuration = ConfigurationList(self)
-        return self._configuration
+        pass
 
     @property
     def conversations(self) -> ConversationList:
-        if self._conversations is None:
-            self._conversations = ConversationList(self)
-        return self._conversations
+        pass
 
     @property
     def conversation_with_participants(self) -> ConversationWithParticipantsList:
-        if self._conversation_with_participants is None:
-            self._conversation_with_participants = ConversationWithParticipantsList(
-                self
-            )
-        return self._conversation_with_participants
+        pass
 
     @property
     def credentials(self) -> CredentialList:
-        if self._credentials is None:
-            self._credentials = CredentialList(self)
-        return self._credentials
+        pass
 
     @property
     def participant_conversations(self) -> ParticipantConversationList:
-        if self._participant_conversations is None:
-            self._participant_conversations = ParticipantConversationList(self)
-        return self._participant_conversations
+        pass
 
     @property
     def roles(self) -> RoleList:
-        if self._roles is None:
-            self._roles = RoleList(self)
-        return self._roles
+        pass
 
     @property
     def services(self) -> ServiceList:
-        if self._services is None:
-            self._services = ServiceList(self)
-        return self._services
+        pass
 
     @property
     def users(self) -> UserList:
-        if self._users is None:
-            self._users = UserList(self)
-        return self._users
+        pass
 
     def __repr__(self) -> str:
         """

@@ -35,21 +35,15 @@ class V2(Version):
 
     @property
     def channels_senders(self) -> ChannelsSenderList:
-        if self._channels_senders is None:
-            self._channels_senders = ChannelsSenderList(self)
-        return self._channels_senders
+        pass
 
     @property
     def domain_certs(self) -> DomainCertsList:
-        if self._domain_certs is None:
-            self._domain_certs = DomainCertsList(self)
-        return self._domain_certs
+        pass
 
     @property
     def typing_indicator(self) -> TypingIndicatorList:
-        if self._typing_indicator is None:
-            self._typing_indicator = TypingIndicatorList(self)
-        return self._typing_indicator
+        pass
 
     def __repr__(self) -> str:
         """
